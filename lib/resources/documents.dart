@@ -1,49 +1,59 @@
+// lib/resources/documents.dart
 import 'package:dio/dio.dart';
 import 'package:razorpay_dart/api.dart';
 import 'package:razorpay_dart/models/documents_model.dart';
 
 class Documents {
-  Documents({required this.api});
+  Documents(this.api);
   final API api;
   static const String BASE_URL = '/documents';
 
   /// Create a Document
-  Future<Response<RazorpayDocument>> create(
-    FileCreateParams params,
-    MultipartFile file, {
-    void Function(DioException?, Response<RazorpayDocument>?)? callback,
+  ///
+  /// @param purpose - The purpose of the document (e.g., 'dispute_evidence').
+  /// @param file - The file to upload (use dio's MultipartFile).
+  /// @param params - Additional parameters like notes.
+  Future<Response<RazorpayDocument>> create({
+    required String purpose,
+    required MultipartFile file,
+    Map<String, dynamic>? otherParams, // For potential future params like notes
+    void Function(RazorpayApiException?, Response<RazorpayDocument>?)? callback,
   }) async {
-    // Combine params and file for form-data
-    Map<String, dynamic> formDataMap = {
-      'purpose': params.purpose,
+    if (purpose.isEmpty) {
+      throw ArgumentError('purpose is required');
+    }
+
+    final formDataMap = {
+      'purpose': purpose,
       'file': file,
+      ...?otherParams,
     };
 
     return api.postFormData<RazorpayDocument>(
       {
         'url': BASE_URL,
-        'formData': formDataMap,
+        // 'formData' key removed, pass FormData directly
       },
-      callback: callback,
-      // We don't pass the file separately here as it's part of formDataMap
+      formData: FormData.fromMap(formDataMap),
       fromJsonFactory: RazorpayDocument.fromJson,
+      callback: callback,
     );
   }
 
   /// Fetch document by id
-  Future<Response<RazorpayDocument>> fetch(
-    String documentId, {
-    void Function(DioException?, Response<RazorpayDocument>?)? callback,
+  ///
+  /// @param documentId - The unique identifier of the document
+  Future<Response<RazorpayDocument>> fetch({
+    required String documentId,
+    void Function(RazorpayApiException?, Response<RazorpayDocument>?)? callback,
   }) async {
     if (documentId.isEmpty) {
-      throw ArgumentError('`documentId` is mandatory');
+      throw ArgumentError('documentId is required');
     }
     return api.get<RazorpayDocument>(
-      {
-        'url': '$BASE_URL/$documentId',
-      },
-      callback: callback,
+      {'url': '$BASE_URL/$documentId'},
       fromJsonFactory: RazorpayDocument.fromJson,
+      callback: callback,
     );
   }
 }

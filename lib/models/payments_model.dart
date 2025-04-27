@@ -1,845 +1,740 @@
+// lib/models/payments_model.dart
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:razorpay_dart/models/shared_model.dart'; // For IMap, RazorpayPaginationOptions
+import 'package:razorpay_dart/models/api_model.dart'; // For IMap, RazorpayPaginationOptions
+import 'package:razorpay_dart/models/fund_account_model.dart';
+import 'package:razorpay_dart/models/orders_model.dart'
+    show
+        RazorpayBankAccount,
+        RazorpayOrderBankDetailsBaseRequestBody; // For BankAccount types
+import 'package:razorpay_dart/models/refunds_model.dart'; // For RazorpayRefund
 import 'package:razorpay_dart/models/tokens_model.dart'; // For RazorpayToken
-import 'package:razorpay_dart/models/refunds_model.dart'; // For Refund types
-import 'package:razorpay_dart/models/transfers_model.dart'; // For Transfer types
-import 'package:razorpay_dart/models/virtual_accounts_model.dart'; // For Virtual Account types
-import 'package:razorpay_dart/models/orders_model.dart'; // For Bank Account types
-import 'package:razorpay_dart/models/customers_model.dart'; // For Customer ID usage
+import 'package:razorpay_dart/models/transfers_model.dart'; // For RazorpayTransfer
+import 'package:razorpay_dart/models/virtual_accounts_model.dart'
+    show RazorpayVirtualAccount; // For VirtualAccount types
 
 part 'payments_model.freezed.dart';
 part 'payments_model.g.dart';
 
-/// Base request body for payment operations.
-@freezed
-class RazorpayPaymentBaseRequestBody with _$RazorpayPaymentBaseRequestBody {
-  const factory RazorpayPaymentBaseRequestBody({
-    /// The payment amount represented in smallest unit of the currency.
-    @JsonKey(name: 'amount') required int amount,
+// --- Enums ---
+enum PaymentStatus { created, authorized, captured, refunded, failed }
 
-    /// The currency in which the customer should be charged.
-    @JsonKey(name: 'currency') required String currency,
+enum RefundStatus { none, partial, full } // 'null' represented by null maybe?
 
-    /// The unique identifier of the order.
-    @JsonKey(name: 'order_id') required String orderId,
+enum PaymentMethod {
+  card,
+  netbanking,
+  wallet,
+  emi,
+  upi,
+  bank_transfer
+} // Add more if needed
 
-    /// Customer email address used for the payment.
-    @JsonKey(name: 'email') required String email,
-
-    /// Customer contact number used for the payment.
-    @JsonKey(name: 'contact')
-    required String contact, // Accepts string or number
-    /// Key-value pair for additional information.
-    @JsonKey(name: 'notes') Map<String, dynamic>? notes,
-
-    /// A user-entered description for the payment.
-    @JsonKey(name: 'description') String? description,
-
-    /// The unique identifier of the customer you want to charge.
-    @JsonKey(name: 'customer_id')
-    String? customerId, // Optional in base, required in some specific requests
-    /// The unique identifier of the subscription.
-    @JsonKey(name: 'subscription_id') String? subscriptionId,
-
-    /// The authentication channel for the payment.
-    @JsonKey(name: 'authentication') PaymentAuthentication? authentication,
-  }) = _RazorpayPaymentBaseRequestBody;
-
-  factory RazorpayPaymentBaseRequestBody.fromJson(Map<String, Object?> json) =>
-      _$RazorpayPaymentBaseRequestBodyFromJson(json);
+enum CardNetwork {
+  @JsonValue('American Express')
+  americanExpress,
+  @JsonValue('Diners Club')
+  dinersClub,
+  @JsonValue('Maestro')
+  maestro,
+  @JsonValue('MasterCard')
+  masterCard,
+  @JsonValue('RuPay')
+  ruPay,
+  @JsonValue('Unknown')
+  unknown,
+  @JsonValue('Visa')
+  visa,
 }
 
-/// Authentication details for a payment.
+enum CardType { credit, debit, prepaid, unknown }
+
+enum CardSubType {
+  customer,
+  business
+} // Note: d.ts uses 'customer', might be typo for 'consumer'
+
+enum DowntimeMethod { card, netbanking, wallet, upi }
+
+enum DowntimeStatus { scheduled, started, resolved, cancelled }
+
+enum DowntimeSeverity { high, medium, low }
+
+enum Psp {
+  @JsonValue('google_pay')
+  googlePay,
+  @JsonValue('phonepe')
+  phonepe,
+  @JsonValue('paytm')
+  paytm,
+  @JsonValue('bhim')
+  bhim
+} // Add others if needed
+
+enum S2SAuthChannel { browser, app }
+
+// --- Nested Types ---
 @freezed
 class PaymentAuthentication with _$PaymentAuthentication {
+  @JsonSerializable(includeIfNull: false)
   const factory PaymentAuthentication({
-    @JsonKey(name: 'authentication_channel')
-    required String authenticationChannel, // 'browser' | 'app'
+    required String authentication_channel, // 'browser' | 'app'
   }) = _PaymentAuthentication;
 
-  factory PaymentAuthentication.fromJson(Map<String, Object?> json) =>
+  factory PaymentAuthentication.fromJson(Map<String, dynamic> json) =>
       _$PaymentAuthenticationFromJson(json);
 }
 
-/// Request body for creating a payment.
-@freezed
-class RazorpayPaymentCreateRequestBody extends RazorpayPaymentBaseRequestBody
-    with _$RazorpayPaymentCreateRequestBody {
-  const factory RazorpayPaymentCreateRequestBody({
-    @JsonKey(name: 'amount') required int amount,
-    @JsonKey(name: 'currency') required String currency,
-    @JsonKey(name: 'order_id') required String orderId,
-    @JsonKey(name: 'email') required String email,
-    @JsonKey(name: 'contact') required String contact,
-    @JsonKey(name: 'notes') Map<String, dynamic>? notes,
-    @JsonKey(name: 'description') String? description,
-    @JsonKey(name: 'customer_id') String? customerId,
-    @JsonKey(name: 'subscription_id') String? subscriptionId,
-    @JsonKey(name: 'authentication') PaymentAuthentication? authentication,
-  }) = _RazorpayPaymentCreateRequestBody;
-
-  factory RazorpayPaymentCreateRequestBody.fromJson(
-          Map<String, Object?> json) =>
-      _$RazorpayPaymentCreateRequestBodyFromJson(json);
-}
-
-/// Request body for updating a payment (only notes).
-@freezed
-class RazorpayPaymentUpdateRequestBody with _$RazorpayPaymentUpdateRequestBody {
-  const factory RazorpayPaymentUpdateRequestBody({
-    @JsonKey(name: 'notes') required Map<String, dynamic> notes,
-  }) = _RazorpayPaymentUpdateRequestBody;
-
-  factory RazorpayPaymentUpdateRequestBody.fromJson(
-          Map<String, Object?> json) =>
-      _$RazorpayPaymentUpdateRequestBodyFromJson(json);
-}
-
-/// Acquirer data associated with a payment.
 @freezed
 class AcquirerData with _$AcquirerData {
+  @JsonSerializable(includeIfNull: false)
   const factory AcquirerData({
-    @JsonKey(name: 'rrn') String? rrn,
-    @JsonKey(name: 'authentication_reference_number')
-    String? authenticationReferenceNumber,
-    @JsonKey(name: 'bank_transaction_id') String? bankTransactionId,
-    @JsonKey(name: 'auth_code') String? authCode,
-    @JsonKey(name: 'upi_transaction_id') String? upiTransactionId,
+    String? rrn,
+    String? authentication_reference_number,
+    String? bank_transaction_id,
+    String? auth_code,
+    String? upi_transaction_id,
   }) = _AcquirerData;
 
-  factory AcquirerData.fromJson(Map<String, Object?> json) =>
+  factory AcquirerData.fromJson(Map<String, dynamic> json) =>
       _$AcquirerDataFromJson(json);
 }
 
-/// EMI details associated with a payment.
 @freezed
-class EmiPaymentDetails with _$EmiPaymentDetails {
-  const factory EmiPaymentDetails({
-    @JsonKey(name: 'issuer') String? issuer,
-    @JsonKey(name: 'type') String? type,
-    @JsonKey(name: 'rate') String? rate,
-    @JsonKey(name: 'duration') String? duration,
-  }) = _EmiPaymentDetails;
+class PaymentEmi with _$PaymentEmi {
+  @JsonSerializable(includeIfNull: false)
+  const factory PaymentEmi({
+    required String issuer,
+    required String type,
+    required String rate,
+    required String duration,
+  }) = _PaymentEmi;
 
-  factory EmiPaymentDetails.fromJson(Map<String, Object?> json) =>
-      _$EmiPaymentDetailsFromJson(json);
+  factory PaymentEmi.fromJson(Map<String, dynamic> json) =>
+      _$PaymentEmiFromJson(json);
 }
 
-/// Offer details associated with a payment.
 @freezed
 class PaymentOfferItem with _$PaymentOfferItem {
+  @JsonSerializable(includeIfNull: false)
   const factory PaymentOfferItem({
-    @JsonKey(name: 'id') required String id,
-    // Other offer fields might be present, add if needed
+    required String id,
   }) = _PaymentOfferItem;
 
-  factory PaymentOfferItem.fromJson(Map<String, Object?> json) =>
+  factory PaymentOfferItem.fromJson(Map<String, dynamic> json) =>
       _$PaymentOfferItemFromJson(json);
 }
 
-/// Wrapper for offers list in payment response.
 @freezed
 class PaymentOffers with _$PaymentOffers {
+  @JsonSerializable(includeIfNull: false)
   const factory PaymentOffers({
-    @JsonKey(name: 'entity') required String entity,
-    @JsonKey(name: 'count') required int count,
-    @JsonKey(name: 'items') required List<PaymentOfferItem> items,
+    required String entity,
+    required int count,
+    required List<PaymentOfferItem> items,
   }) = _PaymentOffers;
 
-  factory PaymentOffers.fromJson(Map<String, Object?> json) =>
+  factory PaymentOffers.fromJson(Map<String, dynamic> json) =>
       _$PaymentOffersFromJson(json);
 }
 
-/// Represents base card details for requests.
+// --- Card Related ---
 @freezed
 class RazorpayCardBaseRequestBody with _$RazorpayCardBaseRequestBody {
+  @JsonSerializable(includeIfNull: false)
   const factory RazorpayCardBaseRequestBody({
-    /// Unformatted card number.
-    @JsonKey(name: 'number') required String number,
-
-    /// Name of the cardholder.
-    @JsonKey(name: 'name') required String name,
-
-    /// Expiry month for card in MM format.
-    @JsonKey(name: 'expiry_month') required String expiryMonth,
-
-    /// Expiry year for card in YY format.
-    @JsonKey(name: 'expiry_year') required String expiryYear,
-
-    /// CVV printed on the back of card.
-    @JsonKey(name: 'cvv') required String cvv, // Use String
-    /// The cryptogram value for the token.
-    @JsonKey(name: 'cryptogram_value') String? cryptogramValue,
-
-    /// Indicates if the payment is made using tokenised card or actual card.
-    @JsonKey(name: 'tokenised') bool? tokenised,
-
-    /// The name of the aggregator that provided the token
-    @JsonKey(name: 'token_provider') String? tokenProvider,
-
-    /// The last 4 digits of the tokenised card.
-    @JsonKey(name: 'last4') String? last4,
-
-    /// The name of the aggregator that provided the token.
-    @JsonKey(name: 'provider_type')
-    String? providerType, // 'Visa', 'Mastercard', 'Amex', 'HDFC for Diners'
+    required String number,
+    required String name,
+    required dynamic expiry_month, // string | number
+    required dynamic expiry_year, // string | number
+    required dynamic cvv, // string | number
+    String? cryptogram_value,
+    bool? tokenised,
+    String? token_provider,
+    String? last4, // Last 4 of tokenized card
+    String? provider_type, // 'Visa', 'Mastercard', 'Amex', 'HDFC for Diners'
   }) = _RazorpayCardBaseRequestBody;
 
-  factory RazorpayCardBaseRequestBody.fromJson(Map<String, Object?> json) =>
+  factory RazorpayCardBaseRequestBody.fromJson(Map<String, dynamic> json) =>
       _$RazorpayCardBaseRequestBodyFromJson(json);
 }
 
-/// Represents card details in a payment response.
+// Card Create Request (same as base)
 @freezed
-class RazorpayCard with _$RazorpayCard {
-  const factory RazorpayCard({
-    /// The unique identifier of the card used by the customer to make the payment.
-    @JsonKey(name: 'id') String? id,
+class RazorpayCardCreateRequest with _$RazorpayCardCreateRequest {
+  @JsonSerializable(includeIfNull: false)
+  const factory RazorpayCardCreateRequest({
+    required String number,
+    required String name,
+    required dynamic expiry_month, // string | number
+    required dynamic expiry_year, // string | number
+    required dynamic cvv, // string | number
+    String? cryptogram_value,
+    bool? tokenised,
+    String? token_provider,
+    String? last4,
+    String? provider_type,
+  }) = _RazorpayCardCreateRequest;
 
-    /// Indicates the type of entity.
-    @JsonKey(name: 'entity') required String entity,
-
-    /// Name of the cardholder.
-    @JsonKey(name: 'name') String? name,
-
-    /// The last 4 digits of the card number.
-    @JsonKey(name: 'last4') required String last4,
-
-    /// The card network.
-    @JsonKey(name: 'network') required String network, // Consider Enum
-    /// The card type.
-    @JsonKey(name: 'type')
-    required String
-        type, // 'credit' | 'debit' | 'prepaid' | 'unknown' - Consider Enum
-    /// The card issuer. The 4-character code denotes the issuing bank.
-    @JsonKey(name: 'issuer') String? issuer,
-
-    /// This attribute is set to `true` if the card can be used for EMI payment method.
-    @JsonKey(name: 'emi') required bool emi,
-
-    /// The sub-type of the customer's card.
-    @JsonKey(name: 'sub_type')
-    required String subType, // 'customer' | 'business'
-    @JsonKey(name: 'token_iin') String? tokenIin,
-
-    /// The transaction flow details.
-    @JsonKey(name: 'flows') CardFlows? flows,
-    @JsonKey(name: 'international') bool? international,
-    @JsonKey(name: 'cobranding_partner') String? cobrandingPartner,
-    // Fields from request body (number, expiry_month, expiry_year, cvv) are typically not in the response
-  }) = _RazorpayCard;
-
-  factory RazorpayCard.fromJson(Map<String, Object?> json) =>
-      _$RazorpayCardFromJson(json);
+  factory RazorpayCardCreateRequest.fromJson(Map<String, dynamic> json) =>
+      _$RazorpayCardCreateRequestFromJson(json);
 }
 
-/// Represents card flow details.
 @freezed
 class CardFlows with _$CardFlows {
+  @JsonSerializable(includeIfNull: false)
   const factory CardFlows({
-    @JsonKey(name: 'otp') bool? otp,
-    @JsonKey(name: 'recurring') required bool recurring,
+    required bool recurring,
+    bool? otp,
   }) = _CardFlows;
 
-  factory CardFlows.fromJson(Map<String, Object?> json) =>
+  factory CardFlows.fromJson(Map<String, dynamic> json) =>
       _$CardFlowsFromJson(json);
 }
 
-/// Represents a Razorpay Payment entity.
+// Card Response Body
 @freezed
-class RazorpayPayment extends RazorpayPaymentBaseRequestBody
-    with _$RazorpayPayment {
-  const factory RazorpayPayment({
-    /// Unique identifier of the payment.
-    @JsonKey(name: 'id') required String id,
-
-    /// Indicates the type of entity.
-    @JsonKey(name: 'entity') required String entity,
-
-    // Inherited fields from base request (may not all be present in response)
-    @JsonKey(name: 'amount') required int amount,
-    @JsonKey(name: 'currency') required String currency,
-    @JsonKey(name: 'order_id') required String orderId,
-    @JsonKey(name: 'email') required String email,
-    @JsonKey(name: 'contact') required String contact,
-    @JsonKey(name: 'notes') Map<String, dynamic>? notes,
-    @JsonKey(name: 'description') String? description,
-    @JsonKey(name: 'customer_id') String? customerId,
-    @JsonKey(name: 'subscription_id') String? subscriptionId,
-    // 'authentication' field not present in response d.ts
-
-    // New fields specific to response
-    /// The status of the payment
-    @JsonKey(name: 'status')
+class RazorpayCard with _$RazorpayCard {
+  // Extends Create Request + response fields
+  @JsonSerializable(includeIfNull: false)
+  const factory RazorpayCard({
+    required String id,
+    required String entity,
     required String
-        status, // 'created' | 'authorized' | 'captured' | 'refunded' | 'failed'
-    /// Unique identifier of the invoice.
-    @JsonKey(name: 'invoice_id') String? invoiceId,
+        number, // Full number might not be in response, often masked
+    required String name,
+    required dynamic expiry_month, // string | number
+    required dynamic expiry_year, // string | number
+    required dynamic cvv, // Response specific fields
+    required String last4,
+    required CardType type,
+    required CardSubType sub_type,
+    required bool
+        international, // Masked card number, required CardNetwork network, required CardType type, required String issuer, // Bank code, required bool emi, required CardSubType sub_type, required CardFlows flows, required bool international, // Usually not in response
+    String? cryptogram_value, // Usually not in response
+    bool? tokenised, // Usually not in response
+    String? token_provider, // Usually not in response
+    String? provider_type, // Usually not in response
+    String? token_iin, // Nullable
+    String? cobranding_partner, // Nullable
+  }) = _RazorpayCard;
 
-    /// Indicates whether the payment is done via an international card.
-    @JsonKey(name: 'international') required bool international,
-
-    /// The refund status of the payment.
-    @JsonKey(name: 'refund_status')
-    String? refundStatus, // 'null' | 'partial' | 'full'
-    /// The amount refunded.
-    @JsonKey(name: 'amount_refunded') int? amountRefunded,
-
-    /// Indicates if the payment is captured.
-    @JsonKey(name: 'captured') required bool captured,
-
-    /// The 4-character bank code associated with the customer's account.
-    @JsonKey(name: 'bank') String? bank,
-
-    /// The unique identifier of the card used.
-    @JsonKey(name: 'card_id') String? cardId,
-
-    /// The name of the wallet used.
-    @JsonKey(name: 'wallet') String? wallet,
-
-    /// The customer's VPA (Virtual Payment Address) or UPI id used.
-    @JsonKey(name: 'vpa') String? vpa,
-
-    /// GST charged for the payment.
-    @JsonKey(name: 'tax') int? tax,
-
-    /// Unique identifier of the token.
-    @JsonKey(name: 'token_id') String? tokenId,
-
-    /// Fee (including GST) charged by Razorpay.
-    @JsonKey(name: 'fee') int? fee,
-
-    /// Error that occurred during payment.
-    @JsonKey(name: 'error_code') String? errorCode,
-
-    /// The point of failure.
-    @JsonKey(name: 'error_source') String? errorSource,
-
-    /// Description of the error.
-    @JsonKey(name: 'error_description') String? errorDescription,
-
-    /// The stage where the transaction failure occurred.
-    @JsonKey(name: 'error_step') String? errorStep,
-
-    /// The exact error reason.
-    @JsonKey(name: 'error_reason') String? errorReason,
-
-    /// A dynamic array consisting of unique reference numbers.
-    @JsonKey(name: 'acquirer_data') required AcquirerData acquirerData,
-
-    /// EMI details if applicable.
-    @JsonKey(name: 'emi') EmiPaymentDetails? emi,
-
-    /// Timestamp when the payment was created.
-    @JsonKey(name: 'created_at') required int createdAt,
-
-    /// The payment method used.
-    @JsonKey(name: 'method') required String method, // Could be enum
-    /// Token details if applicable.
-    @JsonKey(name: 'token') RazorpayToken? token,
-
-    /// Offers applied to the payment.
-    @JsonKey(name: 'offers') PaymentOffers? offers,
-
-    /// Card details if applicable.
-    @JsonKey(name: 'card') RazorpayCard? card,
-  }) = _RazorpayPayment;
-
-  factory RazorpayPayment.fromJson(Map<String, Object?> json) =>
-      _$RazorpayPaymentFromJson(json);
+  factory RazorpayCard.fromJson(Map<String, dynamic> json) =>
+      _$RazorpayCardFromJson(json);
 }
 
-/// Represents downtime instrument details.
+// --- Downtime Related ---
 @freezed
 class RazorpayPaymentDowntimeInstrument
     with _$RazorpayPaymentDowntimeInstrument {
+  @JsonSerializable(includeIfNull: false)
   const factory RazorpayPaymentDowntimeInstrument({
-    @JsonKey(name: 'bank') String? bank,
-    @JsonKey(name: 'psp')
-    String? psp, // 'google_pay' | 'phonepe' | 'paytm' | 'bhim'
-    @JsonKey(name: 'vpa_handle') String? vpaHandle,
-    @JsonKey(name: 'wallet') String? wallet,
+    String? bank,
+    Psp? psp,
+    String? vpa_handle,
+    String? wallet,
   }) = _RazorpayPaymentDowntimeInstrument;
 
   factory RazorpayPaymentDowntimeInstrument.fromJson(
-          Map<String, Object?> json) =>
+    Map<String, dynamic> json,
+  ) =>
       _$RazorpayPaymentDowntimeInstrumentFromJson(json);
 }
 
-/// Represents a payment downtime event.
 @freezed
 class RazorpayPaymentDowntime with _$RazorpayPaymentDowntime {
+  @JsonSerializable(includeIfNull: false)
   const factory RazorpayPaymentDowntime({
-    @JsonKey(name: 'id') required String id,
-    @JsonKey(name: 'entity') required String entity,
-    @JsonKey(name: 'method')
-    required String method, // 'card', 'netbanking', 'wallet', 'upi'
-    @JsonKey(name: 'begin') int? begin,
-    @JsonKey(name: 'end') int? end,
-    @JsonKey(name: 'status')
-    required String
-        status, // 'scheduled' | 'started' | 'resolved' | 'cancelled'
-    @JsonKey(name: 'scheduled') required bool scheduled,
-    @JsonKey(name: 'severity')
-    required String severity, // 'high' | 'medium' | 'low'
-    @JsonKey(name: 'instrument')
+    required String id,
+    required String entity,
+    required DowntimeMethod method,
+    required DowntimeStatus status,
+    required bool scheduled,
+    required DowntimeSeverity severity,
     required RazorpayPaymentDowntimeInstrument instrument,
-    @JsonKey(name: 'created_at') required int createdAt,
-    @JsonKey(name: 'updated_at') required int updatedAt,
+    required int created_at,
+    required int updated_at,
+    int? begin, // Nullable Unix timestamp
+    int? end, // Nullable Unix timestamp
   }) = _RazorpayPaymentDowntime;
 
-  factory RazorpayPaymentDowntime.fromJson(Map<String, Object?> json) =>
+  factory RazorpayPaymentDowntime.fromJson(Map<String, dynamic> json) =>
       _$RazorpayPaymentDowntimeFromJson(json);
 }
 
-/// Request body for creating a recurring payment.
+// --- UPI Related ---
 @freezed
-class RazorpayRecurringPaymentCreateRequestBody
-    extends RazorpayPaymentBaseRequestBody
-    with _$RazorpayRecurringPaymentCreateRequestBody {
-  const factory RazorpayRecurringPaymentCreateRequestBody({
-    // Inherited fields
-    @JsonKey(name: 'amount') required int amount,
-    @JsonKey(name: 'currency') required String currency,
-    @JsonKey(name: 'order_id') required String orderId,
-    @JsonKey(name: 'email') required String email,
-    @JsonKey(name: 'contact') required String contact,
-    @JsonKey(name: 'notes') Map<String, dynamic>? notes,
-    @JsonKey(name: 'description') String? description,
-    @JsonKey(name: 'customer_id') required String customerId, // Required here
-    @JsonKey(name: 'subscription_id') String? subscriptionId,
-    @JsonKey(name: 'authentication') PaymentAuthentication? authentication,
-    // New fields
-    /// The `token_id` generated during authorization.
-    @JsonKey(name: 'token') required String token,
+class PaymentUpiDetails with _$PaymentUpiDetails {
+  @JsonSerializable(includeIfNull: false)
+  const factory PaymentUpiDetails({
+    required String flow, // 'collect' | 'intent'
+    String? vpa,
+    int? expiry_time, // Default 5 mins
+  }) = _PaymentUpiDetails;
 
-    /// Determines whether recurring payment is enabled.
-    @JsonKey(name: 'recurring')
-    required bool
-        recurring, // Accept bool, API might expect string/number internally
-  }) = _RazorpayRecurringPaymentCreateRequestBody;
-
-  factory RazorpayRecurringPaymentCreateRequestBody.fromJson(
-          Map<String, Object?> json) =>
-      _$RazorpayRecurringPaymentCreateRequestBodyFromJson(json);
+  factory PaymentUpiDetails.fromJson(Map<String, dynamic> json) =>
+      _$PaymentUpiDetailsFromJson(json);
 }
 
-/// Response for creating a recurring payment.
+// --- S2S Related ---
 @freezed
-class RazorpayRecurringPaymentResponse with _$RazorpayRecurringPaymentResponse {
-  const factory RazorpayRecurringPaymentResponse({
-    @JsonKey(name: 'razorpay_payment_id') String? razorpayPaymentId,
-    @JsonKey(name: 'razorpay_order_id') String? razorpayOrderId,
-    @JsonKey(name: 'razorpay_signature') String? razorpaySignature,
-  }) = _RazorpayRecurringPaymentResponse;
-
-  factory RazorpayRecurringPaymentResponse.fromJson(
-          Map<String, Object?> json) =>
-      _$RazorpayRecurringPaymentResponseFromJson(json);
-}
-
-/// Request body for creating a payment using third-party methods (e.g., Netbanking S2S).
-@freezed
-class RazorpayPaymentThirdPartyCreateRequestBody
-    with _$RazorpayPaymentThirdPartyCreateRequestBody {
-  const factory RazorpayPaymentThirdPartyCreateRequestBody({
-    // Subset of Base request body
-    @JsonKey(name: 'amount') required int amount,
-    @JsonKey(name: 'currency') required String currency,
-    @JsonKey(name: 'order_id') required String orderId,
-    @JsonKey(name: 'email') required String email,
-    @JsonKey(name: 'contact') required String contact,
-    // New fields
-    /// The customer's bank code.
-    @JsonKey(name: 'bank') String? bank,
-
-    /// The payment method.
-    @JsonKey(name: 'method') required String method,
-  }) = _RazorpayPaymentThirdPartyCreateRequestBody;
-
-  factory RazorpayPaymentThirdPartyCreateRequestBody.fromJson(
-          Map<String, Object?> json) =>
-      _$RazorpayPaymentThirdPartyCreateRequestBodyFromJson(json);
-}
-
-/// Request body for creating a UPI payment (S2S / TPV).
-@freezed
-class RazorpayPaymentUpiCreateRequestBody extends RazorpayPaymentBaseRequestBody
-    with _$RazorpayPaymentUpiCreateRequestBody {
-  const factory RazorpayPaymentUpiCreateRequestBody({
-    // Inherited fields (customerId is optional here)
-    @JsonKey(name: 'amount') required int amount,
-    @JsonKey(name: 'currency') required String currency,
-    @JsonKey(name: 'order_id') required String orderId,
-    @JsonKey(name: 'email') required String email,
-    @JsonKey(name: 'contact') required String contact,
-    @JsonKey(name: 'notes') Map<String, dynamic>? notes,
-    @JsonKey(name: 'description') String? description,
-    @JsonKey(name: 'customer_id') String? customerId,
-    @JsonKey(name: 'subscription_id') String? subscriptionId,
-    @JsonKey(name: 'authentication') PaymentAuthentication? authentication,
-    // New fields
-    @JsonKey(name: 'method') required String method, // Should be 'upi'
-    /// Specifies if the VPA should be stored as tokens.
-    @JsonKey(name: 'save') bool? save,
-
-    /// The customer's IP address.
-    @JsonKey(name: 'ip') String? ip, // Optional in d.ts, required in docs?
-    /// URL where Razorpay will submit the final payment status.
-    @JsonKey(name: 'callback_url') String? callbackUrl,
-
-    /// Value of referer header.
-    @JsonKey(name: 'referer') String? referer,
-
-    /// Value of `user_agent` header.
-    @JsonKey(name: 'user_agent') String? userAgent,
-
-    /// Details of the expiry of the UPI link
-    @JsonKey(name: 'upi') UpiPaymentDetails? upi,
-
-    /// Token of the saved VPA.
-    @JsonKey(name: 'token') String? token,
-  }) = _RazorpayPaymentUpiCreateRequestBody;
-
-  factory RazorpayPaymentUpiCreateRequestBody.fromJson(
-          Map<String, Object?> json) =>
-      _$RazorpayPaymentUpiCreateRequestBodyFromJson(json);
-}
-
-/// UPI specific payment details.
-@freezed
-class UpiPaymentDetails with _$UpiPaymentDetails {
-  const factory UpiPaymentDetails({
-    /// Specify the type of the UPI payment flow.
-    @JsonKey(name: 'flow') required String flow, // 'collect' | 'intent'
-    @JsonKey(name: 'vpa') String? vpa,
-
-    /// Period of time (in minutes) after which the link will expire.
-    @JsonKey(name: 'expiry_time') int? expiryTime,
-  }) = _UpiPaymentDetails;
-
-  factory UpiPaymentDetails.fromJson(Map<String, Object?> json) =>
-      _$UpiPaymentDetailsFromJson(json);
-}
-
-/// Response for creating a UPI payment.
-@freezed
-class RazorpayPaymentUpiCreateResponse with _$RazorpayPaymentUpiCreateResponse {
-  const factory RazorpayPaymentUpiCreateResponse({
-    @JsonKey(name: 'razorpay_payment_id') required String razorpayPaymentId,
-    @JsonKey(name: 'link') String? link, // Only for intent flow
-  }) = _RazorpayPaymentUpiCreateResponse;
-
-  factory RazorpayPaymentUpiCreateResponse.fromJson(
-          Map<String, Object?> json) =>
-      _$RazorpayPaymentUpiCreateResponseFromJson(json);
-}
-
-/// Request body for validating a VPA.
-@freezed
-class RazorpayValidateVpaRequestBody with _$RazorpayValidateVpaRequestBody {
-  const factory RazorpayValidateVpaRequestBody({
-    @JsonKey(name: 'vpa') required String vpa,
-  }) = _RazorpayValidateVpaRequestBody;
-
-  factory RazorpayValidateVpaRequestBody.fromJson(Map<String, Object?> json) =>
-      _$RazorpayValidateVpaRequestBodyFromJson(json);
-}
-
-/// Response for validating a VPA.
-@freezed
-class RazorpayValidateVpaResponse with _$RazorpayValidateVpaResponse {
-  const factory RazorpayValidateVpaResponse({
-    @JsonKey(name: 'vpa') required String vpa,
-    @JsonKey(name: 'success') required bool success,
-    @JsonKey(name: 'customer_name') String? customerName,
-  }) = _RazorpayValidateVpaResponse;
-
-  factory RazorpayValidateVpaResponse.fromJson(Map<String, Object?> json) =>
-      _$RazorpayValidateVpaResponseFromJson(json);
-}
-
-/// Represents browser info for S2S payments.
-@freezed
-class BrowserInfo with _$BrowserInfo {
-  const factory BrowserInfo({
-    @JsonKey(name: 'java_enabled') bool? javaEnabled,
-    @JsonKey(name: 'javascript_enabled') bool? javascriptEnabled,
-    @JsonKey(name: 'timezone_offset') int? timezoneOffset,
-    @JsonKey(name: 'screen_width') int? screenWidth,
-    @JsonKey(name: 'screen_height') int? screenHeight,
-    @JsonKey(name: 'color_depth') int? colorDepth,
-    @JsonKey(name: 'language') String? language,
-  }) = _BrowserInfo;
-
-  factory BrowserInfo.fromJson(Map<String, Object?> json) =>
-      _$BrowserInfoFromJson(json);
-}
-
-/// Card details specific to S2S requests.
-@freezed
-class RazorpayCardS2SMethod extends RazorpayCardBaseRequestBody
-    with _$RazorpayCardS2SMethod {
+class RazorpayCardS2SMethod with _$RazorpayCardS2SMethod {
+  // Extends RazorpayCardBaseRequestBody + authentication
+  @JsonSerializable(includeIfNull: false)
   const factory RazorpayCardS2SMethod({
-    // Inherited fields
-    @JsonKey(name: 'number') required String number,
-    @JsonKey(name: 'name') required String name,
-    @JsonKey(name: 'expiry_month') required String expiryMonth,
-    @JsonKey(name: 'expiry_year') required String expiryYear,
-    @JsonKey(name: 'cvv') required String cvv,
-    @JsonKey(name: 'cryptogram_value') String? cryptogramValue,
-    @JsonKey(name: 'tokenised') bool? tokenised,
-    @JsonKey(name: 'token_provider') String? tokenProvider,
-    @JsonKey(name: 'last4') String? last4,
-    @JsonKey(name: 'provider_type') String? providerType,
-    // New fields
-    /// Details of the authentication channel.
-    @JsonKey(name: 'authentication') PaymentAuthentication? authentication,
+    // Base fields
+    required String number,
+    required String name,
+    required dynamic expiry_month, // string | number
+    required dynamic expiry_year, // string | number
+    required dynamic cvv, // string | number
+    String? cryptogram_value,
+    bool? tokenised,
+    String? token_provider,
+    String? last4,
+    String? provider_type,
+    // S2S specific
+    PaymentAuthentication? authentication,
   }) = _RazorpayCardS2SMethod;
 
-  factory RazorpayCardS2SMethod.fromJson(Map<String, Object?> json) =>
+  factory RazorpayCardS2SMethod.fromJson(Map<String, dynamic> json) =>
       _$RazorpayCardS2SMethodFromJson(json);
 }
 
-/// Request body for creating an S2S payment.
 @freezed
-class RazorpayPaymentS2SCreateRequestBody extends RazorpayPaymentBaseRequestBody
+class BrowserInfo with _$BrowserInfo {
+  @JsonSerializable(includeIfNull: false)
+  const factory BrowserInfo({
+    bool? java_enabled,
+    bool? javascript_enabled,
+    dynamic timezone_offset, // number | string
+    dynamic screen_width, // number | string
+    dynamic screen_height, // number | string
+    dynamic color_depth, // number | string
+    String? language,
+  }) = _BrowserInfo;
+
+  factory BrowserInfo.fromJson(Map<String, dynamic> json) =>
+      _$BrowserInfoFromJson(json);
+}
+
+// --- Payment Base Request Body ---
+@freezed
+class RazorpayPaymentBaseRequestBody with _$RazorpayPaymentBaseRequestBody {
+  @JsonSerializable(includeIfNull: false)
+  const factory RazorpayPaymentBaseRequestBody({
+    required dynamic amount, // number | string
+    required String currency,
+    required String order_id,
+    required String email,
+    required dynamic contact,
+    required String customer_id, // string | number
+    IMap<String>? notes, // { [key: string]: string }
+    String? description,
+    String? subscription_id,
+    PaymentAuthentication? authentication,
+  }) = _RazorpayPaymentBaseRequestBody;
+
+  factory RazorpayPaymentBaseRequestBody.fromJson(Map<String, dynamic> json) =>
+      _$RazorpayPaymentBaseRequestBodyFromJson(json);
+}
+
+// --- Create Request Bodies ---
+@freezed
+class RazorpayPaymentCreateRequestBody with _$RazorpayPaymentCreateRequestBody {
+  // Inherits Base
+  @JsonSerializable(includeIfNull: false)
+  const factory RazorpayPaymentCreateRequestBody({
+    required dynamic amount, // number | string
+    required String currency,
+    required String order_id,
+    required String email,
+    required dynamic contact,
+    required String customer_id, // string | number
+    IMap<String>? notes,
+    String? description,
+    String? subscription_id,
+    PaymentAuthentication? authentication,
+  }) = _RazorpayPaymentCreateRequestBody;
+
+  factory RazorpayPaymentCreateRequestBody.fromJson(
+    Map<String, dynamic> json,
+  ) =>
+      _$RazorpayPaymentCreateRequestBodyFromJson(json);
+}
+
+@freezed
+class RazorpayRecurringPaymentCreateRequestBody
+    with _$RazorpayRecurringPaymentCreateRequestBody {
+  // Extends Base + token, recurring
+  @JsonSerializable(includeIfNull: false)
+  const factory RazorpayRecurringPaymentCreateRequestBody({
+    // Base fields
+    required dynamic amount, // number | string
+    required String currency,
+    required String order_id,
+    required String email,
+    required dynamic contact,
+    required String customer_id, // Recurring specific
+    required String
+        token, // token_id, required dynamic recurring, // boolean | 1 | 0 | string, // string | number
+    IMap<String>? notes,
+    String? description,
+    String? subscription_id,
+    PaymentAuthentication? authentication,
+  }) = _RazorpayRecurringPaymentCreateRequestBody;
+
+  factory RazorpayRecurringPaymentCreateRequestBody.fromJson(
+    Map<String, dynamic> json,
+  ) =>
+      _$RazorpayRecurringPaymentCreateRequestBodyFromJson(json);
+}
+
+@freezed
+class RazorpayPaymentThirdPartyCreateRequestBody
+    with _$RazorpayPaymentThirdPartyCreateRequestBody {
+  // Omit<Base, 'customer_id' | 'notes' | 'description'> + bank, method
+  @JsonSerializable(includeIfNull: false)
+  const factory RazorpayPaymentThirdPartyCreateRequestBody({
+    required dynamic amount, // number | string
+    required String currency,
+    required String order_id,
+    required String email,
+    required dynamic contact,
+    required String
+        method, // 'card' | 'netbanking' | 'wallet' | 'upi', // string | number
+    String? subscription_id,
+    PaymentAuthentication? authentication,
+    // Third party specific
+    String? bank,
+  }) = _RazorpayPaymentThirdPartyCreateRequestBody;
+
+  factory RazorpayPaymentThirdPartyCreateRequestBody.fromJson(
+    Map<String, dynamic> json,
+  ) =>
+      _$RazorpayPaymentThirdPartyCreateRequestBodyFromJson(json);
+}
+
+@freezed
+class RazorpayPaymentUpiCreateRequestBody
+    with _$RazorpayPaymentUpiCreateRequestBody {
+  // PartialOptional<Base, 'customer_id'> + method, save, ip, etc.
+  @JsonSerializable(includeIfNull: false)
+  const factory RazorpayPaymentUpiCreateRequestBody({
+    // Base fields (customer_id is optional)
+    required dynamic amount, // number | string
+    required String currency,
+    required String order_id,
+    required String email,
+    required dynamic contact, // UPI specific
+    required String
+        method, // Should be 'upi', required String ip, required String referer, required String user_agent, // string | number
+    IMap<String>? notes,
+    String? description,
+    String? customer_id, // Optional
+    String? subscription_id,
+    PaymentAuthentication? authentication,
+    @JsonKey(toJson: _boolToInt, fromJson: _intToBool) bool? save, // 1 | 0
+    String? callback_url,
+    PaymentUpiDetails? upi,
+    String? token, // Token of saved VPA
+  }) = _RazorpayPaymentUpiCreateRequestBody;
+
+  factory RazorpayPaymentUpiCreateRequestBody.fromJson(
+    Map<String, dynamic> json,
+  ) =>
+      _$RazorpayPaymentUpiCreateRequestBodyFromJson(json);
+}
+
+@freezed
+class RazorpayPaymentS2SCreateRequestBody
     with _$RazorpayPaymentS2SCreateRequestBody {
+  // Extends Base + save, token, account_id, card, ip, etc.
+  @JsonSerializable(includeIfNull: false)
   const factory RazorpayPaymentS2SCreateRequestBody({
-    // Inherited fields
-    @JsonKey(name: 'amount') required int amount,
-    @JsonKey(name: 'currency') required String currency,
-    @JsonKey(name: 'order_id') required String orderId,
-    @JsonKey(name: 'email') required String email,
-    @JsonKey(name: 'contact') required String contact,
-    @JsonKey(name: 'notes') Map<String, dynamic>? notes,
-    @JsonKey(name: 'description') String? description,
-    @JsonKey(name: 'customer_id') required String customerId, // Required here
-    @JsonKey(name: 'subscription_id') String? subscriptionId,
-    @JsonKey(name: 'authentication')
-    PaymentAuthentication? authentication, // Base auth
-    // New fields
-    @JsonKey(name: 'save') required bool save,
+    // Base fields
+    required dynamic amount, // number | string
+    required String currency,
+    required String order_id,
+    required String email,
+    required dynamic contact,
+    required String customer_id,
+    // PaymentAuthentication? authentication, // Handled inside card?
 
-    /// Pass the unique token id created when the customer made the first payment.
-    @JsonKey(name: 'token') String? token,
-
-    /// Pass the sub-merchant's unique identifier.
-    @JsonKey(name: 'account_id') String? accountId,
-    @JsonKey(name: 'card') required RazorpayCardS2SMethod card,
-
-    /// The customer's IP address.
-    @JsonKey(name: 'ip') required String ip,
-
-    /// Referrer header passed by the client's browser.
-    @JsonKey(name: 'referer') String? referer,
-
-    /// The User-Agent header of the user's browser.
-    @JsonKey(name: 'user_agent') String? userAgent,
-    @JsonKey(name: 'provider_name') String? providerName,
-
-    /// Information regarding the customer's browser.
-    @JsonKey(name: 'browser') BrowserInfo? browser,
+    // S2S specific
+    required dynamic save, // boolean | number (0 or 1)
+    required RazorpayCardS2SMethod card, // Reverted to required
+    Map<String, String?>? notes, // Kept type change
+    String? description,
+    String? subscription_id,
+    String? token,
+    String? account_id, // Sub-merchant ID
+    String? referer,
+    String? user_agent,
+    String? provider_name, // Not in d.ts, check if needed
+    BrowserInfo? browser,
   }) = _RazorpayPaymentS2SCreateRequestBody;
 
   factory RazorpayPaymentS2SCreateRequestBody.fromJson(
-          Map<String, Object?> json) =>
+    Map<String, dynamic> json,
+  ) =>
       _$RazorpayPaymentS2SCreateRequestBodyFromJson(json);
 }
 
-/// Represents the next action required in an S2S payment flow.
+// --- Update Request Body ---
 @freezed
-class S2SNextAction with _$S2SNextAction {
-  const factory S2SNextAction({
-    // The structure is { [key: string]: string }, using a Map.
-    // The actual keys will depend on the required action (e.g., 'url', 'method').
-    required Map<String, String> actionDetails,
-  }) = _S2SNextAction;
+class RazorpayPaymentUpdateRequestBody with _$RazorpayPaymentUpdateRequestBody {
+  // Pick<Base, "notes">
+  @JsonSerializable(includeIfNull: false)
+  const factory RazorpayPaymentUpdateRequestBody({
+    IMap<String>? notes,
+  }) = _RazorpayPaymentUpdateRequestBody;
 
-  // This might need custom fromJson logic depending on the actual keys
-  factory S2SNextAction.fromJson(Map<String, Object?> json) =>
-      _$S2SNextActionFromJson(json);
+  factory RazorpayPaymentUpdateRequestBody.fromJson(
+    Map<String, dynamic> json,
+  ) =>
+      _$RazorpayPaymentUpdateRequestBodyFromJson(json);
 }
 
-/// Response structure for S2S payment creation/submission.
+// --- Refund Request within Payment ---
+@freezed
+class RazorpayRefundPaymentLinkAccountCreateRequestBody
+    with _$RazorpayRefundPaymentLinkAccountCreateRequestBody {
+  // Pick<Base, "amount"> + reverse_all
+  @JsonSerializable(includeIfNull: false)
+  const factory RazorpayRefundPaymentLinkAccountCreateRequestBody({
+    required dynamic amount,
+    @JsonKey(toJson: _boolToInt, fromJson: _intToBool)
+    bool? reverse_all, // 1 | 0
+    // Add other standard refund params if applicable here (speed, notes, receipt)
+    String? speed, // 'normal' | 'optimum'
+    IMap<dynamic>? notes,
+    String? receipt,
+  }) = _RazorpayRefundPaymentLinkAccountCreateRequestBody;
+
+  factory RazorpayRefundPaymentLinkAccountCreateRequestBody.fromJson(
+    Map<String, dynamic> json,
+  ) =>
+      _$RazorpayRefundPaymentLinkAccountCreateRequestBodyFromJson(json);
+}
+
+// --- Response Bodies ---
+@freezed
+class RazorpayPayment with _$RazorpayPayment {
+  // Extends Create Request + response fields
+  @JsonSerializable(includeIfNull: false)
+  const factory RazorpayPayment({
+    required String id,
+    required String entity, // 'payment'
+    required dynamic amount, // number | string
+    required String currency,
+    required PaymentStatus status,
+    required String order_id,
+    required bool international,
+    required String method, // 'card' | 'netbanking' | 'wallet' | 'emi' | 'upi'
+    required int created_at,
+    required int amount_refunded,
+    required int fee,
+    required int tax,
+    RefundStatus?
+        refund_status, // 'null' | 'partial' | 'full' - Use nullable enum
+    String? description,
+    String? card_id, // Nullable
+    String? bank, // Bank code or name? d.ts says code.
+    String? wallet, // Nullable
+    String? vpa, // Nullable
+    IMap<String>? notes, // Changed type to IMap<String>?
+    String? error_code, // Nullable
+    String? error_description, // Nullable
+    String? error_source, // Nullable
+    String? error_step, // Nullable
+    String? error_reason, // Nullable
+    // Optional expanded fields
+    RazorpayCard? card, // Nullable if not expanded
+    PaymentEmi? emi, // Nullable if not expanded
+    PaymentOffers? offers, // Nullable if not expanded
+    String? token_id, // Nullable
+    RazorpayToken? token, // Nullable expanded token info
+    // Removed upi field, seems implicit in vpa/method
+  }) = _RazorpayPayment;
+
+  factory RazorpayPayment.fromJson(Map<String, dynamic> json) =>
+      _$RazorpayPaymentFromJson(json);
+}
+
+// S2S JSON Response
 @freezed
 class RazorpayPaymentS2SJson with _$RazorpayPaymentS2SJson {
+  @JsonSerializable(includeIfNull: false)
   const factory RazorpayPaymentS2SJson({
-    @JsonKey(name: 'razorpay_payment_id') required String razorpayPaymentId,
-
-    /// A list of action objects available to continue the payment process.
-    @JsonKey(name: 'next') List<S2SNextAction>? next,
-    @JsonKey(name: 'metadata') Map<String, String>? metadata,
-    // Fields for OTP submit success
-    @JsonKey(name: 'razorpay_order_id') String? razorpayOrderId,
-    @JsonKey(name: 'razorpay_signature') String? razorpaySignature,
+    required String razorpay_payment_id,
+    // 'next' structure varies, use List<Map<String, String>> for flexibility
+    List<Map<String, String>>? next,
+    Map<String, String>?
+        metadata, // Not in d.ts, but present in JS code example
   }) = _RazorpayPaymentS2SJson;
 
-  factory RazorpayPaymentS2SJson.fromJson(Map<String, Object?> json) =>
+  factory RazorpayPaymentS2SJson.fromJson(Map<String, dynamic> json) =>
       _$RazorpayPaymentS2SJsonFromJson(json);
 }
 
-/// Response structure for OTP resend.
+// OTP Submit Response
+@freezed
+class RazorpayOtpSubmitResponse with _$RazorpayOtpSubmitResponse {
+  @JsonSerializable(includeIfNull: false)
+  const factory RazorpayOtpSubmitResponse({
+    required String razorpay_payment_id,
+    required String razorpay_order_id,
+    required String razorpay_signature,
+  }) = _RazorpayOtpSubmitResponse;
+
+  factory RazorpayOtpSubmitResponse.fromJson(Map<String, dynamic> json) =>
+      _$RazorpayOtpSubmitResponseFromJson(json);
+}
+
+// OTP Resend Response
 @freezed
 class RazorpayOtpResendResponse with _$RazorpayOtpResendResponse {
+  @JsonSerializable(includeIfNull: false)
   const factory RazorpayOtpResendResponse({
-    @JsonKey(name: 'next')
     required List<String>
-        next, // Assuming it's just strings like ['otp_resend']
-    @JsonKey(name: 'razorpay_payment_id') required String razorpayPaymentId,
+        next, // d.ts shows string[], JS shows array of objects. Assuming string array.
+    required String razorpay_payment_id,
   }) = _RazorpayOtpResendResponse;
 
-  factory RazorpayOtpResendResponse.fromJson(Map<String, Object?> json) =>
+  factory RazorpayOtpResendResponse.fromJson(Map<String, dynamic> json) =>
       _$RazorpayOtpResendResponseFromJson(json);
 }
 
-/// Represents bank account details within payment details.
+// Create UPI Response
 @freezed
-class PaymentDetailsBankAccount extends RazorpayBankAccount
-    with _$PaymentDetailsBankAccount {
-  const factory PaymentDetailsBankAccount({
-    // Inherited fields from RazorpayBankAccount
-    @JsonKey(name: 'name') required String name,
-    @JsonKey(name: 'account_number') required String accountNumber,
-    @JsonKey(name: 'ifsc') required String ifsc,
-    @JsonKey(name: 'bank_name') String? bankName,
-    @JsonKey(name: 'notes') Map<String, dynamic>? notes,
-    // New fields specific to this context
-    @JsonKey(name: 'id') String? id, // Added from payment d.ts
-    @JsonKey(name: 'entity') String? entity, // Added from payment d.ts
-  }) = _PaymentDetailsBankAccount;
+class RazorpayCreateUpiResponse with _$RazorpayCreateUpiResponse {
+  @JsonSerializable(includeIfNull: false)
+  const factory RazorpayCreateUpiResponse({
+    required String razorpay_payment_id,
+    String? link, // For intent flow
+  }) = _RazorpayCreateUpiResponse;
 
-  factory PaymentDetailsBankAccount.fromJson(Map<String, Object?> json) =>
-      _$PaymentDetailsBankAccountFromJson(json);
+  factory RazorpayCreateUpiResponse.fromJson(Map<String, dynamic> json) =>
+      _$RazorpayCreateUpiResponseFromJson(json);
 }
 
-/// Represents detailed information for a bank transfer payment.
+// Validate VPA Response
+@freezed
+class RazorpayValidateVpaResponse with _$RazorpayValidateVpaResponse {
+  @JsonSerializable(includeIfNull: false)
+  const factory RazorpayValidateVpaResponse({
+    required String vpa,
+    required bool success,
+    required String customer_name,
+  }) = _RazorpayValidateVpaResponse;
+
+  factory RazorpayValidateVpaResponse.fromJson(Map<String, dynamic> json) =>
+      _$RazorpayValidateVpaResponseFromJson(json);
+}
+
+// Payment Methods Response
+// Returns a map like {"card": true, "netbanking": {...}, ...}. Use Map<String, dynamic>.
+// No specific model needed unless you want to strongly type the methods.
+
+// Bank Transfer Payment Details Response
 @freezed
 class RazorpayPaymentDetails with _$RazorpayPaymentDetails {
+  @JsonSerializable(includeIfNull: false)
   const factory RazorpayPaymentDetails({
-    @JsonKey(name: 'id') required String id,
-    @JsonKey(name: 'entity') required String entity,
-    @JsonKey(name: 'payment_id') required String paymentId,
-    @JsonKey(name: 'mode') required String mode,
-    @JsonKey(name: 'bank_reference') String? bankReference,
-    @JsonKey(name: 'amount') required int amount,
-    @JsonKey(name: 'payer_bank_account')
-    required PaymentDetailsBankAccount payerBankAccount,
-    @JsonKey(name: 'virtual_account_id') required String virtualAccountId,
-    @JsonKey(name: 'virtual_account')
-    required RazorpayVirtualAccount virtualAccount,
+    required String id, // Detail ID, not payment ID
+    required String entity, // e.g., 'bank_transfer'
+    required String payment_id,
+    required String mode, // e.g., 'NEFT'
+    required String bank_reference, // UTR
+    required dynamic amount, // number | string
+    required RazorpayBankAccount
+        payer_bank_account, // Use the defined bank account model
+    required String virtual_account_id,
+    required RazorpayVirtualAccount virtual_account, // Use the defined VA model
   }) = _RazorpayPaymentDetails;
 
-  factory RazorpayPaymentDetails.fromJson(Map<String, Object?> json) =>
+  factory RazorpayPaymentDetails.fromJson(Map<String, dynamic> json) =>
       _$RazorpayPaymentDetailsFromJson(json);
 }
 
-/// Query parameters for fetching payments.
-@freezed
-class RazorpayPaymentQuery extends RazorpayPaginationOptions
-    with _$RazorpayPaymentQuery {
-  const factory RazorpayPaymentQuery({
-    // Inherited pagination fields
-    @JsonKey(name: 'from') int? from,
-    @JsonKey(name: 'to') int? to,
-    @JsonKey(name: 'count') int? count,
-    @JsonKey(name: 'skip') int? skip,
+// Helper functions for bool <-> int conversion (if needed)
+int? _boolToInt(bool? b) => b == null ? null : (b ? 1 : 0);
+bool? _intToBool(dynamic i) => i == null ? null : (i == 1 || i == true);
 
-    // Payment specific fields
+// Query Parameters
+@freezed
+class RazorpayPaymentQuery with _$RazorpayPaymentQuery {
+  // Extends RazorpayPaginationOptions + expand
+  @JsonSerializable(includeIfNull: false)
+  const factory RazorpayPaymentQuery({
+    int? from,
+    int? to,
+    int? count,
+    int? skip,
     @JsonKey(name: 'expand[]')
     List<String>? expand, // 'card', 'emi', 'offers', 'upi'
   }) = _RazorpayPaymentQuery;
 
-  factory RazorpayPaymentQuery.fromJson(Map<String, Object?> json) =>
+  factory RazorpayPaymentQuery.fromJson(Map<String, dynamic> json) =>
       _$RazorpayPaymentQueryFromJson(json);
 }
 
-/// Represents the response structure for fetching all payments.
-@freezed
-class RazorpayPaymentList with _$RazorpayPaymentList {
-  const factory RazorpayPaymentList({
-    @JsonKey(name: 'entity') required String entity,
-    @JsonKey(name: 'count') required int count,
-    @JsonKey(name: 'items') required List<RazorpayPayment> items,
-  }) = _RazorpayPaymentList;
+// --- Specific Response Types for Resource Methods ---
 
-  factory RazorpayPaymentList.fromJson(Map<String, Object?> json) =>
-      _$RazorpayPaymentListFromJson(json);
+// Response for Fetch Multiple Refunds for Payment
+@freezed
+class RazorpayPaymentRefundsResponse with _$RazorpayPaymentRefundsResponse {
+  @JsonSerializable(includeIfNull: false)
+  const factory RazorpayPaymentRefundsResponse({
+    required String entity,
+    required int count,
+    required List<RazorpayRefund> items,
+  }) = _RazorpayPaymentRefundsResponse;
+
+  factory RazorpayPaymentRefundsResponse.fromJson(Map<String, dynamic> json) =>
+      _$RazorpayPaymentRefundsResponseFromJson(json);
 }
 
-/// Represents the response structure for fetching payment methods.
+// Response for Fetch Transfers for Payment
 @freezed
-class RazorpayPaymentMethodsResponse with _$RazorpayPaymentMethodsResponse {
-  const factory RazorpayPaymentMethodsResponse({
-    // The structure is { [key: string]: string }
-    required Map<String, dynamic>
-        methods, // Using dynamic for potential boolean/string values
-  }) = _RazorpayPaymentMethodsResponse;
+class RazorpayPaymentTransfersResponse with _$RazorpayPaymentTransfersResponse {
+  @JsonSerializable(includeIfNull: false)
+  const factory RazorpayPaymentTransfersResponse({
+    required String entity,
+    required int count,
+    required List<RazorpayTransfer> items,
+  }) = _RazorpayPaymentTransfersResponse;
 
-  factory RazorpayPaymentMethodsResponse.fromJson(Map<String, Object?> json) =>
-      _$RazorpayPaymentMethodsResponseFromJson(json);
+  factory RazorpayPaymentTransfersResponse.fromJson(
+    Map<String, dynamic> json,
+  ) =>
+      _$RazorpayPaymentTransfersResponseFromJson(json);
 }
 
-/// Represents the response structure for fetching multiple refunds for a payment.
+// Response for Create Transfer from Payment
 @freezed
-class RazorpayPaymentRefundList with _$RazorpayPaymentRefundList {
-  const factory RazorpayPaymentRefundList({
-    @JsonKey(name: 'entity') required String entity,
-    @JsonKey(name: 'count') required int count,
-    @JsonKey(name: 'items') required List<RazorpayRefund> items,
-  }) = _RazorpayPaymentRefundList;
+class RazorpayCreateTransferResponse with _$RazorpayCreateTransferResponse {
+  @JsonSerializable(includeIfNull: false)
+  const factory RazorpayCreateTransferResponse({
+    required String entity,
+    required int count,
+    required List<RazorpayTransfer> items,
+  }) = _RazorpayCreateTransferResponse;
 
-  factory RazorpayPaymentRefundList.fromJson(Map<String, Object?> json) =>
-      _$RazorpayPaymentRefundListFromJson(json);
+  factory RazorpayCreateTransferResponse.fromJson(Map<String, dynamic> json) =>
+      _$RazorpayCreateTransferResponseFromJson(json);
 }
 
-/// Represents the response structure for fetching transfers for a payment.
+// Response for Fetch Downtimes
 @freezed
-class RazorpayPaymentTransferList with _$RazorpayPaymentTransferList {
-  const factory RazorpayPaymentTransferList({
-    @JsonKey(name: 'entity') required String entity,
-    @JsonKey(name: 'count') required int count,
-    @JsonKey(name: 'items') required List<RazorpayTransfer> items,
-  }) = _RazorpayPaymentTransferList;
+class RazorpayPaymentDowntimeResponse with _$RazorpayPaymentDowntimeResponse {
+  @JsonSerializable(includeIfNull: false)
+  const factory RazorpayPaymentDowntimeResponse({
+    required String entity,
+    required int count,
+    required List<RazorpayPaymentDowntime> items,
+  }) = _RazorpayPaymentDowntimeResponse;
 
-  factory RazorpayPaymentTransferList.fromJson(Map<String, Object?> json) =>
-      _$RazorpayPaymentTransferListFromJson(json);
-}
-
-/// Represents the response structure for creating transfers from a payment.
-@freezed
-class RazorpayPaymentCreateTransferResponse
-    with _$RazorpayPaymentCreateTransferResponse {
-  const factory RazorpayPaymentCreateTransferResponse({
-    @JsonKey(name: 'entity') required String entity,
-    @JsonKey(name: 'count') required int count,
-    @JsonKey(name: 'items') required List<RazorpayTransfer> items,
-  }) = _RazorpayPaymentCreateTransferResponse;
-
-  factory RazorpayPaymentCreateTransferResponse.fromJson(
-          Map<String, Object?> json) =>
-      _$RazorpayPaymentCreateTransferResponseFromJson(json);
-}
-
-/// Represents the response structure for fetching payment downtimes.
-@freezed
-class RazorpayPaymentDowntimeList with _$RazorpayPaymentDowntimeList {
-  const factory RazorpayPaymentDowntimeList({
-    @JsonKey(name: 'entity') required String entity,
-    @JsonKey(name: 'count') required int count,
-    @JsonKey(name: 'items') required List<RazorpayPaymentDowntime> items,
-  }) = _RazorpayPaymentDowntimeList;
-
-  factory RazorpayPaymentDowntimeList.fromJson(Map<String, Object?> json) =>
-      _$RazorpayPaymentDowntimeListFromJson(json);
-}
-
-/// Query parameters for fetch payment by ID
-@freezed
-class FetchPaymentParams with _$FetchPaymentParams {
-  const factory FetchPaymentParams({
-    @JsonKey(name: 'expand[]') List<String>? expand,
-  }) = _FetchPaymentParams;
-  factory FetchPaymentParams.fromJson(Map<String, Object?> json) =>
-      _$FetchPaymentParamsFromJson(json);
+  factory RazorpayPaymentDowntimeResponse.fromJson(Map<String, dynamic> json) =>
+      _$RazorpayPaymentDowntimeResponseFromJson(json);
 }

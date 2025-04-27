@@ -1,33 +1,34 @@
+// lib/models/iins_model.dart
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'iins_model.freezed.dart';
 part 'iins_model.g.dart';
 
 // Enums based on d.ts types
-enum NetworkIIN {
+enum IinNetwork {
   @JsonValue('Visa')
-  visa,
+  Visa,
   @JsonValue('RuPay')
-  ruPay,
+  RuPay,
   @JsonValue('MasterCard')
-  masterCard,
+  MasterCard,
   @JsonValue('American Express')
-  americanExpress,
+  AmericanExpress,
   @JsonValue('Diners Club')
-  dinersClub,
+  DinersClub,
   @JsonValue('Bajaj Finserv')
-  bajajFinserv,
+  BajajFinserv,
   @JsonValue('Maestro')
-  maestro,
+  Maestro,
   @JsonValue('JCB')
-  jcb,
+  JCB,
   @JsonValue('Union Pay')
-  unionPay,
+  UnionPay,
   @JsonValue('Unknown')
-  unknown
+  Unknown,
 }
 
-enum CardTypeIIN {
+enum IinCardType {
   @JsonValue('credit')
   credit,
   @JsonValue('debit')
@@ -35,115 +36,88 @@ enum CardTypeIIN {
   @JsonValue('prepaid')
   prepaid,
   @JsonValue('unknown')
-  unknown
+  unknown,
 }
 
-enum SubTypeIIN {
+enum IinSubType {
   @JsonValue('consumer')
   consumer,
   @JsonValue('business')
   business,
   @JsonValue('unknown')
-  unknown
+  unknown,
 }
 
-/// Represents EMI applicability details.
+// --- Nested Types ---
 @freezed
-class EmiDetails with _$EmiDetails {
-  const factory EmiDetails({
-    /// Determines whether the card is eligible for EMI payments or not.
-    @JsonKey(name: 'available') required bool available,
-  }) = _EmiDetails;
+class IinEmi with _$IinEmi {
+  @JsonSerializable(includeIfNull: false)
+  const factory IinEmi({
+    required bool available,
+  }) = _IinEmi;
 
-  factory EmiDetails.fromJson(Map<String, Object?> json) =>
-      _$EmiDetailsFromJson(json);
+  factory IinEmi.fromJson(Map<String, dynamic> json) => _$IinEmiFromJson(json);
 }
 
-/// Represents recurring payment applicability details.
 @freezed
-class RecurringDetails with _$RecurringDetails {
-  const factory RecurringDetails({
-    /// Determines whether the card is eligible for recurring payments or not.
-    @JsonKey(name: 'available') required bool available,
-  }) = _RecurringDetails;
+class IinRecurring with _$IinRecurring {
+  @JsonSerializable(includeIfNull: false)
+  const factory IinRecurring({
+    required bool available,
+  }) = _IinRecurring;
 
-  factory RecurringDetails.fromJson(Map<String, Object?> json) =>
-      _$RecurringDetailsFromJson(json);
+  factory IinRecurring.fromJson(Map<String, dynamic> json) =>
+      _$IinRecurringFromJson(json);
 }
 
-/// Represents authentication type details.
 @freezed
-class AuthenticationType with _$AuthenticationType {
-  const factory AuthenticationType({
-    @JsonKey(name: 'type') required String type,
-  }) = _AuthenticationType;
+class IinAuthenticationType with _$IinAuthenticationType {
+  @JsonSerializable(includeIfNull: false)
+  const factory IinAuthenticationType({
+    required String type, // '3ds' or 'otp'
+  }) = _IinAuthenticationType;
 
-  factory AuthenticationType.fromJson(Map<String, Object?> json) =>
-      _$AuthenticationTypeFromJson(json);
+  factory IinAuthenticationType.fromJson(Map<String, dynamic> json) =>
+      _$IinAuthenticationTypeFromJson(json);
 }
 
-/// Represents the properties of a card based on its IIN.
+// --- Main IIN Response Body ---
 @freezed
 class RazorpayIin with _$RazorpayIin {
+  @JsonSerializable(includeIfNull: false)
   const factory RazorpayIin({
-    /// The Issuer Identification Number (IIN).
-    @JsonKey(name: 'iin') String? iin,
-
-    /// The name of the entity
-    @JsonKey(name: 'entity')
-    String? entity, // Not in d.ts definition, but likely present
-
-    /// The card network
-    @JsonKey(name: 'network') NetworkIIN? network,
-
-    /// The card type for the given IIN.
-    @JsonKey(name: 'type') CardTypeIIN? type,
-
-    /// The card sub-type for the given IIN.
-    @JsonKey(name: 'sub_type') SubTypeIIN? subType,
-
-    /// The 4-character issuer code unique to each issuing bank in India.
-    @JsonKey(name: 'issuer_code') String? issuerCode,
-
-    /// The name of the issuing bank.
-    @JsonKey(name: 'issuer_name') String? issuerName,
-
-    /// Determines whether the card is international (issued outside India) or domestic.
-    @JsonKey(name: 'international') bool? international,
-    @JsonKey(name: 'is_tokenized') bool? isTokenized,
-    @JsonKey(name: 'card_iin') String? cardIin,
-
-    /// A JSON object which provides information about the applicability of EMI on the IIN.
-    @JsonKey(name: 'emi') EmiDetails? emi,
-
-    /// A JSON object which provides information about the applicability of recurring payments on the IIN.
-    @JsonKey(name: 'recurring') RecurringDetails? recurring,
-
-    /// Array which lists the possible authentication types for which the IIN is eligible
-    @JsonKey(name: 'authentication_types')
-    List<AuthenticationType>? authenticationTypes,
+    required String iin,
+    required String entity,
+    required String issuer_code,
+    required String issuer_name,
+    required bool international,
+    required bool is_tokenized,
+    required IinEmi emi,
+    required IinRecurring recurring,
+    required List<IinAuthenticationType> authentication_types,
+    IinNetwork? network, // Nullable enum
+    IinCardType? type, // Nullable enum
+    IinSubType? sub_type, // Nullable enum
+    String? card_iin, // Nullable string
   }) = _RazorpayIin;
 
-  factory RazorpayIin.fromJson(Map<String, Object?> json) =>
+  factory RazorpayIin.fromJson(Map<String, dynamic> json) =>
       _$RazorpayIinFromJson(json);
 }
 
-/// Base class for list type parameters (using polymorphism isn't ideal with freezed for requests)
-/// We'll handle this in the resource method by accepting a Map.
-// @freezed
-// abstract class ListType with _$ListType {
-//   const factory ListType.flow({required String flow}) = FlowListType;
-//   const factory ListType.subType({required String sub_type}) = SubTypeListType;
-// }
+// --- Request Body for List ---
+// Union type ListType = {flow: string;} | {sub_type: string;}
+// Handle this in the resource method parameters
 
-/// Represents the response structure for fetching a list of IINs.
+// --- Response Body for List ---
 @freezed
 class RazorpayIinList with _$RazorpayIinList {
+  @JsonSerializable(includeIfNull: false)
   const factory RazorpayIinList({
-    @JsonKey(name: 'count') required int count,
-    @JsonKey(name: 'iins') required List<String> iins,
+    required int count,
+    required List<String> iins,
   }) = _RazorpayIinList;
 
-  factory RazorpayIinList.fromJson(Map<String, Object?> json) =>
+  factory RazorpayIinList.fromJson(Map<String, dynamic> json) =>
       _$RazorpayIinListFromJson(json);
 }

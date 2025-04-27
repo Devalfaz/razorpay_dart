@@ -1,308 +1,293 @@
+// lib/models/customers_model.dart
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:razorpay_dart/models/api_model.dart'; // For IMap
 import 'package:razorpay_dart/models/invoices_model.dart'; // For RazorpayInvoiceAddress
+import 'package:razorpay_dart/models/tokens_model.dart'; // For RazorpayToken
 
 part 'customers_model.freezed.dart';
 part 'customers_model.g.dart';
 
-/// Base request body for customer operations.
+// --- Base Request Body ---
 @freezed
 class RazorpayCustomerBaseRequestBody with _$RazorpayCustomerBaseRequestBody {
+  @JsonSerializable(includeIfNull: false)
   const factory RazorpayCustomerBaseRequestBody({
-    /// Customer's name. Alphanumeric value with period (.), apostrophe (')
-    /// and parentheses are allowed. The name must be between 3-50 characters
-    /// in length. For example, `Gaurav Kumar`.
-    @JsonKey(name: 'name') String? name,
-
-    /// The customer's email address. A maximum length of 64 characters.
-    /// For example, `gaurav.kumar@example.com`.
-    @JsonKey(name: 'email') String? email,
-
-    /// The customer's phone number. A maximum length of 15 characters including country code
-    @JsonKey(name: 'contact') String? contact,
-
-    /// `0`: If a customer with the same details already exists, fetches details of the existing customer.
-    /// `1` (default): If a customer with the same details already exists, throws an error.
-    @JsonKey(name: 'fail_existing') bool? failExisting,
-
-    /// Customer's GST number, if available
-    @JsonKey(name: 'gstin') String? gstin,
-
-    /// This is a key-value pair that can be used to store additional information about the entity
-    @JsonKey(name: 'notes') Map<String, dynamic>? notes,
+    String? name,
+    String? email,
+    dynamic contact, // string | number
+    @JsonKey(toJson: _boolToInt, fromJson: _intToBool)
+    bool? fail_existing, // boolean | 0 | 1
+    String? gstin,
+    IMap<dynamic>? notes, // IMap<string | number>
   }) = _RazorpayCustomerBaseRequestBody;
 
-  factory RazorpayCustomerBaseRequestBody.fromJson(Map<String, Object?> json) =>
+  factory RazorpayCustomerBaseRequestBody.fromJson(Map<String, dynamic> json) =>
       _$RazorpayCustomerBaseRequestBodyFromJson(json);
 }
 
-/// Request body for creating a customer.
+// Helper functions for bool <-> int conversion
+int? _boolToInt(bool? b) => b == null ? null : (b ? 1 : 0);
+bool? _intToBool(dynamic i) => i == null ? null : (i == 1 || i == true);
+
+// --- Create/Update Request Bodies ---
 @freezed
-class RazorpayCustomerCreateRequestBody extends RazorpayCustomerBaseRequestBody
+class RazorpayCustomerCreateRequestBody
     with _$RazorpayCustomerCreateRequestBody {
+  // Inherits structure from Base
+  @JsonSerializable(includeIfNull: false)
   const factory RazorpayCustomerCreateRequestBody({
-    @JsonKey(name: 'name') String? name,
-    @JsonKey(name: 'email') String? email,
-    @JsonKey(name: 'contact') String? contact,
-    @JsonKey(name: 'fail_existing') bool? failExisting,
-    @JsonKey(name: 'gstin') String? gstin,
-    @JsonKey(name: 'notes') Map<String, dynamic>? notes,
+    String? name,
+    String? email,
+    dynamic contact, // string | number
+    @JsonKey(toJson: _boolToInt, fromJson: _intToBool)
+    bool? fail_existing, // boolean | 0 | 1
+    String? gstin,
+    IMap<dynamic>? notes, // IMap<string | number>
   }) = _RazorpayCustomerCreateRequestBody;
 
   factory RazorpayCustomerCreateRequestBody.fromJson(
-          Map<String, Object?> json) =>
+    Map<String, dynamic> json,
+  ) =>
       _$RazorpayCustomerCreateRequestBodyFromJson(json);
 }
 
-/// Request body for updating a customer.
 @freezed
 class RazorpayCustomerUpdateRequestBody
     with _$RazorpayCustomerUpdateRequestBody {
+  // Partial<Omit<RazorpayCustomerBaseRequestBody, 'notes' | 'gstin' | 'fail_existing'>>
+  @JsonSerializable(includeIfNull: false)
   const factory RazorpayCustomerUpdateRequestBody({
-    @JsonKey(name: 'name') String? name,
-    @JsonKey(name: 'email') String? email,
-    @JsonKey(name: 'contact') String? contact,
-    // gstin and fail_existing are not updatable according to d.ts
-    // @JsonKey(name: 'notes') Map<String, dynamic>? notes, // Notes also seem not directly updatable via `edit` in d.ts, check API docs if needed
+    String? name,
+    String? email,
+    dynamic contact, // string | number
   }) = _RazorpayCustomerUpdateRequestBody;
 
   factory RazorpayCustomerUpdateRequestBody.fromJson(
-          Map<String, Object?> json) =>
+    Map<String, dynamic> json,
+  ) =>
       _$RazorpayCustomerUpdateRequestBodyFromJson(json);
 }
 
-/// Represents a Razorpay customer.
+// --- Response Body ---
 @freezed
-class RazorpayCustomer extends RazorpayCustomerBaseRequestBody
-    with _$RazorpayCustomer {
+class RazorpayCustomer with _$RazorpayCustomer {
+  @JsonSerializable(includeIfNull: false)
   const factory RazorpayCustomer({
-    /// The unique identifier of the customer.
-    @JsonKey(name: 'id') required String id,
-
-    /// Indicates the type of entity.
-    @JsonKey(name: 'entity') required String entity,
-
-    /// Unix timestamp, when the customer was created.
-    @JsonKey(name: 'created_at') required int createdAt,
-
-    // Inherited fields from RazorpayCustomerBaseRequestBody
-    @JsonKey(name: 'name') String? name,
-    @JsonKey(name: 'email') String? email,
-    @JsonKey(name: 'contact') String? contact,
-    @JsonKey(name: 'fail_existing') bool? failExisting,
-    @JsonKey(name: 'gstin') String? gstin,
-    @JsonKey(name: 'notes') Map<String, dynamic>? notes,
-
-    /// Details of the customer's shipping address.
-    @JsonKey(name: 'shipping_address')
-    List<RazorpayInvoiceAddress>? shippingAddress,
+    required String id,
+    required String entity,
+    required int created_at,
+    String? name,
+    String? email,
+    dynamic contact, // string | number
+    String? gstin,
+    IMap<dynamic>? notes, // IMap<string | number>
+    // shipping_address type is based on Invoices, ensure it's defined correctly there
+    List<RazorpayInvoiceAddress>? shipping_address,
+    @JsonKey(toJson: _boolToInt, fromJson: _intToBool)
+    bool?
+        fail_existing, // Although usually not in response, keep if needed based on d.ts
   }) = _RazorpayCustomer;
 
-  factory RazorpayCustomer.fromJson(Map<String, Object?> json) =>
+  factory RazorpayCustomer.fromJson(Map<String, dynamic> json) =>
       _$RazorpayCustomerFromJson(json);
 }
 
-/// Request body for adding a customer bank account.
+// --- Bank Account Related ---
 @freezed
 class RazorpayCustomerBankAccountRequestBody
     with _$RazorpayCustomerBankAccountRequestBody {
+  @JsonSerializable(includeIfNull: false)
   const factory RazorpayCustomerBankAccountRequestBody({
-    /// The IFSC code of the bank branch associated with the account.
-    @JsonKey(name: 'ifsc_code') required String ifscCode,
-
-    /// Customer's bank account number.
-    @JsonKey(name: 'account_number') required String accountNumber,
-
-    /// The name of the beneficiary associated with the bank account.
-    @JsonKey(name: 'beneficiary_name') String? beneficiaryName,
-
-    /// The virtual payment address.
-    @JsonKey(name: 'beneficiary_address1') String? beneficiaryAddress1,
-    @JsonKey(name: 'beneficiary_address2') String? beneficiaryAddress2,
-    @JsonKey(name: 'beneficiary_address3') String? beneficiaryAddress3,
-    @JsonKey(name: 'beneficiary_address4') String? beneficiaryAddress4,
-
-    /// Email address of the beneficiary. For example, `gaurav.kumar@example.com`.
-    @JsonKey(name: 'beneficiary_email') String? beneficiaryEmail,
-
-    /// Mobile number of the beneficiary.
-    @JsonKey(name: 'beneficiary_mobile') String? beneficiaryMobile,
-
-    /// The name of the city of the beneficiary.
-    @JsonKey(name: 'beneficiary_city') String? beneficiaryCity,
-
-    /// The state of the beneficiary.
-    @JsonKey(name: 'beneficiary_state') String? beneficiaryState,
-
-    /// The country of the beneficiary.
-    @JsonKey(name: 'beneficiary_country') String? beneficiaryCountry,
-
-    /// The pin code of the beneficiary's address.
-    @JsonKey(name: 'beneficiary_pin') String? beneficiaryPin,
+    required String ifsc_code,
+    required String account_number,
+    String? beneficiary_name,
+    String? beneficiary_address1,
+    String? beneficiary_address2,
+    String? beneficiary_address3,
+    String? beneficiary_address4,
+    String? beneficiary_email,
+    String? beneficiary_mobile,
+    String? beneficiary_city,
+    String? beneficiary_state,
+    String? beneficiary_country,
+    String? beneficiary_pin,
   }) = _RazorpayCustomerBankAccountRequestBody;
 
   factory RazorpayCustomerBankAccountRequestBody.fromJson(
-          Map<String, Object?> json) =>
+    Map<String, dynamic> json,
+  ) =>
       _$RazorpayCustomerBankAccountRequestBodyFromJson(json);
 }
 
-/// Represents a customer's bank account (response from addBankAccount).
+// Response for Add/Delete Bank Account
 @freezed
 class RazorpayCustomerBankAccount with _$RazorpayCustomerBankAccount {
-  // This seems to partially inherit from VirtualAccounts.RazorpayVirtualAccountReceiver
-  // Need VirtualAccounts model defined first. Let's define the known fields for now.
+  // Includes fields from RazorpayVirtualAccountReceiver plus 'success'
+  @JsonSerializable(includeIfNull: false)
   const factory RazorpayCustomerBankAccount({
-    @JsonKey(name: 'success')
-    bool? success, // d.ts shows string?, API might return boolean
-    // Other fields inherited from RazorpayVirtualAccountReceiver will go here
-    @JsonKey(name: 'id') String? id,
-    @JsonKey(name: 'entity') String? entity,
-    @JsonKey(name: 'ifsc') String? ifsc,
-    @JsonKey(name: 'bank_name') String? bankName,
-    @JsonKey(name: 'account_number') String? accountNumber,
-    @JsonKey(name: 'name') String? name,
-    @JsonKey(name: 'notes') Map<String, dynamic>? notes,
-    @JsonKey(name: 'updated_at') int? updatedAt,
-    // Assuming address fields are also part of the response
-    @JsonKey(name: 'address') String? address,
-    @JsonKey(name: 'username') String? username,
-    @JsonKey(name: 'handle') String? handle,
-    @JsonKey(name: 'status') String? status,
-    @JsonKey(name: 'short_url') String? shortUrl,
-    @JsonKey(name: 'reference') String? reference,
+    // Fields from RazorpayVirtualAccountReceiver (nullable based on Partial)
+    String? id,
+    String? entity,
+    String? ifsc,
+    String? bank_name,
+    String? account_number,
+    String? name,
+    IMap<dynamic>? notes, // Assuming notes from Receiver if needed
+
+    // Field specific to this response type in d.ts
+    String? success, // Or bool? depending on actual API response
+
+    // Potentially other fields if needed based on VirtualAccounts definition
+    String? status, // from Receiver
+    String? username, // from Receiver
+    String? handle, // from Receiver
+    String? address, // from Receiver
+    String? short_url, // from Receiver
+    String? reference, // from Receiver
+    int? updated_at, // from Receiver
   }) = _RazorpayCustomerBankAccount;
 
-  factory RazorpayCustomerBankAccount.fromJson(Map<String, Object?> json) =>
+  factory RazorpayCustomerBankAccount.fromJson(Map<String, dynamic> json) =>
       _$RazorpayCustomerBankAccountFromJson(json);
 }
 
-/// Represents customer details used in eligibility check.
+// --- Eligibility Check Related ---
 @freezed
 class CustomersEligibility with _$CustomersEligibility {
+  @JsonSerializable(includeIfNull: false)
   const factory CustomersEligibility({
-    @JsonKey(name: 'id') String? id,
-    @JsonKey(name: 'contact') String? contact,
-    @JsonKey(name: 'ip') String? ip,
-    @JsonKey(name: 'referrer') String? referrer,
-    @JsonKey(name: 'user_agent') String? userAgent,
+    required String id,
+    required String contact,
+    required String ip,
+    required String referrer,
+    required String user_agent,
   }) = _CustomersEligibility;
 
-  factory CustomersEligibility.fromJson(Map<String, Object?> json) =>
+  factory CustomersEligibility.fromJson(Map<String, dynamic> json) =>
       _$CustomersEligibilityFromJson(json);
 }
 
-/// Request body for checking customer eligibility.
 @freezed
 class RazorpayCustomerEligibilityRequestBody
     with _$RazorpayCustomerEligibilityRequestBody {
+  @JsonSerializable(includeIfNull: false)
   const factory RazorpayCustomerEligibilityRequestBody({
-    @JsonKey(name: 'inquiry') String? inquiry,
-    @JsonKey(name: 'amount')
-    required String amount, // Use String to handle number or string input
-    @JsonKey(name: 'currency') required String currency,
-    @JsonKey(name: 'customer') required CustomersEligibility customer,
+    required dynamic
+        amount, // number | string, required String currency, // Partial<CustomersEligibility> -> make fields nullable
+    required CustomersEligibilityInput customer,
+    String? inquiry,
   }) = _RazorpayCustomerEligibilityRequestBody;
 
   factory RazorpayCustomerEligibilityRequestBody.fromJson(
-          Map<String, Object?> json) =>
+    Map<String, dynamic> json,
+  ) =>
       _$RazorpayCustomerEligibilityRequestBodyFromJson(json);
 }
 
-/// Represents an error during eligibility check.
+// Input version of CustomersEligibility for the request body
 @freezed
-class EligibilityError with _$EligibilityError {
-  const factory EligibilityError({
-    @JsonKey(name: 'code') required String code,
-    @JsonKey(name: 'description') required String description,
-    @JsonKey(name: 'field') dynamic field,
-    @JsonKey(name: 'source') String? source,
-    @JsonKey(name: 'step') String? step,
-    @JsonKey(name: 'reason') String? reason,
-    @JsonKey(name: 'metadata') Map<String, String>? metadata,
-  }) = _EligibilityError;
+class CustomersEligibilityInput with _$CustomersEligibilityInput {
+  @JsonSerializable(includeIfNull: false)
+  const factory CustomersEligibilityInput({
+    String? id,
+    String? contact,
+    String? ip,
+    String? referrer,
+    String? user_agent,
+  }) = _CustomersEligibilityInput;
 
-  factory EligibilityError.fromJson(Map<String, Object?> json) =>
-      _$EligibilityErrorFromJson(json);
+  factory CustomersEligibilityInput.fromJson(Map<String, dynamic> json) =>
+      _$CustomersEligibilityInputFromJson(json);
 }
 
-/// Represents eligibility details for an instrument.
 @freezed
-class Eligibility with _$Eligibility {
-  const factory Eligibility({
-    @JsonKey(name: 'status') required String status,
-    @JsonKey(name: 'error') EligibilityError? error,
-  }) = _Eligibility;
+class InstrumentEligibilityError with _$InstrumentEligibilityError {
+  @JsonSerializable(includeIfNull: false)
+  const factory InstrumentEligibilityError({
+    // Omit<INormalizeError,'statusCode'> -> Map fields from RazorpayError
+    required String code,
+    required String description,
+    dynamic field,
+    String? source,
+    String? step,
+    String? reason,
+    Map<String, String>? metadata,
+  }) = _InstrumentEligibilityError;
 
-  factory Eligibility.fromJson(Map<String, Object?> json) =>
-      _$EligibilityFromJson(json);
+  factory InstrumentEligibilityError.fromJson(Map<String, dynamic> json) =>
+      _$InstrumentEligibilityErrorFromJson(json);
 }
 
-/// Represents instrument details in eligibility response.
+@freezed
+class InstrumentEligibility with _$InstrumentEligibility {
+  @JsonSerializable(includeIfNull: false)
+  const factory InstrumentEligibility({
+    required String status,
+    InstrumentEligibilityError? error, // Nullable error
+  }) = _InstrumentEligibility;
+
+  factory InstrumentEligibility.fromJson(Map<String, dynamic> json) =>
+      _$InstrumentEligibilityFromJson(json);
+}
+
 @freezed
 class Instruments with _$Instruments {
+  @JsonSerializable(includeIfNull: false)
   const factory Instruments({
-    @JsonKey(name: 'method') required String method,
-    @JsonKey(name: 'issuer') required String issuer,
-    @JsonKey(name: 'type') required String type,
-    @JsonKey(name: 'provider') required String provider,
-    @JsonKey(name: 'eligibility_req_id') required String eligibilityReqId,
-    @JsonKey(name: 'eligibility') required Eligibility eligibility,
+    required String method,
+    required String issuer,
+    required String type,
+    required String provider,
+    required String eligibility_req_id,
+    required InstrumentEligibility eligibility,
   }) = _Instruments;
 
-  factory Instruments.fromJson(Map<String, Object?> json) =>
+  factory Instruments.fromJson(Map<String, dynamic> json) =>
       _$InstrumentsFromJson(json);
 }
 
-/// Represents the response for customer eligibility check.
+// Response for Eligibility Check
 @freezed
-class RazorpayCustomerEligibility extends RazorpayCustomerEligibilityRequestBody
-    with _$RazorpayCustomerEligibility {
+class RazorpayCustomerEligibility with _$RazorpayCustomerEligibility {
+  // Extends RequestBody + instruments array
+  @JsonSerializable(includeIfNull: false)
   const factory RazorpayCustomerEligibility({
-    // Inherited fields
-    @JsonKey(name: 'inquiry') String? inquiry,
-    @JsonKey(name: 'amount') required String amount,
-    @JsonKey(name: 'currency') required String currency,
-    @JsonKey(name: 'customer') required CustomersEligibility customer,
-    // New fields
-    @JsonKey(name: 'instruments') List<Instruments>? instruments,
+    required dynamic
+        amount, // number | string, required String currency, String? inquiry,
+    CustomersEligibilityInput?
+        customer, // Use the input type or a response-specific one if different
+    List<Instruments>? instruments,
   }) = _RazorpayCustomerEligibility;
 
-  factory RazorpayCustomerEligibility.fromJson(Map<String, Object?> json) =>
+  // The fetchEligibility might return a slightly different structure (Partial?)
+  // For now, using the same model. Adjust if fetch returns less data.
+
+  factory RazorpayCustomerEligibility.fromJson(Map<String, dynamic> json) =>
       _$RazorpayCustomerEligibilityFromJson(json);
 }
 
-/// Represents the response structure for fetching all customers.
+// Specific response for Fetch Tokens
 @freezed
-class RazorpayCustomerList with _$RazorpayCustomerList {
-  const factory RazorpayCustomerList({
-    @JsonKey(name: 'entity') required String entity,
-    @JsonKey(name: 'count') required int count,
-    @JsonKey(name: 'items') required List<RazorpayCustomer> items,
-  }) = _RazorpayCustomerList;
+class RazorpayCustomerTokensResponse with _$RazorpayCustomerTokensResponse {
+  @JsonSerializable(includeIfNull: false)
+  const factory RazorpayCustomerTokensResponse({
+    required String entity,
+    required int count,
+    required List<RazorpayToken> items, // Assuming RazorpayToken is defined
+  }) = _RazorpayCustomerTokensResponse;
 
-  factory RazorpayCustomerList.fromJson(Map<String, Object?> json) =>
-      _$RazorpayCustomerListFromJson(json);
+  factory RazorpayCustomerTokensResponse.fromJson(Map<String, dynamic> json) =>
+      _$RazorpayCustomerTokensResponseFromJson(json);
 }
 
-/// Represents the response structure for fetching customer tokens.
-@freezed
-class RazorpayCustomerTokenList with _$RazorpayCustomerTokenList {
-  const factory RazorpayCustomerTokenList({
-    @JsonKey(name: 'entity') required String entity,
-    @JsonKey(name: 'count') required int count,
-    @JsonKey(name: 'items') required List<RazorpayToken> items,
-  }) = _RazorpayCustomerTokenList;
-
-  factory RazorpayCustomerTokenList.fromJson(Map<String, Object?> json) =>
-      _$RazorpayCustomerTokenListFromJson(json);
-}
-
-/// Represents the response structure for deleting a token.
+// Specific response for Delete Token
 @freezed
 class RazorpayDeleteTokenResponse with _$RazorpayDeleteTokenResponse {
+  @JsonSerializable(includeIfNull: false)
   const factory RazorpayDeleteTokenResponse({
-    @JsonKey(name: 'deleted') required bool deleted,
+    required bool deleted,
   }) = _RazorpayDeleteTokenResponse;
 
-  factory RazorpayDeleteTokenResponse.fromJson(Map<String, Object?> json) =>
+  factory RazorpayDeleteTokenResponse.fromJson(Map<String, dynamic> json) =>
       _$RazorpayDeleteTokenResponseFromJson(json);
 }

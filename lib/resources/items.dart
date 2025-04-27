@@ -1,99 +1,140 @@
+// lib/resources/items.dart
 import 'package:dio/dio.dart';
 import 'package:razorpay_dart/api.dart';
+import 'package:razorpay_dart/models/api_model.dart';
 import 'package:razorpay_dart/models/items_model.dart';
-import 'package:razorpay_dart/models/invoices_model.dart'; // For RazorpayDeleteResponse
-import 'package:razorpay_dart/models/shared_model.dart'; // For RazorpayPaginationOptions
+import 'package:razorpay_dart/utils.dart'; // For normalizeDate
 
 class Items {
-  Items({required this.api});
+  Items(this.api);
   final API api;
-  static const String BASE_URL = '/items';
 
   /// Get all Items
-  Future<Response<RazorpayItemList>> all({
+  ///
+  /// @param params - Check [doc](https://razorpay.com/docs/api/payments/items#fetch-multiple-items) for required params
+  Future<Response<RazorpayApiResponse<RazorpayItem>>> all({
     RazorpayItemQuery? params,
-    void Function(DioException?, Response<RazorpayItemList>?)? callback,
+    void Function(
+      RazorpayApiException?,
+      Response<RazorpayApiResponse<RazorpayItem>>?,
+    )? callback,
   }) async {
-    return api.get<RazorpayItemList>(
+    var from = params?.from;
+    var to = params?.to;
+    final count = params?.count ?? 10;
+    final skip = params?.skip ?? 0;
+
+    if (from != null) {
+      from = normalizeDate(from);
+    }
+    if (to != null) {
+      to = normalizeDate(to);
+    }
+
+    final queryParams = {
+      'from': from,
+      'to': to,
+      'count': count,
+      'skip': skip,
+      ...?params?.toJson(),
+    };
+    queryParams.removeWhere((key, value) => value == null);
+
+    return api.get<RazorpayApiResponse<RazorpayItem>>(
       {
-        'url': BASE_URL,
-        'data': params?.toJson(),
+        'url': '/items',
+        'data': queryParams,
       },
       callback: callback,
-      fromJsonFactory: RazorpayItemList.fromJson,
+      fromJsonFactory: (json) => RazorpayApiResponse<RazorpayItem>.fromJson(
+        json,
+        (itemJson) => RazorpayItem.fromJson(itemJson! as Map<String, dynamic>),
+      ),
     );
   }
 
   /// Fetch an item given Item ID
-  Future<Response<RazorpayItem>> fetch(
-    String itemId, {
-    void Function(DioException?, Response<RazorpayItem>?)? callback,
+  ///
+  /// @param itemId - The unique identifier of the item.
+  Future<Response<RazorpayItem>> fetch({
+    required String itemId,
+    void Function(RazorpayApiException?, Response<RazorpayItem>?)? callback,
   }) async {
     if (itemId.isEmpty) {
-      throw ArgumentError('`itemId` is mandatory');
+      throw ArgumentError('`item_id` is mandatory');
     }
     return api.get<RazorpayItem>(
-      {
-        'url': '$BASE_URL/$itemId',
-      },
-      callback: callback,
+      {'url': '/items/$itemId'},
       fromJsonFactory: RazorpayItem.fromJson,
+      callback: callback,
     );
   }
 
   /// Create an Item
-  Future<Response<RazorpayItem>> create(
-    RazorpayItemCreateRequestBody params, {
-    void Function(DioException?, Response<RazorpayItem>?)? callback,
+  ///
+  /// @param params - Check [doc](https://razorpay.com/docs/api/payments/items#create-an-item) for required params
+  Future<Response<RazorpayItem>> create({
+    required RazorpayItemCreateRequestBody params,
+    void Function(RazorpayApiException?, Response<RazorpayItem>?)? callback,
   }) async {
-    // Basic validation
-    if (params.name.isEmpty || params.amount <= 0 || params.currency.isEmpty) {
-      throw ArgumentError('`name`, `amount`, and `currency` are mandatory');
+    // Input validation (amount is required in the model)
+    // JS check: if (!params.amount) throw Error('`amount` is mandatory')
+    // This is handled by the required field in the Dart model.
+
+    // Ensure currency defaults if not provided (handled by model default or here)
+    final data = params.toJson();
+    if (!data.containsKey('currency') || data['currency'] == null) {
+      data['currency'] = 'INR';
     }
+
     return api.post<RazorpayItem>(
       {
-        'url': BASE_URL,
-        'data': params.toJson(),
+        'url': '/items',
+        'data': data,
       },
-      callback: callback,
       fromJsonFactory: RazorpayItem.fromJson,
+      callback: callback,
     );
   }
 
   /// Edit an item given Item ID
-  Future<Response<RazorpayItem>> edit(
-    String itemId,
-    RazorpayItemUpdateRequestBody params, {
-    void Function(DioException?, Response<RazorpayItem>?)? callback,
+  ///
+  /// @param itemId - The unique identifier of the item.
+  /// @param params - Check [doc](https://razorpay.com/docs/api/payments/items#update-an-item) for required params
+  Future<Response<RazorpayItem>> edit({
+    required String itemId,
+    required RazorpayItemUpdateRequestBody params,
+    void Function(RazorpayApiException?, Response<RazorpayItem>?)? callback,
   }) async {
     if (itemId.isEmpty) {
-      throw ArgumentError('`itemId` is mandatory');
+      throw ArgumentError('`item_id` is mandatory');
     }
     return api.patch<RazorpayItem>(
       {
-        'url': '$BASE_URL/$itemId',
+        'url': '/items/$itemId',
         'data': params.toJson(),
       },
-      callback: callback,
       fromJsonFactory: RazorpayItem.fromJson,
+      callback: callback,
     );
   }
 
   /// Delete an item given Item ID
-  Future<Response<RazorpayDeleteResponse>> delete(
-    String itemId, {
-    void Function(DioException?, Response<RazorpayDeleteResponse>?)? callback,
+  ///
+  /// @param itemId - The unique identifier of the item.
+  Future<Response<RazorpayItemDeleteResponse>> delete({
+    // Use specific empty model
+    required String itemId,
+    void Function(RazorpayApiException?, Response<RazorpayItemDeleteResponse>?)?
+        callback,
   }) async {
     if (itemId.isEmpty) {
-      throw ArgumentError('`itemId` is mandatory');
+      throw ArgumentError('`item_id` is mandatory');
     }
-    // API returns empty body on success
-    return api.delete<RazorpayDeleteResponse>(
-      {
-        'url': '$BASE_URL/$itemId',
-      },
+    return api.delete<RazorpayItemDeleteResponse>(
+      {'url': '/items/$itemId'},
+      fromJsonFactory: RazorpayItemDeleteResponse.fromJson,
       callback: callback,
-      fromJsonFactory: (_) => const RazorpayDeleteResponse(),
     );
   }
 }

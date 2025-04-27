@@ -1,57 +1,61 @@
+// lib/models/cards_model.dart
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:razorpay_dart/models/payments_model.dart'; // Assuming Payments models are defined
+// For RazorpayCard
 
 part 'cards_model.freezed.dart';
 part 'cards_model.g.dart';
 
-/// Base request body for retrieving card reference using card number.
+// Enums
+enum CardNetwork { Mastercard, RuPay, Visa } // Add others as needed from d.ts
+
+// Request Bodies
 @freezed
 class RazorpayCardReferenceNumberBaseRequest
     with _$RazorpayCardReferenceNumberBaseRequest {
+  @JsonSerializable(includeIfNull: false)
   const factory RazorpayCardReferenceNumberBaseRequest({
-    /// The tokenised card number whose PAR or network reference id should be retrieved.
-    @JsonKey(name: 'number') required String number,
-
-    /// Determines if the card is saved as a token. possible value is `true` or `false`
-    @JsonKey(name: 'tokenised') bool? tokenised,
+    required String number,
+    bool? tokenised,
   }) = _RazorpayCardReferenceNumberBaseRequest;
 
   factory RazorpayCardReferenceNumberBaseRequest.fromJson(
-          Map<String, Object?> json) =>
+    Map<String, dynamic> json,
+  ) =>
       _$RazorpayCardReferenceNumberBaseRequestFromJson(json);
 }
 
-/// Base request body for retrieving card reference using token.
 @freezed
 class RazorpayCardReferenceTokenBaseRequest
     with _$RazorpayCardReferenceTokenBaseRequest {
+  @JsonSerializable(includeIfNull: false)
   const factory RazorpayCardReferenceTokenBaseRequest({
-    /// The token whose PAR or network reference id should be retrieved.
-    @JsonKey(name: 'token') required String token,
+    required String token,
   }) = _RazorpayCardReferenceTokenBaseRequest;
 
   factory RazorpayCardReferenceTokenBaseRequest.fromJson(
-          Map<String, Object?> json) =>
+    Map<String, dynamic> json,
+  ) =>
       _$RazorpayCardReferenceTokenBaseRequestFromJson(json);
 }
 
-/// Represents the card reference details.
+// Union type for the request parameter
+// In Dart, you might handle this at the function call site by accepting 'dynamic'
+// or creating specific methods, or using a sealed class/interface if needed.
+// For simplicity, we'll handle it in the resource method.
+
+// Response Body
 @freezed
 class RazorpayCardReference with _$RazorpayCardReference {
+  @JsonSerializable(includeIfNull: false)
   const factory RazorpayCardReference({
-    /// The card network.
-    @JsonKey(name: 'network')
-    String? network, // Consider using an enum if strict values are needed
-
-    @JsonKey(name: 'payment_account_reference') String? paymentAccountReference,
-    @JsonKey(name: 'network_reference_id') String? networkReferenceId,
-    @JsonKey(name: 'card_reference_number') String? cardReferenceNumber,
-    @JsonKey(name: 'provider') required String provider,
+    required String provider,
+    String? network, // Map from d.ts Network type if needed, or keep as String
+    String? payment_account_reference,
+    String? network_reference_id,
+    String?
+        card_reference_number, // Added from d.ts, though might be alias for others
   }) = _RazorpayCardReference;
 
-  factory RazorpayCardReference.fromJson(Map<String, Object?> json) =>
+  factory RazorpayCardReference.fromJson(Map<String, dynamic> json) =>
       _$RazorpayCardReferenceFromJson(json);
 }
-
-// Define Network enum if needed based on d.ts
-// enum Network { Mastercard, RuPay, Visa }

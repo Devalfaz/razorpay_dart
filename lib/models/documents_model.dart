@@ -1,49 +1,25 @@
+// lib/models/documents_model.dart
 import 'package:freezed_annotation/freezed_annotation.dart';
-// Removed unused import: import 'dart:io'; // File/ReadStream is handled in resource, not model
-// Removed unused import: import 'package:razorpay_dart/models/shared_model.dart'; // Not needed here
 
 part 'documents_model.freezed.dart';
 part 'documents_model.g.dart';
 
-/// Represents the parameters for creating a document (file is handled in the resource method).
-@freezed
-class FileCreateParams with _$FileCreateParams {
-  const factory FileCreateParams({
-    /// The reason you are uploading this document. possible value is `dispute_evidence`.
-    @JsonKey(name: 'purpose') required String purpose,
-    // file details (value, options) are handled directly in the API call
-  }) = _FileCreateParams;
+// Note: FileCreateParams is handled in the resource method using MultipartFile
 
-  // No fromJson needed if this is only used for sending data *with* the file separately
-  // factory FileCreateParams.fromJson(Map<String, Object?> json) =>
-  //     _$FileCreateParamsFromJson(json);
-}
-
-/// Represents a Razorpay document.
 @freezed
 class RazorpayDocument with _$RazorpayDocument {
+  @JsonSerializable(includeIfNull: false)
   const factory RazorpayDocument({
-    /// The unique identifier of the document.
-    @JsonKey(name: 'id') required String id,
-
-    /// Indicates the type of entity.
-    @JsonKey(name: 'entity') required String entity,
-
-    /// The reason you are uploading this document. possible value is `dispute_evidence`.
-    @JsonKey(name: 'purpose') required String purpose,
-    @JsonKey(name: 'name') required String name,
-
-    /// Indicates the nature and format in which the document is uploaded.
-    /// possible value is `image/jpg`, `image/jpeg`, `image/png`, `application/pdf`
-    @JsonKey(name: 'mime_type') required String mimeType,
-
-    /// Indicates the size of the document in bytes.
-    @JsonKey(name: 'size') required int size,
-
-    /// Unix timestamp at which the document was uploaded.
-    @JsonKey(name: 'created_at') required int createdAt,
+    required String id,
+    required String entity,
+    required String purpose, // Consider an enum: 'dispute_evidence'
+    required String name,
+    required String
+        mime_type, // Consider an enum: 'image/jpg', 'image/jpeg', 'image/png', 'application/pdf'
+    required int size,
+    required int created_at,
   }) = _RazorpayDocument;
 
-  factory RazorpayDocument.fromJson(Map<String, Object?> json) =>
+  factory RazorpayDocument.fromJson(Map<String, dynamic> json) =>
       _$RazorpayDocumentFromJson(json);
 }

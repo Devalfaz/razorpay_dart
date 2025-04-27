@@ -1,121 +1,182 @@
+// lib/resources/payment_link.dart
 import 'package:dio/dio.dart';
 import 'package:razorpay_dart/api.dart';
+import 'package:razorpay_dart/models/api_model.dart';
 import 'package:razorpay_dart/models/payment_link_model.dart';
-import 'package:razorpay_dart/models/shared_model.dart'; // For INotify, RazorpayPaginationOptions
-import 'package:razorpay_dart/models/invoices_model.dart'; // For RazorpayNotifyResponse
+import 'package:razorpay_dart/utils.dart'; // For normalizeDate
 
 class PaymentLink {
-  PaymentLink({required this.api});
+  PaymentLink(this.api);
   final API api;
   static const String BASE_URL = '/payment_links';
+  static const String MISSING_ID_ERROR = 'Payment Link ID is mandatory';
 
-  /// Create payment link
-  Future<Response<RazorpayPaymentLink>> create(
-    Map<String, dynamic>
-        params, // Using Map for flexibility with advanced options
-    {
-    void Function(DioException?, Response<RazorpayPaymentLink>?)? callback,
+  /// Create payment link (standard or with advanced options)
+  ///
+  /// @param params - Check [doc](https://razorpay.com/docs/api/payments/payment-links#create-payment-link) for required params.
+  /// Accepts [RazorpayPaymentLinkCreateRequestBody] or models representing advanced options.
+  Future<Response<RazorpayPaymentLink>> create({
+    required dynamic params, // Use dynamic for flexibility
+    void Function(RazorpayApiException?, Response<RazorpayPaymentLink>?)?
+        callback,
   }) async {
-    // Basic validation for required fields
-    if (!params.containsKey('amount') || !params.containsKey('customer')) {
-      throw ArgumentError('`amount` and `customer` details are mandatory');
+    const url = BASE_URL;
+    Map<String, dynamic> requestData;
+
+    // Basic type checking - expand if needed for advanced options
+    if (params is RazorpayPaymentLinkCreateRequestBody) {
+      requestData = params.toJson();
     }
-    // Add more specific validation if needed, e.g., for advanced options structure
+    // Add checks for advanced option types here if models are defined
+    // else if (params is RazorpayTransferPaymentOption) { ... }
+    else {
+      // Assuming dynamic params is already a map for advanced options
+      // This might need better handling based on how advanced options are modeled.
+      if (params is Map<String, dynamic>) {
+        requestData = params;
+      } else {
+        throw ArgumentError(
+          'Invalid type for params. Expected a RequestBody or Map.',
+        );
+      }
+    }
 
     return api.post<RazorpayPaymentLink>(
       {
-        'url': BASE_URL,
-        'data': params,
+        'url': url,
+        'data': requestData,
       },
-      callback: callback,
       fromJsonFactory: RazorpayPaymentLink.fromJson,
+      callback: callback,
     );
   }
 
   /// Cancel a payment link
-  Future<Response<RazorpayPaymentLink>> cancel(
-    String paymentLinkId, {
-    void Function(DioException?, Response<RazorpayPaymentLink>?)? callback,
+  ///
+  /// @param paymentLinkId - The unique identifier of the paymentlink.
+  Future<Response<RazorpayPaymentLink>> cancel({
+    required String paymentLinkId,
+    void Function(RazorpayApiException?, Response<RazorpayPaymentLink>?)?
+        callback,
   }) async {
     if (paymentLinkId.isEmpty) {
-      throw ArgumentError('`paymentLinkId` is mandatory');
+      throw ArgumentError(MISSING_ID_ERROR);
     }
+    final url = '$BASE_URL/$paymentLinkId/cancel';
     return api.post<RazorpayPaymentLink>(
-      {
-        'url': '$BASE_URL/$paymentLinkId/cancel',
-      },
-      callback: callback,
+      {'url': url},
       fromJsonFactory: RazorpayPaymentLink.fromJson,
+      callback: callback,
     );
   }
 
-  /// Fetch a payment link given Payment Link ID
-  Future<Response<RazorpayPaymentLink>> fetch(
-    String paymentLinkId, {
-    void Function(DioException?, Response<RazorpayPaymentLink>?)? callback,
+  /// Fetch a paymentLink given paymentLink ID
+  ///
+  /// @param paymentLinkId - The unique identifier of the paymentlink.
+  Future<Response<RazorpayPaymentLink>> fetch({
+    required String paymentLinkId,
+    void Function(RazorpayApiException?, Response<RazorpayPaymentLink>?)?
+        callback,
   }) async {
     if (paymentLinkId.isEmpty) {
-      throw ArgumentError('`paymentLinkId` is mandatory');
+      throw ArgumentError(MISSING_ID_ERROR);
     }
+    final url = '$BASE_URL/$paymentLinkId';
     return api.get<RazorpayPaymentLink>(
-      {
-        'url': '$BASE_URL/$paymentLinkId',
-      },
-      callback: callback,
+      {'url': url},
       fromJsonFactory: RazorpayPaymentLink.fromJson,
+      callback: callback,
     );
   }
 
-  /// Get all payment links
-  Future<Response<RazorpayPaymentLinkList>> all({
+  /// Get all paymentLinks
+  ///
+  /// @param params - Check [doc](https://razorpay.com/docs/api/payments/payment-links#fetch-all-payment-links) for required params.
+  Future<Response<RazorpayPaymentLinkListResponse>> all({
     RazorpayPaginationOptions? params,
-    void Function(DioException?, Response<RazorpayPaymentLinkList>?)? callback,
+    void Function(
+      RazorpayApiException?,
+      Response<RazorpayPaymentLinkListResponse>?,
+    )? callback,
   }) async {
-    return api.get<RazorpayPaymentLinkList>(
+    const url = BASE_URL;
+    var from = params?.from;
+    var to = params?.to;
+    final count = params?.count ?? 10;
+    final skip = params?.skip ?? 0;
+
+    if (from != null) {
+      from = normalizeDate(from);
+    }
+    if (to != null) {
+      to = normalizeDate(to);
+    }
+
+    final queryParams = {
+      'from': from,
+      'to': to,
+      'count': count,
+      'skip': skip,
+      // Include other potential params from the input object if necessary
+      ...?params?.toJson(),
+    };
+    queryParams.removeWhere((key, value) => value == null);
+
+    // Note: JS returns { payment_links: [...] }. Use specific model.
+    return api.get<RazorpayPaymentLinkListResponse>(
       {
-        'url': BASE_URL,
-        'data': params?.toJson(),
+        'url': url,
+        'data': queryParams,
       },
       callback: callback,
-      fromJsonFactory: RazorpayPaymentLinkList.fromJson,
+      fromJsonFactory: RazorpayPaymentLinkListResponse.fromJson,
     );
   }
 
-  /// Edit a payment link given Payment Link ID
-  Future<Response<RazorpayPaymentLink>> edit(
-    String paymentLinkId,
-    RazorpayPaymentLinkUpdateRequestBody params, {
-    void Function(DioException?, Response<RazorpayPaymentLink>?)? callback,
+  /// Edit a paymentLink given paymentLink ID
+  ///
+  /// @param paymentLinkId - The unique identifier of the paymentlink.
+  /// @param params - Check [doc](https://razorpay.com/docs/api/payments/payment-links#update-payment-link) for required params.
+  Future<Response<RazorpayPaymentLink>> edit({
+    required String paymentLinkId,
+    required RazorpayPaymentLinkUpdateRequestBody params,
+    void Function(RazorpayApiException?, Response<RazorpayPaymentLink>?)?
+        callback,
   }) async {
     if (paymentLinkId.isEmpty) {
-      throw ArgumentError('`paymentLinkId` is mandatory');
+      throw ArgumentError(MISSING_ID_ERROR);
     }
     return api.patch<RazorpayPaymentLink>(
       {
         'url': '$BASE_URL/$paymentLinkId',
         'data': params.toJson(),
       },
-      callback: callback,
       fromJsonFactory: RazorpayPaymentLink.fromJson,
+      callback: callback,
     );
   }
 
   /// Send notification
-  Future<Response<RazorpayNotifyResponse>> notifyBy(
-    String paymentLinkId,
-    INotify medium, // Assuming INotify is defined in shared_model.dart
-    {
-    void Function(DioException?, Response<RazorpayNotifyResponse>?)? callback,
+  ///
+  /// @param paymentLinkId - The unique identifier of the paymentlink.
+  /// @param medium - Possible values: `sms`, `email`, `whatsapp`
+  Future<Response<RazorpayNotifyResponse>> notifyBy({
+    required String paymentLinkId,
+    required NotifyMedium medium,
+    void Function(RazorpayApiException?, Response<RazorpayNotifyResponse>?)?
+        callback,
   }) async {
     if (paymentLinkId.isEmpty) {
-      throw ArgumentError('`paymentLinkId` is mandatory');
+      throw ArgumentError(MISSING_ID_ERROR);
     }
+
+    final mediumString = medium.toString().split('.').last;
+    final url = '$BASE_URL/$paymentLinkId/notify_by/$mediumString';
+
     return api.post<RazorpayNotifyResponse>(
-      {
-        'url': '$BASE_URL/$paymentLinkId/notify_by/${medium.name}',
-      },
-      callback: callback,
+      {'url': url},
       fromJsonFactory: RazorpayNotifyResponse.fromJson,
+      callback: callback,
     );
   }
 }

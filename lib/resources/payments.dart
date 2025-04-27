@@ -1,397 +1,525 @@
+// lib/resources/payments.dart
 import 'package:dio/dio.dart';
 import 'package:razorpay_dart/api.dart';
+import 'package:razorpay_dart/models/api_model.dart';
 import 'package:razorpay_dart/models/payments_model.dart';
-import 'package:razorpay_dart/models/refunds_model.dart'; // For RazorpayRefund
-import 'package:razorpay_dart/models/shared_model.dart'; // For RazorpayPaginationOptions
-import 'package:razorpay_dart/models/transfers_model.dart'; // For Transfer types
+import 'package:razorpay_dart/models/refunds_model.dart'; // For refund types
+import 'package:razorpay_dart/models/transfers_model.dart'; // For transfer types
+import 'package:razorpay_dart/utils.dart'; // For normalizeDate
 
 class Payments {
-  Payments({required this.api});
+  Payments(this.api);
   final API api;
   static const String BASE_URL = '/payments';
+  static const String ID_REQUIRED_MSG = '`payment_id` is mandatory';
 
   /// Get all payments
-  Future<Response<RazorpayPaymentList>> all({
+  ///
+  /// @param params - Check [doc](https://razorpay.com/docs/api/payments/#fetch-multiple-payments) for required params
+  Future<Response<RazorpayApiResponse<RazorpayPayment>>> all({
     RazorpayPaymentQuery? params,
-    void Function(DioException?, Response<RazorpayPaymentList>?)? callback,
+    void Function(
+      RazorpayApiException?,
+      Response<RazorpayApiResponse<RazorpayPayment>>?,
+    )? callback,
   }) async {
-    return api.get<RazorpayPaymentList>(
+    var from = params?.from;
+    var to = params?.to;
+    final count = params?.count ?? 10;
+    final skip = params?.skip ?? 0;
+
+    if (from != null) {
+      from = normalizeDate(from);
+    }
+    if (to != null) {
+      to = normalizeDate(to);
+    }
+
+    final queryParams = {
+      'from': from,
+      'to': to,
+      'count': count,
+      'skip': skip,
+      if (params?.expand != null) 'expand[]': params!.expand,
+    };
+    queryParams.removeWhere((key, value) => value == null);
+
+    return api.get<RazorpayApiResponse<RazorpayPayment>>(
       {
         'url': BASE_URL,
-        'data': params?.toJson(),
+        'data': queryParams,
       },
       callback: callback,
-      fromJsonFactory: RazorpayPaymentList.fromJson,
+      fromJsonFactory: (json) => RazorpayApiResponse<RazorpayPayment>.fromJson(
+        json,
+        (itemJson) =>
+            RazorpayPayment.fromJson(itemJson! as Map<String, dynamic>),
+      ),
     );
   }
 
   /// Fetch a payment
-  Future<Response<RazorpayPayment>> fetch(
-    String paymentId,
-    FetchPaymentParams? params, {
-    void Function(DioException?, Response<RazorpayPayment>?)? callback,
+  ///
+  /// @param paymentId - The unique identifier of the payment.
+  /// @param params - Check [doc](https://razorpay.com/docs/api/payments/#fetch-a-payment) for required params (expand)
+  Future<Response<RazorpayPayment>> fetch({
+    required String paymentId,
+    List<String>? expand, // Use List<String> for expand
+    void Function(RazorpayApiException?, Response<RazorpayPayment>?)? callback,
   }) async {
     if (paymentId.isEmpty) {
-      throw ArgumentError('`paymentId` is mandatory');
+      throw ArgumentError(ID_REQUIRED_MSG);
     }
+
+    final queryParams = {
+      if (expand != null) 'expand[]': expand,
+    };
+    queryParams.removeWhere((key, value) => value == null);
+
     return api.get<RazorpayPayment>(
       {
         'url': '$BASE_URL/$paymentId',
-        'data': params?.toJson(), // Query parameters for expand
+        'data': queryParams.isNotEmpty ? queryParams : null,
       },
-      callback: callback,
       fromJsonFactory: RazorpayPayment.fromJson,
+      callback: callback,
     );
   }
 
   /// Capture payment
-  Future<Response<RazorpayPayment>> capture(
-    String paymentId,
-    int amount,
-    String currency, {
-    void Function(DioException?, Response<RazorpayPayment>?)? callback,
+  ///
+  /// @param paymentId - The unique identifier of the payment.
+  /// @param amount - The amount to be captured (should be equal to the authorised amount,
+  /// in the smallest unit of the chosen currency).
+  /// @param currency - ISO code of the currency in which the payment was made.
+  Future<Response<RazorpayPayment>> capture({
+    required String paymentId,
+    required dynamic amount, // number | string
+    required String currency,
+    void Function(RazorpayApiException?, Response<RazorpayPayment>?)? callback,
   }) async {
-    if (paymentId.isEmpty || currency.isEmpty) {
-      throw ArgumentError('`paymentId` and `currency` are mandatory');
+    if (paymentId.isEmpty) {
+      throw ArgumentError(ID_REQUIRED_MSG);
     }
-    if (amount <= 0) {
-      throw ArgumentError('`amount` must be greater than 0');
-    }
+    // Amount validation happens implicitly via model or API
+
+    final payload = {
+      'amount': amount,
+      'currency': currency,
+    };
+
     return api.post<RazorpayPayment>(
       {
         'url': '$BASE_URL/$paymentId/capture',
-        'data': {
-          'amount': amount,
-          'currency': currency,
-        },
+        'data': payload,
       },
-      callback: callback,
       fromJsonFactory: RazorpayPayment.fromJson,
+      callback: callback,
     );
   }
 
-  /// Create payment json (S2S or Third Party)
-  Future<Response<RazorpayPaymentS2SJson>> createPaymentJson(
-    Map<String, dynamic> params, // Use Map for flexibility
-    {
-    void Function(DioException?, Response<RazorpayPaymentS2SJson>?)? callback,
+  /// Create payment json (S2S flow)
+  ///
+  /// @param params - Check docs for S2S or TPV card payments.
+  /// Accepts [RazorpayPaymentS2SCreateRequestBody] or [RazorpayPaymentThirdPartyCreateRequestBody].
+  Future<Response<RazorpayPaymentS2SJson>> createPaymentJson({
+    required dynamic params, // Use dynamic for union type
+    void Function(RazorpayApiException?, Response<RazorpayPaymentS2SJson>?)?
+        callback,
   }) async {
-    // Basic validation - could be enhanced based on specific type (S2S vs ThirdParty)
-    if (!params.containsKey('amount') ||
-        !params.containsKey('currency') ||
-        !params.containsKey('order_id')) {
-      throw ArgumentError('`amount`, `currency`, and `order_id` are mandatory');
+    Map<String, dynamic> requestData;
+    if (params is RazorpayPaymentS2SCreateRequestBody ||
+        params is RazorpayPaymentThirdPartyCreateRequestBody) {
+      requestData = params is RazorpayPaymentS2SCreateRequestBody
+          ? params.toJson()
+          : params is RazorpayPaymentThirdPartyCreateRequestBody
+              ? params.toJson()
+              : {};
+    } else {
+      throw ArgumentError('Invalid params type for createPaymentJson.');
     }
+
     return api.post<RazorpayPaymentS2SJson>(
       {
-        'url': '$BASE_URL/create/json', // Endpoint based on JS comments
-        'data': params,
+        'url': '$BASE_URL/create/json',
+        'data': requestData,
       },
-      callback: callback,
       fromJsonFactory: RazorpayPaymentS2SJson.fromJson,
+      callback: callback,
     );
   }
 
   /// Create a recurring payment
-  Future<Response<RazorpayRecurringPaymentResponse>> createRecurringPayment(
-    RazorpayRecurringPaymentCreateRequestBody params, {
-    void Function(DioException?, Response<RazorpayRecurringPaymentResponse>?)?
+  ///
+  /// @param params - Check docs for recurring payments (card, emandate, nach, upi).
+  Future<Response<RazorpayOtpSubmitResponse>> createRecurringPayment({
+    // Response based on JS example (signature)
+    required RazorpayRecurringPaymentCreateRequestBody params,
+    void Function(RazorpayApiException?, Response<RazorpayOtpSubmitResponse>?)?
         callback,
   }) async {
-    return api.post<RazorpayRecurringPaymentResponse>(
+    return api.post<RazorpayOtpSubmitResponse>(
+      // Assuming OTP submit response structure
       {
         'url': '$BASE_URL/create/recurring',
         'data': params.toJson(),
       },
+      fromJsonFactory: RazorpayOtpSubmitResponse.fromJson,
       callback: callback,
-      fromJsonFactory: RazorpayRecurringPaymentResponse.fromJson,
     );
   }
 
-  /// Edit a payment given Payment ID (Updates notes only)
-  Future<Response<RazorpayPayment>> edit(
-    String paymentId,
-    RazorpayPaymentUpdateRequestBody params, {
-    void Function(DioException?, Response<RazorpayPayment>?)? callback,
+  /// Edit a payment given Payment ID (Update notes)
+  ///
+  /// @param paymentId - The unique identifier of the payment.
+  /// @param params - Contains the 'notes' to update.
+  Future<Response<RazorpayPayment>> edit({
+    required String paymentId,
+    required RazorpayPaymentUpdateRequestBody
+        params, // Use the specific update model
+    void Function(RazorpayApiException?, Response<RazorpayPayment>?)? callback,
   }) async {
     if (paymentId.isEmpty) {
-      throw ArgumentError('`paymentId` is mandatory');
+      throw ArgumentError(ID_REQUIRED_MSG);
     }
     return api.patch<RazorpayPayment>(
       {
         'url': '$BASE_URL/$paymentId',
         'data': params.toJson(),
       },
-      callback: callback,
       fromJsonFactory: RazorpayPayment.fromJson,
+      callback: callback,
     );
   }
 
-  /// Create a normal/instant refund or reverse transfer
-  Future<Response<RazorpayRefund>> refund(
-    String paymentId,
-    Map<String, dynamic>
-        params, // Use Map for flexibility (Refund or Reverse Transfer)
-    {
-    void Function(DioException?, Response<RazorpayRefund>?)? callback,
+  /// Create a normal/instant refund or refund with transfer reversal.
+  ///
+  /// @param paymentId - The unique identifier of the payment.
+  /// @param params - Accepts [RazorpayRefundCreateRequestBody] or [RazorpayRefundPaymentLinkAccountCreateRequestBody].
+  Future<Response<RazorpayRefund>> refund({
+    required String paymentId,
+    required dynamic params, // Use dynamic for union type
+    void Function(RazorpayApiException?, Response<RazorpayRefund>?)? callback,
   }) async {
     if (paymentId.isEmpty) {
-      throw ArgumentError('`paymentId` is mandatory');
+      throw ArgumentError(ID_REQUIRED_MSG);
     }
+    Map<String, dynamic> requestData;
+    if (params is RazorpayRefundCreateRequestBody ||
+        params is RazorpayRefundPaymentLinkAccountCreateRequestBody) {
+      requestData = params is RazorpayRefundCreateRequestBody
+          ? params.toJson()
+          : params is RazorpayRefundPaymentLinkAccountCreateRequestBody
+              ? params.toJson()
+              : {};
+    } else {
+      throw ArgumentError('Invalid params type for refund.');
+    }
+
     return api.post<RazorpayRefund>(
       {
         'url': '$BASE_URL/$paymentId/refund',
-        'data': params,
+        'data': requestData,
       },
-      callback: callback,
       fromJsonFactory: RazorpayRefund.fromJson,
+      callback: callback,
     );
   }
 
   /// Fetch multiple refunds for a payment
-  Future<Response<RazorpayPaymentRefundList>> fetchMultipleRefund(
-    String paymentId, {
+  ///
+  /// @param paymentId - The unique identifier of the payment.
+  /// @param params - Pagination options.
+  Future<Response<RazorpayPaymentRefundsResponse>> fetchMultipleRefund({
+    required String paymentId,
     RazorpayPaginationOptions? params,
-    void Function(DioException?, Response<RazorpayPaymentRefundList>?)?
-        callback,
+    void Function(
+      RazorpayApiException?,
+      Response<RazorpayPaymentRefundsResponse>?,
+    )? callback,
   }) async {
     if (paymentId.isEmpty) {
-      throw ArgumentError('`paymentId` is mandatory');
+      throw ArgumentError(ID_REQUIRED_MSG);
     }
-    return api.get<RazorpayPaymentRefundList>(
+
+    var from = params?.from;
+    var to = params?.to;
+    final count = params?.count ?? 10;
+    final skip = params?.skip ?? 0;
+
+    if (from != null) {
+      from = normalizeDate(from);
+    }
+    if (to != null) {
+      to = normalizeDate(to);
+    }
+
+    final queryParams = {
+      'from': from,
+      'to': to,
+      'count': count,
+      'skip': skip,
+      ...?params?.toJson(),
+    };
+    queryParams.removeWhere((key, value) => value == null);
+
+    return api.get<RazorpayPaymentRefundsResponse>(
       {
         'url': '$BASE_URL/$paymentId/refunds',
-        'data': params?.toJson(),
+        'data': queryParams,
       },
+      fromJsonFactory: RazorpayPaymentRefundsResponse.fromJson,
       callback: callback,
-      fromJsonFactory: RazorpayPaymentRefundList.fromJson,
     );
   }
 
   /// Fetch a specific refund for a payment
-  Future<Response<RazorpayRefund>> fetchRefund(
-    String paymentId,
-    String refundId, {
-    void Function(DioException?, Response<RazorpayRefund>?)? callback,
+  ///
+  /// @param paymentId - The unique identifier of the payment.
+  /// @param refundId - The unique identifier of the refund.
+  Future<Response<RazorpayRefund>> fetchRefund({
+    required String paymentId,
+    required String refundId,
+    void Function(RazorpayApiException?, Response<RazorpayRefund>?)? callback,
   }) async {
-    if (paymentId.isEmpty || refundId.isEmpty) {
-      throw ArgumentError('`paymentId` and `refundId` are mandatory');
+    if (paymentId.isEmpty) {
+      throw ArgumentError('paymentId is mandatory');
+    }
+    if (refundId.isEmpty) {
+      throw ArgumentError('refundId is mandatory');
     }
     return api.get<RazorpayRefund>(
-      {
-        'url': '$BASE_URL/$paymentId/refunds/$refundId',
-      },
-      callback: callback,
+      {'url': '$BASE_URL/$paymentId/refunds/$refundId'},
       fromJsonFactory: RazorpayRefund.fromJson,
+      callback: callback,
     );
   }
 
   /// Fetch transfers for a payment
-  Future<Response<RazorpayPaymentTransferList>> fetchTransfer(
-    String paymentId, {
-    void Function(DioException?, Response<RazorpayPaymentTransferList>?)?
-        callback,
+  ///
+  /// @param paymentId - The unique identifier of the payment.
+  Future<Response<RazorpayPaymentTransfersResponse>> fetchTransfer({
+    required String paymentId,
+    void Function(
+      RazorpayApiException?,
+      Response<RazorpayPaymentTransfersResponse>?,
+    )? callback,
   }) async {
     if (paymentId.isEmpty) {
-      throw ArgumentError('`paymentId` is mandatory');
+      throw ArgumentError('paymentId is mandatory');
     }
-    return api.get<RazorpayPaymentTransferList>(
-      {
-        'url': '$BASE_URL/$paymentId/transfers',
-      },
+    return api.get<RazorpayPaymentTransfersResponse>(
+      {'url': '$BASE_URL/$paymentId/transfers'},
+      fromJsonFactory: RazorpayPaymentTransfersResponse.fromJson,
       callback: callback,
-      fromJsonFactory: RazorpayPaymentTransferList.fromJson,
     );
   }
 
   /// Create transfers from payment
-  Future<Response<RazorpayPaymentCreateTransferResponse>> transfer(
-    String paymentId,
-    List<RazorpayPaymentCreateRequestBody> transfers, // Use the defined model
-    {
+  ///
+  /// @param paymentId - The unique identifier of the payment.
+  /// @param params - Contains the list of transfers.
+  Future<Response<RazorpayCreateTransferResponse>> transfer({
+    required String paymentId,
+    required List<RazorpayPaymentCreateTransferRequestBody> transfers,
     void Function(
-            DioException?, Response<RazorpayPaymentCreateTransferResponse>?)?
-        callback,
+      RazorpayApiException?,
+      Response<RazorpayCreateTransferResponse>?,
+    )? callback,
   }) async {
     if (paymentId.isEmpty) {
-      throw ArgumentError('`paymentId` is mandatory');
+      throw ArgumentError(ID_REQUIRED_MSG);
     }
-    // The request body needs to be { "transfers": [...] }
-    Map<String, dynamic> data = {
-      'transfers': transfers.map((t) => t.toJson()).toList()
-    };
-    return api.post<RazorpayPaymentCreateTransferResponse>(
+    return api.post<RazorpayCreateTransferResponse>(
       {
         'url': '$BASE_URL/$paymentId/transfers',
-        'data': data,
+        'data': {'transfers': transfers.map((t) => t.toJson()).toList()},
       },
+      fromJsonFactory: RazorpayCreateTransferResponse.fromJson,
       callback: callback,
-      fromJsonFactory: RazorpayPaymentCreateTransferResponse.fromJson,
     );
   }
 
-  /// Fetch payment details using id and transfer method (Bank Transfer)
-  Future<Response<RazorpayPaymentDetails>> bankTransfer(
-    String paymentId, {
-    void Function(DioException?, Response<RazorpayPaymentDetails>?)? callback,
+  /// Fetch payment details using id for bank transfer method
+  ///
+  /// @param paymentId - The unique identifier of the payment.
+  Future<Response<RazorpayPaymentDetails>> bankTransfer({
+    required String paymentId,
+    void Function(RazorpayApiException?, Response<RazorpayPaymentDetails>?)?
+        callback,
   }) async {
     if (paymentId.isEmpty) {
-      throw ArgumentError('`paymentId` is mandatory');
+      throw ArgumentError(ID_REQUIRED_MSG);
     }
     return api.get<RazorpayPaymentDetails>(
-      {
-        'url': '$BASE_URL/$paymentId/bank_transfer',
-      },
-      callback: callback,
+      {'url': '$BASE_URL/$paymentId/bank_transfer'},
       fromJsonFactory: RazorpayPaymentDetails.fromJson,
+      callback: callback,
     );
   }
 
   /// Fetch card details with paymentId
-  Future<Response<RazorpayCard>> fetchCardDetails(
-    String paymentId, {
-    void Function(DioException?, Response<RazorpayCard>?)? callback,
+  ///
+  /// @param paymentId - The unique identifier of the payment.
+  Future<Response<RazorpayCard>> fetchCardDetails({
+    required String paymentId,
+    void Function(RazorpayApiException?, Response<RazorpayCard>?)? callback,
   }) async {
     if (paymentId.isEmpty) {
-      throw ArgumentError('`paymentId` is mandatory');
+      throw ArgumentError(ID_REQUIRED_MSG);
     }
     return api.get<RazorpayCard>(
-      {
-        'url': '$BASE_URL/$paymentId/card', // Endpoint based on JS comments
-      },
-      callback: callback,
+      {'url': '$BASE_URL/$paymentId/card'},
       fromJsonFactory: RazorpayCard.fromJson,
+      callback: callback,
     );
   }
 
   /// Fetch Payment Downtime Details
-  Future<Response<RazorpayPaymentDowntimeList>> fetchPaymentDowntime({
-    void Function(DioException?, Response<RazorpayPaymentDowntimeList>?)?
-        callback,
+  Future<Response<RazorpayPaymentDowntimeResponse>> fetchPaymentDowntime({
+    void Function(
+      RazorpayApiException?,
+      Response<RazorpayPaymentDowntimeResponse>?,
+    )? callback,
   }) async {
-    return api.get<RazorpayPaymentDowntimeList>(
-      {
-        'url': '/payments/downtimes', // Endpoint based on JS comments
-      },
+    return api.get<RazorpayPaymentDowntimeResponse>(
+      {'url': '$BASE_URL/downtimes'},
+      fromJsonFactory: RazorpayPaymentDowntimeResponse.fromJson,
       callback: callback,
-      fromJsonFactory: RazorpayPaymentDowntimeList.fromJson,
     );
   }
 
   /// Fetch Payment Downtime by ID
-  Future<Response<RazorpayPaymentDowntime>> fetchPaymentDowntimeById(
-    String downtimeId, {
-    void Function(DioException?, Response<RazorpayPaymentDowntime>?)? callback,
+  ///
+  /// @param downtimeId - The unique identifier of the downtime record.
+  Future<Response<RazorpayPaymentDowntime>> fetchPaymentDowntimeById({
+    required String downtimeId,
+    void Function(RazorpayApiException?, Response<RazorpayPaymentDowntime>?)?
+        callback,
   }) async {
     if (downtimeId.isEmpty) {
-      throw ArgumentError('`downtimeId` is mandatory');
+      throw ArgumentError('Downtime Id is mandatory');
     }
     return api.get<RazorpayPaymentDowntime>(
-      {
-        'url': '/payments/downtimes/$downtimeId',
-      },
-      callback: callback,
+      {'url': '$BASE_URL/downtimes/$downtimeId'},
       fromJsonFactory: RazorpayPaymentDowntime.fromJson,
+      callback: callback,
     );
   }
 
-  /// Generate OTP for S2S payment
-  Future<Response<RazorpayPaymentS2SJson>> otpGenerate(
-    String paymentId, {
-    void Function(DioException?, Response<RazorpayPaymentS2SJson>?)? callback,
+  /// Generate OTP for S2S payments
+  ///
+  /// @param paymentId - The unique identifier of the payment.
+  Future<Response<RazorpayPaymentS2SJson>> otpGenerate({
+    required String paymentId,
+    void Function(RazorpayApiException?, Response<RazorpayPaymentS2SJson>?)?
+        callback,
   }) async {
     if (paymentId.isEmpty) {
-      throw ArgumentError('`paymentId` is mandatory');
+      throw ArgumentError('paymentId is mandatory');
     }
     return api.post<RazorpayPaymentS2SJson>(
-      {
-        'url': '$BASE_URL/$paymentId/otp_generate',
-      },
-      callback: callback,
+      {'url': '$BASE_URL/$paymentId/otp_generate'},
       fromJsonFactory: RazorpayPaymentS2SJson.fromJson,
+      callback: callback,
     );
   }
 
-  /// Submit OTP for S2S payment
-  Future<Response<RazorpayPaymentS2SJson>> otpSubmit(
-    String paymentId,
-    String otp, {
-    void Function(DioException?, Response<RazorpayPaymentS2SJson>?)? callback,
+  /// Submit OTP for S2S payments
+  ///
+  /// @param paymentId - The unique identifier of the payment.
+  /// @param params - Contains the OTP: {'otp': '123456'}
+  Future<Response<RazorpayOtpSubmitResponse>> otpSubmit({
+    required String paymentId,
+    required String otp,
+    void Function(RazorpayApiException?, Response<RazorpayOtpSubmitResponse>?)?
+        callback,
   }) async {
-    if (paymentId.isEmpty || otp.isEmpty) {
-      throw ArgumentError('`paymentId` and `otp` are mandatory');
+    if (paymentId.isEmpty) {
+      throw ArgumentError('paymentId is mandatory');
     }
-    return api.post<RazorpayPaymentS2SJson>(
+    if (otp.isEmpty) {
+      throw ArgumentError('otp is mandatory');
+    }
+    return api.post<RazorpayOtpSubmitResponse>(
       {
         'url': '$BASE_URL/$paymentId/otp/submit',
-        'data': {'otp': otp}
+        'data': {'otp': otp},
       },
+      fromJsonFactory: RazorpayOtpSubmitResponse.fromJson,
       callback: callback,
-      fromJsonFactory: RazorpayPaymentS2SJson.fromJson,
     );
   }
 
-  /// Resend OTP for S2S payment
-  Future<Response<RazorpayOtpResendResponse>> otpResend(
-    String paymentId, {
-    void Function(DioException?, Response<RazorpayOtpResendResponse>?)?
+  /// Resend OTP for S2S payments
+  ///
+  /// @param paymentId - The unique identifier of the payment.
+  Future<Response<RazorpayOtpResendResponse>> otpResend({
+    required String paymentId,
+    void Function(RazorpayApiException?, Response<RazorpayOtpResendResponse>?)?
         callback,
   }) async {
     if (paymentId.isEmpty) {
-      throw ArgumentError('`paymentId` is mandatory');
+      throw ArgumentError('paymentId is mandatory');
     }
     return api.post<RazorpayOtpResendResponse>(
-      {
-        'url': '$BASE_URL/$paymentId/otp/resend',
-      },
-      callback: callback,
+      {'url': '$BASE_URL/$paymentId/otp/resend'},
       fromJsonFactory: RazorpayOtpResendResponse.fromJson,
+      callback: callback,
     );
   }
 
-  /// Create Payment UPI s2s / VPA token (Third party validation)
-  Future<Response<RazorpayPaymentUpiCreateResponse>> createUpi(
-    RazorpayPaymentUpiCreateRequestBody params, {
-    void Function(DioException?, Response<RazorpayPaymentUpiCreateResponse>?)?
+  /// Create Payment UPI (TPV flows)
+  ///
+  /// @param params - Check docs for UPI TPV payments.
+  Future<Response<RazorpayCreateUpiResponse>> createUpi({
+    required RazorpayPaymentUpiCreateRequestBody params,
+    void Function(RazorpayApiException?, Response<RazorpayCreateUpiResponse>?)?
         callback,
   }) async {
-    return api.post<RazorpayPaymentUpiCreateResponse>(
+    return api.post<RazorpayCreateUpiResponse>(
       {
         'url': '$BASE_URL/create/upi',
         'data': params.toJson(),
       },
+      fromJsonFactory: RazorpayCreateUpiResponse.fromJson,
       callback: callback,
-      fromJsonFactory: RazorpayPaymentUpiCreateResponse.fromJson,
     );
   }
 
-  /// Validate VPA
-  Future<Response<RazorpayValidateVpaResponse>> validateVpa(
-    RazorpayValidateVpaRequestBody params, {
-    void Function(DioException?, Response<RazorpayValidateVpaResponse>?)?
-        callback,
+  /// Validate VPA (TPV flow)
+  ///
+  /// @param params - Contains the VPA to validate: {'vpa': 'user@bank'}
+  Future<Response<RazorpayValidateVpaResponse>> validateVpa({
+    required String vpa,
+    void Function(
+      RazorpayApiException?,
+      Response<RazorpayValidateVpaResponse>?,
+    )? callback,
   }) async {
+    if (vpa.isEmpty) {
+      throw ArgumentError('vpa is mandatory');
+    }
     return api.post<RazorpayValidateVpaResponse>(
       {
         'url': '$BASE_URL/validate/vpa',
-        'data': params.toJson(),
+        'data': {'vpa': vpa},
       },
-      callback: callback,
       fromJsonFactory: RazorpayValidateVpaResponse.fromJson,
+      callback: callback,
     );
   }
 
-  /// Fetch payment methods
-  Future<Response<RazorpayPaymentMethodsResponse>> fetchPaymentMethods({
-    void Function(DioException?, Response<RazorpayPaymentMethodsResponse>?)?
+  /// Fetch available payment methods
+  Future<Response<Map<String, dynamic>>> fetchPaymentMethods({
+    // Returns a complex map
+    void Function(RazorpayApiException?, Response<Map<String, dynamic>>?)?
         callback,
   }) async {
-    return api.get<RazorpayPaymentMethodsResponse>(
-      {
-        'url': '/methods',
-      },
+    return api.get<Map<String, dynamic>>(
+      {'url': '/methods'}, // Endpoint from JS code
+      fromJsonFactory: (json) => json, // Return raw map
       callback: callback,
-      fromJsonFactory: RazorpayPaymentMethodsResponse.fromJson,
     );
   }
 }

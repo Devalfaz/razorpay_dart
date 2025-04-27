@@ -1,50 +1,58 @@
+// lib/resources/cards.dart
 import 'package:dio/dio.dart';
 import 'package:razorpay_dart/api.dart';
 import 'package:razorpay_dart/models/cards_model.dart';
-import 'package:razorpay_dart/models/payments_model.dart'; // Assuming RazorpayCard is in payments_model
-import 'package:razorpay_dart/models/shared_model.dart'; // Assuming INormalizeError is here
+import 'package:razorpay_dart/models/payments_model.dart'; // For RazorpayCard response
 
 class Cards {
-  Cards({required this.api});
+  Cards(this.api);
   final API api;
-  static const String BASE_URL = '/cards';
 
   /// Fetch a card given a Card ID
-  Future<Response<RazorpayCard>> fetch(
-    String cardId, {
-    void Function(DioException?, Response<RazorpayCard>?)? callback,
+  ///
+  /// @param cardId - The unique identifier of the card
+  Future<Response<RazorpayCard>> fetch({
+    required String cardId,
+    void Function(RazorpayApiException?, Response<RazorpayCard>?)? callback,
   }) async {
     if (cardId.isEmpty) {
       throw ArgumentError('`card_id` is mandatory');
     }
     return api.get<RazorpayCard>(
-      {
-        'url': '$BASE_URL/$cardId',
-      },
+      {'url': '/cards/$cardId'},
+      fromJsonFactory: RazorpayCard.fromJson,
       callback: callback,
-      fromJsonFactory:
-          RazorpayCard.fromJson, // Assuming RazorpayCard model exists
     );
   }
 
   /// Retrieve the card reference number for a specific card
-  Future<Response<RazorpayCardReference>> requestCardReference(
-    Map<String, dynamic> params, // Accepts both request types as Map
-    {
-    void Function(DioException?, Response<RazorpayCardReference>?)? callback,
+  ///
+  /// @param params - The card/token number whose PAR or network reference id should be retrieved.
+  /// Accepts either [RazorpayCardReferenceNumberBaseRequest] or [RazorpayCardReferenceTokenBaseRequest].
+  Future<Response<RazorpayCardReference>> requestCardReference({
+    required dynamic params, // Use dynamic to accept either type
+    void Function(RazorpayApiException?, Response<RazorpayCardReference>?)?
+        callback,
   }) async {
-    // Basic validation: ensure either 'number' or 'token' is present
-    if (!params.containsKey('number') && !params.containsKey('token')) {
+    Map<String, dynamic> requestData;
+
+    if (params is RazorpayCardReferenceNumberBaseRequest) {
+      requestData = params.toJson();
+    } else if (params is RazorpayCardReferenceTokenBaseRequest) {
+      requestData = params.toJson();
+    } else {
       throw ArgumentError(
-          'Either `number` or `token` must be provided in params');
+        'Invalid type for params. Expected RazorpayCardReferenceNumberBaseRequest or RazorpayCardReferenceTokenBaseRequest.',
+      );
     }
+
     return api.post<RazorpayCardReference>(
       {
-        'url': '$BASE_URL/fingerprints',
-        'data': params,
+        'url': '/cards/fingerprints',
+        'data': requestData,
       },
-      callback: callback,
       fromJsonFactory: RazorpayCardReference.fromJson,
+      callback: callback,
     );
   }
 }

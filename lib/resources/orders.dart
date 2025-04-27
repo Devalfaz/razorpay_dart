@@ -1,161 +1,221 @@
+// lib/resources/orders.dart
 import 'package:dio/dio.dart';
 import 'package:razorpay_dart/api.dart';
+import 'package:razorpay_dart/models/api_model.dart';
 import 'package:razorpay_dart/models/orders_model.dart';
-import 'package:razorpay_dart/models/payments_model.dart'; // For RazorpayPayment list response
+// For Payment types
+import 'package:razorpay_dart/utils.dart'; // For normalizeDate
 
 class Orders {
-  Orders({required this.api});
+  Orders(this.api);
   final API api;
-  static const String BASE_URL = '/orders';
-
-  /// Creates an order (Standard, Transfer, or Authorization)
-  Future<Response<RazorpayOrder>> create(
-    Map<String, dynamic>
-        params, // Use Map to accept different request body types
-    {
-    void Function(DioException?, Response<RazorpayOrder>?)? callback,
-  }) async {
-    // Basic validation based on common fields
-    if (!params.containsKey('amount') || !params.containsKey('currency')) {
-      throw ArgumentError('`amount` and `currency` are mandatory');
-    }
-
-    // Specific validation/type checking could be added here if needed
-    // e.g., check for 'transfers' key for transfer order,
-    // or 'customer_id' and 'token' for authorization order.
-
-    return api.post<RazorpayOrder>(
-      {
-        'url': BASE_URL,
-        'data': params, // Pass the map directly
-      },
-      callback: callback,
-      fromJsonFactory: RazorpayOrder.fromJson,
-    );
-  }
 
   /// Get all orders
-  Future<Response<RazorpayOrderList>> all({
+  ///
+  /// @param params - Check [doc](https://razorpay.com/docs/api/orders/#fetch-multiple-orders) for required params
+  Future<Response<RazorpayApiResponse<RazorpayOrder>>> all({
     RazorpayOrderQuery? params,
-    void Function(DioException?, Response<RazorpayOrderList>?)? callback,
+    void Function(
+      RazorpayApiException?,
+      Response<RazorpayApiResponse<RazorpayOrder>>?,
+    )? callback,
   }) async {
-    return api.get<RazorpayOrderList>(
+    var from = params?.from;
+    var to = params?.to;
+    final count = params?.count ?? 10;
+    final skip = params?.skip ?? 0;
+
+    from = normalizeDate(from);
+    to = normalizeDate(to);
+
+    // Build query parameters carefully
+    final queryParams = {
+      'from': from,
+      'to': to,
+      'count': count,
+      'skip': skip,
+      'authorized': params?.authorized,
+      'receipt': params?.receipt,
+      if (params?.expand != null) 'expand[]': params!.expand,
+    };
+    queryParams.removeWhere((key, value) => value == null);
+
+    return api.get<RazorpayApiResponse<RazorpayOrder>>(
       {
-        'url': BASE_URL,
-        'data': params?.toJson(),
+        'url': '/orders',
+        'data': queryParams,
       },
       callback: callback,
-      fromJsonFactory: RazorpayOrderList.fromJson,
+      fromJsonFactory: (json) => RazorpayApiResponse<RazorpayOrder>.fromJson(
+        json,
+        (itemJson) => RazorpayOrder.fromJson(itemJson! as Map<String, dynamic>),
+      ),
     );
   }
 
   /// Fetches an order given Order ID
-  Future<Response<RazorpayOrder>> fetch(
-    String orderId, {
-    void Function(DioException?, Response<RazorpayOrder>?)? callback,
+  ///
+  /// @param orderId - The unique identifier of the order
+  Future<Response<RazorpayOrder>> fetch({
+    required String orderId,
+    void Function(RazorpayApiException?, Response<RazorpayOrder>?)? callback,
   }) async {
     if (orderId.isEmpty) {
-      throw ArgumentError('`orderId` is mandatory');
+      throw ArgumentError('`order_id` is mandatory');
     }
     return api.get<RazorpayOrder>(
-      {
-        'url': '$BASE_URL/$orderId',
-      },
-      callback: callback,
+      {'url': '/orders/$orderId'},
       fromJsonFactory: RazorpayOrder.fromJson,
+      callback: callback,
     );
   }
 
-  /// Edit an order given Order ID (Updates notes only)
-  Future<Response<RazorpayOrder>> edit(
-    String orderId,
-    RazorpayOrderUpdateRequestBody params, {
-    void Function(DioException?, Response<RazorpayOrder>?)? callback,
+  /// Creates an order (standard, transfer, or authorization)
+  ///
+  /// @param params - Check [doc](https://razorpay.com/docs/api/orders/#create-an-order) for required params.
+  /// Accepts [RazorpayOrderCreateRequestBody], [RazorpayTransferOrderCreateRequestBody], or [RazorpayAuthorizationOrderCreateRequestBody].
+  Future<Response<RazorpayOrder>> create({
+    required dynamic params, // Use dynamic to accept multiple request types
+    void Function(RazorpayApiException?, Response<RazorpayOrder>?)? callback,
+  }) async {
+    Map<String, dynamic> requestData;
+    if (params is RazorpayOrderCreateRequestBody ||
+        params is RazorpayTransferOrderCreateRequestBody ||
+        params is RazorpayAuthorizationOrderCreateRequestBody) {
+      requestData = params is RazorpayOrderCreateRequestBody
+          ? params.toJson()
+          : params is RazorpayTransferOrderCreateRequestBody
+              ? params.toJson()
+              : params is RazorpayAuthorizationOrderCreateRequestBody
+                  ? params.toJson()
+                  : {};
+    } else {
+      throw ArgumentError('Invalid params type for order creation.');
+    }
+
+    // Ensure currency defaults if not provided
+    if (!requestData.containsKey('currency') ||
+        requestData['currency'] == null) {
+      requestData['currency'] = 'INR';
+    }
+
+    return api.post<RazorpayOrder>(
+      {
+        'url': '/orders',
+        'data': requestData,
+      },
+      fromJsonFactory: RazorpayOrder.fromJson,
+      callback: callback,
+    );
+  }
+
+  /// Edit an order given Order ID
+  ///
+  /// @param orderId - The unique identifier of the order
+  /// @param params - Check [doc](https://razorpay.com/docs/api/orders/#update-order) for required params
+  Future<Response<RazorpayOrder>> edit({
+    required String orderId,
+    required RazorpayOrderUpdateRequestBody params,
+    void Function(RazorpayApiException?, Response<RazorpayOrder>?)? callback,
   }) async {
     if (orderId.isEmpty) {
-      throw ArgumentError('`orderId` is mandatory');
+      throw ArgumentError('`order_id` is mandatory');
     }
     return api.patch<RazorpayOrder>(
       {
-        'url': '$BASE_URL/$orderId',
+        'url': '/orders/$orderId',
         'data': params.toJson(),
       },
-      callback: callback,
       fromJsonFactory: RazorpayOrder.fromJson,
+      callback: callback,
     );
   }
 
   /// Fetch payments for an order
-  Future<Response<RazorpayOrderPaymentsList>> fetchPayments(
-    String orderId, {
-    void Function(DioException?, Response<RazorpayOrderPaymentsList>?)?
-        callback,
+  ///
+  /// @param orderId - The unique identifier of the order
+  Future<Response<RazorpayOrderPaymentsResponse>> fetchPayments({
+    required String orderId,
+    void Function(
+      RazorpayApiException?,
+      Response<RazorpayOrderPaymentsResponse>?,
+    )? callback,
   }) async {
     if (orderId.isEmpty) {
-      throw ArgumentError('`orderId` is mandatory');
+      throw ArgumentError('`order_id` is mandatory');
     }
-    return api.get<RazorpayOrderPaymentsList>(
-      {
-        'url': '$BASE_URL/$orderId/payments',
-      },
+    return api.get<RazorpayOrderPaymentsResponse>(
+      {'url': '/orders/$orderId/payments'},
+      fromJsonFactory: RazorpayOrderPaymentsResponse.fromJson,
       callback: callback,
-      fromJsonFactory: RazorpayOrderPaymentsList.fromJson,
     );
   }
 
   /// Fetch transfers for an order
-  Future<Response<RazorpayOrder>> fetchTransferOrder(
-    String orderId, {
-    void Function(DioException?, Response<RazorpayOrder>?)? callback,
+  ///
+  /// @param orderId - The unique identifier of the order
+  Future<Response<RazorpayOrder>> fetchTransferOrder({
+    required String orderId,
+    void Function(RazorpayApiException?, Response<RazorpayOrder>?)? callback,
   }) async {
     if (orderId.isEmpty) {
-      throw ArgumentError('`orderId` is mandatory');
+      throw ArgumentError('`order_id` is mandatory');
     }
-    // The d.ts returns RazorpayOrder which includes transfers, endpoint might be just the order fetch
+    // The JS code uses expand[]=transfers&status, which seems unusual.
+    // Using standard expand syntax. Verify with actual API behavior.
     return api.get<RazorpayOrder>(
       {
-        'url':
-            '$BASE_URL/$orderId', // Assuming transfers are expanded by default or via query param if needed
+        'url': '/orders/$orderId',
+        'data': {'expand[]': 'transfers'}, // Using standard expand
       },
-      callback: callback,
       fromJsonFactory: RazorpayOrder.fromJson,
+      callback: callback,
     );
   }
 
   /// View RTO/Risk Reasons
-  Future<Response<RazorpayRtoReview>> viewRtoReview(
-    String orderId, {
-    void Function(DioException?, Response<RazorpayRtoReview>?)? callback,
+  ///
+  /// @param orderId - The unique identifier of the order
+  Future<Response<RazorpayRtoReview>> viewRtoReview({
+    required String orderId,
+    void Function(RazorpayApiException?, Response<RazorpayRtoReview>?)?
+        callback,
   }) async {
     if (orderId.isEmpty) {
-      throw ArgumentError('`orderId` is mandatory');
+      throw ArgumentError('`order_id` is mandatory');
     }
-    return api.get<RazorpayRtoReview>(
-      {
-        'url': '$BASE_URL/$orderId/rto_review',
-      },
-      callback: callback,
+    // Note: JS uses POST, but this feels like a GET. Confirm API method. Assuming POST based on JS.
+    return api.post<RazorpayRtoReview>(
+      {'url': '/orders/$orderId/rto_review'},
+      // No body needed for this POST based on JS
       fromJsonFactory: RazorpayRtoReview.fromJson,
+      callback: callback,
     );
   }
 
   /// Update the Fulfillment Details
-  Future<Response<RazorpayFulFillment>> editFulfillment(
-    String orderId,
-    RazorpayFulFillmentBaseRequestBody params, {
-    void Function(DioException?, Response<RazorpayFulFillment>?)? callback,
+  ///
+  /// @param orderId - The unique identifier of the order
+  /// @param params - Check [doc](https://razorpay.com/docs/payments/magic-checkout/rto-intelligence/#step-3-update-the-fulfillment-details) for required params
+  Future<Response<RazorpayFulFillment>> editFulfillment({
+    // Assuming response matches RazorpayFulFillment model
+    required String orderId,
+    required RazorpayFulFillmentBaseRequestBody params,
+    void Function(RazorpayApiException?, Response<RazorpayFulFillment>?)?
+        callback,
   }) async {
     if (orderId.isEmpty) {
-      throw ArgumentError('`orderId` is mandatory');
+      throw ArgumentError('`order_id` is mandatory');
     }
+    // JS returns 'any', using the defined fulfillment model.
     return api.post<RazorpayFulFillment>(
       {
-        'url': '$BASE_URL/$orderId/fulfillment',
+        'url': '/orders/$orderId/fulfillment',
         'data': params.toJson(),
       },
+      fromJsonFactory:
+          RazorpayFulFillment.fromJson, // Adjust if response differs
       callback: callback,
-      fromJsonFactory: RazorpayFulFillment
-          .fromJson, // d.ts response is 'any', using defined model
     );
   }
 }

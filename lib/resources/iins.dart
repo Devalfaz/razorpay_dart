@@ -1,51 +1,57 @@
+// lib/resources/iins.dart
 import 'package:dio/dio.dart';
 import 'package:razorpay_dart/api.dart';
 import 'package:razorpay_dart/models/iins_model.dart';
 
 class Iins {
-  Iins({required this.api});
+  Iins(this.api);
   final API api;
   static const String BASE_URL = '/iins';
 
   /// Fetch the properties of the card using token IIN
-  Future<Response<RazorpayIin>> fetch(
-    String tokenIin, {
-    void Function(DioException?, Response<RazorpayIin>?)? callback,
+  ///
+  /// @param tokenIin - The token IIN.
+  Future<Response<RazorpayIin>> fetch({
+    required String tokenIin,
+    void Function(RazorpayApiException?, Response<RazorpayIin>?)? callback,
   }) async {
     if (tokenIin.isEmpty) {
-      throw ArgumentError('`tokenIin` is mandatory');
+      throw ArgumentError('tokenIin is required');
     }
     return api.get<RazorpayIin>(
-      {
-        'url': '$BASE_URL/$tokenIin',
-      },
-      callback: callback,
+      {'url': '$BASE_URL/$tokenIin'},
       fromJsonFactory: RazorpayIin.fromJson,
+      callback: callback,
     );
   }
 
   /// Fetch all IINs supporting `native otp` or `business sub-type`
-  Future<Response<RazorpayIinList>> all(
-    Map<String, dynamic>
-        params, // Use Map to handle {flow: string} or {sub_type: string}
-    {
-    void Function(DioException?, Response<RazorpayIinList>?)? callback,
+  ///
+  /// @param params - Check [doc](https://razorpay.com/docs/api/payments/cards/iin-api/#fetch-all-iins-supporting-native-otp) for required params
+  /// Requires either 'flow' or 'sub_type'.
+  Future<Response<RazorpayIinList>> all({
+    String? flow,
+    String? subType,
+    void Function(RazorpayApiException?, Response<RazorpayIinList>?)? callback,
   }) async {
-    // Basic validation
-    if (!params.containsKey('flow') && !params.containsKey('sub_type')) {
-      throw ArgumentError('Params must contain either `flow` or `sub_type`');
+    if (flow == null && subType == null) {
+      throw ArgumentError('Either flow or subType parameter is required.');
     }
-    if (params.containsKey('flow') && params.containsKey('sub_type')) {
-      throw ArgumentError('Params cannot contain both `flow` and `sub_type`');
+    if (flow != null && subType != null) {
+      throw ArgumentError('Provide either flow or subType, not both.');
     }
+
+    final queryParams = <String, dynamic>{};
+    if (flow != null) queryParams['flow'] = flow;
+    if (subType != null) queryParams['sub_type'] = subType;
 
     return api.get<RazorpayIinList>(
       {
         'url': '$BASE_URL/list',
-        'data': params,
+        'data': queryParams,
       },
-      callback: callback,
       fromJsonFactory: RazorpayIinList.fromJson,
+      callback: callback,
     );
   }
 }
