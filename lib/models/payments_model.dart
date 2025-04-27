@@ -2,15 +2,10 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:razorpay_dart/models/api_model.dart'; // For IMap, RazorpayPaginationOptions
 import 'package:razorpay_dart/models/fund_account_model.dart';
-import 'package:razorpay_dart/models/orders_model.dart'
-    show
-        RazorpayBankAccount,
-        RazorpayOrderBankDetailsBaseRequestBody; // For BankAccount types
 import 'package:razorpay_dart/models/refunds_model.dart'; // For RazorpayRefund
 import 'package:razorpay_dart/models/tokens_model.dart'; // For RazorpayToken
 import 'package:razorpay_dart/models/transfers_model.dart'; // For RazorpayTransfer
-import 'package:razorpay_dart/models/virtual_accounts_model.dart'
-    show RazorpayVirtualAccount; // For VirtualAccount types
+import 'package:razorpay_dart/models/virtual_accounts_model.dart'; // For VirtualAccount types
 
 part 'payments_model.freezed.dart';
 part 'payments_model.g.dart';

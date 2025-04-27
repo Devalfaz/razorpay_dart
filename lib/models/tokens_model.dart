@@ -1,14 +1,11 @@
 // lib/models/tokens_model.dart
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:razorpay_dart/models/api_model.dart'; // For IMap
-import 'package:razorpay_dart/models/customers_model.dart'
-    show RazorpayCustomer; // Customer type
+import 'package:razorpay_dart/models/customers_model.dart'; // Customer type
 import 'package:razorpay_dart/models/fund_account_model.dart';
-import 'package:razorpay_dart/models/invoices_model.dart'
-    show RazorpayInvoiceAddress; // Address type
+import 'package:razorpay_dart/models/invoices_model.dart'; // Address type
 import 'package:razorpay_dart/models/orders_model.dart';
-import 'package:razorpay_dart/models/payments_model.dart'
-    show RazorpayCard, RazorpayCardBaseRequestBody; // Card types
+import 'package:razorpay_dart/models/payments_model.dart'; // Card types
 
 part 'tokens_model.freezed.dart';
 part 'tokens_model.g.dart';
@@ -163,10 +160,11 @@ class Authentication with _$Authentication {
 class RazorpayTokenBaseRequestBody with _$RazorpayTokenBaseRequestBody {
   @JsonSerializable(includeIfNull: false)
   const factory RazorpayTokenBaseRequestBody({
-    required String
-        method, // Currently 'card', required RazorpayCardBaseRequestBody card, required Authentication authentication, String? customer_id,
+    required String method, // Currently 'card',
+    required RazorpayCardBaseRequestBody card,
     required Authentication authentication,
-    @Default([]) IMap<dynamic>? notes, // Allow empty list or map
+    String? customer_id,
+    @Default({}) IMap<dynamic>? notes, // Allow empty list or map
   }) = _RazorpayTokenBaseRequestBody;
 
   factory RazorpayTokenBaseRequestBody.fromJson(Map<String, dynamic> json) =>

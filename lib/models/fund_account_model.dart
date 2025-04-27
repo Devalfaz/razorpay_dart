@@ -31,7 +31,7 @@ class RazorpayBankAccount with _$RazorpayBankAccount {
     required dynamic account_number, // string | number
     required String ifsc,
     required String bank_name,
-    @Default([])
+    @Default({})
     IMap<dynamic>? notes, // IMap<string | number> | [] -> Default to empty map
   }) = _RazorpayBankAccount;
 
