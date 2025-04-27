@@ -1,7 +1,16 @@
 name: razorpay_dart
-description: "A new Flutter package project."
+description: "A Dart package for interacting with the Razorpay API."
 version: 0.0.1
-homepage:
+repository: https://github.com/devalfaz/razorpay_dart
+homepage: https://github.com/devalfaz/razorpay_dart
+
+topics:
+  - razorpay
+  - payment
+  - gateway
+  - finance
+  - flutter
+  - dart
 
 environment:
   sdk: ^3.5.4
