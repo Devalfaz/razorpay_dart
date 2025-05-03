@@ -68,7 +68,7 @@ _$RazorpayRefundImpl _$$RazorpayRefundImplFromJson(Map<String, dynamic> json) =>
       currency: json['currency'] as String,
       payment_id: json['payment_id'] as String,
       created_at: (json['created_at'] as num).toInt(),
-      status: $enumDecode(_$RefundStatusEnumMap, json['status']),
+      status: $enumDecode(_$RazorpayRefundStatusEnumMap, json['status']),
       amount: (json['amount'] as num?)?.toInt(),
       notes: json['notes'] as Map<String, dynamic>?,
       receipt: json['receipt'] as String?,
@@ -88,7 +88,7 @@ Map<String, dynamic> _$$RazorpayRefundImplToJson(
       'currency': instance.currency,
       'payment_id': instance.payment_id,
       'created_at': instance.created_at,
-      'status': _$RefundStatusEnumMap[instance.status]!,
+      'status': _$RazorpayRefundStatusEnumMap[instance.status]!,
       if (instance.amount case final value?) 'amount': value,
       if (instance.notes case final value?) 'notes': value,
       if (instance.receipt case final value?) 'receipt': value,
@@ -100,10 +100,10 @@ Map<String, dynamic> _$$RazorpayRefundImplToJson(
         'speed_requested': value,
     };
 
-const _$RefundStatusEnumMap = {
-  RefundStatus.pending: 'pending',
-  RefundStatus.processed: 'processed',
-  RefundStatus.failed: 'failed',
+const _$RazorpayRefundStatusEnumMap = {
+  RazorpayRefundStatus.pending: 'pending',
+  RazorpayRefundStatus.processed: 'processed',
+  RazorpayRefundStatus.failed: 'failed',
 };
 
 const _$ProcessedSpeedEnumMap = {

@@ -59,7 +59,7 @@ _$RazorpayPlanImpl _$$RazorpayPlanImplFromJson(Map<String, dynamic> json) =>
       interval: (json['interval'] as num).toInt(),
       item: RazorpayItem.fromJson(json['item'] as Map<String, dynamic>),
       created_at: (json['created_at'] as num).toInt(),
-      notes: json['notes'] as Map<String, dynamic>?,
+      notes: const NotesConverter().fromJson(json['notes']),
     );
 
 Map<String, dynamic> _$$RazorpayPlanImplToJson(_$RazorpayPlanImpl instance) =>
@@ -70,5 +70,6 @@ Map<String, dynamic> _$$RazorpayPlanImplToJson(_$RazorpayPlanImpl instance) =>
       'interval': instance.interval,
       'item': instance.item,
       'created_at': instance.created_at,
-      if (instance.notes case final value?) 'notes': value,
+      if (const NotesConverter().toJson(instance.notes) case final value?)
+        'notes': value,
     };

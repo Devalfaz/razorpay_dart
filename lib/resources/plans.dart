@@ -14,9 +14,8 @@ class Plans {
   /// Creates a plan
   ///
   /// @param params - Check [doc](https://razorpay.com/docs/api/payments/subscriptions/#create-a-plan) for required params
-  Future<Response<RazorpayPlan>> create({
+  Future<RazorpayPlan> create({
     required RazorpayPlanCreateRequestBody params,
-    void Function(RazorpayApiException?, Response<RazorpayPlan>?)? callback,
   }) async {
     const url = BASE_URL;
     return api.post<RazorpayPlan>(
@@ -25,16 +24,14 @@ class Plans {
         'data': params.toJson(),
       },
       fromJsonFactory: RazorpayPlan.fromJson,
-      callback: callback,
-    );
+    ).then((response) => response.data!);
   }
 
   /// Fetches a plan given Plan ID
   ///
   /// @param planId - The unique identifier of the plan
-  Future<Response<RazorpayPlan>> fetch({
+  Future<RazorpayPlan> fetch({
     required String planId,
-    void Function(RazorpayApiException?, Response<RazorpayPlan>?)? callback,
   }) async {
     if (planId.isEmpty) {
       throw ArgumentError(MISSING_ID_ERROR);
@@ -43,19 +40,14 @@ class Plans {
     return api.get<RazorpayPlan>(
       {'url': url},
       fromJsonFactory: RazorpayPlan.fromJson,
-      callback: callback,
-    );
+    ).then((response) => response.data!);
   }
 
   /// Get all Plans
   ///
   /// @param params - Check [doc](https://razorpay.com/docs/api/payments/subscriptions/#fetch-all-plans) for required params
-  Future<Response<RazorpayApiResponse<RazorpayPlan>>> all({
+  Future<RazorpayApiResponse<RazorpayPlan>> all({
     RazorpayPaginationOptions? params,
-    void Function(
-      RazorpayApiException?,
-      Response<RazorpayApiResponse<RazorpayPlan>>?,
-    )? callback,
   }) async {
     const url = BASE_URL;
     var from = params?.from;
@@ -76,19 +68,17 @@ class Plans {
       'count': count,
       'skip': skip,
       ...?params?.toJson(),
-    };
-    queryParams.removeWhere((key, value) => value == null);
+    }..removeWhere((key, value) => value == null);
 
     return api.get<RazorpayApiResponse<RazorpayPlan>>(
       {
         'url': url,
         'data': queryParams,
       },
-      callback: callback,
       fromJsonFactory: (json) => RazorpayApiResponse<RazorpayPlan>.fromJson(
         json,
         (itemJson) => RazorpayPlan.fromJson(itemJson! as Map<String, dynamic>),
       ),
-    );
+    ).then((response) => response.data!);
   }
 }

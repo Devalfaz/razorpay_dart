@@ -8,7 +8,7 @@ part 'refunds_model.g.dart';
 // --- Enums ---
 enum RefundSpeed { normal, optimum }
 
-enum RefundStatus { pending, processed, failed }
+enum RazorpayRefundStatus { pending, processed, failed }
 
 enum ProcessedSpeed { instant, normal } // For speed_processed response field
 
@@ -68,7 +68,7 @@ class RazorpayRefund with _$RazorpayRefund {
     required String currency,
     required String payment_id,
     required int created_at,
-    required RefundStatus status,
+    required RazorpayRefundStatus status,
     int?
         amount, // Use nullable int as amount might not be present in all contexts? d.ts shows optional
     IMap<dynamic>? notes, // IMap<string | number>

@@ -1,8 +1,7 @@
 // lib/resources/payment_link.dart
 import 'package:dio/dio.dart';
 import 'package:razorpay_dart/api.dart';
-import 'package:razorpay_dart/models/api_model.dart';
-import 'package:razorpay_dart/models/payment_link_model.dart';
+import 'package:razorpay_dart/razorpay_dart.dart';
 import 'package:razorpay_dart/utils.dart'; // For normalizeDate
 
 class PaymentLink {

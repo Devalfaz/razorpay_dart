@@ -26,6 +26,9 @@ import 'package:razorpay_dart/resources/virtual_accounts.dart';
 import 'package:razorpay_dart/resources/webhooks.dart';
 import 'package:razorpay_dart/utils.dart' as utils; // Alias utils
 
+export 'models/models.dart';
+export 'resources/resources.dart';
+
 /// Razorpay API Client for Dart.
 class Razorpay {
   Razorpay({

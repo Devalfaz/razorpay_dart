@@ -529,7 +529,8 @@ mixin _$RazorpayPlan {
   RazorpayItem get item => throw _privateConstructorUsedError;
   int get created_at =>
       throw _privateConstructorUsedError; // Use the full Item response model
-  IMap<dynamic>? get notes => throw _privateConstructorUsedError;
+  @NotesConverter()
+  Map<String, dynamic>? get notes => throw _privateConstructorUsedError;
 
   /// Serializes this RazorpayPlan to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -554,7 +555,7 @@ abstract class $RazorpayPlanCopyWith<$Res> {
       int interval,
       RazorpayItem item,
       int created_at,
-      IMap<dynamic>? notes});
+      @NotesConverter() Map<String, dynamic>? notes});
 
   $RazorpayItemCopyWith<$Res> get item;
 }
@@ -610,7 +611,7 @@ class _$RazorpayPlanCopyWithImpl<$Res, $Val extends RazorpayPlan>
       notes: freezed == notes
           ? _value.notes
           : notes // ignore: cast_nullable_to_non_nullable
-              as IMap<dynamic>?,
+              as Map<String, dynamic>?,
     ) as $Val);
   }
 
@@ -640,7 +641,7 @@ abstract class _$$RazorpayPlanImplCopyWith<$Res>
       int interval,
       RazorpayItem item,
       int created_at,
-      IMap<dynamic>? notes});
+      @NotesConverter() Map<String, dynamic>? notes});
 
   @override
   $RazorpayItemCopyWith<$Res> get item;
@@ -695,7 +696,7 @@ class __$$RazorpayPlanImplCopyWithImpl<$Res>
       notes: freezed == notes
           ? _value._notes
           : notes // ignore: cast_nullable_to_non_nullable
-              as IMap<dynamic>?,
+              as Map<String, dynamic>?,
     ));
   }
 }
@@ -711,7 +712,7 @@ class _$RazorpayPlanImpl implements _RazorpayPlan {
       required this.interval,
       required this.item,
       required this.created_at,
-      final IMap<dynamic>? notes})
+      @NotesConverter() final Map<String, dynamic>? notes})
       : _notes = notes;
 
   factory _$RazorpayPlanImpl.fromJson(Map<String, dynamic> json) =>
@@ -730,10 +731,11 @@ class _$RazorpayPlanImpl implements _RazorpayPlan {
   @override
   final int created_at;
 // Use the full Item response model
-  final IMap<dynamic>? _notes;
+  final Map<String, dynamic>? _notes;
 // Use the full Item response model
   @override
-  IMap<dynamic>? get notes {
+  @NotesConverter()
+  Map<String, dynamic>? get notes {
     final value = _notes;
     if (value == null) return null;
     if (_notes is EqualUnmodifiableMapView) return _notes;
@@ -785,13 +787,14 @@ class _$RazorpayPlanImpl implements _RazorpayPlan {
 
 abstract class _RazorpayPlan implements RazorpayPlan {
   const factory _RazorpayPlan(
-      {required final String id,
-      required final String entity,
-      required final PlanPeriod period,
-      required final int interval,
-      required final RazorpayItem item,
-      required final int created_at,
-      final IMap<dynamic>? notes}) = _$RazorpayPlanImpl;
+          {required final String id,
+          required final String entity,
+          required final PlanPeriod period,
+          required final int interval,
+          required final RazorpayItem item,
+          required final int created_at,
+          @NotesConverter() final Map<String, dynamic>? notes}) =
+      _$RazorpayPlanImpl;
 
   factory _RazorpayPlan.fromJson(Map<String, dynamic> json) =
       _$RazorpayPlanImpl.fromJson;
@@ -809,7 +812,8 @@ abstract class _RazorpayPlan implements RazorpayPlan {
   @override
   int get created_at; // Use the full Item response model
   @override
-  IMap<dynamic>? get notes;
+  @NotesConverter()
+  Map<String, dynamic>? get notes;
 
   /// Create a copy of RazorpayPlan
   /// with the given fields replaced by the non-null parameter values.

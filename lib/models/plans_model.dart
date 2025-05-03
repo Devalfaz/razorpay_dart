@@ -1,10 +1,34 @@
 // lib/models/plans_model.dart
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:razorpay_dart/models/api_model.dart'; // For IMap
-import 'package:razorpay_dart/models/items_model.dart'; // For Item types
+import 'items_model.dart'; // For Item types
 
 part 'plans_model.freezed.dart';
 part 'plans_model.g.dart';
+
+// Define the custom converter
+class NotesConverter implements JsonConverter<Map<String, dynamic>?, dynamic> {
+  const NotesConverter();
+
+  @override
+  Map<String, dynamic>? fromJson(dynamic json) {
+    if (json is List && json.isEmpty) {
+      // If it's an empty list, return an empty map
+      return <String, dynamic>{};
+    } else if (json is Map) {
+      // If it's a map, cast it and return
+      return Map<String, dynamic>.from(json);
+    }
+    // Handle null or other unexpected types
+    return null; // Or return <String, dynamic>{} based on preference
+  }
+
+  @override
+  dynamic toJson(Map<String, dynamic>? object) {
+    // Convert back to JSON
+    return object;
+  }
+}
 
 // Enums
 enum PlanPeriod { daily, weekly, monthly, yearly }
@@ -52,7 +76,7 @@ class RazorpayPlan with _$RazorpayPlan {
     required int interval,
     required RazorpayItem item,
     required int created_at, // Use the full Item response model
-    IMap<dynamic>? notes,
+    @NotesConverter() Map<String, dynamic>? notes,
   }) = _RazorpayPlan;
 
   factory RazorpayPlan.fromJson(Map<String, dynamic> json) =>

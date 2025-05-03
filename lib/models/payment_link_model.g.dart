@@ -274,15 +274,3 @@ Map<String, dynamic> _$$RazorpayPaymentLinkListResponseImplToJson(
     <String, dynamic>{
       'payment_links': instance.payment_links,
     };
-
-_$RazorpayNotifyResponseImpl _$$RazorpayNotifyResponseImplFromJson(
-        Map<String, dynamic> json) =>
-    _$RazorpayNotifyResponseImpl(
-      success: json['success'] as bool,
-    );
-
-Map<String, dynamic> _$$RazorpayNotifyResponseImplToJson(
-        _$RazorpayNotifyResponseImpl instance) =>
-    <String, dynamic>{
-      'success': instance.success,
-    };

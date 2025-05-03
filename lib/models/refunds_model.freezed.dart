@@ -658,7 +658,7 @@ mixin _$RazorpayRefund {
   String get currency => throw _privateConstructorUsedError;
   String get payment_id => throw _privateConstructorUsedError;
   int get created_at => throw _privateConstructorUsedError;
-  RefundStatus get status => throw _privateConstructorUsedError;
+  RazorpayRefundStatus get status => throw _privateConstructorUsedError;
   int? get amount =>
       throw _privateConstructorUsedError; // Use nullable int as amount might not be present in all contexts? d.ts shows optional
   IMap<dynamic>? get notes =>
@@ -694,7 +694,7 @@ abstract class $RazorpayRefundCopyWith<$Res> {
       String currency,
       String payment_id,
       int created_at,
-      RefundStatus status,
+      RazorpayRefundStatus status,
       int? amount,
       IMap<dynamic>? notes,
       String? receipt,
@@ -757,7 +757,7 @@ class _$RazorpayRefundCopyWithImpl<$Res, $Val extends RazorpayRefund>
       status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
-              as RefundStatus,
+              as RazorpayRefundStatus,
       amount: freezed == amount
           ? _value.amount
           : amount // ignore: cast_nullable_to_non_nullable
@@ -804,7 +804,7 @@ abstract class _$$RazorpayRefundImplCopyWith<$Res>
       String currency,
       String payment_id,
       int created_at,
-      RefundStatus status,
+      RazorpayRefundStatus status,
       int? amount,
       IMap<dynamic>? notes,
       String? receipt,
@@ -865,7 +865,7 @@ class __$$RazorpayRefundImplCopyWithImpl<$Res>
       status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
-              as RefundStatus,
+              as RazorpayRefundStatus,
       amount: freezed == amount
           ? _value.amount
           : amount // ignore: cast_nullable_to_non_nullable
@@ -933,7 +933,7 @@ class _$RazorpayRefundImpl implements _RazorpayRefund {
   @override
   final int created_at;
   @override
-  final RefundStatus status;
+  final RazorpayRefundStatus status;
   @override
   final int? amount;
 // Use nullable int as amount might not be present in all contexts? d.ts shows optional
@@ -1049,7 +1049,7 @@ abstract class _RazorpayRefund implements RazorpayRefund {
       required final String currency,
       required final String payment_id,
       required final int created_at,
-      required final RefundStatus status,
+      required final RazorpayRefundStatus status,
       final int? amount,
       final IMap<dynamic>? notes,
       final String? receipt,
@@ -1072,7 +1072,7 @@ abstract class _RazorpayRefund implements RazorpayRefund {
   @override
   int get created_at;
   @override
-  RefundStatus get status;
+  RazorpayRefundStatus get status;
   @override
   int?
       get amount; // Use nullable int as amount might not be present in all contexts? d.ts shows optional

@@ -223,15 +223,3 @@ class RazorpayPaymentLinkListResponse with _$RazorpayPaymentLinkListResponse {
   factory RazorpayPaymentLinkListResponse.fromJson(Map<String, dynamic> json) =>
       _$RazorpayPaymentLinkListResponseFromJson(json);
 }
-
-// --- Notify Response ---
-@freezed
-class RazorpayNotifyResponse with _$RazorpayNotifyResponse {
-  @JsonSerializable(includeIfNull: false)
-  const factory RazorpayNotifyResponse({
-    required bool success,
-  }) = _RazorpayNotifyResponse;
-
-  factory RazorpayNotifyResponse.fromJson(Map<String, dynamic> json) =>
-      _$RazorpayNotifyResponseFromJson(json);
-}

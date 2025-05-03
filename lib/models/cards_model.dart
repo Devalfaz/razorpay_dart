@@ -5,9 +5,6 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part 'cards_model.freezed.dart';
 part 'cards_model.g.dart';
 
-// Enums
-enum CardNetwork { Mastercard, RuPay, Visa } // Add others as needed from d.ts
-
 // Request Bodies
 @freezed
 class RazorpayCardReferenceNumberBaseRequest

@@ -49,7 +49,7 @@ Add `razorpay_dart` to your `pubspec.yaml` dependencies:
 
 ```yaml
 dependencies:
-  razorpay_dart: ^0.0.1 # Use the latest version
+  razorpay_dart: ^0.0.2 # Use the latest version
 ```
 
 Then, run `flutter pub get` (or `dart pub get`).
@@ -63,73 +63,34 @@ import 'package:razorpay_dart/razorpay_dart.dart';
 
 void main() async {
   // Replace with your actual Key ID and Key Secret
-  final String keyId = 'YOUR_KEY_ID';
-  final String keySecret = 'YOUR_KEY_SECRET';
+  const keyId = 'TEST_KEY_ID';
+  const keySecret = 'TEST_KEY_SECRET';
 
-  final razorpay = Razorpay(keyId, keySecret);
+  final razorpay = Razorpay(keyId: keyId, keySecret: keySecret);
 
-  // Example: Fetch orders (adjust parameters as needed)
-  try {
-    final orders = await razorpay.orders.fetchAll({
-      'count': 10, // Fetch 10 orders
-    });
-    print('Fetched ${orders['count']} orders:');
-    // Process the orders (orders['items'])
-    print(orders);
-  } catch (e) {
-    print('Error fetching orders: $e');
-  }
+  // Create a plan
+  final plan = await razorpay.plans.create(
+    params: const RazorpayPlanCreateRequestBody(
+      interval: 12,
+      item: RazorpayItemBaseRequestBody(
+        name: 'Test Plan',
+        amount: 1000,
+        currency: 'INR',
+      ),
+      period: PlanPeriod.monthly,
+      notes: {
+        'key': 'value',
+      },
+    ),
+  );
+  print(plan.toJson());
 
-  // --- More examples for other APIs ---
+  // Get a plan
+  final singlePlan = await razorpay.plans.fetch(planId: plan.id);
+  print(singlePlan.toJson());
 
-  // Example: Create an Order
-  String? createdOrderId;
-  try {
-    final orderData = {
-      'amount': 50000, // Amount in paise (e.g., 50000 paise = ₹500)
-      'currency': 'INR',
-      'receipt': 'receipt#1',
-      'notes': {
-        'key1': 'value3',
-        'key2': 'value2'
-      }
-    };
-    final newOrder = await razorpay.orders.create(orderData);
-    print('Created Order:');
-    print(newOrder);
-    createdOrderId = newOrder['id']; // Store for verification example
-  } catch (e) {
-    print('Error creating order: $e');
-  }
-
-  // Example: Verify Payment Signature (Simulated - replace with actual data from your frontend)
-  if (createdOrderId != null) {
-    try {
-      final attributes = {
-         'razorpay_order_id': createdOrderId,
-         'razorpay_payment_id': 'pay_ABCDE12345', // Replace with actual payment ID
-         'razorpay_signature': 'generated_signature_from_frontend' // Replace with actual signature
-      };
-      final isValid = razorpay.utils.verifyPaymentSignature(attributes);
-      print('Payment Signature Valid: $isValid');
-    } catch (e) {
-      print('Error verifying payment signature: $e');
-    }
-  }
-
- // Example: Verify Webhook Signature (Simulated - replace with actual data from webhook)
- try {
-   final webhookBody = '{"event":"payment.authorized",...}'; // Replace with actual webhook body
-   final webhookSignature = 'sha256=generated_signature_from_header'; // Replace with actual X-Razorpay-Signature header
-   final webhookSecret = 'YOUR_WEBHOOK_SECRET'; // Replace with your configured webhook secret
-
-   final isValid = razorpay.utils.verifyWebhookSignature(webhookBody, webhookSignature, webhookSecret);
-   print('Webhook Signature Valid: $isValid');
- } catch (e) {
-   print('Error verifying webhook signature: $e');
- }
-
-
+  final getAllPlans = await razorpay.plans.all();
+  print(getAllPlans.toJson((value) => value.toJson()));
 }
 ```
 
