@@ -1,5 +1,4 @@
 // lib/resources/plans.dart
-import 'package:dio/dio.dart';
 import 'package:razorpay_dart/api.dart';
 import 'package:razorpay_dart/models/api_model.dart';
 import 'package:razorpay_dart/models/plans_model.dart';
