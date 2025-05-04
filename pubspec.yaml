@@ -1,6 +1,6 @@
 name: razorpay_dart
 description: "A Dart package for interacting with the Razorpay API."
-version: 0.0.2
+version: 0.0.3
 repository: https://github.com/devalfaz/razorpay_dart
 homepage: https://github.com/devalfaz/razorpay_dart
 issues: https://github.com/devalfaz/razorpay_dart/issues

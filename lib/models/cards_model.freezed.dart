@@ -14,74 +14,80 @@ part of 'cards_model.dart';
 T _$identity<T>(T value) => value;
 
 /// @nodoc
-mixin _$RazorpayCardReferenceNumberBaseRequest {
-  String get number;
+mixin _$RazorpayCardReferenceRequest {
+  String? get number;
+  String? get token;
   bool? get tokenised;
 
-  /// Create a copy of RazorpayCardReferenceNumberBaseRequest
+  /// Create a copy of RazorpayCardReferenceRequest
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
-  $RazorpayCardReferenceNumberBaseRequestCopyWith<
-          RazorpayCardReferenceNumberBaseRequest>
-      get copyWith => _$RazorpayCardReferenceNumberBaseRequestCopyWithImpl<
-              RazorpayCardReferenceNumberBaseRequest>(
-          this as RazorpayCardReferenceNumberBaseRequest, _$identity);
+  $RazorpayCardReferenceRequestCopyWith<RazorpayCardReferenceRequest>
+      get copyWith => _$RazorpayCardReferenceRequestCopyWithImpl<
+              RazorpayCardReferenceRequest>(
+          this as RazorpayCardReferenceRequest, _$identity);
 
-  /// Serializes this RazorpayCardReferenceNumberBaseRequest to a JSON map.
+  /// Serializes this RazorpayCardReferenceRequest to a JSON map.
   Map<String, dynamic> toJson();
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is RazorpayCardReferenceNumberBaseRequest &&
+            other is RazorpayCardReferenceRequest &&
             (identical(other.number, number) || other.number == number) &&
+            (identical(other.token, token) || other.token == token) &&
             (identical(other.tokenised, tokenised) ||
                 other.tokenised == tokenised));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, number, tokenised);
+  int get hashCode => Object.hash(runtimeType, number, token, tokenised);
 
   @override
   String toString() {
-    return 'RazorpayCardReferenceNumberBaseRequest(number: $number, tokenised: $tokenised)';
+    return 'RazorpayCardReferenceRequest(number: $number, token: $token, tokenised: $tokenised)';
   }
 }
 
 /// @nodoc
-abstract mixin class $RazorpayCardReferenceNumberBaseRequestCopyWith<$Res> {
-  factory $RazorpayCardReferenceNumberBaseRequestCopyWith(
-          RazorpayCardReferenceNumberBaseRequest value,
-          $Res Function(RazorpayCardReferenceNumberBaseRequest) _then) =
-      _$RazorpayCardReferenceNumberBaseRequestCopyWithImpl;
+abstract mixin class $RazorpayCardReferenceRequestCopyWith<$Res> {
+  factory $RazorpayCardReferenceRequestCopyWith(
+          RazorpayCardReferenceRequest value,
+          $Res Function(RazorpayCardReferenceRequest) _then) =
+      _$RazorpayCardReferenceRequestCopyWithImpl;
   @useResult
-  $Res call({String number, bool? tokenised});
+  $Res call({String? number, String? token, bool? tokenised});
 }
 
 /// @nodoc
-class _$RazorpayCardReferenceNumberBaseRequestCopyWithImpl<$Res>
-    implements $RazorpayCardReferenceNumberBaseRequestCopyWith<$Res> {
-  _$RazorpayCardReferenceNumberBaseRequestCopyWithImpl(this._self, this._then);
+class _$RazorpayCardReferenceRequestCopyWithImpl<$Res>
+    implements $RazorpayCardReferenceRequestCopyWith<$Res> {
+  _$RazorpayCardReferenceRequestCopyWithImpl(this._self, this._then);
 
-  final RazorpayCardReferenceNumberBaseRequest _self;
-  final $Res Function(RazorpayCardReferenceNumberBaseRequest) _then;
+  final RazorpayCardReferenceRequest _self;
+  final $Res Function(RazorpayCardReferenceRequest) _then;
 
-  /// Create a copy of RazorpayCardReferenceNumberBaseRequest
+  /// Create a copy of RazorpayCardReferenceRequest
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? number = null,
+    Object? number = freezed,
+    Object? token = freezed,
     Object? tokenised = freezed,
   }) {
     return _then(_self.copyWith(
-      number: null == number
+      number: freezed == number
           ? _self.number
           : number // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
+      token: freezed == token
+          ? _self.token
+          : token // ignore: cast_nullable_to_non_nullable
+              as String?,
       tokenised: freezed == tokenised
           ? _self.tokenised
           : tokenised // ignore: cast_nullable_to_non_nullable
@@ -93,32 +99,36 @@ class _$RazorpayCardReferenceNumberBaseRequestCopyWithImpl<$Res>
 /// @nodoc
 
 @JsonSerializable(includeIfNull: false)
-class _RazorpayCardReferenceNumberBaseRequest
-    implements RazorpayCardReferenceNumberBaseRequest {
-  const _RazorpayCardReferenceNumberBaseRequest(
-      {required this.number, this.tokenised});
-  factory _RazorpayCardReferenceNumberBaseRequest.fromJson(
-          Map<String, dynamic> json) =>
-      _$RazorpayCardReferenceNumberBaseRequestFromJson(json);
+class _RazorpayCardReferenceRequest implements RazorpayCardReferenceRequest {
+  const _RazorpayCardReferenceRequest({this.number, this.token, this.tokenised})
+      : assert(
+            (number != null && token == null) ||
+                (number == null && token != null),
+            'Either number or token must be provided, but not both.'),
+        assert(tokenised == null || number != null,
+            'tokenised can only be set if number is provided.');
+  factory _RazorpayCardReferenceRequest.fromJson(Map<String, dynamic> json) =>
+      _$RazorpayCardReferenceRequestFromJson(json);
 
   @override
-  final String number;
+  final String? number;
+  @override
+  final String? token;
   @override
   final bool? tokenised;
 
-  /// Create a copy of RazorpayCardReferenceNumberBaseRequest
+  /// Create a copy of RazorpayCardReferenceRequest
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
-  _$RazorpayCardReferenceNumberBaseRequestCopyWith<
-          _RazorpayCardReferenceNumberBaseRequest>
-      get copyWith => __$RazorpayCardReferenceNumberBaseRequestCopyWithImpl<
-          _RazorpayCardReferenceNumberBaseRequest>(this, _$identity);
+  _$RazorpayCardReferenceRequestCopyWith<_RazorpayCardReferenceRequest>
+      get copyWith => __$RazorpayCardReferenceRequestCopyWithImpl<
+          _RazorpayCardReferenceRequest>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$RazorpayCardReferenceNumberBaseRequestToJson(
+    return _$RazorpayCardReferenceRequestToJson(
       this,
     );
   }
@@ -127,212 +137,65 @@ class _RazorpayCardReferenceNumberBaseRequest
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _RazorpayCardReferenceNumberBaseRequest &&
+            other is _RazorpayCardReferenceRequest &&
             (identical(other.number, number) || other.number == number) &&
+            (identical(other.token, token) || other.token == token) &&
             (identical(other.tokenised, tokenised) ||
                 other.tokenised == tokenised));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, number, tokenised);
+  int get hashCode => Object.hash(runtimeType, number, token, tokenised);
 
   @override
   String toString() {
-    return 'RazorpayCardReferenceNumberBaseRequest(number: $number, tokenised: $tokenised)';
+    return 'RazorpayCardReferenceRequest(number: $number, token: $token, tokenised: $tokenised)';
   }
 }
 
 /// @nodoc
-abstract mixin class _$RazorpayCardReferenceNumberBaseRequestCopyWith<$Res>
-    implements $RazorpayCardReferenceNumberBaseRequestCopyWith<$Res> {
-  factory _$RazorpayCardReferenceNumberBaseRequestCopyWith(
-          _RazorpayCardReferenceNumberBaseRequest value,
-          $Res Function(_RazorpayCardReferenceNumberBaseRequest) _then) =
-      __$RazorpayCardReferenceNumberBaseRequestCopyWithImpl;
+abstract mixin class _$RazorpayCardReferenceRequestCopyWith<$Res>
+    implements $RazorpayCardReferenceRequestCopyWith<$Res> {
+  factory _$RazorpayCardReferenceRequestCopyWith(
+          _RazorpayCardReferenceRequest value,
+          $Res Function(_RazorpayCardReferenceRequest) _then) =
+      __$RazorpayCardReferenceRequestCopyWithImpl;
   @override
   @useResult
-  $Res call({String number, bool? tokenised});
+  $Res call({String? number, String? token, bool? tokenised});
 }
 
 /// @nodoc
-class __$RazorpayCardReferenceNumberBaseRequestCopyWithImpl<$Res>
-    implements _$RazorpayCardReferenceNumberBaseRequestCopyWith<$Res> {
-  __$RazorpayCardReferenceNumberBaseRequestCopyWithImpl(this._self, this._then);
+class __$RazorpayCardReferenceRequestCopyWithImpl<$Res>
+    implements _$RazorpayCardReferenceRequestCopyWith<$Res> {
+  __$RazorpayCardReferenceRequestCopyWithImpl(this._self, this._then);
 
-  final _RazorpayCardReferenceNumberBaseRequest _self;
-  final $Res Function(_RazorpayCardReferenceNumberBaseRequest) _then;
+  final _RazorpayCardReferenceRequest _self;
+  final $Res Function(_RazorpayCardReferenceRequest) _then;
 
-  /// Create a copy of RazorpayCardReferenceNumberBaseRequest
+  /// Create a copy of RazorpayCardReferenceRequest
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $Res call({
-    Object? number = null,
+    Object? number = freezed,
+    Object? token = freezed,
     Object? tokenised = freezed,
   }) {
-    return _then(_RazorpayCardReferenceNumberBaseRequest(
-      number: null == number
+    return _then(_RazorpayCardReferenceRequest(
+      number: freezed == number
           ? _self.number
           : number // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
+      token: freezed == token
+          ? _self.token
+          : token // ignore: cast_nullable_to_non_nullable
+              as String?,
       tokenised: freezed == tokenised
           ? _self.tokenised
           : tokenised // ignore: cast_nullable_to_non_nullable
               as bool?,
-    ));
-  }
-}
-
-/// @nodoc
-mixin _$RazorpayCardReferenceTokenBaseRequest {
-  String get token;
-
-  /// Create a copy of RazorpayCardReferenceTokenBaseRequest
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  $RazorpayCardReferenceTokenBaseRequestCopyWith<
-          RazorpayCardReferenceTokenBaseRequest>
-      get copyWith => _$RazorpayCardReferenceTokenBaseRequestCopyWithImpl<
-              RazorpayCardReferenceTokenBaseRequest>(
-          this as RazorpayCardReferenceTokenBaseRequest, _$identity);
-
-  /// Serializes this RazorpayCardReferenceTokenBaseRequest to a JSON map.
-  Map<String, dynamic> toJson();
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is RazorpayCardReferenceTokenBaseRequest &&
-            (identical(other.token, token) || other.token == token));
-  }
-
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(runtimeType, token);
-
-  @override
-  String toString() {
-    return 'RazorpayCardReferenceTokenBaseRequest(token: $token)';
-  }
-}
-
-/// @nodoc
-abstract mixin class $RazorpayCardReferenceTokenBaseRequestCopyWith<$Res> {
-  factory $RazorpayCardReferenceTokenBaseRequestCopyWith(
-          RazorpayCardReferenceTokenBaseRequest value,
-          $Res Function(RazorpayCardReferenceTokenBaseRequest) _then) =
-      _$RazorpayCardReferenceTokenBaseRequestCopyWithImpl;
-  @useResult
-  $Res call({String token});
-}
-
-/// @nodoc
-class _$RazorpayCardReferenceTokenBaseRequestCopyWithImpl<$Res>
-    implements $RazorpayCardReferenceTokenBaseRequestCopyWith<$Res> {
-  _$RazorpayCardReferenceTokenBaseRequestCopyWithImpl(this._self, this._then);
-
-  final RazorpayCardReferenceTokenBaseRequest _self;
-  final $Res Function(RazorpayCardReferenceTokenBaseRequest) _then;
-
-  /// Create a copy of RazorpayCardReferenceTokenBaseRequest
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? token = null,
-  }) {
-    return _then(_self.copyWith(
-      token: null == token
-          ? _self.token
-          : token // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
-}
-
-/// @nodoc
-
-@JsonSerializable(includeIfNull: false)
-class _RazorpayCardReferenceTokenBaseRequest
-    implements RazorpayCardReferenceTokenBaseRequest {
-  const _RazorpayCardReferenceTokenBaseRequest({required this.token});
-  factory _RazorpayCardReferenceTokenBaseRequest.fromJson(
-          Map<String, dynamic> json) =>
-      _$RazorpayCardReferenceTokenBaseRequestFromJson(json);
-
-  @override
-  final String token;
-
-  /// Create a copy of RazorpayCardReferenceTokenBaseRequest
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  _$RazorpayCardReferenceTokenBaseRequestCopyWith<
-          _RazorpayCardReferenceTokenBaseRequest>
-      get copyWith => __$RazorpayCardReferenceTokenBaseRequestCopyWithImpl<
-          _RazorpayCardReferenceTokenBaseRequest>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$RazorpayCardReferenceTokenBaseRequestToJson(
-      this,
-    );
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _RazorpayCardReferenceTokenBaseRequest &&
-            (identical(other.token, token) || other.token == token));
-  }
-
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(runtimeType, token);
-
-  @override
-  String toString() {
-    return 'RazorpayCardReferenceTokenBaseRequest(token: $token)';
-  }
-}
-
-/// @nodoc
-abstract mixin class _$RazorpayCardReferenceTokenBaseRequestCopyWith<$Res>
-    implements $RazorpayCardReferenceTokenBaseRequestCopyWith<$Res> {
-  factory _$RazorpayCardReferenceTokenBaseRequestCopyWith(
-          _RazorpayCardReferenceTokenBaseRequest value,
-          $Res Function(_RazorpayCardReferenceTokenBaseRequest) _then) =
-      __$RazorpayCardReferenceTokenBaseRequestCopyWithImpl;
-  @override
-  @useResult
-  $Res call({String token});
-}
-
-/// @nodoc
-class __$RazorpayCardReferenceTokenBaseRequestCopyWithImpl<$Res>
-    implements _$RazorpayCardReferenceTokenBaseRequestCopyWith<$Res> {
-  __$RazorpayCardReferenceTokenBaseRequestCopyWithImpl(this._self, this._then);
-
-  final _RazorpayCardReferenceTokenBaseRequest _self;
-  final $Res Function(_RazorpayCardReferenceTokenBaseRequest) _then;
-
-  /// Create a copy of RazorpayCardReferenceTokenBaseRequest
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $Res call({
-    Object? token = null,
-  }) {
-    return _then(_RazorpayCardReferenceTokenBaseRequest(
-      token: null == token
-          ? _self.token
-          : token // ignore: cast_nullable_to_non_nullable
-              as String,
     ));
   }
 }
@@ -340,8 +203,7 @@ class __$RazorpayCardReferenceTokenBaseRequestCopyWithImpl<$Res>
 /// @nodoc
 mixin _$RazorpayCardReference {
   String get provider;
-  String?
-      get network; // Map from d.ts Network type if needed, or keep as String
+  CardNetwork? get network; // Keep as String for now
   String? get payment_account_reference;
   String? get network_reference_id;
   String? get card_reference_number;
@@ -393,7 +255,7 @@ abstract mixin class $RazorpayCardReferenceCopyWith<$Res> {
   @useResult
   $Res call(
       {String provider,
-      String? network,
+      CardNetwork? network,
       String? payment_account_reference,
       String? network_reference_id,
       String? card_reference_number});
@@ -426,7 +288,7 @@ class _$RazorpayCardReferenceCopyWithImpl<$Res>
       network: freezed == network
           ? _self.network
           : network // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as CardNetwork?,
       payment_account_reference: freezed == payment_account_reference
           ? _self.payment_account_reference
           : payment_account_reference // ignore: cast_nullable_to_non_nullable
@@ -459,8 +321,8 @@ class _RazorpayCardReference implements RazorpayCardReference {
   @override
   final String provider;
   @override
-  final String? network;
-// Map from d.ts Network type if needed, or keep as String
+  final CardNetwork? network;
+// Keep as String for now
   @override
   final String? payment_account_reference;
   @override
@@ -522,7 +384,7 @@ abstract mixin class _$RazorpayCardReferenceCopyWith<$Res>
   @useResult
   $Res call(
       {String provider,
-      String? network,
+      CardNetwork? network,
       String? payment_account_reference,
       String? network_reference_id,
       String? card_reference_number});
@@ -555,7 +417,7 @@ class __$RazorpayCardReferenceCopyWithImpl<$Res>
       network: freezed == network
           ? _self.network
           : network // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as CardNetwork?,
       payment_account_reference: freezed == payment_account_reference
           ? _self.payment_account_reference
           : payment_account_reference // ignore: cast_nullable_to_non_nullable

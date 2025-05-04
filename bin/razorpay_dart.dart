@@ -1,68 +1,153 @@
 import 'package:razorpay_dart/razorpay_dart.dart';
 
-void main() async {
-  // Replace with your actual Key ID and Key Secret
-  const keyId = String.fromEnvironment('RAZORPAY_KEY_ID');
-  const keySecret = String.fromEnvironment('RAZORPAY_KEY_SECRET');
+// Function to demonstrate Plan operations
+Future<void> _demonstratePlans(Razorpay razorpay) async {
+  print('\n--- Demonstrating Plans ---');
+  try {
+    // Create a plan
+    print('Creating Plan...');
+    final plan = await razorpay.plans.create(
+      params: const RazorpayPlanCreateRequestBody(
+        interval: 12,
+        item: RazorpayItemBaseRequestBody(
+          name: 'Test Plan',
+          amount: 1000,
+          currency: 'INR',
+        ),
+        period: PlanPeriod.monthly,
+        notes: {
+          'key': 'value',
+        },
+      ),
+    );
+    print('Created Plan: ${plan.toJson()}');
 
-  final razorpay = Razorpay(keyId: keyId, keySecret: keySecret);
+    // Get a plan
+    print('\nFetching Plan ${plan.id}...');
+    final singlePlan = await razorpay.plans.fetch(planId: plan.id);
+    print('Fetched Plan: ${singlePlan.toJson()}');
 
-  print(keyId);
-  print(keySecret);
+    // Get all plans
+    print('\nFetching All Plans...');
+    final getAllPlans = await razorpay.plans.all();
+    print(
+        'Fetched All Plans: ${getAllPlans.toJson((value) => value.toJson())}');
+  } catch (e, s) {
+    print('Error during Plan operations: $e\n$s');
+  }
+}
 
-  // Create a plan
-  final plan = await razorpay.plans.create(
-    params: const RazorpayPlanCreateRequestBody(
-      interval: 12,
-      item: RazorpayItemBaseRequestBody(
-        name: 'Test Plan',
+// Function to demonstrate Item operations
+Future<void> _demonstrateItems(Razorpay razorpay) async {
+  print('\n--- Demonstrating Items ---');
+  String? createdItemId; // To hold the ID for later deletion
+  try {
+    // Create an item
+    print('Creating Item...');
+    final item = await razorpay.items.create(
+      params: const RazorpayItemCreateRequestBody(
+        name: 'Test Item',
         amount: 1000,
         currency: 'INR',
       ),
-      period: PlanPeriod.monthly,
-      notes: {
-        'key': 'value',
-      },
-    ),
-  );
-  print(plan.toJson());
+    );
+    createdItemId = item.id; // Store the ID
+    print('Created Item: ${item.toJson()}');
 
-  // Get a plan
-  final singlePlan = await razorpay.plans.fetch(planId: plan.id);
-  print(singlePlan.toJson());
+    // Get an item
+    print('\nFetching Item ${item.id}...');
+    final singleItem = await razorpay.items.fetch(itemId: item.id);
+    print('Fetched Item: ${singleItem.toJson()}');
 
-  // Get all plans
-  final getAllPlans = await razorpay.plans.all();
-  print(getAllPlans.toJson((value) => value.toJson()));
+    // Get all items
+    print('\nFetching All Items...');
+    final getAllItems = await razorpay.items.all();
+    print(
+        'Fetched All Items: ${getAllItems.toJson((value) => value.toJson())}');
 
-  // Create a item
-  final item = await razorpay.items.create(
-    params: const RazorpayItemCreateRequestBody(
-      name: 'Test Item',
-      amount: 1000,
-      currency: 'INR',
-    ),
-  );
-  print(item.toJson());
+    // Edit an item
+    print('\nEditing Item ${item.id}...');
+    final editedItem = await razorpay.items.edit(
+      itemId: item.id,
+      params: const RazorpayItemUpdateRequestBody(
+        name: 'Updated Test Item', // Changed name
+      ),
+    );
+    print('Edited Item: ${editedItem.toJson()}');
 
-  // Get a item
-  final singleItem = await razorpay.items.fetch(itemId: item.id);
-  print(singleItem.toJson());
+    // Delete an item
+    if (createdItemId != null) {
+      print('\nDeleting Item ${createdItemId}...');
+      final deletedItem = await razorpay.items.delete(itemId: createdItemId);
+      print('Deleted Item Response: ${deletedItem.toJson()}');
+      // Reset ID after deletion
+      createdItemId = null;
+    }
+  } catch (e, s) {
+    print('Error during Item operations: $e\n$s');
+    // Attempt cleanup if an item was created but deletion failed later
+    if (createdItemId != null) {
+      try {
+        print(
+            '\nAttempting cleanup: Deleting Item ${createdItemId} after error...');
+        await razorpay.items.delete(itemId: createdItemId);
+        print('Cleanup successful.');
+      } catch (cleanupError) {
+        print(
+            'Cleanup failed: Could not delete item $createdItemId. Error: $cleanupError');
+      }
+    }
+  }
+}
 
-  // Get all items
-  final getAllItems = await razorpay.items.all();
-  print(getAllItems.toJson((value) => value.toJson()));
+// Function to demonstrate Card operations
+// Function to demonstrate Plan operations
+Future<void> _demonstrateCards(Razorpay razorpay) async {
+  print('\n--- Demonstrating Cards ---');
+  try {
+    // Create a card
+    print('Requesting Card Reference...');
+    final card = await razorpay.cards.requestCardReference(
+      params: const RazorpayCardReferenceRequest(
+        number: '1234567890123456',
+      ),
+    );
+    print('Fetched Card Reference: ${card.toJson()}');
 
-  // Edit a item
-  final editedItem = await razorpay.items.edit(
-    itemId: item.id,
-    params: const RazorpayItemUpdateRequestBody(
-      name: 'Test Item',
-    ),
-  );
-  print(editedItem.toJson());
+    // Get a card
+    print('\nFetching Card ${card.card_reference_number}...');
+    final singleCard = await razorpay.cards.fetch(cardId: '1234567890123456');
+    print('Fetched Card: ${singleCard.toJson()}');
+  } catch (e, s) {
+    print('Error during Card operations: $e\n$s');
+  }
+}
 
-  // Delete a item
-  final deletedItem = await razorpay.items.delete(itemId: item.id);
-  print(deletedItem.toJson());
+void main() async {
+  // Replace with your actual Key ID and Key Secret from environment variables
+  const keyId = String.fromEnvironment('RAZORPAY_KEY_ID');
+  const keySecret = String.fromEnvironment('RAZORPAY_KEY_SECRET');
+
+  if (keyId.isEmpty || keySecret.isEmpty) {
+    print(
+        'Error: RAZORPAY_KEY_ID or RAZORPAY_KEY_SECRET not set. Ensure .env file exists and is passed via --dart-define-from-file=.env');
+    return;
+  }
+
+  print('Using Key ID: $keyId');
+  // Avoid printing the secret in production/real scenarios
+  // print('Using Key Secret: $keySecret');
+
+  final razorpay = Razorpay(keyId: keyId, keySecret: keySecret);
+
+  // Demonstrate Plan operations
+  await _demonstratePlans(razorpay);
+
+  // Demonstrate Item operations
+  await _demonstrateItems(razorpay);
+
+  // Demonstrate Card operations
+  await _demonstrateCards(razorpay);
+
+  print('\n--- All demonstrations finished ---');
 }

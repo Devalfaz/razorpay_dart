@@ -11,9 +11,8 @@ class Cards {
   /// Fetch a card given a Card ID
   ///
   /// @param cardId - The unique identifier of the card
-  Future<Response<RazorpayCard>> fetch({
+  Future<RazorpayCard> fetch({
     required String cardId,
-    void Function(RazorpayApiException?, Response<RazorpayCard>?)? callback,
   }) async {
     if (cardId.isEmpty) {
       throw ArgumentError('`card_id` is mandatory');
@@ -21,38 +20,22 @@ class Cards {
     return api.get<RazorpayCard>(
       {'url': '/cards/$cardId'},
       fromJsonFactory: RazorpayCard.fromJson,
-      callback: callback,
-    );
+    ).then((value) => value.data!);
   }
 
   /// Retrieve the card reference number for a specific card
   ///
   /// @param params - The card/token number whose PAR or network reference id should be retrieved.
-  /// Accepts either [RazorpayCardReferenceNumberBaseRequest] or [RazorpayCardReferenceTokenBaseRequest].
-  Future<Response<RazorpayCardReference>> requestCardReference({
-    required dynamic params, // Use dynamic to accept either type
-    void Function(RazorpayApiException?, Response<RazorpayCardReference>?)?
-        callback,
+  Future<RazorpayCardReference> requestCardReference({
+    required RazorpayCardReferenceRequest
+        params, // Use dynamic to accept either type
   }) async {
-    Map<String, dynamic> requestData;
-
-    if (params is RazorpayCardReferenceNumberBaseRequest) {
-      requestData = params.toJson();
-    } else if (params is RazorpayCardReferenceTokenBaseRequest) {
-      requestData = params.toJson();
-    } else {
-      throw ArgumentError(
-        'Invalid type for params. Expected RazorpayCardReferenceNumberBaseRequest or RazorpayCardReferenceTokenBaseRequest.',
-      );
-    }
-
     return api.post<RazorpayCardReference>(
       {
         'url': '/cards/fingerprints',
-        'data': requestData,
+        'data': params.toJson(),
       },
       fromJsonFactory: RazorpayCardReference.fromJson,
-      callback: callback,
-    );
+    ).then((value) => value.data!);
   }
 }
