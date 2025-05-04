@@ -6,53 +6,52 @@ part of 'subscriptions_model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$RazorpaySubscriptionAddonsItemImpl
-    _$$RazorpaySubscriptionAddonsItemImplFromJson(Map<String, dynamic> json) =>
-        _$RazorpaySubscriptionAddonsItemImpl(
-          item: RazorpayItemBaseRequestBody.fromJson(
-              json['item'] as Map<String, dynamic>),
-        );
+_RazorpaySubscriptionAddonsItem _$RazorpaySubscriptionAddonsItemFromJson(
+        Map<String, dynamic> json) =>
+    _RazorpaySubscriptionAddonsItem(
+      item: RazorpayItemBaseRequestBody.fromJson(
+          json['item'] as Map<String, dynamic>),
+    );
 
-Map<String, dynamic> _$$RazorpaySubscriptionAddonsItemImplToJson(
-        _$RazorpaySubscriptionAddonsItemImpl instance) =>
+Map<String, dynamic> _$RazorpaySubscriptionAddonsItemToJson(
+        _RazorpaySubscriptionAddonsItem instance) =>
     <String, dynamic>{
       'item': instance.item,
     };
 
-_$RazorpaySubscriptionAddonsBaseRequestBodyImpl
-    _$$RazorpaySubscriptionAddonsBaseRequestBodyImplFromJson(
+_RazorpaySubscriptionAddonsBaseRequestBody
+    _$RazorpaySubscriptionAddonsBaseRequestBodyFromJson(
             Map<String, dynamic> json) =>
-        _$RazorpaySubscriptionAddonsBaseRequestBodyImpl(
+        _RazorpaySubscriptionAddonsBaseRequestBody(
           item: RazorpayItemBaseRequestBody.fromJson(
               json['item'] as Map<String, dynamic>),
           quantity: (json['quantity'] as num?)?.toInt(),
         );
 
-Map<String, dynamic> _$$RazorpaySubscriptionAddonsBaseRequestBodyImplToJson(
-        _$RazorpaySubscriptionAddonsBaseRequestBodyImpl instance) =>
+Map<String, dynamic> _$RazorpaySubscriptionAddonsBaseRequestBodyToJson(
+        _RazorpaySubscriptionAddonsBaseRequestBody instance) =>
     <String, dynamic>{
       'item': instance.item,
       if (instance.quantity case final value?) 'quantity': value,
     };
 
-_$RazorpaySubscriptionNotifyInfoImpl
-    _$$RazorpaySubscriptionNotifyInfoImplFromJson(Map<String, dynamic> json) =>
-        _$RazorpaySubscriptionNotifyInfoImpl(
-          notify_phone: json['notify_phone'],
-          notify_email: json['notify_email'] as String?,
-        );
+_RazorpaySubscriptionNotifyInfo _$RazorpaySubscriptionNotifyInfoFromJson(
+        Map<String, dynamic> json) =>
+    _RazorpaySubscriptionNotifyInfo(
+      notify_phone: json['notify_phone'],
+      notify_email: json['notify_email'] as String?,
+    );
 
-Map<String, dynamic> _$$RazorpaySubscriptionNotifyInfoImplToJson(
-        _$RazorpaySubscriptionNotifyInfoImpl instance) =>
+Map<String, dynamic> _$RazorpaySubscriptionNotifyInfoToJson(
+        _RazorpaySubscriptionNotifyInfo instance) =>
     <String, dynamic>{
       if (instance.notify_phone case final value?) 'notify_phone': value,
       if (instance.notify_email case final value?) 'notify_email': value,
     };
 
-_$RazorpaySubscriptionBaseRequestBodyImpl
-    _$$RazorpaySubscriptionBaseRequestBodyImplFromJson(
-            Map<String, dynamic> json) =>
-        _$RazorpaySubscriptionBaseRequestBodyImpl(
+_RazorpaySubscriptionBaseRequestBody
+    _$RazorpaySubscriptionBaseRequestBodyFromJson(Map<String, dynamic> json) =>
+        _RazorpaySubscriptionBaseRequestBody(
           plan_id: json['plan_id'] as String,
           total_count: (json['total_count'] as num).toInt(),
           customer_notify: _intToBool(json['customer_notify']),
@@ -69,8 +68,8 @@ _$RazorpaySubscriptionBaseRequestBodyImpl
               _$ScheduleChangeAtEnumMap, json['schedule_change_at']),
         );
 
-Map<String, dynamic> _$$RazorpaySubscriptionBaseRequestBodyImplToJson(
-        _$RazorpaySubscriptionBaseRequestBodyImpl instance) =>
+Map<String, dynamic> _$RazorpaySubscriptionBaseRequestBodyToJson(
+        _RazorpaySubscriptionBaseRequestBody instance) =>
     <String, dynamic>{
       'plan_id': instance.plan_id,
       'total_count': instance.total_count,
@@ -92,10 +91,10 @@ const _$ScheduleChangeAtEnumMap = {
   ScheduleChangeAt.cycle_end: 'cycle_end',
 };
 
-_$RazorpaySubscriptionCreateRequestBodyImpl
-    _$$RazorpaySubscriptionCreateRequestBodyImplFromJson(
+_RazorpaySubscriptionCreateRequestBody
+    _$RazorpaySubscriptionCreateRequestBodyFromJson(
             Map<String, dynamic> json) =>
-        _$RazorpaySubscriptionCreateRequestBodyImpl(
+        _RazorpaySubscriptionCreateRequestBody(
           plan_id: json['plan_id'] as String,
           total_count: (json['total_count'] as num).toInt(),
           customer_notify: _intToBool(json['customer_notify']),
@@ -112,8 +111,8 @@ _$RazorpaySubscriptionCreateRequestBodyImpl
               _$ScheduleChangeAtEnumMap, json['schedule_change_at']),
         );
 
-Map<String, dynamic> _$$RazorpaySubscriptionCreateRequestBodyImplToJson(
-        _$RazorpaySubscriptionCreateRequestBodyImpl instance) =>
+Map<String, dynamic> _$RazorpaySubscriptionCreateRequestBodyToJson(
+        _RazorpaySubscriptionCreateRequestBody instance) =>
     <String, dynamic>{
       'plan_id': instance.plan_id,
       'total_count': instance.total_count,
@@ -130,10 +129,10 @@ Map<String, dynamic> _$$RazorpaySubscriptionCreateRequestBodyImplToJson(
         'schedule_change_at': value,
     };
 
-_$RazorpaySubscriptionLinkCreateRequestBodyImpl
-    _$$RazorpaySubscriptionLinkCreateRequestBodyImplFromJson(
+_RazorpaySubscriptionLinkCreateRequestBody
+    _$RazorpaySubscriptionLinkCreateRequestBodyFromJson(
             Map<String, dynamic> json) =>
-        _$RazorpaySubscriptionLinkCreateRequestBodyImpl(
+        _RazorpaySubscriptionLinkCreateRequestBody(
           plan_id: json['plan_id'] as String,
           total_count: (json['total_count'] as num).toInt(),
           customer_notify: _intToBool(json['customer_notify']),
@@ -152,8 +151,8 @@ _$RazorpaySubscriptionLinkCreateRequestBodyImpl
                   json['notify_info'] as Map<String, dynamic>),
         );
 
-Map<String, dynamic> _$$RazorpaySubscriptionLinkCreateRequestBodyImplToJson(
-        _$RazorpaySubscriptionLinkCreateRequestBodyImpl instance) =>
+Map<String, dynamic> _$RazorpaySubscriptionLinkCreateRequestBodyToJson(
+        _RazorpaySubscriptionLinkCreateRequestBody instance) =>
     <String, dynamic>{
       'plan_id': instance.plan_id,
       'total_count': instance.total_count,
@@ -168,10 +167,10 @@ Map<String, dynamic> _$$RazorpaySubscriptionLinkCreateRequestBodyImplToJson(
       if (instance.notify_info case final value?) 'notify_info': value,
     };
 
-_$RazorpaySubscriptionUpdateRequestBodyImpl
-    _$$RazorpaySubscriptionUpdateRequestBodyImplFromJson(
+_RazorpaySubscriptionUpdateRequestBody
+    _$RazorpaySubscriptionUpdateRequestBodyFromJson(
             Map<String, dynamic> json) =>
-        _$RazorpaySubscriptionUpdateRequestBodyImpl(
+        _RazorpaySubscriptionUpdateRequestBody(
           plan_id: json['plan_id'] as String?,
           total_count: (json['total_count'] as num?)?.toInt(),
           customer_notify: _intToBool(json['customer_notify']),
@@ -189,8 +188,8 @@ _$RazorpaySubscriptionUpdateRequestBodyImpl
           remaining_count: (json['remaining_count'] as num?)?.toInt(),
         );
 
-Map<String, dynamic> _$$RazorpaySubscriptionUpdateRequestBodyImplToJson(
-        _$RazorpaySubscriptionUpdateRequestBodyImpl instance) =>
+Map<String, dynamic> _$RazorpaySubscriptionUpdateRequestBodyToJson(
+        _RazorpaySubscriptionUpdateRequestBody instance) =>
     <String, dynamic>{
       if (instance.plan_id case final value?) 'plan_id': value,
       if (instance.total_count case final value?) 'total_count': value,
@@ -208,9 +207,9 @@ Map<String, dynamic> _$$RazorpaySubscriptionUpdateRequestBodyImplToJson(
       if (instance.remaining_count case final value?) 'remaining_count': value,
     };
 
-_$RazorpaySubscriptionImpl _$$RazorpaySubscriptionImplFromJson(
+_RazorpaySubscription _$RazorpaySubscriptionFromJson(
         Map<String, dynamic> json) =>
-    _$RazorpaySubscriptionImpl(
+    _RazorpaySubscription(
       id: json['id'] as String,
       entity: json['entity'] as String,
       plan_id: json['plan_id'] as String,
@@ -236,8 +235,8 @@ _$RazorpaySubscriptionImpl _$$RazorpaySubscriptionImplFromJson(
       payment_method: json['payment_method'] as String?,
     );
 
-Map<String, dynamic> _$$RazorpaySubscriptionImplToJson(
-        _$RazorpaySubscriptionImpl instance) =>
+Map<String, dynamic> _$RazorpaySubscriptionToJson(
+        _RazorpaySubscription instance) =>
     <String, dynamic>{
       'id': instance.id,
       'entity': instance.entity,
@@ -274,25 +273,24 @@ const _$SubscriptionStatusEnumMap = {
   SubscriptionStatus.expired: 'expired',
 };
 
-_$RazorpaySubscriptionRegistrationBaseRequestBodyImpl
-    _$$RazorpaySubscriptionRegistrationBaseRequestBodyImplFromJson(
+_RazorpaySubscriptionRegistrationBaseRequestBody
+    _$RazorpaySubscriptionRegistrationBaseRequestBodyFromJson(
             Map<String, dynamic> json) =>
-        _$RazorpaySubscriptionRegistrationBaseRequestBodyImpl(
+        _RazorpaySubscriptionRegistrationBaseRequestBody(
           method:
               $enumDecodeNullable(_$AuthorizationMethodEnumMap, json['method']),
           max_amount: (json['max_amount'] as num?)?.toInt(),
           expire_at: (json['expire_at'] as num?)?.toInt(),
         );
 
-Map<String, dynamic>
-    _$$RazorpaySubscriptionRegistrationBaseRequestBodyImplToJson(
-            _$RazorpaySubscriptionRegistrationBaseRequestBodyImpl instance) =>
-        <String, dynamic>{
-          if (_$AuthorizationMethodEnumMap[instance.method] case final value?)
-            'method': value,
-          if (instance.max_amount case final value?) 'max_amount': value,
-          if (instance.expire_at case final value?) 'expire_at': value,
-        };
+Map<String, dynamic> _$RazorpaySubscriptionRegistrationBaseRequestBodyToJson(
+        _RazorpaySubscriptionRegistrationBaseRequestBody instance) =>
+    <String, dynamic>{
+      if (_$AuthorizationMethodEnumMap[instance.method] case final value?)
+        'method': value,
+      if (instance.max_amount case final value?) 'max_amount': value,
+      if (instance.expire_at case final value?) 'expire_at': value,
+    };
 
 const _$AuthorizationMethodEnumMap = {
   AuthorizationMethod.card: 'card',
@@ -301,18 +299,17 @@ const _$AuthorizationMethodEnumMap = {
   AuthorizationMethod.upi: 'upi',
 };
 
-_$RazorpaySubscriptionRegistrationUpiImpl
-    _$$RazorpaySubscriptionRegistrationUpiImplFromJson(
-            Map<String, dynamic> json) =>
-        _$RazorpaySubscriptionRegistrationUpiImpl(
+_RazorpaySubscriptionRegistrationUpi
+    _$RazorpaySubscriptionRegistrationUpiFromJson(Map<String, dynamic> json) =>
+        _RazorpaySubscriptionRegistrationUpi(
           method:
               $enumDecodeNullable(_$AuthorizationMethodEnumMap, json['method']),
           max_amount: (json['max_amount'] as num?)?.toInt(),
           expire_at: (json['expire_at'] as num?)?.toInt(),
         );
 
-Map<String, dynamic> _$$RazorpaySubscriptionRegistrationUpiImplToJson(
-        _$RazorpaySubscriptionRegistrationUpiImpl instance) =>
+Map<String, dynamic> _$RazorpaySubscriptionRegistrationUpiToJson(
+        _RazorpaySubscriptionRegistrationUpi instance) =>
     <String, dynamic>{
       if (_$AuthorizationMethodEnumMap[instance.method] case final value?)
         'method': value,
@@ -320,10 +317,10 @@ Map<String, dynamic> _$$RazorpaySubscriptionRegistrationUpiImplToJson(
       if (instance.expire_at case final value?) 'expire_at': value,
     };
 
-_$RazorpaySubscriptionRegistrationUpiTpvImpl
-    _$$RazorpaySubscriptionRegistrationUpiTpvImplFromJson(
+_RazorpaySubscriptionRegistrationUpiTpv
+    _$RazorpaySubscriptionRegistrationUpiTpvFromJson(
             Map<String, dynamic> json) =>
-        _$RazorpaySubscriptionRegistrationUpiTpvImpl(
+        _RazorpaySubscriptionRegistrationUpiTpv(
           frequency: json['frequency'] as String,
           max_amount: (json['max_amount'] as num?)?.toInt(),
           expire_at: (json['expire_at'] as num?)?.toInt(),
@@ -333,8 +330,8 @@ _$RazorpaySubscriptionRegistrationUpiTpvImpl
                   json['bank_account'] as Map<String, dynamic>),
         );
 
-Map<String, dynamic> _$$RazorpaySubscriptionRegistrationUpiTpvImplToJson(
-        _$RazorpaySubscriptionRegistrationUpiTpvImpl instance) =>
+Map<String, dynamic> _$RazorpaySubscriptionRegistrationUpiTpvToJson(
+        _RazorpaySubscriptionRegistrationUpiTpv instance) =>
     <String, dynamic>{
       'frequency': instance.frequency,
       if (instance.max_amount case final value?) 'max_amount': value,
@@ -342,24 +339,22 @@ Map<String, dynamic> _$$RazorpaySubscriptionRegistrationUpiTpvImplToJson(
       if (instance.bank_account case final value?) 'bank_account': value,
     };
 
-_$NachDetailsImpl _$$NachDetailsImplFromJson(Map<String, dynamic> json) =>
-    _$NachDetailsImpl(
+_NachDetails _$NachDetailsFromJson(Map<String, dynamic> json) => _NachDetails(
       form_reference1: json['form_reference1'] as String?,
       form_reference2: json['form_reference2'] as String?,
       description: json['description'] as String?,
     );
 
-Map<String, dynamic> _$$NachDetailsImplToJson(_$NachDetailsImpl instance) =>
+Map<String, dynamic> _$NachDetailsToJson(_NachDetails instance) =>
     <String, dynamic>{
       if (instance.form_reference1 case final value?) 'form_reference1': value,
       if (instance.form_reference2 case final value?) 'form_reference2': value,
       if (instance.description case final value?) 'description': value,
     };
 
-_$RazorpaySubscriptionRegistrationNachImpl
-    _$$RazorpaySubscriptionRegistrationNachImplFromJson(
-            Map<String, dynamic> json) =>
-        _$RazorpaySubscriptionRegistrationNachImpl(
+_RazorpaySubscriptionRegistrationNach
+    _$RazorpaySubscriptionRegistrationNachFromJson(Map<String, dynamic> json) =>
+        _RazorpaySubscriptionRegistrationNach(
           method:
               $enumDecodeNullable(_$AuthorizationMethodEnumMap, json['method']),
           max_amount: (json['max_amount'] as num?)?.toInt(),
@@ -373,8 +368,8 @@ _$RazorpaySubscriptionRegistrationNachImpl
               : NachDetails.fromJson(json['nach'] as Map<String, dynamic>),
         );
 
-Map<String, dynamic> _$$RazorpaySubscriptionRegistrationNachImplToJson(
-        _$RazorpaySubscriptionRegistrationNachImpl instance) =>
+Map<String, dynamic> _$RazorpaySubscriptionRegistrationNachToJson(
+        _RazorpaySubscriptionRegistrationNach instance) =>
     <String, dynamic>{
       if (_$AuthorizationMethodEnumMap[instance.method] case final value?)
         'method': value,
@@ -384,10 +379,10 @@ Map<String, dynamic> _$$RazorpaySubscriptionRegistrationNachImplToJson(
       if (instance.nach case final value?) 'nach': value,
     };
 
-_$RazorpaySubscriptionRegistrationEmandateImpl
-    _$$RazorpaySubscriptionRegistrationEmandateImplFromJson(
+_RazorpaySubscriptionRegistrationEmandate
+    _$RazorpaySubscriptionRegistrationEmandateFromJson(
             Map<String, dynamic> json) =>
-        _$RazorpaySubscriptionRegistrationEmandateImpl(
+        _RazorpaySubscriptionRegistrationEmandate(
           first_payment_amount: (json['first_payment_amount'] as num).toInt(),
           max_amount: (json['max_amount'] as num?)?.toInt(),
           expire_at: (json['expire_at'] as num?)?.toInt(),
@@ -399,8 +394,8 @@ _$RazorpaySubscriptionRegistrationEmandateImpl
                   json['bank_account'] as Map<String, dynamic>),
         );
 
-Map<String, dynamic> _$$RazorpaySubscriptionRegistrationEmandateImplToJson(
-        _$RazorpaySubscriptionRegistrationEmandateImpl instance) =>
+Map<String, dynamic> _$RazorpaySubscriptionRegistrationEmandateToJson(
+        _RazorpaySubscriptionRegistrationEmandate instance) =>
     <String, dynamic>{
       'first_payment_amount': instance.first_payment_amount,
       if (instance.max_amount case final value?) 'max_amount': value,
@@ -417,10 +412,10 @@ const _$EmandateAuthTypeEnumMap = {
   EmandateAuthType.physical: 'physical',
 };
 
-_$RazorpayRegistrationLinkBaseRequestBodyImpl
-    _$$RazorpayRegistrationLinkBaseRequestBodyImplFromJson(
+_RazorpayRegistrationLinkBaseRequestBody
+    _$RazorpayRegistrationLinkBaseRequestBodyFromJson(
             Map<String, dynamic> json) =>
-        _$RazorpayRegistrationLinkBaseRequestBodyImpl(
+        _RazorpayRegistrationLinkBaseRequestBody(
           type: json['type'] as String,
           subscription_registration: json['subscription_registration'],
           description: json['description'] as String?,
@@ -439,8 +434,8 @@ _$RazorpayRegistrationLinkBaseRequestBodyImpl
           amount: json['amount'],
         );
 
-Map<String, dynamic> _$$RazorpayRegistrationLinkBaseRequestBodyImplToJson(
-        _$RazorpayRegistrationLinkBaseRequestBodyImpl instance) =>
+Map<String, dynamic> _$RazorpayRegistrationLinkBaseRequestBodyToJson(
+        _RazorpayRegistrationLinkBaseRequestBody instance) =>
     <String, dynamic>{
       'type': instance.type,
       if (instance.subscription_registration case final value?)
@@ -460,9 +455,9 @@ Map<String, dynamic> _$$RazorpayRegistrationLinkBaseRequestBodyImplToJson(
       if (instance.amount case final value?) 'amount': value,
     };
 
-_$RazorpayRegistrationLinkImpl _$$RazorpayRegistrationLinkImplFromJson(
+_RazorpayRegistrationLink _$RazorpayRegistrationLinkFromJson(
         Map<String, dynamic> json) =>
-    _$RazorpayRegistrationLinkImpl(
+    _RazorpayRegistrationLink(
       id: json['id'] as String,
       entity: json['entity'] as String,
       type: json['type'] as String,
@@ -517,8 +512,8 @@ _$RazorpayRegistrationLinkImpl _$$RazorpayRegistrationLinkImplFromJson(
       nach_form_url: json['nach_form_url'] as String?,
     );
 
-Map<String, dynamic> _$$RazorpayRegistrationLinkImplToJson(
-        _$RazorpayRegistrationLinkImpl instance) =>
+Map<String, dynamic> _$RazorpayRegistrationLinkToJson(
+        _RazorpayRegistrationLink instance) =>
     <String, dynamic>{
       'id': instance.id,
       'entity': instance.entity,
@@ -588,9 +583,9 @@ const _$InvoiceStatusEnumMap = {
   InvoiceStatus.deleted: 'deleted',
 };
 
-_$RazorpaySubscriptionQueryImpl _$$RazorpaySubscriptionQueryImplFromJson(
+_RazorpaySubscriptionQuery _$RazorpaySubscriptionQueryFromJson(
         Map<String, dynamic> json) =>
-    _$RazorpaySubscriptionQueryImpl(
+    _RazorpaySubscriptionQuery(
       from: (json['from'] as num?)?.toInt(),
       to: (json['to'] as num?)?.toInt(),
       count: (json['count'] as num?)?.toInt(),
@@ -598,8 +593,8 @@ _$RazorpaySubscriptionQueryImpl _$$RazorpaySubscriptionQueryImplFromJson(
       plan_id: json['plan_id'] as String?,
     );
 
-Map<String, dynamic> _$$RazorpaySubscriptionQueryImplToJson(
-        _$RazorpaySubscriptionQueryImpl instance) =>
+Map<String, dynamic> _$RazorpaySubscriptionQueryToJson(
+        _RazorpaySubscriptionQuery instance) =>
     <String, dynamic>{
       if (instance.from case final value?) 'from': value,
       if (instance.to case final value?) 'to': value,

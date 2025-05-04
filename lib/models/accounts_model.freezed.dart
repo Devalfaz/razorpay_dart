@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,52 +10,99 @@ part of 'accounts_model.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-RazorpayAccountBaseRequestBody _$RazorpayAccountBaseRequestBodyFromJson(
-    Map<String, dynamic> json) {
-  return _RazorpayAccountBaseRequestBody.fromJson(json);
-}
 
 /// @nodoc
 mixin _$RazorpayAccountBaseRequestBody {
-  String get email => throw _privateConstructorUsedError;
-  Profile get profile => throw _privateConstructorUsedError;
-  dynamic get phone => throw _privateConstructorUsedError;
-  String get business_type => throw _privateConstructorUsedError;
-  String get legal_business_name => throw _privateConstructorUsedError;
-  String get contact_name =>
-      throw _privateConstructorUsedError; // string | number
-  String? get type => throw _privateConstructorUsedError;
-  String? get reference_id => throw _privateConstructorUsedError;
-  String? get customer_facing_business_name =>
-      throw _privateConstructorUsedError;
-  LegalInfo? get legal_info => throw _privateConstructorUsedError;
-  Apps? get apps => throw _privateConstructorUsedError;
-  Brand? get brand => throw _privateConstructorUsedError;
-  ContactInfoSupport? get contact_info => throw _privateConstructorUsedError;
-  IMap<dynamic>? get notes => throw _privateConstructorUsedError;
-
-  /// Serializes this RazorpayAccountBaseRequestBody to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  String get email;
+  Profile get profile;
+  dynamic get phone;
+  String get business_type;
+  String get legal_business_name;
+  String get contact_name; // string | number
+  String? get type;
+  String? get reference_id;
+  String? get customer_facing_business_name;
+  LegalInfo? get legal_info;
+  Apps? get apps;
+  Brand? get brand;
+  ContactInfoSupport? get contact_info;
+  IMap<dynamic>? get notes;
 
   /// Create a copy of RazorpayAccountBaseRequestBody
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
   $RazorpayAccountBaseRequestBodyCopyWith<RazorpayAccountBaseRequestBody>
-      get copyWith => throw _privateConstructorUsedError;
+      get copyWith => _$RazorpayAccountBaseRequestBodyCopyWithImpl<
+              RazorpayAccountBaseRequestBody>(
+          this as RazorpayAccountBaseRequestBody, _$identity);
+
+  /// Serializes this RazorpayAccountBaseRequestBody to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is RazorpayAccountBaseRequestBody &&
+            (identical(other.email, email) || other.email == email) &&
+            (identical(other.profile, profile) || other.profile == profile) &&
+            const DeepCollectionEquality().equals(other.phone, phone) &&
+            (identical(other.business_type, business_type) ||
+                other.business_type == business_type) &&
+            (identical(other.legal_business_name, legal_business_name) ||
+                other.legal_business_name == legal_business_name) &&
+            (identical(other.contact_name, contact_name) ||
+                other.contact_name == contact_name) &&
+            (identical(other.type, type) || other.type == type) &&
+            (identical(other.reference_id, reference_id) ||
+                other.reference_id == reference_id) &&
+            (identical(other.customer_facing_business_name,
+                    customer_facing_business_name) ||
+                other.customer_facing_business_name ==
+                    customer_facing_business_name) &&
+            (identical(other.legal_info, legal_info) ||
+                other.legal_info == legal_info) &&
+            (identical(other.apps, apps) || other.apps == apps) &&
+            (identical(other.brand, brand) || other.brand == brand) &&
+            (identical(other.contact_info, contact_info) ||
+                other.contact_info == contact_info) &&
+            const DeepCollectionEquality().equals(other.notes, notes));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      email,
+      profile,
+      const DeepCollectionEquality().hash(phone),
+      business_type,
+      legal_business_name,
+      contact_name,
+      type,
+      reference_id,
+      customer_facing_business_name,
+      legal_info,
+      apps,
+      brand,
+      contact_info,
+      const DeepCollectionEquality().hash(notes));
+
+  @override
+  String toString() {
+    return 'RazorpayAccountBaseRequestBody(email: $email, profile: $profile, phone: $phone, business_type: $business_type, legal_business_name: $legal_business_name, contact_name: $contact_name, type: $type, reference_id: $reference_id, customer_facing_business_name: $customer_facing_business_name, legal_info: $legal_info, apps: $apps, brand: $brand, contact_info: $contact_info, notes: $notes)';
+  }
 }
 
 /// @nodoc
-abstract class $RazorpayAccountBaseRequestBodyCopyWith<$Res> {
+abstract mixin class $RazorpayAccountBaseRequestBodyCopyWith<$Res> {
   factory $RazorpayAccountBaseRequestBodyCopyWith(
           RazorpayAccountBaseRequestBody value,
-          $Res Function(RazorpayAccountBaseRequestBody) then) =
-      _$RazorpayAccountBaseRequestBodyCopyWithImpl<$Res,
-          RazorpayAccountBaseRequestBody>;
+          $Res Function(RazorpayAccountBaseRequestBody) _then) =
+      _$RazorpayAccountBaseRequestBodyCopyWithImpl;
   @useResult
   $Res call(
       {String email,
@@ -80,15 +128,12 @@ abstract class $RazorpayAccountBaseRequestBodyCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$RazorpayAccountBaseRequestBodyCopyWithImpl<$Res,
-        $Val extends RazorpayAccountBaseRequestBody>
+class _$RazorpayAccountBaseRequestBodyCopyWithImpl<$Res>
     implements $RazorpayAccountBaseRequestBodyCopyWith<$Res> {
-  _$RazorpayAccountBaseRequestBodyCopyWithImpl(this._value, this._then);
+  _$RazorpayAccountBaseRequestBodyCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final RazorpayAccountBaseRequestBody _self;
+  final $Res Function(RazorpayAccountBaseRequestBody) _then;
 
   /// Create a copy of RazorpayAccountBaseRequestBody
   /// with the given fields replaced by the non-null parameter values.
@@ -110,64 +155,64 @@ class _$RazorpayAccountBaseRequestBodyCopyWithImpl<$Res,
     Object? contact_info = freezed,
     Object? notes = freezed,
   }) {
-    return _then(_value.copyWith(
+    return _then(_self.copyWith(
       email: null == email
-          ? _value.email
+          ? _self.email
           : email // ignore: cast_nullable_to_non_nullable
               as String,
       profile: null == profile
-          ? _value.profile
+          ? _self.profile
           : profile // ignore: cast_nullable_to_non_nullable
               as Profile,
       phone: freezed == phone
-          ? _value.phone
+          ? _self.phone
           : phone // ignore: cast_nullable_to_non_nullable
               as dynamic,
       business_type: null == business_type
-          ? _value.business_type
+          ? _self.business_type
           : business_type // ignore: cast_nullable_to_non_nullable
               as String,
       legal_business_name: null == legal_business_name
-          ? _value.legal_business_name
+          ? _self.legal_business_name
           : legal_business_name // ignore: cast_nullable_to_non_nullable
               as String,
       contact_name: null == contact_name
-          ? _value.contact_name
+          ? _self.contact_name
           : contact_name // ignore: cast_nullable_to_non_nullable
               as String,
       type: freezed == type
-          ? _value.type
+          ? _self.type
           : type // ignore: cast_nullable_to_non_nullable
               as String?,
       reference_id: freezed == reference_id
-          ? _value.reference_id
+          ? _self.reference_id
           : reference_id // ignore: cast_nullable_to_non_nullable
               as String?,
       customer_facing_business_name: freezed == customer_facing_business_name
-          ? _value.customer_facing_business_name
+          ? _self.customer_facing_business_name
           : customer_facing_business_name // ignore: cast_nullable_to_non_nullable
               as String?,
       legal_info: freezed == legal_info
-          ? _value.legal_info
+          ? _self.legal_info
           : legal_info // ignore: cast_nullable_to_non_nullable
               as LegalInfo?,
       apps: freezed == apps
-          ? _value.apps
+          ? _self.apps
           : apps // ignore: cast_nullable_to_non_nullable
               as Apps?,
       brand: freezed == brand
-          ? _value.brand
+          ? _self.brand
           : brand // ignore: cast_nullable_to_non_nullable
               as Brand?,
       contact_info: freezed == contact_info
-          ? _value.contact_info
+          ? _self.contact_info
           : contact_info // ignore: cast_nullable_to_non_nullable
               as ContactInfoSupport?,
       notes: freezed == notes
-          ? _value.notes
+          ? _self.notes
           : notes // ignore: cast_nullable_to_non_nullable
               as IMap<dynamic>?,
-    ) as $Val);
+    ));
   }
 
   /// Create a copy of RazorpayAccountBaseRequestBody
@@ -175,8 +220,8 @@ class _$RazorpayAccountBaseRequestBodyCopyWithImpl<$Res,
   @override
   @pragma('vm:prefer-inline')
   $ProfileCopyWith<$Res> get profile {
-    return $ProfileCopyWith<$Res>(_value.profile, (value) {
-      return _then(_value.copyWith(profile: value) as $Val);
+    return $ProfileCopyWith<$Res>(_self.profile, (value) {
+      return _then(_self.copyWith(profile: value));
     });
   }
 
@@ -185,12 +230,12 @@ class _$RazorpayAccountBaseRequestBodyCopyWithImpl<$Res,
   @override
   @pragma('vm:prefer-inline')
   $LegalInfoCopyWith<$Res>? get legal_info {
-    if (_value.legal_info == null) {
+    if (_self.legal_info == null) {
       return null;
     }
 
-    return $LegalInfoCopyWith<$Res>(_value.legal_info!, (value) {
-      return _then(_value.copyWith(legal_info: value) as $Val);
+    return $LegalInfoCopyWith<$Res>(_self.legal_info!, (value) {
+      return _then(_self.copyWith(legal_info: value));
     });
   }
 
@@ -199,12 +244,12 @@ class _$RazorpayAccountBaseRequestBodyCopyWithImpl<$Res,
   @override
   @pragma('vm:prefer-inline')
   $AppsCopyWith<$Res>? get apps {
-    if (_value.apps == null) {
+    if (_self.apps == null) {
       return null;
     }
 
-    return $AppsCopyWith<$Res>(_value.apps!, (value) {
-      return _then(_value.copyWith(apps: value) as $Val);
+    return $AppsCopyWith<$Res>(_self.apps!, (value) {
+      return _then(_self.copyWith(apps: value));
     });
   }
 
@@ -213,12 +258,12 @@ class _$RazorpayAccountBaseRequestBodyCopyWithImpl<$Res,
   @override
   @pragma('vm:prefer-inline')
   $BrandCopyWith<$Res>? get brand {
-    if (_value.brand == null) {
+    if (_self.brand == null) {
       return null;
     }
 
-    return $BrandCopyWith<$Res>(_value.brand!, (value) {
-      return _then(_value.copyWith(brand: value) as $Val);
+    return $BrandCopyWith<$Res>(_self.brand!, (value) {
+      return _then(_self.copyWith(brand: value));
     });
   }
 
@@ -227,150 +272,22 @@ class _$RazorpayAccountBaseRequestBodyCopyWithImpl<$Res,
   @override
   @pragma('vm:prefer-inline')
   $ContactInfoSupportCopyWith<$Res>? get contact_info {
-    if (_value.contact_info == null) {
+    if (_self.contact_info == null) {
       return null;
     }
 
-    return $ContactInfoSupportCopyWith<$Res>(_value.contact_info!, (value) {
-      return _then(_value.copyWith(contact_info: value) as $Val);
+    return $ContactInfoSupportCopyWith<$Res>(_self.contact_info!, (value) {
+      return _then(_self.copyWith(contact_info: value));
     });
-  }
-}
-
-/// @nodoc
-abstract class _$$RazorpayAccountBaseRequestBodyImplCopyWith<$Res>
-    implements $RazorpayAccountBaseRequestBodyCopyWith<$Res> {
-  factory _$$RazorpayAccountBaseRequestBodyImplCopyWith(
-          _$RazorpayAccountBaseRequestBodyImpl value,
-          $Res Function(_$RazorpayAccountBaseRequestBodyImpl) then) =
-      __$$RazorpayAccountBaseRequestBodyImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {String email,
-      Profile profile,
-      dynamic phone,
-      String business_type,
-      String legal_business_name,
-      String contact_name,
-      String? type,
-      String? reference_id,
-      String? customer_facing_business_name,
-      LegalInfo? legal_info,
-      Apps? apps,
-      Brand? brand,
-      ContactInfoSupport? contact_info,
-      IMap<dynamic>? notes});
-
-  @override
-  $ProfileCopyWith<$Res> get profile;
-  @override
-  $LegalInfoCopyWith<$Res>? get legal_info;
-  @override
-  $AppsCopyWith<$Res>? get apps;
-  @override
-  $BrandCopyWith<$Res>? get brand;
-  @override
-  $ContactInfoSupportCopyWith<$Res>? get contact_info;
-}
-
-/// @nodoc
-class __$$RazorpayAccountBaseRequestBodyImplCopyWithImpl<$Res>
-    extends _$RazorpayAccountBaseRequestBodyCopyWithImpl<$Res,
-        _$RazorpayAccountBaseRequestBodyImpl>
-    implements _$$RazorpayAccountBaseRequestBodyImplCopyWith<$Res> {
-  __$$RazorpayAccountBaseRequestBodyImplCopyWithImpl(
-      _$RazorpayAccountBaseRequestBodyImpl _value,
-      $Res Function(_$RazorpayAccountBaseRequestBodyImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of RazorpayAccountBaseRequestBody
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? email = null,
-    Object? profile = null,
-    Object? phone = freezed,
-    Object? business_type = null,
-    Object? legal_business_name = null,
-    Object? contact_name = null,
-    Object? type = freezed,
-    Object? reference_id = freezed,
-    Object? customer_facing_business_name = freezed,
-    Object? legal_info = freezed,
-    Object? apps = freezed,
-    Object? brand = freezed,
-    Object? contact_info = freezed,
-    Object? notes = freezed,
-  }) {
-    return _then(_$RazorpayAccountBaseRequestBodyImpl(
-      email: null == email
-          ? _value.email
-          : email // ignore: cast_nullable_to_non_nullable
-              as String,
-      profile: null == profile
-          ? _value.profile
-          : profile // ignore: cast_nullable_to_non_nullable
-              as Profile,
-      phone: freezed == phone
-          ? _value.phone
-          : phone // ignore: cast_nullable_to_non_nullable
-              as dynamic,
-      business_type: null == business_type
-          ? _value.business_type
-          : business_type // ignore: cast_nullable_to_non_nullable
-              as String,
-      legal_business_name: null == legal_business_name
-          ? _value.legal_business_name
-          : legal_business_name // ignore: cast_nullable_to_non_nullable
-              as String,
-      contact_name: null == contact_name
-          ? _value.contact_name
-          : contact_name // ignore: cast_nullable_to_non_nullable
-              as String,
-      type: freezed == type
-          ? _value.type
-          : type // ignore: cast_nullable_to_non_nullable
-              as String?,
-      reference_id: freezed == reference_id
-          ? _value.reference_id
-          : reference_id // ignore: cast_nullable_to_non_nullable
-              as String?,
-      customer_facing_business_name: freezed == customer_facing_business_name
-          ? _value.customer_facing_business_name
-          : customer_facing_business_name // ignore: cast_nullable_to_non_nullable
-              as String?,
-      legal_info: freezed == legal_info
-          ? _value.legal_info
-          : legal_info // ignore: cast_nullable_to_non_nullable
-              as LegalInfo?,
-      apps: freezed == apps
-          ? _value.apps
-          : apps // ignore: cast_nullable_to_non_nullable
-              as Apps?,
-      brand: freezed == brand
-          ? _value.brand
-          : brand // ignore: cast_nullable_to_non_nullable
-              as Brand?,
-      contact_info: freezed == contact_info
-          ? _value.contact_info
-          : contact_info // ignore: cast_nullable_to_non_nullable
-              as ContactInfoSupport?,
-      notes: freezed == notes
-          ? _value._notes
-          : notes // ignore: cast_nullable_to_non_nullable
-              as IMap<dynamic>?,
-    ));
   }
 }
 
 /// @nodoc
 
 @JsonSerializable(includeIfNull: false)
-class _$RazorpayAccountBaseRequestBodyImpl
-    implements _RazorpayAccountBaseRequestBody {
-  const _$RazorpayAccountBaseRequestBodyImpl(
+class _RazorpayAccountBaseRequestBody
+    implements RazorpayAccountBaseRequestBody {
+  const _RazorpayAccountBaseRequestBody(
       {required this.email,
       required this.profile,
       required this.phone,
@@ -386,10 +303,8 @@ class _$RazorpayAccountBaseRequestBodyImpl
       this.contact_info,
       final IMap<dynamic>? notes})
       : _notes = notes;
-
-  factory _$RazorpayAccountBaseRequestBodyImpl.fromJson(
-          Map<String, dynamic> json) =>
-      _$$RazorpayAccountBaseRequestBodyImplFromJson(json);
+  factory _RazorpayAccountBaseRequestBody.fromJson(Map<String, dynamic> json) =>
+      _$RazorpayAccountBaseRequestBodyFromJson(json);
 
   @override
   final String email;
@@ -428,16 +343,27 @@ class _$RazorpayAccountBaseRequestBodyImpl
     return EqualUnmodifiableMapView(value);
   }
 
+  /// Create a copy of RazorpayAccountBaseRequestBody
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'RazorpayAccountBaseRequestBody(email: $email, profile: $profile, phone: $phone, business_type: $business_type, legal_business_name: $legal_business_name, contact_name: $contact_name, type: $type, reference_id: $reference_id, customer_facing_business_name: $customer_facing_business_name, legal_info: $legal_info, apps: $apps, brand: $brand, contact_info: $contact_info, notes: $notes)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$RazorpayAccountBaseRequestBodyCopyWith<_RazorpayAccountBaseRequestBody>
+      get copyWith => __$RazorpayAccountBaseRequestBodyCopyWithImpl<
+          _RazorpayAccountBaseRequestBody>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$RazorpayAccountBaseRequestBodyToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$RazorpayAccountBaseRequestBodyImpl &&
+            other is _RazorpayAccountBaseRequestBody &&
             (identical(other.email, email) || other.email == email) &&
             (identical(other.profile, profile) || other.profile == profile) &&
             const DeepCollectionEquality().equals(other.phone, phone) &&
@@ -482,206 +408,224 @@ class _$RazorpayAccountBaseRequestBodyImpl
       contact_info,
       const DeepCollectionEquality().hash(_notes));
 
-  /// Create a copy of RazorpayAccountBaseRequestBody
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$RazorpayAccountBaseRequestBodyImplCopyWith<
-          _$RazorpayAccountBaseRequestBodyImpl>
-      get copyWith => __$$RazorpayAccountBaseRequestBodyImplCopyWithImpl<
-          _$RazorpayAccountBaseRequestBodyImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$RazorpayAccountBaseRequestBodyImplToJson(
-      this,
-    );
+  String toString() {
+    return 'RazorpayAccountBaseRequestBody(email: $email, profile: $profile, phone: $phone, business_type: $business_type, legal_business_name: $legal_business_name, contact_name: $contact_name, type: $type, reference_id: $reference_id, customer_facing_business_name: $customer_facing_business_name, legal_info: $legal_info, apps: $apps, brand: $brand, contact_info: $contact_info, notes: $notes)';
   }
 }
 
-abstract class _RazorpayAccountBaseRequestBody
-    implements RazorpayAccountBaseRequestBody {
-  const factory _RazorpayAccountBaseRequestBody(
-      {required final String email,
-      required final Profile profile,
-      required final dynamic phone,
-      required final String business_type,
-      required final String legal_business_name,
-      required final String contact_name,
-      final String? type,
-      final String? reference_id,
-      final String? customer_facing_business_name,
-      final LegalInfo? legal_info,
-      final Apps? apps,
-      final Brand? brand,
-      final ContactInfoSupport? contact_info,
-      final IMap<dynamic>? notes}) = _$RazorpayAccountBaseRequestBodyImpl;
+/// @nodoc
+abstract mixin class _$RazorpayAccountBaseRequestBodyCopyWith<$Res>
+    implements $RazorpayAccountBaseRequestBodyCopyWith<$Res> {
+  factory _$RazorpayAccountBaseRequestBodyCopyWith(
+          _RazorpayAccountBaseRequestBody value,
+          $Res Function(_RazorpayAccountBaseRequestBody) _then) =
+      __$RazorpayAccountBaseRequestBodyCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {String email,
+      Profile profile,
+      dynamic phone,
+      String business_type,
+      String legal_business_name,
+      String contact_name,
+      String? type,
+      String? reference_id,
+      String? customer_facing_business_name,
+      LegalInfo? legal_info,
+      Apps? apps,
+      Brand? brand,
+      ContactInfoSupport? contact_info,
+      IMap<dynamic>? notes});
 
-  factory _RazorpayAccountBaseRequestBody.fromJson(Map<String, dynamic> json) =
-      _$RazorpayAccountBaseRequestBodyImpl.fromJson;
+  @override
+  $ProfileCopyWith<$Res> get profile;
+  @override
+  $LegalInfoCopyWith<$Res>? get legal_info;
+  @override
+  $AppsCopyWith<$Res>? get apps;
+  @override
+  $BrandCopyWith<$Res>? get brand;
+  @override
+  $ContactInfoSupportCopyWith<$Res>? get contact_info;
+}
 
-  @override
-  String get email;
-  @override
-  Profile get profile;
-  @override
-  dynamic get phone;
-  @override
-  String get business_type;
-  @override
-  String get legal_business_name;
-  @override
-  String get contact_name; // string | number
-  @override
-  String? get type;
-  @override
-  String? get reference_id;
-  @override
-  String? get customer_facing_business_name;
-  @override
-  LegalInfo? get legal_info;
-  @override
-  Apps? get apps;
-  @override
-  Brand? get brand;
-  @override
-  ContactInfoSupport? get contact_info;
-  @override
-  IMap<dynamic>? get notes;
+/// @nodoc
+class __$RazorpayAccountBaseRequestBodyCopyWithImpl<$Res>
+    implements _$RazorpayAccountBaseRequestBodyCopyWith<$Res> {
+  __$RazorpayAccountBaseRequestBodyCopyWithImpl(this._self, this._then);
+
+  final _RazorpayAccountBaseRequestBody _self;
+  final $Res Function(_RazorpayAccountBaseRequestBody) _then;
 
   /// Create a copy of RazorpayAccountBaseRequestBody
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$RazorpayAccountBaseRequestBodyImplCopyWith<
-          _$RazorpayAccountBaseRequestBodyImpl>
-      get copyWith => throw _privateConstructorUsedError;
-}
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? email = null,
+    Object? profile = null,
+    Object? phone = freezed,
+    Object? business_type = null,
+    Object? legal_business_name = null,
+    Object? contact_name = null,
+    Object? type = freezed,
+    Object? reference_id = freezed,
+    Object? customer_facing_business_name = freezed,
+    Object? legal_info = freezed,
+    Object? apps = freezed,
+    Object? brand = freezed,
+    Object? contact_info = freezed,
+    Object? notes = freezed,
+  }) {
+    return _then(_RazorpayAccountBaseRequestBody(
+      email: null == email
+          ? _self.email
+          : email // ignore: cast_nullable_to_non_nullable
+              as String,
+      profile: null == profile
+          ? _self.profile
+          : profile // ignore: cast_nullable_to_non_nullable
+              as Profile,
+      phone: freezed == phone
+          ? _self.phone
+          : phone // ignore: cast_nullable_to_non_nullable
+              as dynamic,
+      business_type: null == business_type
+          ? _self.business_type
+          : business_type // ignore: cast_nullable_to_non_nullable
+              as String,
+      legal_business_name: null == legal_business_name
+          ? _self.legal_business_name
+          : legal_business_name // ignore: cast_nullable_to_non_nullable
+              as String,
+      contact_name: null == contact_name
+          ? _self.contact_name
+          : contact_name // ignore: cast_nullable_to_non_nullable
+              as String,
+      type: freezed == type
+          ? _self.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as String?,
+      reference_id: freezed == reference_id
+          ? _self.reference_id
+          : reference_id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      customer_facing_business_name: freezed == customer_facing_business_name
+          ? _self.customer_facing_business_name
+          : customer_facing_business_name // ignore: cast_nullable_to_non_nullable
+              as String?,
+      legal_info: freezed == legal_info
+          ? _self.legal_info
+          : legal_info // ignore: cast_nullable_to_non_nullable
+              as LegalInfo?,
+      apps: freezed == apps
+          ? _self.apps
+          : apps // ignore: cast_nullable_to_non_nullable
+              as Apps?,
+      brand: freezed == brand
+          ? _self.brand
+          : brand // ignore: cast_nullable_to_non_nullable
+              as Brand?,
+      contact_info: freezed == contact_info
+          ? _self.contact_info
+          : contact_info // ignore: cast_nullable_to_non_nullable
+              as ContactInfoSupport?,
+      notes: freezed == notes
+          ? _self._notes
+          : notes // ignore: cast_nullable_to_non_nullable
+              as IMap<dynamic>?,
+    ));
+  }
 
-AppDetails _$AppDetailsFromJson(Map<String, dynamic> json) {
-  return _AppDetails.fromJson(json);
+  /// Create a copy of RazorpayAccountBaseRequestBody
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $ProfileCopyWith<$Res> get profile {
+    return $ProfileCopyWith<$Res>(_self.profile, (value) {
+      return _then(_self.copyWith(profile: value));
+    });
+  }
+
+  /// Create a copy of RazorpayAccountBaseRequestBody
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $LegalInfoCopyWith<$Res>? get legal_info {
+    if (_self.legal_info == null) {
+      return null;
+    }
+
+    return $LegalInfoCopyWith<$Res>(_self.legal_info!, (value) {
+      return _then(_self.copyWith(legal_info: value));
+    });
+  }
+
+  /// Create a copy of RazorpayAccountBaseRequestBody
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $AppsCopyWith<$Res>? get apps {
+    if (_self.apps == null) {
+      return null;
+    }
+
+    return $AppsCopyWith<$Res>(_self.apps!, (value) {
+      return _then(_self.copyWith(apps: value));
+    });
+  }
+
+  /// Create a copy of RazorpayAccountBaseRequestBody
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $BrandCopyWith<$Res>? get brand {
+    if (_self.brand == null) {
+      return null;
+    }
+
+    return $BrandCopyWith<$Res>(_self.brand!, (value) {
+      return _then(_self.copyWith(brand: value));
+    });
+  }
+
+  /// Create a copy of RazorpayAccountBaseRequestBody
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $ContactInfoSupportCopyWith<$Res>? get contact_info {
+    if (_self.contact_info == null) {
+      return null;
+    }
+
+    return $ContactInfoSupportCopyWith<$Res>(_self.contact_info!, (value) {
+      return _then(_self.copyWith(contact_info: value));
+    });
+  }
 }
 
 /// @nodoc
 mixin _$AppDetails {
-  String get url => throw _privateConstructorUsedError;
-  String get name => throw _privateConstructorUsedError;
-
-  /// Serializes this AppDetails to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  String get url;
+  String get name;
 
   /// Create a copy of AppDetails
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
   $AppDetailsCopyWith<AppDetails> get copyWith =>
-      throw _privateConstructorUsedError;
-}
+      _$AppDetailsCopyWithImpl<AppDetails>(this as AppDetails, _$identity);
 
-/// @nodoc
-abstract class $AppDetailsCopyWith<$Res> {
-  factory $AppDetailsCopyWith(
-          AppDetails value, $Res Function(AppDetails) then) =
-      _$AppDetailsCopyWithImpl<$Res, AppDetails>;
-  @useResult
-  $Res call({String url, String name});
-}
-
-/// @nodoc
-class _$AppDetailsCopyWithImpl<$Res, $Val extends AppDetails>
-    implements $AppDetailsCopyWith<$Res> {
-  _$AppDetailsCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of AppDetails
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? url = null,
-    Object? name = null,
-  }) {
-    return _then(_value.copyWith(
-      url: null == url
-          ? _value.url
-          : url // ignore: cast_nullable_to_non_nullable
-              as String,
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-    ) as $Val);
-  }
-}
-
-/// @nodoc
-abstract class _$$AppDetailsImplCopyWith<$Res>
-    implements $AppDetailsCopyWith<$Res> {
-  factory _$$AppDetailsImplCopyWith(
-          _$AppDetailsImpl value, $Res Function(_$AppDetailsImpl) then) =
-      __$$AppDetailsImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({String url, String name});
-}
-
-/// @nodoc
-class __$$AppDetailsImplCopyWithImpl<$Res>
-    extends _$AppDetailsCopyWithImpl<$Res, _$AppDetailsImpl>
-    implements _$$AppDetailsImplCopyWith<$Res> {
-  __$$AppDetailsImplCopyWithImpl(
-      _$AppDetailsImpl _value, $Res Function(_$AppDetailsImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of AppDetails
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? url = null,
-    Object? name = null,
-  }) {
-    return _then(_$AppDetailsImpl(
-      url: null == url
-          ? _value.url
-          : url // ignore: cast_nullable_to_non_nullable
-              as String,
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
-}
-
-/// @nodoc
-
-@JsonSerializable(includeIfNull: false)
-class _$AppDetailsImpl implements _AppDetails {
-  const _$AppDetailsImpl({required this.url, required this.name});
-
-  factory _$AppDetailsImpl.fromJson(Map<String, dynamic> json) =>
-      _$$AppDetailsImplFromJson(json);
-
-  @override
-  final String url;
-  @override
-  final String name;
-
-  @override
-  String toString() {
-    return 'AppDetails(url: $url, name: $name)';
-  }
+  /// Serializes this AppDetails to a JSON map.
+  Map<String, dynamic> toJson();
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$AppDetailsImpl &&
+            other is AppDetails &&
             (identical(other.url, url) || other.url == url) &&
             (identical(other.name, name) || other.name == name));
   }
@@ -690,199 +634,45 @@ class _$AppDetailsImpl implements _AppDetails {
   @override
   int get hashCode => Object.hash(runtimeType, url, name);
 
-  /// Create a copy of AppDetails
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$AppDetailsImplCopyWith<_$AppDetailsImpl> get copyWith =>
-      __$$AppDetailsImplCopyWithImpl<_$AppDetailsImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$AppDetailsImplToJson(
-      this,
-    );
+  String toString() {
+    return 'AppDetails(url: $url, name: $name)';
   }
 }
 
-abstract class _AppDetails implements AppDetails {
-  const factory _AppDetails(
-      {required final String url,
-      required final String name}) = _$AppDetailsImpl;
+/// @nodoc
+abstract mixin class $AppDetailsCopyWith<$Res> {
+  factory $AppDetailsCopyWith(
+          AppDetails value, $Res Function(AppDetails) _then) =
+      _$AppDetailsCopyWithImpl;
+  @useResult
+  $Res call({String url, String name});
+}
 
-  factory _AppDetails.fromJson(Map<String, dynamic> json) =
-      _$AppDetailsImpl.fromJson;
+/// @nodoc
+class _$AppDetailsCopyWithImpl<$Res> implements $AppDetailsCopyWith<$Res> {
+  _$AppDetailsCopyWithImpl(this._self, this._then);
 
-  @override
-  String get url;
-  @override
-  String get name;
+  final AppDetails _self;
+  final $Res Function(AppDetails) _then;
 
   /// Create a copy of AppDetails
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$AppDetailsImplCopyWith<_$AppDetailsImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-Profile _$ProfileFromJson(Map<String, dynamic> json) {
-  return _Profile.fromJson(json);
-}
-
-/// @nodoc
-mixin _$Profile {
-  String? get category => throw _privateConstructorUsedError;
-  String? get subcategory => throw _privateConstructorUsedError;
-  @Deprecated('Use business_model instead')
-  String? get description => throw _privateConstructorUsedError;
-  ProfileAddressesContainer? get addresses =>
-      throw _privateConstructorUsedError;
-  String? get business_model => throw _privateConstructorUsedError;
-
-  /// Serializes this Profile to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of Profile
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  $ProfileCopyWith<Profile> get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $ProfileCopyWith<$Res> {
-  factory $ProfileCopyWith(Profile value, $Res Function(Profile) then) =
-      _$ProfileCopyWithImpl<$Res, Profile>;
-  @useResult
-  $Res call(
-      {String? category,
-      String? subcategory,
-      @Deprecated('Use business_model instead') String? description,
-      ProfileAddressesContainer? addresses,
-      String? business_model});
-
-  $ProfileAddressesContainerCopyWith<$Res>? get addresses;
-}
-
-/// @nodoc
-class _$ProfileCopyWithImpl<$Res, $Val extends Profile>
-    implements $ProfileCopyWith<$Res> {
-  _$ProfileCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of Profile
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? category = freezed,
-    Object? subcategory = freezed,
-    Object? description = freezed,
-    Object? addresses = freezed,
-    Object? business_model = freezed,
+    Object? url = null,
+    Object? name = null,
   }) {
-    return _then(_value.copyWith(
-      category: freezed == category
-          ? _value.category
-          : category // ignore: cast_nullable_to_non_nullable
-              as String?,
-      subcategory: freezed == subcategory
-          ? _value.subcategory
-          : subcategory // ignore: cast_nullable_to_non_nullable
-              as String?,
-      description: freezed == description
-          ? _value.description
-          : description // ignore: cast_nullable_to_non_nullable
-              as String?,
-      addresses: freezed == addresses
-          ? _value.addresses
-          : addresses // ignore: cast_nullable_to_non_nullable
-              as ProfileAddressesContainer?,
-      business_model: freezed == business_model
-          ? _value.business_model
-          : business_model // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ) as $Val);
-  }
-
-  /// Create a copy of Profile
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $ProfileAddressesContainerCopyWith<$Res>? get addresses {
-    if (_value.addresses == null) {
-      return null;
-    }
-
-    return $ProfileAddressesContainerCopyWith<$Res>(_value.addresses!, (value) {
-      return _then(_value.copyWith(addresses: value) as $Val);
-    });
-  }
-}
-
-/// @nodoc
-abstract class _$$ProfileImplCopyWith<$Res> implements $ProfileCopyWith<$Res> {
-  factory _$$ProfileImplCopyWith(
-          _$ProfileImpl value, $Res Function(_$ProfileImpl) then) =
-      __$$ProfileImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {String? category,
-      String? subcategory,
-      @Deprecated('Use business_model instead') String? description,
-      ProfileAddressesContainer? addresses,
-      String? business_model});
-
-  @override
-  $ProfileAddressesContainerCopyWith<$Res>? get addresses;
-}
-
-/// @nodoc
-class __$$ProfileImplCopyWithImpl<$Res>
-    extends _$ProfileCopyWithImpl<$Res, _$ProfileImpl>
-    implements _$$ProfileImplCopyWith<$Res> {
-  __$$ProfileImplCopyWithImpl(
-      _$ProfileImpl _value, $Res Function(_$ProfileImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of Profile
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? category = freezed,
-    Object? subcategory = freezed,
-    Object? description = freezed,
-    Object? addresses = freezed,
-    Object? business_model = freezed,
-  }) {
-    return _then(_$ProfileImpl(
-      category: freezed == category
-          ? _value.category
-          : category // ignore: cast_nullable_to_non_nullable
-              as String?,
-      subcategory: freezed == subcategory
-          ? _value.subcategory
-          : subcategory // ignore: cast_nullable_to_non_nullable
-              as String?,
-      description: freezed == description
-          ? _value.description
-          : description // ignore: cast_nullable_to_non_nullable
-              as String?,
-      addresses: freezed == addresses
-          ? _value.addresses
-          : addresses // ignore: cast_nullable_to_non_nullable
-              as ProfileAddressesContainer?,
-      business_model: freezed == business_model
-          ? _value.business_model
-          : business_model // ignore: cast_nullable_to_non_nullable
-              as String?,
+    return _then(_self.copyWith(
+      url: null == url
+          ? _self.url
+          : url // ignore: cast_nullable_to_non_nullable
+              as String,
+      name: null == name
+          ? _self.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -890,39 +680,113 @@ class __$$ProfileImplCopyWithImpl<$Res>
 /// @nodoc
 
 @JsonSerializable(includeIfNull: false)
-class _$ProfileImpl implements _Profile {
-  const _$ProfileImpl(
-      {this.category,
-      this.subcategory,
-      @Deprecated('Use business_model instead') this.description,
-      this.addresses,
-      this.business_model});
-
-  factory _$ProfileImpl.fromJson(Map<String, dynamic> json) =>
-      _$$ProfileImplFromJson(json);
+class _AppDetails implements AppDetails {
+  const _AppDetails({required this.url, required this.name});
+  factory _AppDetails.fromJson(Map<String, dynamic> json) =>
+      _$AppDetailsFromJson(json);
 
   @override
-  final String? category;
+  final String url;
   @override
-  final String? subcategory;
+  final String name;
+
+  /// Create a copy of AppDetails
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @Deprecated('Use business_model instead')
-  final String? description;
-  @override
-  final ProfileAddressesContainer? addresses;
-  @override
-  final String? business_model;
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$AppDetailsCopyWith<_AppDetails> get copyWith =>
+      __$AppDetailsCopyWithImpl<_AppDetails>(this, _$identity);
 
   @override
-  String toString() {
-    return 'Profile(category: $category, subcategory: $subcategory, description: $description, addresses: $addresses, business_model: $business_model)';
+  Map<String, dynamic> toJson() {
+    return _$AppDetailsToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ProfileImpl &&
+            other is _AppDetails &&
+            (identical(other.url, url) || other.url == url) &&
+            (identical(other.name, name) || other.name == name));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, url, name);
+
+  @override
+  String toString() {
+    return 'AppDetails(url: $url, name: $name)';
+  }
+}
+
+/// @nodoc
+abstract mixin class _$AppDetailsCopyWith<$Res>
+    implements $AppDetailsCopyWith<$Res> {
+  factory _$AppDetailsCopyWith(
+          _AppDetails value, $Res Function(_AppDetails) _then) =
+      __$AppDetailsCopyWithImpl;
+  @override
+  @useResult
+  $Res call({String url, String name});
+}
+
+/// @nodoc
+class __$AppDetailsCopyWithImpl<$Res> implements _$AppDetailsCopyWith<$Res> {
+  __$AppDetailsCopyWithImpl(this._self, this._then);
+
+  final _AppDetails _self;
+  final $Res Function(_AppDetails) _then;
+
+  /// Create a copy of AppDetails
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? url = null,
+    Object? name = null,
+  }) {
+    return _then(_AppDetails(
+      url: null == url
+          ? _self.url
+          : url // ignore: cast_nullable_to_non_nullable
+              as String,
+      name: null == name
+          ? _self.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+mixin _$Profile {
+  String? get category;
+  String? get subcategory;
+  @Deprecated('Use business_model instead')
+  String? get description;
+  ProfileAddressesContainer? get addresses;
+  String? get business_model;
+
+  /// Create a copy of Profile
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $ProfileCopyWith<Profile> get copyWith =>
+      _$ProfileCopyWithImpl<Profile>(this as Profile, _$identity);
+
+  /// Serializes this Profile to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is Profile &&
             (identical(other.category, category) ||
                 other.category == category) &&
             (identical(other.subcategory, subcategory) ||
@@ -940,216 +804,247 @@ class _$ProfileImpl implements _Profile {
   int get hashCode => Object.hash(runtimeType, category, subcategory,
       description, addresses, business_model);
 
-  /// Create a copy of Profile
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$ProfileImplCopyWith<_$ProfileImpl> get copyWith =>
-      __$$ProfileImplCopyWithImpl<_$ProfileImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$ProfileImplToJson(
-      this,
-    );
+  String toString() {
+    return 'Profile(category: $category, subcategory: $subcategory, description: $description, addresses: $addresses, business_model: $business_model)';
   }
 }
 
-abstract class _Profile implements Profile {
-  const factory _Profile(
-      {final String? category,
-      final String? subcategory,
-      @Deprecated('Use business_model instead') final String? description,
-      final ProfileAddressesContainer? addresses,
-      final String? business_model}) = _$ProfileImpl;
+/// @nodoc
+abstract mixin class $ProfileCopyWith<$Res> {
+  factory $ProfileCopyWith(Profile value, $Res Function(Profile) _then) =
+      _$ProfileCopyWithImpl;
+  @useResult
+  $Res call(
+      {String? category,
+      String? subcategory,
+      @Deprecated('Use business_model instead') String? description,
+      ProfileAddressesContainer? addresses,
+      String? business_model});
 
-  factory _Profile.fromJson(Map<String, dynamic> json) = _$ProfileImpl.fromJson;
+  $ProfileAddressesContainerCopyWith<$Res>? get addresses;
+}
 
-  @override
-  String? get category;
-  @override
-  String? get subcategory;
-  @override
-  @Deprecated('Use business_model instead')
-  String? get description;
-  @override
-  ProfileAddressesContainer? get addresses;
-  @override
-  String? get business_model;
+/// @nodoc
+class _$ProfileCopyWithImpl<$Res> implements $ProfileCopyWith<$Res> {
+  _$ProfileCopyWithImpl(this._self, this._then);
+
+  final Profile _self;
+  final $Res Function(Profile) _then;
 
   /// Create a copy of Profile
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$ProfileImplCopyWith<_$ProfileImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-ProfileAddressesContainer _$ProfileAddressesContainerFromJson(
-    Map<String, dynamic> json) {
-  return _ProfileAddressesContainer.fromJson(json);
-}
-
-/// @nodoc
-mixin _$ProfileAddressesContainer {
-  ProfileAddresses? get registered => throw _privateConstructorUsedError;
-  ProfileAddresses? get operation => throw _privateConstructorUsedError;
-
-  /// Serializes this ProfileAddressesContainer to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of ProfileAddressesContainer
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  $ProfileAddressesContainerCopyWith<ProfileAddressesContainer> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $ProfileAddressesContainerCopyWith<$Res> {
-  factory $ProfileAddressesContainerCopyWith(ProfileAddressesContainer value,
-          $Res Function(ProfileAddressesContainer) then) =
-      _$ProfileAddressesContainerCopyWithImpl<$Res, ProfileAddressesContainer>;
-  @useResult
-  $Res call({ProfileAddresses? registered, ProfileAddresses? operation});
-
-  $ProfileAddressesCopyWith<$Res>? get registered;
-  $ProfileAddressesCopyWith<$Res>? get operation;
-}
-
-/// @nodoc
-class _$ProfileAddressesContainerCopyWithImpl<$Res,
-        $Val extends ProfileAddressesContainer>
-    implements $ProfileAddressesContainerCopyWith<$Res> {
-  _$ProfileAddressesContainerCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of ProfileAddressesContainer
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? registered = freezed,
-    Object? operation = freezed,
+    Object? category = freezed,
+    Object? subcategory = freezed,
+    Object? description = freezed,
+    Object? addresses = freezed,
+    Object? business_model = freezed,
   }) {
-    return _then(_value.copyWith(
-      registered: freezed == registered
-          ? _value.registered
-          : registered // ignore: cast_nullable_to_non_nullable
-              as ProfileAddresses?,
-      operation: freezed == operation
-          ? _value.operation
-          : operation // ignore: cast_nullable_to_non_nullable
-              as ProfileAddresses?,
-    ) as $Val);
-  }
-
-  /// Create a copy of ProfileAddressesContainer
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $ProfileAddressesCopyWith<$Res>? get registered {
-    if (_value.registered == null) {
-      return null;
-    }
-
-    return $ProfileAddressesCopyWith<$Res>(_value.registered!, (value) {
-      return _then(_value.copyWith(registered: value) as $Val);
-    });
-  }
-
-  /// Create a copy of ProfileAddressesContainer
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $ProfileAddressesCopyWith<$Res>? get operation {
-    if (_value.operation == null) {
-      return null;
-    }
-
-    return $ProfileAddressesCopyWith<$Res>(_value.operation!, (value) {
-      return _then(_value.copyWith(operation: value) as $Val);
-    });
-  }
-}
-
-/// @nodoc
-abstract class _$$ProfileAddressesContainerImplCopyWith<$Res>
-    implements $ProfileAddressesContainerCopyWith<$Res> {
-  factory _$$ProfileAddressesContainerImplCopyWith(
-          _$ProfileAddressesContainerImpl value,
-          $Res Function(_$ProfileAddressesContainerImpl) then) =
-      __$$ProfileAddressesContainerImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({ProfileAddresses? registered, ProfileAddresses? operation});
-
-  @override
-  $ProfileAddressesCopyWith<$Res>? get registered;
-  @override
-  $ProfileAddressesCopyWith<$Res>? get operation;
-}
-
-/// @nodoc
-class __$$ProfileAddressesContainerImplCopyWithImpl<$Res>
-    extends _$ProfileAddressesContainerCopyWithImpl<$Res,
-        _$ProfileAddressesContainerImpl>
-    implements _$$ProfileAddressesContainerImplCopyWith<$Res> {
-  __$$ProfileAddressesContainerImplCopyWithImpl(
-      _$ProfileAddressesContainerImpl _value,
-      $Res Function(_$ProfileAddressesContainerImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of ProfileAddressesContainer
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? registered = freezed,
-    Object? operation = freezed,
-  }) {
-    return _then(_$ProfileAddressesContainerImpl(
-      registered: freezed == registered
-          ? _value.registered
-          : registered // ignore: cast_nullable_to_non_nullable
-              as ProfileAddresses?,
-      operation: freezed == operation
-          ? _value.operation
-          : operation // ignore: cast_nullable_to_non_nullable
-              as ProfileAddresses?,
+    return _then(_self.copyWith(
+      category: freezed == category
+          ? _self.category
+          : category // ignore: cast_nullable_to_non_nullable
+              as String?,
+      subcategory: freezed == subcategory
+          ? _self.subcategory
+          : subcategory // ignore: cast_nullable_to_non_nullable
+              as String?,
+      description: freezed == description
+          ? _self.description
+          : description // ignore: cast_nullable_to_non_nullable
+              as String?,
+      addresses: freezed == addresses
+          ? _self.addresses
+          : addresses // ignore: cast_nullable_to_non_nullable
+              as ProfileAddressesContainer?,
+      business_model: freezed == business_model
+          ? _self.business_model
+          : business_model // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
+  }
+
+  /// Create a copy of Profile
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $ProfileAddressesContainerCopyWith<$Res>? get addresses {
+    if (_self.addresses == null) {
+      return null;
+    }
+
+    return $ProfileAddressesContainerCopyWith<$Res>(_self.addresses!, (value) {
+      return _then(_self.copyWith(addresses: value));
+    });
   }
 }
 
 /// @nodoc
 
 @JsonSerializable(includeIfNull: false)
-class _$ProfileAddressesContainerImpl implements _ProfileAddressesContainer {
-  const _$ProfileAddressesContainerImpl({this.registered, this.operation});
-
-  factory _$ProfileAddressesContainerImpl.fromJson(Map<String, dynamic> json) =>
-      _$$ProfileAddressesContainerImplFromJson(json);
+class _Profile implements Profile {
+  const _Profile(
+      {this.category,
+      this.subcategory,
+      @Deprecated('Use business_model instead') this.description,
+      this.addresses,
+      this.business_model});
+  factory _Profile.fromJson(Map<String, dynamic> json) =>
+      _$ProfileFromJson(json);
 
   @override
-  final ProfileAddresses? registered;
+  final String? category;
   @override
-  final ProfileAddresses? operation;
+  final String? subcategory;
+  @override
+  @Deprecated('Use business_model instead')
+  final String? description;
+  @override
+  final ProfileAddressesContainer? addresses;
+  @override
+  final String? business_model;
+
+  /// Create a copy of Profile
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$ProfileCopyWith<_Profile> get copyWith =>
+      __$ProfileCopyWithImpl<_Profile>(this, _$identity);
 
   @override
-  String toString() {
-    return 'ProfileAddressesContainer(registered: $registered, operation: $operation)';
+  Map<String, dynamic> toJson() {
+    return _$ProfileToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ProfileAddressesContainerImpl &&
+            other is _Profile &&
+            (identical(other.category, category) ||
+                other.category == category) &&
+            (identical(other.subcategory, subcategory) ||
+                other.subcategory == subcategory) &&
+            (identical(other.description, description) ||
+                other.description == description) &&
+            (identical(other.addresses, addresses) ||
+                other.addresses == addresses) &&
+            (identical(other.business_model, business_model) ||
+                other.business_model == business_model));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, category, subcategory,
+      description, addresses, business_model);
+
+  @override
+  String toString() {
+    return 'Profile(category: $category, subcategory: $subcategory, description: $description, addresses: $addresses, business_model: $business_model)';
+  }
+}
+
+/// @nodoc
+abstract mixin class _$ProfileCopyWith<$Res> implements $ProfileCopyWith<$Res> {
+  factory _$ProfileCopyWith(_Profile value, $Res Function(_Profile) _then) =
+      __$ProfileCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {String? category,
+      String? subcategory,
+      @Deprecated('Use business_model instead') String? description,
+      ProfileAddressesContainer? addresses,
+      String? business_model});
+
+  @override
+  $ProfileAddressesContainerCopyWith<$Res>? get addresses;
+}
+
+/// @nodoc
+class __$ProfileCopyWithImpl<$Res> implements _$ProfileCopyWith<$Res> {
+  __$ProfileCopyWithImpl(this._self, this._then);
+
+  final _Profile _self;
+  final $Res Function(_Profile) _then;
+
+  /// Create a copy of Profile
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? category = freezed,
+    Object? subcategory = freezed,
+    Object? description = freezed,
+    Object? addresses = freezed,
+    Object? business_model = freezed,
+  }) {
+    return _then(_Profile(
+      category: freezed == category
+          ? _self.category
+          : category // ignore: cast_nullable_to_non_nullable
+              as String?,
+      subcategory: freezed == subcategory
+          ? _self.subcategory
+          : subcategory // ignore: cast_nullable_to_non_nullable
+              as String?,
+      description: freezed == description
+          ? _self.description
+          : description // ignore: cast_nullable_to_non_nullable
+              as String?,
+      addresses: freezed == addresses
+          ? _self.addresses
+          : addresses // ignore: cast_nullable_to_non_nullable
+              as ProfileAddressesContainer?,
+      business_model: freezed == business_model
+          ? _self.business_model
+          : business_model // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+
+  /// Create a copy of Profile
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $ProfileAddressesContainerCopyWith<$Res>? get addresses {
+    if (_self.addresses == null) {
+      return null;
+    }
+
+    return $ProfileAddressesContainerCopyWith<$Res>(_self.addresses!, (value) {
+      return _then(_self.copyWith(addresses: value));
+    });
+  }
+}
+
+/// @nodoc
+mixin _$ProfileAddressesContainer {
+  ProfileAddresses? get registered;
+  ProfileAddresses? get operation;
+
+  /// Create a copy of ProfileAddressesContainer
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $ProfileAddressesContainerCopyWith<ProfileAddressesContainer> get copyWith =>
+      _$ProfileAddressesContainerCopyWithImpl<ProfileAddressesContainer>(
+          this as ProfileAddressesContainer, _$identity);
+
+  /// Serializes this ProfileAddressesContainer to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is ProfileAddressesContainer &&
             (identical(other.registered, registered) ||
                 other.registered == registered) &&
             (identical(other.operation, operation) ||
@@ -1160,142 +1055,256 @@ class _$ProfileAddressesContainerImpl implements _ProfileAddressesContainer {
   @override
   int get hashCode => Object.hash(runtimeType, registered, operation);
 
-  /// Create a copy of ProfileAddressesContainer
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$ProfileAddressesContainerImplCopyWith<_$ProfileAddressesContainerImpl>
-      get copyWith => __$$ProfileAddressesContainerImplCopyWithImpl<
-          _$ProfileAddressesContainerImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$ProfileAddressesContainerImplToJson(
-      this,
-    );
+  String toString() {
+    return 'ProfileAddressesContainer(registered: $registered, operation: $operation)';
   }
 }
 
-abstract class _ProfileAddressesContainer implements ProfileAddressesContainer {
-  const factory _ProfileAddressesContainer(
-      {final ProfileAddresses? registered,
-      final ProfileAddresses? operation}) = _$ProfileAddressesContainerImpl;
+/// @nodoc
+abstract mixin class $ProfileAddressesContainerCopyWith<$Res> {
+  factory $ProfileAddressesContainerCopyWith(ProfileAddressesContainer value,
+          $Res Function(ProfileAddressesContainer) _then) =
+      _$ProfileAddressesContainerCopyWithImpl;
+  @useResult
+  $Res call({ProfileAddresses? registered, ProfileAddresses? operation});
 
-  factory _ProfileAddressesContainer.fromJson(Map<String, dynamic> json) =
-      _$ProfileAddressesContainerImpl.fromJson;
+  $ProfileAddressesCopyWith<$Res>? get registered;
+  $ProfileAddressesCopyWith<$Res>? get operation;
+}
+
+/// @nodoc
+class _$ProfileAddressesContainerCopyWithImpl<$Res>
+    implements $ProfileAddressesContainerCopyWith<$Res> {
+  _$ProfileAddressesContainerCopyWithImpl(this._self, this._then);
+
+  final ProfileAddressesContainer _self;
+  final $Res Function(ProfileAddressesContainer) _then;
+
+  /// Create a copy of ProfileAddressesContainer
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? registered = freezed,
+    Object? operation = freezed,
+  }) {
+    return _then(_self.copyWith(
+      registered: freezed == registered
+          ? _self.registered
+          : registered // ignore: cast_nullable_to_non_nullable
+              as ProfileAddresses?,
+      operation: freezed == operation
+          ? _self.operation
+          : operation // ignore: cast_nullable_to_non_nullable
+              as ProfileAddresses?,
+    ));
+  }
+
+  /// Create a copy of ProfileAddressesContainer
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $ProfileAddressesCopyWith<$Res>? get registered {
+    if (_self.registered == null) {
+      return null;
+    }
+
+    return $ProfileAddressesCopyWith<$Res>(_self.registered!, (value) {
+      return _then(_self.copyWith(registered: value));
+    });
+  }
+
+  /// Create a copy of ProfileAddressesContainer
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $ProfileAddressesCopyWith<$Res>? get operation {
+    if (_self.operation == null) {
+      return null;
+    }
+
+    return $ProfileAddressesCopyWith<$Res>(_self.operation!, (value) {
+      return _then(_self.copyWith(operation: value));
+    });
+  }
+}
+
+/// @nodoc
+
+@JsonSerializable(includeIfNull: false)
+class _ProfileAddressesContainer implements ProfileAddressesContainer {
+  const _ProfileAddressesContainer({this.registered, this.operation});
+  factory _ProfileAddressesContainer.fromJson(Map<String, dynamic> json) =>
+      _$ProfileAddressesContainerFromJson(json);
 
   @override
-  ProfileAddresses? get registered;
+  final ProfileAddresses? registered;
   @override
-  ProfileAddresses? get operation;
+  final ProfileAddresses? operation;
 
   /// Create a copy of ProfileAddressesContainer
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$ProfileAddressesContainerImplCopyWith<_$ProfileAddressesContainerImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  @pragma('vm:prefer-inline')
+  _$ProfileAddressesContainerCopyWith<_ProfileAddressesContainer>
+      get copyWith =>
+          __$ProfileAddressesContainerCopyWithImpl<_ProfileAddressesContainer>(
+              this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$ProfileAddressesContainerToJson(
+      this,
+    );
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _ProfileAddressesContainer &&
+            (identical(other.registered, registered) ||
+                other.registered == registered) &&
+            (identical(other.operation, operation) ||
+                other.operation == operation));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, registered, operation);
+
+  @override
+  String toString() {
+    return 'ProfileAddressesContainer(registered: $registered, operation: $operation)';
+  }
 }
 
-ProfileAddresses _$ProfileAddressesFromJson(Map<String, dynamic> json) {
-  return _ProfileAddresses.fromJson(json);
+/// @nodoc
+abstract mixin class _$ProfileAddressesContainerCopyWith<$Res>
+    implements $ProfileAddressesContainerCopyWith<$Res> {
+  factory _$ProfileAddressesContainerCopyWith(_ProfileAddressesContainer value,
+          $Res Function(_ProfileAddressesContainer) _then) =
+      __$ProfileAddressesContainerCopyWithImpl;
+  @override
+  @useResult
+  $Res call({ProfileAddresses? registered, ProfileAddresses? operation});
+
+  @override
+  $ProfileAddressesCopyWith<$Res>? get registered;
+  @override
+  $ProfileAddressesCopyWith<$Res>? get operation;
+}
+
+/// @nodoc
+class __$ProfileAddressesContainerCopyWithImpl<$Res>
+    implements _$ProfileAddressesContainerCopyWith<$Res> {
+  __$ProfileAddressesContainerCopyWithImpl(this._self, this._then);
+
+  final _ProfileAddressesContainer _self;
+  final $Res Function(_ProfileAddressesContainer) _then;
+
+  /// Create a copy of ProfileAddressesContainer
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? registered = freezed,
+    Object? operation = freezed,
+  }) {
+    return _then(_ProfileAddressesContainer(
+      registered: freezed == registered
+          ? _self.registered
+          : registered // ignore: cast_nullable_to_non_nullable
+              as ProfileAddresses?,
+      operation: freezed == operation
+          ? _self.operation
+          : operation // ignore: cast_nullable_to_non_nullable
+              as ProfileAddresses?,
+    ));
+  }
+
+  /// Create a copy of ProfileAddressesContainer
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $ProfileAddressesCopyWith<$Res>? get registered {
+    if (_self.registered == null) {
+      return null;
+    }
+
+    return $ProfileAddressesCopyWith<$Res>(_self.registered!, (value) {
+      return _then(_self.copyWith(registered: value));
+    });
+  }
+
+  /// Create a copy of ProfileAddressesContainer
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $ProfileAddressesCopyWith<$Res>? get operation {
+    if (_self.operation == null) {
+      return null;
+    }
+
+    return $ProfileAddressesCopyWith<$Res>(_self.operation!, (value) {
+      return _then(_self.copyWith(operation: value));
+    });
+  }
 }
 
 /// @nodoc
 mixin _$ProfileAddresses {
-  String get street1 => throw _privateConstructorUsedError;
-  String get street2 =>
-      throw _privateConstructorUsedError; // Note: d.ts says required, but might be optional in practice
-  String get city => throw _privateConstructorUsedError;
-  String get state => throw _privateConstructorUsedError;
-  dynamic get postal_code =>
-      throw _privateConstructorUsedError; // number | string
-  String get country => throw _privateConstructorUsedError;
-
-  /// Serializes this ProfileAddresses to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  String get street1;
+  String
+      get street2; // Note: d.ts says required, but might be optional in practice
+  String get city;
+  String get state;
+  dynamic get postal_code; // number | string
+  String get country;
 
   /// Create a copy of ProfileAddresses
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $ProfileAddressesCopyWith<ProfileAddresses> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $ProfileAddressesCopyWith<$Res> {
-  factory $ProfileAddressesCopyWith(
-          ProfileAddresses value, $Res Function(ProfileAddresses) then) =
-      _$ProfileAddressesCopyWithImpl<$Res, ProfileAddresses>;
-  @useResult
-  $Res call(
-      {String street1,
-      String street2,
-      String city,
-      String state,
-      dynamic postal_code,
-      String country});
-}
-
-/// @nodoc
-class _$ProfileAddressesCopyWithImpl<$Res, $Val extends ProfileAddresses>
-    implements $ProfileAddressesCopyWith<$Res> {
-  _$ProfileAddressesCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of ProfileAddresses
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
+  $ProfileAddressesCopyWith<ProfileAddresses> get copyWith =>
+      _$ProfileAddressesCopyWithImpl<ProfileAddresses>(
+          this as ProfileAddresses, _$identity);
+
+  /// Serializes this ProfileAddresses to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? street1 = null,
-    Object? street2 = null,
-    Object? city = null,
-    Object? state = null,
-    Object? postal_code = freezed,
-    Object? country = null,
-  }) {
-    return _then(_value.copyWith(
-      street1: null == street1
-          ? _value.street1
-          : street1 // ignore: cast_nullable_to_non_nullable
-              as String,
-      street2: null == street2
-          ? _value.street2
-          : street2 // ignore: cast_nullable_to_non_nullable
-              as String,
-      city: null == city
-          ? _value.city
-          : city // ignore: cast_nullable_to_non_nullable
-              as String,
-      state: null == state
-          ? _value.state
-          : state // ignore: cast_nullable_to_non_nullable
-              as String,
-      postal_code: freezed == postal_code
-          ? _value.postal_code
-          : postal_code // ignore: cast_nullable_to_non_nullable
-              as dynamic,
-      country: null == country
-          ? _value.country
-          : country // ignore: cast_nullable_to_non_nullable
-              as String,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is ProfileAddresses &&
+            (identical(other.street1, street1) || other.street1 == street1) &&
+            (identical(other.street2, street2) || other.street2 == street2) &&
+            (identical(other.city, city) || other.city == city) &&
+            (identical(other.state, state) || other.state == state) &&
+            const DeepCollectionEquality()
+                .equals(other.postal_code, postal_code) &&
+            (identical(other.country, country) || other.country == country));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, street1, street2, city, state,
+      const DeepCollectionEquality().hash(postal_code), country);
+
+  @override
+  String toString() {
+    return 'ProfileAddresses(street1: $street1, street2: $street2, city: $city, state: $state, postal_code: $postal_code, country: $country)';
   }
 }
 
 /// @nodoc
-abstract class _$$ProfileAddressesImplCopyWith<$Res>
-    implements $ProfileAddressesCopyWith<$Res> {
-  factory _$$ProfileAddressesImplCopyWith(_$ProfileAddressesImpl value,
-          $Res Function(_$ProfileAddressesImpl) then) =
-      __$$ProfileAddressesImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $ProfileAddressesCopyWith<$Res> {
+  factory $ProfileAddressesCopyWith(
+          ProfileAddresses value, $Res Function(ProfileAddresses) _then) =
+      _$ProfileAddressesCopyWithImpl;
   @useResult
   $Res call(
       {String street1,
@@ -1307,12 +1316,12 @@ abstract class _$$ProfileAddressesImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$ProfileAddressesImplCopyWithImpl<$Res>
-    extends _$ProfileAddressesCopyWithImpl<$Res, _$ProfileAddressesImpl>
-    implements _$$ProfileAddressesImplCopyWith<$Res> {
-  __$$ProfileAddressesImplCopyWithImpl(_$ProfileAddressesImpl _value,
-      $Res Function(_$ProfileAddressesImpl) _then)
-      : super(_value, _then);
+class _$ProfileAddressesCopyWithImpl<$Res>
+    implements $ProfileAddressesCopyWith<$Res> {
+  _$ProfileAddressesCopyWithImpl(this._self, this._then);
+
+  final ProfileAddresses _self;
+  final $Res Function(ProfileAddresses) _then;
 
   /// Create a copy of ProfileAddresses
   /// with the given fields replaced by the non-null parameter values.
@@ -1326,29 +1335,29 @@ class __$$ProfileAddressesImplCopyWithImpl<$Res>
     Object? postal_code = freezed,
     Object? country = null,
   }) {
-    return _then(_$ProfileAddressesImpl(
+    return _then(_self.copyWith(
       street1: null == street1
-          ? _value.street1
+          ? _self.street1
           : street1 // ignore: cast_nullable_to_non_nullable
               as String,
       street2: null == street2
-          ? _value.street2
+          ? _self.street2
           : street2 // ignore: cast_nullable_to_non_nullable
               as String,
       city: null == city
-          ? _value.city
+          ? _self.city
           : city // ignore: cast_nullable_to_non_nullable
               as String,
       state: null == state
-          ? _value.state
+          ? _self.state
           : state // ignore: cast_nullable_to_non_nullable
               as String,
       postal_code: freezed == postal_code
-          ? _value.postal_code
+          ? _self.postal_code
           : postal_code // ignore: cast_nullable_to_non_nullable
               as dynamic,
       country: null == country
-          ? _value.country
+          ? _self.country
           : country // ignore: cast_nullable_to_non_nullable
               as String,
     ));
@@ -1358,17 +1367,16 @@ class __$$ProfileAddressesImplCopyWithImpl<$Res>
 /// @nodoc
 
 @JsonSerializable(includeIfNull: false)
-class _$ProfileAddressesImpl implements _ProfileAddresses {
-  const _$ProfileAddressesImpl(
+class _ProfileAddresses implements ProfileAddresses {
+  const _ProfileAddresses(
       {required this.street1,
       required this.street2,
       required this.city,
       required this.state,
       required this.postal_code,
       required this.country});
-
-  factory _$ProfileAddressesImpl.fromJson(Map<String, dynamic> json) =>
-      _$$ProfileAddressesImplFromJson(json);
+  factory _ProfileAddresses.fromJson(Map<String, dynamic> json) =>
+      _$ProfileAddressesFromJson(json);
 
   @override
   final String street1;
@@ -1385,16 +1393,26 @@ class _$ProfileAddressesImpl implements _ProfileAddresses {
   @override
   final String country;
 
+  /// Create a copy of ProfileAddresses
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'ProfileAddresses(street1: $street1, street2: $street2, city: $city, state: $state, postal_code: $postal_code, country: $country)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$ProfileAddressesCopyWith<_ProfileAddresses> get copyWith =>
+      __$ProfileAddressesCopyWithImpl<_ProfileAddresses>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$ProfileAddressesToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ProfileAddressesImpl &&
+            other is _ProfileAddresses &&
             (identical(other.street1, street1) || other.street1 == street1) &&
             (identical(other.street2, street2) || other.street2 == street2) &&
             (identical(other.city, city) || other.city == city) &&
@@ -1409,192 +1427,99 @@ class _$ProfileAddressesImpl implements _ProfileAddresses {
   int get hashCode => Object.hash(runtimeType, street1, street2, city, state,
       const DeepCollectionEquality().hash(postal_code), country);
 
-  /// Create a copy of ProfileAddresses
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$ProfileAddressesImplCopyWith<_$ProfileAddressesImpl> get copyWith =>
-      __$$ProfileAddressesImplCopyWithImpl<_$ProfileAddressesImpl>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$ProfileAddressesImplToJson(
-      this,
-    );
-  }
-}
-
-abstract class _ProfileAddresses implements ProfileAddresses {
-  const factory _ProfileAddresses(
-      {required final String street1,
-      required final String street2,
-      required final String city,
-      required final String state,
-      required final dynamic postal_code,
-      required final String country}) = _$ProfileAddressesImpl;
-
-  factory _ProfileAddresses.fromJson(Map<String, dynamic> json) =
-      _$ProfileAddressesImpl.fromJson;
-
-  @override
-  String get street1;
-  @override
-  String
-      get street2; // Note: d.ts says required, but might be optional in practice
-  @override
-  String get city;
-  @override
-  String get state;
-  @override
-  dynamic get postal_code; // number | string
-  @override
-  String get country;
-
-  /// Create a copy of ProfileAddresses
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$ProfileAddressesImplCopyWith<_$ProfileAddressesImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-LegalInfo _$LegalInfoFromJson(Map<String, dynamic> json) {
-  return _LegalInfo.fromJson(json);
-}
-
-/// @nodoc
-mixin _$LegalInfo {
-  String? get pan => throw _privateConstructorUsedError;
-  String? get gst => throw _privateConstructorUsedError;
-  String? get cin => throw _privateConstructorUsedError;
-
-  /// Serializes this LegalInfo to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of LegalInfo
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  $LegalInfoCopyWith<LegalInfo> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $LegalInfoCopyWith<$Res> {
-  factory $LegalInfoCopyWith(LegalInfo value, $Res Function(LegalInfo) then) =
-      _$LegalInfoCopyWithImpl<$Res, LegalInfo>;
-  @useResult
-  $Res call({String? pan, String? gst, String? cin});
-}
-
-/// @nodoc
-class _$LegalInfoCopyWithImpl<$Res, $Val extends LegalInfo>
-    implements $LegalInfoCopyWith<$Res> {
-  _$LegalInfoCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of LegalInfo
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? pan = freezed,
-    Object? gst = freezed,
-    Object? cin = freezed,
-  }) {
-    return _then(_value.copyWith(
-      pan: freezed == pan
-          ? _value.pan
-          : pan // ignore: cast_nullable_to_non_nullable
-              as String?,
-      gst: freezed == gst
-          ? _value.gst
-          : gst // ignore: cast_nullable_to_non_nullable
-              as String?,
-      cin: freezed == cin
-          ? _value.cin
-          : cin // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ) as $Val);
+  String toString() {
+    return 'ProfileAddresses(street1: $street1, street2: $street2, city: $city, state: $state, postal_code: $postal_code, country: $country)';
   }
 }
 
 /// @nodoc
-abstract class _$$LegalInfoImplCopyWith<$Res>
-    implements $LegalInfoCopyWith<$Res> {
-  factory _$$LegalInfoImplCopyWith(
-          _$LegalInfoImpl value, $Res Function(_$LegalInfoImpl) then) =
-      __$$LegalInfoImplCopyWithImpl<$Res>;
+abstract mixin class _$ProfileAddressesCopyWith<$Res>
+    implements $ProfileAddressesCopyWith<$Res> {
+  factory _$ProfileAddressesCopyWith(
+          _ProfileAddresses value, $Res Function(_ProfileAddresses) _then) =
+      __$ProfileAddressesCopyWithImpl;
   @override
   @useResult
-  $Res call({String? pan, String? gst, String? cin});
+  $Res call(
+      {String street1,
+      String street2,
+      String city,
+      String state,
+      dynamic postal_code,
+      String country});
 }
 
 /// @nodoc
-class __$$LegalInfoImplCopyWithImpl<$Res>
-    extends _$LegalInfoCopyWithImpl<$Res, _$LegalInfoImpl>
-    implements _$$LegalInfoImplCopyWith<$Res> {
-  __$$LegalInfoImplCopyWithImpl(
-      _$LegalInfoImpl _value, $Res Function(_$LegalInfoImpl) _then)
-      : super(_value, _then);
+class __$ProfileAddressesCopyWithImpl<$Res>
+    implements _$ProfileAddressesCopyWith<$Res> {
+  __$ProfileAddressesCopyWithImpl(this._self, this._then);
 
-  /// Create a copy of LegalInfo
+  final _ProfileAddresses _self;
+  final $Res Function(_ProfileAddresses) _then;
+
+  /// Create a copy of ProfileAddresses
   /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
   @override
+  @pragma('vm:prefer-inline')
   $Res call({
-    Object? pan = freezed,
-    Object? gst = freezed,
-    Object? cin = freezed,
+    Object? street1 = null,
+    Object? street2 = null,
+    Object? city = null,
+    Object? state = null,
+    Object? postal_code = freezed,
+    Object? country = null,
   }) {
-    return _then(_$LegalInfoImpl(
-      pan: freezed == pan
-          ? _value.pan
-          : pan // ignore: cast_nullable_to_non_nullable
-              as String?,
-      gst: freezed == gst
-          ? _value.gst
-          : gst // ignore: cast_nullable_to_non_nullable
-              as String?,
-      cin: freezed == cin
-          ? _value.cin
-          : cin // ignore: cast_nullable_to_non_nullable
-              as String?,
+    return _then(_ProfileAddresses(
+      street1: null == street1
+          ? _self.street1
+          : street1 // ignore: cast_nullable_to_non_nullable
+              as String,
+      street2: null == street2
+          ? _self.street2
+          : street2 // ignore: cast_nullable_to_non_nullable
+              as String,
+      city: null == city
+          ? _self.city
+          : city // ignore: cast_nullable_to_non_nullable
+              as String,
+      state: null == state
+          ? _self.state
+          : state // ignore: cast_nullable_to_non_nullable
+              as String,
+      postal_code: freezed == postal_code
+          ? _self.postal_code
+          : postal_code // ignore: cast_nullable_to_non_nullable
+              as dynamic,
+      country: null == country
+          ? _self.country
+          : country // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
 
 /// @nodoc
+mixin _$LegalInfo {
+  String? get pan;
+  String? get gst;
+  String? get cin;
 
-@JsonSerializable(includeIfNull: false)
-class _$LegalInfoImpl implements _LegalInfo {
-  const _$LegalInfoImpl({this.pan, this.gst, this.cin});
+  /// Create a copy of LegalInfo
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $LegalInfoCopyWith<LegalInfo> get copyWith =>
+      _$LegalInfoCopyWithImpl<LegalInfo>(this as LegalInfo, _$identity);
 
-  factory _$LegalInfoImpl.fromJson(Map<String, dynamic> json) =>
-      _$$LegalInfoImplFromJson(json);
-
-  @override
-  final String? pan;
-  @override
-  final String? gst;
-  @override
-  final String? cin;
-
-  @override
-  String toString() {
-    return 'LegalInfo(pan: $pan, gst: $gst, cin: $cin)';
-  }
+  /// Serializes this LegalInfo to a JSON map.
+  Map<String, dynamic> toJson();
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$LegalInfoImpl &&
+            other is LegalInfo &&
             (identical(other.pan, pan) || other.pan == pan) &&
             (identical(other.gst, gst) || other.gst == gst) &&
             (identical(other.cin, cin) || other.cin == cin));
@@ -1604,118 +1529,191 @@ class _$LegalInfoImpl implements _LegalInfo {
   @override
   int get hashCode => Object.hash(runtimeType, pan, gst, cin);
 
-  /// Create a copy of LegalInfo
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$LegalInfoImplCopyWith<_$LegalInfoImpl> get copyWith =>
-      __$$LegalInfoImplCopyWithImpl<_$LegalInfoImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$LegalInfoImplToJson(
-      this,
-    );
+  String toString() {
+    return 'LegalInfo(pan: $pan, gst: $gst, cin: $cin)';
   }
 }
 
-abstract class _LegalInfo implements LegalInfo {
-  const factory _LegalInfo(
-      {final String? pan,
-      final String? gst,
-      final String? cin}) = _$LegalInfoImpl;
+/// @nodoc
+abstract mixin class $LegalInfoCopyWith<$Res> {
+  factory $LegalInfoCopyWith(LegalInfo value, $Res Function(LegalInfo) _then) =
+      _$LegalInfoCopyWithImpl;
+  @useResult
+  $Res call({String? pan, String? gst, String? cin});
+}
 
-  factory _LegalInfo.fromJson(Map<String, dynamic> json) =
-      _$LegalInfoImpl.fromJson;
+/// @nodoc
+class _$LegalInfoCopyWithImpl<$Res> implements $LegalInfoCopyWith<$Res> {
+  _$LegalInfoCopyWithImpl(this._self, this._then);
+
+  final LegalInfo _self;
+  final $Res Function(LegalInfo) _then;
+
+  /// Create a copy of LegalInfo
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? pan = freezed,
+    Object? gst = freezed,
+    Object? cin = freezed,
+  }) {
+    return _then(_self.copyWith(
+      pan: freezed == pan
+          ? _self.pan
+          : pan // ignore: cast_nullable_to_non_nullable
+              as String?,
+      gst: freezed == gst
+          ? _self.gst
+          : gst // ignore: cast_nullable_to_non_nullable
+              as String?,
+      cin: freezed == cin
+          ? _self.cin
+          : cin // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+
+@JsonSerializable(includeIfNull: false)
+class _LegalInfo implements LegalInfo {
+  const _LegalInfo({this.pan, this.gst, this.cin});
+  factory _LegalInfo.fromJson(Map<String, dynamic> json) =>
+      _$LegalInfoFromJson(json);
 
   @override
-  String? get pan;
+  final String? pan;
   @override
-  String? get gst;
+  final String? gst;
   @override
-  String? get cin;
+  final String? cin;
 
   /// Create a copy of LegalInfo
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$LegalInfoImplCopyWith<_$LegalInfoImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  @pragma('vm:prefer-inline')
+  _$LegalInfoCopyWith<_LegalInfo> get copyWith =>
+      __$LegalInfoCopyWithImpl<_LegalInfo>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$LegalInfoToJson(
+      this,
+    );
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _LegalInfo &&
+            (identical(other.pan, pan) || other.pan == pan) &&
+            (identical(other.gst, gst) || other.gst == gst) &&
+            (identical(other.cin, cin) || other.cin == cin));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, pan, gst, cin);
+
+  @override
+  String toString() {
+    return 'LegalInfo(pan: $pan, gst: $gst, cin: $cin)';
+  }
 }
 
-Apps _$AppsFromJson(Map<String, dynamic> json) {
-  return _Apps.fromJson(json);
+/// @nodoc
+abstract mixin class _$LegalInfoCopyWith<$Res>
+    implements $LegalInfoCopyWith<$Res> {
+  factory _$LegalInfoCopyWith(
+          _LegalInfo value, $Res Function(_LegalInfo) _then) =
+      __$LegalInfoCopyWithImpl;
+  @override
+  @useResult
+  $Res call({String? pan, String? gst, String? cin});
+}
+
+/// @nodoc
+class __$LegalInfoCopyWithImpl<$Res> implements _$LegalInfoCopyWith<$Res> {
+  __$LegalInfoCopyWithImpl(this._self, this._then);
+
+  final _LegalInfo _self;
+  final $Res Function(_LegalInfo) _then;
+
+  /// Create a copy of LegalInfo
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? pan = freezed,
+    Object? gst = freezed,
+    Object? cin = freezed,
+  }) {
+    return _then(_LegalInfo(
+      pan: freezed == pan
+          ? _self.pan
+          : pan // ignore: cast_nullable_to_non_nullable
+              as String?,
+      gst: freezed == gst
+          ? _self.gst
+          : gst // ignore: cast_nullable_to_non_nullable
+              as String?,
+      cin: freezed == cin
+          ? _self.cin
+          : cin // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
 }
 
 /// @nodoc
 mixin _$Apps {
-  List<String> get websites => throw _privateConstructorUsedError;
-  List<AppDetails>? get android => throw _privateConstructorUsedError;
-  List<AppDetails>? get ios => throw _privateConstructorUsedError;
-
-  /// Serializes this Apps to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  List<String> get websites;
+  List<AppDetails>? get android;
+  List<AppDetails>? get ios;
 
   /// Create a copy of Apps
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $AppsCopyWith<Apps> get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $AppsCopyWith<$Res> {
-  factory $AppsCopyWith(Apps value, $Res Function(Apps) then) =
-      _$AppsCopyWithImpl<$Res, Apps>;
-  @useResult
-  $Res call(
-      {List<String> websites,
-      List<AppDetails>? android,
-      List<AppDetails>? ios});
-}
-
-/// @nodoc
-class _$AppsCopyWithImpl<$Res, $Val extends Apps>
-    implements $AppsCopyWith<$Res> {
-  _$AppsCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of Apps
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
+  $AppsCopyWith<Apps> get copyWith =>
+      _$AppsCopyWithImpl<Apps>(this as Apps, _$identity);
+
+  /// Serializes this Apps to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? websites = null,
-    Object? android = freezed,
-    Object? ios = freezed,
-  }) {
-    return _then(_value.copyWith(
-      websites: null == websites
-          ? _value.websites
-          : websites // ignore: cast_nullable_to_non_nullable
-              as List<String>,
-      android: freezed == android
-          ? _value.android
-          : android // ignore: cast_nullable_to_non_nullable
-              as List<AppDetails>?,
-      ios: freezed == ios
-          ? _value.ios
-          : ios // ignore: cast_nullable_to_non_nullable
-              as List<AppDetails>?,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is Apps &&
+            const DeepCollectionEquality().equals(other.websites, websites) &&
+            const DeepCollectionEquality().equals(other.android, android) &&
+            const DeepCollectionEquality().equals(other.ios, ios));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(websites),
+      const DeepCollectionEquality().hash(android),
+      const DeepCollectionEquality().hash(ios));
+
+  @override
+  String toString() {
+    return 'Apps(websites: $websites, android: $android, ios: $ios)';
   }
 }
 
 /// @nodoc
-abstract class _$$AppsImplCopyWith<$Res> implements $AppsCopyWith<$Res> {
-  factory _$$AppsImplCopyWith(
-          _$AppsImpl value, $Res Function(_$AppsImpl) then) =
-      __$$AppsImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $AppsCopyWith<$Res> {
+  factory $AppsCopyWith(Apps value, $Res Function(Apps) _then) =
+      _$AppsCopyWithImpl;
   @useResult
   $Res call(
       {List<String> websites,
@@ -1724,11 +1722,11 @@ abstract class _$$AppsImplCopyWith<$Res> implements $AppsCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$AppsImplCopyWithImpl<$Res>
-    extends _$AppsCopyWithImpl<$Res, _$AppsImpl>
-    implements _$$AppsImplCopyWith<$Res> {
-  __$$AppsImplCopyWithImpl(_$AppsImpl _value, $Res Function(_$AppsImpl) _then)
-      : super(_value, _then);
+class _$AppsCopyWithImpl<$Res> implements $AppsCopyWith<$Res> {
+  _$AppsCopyWithImpl(this._self, this._then);
+
+  final Apps _self;
+  final $Res Function(Apps) _then;
 
   /// Create a copy of Apps
   /// with the given fields replaced by the non-null parameter values.
@@ -1739,17 +1737,17 @@ class __$$AppsImplCopyWithImpl<$Res>
     Object? android = freezed,
     Object? ios = freezed,
   }) {
-    return _then(_$AppsImpl(
+    return _then(_self.copyWith(
       websites: null == websites
-          ? _value._websites
+          ? _self.websites
           : websites // ignore: cast_nullable_to_non_nullable
               as List<String>,
       android: freezed == android
-          ? _value._android
+          ? _self.android
           : android // ignore: cast_nullable_to_non_nullable
               as List<AppDetails>?,
       ios: freezed == ios
-          ? _value._ios
+          ? _self.ios
           : ios // ignore: cast_nullable_to_non_nullable
               as List<AppDetails>?,
     ));
@@ -1759,17 +1757,15 @@ class __$$AppsImplCopyWithImpl<$Res>
 /// @nodoc
 
 @JsonSerializable(includeIfNull: false)
-class _$AppsImpl implements _Apps {
-  const _$AppsImpl(
+class _Apps implements Apps {
+  const _Apps(
       {required final List<String> websites,
       final List<AppDetails>? android,
       final List<AppDetails>? ios})
       : _websites = websites,
         _android = android,
         _ios = ios;
-
-  factory _$AppsImpl.fromJson(Map<String, dynamic> json) =>
-      _$$AppsImplFromJson(json);
+  factory _Apps.fromJson(Map<String, dynamic> json) => _$AppsFromJson(json);
 
   final List<String> _websites;
   @override
@@ -1799,16 +1795,26 @@ class _$AppsImpl implements _Apps {
     return EqualUnmodifiableListView(value);
   }
 
+  /// Create a copy of Apps
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'Apps(websites: $websites, android: $android, ios: $ios)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$AppsCopyWith<_Apps> get copyWith =>
+      __$AppsCopyWithImpl<_Apps>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$AppsToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$AppsImpl &&
+            other is _Apps &&
             const DeepCollectionEquality().equals(other._websites, _websites) &&
             const DeepCollectionEquality().equals(other._android, _android) &&
             const DeepCollectionEquality().equals(other._ios, _ios));
@@ -1822,152 +1828,76 @@ class _$AppsImpl implements _Apps {
       const DeepCollectionEquality().hash(_android),
       const DeepCollectionEquality().hash(_ios));
 
-  /// Create a copy of Apps
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$AppsImplCopyWith<_$AppsImpl> get copyWith =>
-      __$$AppsImplCopyWithImpl<_$AppsImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$AppsImplToJson(
-      this,
-    );
-  }
-}
-
-abstract class _Apps implements Apps {
-  const factory _Apps(
-      {required final List<String> websites,
-      final List<AppDetails>? android,
-      final List<AppDetails>? ios}) = _$AppsImpl;
-
-  factory _Apps.fromJson(Map<String, dynamic> json) = _$AppsImpl.fromJson;
-
-  @override
-  List<String> get websites;
-  @override
-  List<AppDetails>? get android;
-  @override
-  List<AppDetails>? get ios;
-
-  /// Create a copy of Apps
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$AppsImplCopyWith<_$AppsImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-Brand _$BrandFromJson(Map<String, dynamic> json) {
-  return _Brand.fromJson(json);
-}
-
-/// @nodoc
-mixin _$Brand {
-  String? get color => throw _privateConstructorUsedError;
-
-  /// Serializes this Brand to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of Brand
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  $BrandCopyWith<Brand> get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $BrandCopyWith<$Res> {
-  factory $BrandCopyWith(Brand value, $Res Function(Brand) then) =
-      _$BrandCopyWithImpl<$Res, Brand>;
-  @useResult
-  $Res call({String? color});
-}
-
-/// @nodoc
-class _$BrandCopyWithImpl<$Res, $Val extends Brand>
-    implements $BrandCopyWith<$Res> {
-  _$BrandCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of Brand
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? color = freezed,
-  }) {
-    return _then(_value.copyWith(
-      color: freezed == color
-          ? _value.color
-          : color // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ) as $Val);
+  String toString() {
+    return 'Apps(websites: $websites, android: $android, ios: $ios)';
   }
 }
 
 /// @nodoc
-abstract class _$$BrandImplCopyWith<$Res> implements $BrandCopyWith<$Res> {
-  factory _$$BrandImplCopyWith(
-          _$BrandImpl value, $Res Function(_$BrandImpl) then) =
-      __$$BrandImplCopyWithImpl<$Res>;
+abstract mixin class _$AppsCopyWith<$Res> implements $AppsCopyWith<$Res> {
+  factory _$AppsCopyWith(_Apps value, $Res Function(_Apps) _then) =
+      __$AppsCopyWithImpl;
   @override
   @useResult
-  $Res call({String? color});
+  $Res call(
+      {List<String> websites,
+      List<AppDetails>? android,
+      List<AppDetails>? ios});
 }
 
 /// @nodoc
-class __$$BrandImplCopyWithImpl<$Res>
-    extends _$BrandCopyWithImpl<$Res, _$BrandImpl>
-    implements _$$BrandImplCopyWith<$Res> {
-  __$$BrandImplCopyWithImpl(
-      _$BrandImpl _value, $Res Function(_$BrandImpl) _then)
-      : super(_value, _then);
+class __$AppsCopyWithImpl<$Res> implements _$AppsCopyWith<$Res> {
+  __$AppsCopyWithImpl(this._self, this._then);
 
-  /// Create a copy of Brand
+  final _Apps _self;
+  final $Res Function(_Apps) _then;
+
+  /// Create a copy of Apps
   /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
   @override
+  @pragma('vm:prefer-inline')
   $Res call({
-    Object? color = freezed,
+    Object? websites = null,
+    Object? android = freezed,
+    Object? ios = freezed,
   }) {
-    return _then(_$BrandImpl(
-      color: freezed == color
-          ? _value.color
-          : color // ignore: cast_nullable_to_non_nullable
-              as String?,
+    return _then(_Apps(
+      websites: null == websites
+          ? _self._websites
+          : websites // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      android: freezed == android
+          ? _self._android
+          : android // ignore: cast_nullable_to_non_nullable
+              as List<AppDetails>?,
+      ios: freezed == ios
+          ? _self._ios
+          : ios // ignore: cast_nullable_to_non_nullable
+              as List<AppDetails>?,
     ));
   }
 }
 
 /// @nodoc
+mixin _$Brand {
+  String? get color;
 
-@JsonSerializable(includeIfNull: false)
-class _$BrandImpl implements _Brand {
-  const _$BrandImpl({this.color});
+  /// Create a copy of Brand
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $BrandCopyWith<Brand> get copyWith =>
+      _$BrandCopyWithImpl<Brand>(this as Brand, _$identity);
 
-  factory _$BrandImpl.fromJson(Map<String, dynamic> json) =>
-      _$$BrandImplFromJson(json);
-
-  @override
-  final String? color;
-
-  @override
-  String toString() {
-    return 'Brand(color: $color)';
-  }
+  /// Serializes this Brand to a JSON map.
+  Map<String, dynamic> toJson();
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$BrandImpl &&
+            other is Brand &&
             (identical(other.color, color) || other.color == color));
   }
 
@@ -1975,199 +1905,39 @@ class _$BrandImpl implements _Brand {
   @override
   int get hashCode => Object.hash(runtimeType, color);
 
-  /// Create a copy of Brand
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$BrandImplCopyWith<_$BrandImpl> get copyWith =>
-      __$$BrandImplCopyWithImpl<_$BrandImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$BrandImplToJson(
-      this,
-    );
+  String toString() {
+    return 'Brand(color: $color)';
   }
 }
 
-abstract class _Brand implements Brand {
-  const factory _Brand({final String? color}) = _$BrandImpl;
+/// @nodoc
+abstract mixin class $BrandCopyWith<$Res> {
+  factory $BrandCopyWith(Brand value, $Res Function(Brand) _then) =
+      _$BrandCopyWithImpl;
+  @useResult
+  $Res call({String? color});
+}
 
-  factory _Brand.fromJson(Map<String, dynamic> json) = _$BrandImpl.fromJson;
+/// @nodoc
+class _$BrandCopyWithImpl<$Res> implements $BrandCopyWith<$Res> {
+  _$BrandCopyWithImpl(this._self, this._then);
 
-  @override
-  String? get color;
+  final Brand _self;
+  final $Res Function(Brand) _then;
 
   /// Create a copy of Brand
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$BrandImplCopyWith<_$BrandImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-ContactInfoSupport _$ContactInfoSupportFromJson(Map<String, dynamic> json) {
-  return _ContactInfoSupport.fromJson(json);
-}
-
-/// @nodoc
-mixin _$ContactInfoSupport {
-  SupportType? get chargeback => throw _privateConstructorUsedError;
-  SupportType? get refund => throw _privateConstructorUsedError;
-  SupportType? get support => throw _privateConstructorUsedError;
-
-  /// Serializes this ContactInfoSupport to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of ContactInfoSupport
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  $ContactInfoSupportCopyWith<ContactInfoSupport> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $ContactInfoSupportCopyWith<$Res> {
-  factory $ContactInfoSupportCopyWith(
-          ContactInfoSupport value, $Res Function(ContactInfoSupport) then) =
-      _$ContactInfoSupportCopyWithImpl<$Res, ContactInfoSupport>;
-  @useResult
-  $Res call(
-      {SupportType? chargeback, SupportType? refund, SupportType? support});
-
-  $SupportTypeCopyWith<$Res>? get chargeback;
-  $SupportTypeCopyWith<$Res>? get refund;
-  $SupportTypeCopyWith<$Res>? get support;
-}
-
-/// @nodoc
-class _$ContactInfoSupportCopyWithImpl<$Res, $Val extends ContactInfoSupport>
-    implements $ContactInfoSupportCopyWith<$Res> {
-  _$ContactInfoSupportCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of ContactInfoSupport
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? chargeback = freezed,
-    Object? refund = freezed,
-    Object? support = freezed,
+    Object? color = freezed,
   }) {
-    return _then(_value.copyWith(
-      chargeback: freezed == chargeback
-          ? _value.chargeback
-          : chargeback // ignore: cast_nullable_to_non_nullable
-              as SupportType?,
-      refund: freezed == refund
-          ? _value.refund
-          : refund // ignore: cast_nullable_to_non_nullable
-              as SupportType?,
-      support: freezed == support
-          ? _value.support
-          : support // ignore: cast_nullable_to_non_nullable
-              as SupportType?,
-    ) as $Val);
-  }
-
-  /// Create a copy of ContactInfoSupport
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $SupportTypeCopyWith<$Res>? get chargeback {
-    if (_value.chargeback == null) {
-      return null;
-    }
-
-    return $SupportTypeCopyWith<$Res>(_value.chargeback!, (value) {
-      return _then(_value.copyWith(chargeback: value) as $Val);
-    });
-  }
-
-  /// Create a copy of ContactInfoSupport
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $SupportTypeCopyWith<$Res>? get refund {
-    if (_value.refund == null) {
-      return null;
-    }
-
-    return $SupportTypeCopyWith<$Res>(_value.refund!, (value) {
-      return _then(_value.copyWith(refund: value) as $Val);
-    });
-  }
-
-  /// Create a copy of ContactInfoSupport
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $SupportTypeCopyWith<$Res>? get support {
-    if (_value.support == null) {
-      return null;
-    }
-
-    return $SupportTypeCopyWith<$Res>(_value.support!, (value) {
-      return _then(_value.copyWith(support: value) as $Val);
-    });
-  }
-}
-
-/// @nodoc
-abstract class _$$ContactInfoSupportImplCopyWith<$Res>
-    implements $ContactInfoSupportCopyWith<$Res> {
-  factory _$$ContactInfoSupportImplCopyWith(_$ContactInfoSupportImpl value,
-          $Res Function(_$ContactInfoSupportImpl) then) =
-      __$$ContactInfoSupportImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {SupportType? chargeback, SupportType? refund, SupportType? support});
-
-  @override
-  $SupportTypeCopyWith<$Res>? get chargeback;
-  @override
-  $SupportTypeCopyWith<$Res>? get refund;
-  @override
-  $SupportTypeCopyWith<$Res>? get support;
-}
-
-/// @nodoc
-class __$$ContactInfoSupportImplCopyWithImpl<$Res>
-    extends _$ContactInfoSupportCopyWithImpl<$Res, _$ContactInfoSupportImpl>
-    implements _$$ContactInfoSupportImplCopyWith<$Res> {
-  __$$ContactInfoSupportImplCopyWithImpl(_$ContactInfoSupportImpl _value,
-      $Res Function(_$ContactInfoSupportImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of ContactInfoSupport
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? chargeback = freezed,
-    Object? refund = freezed,
-    Object? support = freezed,
-  }) {
-    return _then(_$ContactInfoSupportImpl(
-      chargeback: freezed == chargeback
-          ? _value.chargeback
-          : chargeback // ignore: cast_nullable_to_non_nullable
-              as SupportType?,
-      refund: freezed == refund
-          ? _value.refund
-          : refund // ignore: cast_nullable_to_non_nullable
-              as SupportType?,
-      support: freezed == support
-          ? _value.support
-          : support // ignore: cast_nullable_to_non_nullable
-              as SupportType?,
+    return _then(_self.copyWith(
+      color: freezed == color
+          ? _self.color
+          : color // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -2175,29 +1945,100 @@ class __$$ContactInfoSupportImplCopyWithImpl<$Res>
 /// @nodoc
 
 @JsonSerializable(includeIfNull: false)
-class _$ContactInfoSupportImpl implements _ContactInfoSupport {
-  const _$ContactInfoSupportImpl({this.chargeback, this.refund, this.support});
-
-  factory _$ContactInfoSupportImpl.fromJson(Map<String, dynamic> json) =>
-      _$$ContactInfoSupportImplFromJson(json);
+class _Brand implements Brand {
+  const _Brand({this.color});
+  factory _Brand.fromJson(Map<String, dynamic> json) => _$BrandFromJson(json);
 
   @override
-  final SupportType? chargeback;
+  final String? color;
+
+  /// Create a copy of Brand
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  final SupportType? refund;
-  @override
-  final SupportType? support;
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$BrandCopyWith<_Brand> get copyWith =>
+      __$BrandCopyWithImpl<_Brand>(this, _$identity);
 
   @override
-  String toString() {
-    return 'ContactInfoSupport(chargeback: $chargeback, refund: $refund, support: $support)';
+  Map<String, dynamic> toJson() {
+    return _$BrandToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ContactInfoSupportImpl &&
+            other is _Brand &&
+            (identical(other.color, color) || other.color == color));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, color);
+
+  @override
+  String toString() {
+    return 'Brand(color: $color)';
+  }
+}
+
+/// @nodoc
+abstract mixin class _$BrandCopyWith<$Res> implements $BrandCopyWith<$Res> {
+  factory _$BrandCopyWith(_Brand value, $Res Function(_Brand) _then) =
+      __$BrandCopyWithImpl;
+  @override
+  @useResult
+  $Res call({String? color});
+}
+
+/// @nodoc
+class __$BrandCopyWithImpl<$Res> implements _$BrandCopyWith<$Res> {
+  __$BrandCopyWithImpl(this._self, this._then);
+
+  final _Brand _self;
+  final $Res Function(_Brand) _then;
+
+  /// Create a copy of Brand
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? color = freezed,
+  }) {
+    return _then(_Brand(
+      color: freezed == color
+          ? _self.color
+          : color // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+mixin _$ContactInfoSupport {
+  SupportType? get chargeback;
+  SupportType? get refund;
+  SupportType? get support;
+
+  /// Create a copy of ContactInfoSupport
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $ContactInfoSupportCopyWith<ContactInfoSupport> get copyWith =>
+      _$ContactInfoSupportCopyWithImpl<ContactInfoSupport>(
+          this as ContactInfoSupport, _$identity);
+
+  /// Serializes this ContactInfoSupport to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is ContactInfoSupport &&
             (identical(other.chargeback, chargeback) ||
                 other.chargeback == chargeback) &&
             (identical(other.refund, refund) || other.refund == refund) &&
@@ -2208,183 +2049,269 @@ class _$ContactInfoSupportImpl implements _ContactInfoSupport {
   @override
   int get hashCode => Object.hash(runtimeType, chargeback, refund, support);
 
-  /// Create a copy of ContactInfoSupport
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$ContactInfoSupportImplCopyWith<_$ContactInfoSupportImpl> get copyWith =>
-      __$$ContactInfoSupportImplCopyWithImpl<_$ContactInfoSupportImpl>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$ContactInfoSupportImplToJson(
-      this,
-    );
-  }
-}
-
-abstract class _ContactInfoSupport implements ContactInfoSupport {
-  const factory _ContactInfoSupport(
-      {final SupportType? chargeback,
-      final SupportType? refund,
-      final SupportType? support}) = _$ContactInfoSupportImpl;
-
-  factory _ContactInfoSupport.fromJson(Map<String, dynamic> json) =
-      _$ContactInfoSupportImpl.fromJson;
-
-  @override
-  SupportType? get chargeback;
-  @override
-  SupportType? get refund;
-  @override
-  SupportType? get support;
-
-  /// Create a copy of ContactInfoSupport
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$ContactInfoSupportImplCopyWith<_$ContactInfoSupportImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-SupportType _$SupportTypeFromJson(Map<String, dynamic> json) {
-  return _SupportType.fromJson(json);
-}
-
-/// @nodoc
-mixin _$SupportType {
-  String? get email => throw _privateConstructorUsedError;
-  String? get phone => throw _privateConstructorUsedError;
-  String? get policy_url => throw _privateConstructorUsedError;
-
-  /// Serializes this SupportType to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of SupportType
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  $SupportTypeCopyWith<SupportType> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $SupportTypeCopyWith<$Res> {
-  factory $SupportTypeCopyWith(
-          SupportType value, $Res Function(SupportType) then) =
-      _$SupportTypeCopyWithImpl<$Res, SupportType>;
-  @useResult
-  $Res call({String? email, String? phone, String? policy_url});
-}
-
-/// @nodoc
-class _$SupportTypeCopyWithImpl<$Res, $Val extends SupportType>
-    implements $SupportTypeCopyWith<$Res> {
-  _$SupportTypeCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of SupportType
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? email = freezed,
-    Object? phone = freezed,
-    Object? policy_url = freezed,
-  }) {
-    return _then(_value.copyWith(
-      email: freezed == email
-          ? _value.email
-          : email // ignore: cast_nullable_to_non_nullable
-              as String?,
-      phone: freezed == phone
-          ? _value.phone
-          : phone // ignore: cast_nullable_to_non_nullable
-              as String?,
-      policy_url: freezed == policy_url
-          ? _value.policy_url
-          : policy_url // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ) as $Val);
+  String toString() {
+    return 'ContactInfoSupport(chargeback: $chargeback, refund: $refund, support: $support)';
   }
 }
 
 /// @nodoc
-abstract class _$$SupportTypeImplCopyWith<$Res>
-    implements $SupportTypeCopyWith<$Res> {
-  factory _$$SupportTypeImplCopyWith(
-          _$SupportTypeImpl value, $Res Function(_$SupportTypeImpl) then) =
-      __$$SupportTypeImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $ContactInfoSupportCopyWith<$Res> {
+  factory $ContactInfoSupportCopyWith(
+          ContactInfoSupport value, $Res Function(ContactInfoSupport) _then) =
+      _$ContactInfoSupportCopyWithImpl;
   @useResult
-  $Res call({String? email, String? phone, String? policy_url});
+  $Res call(
+      {SupportType? chargeback, SupportType? refund, SupportType? support});
+
+  $SupportTypeCopyWith<$Res>? get chargeback;
+  $SupportTypeCopyWith<$Res>? get refund;
+  $SupportTypeCopyWith<$Res>? get support;
 }
 
 /// @nodoc
-class __$$SupportTypeImplCopyWithImpl<$Res>
-    extends _$SupportTypeCopyWithImpl<$Res, _$SupportTypeImpl>
-    implements _$$SupportTypeImplCopyWith<$Res> {
-  __$$SupportTypeImplCopyWithImpl(
-      _$SupportTypeImpl _value, $Res Function(_$SupportTypeImpl) _then)
-      : super(_value, _then);
+class _$ContactInfoSupportCopyWithImpl<$Res>
+    implements $ContactInfoSupportCopyWith<$Res> {
+  _$ContactInfoSupportCopyWithImpl(this._self, this._then);
 
-  /// Create a copy of SupportType
+  final ContactInfoSupport _self;
+  final $Res Function(ContactInfoSupport) _then;
+
+  /// Create a copy of ContactInfoSupport
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? email = freezed,
-    Object? phone = freezed,
-    Object? policy_url = freezed,
+    Object? chargeback = freezed,
+    Object? refund = freezed,
+    Object? support = freezed,
   }) {
-    return _then(_$SupportTypeImpl(
-      email: freezed == email
-          ? _value.email
-          : email // ignore: cast_nullable_to_non_nullable
-              as String?,
-      phone: freezed == phone
-          ? _value.phone
-          : phone // ignore: cast_nullable_to_non_nullable
-              as String?,
-      policy_url: freezed == policy_url
-          ? _value.policy_url
-          : policy_url // ignore: cast_nullable_to_non_nullable
-              as String?,
+    return _then(_self.copyWith(
+      chargeback: freezed == chargeback
+          ? _self.chargeback
+          : chargeback // ignore: cast_nullable_to_non_nullable
+              as SupportType?,
+      refund: freezed == refund
+          ? _self.refund
+          : refund // ignore: cast_nullable_to_non_nullable
+              as SupportType?,
+      support: freezed == support
+          ? _self.support
+          : support // ignore: cast_nullable_to_non_nullable
+              as SupportType?,
     ));
+  }
+
+  /// Create a copy of ContactInfoSupport
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $SupportTypeCopyWith<$Res>? get chargeback {
+    if (_self.chargeback == null) {
+      return null;
+    }
+
+    return $SupportTypeCopyWith<$Res>(_self.chargeback!, (value) {
+      return _then(_self.copyWith(chargeback: value));
+    });
+  }
+
+  /// Create a copy of ContactInfoSupport
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $SupportTypeCopyWith<$Res>? get refund {
+    if (_self.refund == null) {
+      return null;
+    }
+
+    return $SupportTypeCopyWith<$Res>(_self.refund!, (value) {
+      return _then(_self.copyWith(refund: value));
+    });
+  }
+
+  /// Create a copy of ContactInfoSupport
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $SupportTypeCopyWith<$Res>? get support {
+    if (_self.support == null) {
+      return null;
+    }
+
+    return $SupportTypeCopyWith<$Res>(_self.support!, (value) {
+      return _then(_self.copyWith(support: value));
+    });
   }
 }
 
 /// @nodoc
 
 @JsonSerializable(includeIfNull: false)
-class _$SupportTypeImpl implements _SupportType {
-  const _$SupportTypeImpl({this.email, this.phone, this.policy_url});
-
-  factory _$SupportTypeImpl.fromJson(Map<String, dynamic> json) =>
-      _$$SupportTypeImplFromJson(json);
-
-  @override
-  final String? email;
-  @override
-  final String? phone;
-  @override
-  final String? policy_url;
+class _ContactInfoSupport implements ContactInfoSupport {
+  const _ContactInfoSupport({this.chargeback, this.refund, this.support});
+  factory _ContactInfoSupport.fromJson(Map<String, dynamic> json) =>
+      _$ContactInfoSupportFromJson(json);
 
   @override
-  String toString() {
-    return 'SupportType(email: $email, phone: $phone, policy_url: $policy_url)';
+  final SupportType? chargeback;
+  @override
+  final SupportType? refund;
+  @override
+  final SupportType? support;
+
+  /// Create a copy of ContactInfoSupport
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$ContactInfoSupportCopyWith<_ContactInfoSupport> get copyWith =>
+      __$ContactInfoSupportCopyWithImpl<_ContactInfoSupport>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$ContactInfoSupportToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$SupportTypeImpl &&
+            other is _ContactInfoSupport &&
+            (identical(other.chargeback, chargeback) ||
+                other.chargeback == chargeback) &&
+            (identical(other.refund, refund) || other.refund == refund) &&
+            (identical(other.support, support) || other.support == support));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, chargeback, refund, support);
+
+  @override
+  String toString() {
+    return 'ContactInfoSupport(chargeback: $chargeback, refund: $refund, support: $support)';
+  }
+}
+
+/// @nodoc
+abstract mixin class _$ContactInfoSupportCopyWith<$Res>
+    implements $ContactInfoSupportCopyWith<$Res> {
+  factory _$ContactInfoSupportCopyWith(
+          _ContactInfoSupport value, $Res Function(_ContactInfoSupport) _then) =
+      __$ContactInfoSupportCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {SupportType? chargeback, SupportType? refund, SupportType? support});
+
+  @override
+  $SupportTypeCopyWith<$Res>? get chargeback;
+  @override
+  $SupportTypeCopyWith<$Res>? get refund;
+  @override
+  $SupportTypeCopyWith<$Res>? get support;
+}
+
+/// @nodoc
+class __$ContactInfoSupportCopyWithImpl<$Res>
+    implements _$ContactInfoSupportCopyWith<$Res> {
+  __$ContactInfoSupportCopyWithImpl(this._self, this._then);
+
+  final _ContactInfoSupport _self;
+  final $Res Function(_ContactInfoSupport) _then;
+
+  /// Create a copy of ContactInfoSupport
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? chargeback = freezed,
+    Object? refund = freezed,
+    Object? support = freezed,
+  }) {
+    return _then(_ContactInfoSupport(
+      chargeback: freezed == chargeback
+          ? _self.chargeback
+          : chargeback // ignore: cast_nullable_to_non_nullable
+              as SupportType?,
+      refund: freezed == refund
+          ? _self.refund
+          : refund // ignore: cast_nullable_to_non_nullable
+              as SupportType?,
+      support: freezed == support
+          ? _self.support
+          : support // ignore: cast_nullable_to_non_nullable
+              as SupportType?,
+    ));
+  }
+
+  /// Create a copy of ContactInfoSupport
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $SupportTypeCopyWith<$Res>? get chargeback {
+    if (_self.chargeback == null) {
+      return null;
+    }
+
+    return $SupportTypeCopyWith<$Res>(_self.chargeback!, (value) {
+      return _then(_self.copyWith(chargeback: value));
+    });
+  }
+
+  /// Create a copy of ContactInfoSupport
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $SupportTypeCopyWith<$Res>? get refund {
+    if (_self.refund == null) {
+      return null;
+    }
+
+    return $SupportTypeCopyWith<$Res>(_self.refund!, (value) {
+      return _then(_self.copyWith(refund: value));
+    });
+  }
+
+  /// Create a copy of ContactInfoSupport
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $SupportTypeCopyWith<$Res>? get support {
+    if (_self.support == null) {
+      return null;
+    }
+
+    return $SupportTypeCopyWith<$Res>(_self.support!, (value) {
+      return _then(_self.copyWith(support: value));
+    });
+  }
+}
+
+/// @nodoc
+mixin _$SupportType {
+  String? get email;
+  String? get phone;
+  String? get policy_url;
+
+  /// Create a copy of SupportType
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $SupportTypeCopyWith<SupportType> get copyWith =>
+      _$SupportTypeCopyWithImpl<SupportType>(this as SupportType, _$identity);
+
+  /// Serializes this SupportType to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is SupportType &&
             (identical(other.email, email) || other.email == email) &&
             (identical(other.phone, phone) || other.phone == phone) &&
             (identical(other.policy_url, policy_url) ||
@@ -2395,87 +2322,239 @@ class _$SupportTypeImpl implements _SupportType {
   @override
   int get hashCode => Object.hash(runtimeType, email, phone, policy_url);
 
-  /// Create a copy of SupportType
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$SupportTypeImplCopyWith<_$SupportTypeImpl> get copyWith =>
-      __$$SupportTypeImplCopyWithImpl<_$SupportTypeImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$SupportTypeImplToJson(
-      this,
-    );
+  String toString() {
+    return 'SupportType(email: $email, phone: $phone, policy_url: $policy_url)';
   }
 }
 
-abstract class _SupportType implements SupportType {
-  const factory _SupportType(
-      {final String? email,
-      final String? phone,
-      final String? policy_url}) = _$SupportTypeImpl;
+/// @nodoc
+abstract mixin class $SupportTypeCopyWith<$Res> {
+  factory $SupportTypeCopyWith(
+          SupportType value, $Res Function(SupportType) _then) =
+      _$SupportTypeCopyWithImpl;
+  @useResult
+  $Res call({String? email, String? phone, String? policy_url});
+}
 
-  factory _SupportType.fromJson(Map<String, dynamic> json) =
-      _$SupportTypeImpl.fromJson;
+/// @nodoc
+class _$SupportTypeCopyWithImpl<$Res> implements $SupportTypeCopyWith<$Res> {
+  _$SupportTypeCopyWithImpl(this._self, this._then);
+
+  final SupportType _self;
+  final $Res Function(SupportType) _then;
+
+  /// Create a copy of SupportType
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? email = freezed,
+    Object? phone = freezed,
+    Object? policy_url = freezed,
+  }) {
+    return _then(_self.copyWith(
+      email: freezed == email
+          ? _self.email
+          : email // ignore: cast_nullable_to_non_nullable
+              as String?,
+      phone: freezed == phone
+          ? _self.phone
+          : phone // ignore: cast_nullable_to_non_nullable
+              as String?,
+      policy_url: freezed == policy_url
+          ? _self.policy_url
+          : policy_url // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+
+@JsonSerializable(includeIfNull: false)
+class _SupportType implements SupportType {
+  const _SupportType({this.email, this.phone, this.policy_url});
+  factory _SupportType.fromJson(Map<String, dynamic> json) =>
+      _$SupportTypeFromJson(json);
 
   @override
-  String? get email;
+  final String? email;
   @override
-  String? get phone;
+  final String? phone;
   @override
-  String? get policy_url;
+  final String? policy_url;
 
   /// Create a copy of SupportType
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$SupportTypeImplCopyWith<_$SupportTypeImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  @pragma('vm:prefer-inline')
+  _$SupportTypeCopyWith<_SupportType> get copyWith =>
+      __$SupportTypeCopyWithImpl<_SupportType>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$SupportTypeToJson(
+      this,
+    );
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _SupportType &&
+            (identical(other.email, email) || other.email == email) &&
+            (identical(other.phone, phone) || other.phone == phone) &&
+            (identical(other.policy_url, policy_url) ||
+                other.policy_url == policy_url));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, email, phone, policy_url);
+
+  @override
+  String toString() {
+    return 'SupportType(email: $email, phone: $phone, policy_url: $policy_url)';
+  }
 }
 
-RazorpayAccountCreateRequestBody _$RazorpayAccountCreateRequestBodyFromJson(
-    Map<String, dynamic> json) {
-  return _RazorpayAccountCreateRequestBody.fromJson(json);
+/// @nodoc
+abstract mixin class _$SupportTypeCopyWith<$Res>
+    implements $SupportTypeCopyWith<$Res> {
+  factory _$SupportTypeCopyWith(
+          _SupportType value, $Res Function(_SupportType) _then) =
+      __$SupportTypeCopyWithImpl;
+  @override
+  @useResult
+  $Res call({String? email, String? phone, String? policy_url});
+}
+
+/// @nodoc
+class __$SupportTypeCopyWithImpl<$Res> implements _$SupportTypeCopyWith<$Res> {
+  __$SupportTypeCopyWithImpl(this._self, this._then);
+
+  final _SupportType _self;
+  final $Res Function(_SupportType) _then;
+
+  /// Create a copy of SupportType
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? email = freezed,
+    Object? phone = freezed,
+    Object? policy_url = freezed,
+  }) {
+    return _then(_SupportType(
+      email: freezed == email
+          ? _self.email
+          : email // ignore: cast_nullable_to_non_nullable
+              as String?,
+      phone: freezed == phone
+          ? _self.phone
+          : phone // ignore: cast_nullable_to_non_nullable
+              as String?,
+      policy_url: freezed == policy_url
+          ? _self.policy_url
+          : policy_url // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
 }
 
 /// @nodoc
 mixin _$RazorpayAccountCreateRequestBody {
-  String get email => throw _privateConstructorUsedError;
-  Profile get profile => throw _privateConstructorUsedError;
-  dynamic get phone => throw _privateConstructorUsedError;
-  String get business_type => throw _privateConstructorUsedError;
-  String get legal_business_name => throw _privateConstructorUsedError;
-  String get contact_name =>
-      throw _privateConstructorUsedError; // string | number
-  String? get type => throw _privateConstructorUsedError;
-  String? get reference_id => throw _privateConstructorUsedError;
-  String? get customer_facing_business_name =>
-      throw _privateConstructorUsedError;
-  LegalInfo? get legal_info => throw _privateConstructorUsedError;
-  Apps? get apps => throw _privateConstructorUsedError;
-  Brand? get brand => throw _privateConstructorUsedError;
-  ContactInfoSupport? get contact_info => throw _privateConstructorUsedError;
-  IMap<dynamic>? get notes => throw _privateConstructorUsedError;
-
-  /// Serializes this RazorpayAccountCreateRequestBody to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  String get email;
+  Profile get profile;
+  dynamic get phone;
+  String get business_type;
+  String get legal_business_name;
+  String get contact_name; // string | number
+  String? get type;
+  String? get reference_id;
+  String? get customer_facing_business_name;
+  LegalInfo? get legal_info;
+  Apps? get apps;
+  Brand? get brand;
+  ContactInfoSupport? get contact_info;
+  IMap<dynamic>? get notes;
 
   /// Create a copy of RazorpayAccountCreateRequestBody
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
   $RazorpayAccountCreateRequestBodyCopyWith<RazorpayAccountCreateRequestBody>
-      get copyWith => throw _privateConstructorUsedError;
+      get copyWith => _$RazorpayAccountCreateRequestBodyCopyWithImpl<
+              RazorpayAccountCreateRequestBody>(
+          this as RazorpayAccountCreateRequestBody, _$identity);
+
+  /// Serializes this RazorpayAccountCreateRequestBody to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is RazorpayAccountCreateRequestBody &&
+            (identical(other.email, email) || other.email == email) &&
+            (identical(other.profile, profile) || other.profile == profile) &&
+            const DeepCollectionEquality().equals(other.phone, phone) &&
+            (identical(other.business_type, business_type) ||
+                other.business_type == business_type) &&
+            (identical(other.legal_business_name, legal_business_name) ||
+                other.legal_business_name == legal_business_name) &&
+            (identical(other.contact_name, contact_name) ||
+                other.contact_name == contact_name) &&
+            (identical(other.type, type) || other.type == type) &&
+            (identical(other.reference_id, reference_id) ||
+                other.reference_id == reference_id) &&
+            (identical(other.customer_facing_business_name,
+                    customer_facing_business_name) ||
+                other.customer_facing_business_name ==
+                    customer_facing_business_name) &&
+            (identical(other.legal_info, legal_info) ||
+                other.legal_info == legal_info) &&
+            (identical(other.apps, apps) || other.apps == apps) &&
+            (identical(other.brand, brand) || other.brand == brand) &&
+            (identical(other.contact_info, contact_info) ||
+                other.contact_info == contact_info) &&
+            const DeepCollectionEquality().equals(other.notes, notes));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      email,
+      profile,
+      const DeepCollectionEquality().hash(phone),
+      business_type,
+      legal_business_name,
+      contact_name,
+      type,
+      reference_id,
+      customer_facing_business_name,
+      legal_info,
+      apps,
+      brand,
+      contact_info,
+      const DeepCollectionEquality().hash(notes));
+
+  @override
+  String toString() {
+    return 'RazorpayAccountCreateRequestBody(email: $email, profile: $profile, phone: $phone, business_type: $business_type, legal_business_name: $legal_business_name, contact_name: $contact_name, type: $type, reference_id: $reference_id, customer_facing_business_name: $customer_facing_business_name, legal_info: $legal_info, apps: $apps, brand: $brand, contact_info: $contact_info, notes: $notes)';
+  }
 }
 
 /// @nodoc
-abstract class $RazorpayAccountCreateRequestBodyCopyWith<$Res> {
+abstract mixin class $RazorpayAccountCreateRequestBodyCopyWith<$Res> {
   factory $RazorpayAccountCreateRequestBodyCopyWith(
           RazorpayAccountCreateRequestBody value,
-          $Res Function(RazorpayAccountCreateRequestBody) then) =
-      _$RazorpayAccountCreateRequestBodyCopyWithImpl<$Res,
-          RazorpayAccountCreateRequestBody>;
+          $Res Function(RazorpayAccountCreateRequestBody) _then) =
+      _$RazorpayAccountCreateRequestBodyCopyWithImpl;
   @useResult
   $Res call(
       {String email,
@@ -2501,15 +2580,12 @@ abstract class $RazorpayAccountCreateRequestBodyCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$RazorpayAccountCreateRequestBodyCopyWithImpl<$Res,
-        $Val extends RazorpayAccountCreateRequestBody>
+class _$RazorpayAccountCreateRequestBodyCopyWithImpl<$Res>
     implements $RazorpayAccountCreateRequestBodyCopyWith<$Res> {
-  _$RazorpayAccountCreateRequestBodyCopyWithImpl(this._value, this._then);
+  _$RazorpayAccountCreateRequestBodyCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final RazorpayAccountCreateRequestBody _self;
+  final $Res Function(RazorpayAccountCreateRequestBody) _then;
 
   /// Create a copy of RazorpayAccountCreateRequestBody
   /// with the given fields replaced by the non-null parameter values.
@@ -2531,64 +2607,64 @@ class _$RazorpayAccountCreateRequestBodyCopyWithImpl<$Res,
     Object? contact_info = freezed,
     Object? notes = freezed,
   }) {
-    return _then(_value.copyWith(
+    return _then(_self.copyWith(
       email: null == email
-          ? _value.email
+          ? _self.email
           : email // ignore: cast_nullable_to_non_nullable
               as String,
       profile: null == profile
-          ? _value.profile
+          ? _self.profile
           : profile // ignore: cast_nullable_to_non_nullable
               as Profile,
       phone: freezed == phone
-          ? _value.phone
+          ? _self.phone
           : phone // ignore: cast_nullable_to_non_nullable
               as dynamic,
       business_type: null == business_type
-          ? _value.business_type
+          ? _self.business_type
           : business_type // ignore: cast_nullable_to_non_nullable
               as String,
       legal_business_name: null == legal_business_name
-          ? _value.legal_business_name
+          ? _self.legal_business_name
           : legal_business_name // ignore: cast_nullable_to_non_nullable
               as String,
       contact_name: null == contact_name
-          ? _value.contact_name
+          ? _self.contact_name
           : contact_name // ignore: cast_nullable_to_non_nullable
               as String,
       type: freezed == type
-          ? _value.type
+          ? _self.type
           : type // ignore: cast_nullable_to_non_nullable
               as String?,
       reference_id: freezed == reference_id
-          ? _value.reference_id
+          ? _self.reference_id
           : reference_id // ignore: cast_nullable_to_non_nullable
               as String?,
       customer_facing_business_name: freezed == customer_facing_business_name
-          ? _value.customer_facing_business_name
+          ? _self.customer_facing_business_name
           : customer_facing_business_name // ignore: cast_nullable_to_non_nullable
               as String?,
       legal_info: freezed == legal_info
-          ? _value.legal_info
+          ? _self.legal_info
           : legal_info // ignore: cast_nullable_to_non_nullable
               as LegalInfo?,
       apps: freezed == apps
-          ? _value.apps
+          ? _self.apps
           : apps // ignore: cast_nullable_to_non_nullable
               as Apps?,
       brand: freezed == brand
-          ? _value.brand
+          ? _self.brand
           : brand // ignore: cast_nullable_to_non_nullable
               as Brand?,
       contact_info: freezed == contact_info
-          ? _value.contact_info
+          ? _self.contact_info
           : contact_info // ignore: cast_nullable_to_non_nullable
               as ContactInfoSupport?,
       notes: freezed == notes
-          ? _value.notes
+          ? _self.notes
           : notes // ignore: cast_nullable_to_non_nullable
               as IMap<dynamic>?,
-    ) as $Val);
+    ));
   }
 
   /// Create a copy of RazorpayAccountCreateRequestBody
@@ -2596,8 +2672,8 @@ class _$RazorpayAccountCreateRequestBodyCopyWithImpl<$Res,
   @override
   @pragma('vm:prefer-inline')
   $ProfileCopyWith<$Res> get profile {
-    return $ProfileCopyWith<$Res>(_value.profile, (value) {
-      return _then(_value.copyWith(profile: value) as $Val);
+    return $ProfileCopyWith<$Res>(_self.profile, (value) {
+      return _then(_self.copyWith(profile: value));
     });
   }
 
@@ -2606,12 +2682,12 @@ class _$RazorpayAccountCreateRequestBodyCopyWithImpl<$Res,
   @override
   @pragma('vm:prefer-inline')
   $LegalInfoCopyWith<$Res>? get legal_info {
-    if (_value.legal_info == null) {
+    if (_self.legal_info == null) {
       return null;
     }
 
-    return $LegalInfoCopyWith<$Res>(_value.legal_info!, (value) {
-      return _then(_value.copyWith(legal_info: value) as $Val);
+    return $LegalInfoCopyWith<$Res>(_self.legal_info!, (value) {
+      return _then(_self.copyWith(legal_info: value));
     });
   }
 
@@ -2620,12 +2696,12 @@ class _$RazorpayAccountCreateRequestBodyCopyWithImpl<$Res,
   @override
   @pragma('vm:prefer-inline')
   $AppsCopyWith<$Res>? get apps {
-    if (_value.apps == null) {
+    if (_self.apps == null) {
       return null;
     }
 
-    return $AppsCopyWith<$Res>(_value.apps!, (value) {
-      return _then(_value.copyWith(apps: value) as $Val);
+    return $AppsCopyWith<$Res>(_self.apps!, (value) {
+      return _then(_self.copyWith(apps: value));
     });
   }
 
@@ -2634,12 +2710,12 @@ class _$RazorpayAccountCreateRequestBodyCopyWithImpl<$Res,
   @override
   @pragma('vm:prefer-inline')
   $BrandCopyWith<$Res>? get brand {
-    if (_value.brand == null) {
+    if (_self.brand == null) {
       return null;
     }
 
-    return $BrandCopyWith<$Res>(_value.brand!, (value) {
-      return _then(_value.copyWith(brand: value) as $Val);
+    return $BrandCopyWith<$Res>(_self.brand!, (value) {
+      return _then(_self.copyWith(brand: value));
     });
   }
 
@@ -2648,150 +2724,22 @@ class _$RazorpayAccountCreateRequestBodyCopyWithImpl<$Res,
   @override
   @pragma('vm:prefer-inline')
   $ContactInfoSupportCopyWith<$Res>? get contact_info {
-    if (_value.contact_info == null) {
+    if (_self.contact_info == null) {
       return null;
     }
 
-    return $ContactInfoSupportCopyWith<$Res>(_value.contact_info!, (value) {
-      return _then(_value.copyWith(contact_info: value) as $Val);
+    return $ContactInfoSupportCopyWith<$Res>(_self.contact_info!, (value) {
+      return _then(_self.copyWith(contact_info: value));
     });
-  }
-}
-
-/// @nodoc
-abstract class _$$RazorpayAccountCreateRequestBodyImplCopyWith<$Res>
-    implements $RazorpayAccountCreateRequestBodyCopyWith<$Res> {
-  factory _$$RazorpayAccountCreateRequestBodyImplCopyWith(
-          _$RazorpayAccountCreateRequestBodyImpl value,
-          $Res Function(_$RazorpayAccountCreateRequestBodyImpl) then) =
-      __$$RazorpayAccountCreateRequestBodyImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {String email,
-      Profile profile,
-      dynamic phone,
-      String business_type,
-      String legal_business_name,
-      String contact_name,
-      String? type,
-      String? reference_id,
-      String? customer_facing_business_name,
-      LegalInfo? legal_info,
-      Apps? apps,
-      Brand? brand,
-      ContactInfoSupport? contact_info,
-      IMap<dynamic>? notes});
-
-  @override
-  $ProfileCopyWith<$Res> get profile;
-  @override
-  $LegalInfoCopyWith<$Res>? get legal_info;
-  @override
-  $AppsCopyWith<$Res>? get apps;
-  @override
-  $BrandCopyWith<$Res>? get brand;
-  @override
-  $ContactInfoSupportCopyWith<$Res>? get contact_info;
-}
-
-/// @nodoc
-class __$$RazorpayAccountCreateRequestBodyImplCopyWithImpl<$Res>
-    extends _$RazorpayAccountCreateRequestBodyCopyWithImpl<$Res,
-        _$RazorpayAccountCreateRequestBodyImpl>
-    implements _$$RazorpayAccountCreateRequestBodyImplCopyWith<$Res> {
-  __$$RazorpayAccountCreateRequestBodyImplCopyWithImpl(
-      _$RazorpayAccountCreateRequestBodyImpl _value,
-      $Res Function(_$RazorpayAccountCreateRequestBodyImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of RazorpayAccountCreateRequestBody
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? email = null,
-    Object? profile = null,
-    Object? phone = freezed,
-    Object? business_type = null,
-    Object? legal_business_name = null,
-    Object? contact_name = null,
-    Object? type = freezed,
-    Object? reference_id = freezed,
-    Object? customer_facing_business_name = freezed,
-    Object? legal_info = freezed,
-    Object? apps = freezed,
-    Object? brand = freezed,
-    Object? contact_info = freezed,
-    Object? notes = freezed,
-  }) {
-    return _then(_$RazorpayAccountCreateRequestBodyImpl(
-      email: null == email
-          ? _value.email
-          : email // ignore: cast_nullable_to_non_nullable
-              as String,
-      profile: null == profile
-          ? _value.profile
-          : profile // ignore: cast_nullable_to_non_nullable
-              as Profile,
-      phone: freezed == phone
-          ? _value.phone
-          : phone // ignore: cast_nullable_to_non_nullable
-              as dynamic,
-      business_type: null == business_type
-          ? _value.business_type
-          : business_type // ignore: cast_nullable_to_non_nullable
-              as String,
-      legal_business_name: null == legal_business_name
-          ? _value.legal_business_name
-          : legal_business_name // ignore: cast_nullable_to_non_nullable
-              as String,
-      contact_name: null == contact_name
-          ? _value.contact_name
-          : contact_name // ignore: cast_nullable_to_non_nullable
-              as String,
-      type: freezed == type
-          ? _value.type
-          : type // ignore: cast_nullable_to_non_nullable
-              as String?,
-      reference_id: freezed == reference_id
-          ? _value.reference_id
-          : reference_id // ignore: cast_nullable_to_non_nullable
-              as String?,
-      customer_facing_business_name: freezed == customer_facing_business_name
-          ? _value.customer_facing_business_name
-          : customer_facing_business_name // ignore: cast_nullable_to_non_nullable
-              as String?,
-      legal_info: freezed == legal_info
-          ? _value.legal_info
-          : legal_info // ignore: cast_nullable_to_non_nullable
-              as LegalInfo?,
-      apps: freezed == apps
-          ? _value.apps
-          : apps // ignore: cast_nullable_to_non_nullable
-              as Apps?,
-      brand: freezed == brand
-          ? _value.brand
-          : brand // ignore: cast_nullable_to_non_nullable
-              as Brand?,
-      contact_info: freezed == contact_info
-          ? _value.contact_info
-          : contact_info // ignore: cast_nullable_to_non_nullable
-              as ContactInfoSupport?,
-      notes: freezed == notes
-          ? _value._notes
-          : notes // ignore: cast_nullable_to_non_nullable
-              as IMap<dynamic>?,
-    ));
   }
 }
 
 /// @nodoc
 
 @JsonSerializable(includeIfNull: false)
-class _$RazorpayAccountCreateRequestBodyImpl
-    implements _RazorpayAccountCreateRequestBody {
-  const _$RazorpayAccountCreateRequestBodyImpl(
+class _RazorpayAccountCreateRequestBody
+    implements RazorpayAccountCreateRequestBody {
+  const _RazorpayAccountCreateRequestBody(
       {required this.email,
       required this.profile,
       required this.phone,
@@ -2807,10 +2755,9 @@ class _$RazorpayAccountCreateRequestBodyImpl
       this.contact_info,
       final IMap<dynamic>? notes})
       : _notes = notes;
-
-  factory _$RazorpayAccountCreateRequestBodyImpl.fromJson(
+  factory _RazorpayAccountCreateRequestBody.fromJson(
           Map<String, dynamic> json) =>
-      _$$RazorpayAccountCreateRequestBodyImplFromJson(json);
+      _$RazorpayAccountCreateRequestBodyFromJson(json);
 
   @override
   final String email;
@@ -2849,16 +2796,27 @@ class _$RazorpayAccountCreateRequestBodyImpl
     return EqualUnmodifiableMapView(value);
   }
 
+  /// Create a copy of RazorpayAccountCreateRequestBody
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'RazorpayAccountCreateRequestBody(email: $email, profile: $profile, phone: $phone, business_type: $business_type, legal_business_name: $legal_business_name, contact_name: $contact_name, type: $type, reference_id: $reference_id, customer_facing_business_name: $customer_facing_business_name, legal_info: $legal_info, apps: $apps, brand: $brand, contact_info: $contact_info, notes: $notes)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$RazorpayAccountCreateRequestBodyCopyWith<_RazorpayAccountCreateRequestBody>
+      get copyWith => __$RazorpayAccountCreateRequestBodyCopyWithImpl<
+          _RazorpayAccountCreateRequestBody>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$RazorpayAccountCreateRequestBodyToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$RazorpayAccountCreateRequestBodyImpl &&
+            other is _RazorpayAccountCreateRequestBody &&
             (identical(other.email, email) || other.email == email) &&
             (identical(other.profile, profile) || other.profile == profile) &&
             const DeepCollectionEquality().equals(other.phone, phone) &&
@@ -2903,122 +2861,287 @@ class _$RazorpayAccountCreateRequestBodyImpl
       contact_info,
       const DeepCollectionEquality().hash(_notes));
 
-  /// Create a copy of RazorpayAccountCreateRequestBody
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$RazorpayAccountCreateRequestBodyImplCopyWith<
-          _$RazorpayAccountCreateRequestBodyImpl>
-      get copyWith => __$$RazorpayAccountCreateRequestBodyImplCopyWithImpl<
-          _$RazorpayAccountCreateRequestBodyImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$RazorpayAccountCreateRequestBodyImplToJson(
-      this,
-    );
+  String toString() {
+    return 'RazorpayAccountCreateRequestBody(email: $email, profile: $profile, phone: $phone, business_type: $business_type, legal_business_name: $legal_business_name, contact_name: $contact_name, type: $type, reference_id: $reference_id, customer_facing_business_name: $customer_facing_business_name, legal_info: $legal_info, apps: $apps, brand: $brand, contact_info: $contact_info, notes: $notes)';
   }
 }
 
-abstract class _RazorpayAccountCreateRequestBody
-    implements RazorpayAccountCreateRequestBody {
-  const factory _RazorpayAccountCreateRequestBody(
-      {required final String email,
-      required final Profile profile,
-      required final dynamic phone,
-      required final String business_type,
-      required final String legal_business_name,
-      required final String contact_name,
-      final String? type,
-      final String? reference_id,
-      final String? customer_facing_business_name,
-      final LegalInfo? legal_info,
-      final Apps? apps,
-      final Brand? brand,
-      final ContactInfoSupport? contact_info,
-      final IMap<dynamic>? notes}) = _$RazorpayAccountCreateRequestBodyImpl;
+/// @nodoc
+abstract mixin class _$RazorpayAccountCreateRequestBodyCopyWith<$Res>
+    implements $RazorpayAccountCreateRequestBodyCopyWith<$Res> {
+  factory _$RazorpayAccountCreateRequestBodyCopyWith(
+          _RazorpayAccountCreateRequestBody value,
+          $Res Function(_RazorpayAccountCreateRequestBody) _then) =
+      __$RazorpayAccountCreateRequestBodyCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {String email,
+      Profile profile,
+      dynamic phone,
+      String business_type,
+      String legal_business_name,
+      String contact_name,
+      String? type,
+      String? reference_id,
+      String? customer_facing_business_name,
+      LegalInfo? legal_info,
+      Apps? apps,
+      Brand? brand,
+      ContactInfoSupport? contact_info,
+      IMap<dynamic>? notes});
 
-  factory _RazorpayAccountCreateRequestBody.fromJson(
-          Map<String, dynamic> json) =
-      _$RazorpayAccountCreateRequestBodyImpl.fromJson;
+  @override
+  $ProfileCopyWith<$Res> get profile;
+  @override
+  $LegalInfoCopyWith<$Res>? get legal_info;
+  @override
+  $AppsCopyWith<$Res>? get apps;
+  @override
+  $BrandCopyWith<$Res>? get brand;
+  @override
+  $ContactInfoSupportCopyWith<$Res>? get contact_info;
+}
 
-  @override
-  String get email;
-  @override
-  Profile get profile;
-  @override
-  dynamic get phone;
-  @override
-  String get business_type;
-  @override
-  String get legal_business_name;
-  @override
-  String get contact_name; // string | number
-  @override
-  String? get type;
-  @override
-  String? get reference_id;
-  @override
-  String? get customer_facing_business_name;
-  @override
-  LegalInfo? get legal_info;
-  @override
-  Apps? get apps;
-  @override
-  Brand? get brand;
-  @override
-  ContactInfoSupport? get contact_info;
-  @override
-  IMap<dynamic>? get notes;
+/// @nodoc
+class __$RazorpayAccountCreateRequestBodyCopyWithImpl<$Res>
+    implements _$RazorpayAccountCreateRequestBodyCopyWith<$Res> {
+  __$RazorpayAccountCreateRequestBodyCopyWithImpl(this._self, this._then);
+
+  final _RazorpayAccountCreateRequestBody _self;
+  final $Res Function(_RazorpayAccountCreateRequestBody) _then;
 
   /// Create a copy of RazorpayAccountCreateRequestBody
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$RazorpayAccountCreateRequestBodyImplCopyWith<
-          _$RazorpayAccountCreateRequestBodyImpl>
-      get copyWith => throw _privateConstructorUsedError;
-}
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? email = null,
+    Object? profile = null,
+    Object? phone = freezed,
+    Object? business_type = null,
+    Object? legal_business_name = null,
+    Object? contact_name = null,
+    Object? type = freezed,
+    Object? reference_id = freezed,
+    Object? customer_facing_business_name = freezed,
+    Object? legal_info = freezed,
+    Object? apps = freezed,
+    Object? brand = freezed,
+    Object? contact_info = freezed,
+    Object? notes = freezed,
+  }) {
+    return _then(_RazorpayAccountCreateRequestBody(
+      email: null == email
+          ? _self.email
+          : email // ignore: cast_nullable_to_non_nullable
+              as String,
+      profile: null == profile
+          ? _self.profile
+          : profile // ignore: cast_nullable_to_non_nullable
+              as Profile,
+      phone: freezed == phone
+          ? _self.phone
+          : phone // ignore: cast_nullable_to_non_nullable
+              as dynamic,
+      business_type: null == business_type
+          ? _self.business_type
+          : business_type // ignore: cast_nullable_to_non_nullable
+              as String,
+      legal_business_name: null == legal_business_name
+          ? _self.legal_business_name
+          : legal_business_name // ignore: cast_nullable_to_non_nullable
+              as String,
+      contact_name: null == contact_name
+          ? _self.contact_name
+          : contact_name // ignore: cast_nullable_to_non_nullable
+              as String,
+      type: freezed == type
+          ? _self.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as String?,
+      reference_id: freezed == reference_id
+          ? _self.reference_id
+          : reference_id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      customer_facing_business_name: freezed == customer_facing_business_name
+          ? _self.customer_facing_business_name
+          : customer_facing_business_name // ignore: cast_nullable_to_non_nullable
+              as String?,
+      legal_info: freezed == legal_info
+          ? _self.legal_info
+          : legal_info // ignore: cast_nullable_to_non_nullable
+              as LegalInfo?,
+      apps: freezed == apps
+          ? _self.apps
+          : apps // ignore: cast_nullable_to_non_nullable
+              as Apps?,
+      brand: freezed == brand
+          ? _self.brand
+          : brand // ignore: cast_nullable_to_non_nullable
+              as Brand?,
+      contact_info: freezed == contact_info
+          ? _self.contact_info
+          : contact_info // ignore: cast_nullable_to_non_nullable
+              as ContactInfoSupport?,
+      notes: freezed == notes
+          ? _self._notes
+          : notes // ignore: cast_nullable_to_non_nullable
+              as IMap<dynamic>?,
+    ));
+  }
 
-RazorpayAccountUpdateRequestBody _$RazorpayAccountUpdateRequestBodyFromJson(
-    Map<String, dynamic> json) {
-  return _RazorpayAccountUpdateRequestBody.fromJson(json);
+  /// Create a copy of RazorpayAccountCreateRequestBody
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $ProfileCopyWith<$Res> get profile {
+    return $ProfileCopyWith<$Res>(_self.profile, (value) {
+      return _then(_self.copyWith(profile: value));
+    });
+  }
+
+  /// Create a copy of RazorpayAccountCreateRequestBody
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $LegalInfoCopyWith<$Res>? get legal_info {
+    if (_self.legal_info == null) {
+      return null;
+    }
+
+    return $LegalInfoCopyWith<$Res>(_self.legal_info!, (value) {
+      return _then(_self.copyWith(legal_info: value));
+    });
+  }
+
+  /// Create a copy of RazorpayAccountCreateRequestBody
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $AppsCopyWith<$Res>? get apps {
+    if (_self.apps == null) {
+      return null;
+    }
+
+    return $AppsCopyWith<$Res>(_self.apps!, (value) {
+      return _then(_self.copyWith(apps: value));
+    });
+  }
+
+  /// Create a copy of RazorpayAccountCreateRequestBody
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $BrandCopyWith<$Res>? get brand {
+    if (_self.brand == null) {
+      return null;
+    }
+
+    return $BrandCopyWith<$Res>(_self.brand!, (value) {
+      return _then(_self.copyWith(brand: value));
+    });
+  }
+
+  /// Create a copy of RazorpayAccountCreateRequestBody
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $ContactInfoSupportCopyWith<$Res>? get contact_info {
+    if (_self.contact_info == null) {
+      return null;
+    }
+
+    return $ContactInfoSupportCopyWith<$Res>(_self.contact_info!, (value) {
+      return _then(_self.copyWith(contact_info: value));
+    });
+  }
 }
 
 /// @nodoc
 mixin _$RazorpayAccountUpdateRequestBody {
-  Profile? get profile => throw _privateConstructorUsedError;
-  dynamic get phone => throw _privateConstructorUsedError; // string | number
-  String? get type => throw _privateConstructorUsedError;
-  String? get reference_id => throw _privateConstructorUsedError;
-  String? get legal_business_name => throw _privateConstructorUsedError;
-  String? get customer_facing_business_name =>
-      throw _privateConstructorUsedError;
-  LegalInfo? get legal_info => throw _privateConstructorUsedError;
-  Apps? get apps => throw _privateConstructorUsedError;
-  Brand? get brand => throw _privateConstructorUsedError;
-  String? get contact_name => throw _privateConstructorUsedError;
-  ContactInfoSupport? get contact_info => throw _privateConstructorUsedError;
-  IMap<dynamic>? get notes => throw _privateConstructorUsedError;
-
-  /// Serializes this RazorpayAccountUpdateRequestBody to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  Profile? get profile;
+  dynamic get phone; // string | number
+  String? get type;
+  String? get reference_id;
+  String? get legal_business_name;
+  String? get customer_facing_business_name;
+  LegalInfo? get legal_info;
+  Apps? get apps;
+  Brand? get brand;
+  String? get contact_name;
+  ContactInfoSupport? get contact_info;
+  IMap<dynamic>? get notes;
 
   /// Create a copy of RazorpayAccountUpdateRequestBody
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
   $RazorpayAccountUpdateRequestBodyCopyWith<RazorpayAccountUpdateRequestBody>
-      get copyWith => throw _privateConstructorUsedError;
+      get copyWith => _$RazorpayAccountUpdateRequestBodyCopyWithImpl<
+              RazorpayAccountUpdateRequestBody>(
+          this as RazorpayAccountUpdateRequestBody, _$identity);
+
+  /// Serializes this RazorpayAccountUpdateRequestBody to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is RazorpayAccountUpdateRequestBody &&
+            (identical(other.profile, profile) || other.profile == profile) &&
+            const DeepCollectionEquality().equals(other.phone, phone) &&
+            (identical(other.type, type) || other.type == type) &&
+            (identical(other.reference_id, reference_id) ||
+                other.reference_id == reference_id) &&
+            (identical(other.legal_business_name, legal_business_name) ||
+                other.legal_business_name == legal_business_name) &&
+            (identical(other.customer_facing_business_name,
+                    customer_facing_business_name) ||
+                other.customer_facing_business_name ==
+                    customer_facing_business_name) &&
+            (identical(other.legal_info, legal_info) ||
+                other.legal_info == legal_info) &&
+            (identical(other.apps, apps) || other.apps == apps) &&
+            (identical(other.brand, brand) || other.brand == brand) &&
+            (identical(other.contact_name, contact_name) ||
+                other.contact_name == contact_name) &&
+            (identical(other.contact_info, contact_info) ||
+                other.contact_info == contact_info) &&
+            const DeepCollectionEquality().equals(other.notes, notes));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      profile,
+      const DeepCollectionEquality().hash(phone),
+      type,
+      reference_id,
+      legal_business_name,
+      customer_facing_business_name,
+      legal_info,
+      apps,
+      brand,
+      contact_name,
+      contact_info,
+      const DeepCollectionEquality().hash(notes));
+
+  @override
+  String toString() {
+    return 'RazorpayAccountUpdateRequestBody(profile: $profile, phone: $phone, type: $type, reference_id: $reference_id, legal_business_name: $legal_business_name, customer_facing_business_name: $customer_facing_business_name, legal_info: $legal_info, apps: $apps, brand: $brand, contact_name: $contact_name, contact_info: $contact_info, notes: $notes)';
+  }
 }
 
 /// @nodoc
-abstract class $RazorpayAccountUpdateRequestBodyCopyWith<$Res> {
+abstract mixin class $RazorpayAccountUpdateRequestBodyCopyWith<$Res> {
   factory $RazorpayAccountUpdateRequestBodyCopyWith(
           RazorpayAccountUpdateRequestBody value,
-          $Res Function(RazorpayAccountUpdateRequestBody) then) =
-      _$RazorpayAccountUpdateRequestBodyCopyWithImpl<$Res,
-          RazorpayAccountUpdateRequestBody>;
+          $Res Function(RazorpayAccountUpdateRequestBody) _then) =
+      _$RazorpayAccountUpdateRequestBodyCopyWithImpl;
   @useResult
   $Res call(
       {Profile? profile,
@@ -3042,15 +3165,12 @@ abstract class $RazorpayAccountUpdateRequestBodyCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$RazorpayAccountUpdateRequestBodyCopyWithImpl<$Res,
-        $Val extends RazorpayAccountUpdateRequestBody>
+class _$RazorpayAccountUpdateRequestBodyCopyWithImpl<$Res>
     implements $RazorpayAccountUpdateRequestBodyCopyWith<$Res> {
-  _$RazorpayAccountUpdateRequestBodyCopyWithImpl(this._value, this._then);
+  _$RazorpayAccountUpdateRequestBodyCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final RazorpayAccountUpdateRequestBody _self;
+  final $Res Function(RazorpayAccountUpdateRequestBody) _then;
 
   /// Create a copy of RazorpayAccountUpdateRequestBody
   /// with the given fields replaced by the non-null parameter values.
@@ -3070,56 +3190,56 @@ class _$RazorpayAccountUpdateRequestBodyCopyWithImpl<$Res,
     Object? contact_info = freezed,
     Object? notes = freezed,
   }) {
-    return _then(_value.copyWith(
+    return _then(_self.copyWith(
       profile: freezed == profile
-          ? _value.profile
+          ? _self.profile
           : profile // ignore: cast_nullable_to_non_nullable
               as Profile?,
       phone: freezed == phone
-          ? _value.phone
+          ? _self.phone
           : phone // ignore: cast_nullable_to_non_nullable
               as dynamic,
       type: freezed == type
-          ? _value.type
+          ? _self.type
           : type // ignore: cast_nullable_to_non_nullable
               as String?,
       reference_id: freezed == reference_id
-          ? _value.reference_id
+          ? _self.reference_id
           : reference_id // ignore: cast_nullable_to_non_nullable
               as String?,
       legal_business_name: freezed == legal_business_name
-          ? _value.legal_business_name
+          ? _self.legal_business_name
           : legal_business_name // ignore: cast_nullable_to_non_nullable
               as String?,
       customer_facing_business_name: freezed == customer_facing_business_name
-          ? _value.customer_facing_business_name
+          ? _self.customer_facing_business_name
           : customer_facing_business_name // ignore: cast_nullable_to_non_nullable
               as String?,
       legal_info: freezed == legal_info
-          ? _value.legal_info
+          ? _self.legal_info
           : legal_info // ignore: cast_nullable_to_non_nullable
               as LegalInfo?,
       apps: freezed == apps
-          ? _value.apps
+          ? _self.apps
           : apps // ignore: cast_nullable_to_non_nullable
               as Apps?,
       brand: freezed == brand
-          ? _value.brand
+          ? _self.brand
           : brand // ignore: cast_nullable_to_non_nullable
               as Brand?,
       contact_name: freezed == contact_name
-          ? _value.contact_name
+          ? _self.contact_name
           : contact_name // ignore: cast_nullable_to_non_nullable
               as String?,
       contact_info: freezed == contact_info
-          ? _value.contact_info
+          ? _self.contact_info
           : contact_info // ignore: cast_nullable_to_non_nullable
               as ContactInfoSupport?,
       notes: freezed == notes
-          ? _value.notes
+          ? _self.notes
           : notes // ignore: cast_nullable_to_non_nullable
               as IMap<dynamic>?,
-    ) as $Val);
+    ));
   }
 
   /// Create a copy of RazorpayAccountUpdateRequestBody
@@ -3127,12 +3247,12 @@ class _$RazorpayAccountUpdateRequestBodyCopyWithImpl<$Res,
   @override
   @pragma('vm:prefer-inline')
   $ProfileCopyWith<$Res>? get profile {
-    if (_value.profile == null) {
+    if (_self.profile == null) {
       return null;
     }
 
-    return $ProfileCopyWith<$Res>(_value.profile!, (value) {
-      return _then(_value.copyWith(profile: value) as $Val);
+    return $ProfileCopyWith<$Res>(_self.profile!, (value) {
+      return _then(_self.copyWith(profile: value));
     });
   }
 
@@ -3141,12 +3261,12 @@ class _$RazorpayAccountUpdateRequestBodyCopyWithImpl<$Res,
   @override
   @pragma('vm:prefer-inline')
   $LegalInfoCopyWith<$Res>? get legal_info {
-    if (_value.legal_info == null) {
+    if (_self.legal_info == null) {
       return null;
     }
 
-    return $LegalInfoCopyWith<$Res>(_value.legal_info!, (value) {
-      return _then(_value.copyWith(legal_info: value) as $Val);
+    return $LegalInfoCopyWith<$Res>(_self.legal_info!, (value) {
+      return _then(_self.copyWith(legal_info: value));
     });
   }
 
@@ -3155,12 +3275,12 @@ class _$RazorpayAccountUpdateRequestBodyCopyWithImpl<$Res,
   @override
   @pragma('vm:prefer-inline')
   $AppsCopyWith<$Res>? get apps {
-    if (_value.apps == null) {
+    if (_self.apps == null) {
       return null;
     }
 
-    return $AppsCopyWith<$Res>(_value.apps!, (value) {
-      return _then(_value.copyWith(apps: value) as $Val);
+    return $AppsCopyWith<$Res>(_self.apps!, (value) {
+      return _then(_self.copyWith(apps: value));
     });
   }
 
@@ -3169,12 +3289,12 @@ class _$RazorpayAccountUpdateRequestBodyCopyWithImpl<$Res,
   @override
   @pragma('vm:prefer-inline')
   $BrandCopyWith<$Res>? get brand {
-    if (_value.brand == null) {
+    if (_self.brand == null) {
       return null;
     }
 
-    return $BrandCopyWith<$Res>(_value.brand!, (value) {
-      return _then(_value.copyWith(brand: value) as $Val);
+    return $BrandCopyWith<$Res>(_self.brand!, (value) {
+      return _then(_self.copyWith(brand: value));
     });
   }
 
@@ -3183,138 +3303,22 @@ class _$RazorpayAccountUpdateRequestBodyCopyWithImpl<$Res,
   @override
   @pragma('vm:prefer-inline')
   $ContactInfoSupportCopyWith<$Res>? get contact_info {
-    if (_value.contact_info == null) {
+    if (_self.contact_info == null) {
       return null;
     }
 
-    return $ContactInfoSupportCopyWith<$Res>(_value.contact_info!, (value) {
-      return _then(_value.copyWith(contact_info: value) as $Val);
+    return $ContactInfoSupportCopyWith<$Res>(_self.contact_info!, (value) {
+      return _then(_self.copyWith(contact_info: value));
     });
-  }
-}
-
-/// @nodoc
-abstract class _$$RazorpayAccountUpdateRequestBodyImplCopyWith<$Res>
-    implements $RazorpayAccountUpdateRequestBodyCopyWith<$Res> {
-  factory _$$RazorpayAccountUpdateRequestBodyImplCopyWith(
-          _$RazorpayAccountUpdateRequestBodyImpl value,
-          $Res Function(_$RazorpayAccountUpdateRequestBodyImpl) then) =
-      __$$RazorpayAccountUpdateRequestBodyImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {Profile? profile,
-      dynamic phone,
-      String? type,
-      String? reference_id,
-      String? legal_business_name,
-      String? customer_facing_business_name,
-      LegalInfo? legal_info,
-      Apps? apps,
-      Brand? brand,
-      String? contact_name,
-      ContactInfoSupport? contact_info,
-      IMap<dynamic>? notes});
-
-  @override
-  $ProfileCopyWith<$Res>? get profile;
-  @override
-  $LegalInfoCopyWith<$Res>? get legal_info;
-  @override
-  $AppsCopyWith<$Res>? get apps;
-  @override
-  $BrandCopyWith<$Res>? get brand;
-  @override
-  $ContactInfoSupportCopyWith<$Res>? get contact_info;
-}
-
-/// @nodoc
-class __$$RazorpayAccountUpdateRequestBodyImplCopyWithImpl<$Res>
-    extends _$RazorpayAccountUpdateRequestBodyCopyWithImpl<$Res,
-        _$RazorpayAccountUpdateRequestBodyImpl>
-    implements _$$RazorpayAccountUpdateRequestBodyImplCopyWith<$Res> {
-  __$$RazorpayAccountUpdateRequestBodyImplCopyWithImpl(
-      _$RazorpayAccountUpdateRequestBodyImpl _value,
-      $Res Function(_$RazorpayAccountUpdateRequestBodyImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of RazorpayAccountUpdateRequestBody
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? profile = freezed,
-    Object? phone = freezed,
-    Object? type = freezed,
-    Object? reference_id = freezed,
-    Object? legal_business_name = freezed,
-    Object? customer_facing_business_name = freezed,
-    Object? legal_info = freezed,
-    Object? apps = freezed,
-    Object? brand = freezed,
-    Object? contact_name = freezed,
-    Object? contact_info = freezed,
-    Object? notes = freezed,
-  }) {
-    return _then(_$RazorpayAccountUpdateRequestBodyImpl(
-      profile: freezed == profile
-          ? _value.profile
-          : profile // ignore: cast_nullable_to_non_nullable
-              as Profile?,
-      phone: freezed == phone
-          ? _value.phone
-          : phone // ignore: cast_nullable_to_non_nullable
-              as dynamic,
-      type: freezed == type
-          ? _value.type
-          : type // ignore: cast_nullable_to_non_nullable
-              as String?,
-      reference_id: freezed == reference_id
-          ? _value.reference_id
-          : reference_id // ignore: cast_nullable_to_non_nullable
-              as String?,
-      legal_business_name: freezed == legal_business_name
-          ? _value.legal_business_name
-          : legal_business_name // ignore: cast_nullable_to_non_nullable
-              as String?,
-      customer_facing_business_name: freezed == customer_facing_business_name
-          ? _value.customer_facing_business_name
-          : customer_facing_business_name // ignore: cast_nullable_to_non_nullable
-              as String?,
-      legal_info: freezed == legal_info
-          ? _value.legal_info
-          : legal_info // ignore: cast_nullable_to_non_nullable
-              as LegalInfo?,
-      apps: freezed == apps
-          ? _value.apps
-          : apps // ignore: cast_nullable_to_non_nullable
-              as Apps?,
-      brand: freezed == brand
-          ? _value.brand
-          : brand // ignore: cast_nullable_to_non_nullable
-              as Brand?,
-      contact_name: freezed == contact_name
-          ? _value.contact_name
-          : contact_name // ignore: cast_nullable_to_non_nullable
-              as String?,
-      contact_info: freezed == contact_info
-          ? _value.contact_info
-          : contact_info // ignore: cast_nullable_to_non_nullable
-              as ContactInfoSupport?,
-      notes: freezed == notes
-          ? _value._notes
-          : notes // ignore: cast_nullable_to_non_nullable
-              as IMap<dynamic>?,
-    ));
   }
 }
 
 /// @nodoc
 
 @JsonSerializable(includeIfNull: false)
-class _$RazorpayAccountUpdateRequestBodyImpl
-    implements _RazorpayAccountUpdateRequestBody {
-  const _$RazorpayAccountUpdateRequestBodyImpl(
+class _RazorpayAccountUpdateRequestBody
+    implements RazorpayAccountUpdateRequestBody {
+  const _RazorpayAccountUpdateRequestBody(
       {this.profile,
       this.phone,
       this.type,
@@ -3328,10 +3332,9 @@ class _$RazorpayAccountUpdateRequestBodyImpl
       this.contact_info,
       final IMap<dynamic>? notes})
       : _notes = notes;
-
-  factory _$RazorpayAccountUpdateRequestBodyImpl.fromJson(
+  factory _RazorpayAccountUpdateRequestBody.fromJson(
           Map<String, dynamic> json) =>
-      _$$RazorpayAccountUpdateRequestBodyImplFromJson(json);
+      _$RazorpayAccountUpdateRequestBodyFromJson(json);
 
   @override
   final Profile? profile;
@@ -3366,16 +3369,27 @@ class _$RazorpayAccountUpdateRequestBodyImpl
     return EqualUnmodifiableMapView(value);
   }
 
+  /// Create a copy of RazorpayAccountUpdateRequestBody
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'RazorpayAccountUpdateRequestBody(profile: $profile, phone: $phone, type: $type, reference_id: $reference_id, legal_business_name: $legal_business_name, customer_facing_business_name: $customer_facing_business_name, legal_info: $legal_info, apps: $apps, brand: $brand, contact_name: $contact_name, contact_info: $contact_info, notes: $notes)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$RazorpayAccountUpdateRequestBodyCopyWith<_RazorpayAccountUpdateRequestBody>
+      get copyWith => __$RazorpayAccountUpdateRequestBodyCopyWithImpl<
+          _RazorpayAccountUpdateRequestBody>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$RazorpayAccountUpdateRequestBodyToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$RazorpayAccountUpdateRequestBodyImpl &&
+            other is _RazorpayAccountUpdateRequestBody &&
             (identical(other.profile, profile) || other.profile == profile) &&
             const DeepCollectionEquality().equals(other.phone, phone) &&
             (identical(other.type, type) || other.type == type) &&
@@ -3415,122 +3429,306 @@ class _$RazorpayAccountUpdateRequestBodyImpl
       contact_info,
       const DeepCollectionEquality().hash(_notes));
 
-  /// Create a copy of RazorpayAccountUpdateRequestBody
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$RazorpayAccountUpdateRequestBodyImplCopyWith<
-          _$RazorpayAccountUpdateRequestBodyImpl>
-      get copyWith => __$$RazorpayAccountUpdateRequestBodyImplCopyWithImpl<
-          _$RazorpayAccountUpdateRequestBodyImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$RazorpayAccountUpdateRequestBodyImplToJson(
-      this,
-    );
+  String toString() {
+    return 'RazorpayAccountUpdateRequestBody(profile: $profile, phone: $phone, type: $type, reference_id: $reference_id, legal_business_name: $legal_business_name, customer_facing_business_name: $customer_facing_business_name, legal_info: $legal_info, apps: $apps, brand: $brand, contact_name: $contact_name, contact_info: $contact_info, notes: $notes)';
   }
 }
 
-abstract class _RazorpayAccountUpdateRequestBody
-    implements RazorpayAccountUpdateRequestBody {
-  const factory _RazorpayAccountUpdateRequestBody(
-      {final Profile? profile,
-      final dynamic phone,
-      final String? type,
-      final String? reference_id,
-      final String? legal_business_name,
-      final String? customer_facing_business_name,
-      final LegalInfo? legal_info,
-      final Apps? apps,
-      final Brand? brand,
-      final String? contact_name,
-      final ContactInfoSupport? contact_info,
-      final IMap<dynamic>? notes}) = _$RazorpayAccountUpdateRequestBodyImpl;
+/// @nodoc
+abstract mixin class _$RazorpayAccountUpdateRequestBodyCopyWith<$Res>
+    implements $RazorpayAccountUpdateRequestBodyCopyWith<$Res> {
+  factory _$RazorpayAccountUpdateRequestBodyCopyWith(
+          _RazorpayAccountUpdateRequestBody value,
+          $Res Function(_RazorpayAccountUpdateRequestBody) _then) =
+      __$RazorpayAccountUpdateRequestBodyCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {Profile? profile,
+      dynamic phone,
+      String? type,
+      String? reference_id,
+      String? legal_business_name,
+      String? customer_facing_business_name,
+      LegalInfo? legal_info,
+      Apps? apps,
+      Brand? brand,
+      String? contact_name,
+      ContactInfoSupport? contact_info,
+      IMap<dynamic>? notes});
 
-  factory _RazorpayAccountUpdateRequestBody.fromJson(
-          Map<String, dynamic> json) =
-      _$RazorpayAccountUpdateRequestBodyImpl.fromJson;
+  @override
+  $ProfileCopyWith<$Res>? get profile;
+  @override
+  $LegalInfoCopyWith<$Res>? get legal_info;
+  @override
+  $AppsCopyWith<$Res>? get apps;
+  @override
+  $BrandCopyWith<$Res>? get brand;
+  @override
+  $ContactInfoSupportCopyWith<$Res>? get contact_info;
+}
 
-  @override
-  Profile? get profile;
-  @override
-  dynamic get phone; // string | number
-  @override
-  String? get type;
-  @override
-  String? get reference_id;
-  @override
-  String? get legal_business_name;
-  @override
-  String? get customer_facing_business_name;
-  @override
-  LegalInfo? get legal_info;
-  @override
-  Apps? get apps;
-  @override
-  Brand? get brand;
-  @override
-  String? get contact_name;
-  @override
-  ContactInfoSupport? get contact_info;
-  @override
-  IMap<dynamic>? get notes;
+/// @nodoc
+class __$RazorpayAccountUpdateRequestBodyCopyWithImpl<$Res>
+    implements _$RazorpayAccountUpdateRequestBodyCopyWith<$Res> {
+  __$RazorpayAccountUpdateRequestBodyCopyWithImpl(this._self, this._then);
+
+  final _RazorpayAccountUpdateRequestBody _self;
+  final $Res Function(_RazorpayAccountUpdateRequestBody) _then;
 
   /// Create a copy of RazorpayAccountUpdateRequestBody
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$RazorpayAccountUpdateRequestBodyImplCopyWith<
-          _$RazorpayAccountUpdateRequestBodyImpl>
-      get copyWith => throw _privateConstructorUsedError;
-}
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? profile = freezed,
+    Object? phone = freezed,
+    Object? type = freezed,
+    Object? reference_id = freezed,
+    Object? legal_business_name = freezed,
+    Object? customer_facing_business_name = freezed,
+    Object? legal_info = freezed,
+    Object? apps = freezed,
+    Object? brand = freezed,
+    Object? contact_name = freezed,
+    Object? contact_info = freezed,
+    Object? notes = freezed,
+  }) {
+    return _then(_RazorpayAccountUpdateRequestBody(
+      profile: freezed == profile
+          ? _self.profile
+          : profile // ignore: cast_nullable_to_non_nullable
+              as Profile?,
+      phone: freezed == phone
+          ? _self.phone
+          : phone // ignore: cast_nullable_to_non_nullable
+              as dynamic,
+      type: freezed == type
+          ? _self.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as String?,
+      reference_id: freezed == reference_id
+          ? _self.reference_id
+          : reference_id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      legal_business_name: freezed == legal_business_name
+          ? _self.legal_business_name
+          : legal_business_name // ignore: cast_nullable_to_non_nullable
+              as String?,
+      customer_facing_business_name: freezed == customer_facing_business_name
+          ? _self.customer_facing_business_name
+          : customer_facing_business_name // ignore: cast_nullable_to_non_nullable
+              as String?,
+      legal_info: freezed == legal_info
+          ? _self.legal_info
+          : legal_info // ignore: cast_nullable_to_non_nullable
+              as LegalInfo?,
+      apps: freezed == apps
+          ? _self.apps
+          : apps // ignore: cast_nullable_to_non_nullable
+              as Apps?,
+      brand: freezed == brand
+          ? _self.brand
+          : brand // ignore: cast_nullable_to_non_nullable
+              as Brand?,
+      contact_name: freezed == contact_name
+          ? _self.contact_name
+          : contact_name // ignore: cast_nullable_to_non_nullable
+              as String?,
+      contact_info: freezed == contact_info
+          ? _self.contact_info
+          : contact_info // ignore: cast_nullable_to_non_nullable
+              as ContactInfoSupport?,
+      notes: freezed == notes
+          ? _self._notes
+          : notes // ignore: cast_nullable_to_non_nullable
+              as IMap<dynamic>?,
+    ));
+  }
 
-RazorpayAccount _$RazorpayAccountFromJson(Map<String, dynamic> json) {
-  return _RazorpayAccount.fromJson(json);
+  /// Create a copy of RazorpayAccountUpdateRequestBody
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $ProfileCopyWith<$Res>? get profile {
+    if (_self.profile == null) {
+      return null;
+    }
+
+    return $ProfileCopyWith<$Res>(_self.profile!, (value) {
+      return _then(_self.copyWith(profile: value));
+    });
+  }
+
+  /// Create a copy of RazorpayAccountUpdateRequestBody
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $LegalInfoCopyWith<$Res>? get legal_info {
+    if (_self.legal_info == null) {
+      return null;
+    }
+
+    return $LegalInfoCopyWith<$Res>(_self.legal_info!, (value) {
+      return _then(_self.copyWith(legal_info: value));
+    });
+  }
+
+  /// Create a copy of RazorpayAccountUpdateRequestBody
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $AppsCopyWith<$Res>? get apps {
+    if (_self.apps == null) {
+      return null;
+    }
+
+    return $AppsCopyWith<$Res>(_self.apps!, (value) {
+      return _then(_self.copyWith(apps: value));
+    });
+  }
+
+  /// Create a copy of RazorpayAccountUpdateRequestBody
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $BrandCopyWith<$Res>? get brand {
+    if (_self.brand == null) {
+      return null;
+    }
+
+    return $BrandCopyWith<$Res>(_self.brand!, (value) {
+      return _then(_self.copyWith(brand: value));
+    });
+  }
+
+  /// Create a copy of RazorpayAccountUpdateRequestBody
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $ContactInfoSupportCopyWith<$Res>? get contact_info {
+    if (_self.contact_info == null) {
+      return null;
+    }
+
+    return $ContactInfoSupportCopyWith<$Res>(_self.contact_info!, (value) {
+      return _then(_self.copyWith(contact_info: value));
+    });
+  }
 }
 
 /// @nodoc
 mixin _$RazorpayAccount {
-  String get id => throw _privateConstructorUsedError;
-  String get email => throw _privateConstructorUsedError;
-  Profile get profile => throw _privateConstructorUsedError;
-  dynamic get phone => throw _privateConstructorUsedError;
-  String get business_type => throw _privateConstructorUsedError;
-  String get legal_business_name => throw _privateConstructorUsedError;
-  String get contact_name => throw _privateConstructorUsedError;
-  bool get live => throw _privateConstructorUsedError;
-  bool get hold_funds => throw _privateConstructorUsedError;
-  String get status => throw _privateConstructorUsedError;
-  int get created_at => throw _privateConstructorUsedError; // string | number
-  String? get type => throw _privateConstructorUsedError;
-  String? get reference_id => throw _privateConstructorUsedError;
-  String? get customer_facing_business_name =>
-      throw _privateConstructorUsedError;
-  LegalInfo? get legal_info => throw _privateConstructorUsedError;
-  Apps? get apps => throw _privateConstructorUsedError;
-  Brand? get brand => throw _privateConstructorUsedError;
-  ContactInfoSupport? get contact_info => throw _privateConstructorUsedError;
-  IMap<dynamic>? get notes =>
-      throw _privateConstructorUsedError; // IMap<string | number>
-  int? get activated_at => throw _privateConstructorUsedError;
-
-  /// Serializes this RazorpayAccount to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  String get id;
+  String get email;
+  Profile get profile;
+  dynamic get phone;
+  String get business_type;
+  String get legal_business_name;
+  String get contact_name;
+  bool get live;
+  bool get hold_funds;
+  String get status;
+  int get created_at; // string | number
+  String? get type;
+  String? get reference_id;
+  String? get customer_facing_business_name;
+  LegalInfo? get legal_info;
+  Apps? get apps;
+  Brand? get brand;
+  ContactInfoSupport? get contact_info;
+  IMap<dynamic>? get notes; // IMap<string | number>
+  int? get activated_at;
 
   /// Create a copy of RazorpayAccount
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
   $RazorpayAccountCopyWith<RazorpayAccount> get copyWith =>
-      throw _privateConstructorUsedError;
+      _$RazorpayAccountCopyWithImpl<RazorpayAccount>(
+          this as RazorpayAccount, _$identity);
+
+  /// Serializes this RazorpayAccount to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is RazorpayAccount &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.email, email) || other.email == email) &&
+            (identical(other.profile, profile) || other.profile == profile) &&
+            const DeepCollectionEquality().equals(other.phone, phone) &&
+            (identical(other.business_type, business_type) ||
+                other.business_type == business_type) &&
+            (identical(other.legal_business_name, legal_business_name) ||
+                other.legal_business_name == legal_business_name) &&
+            (identical(other.contact_name, contact_name) ||
+                other.contact_name == contact_name) &&
+            (identical(other.live, live) || other.live == live) &&
+            (identical(other.hold_funds, hold_funds) ||
+                other.hold_funds == hold_funds) &&
+            (identical(other.status, status) || other.status == status) &&
+            (identical(other.created_at, created_at) ||
+                other.created_at == created_at) &&
+            (identical(other.type, type) || other.type == type) &&
+            (identical(other.reference_id, reference_id) ||
+                other.reference_id == reference_id) &&
+            (identical(other.customer_facing_business_name,
+                    customer_facing_business_name) ||
+                other.customer_facing_business_name ==
+                    customer_facing_business_name) &&
+            (identical(other.legal_info, legal_info) ||
+                other.legal_info == legal_info) &&
+            (identical(other.apps, apps) || other.apps == apps) &&
+            (identical(other.brand, brand) || other.brand == brand) &&
+            (identical(other.contact_info, contact_info) ||
+                other.contact_info == contact_info) &&
+            const DeepCollectionEquality().equals(other.notes, notes) &&
+            (identical(other.activated_at, activated_at) ||
+                other.activated_at == activated_at));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hashAll([
+        runtimeType,
+        id,
+        email,
+        profile,
+        const DeepCollectionEquality().hash(phone),
+        business_type,
+        legal_business_name,
+        contact_name,
+        live,
+        hold_funds,
+        status,
+        created_at,
+        type,
+        reference_id,
+        customer_facing_business_name,
+        legal_info,
+        apps,
+        brand,
+        contact_info,
+        const DeepCollectionEquality().hash(notes),
+        activated_at
+      ]);
+
+  @override
+  String toString() {
+    return 'RazorpayAccount(id: $id, email: $email, profile: $profile, phone: $phone, business_type: $business_type, legal_business_name: $legal_business_name, contact_name: $contact_name, live: $live, hold_funds: $hold_funds, status: $status, created_at: $created_at, type: $type, reference_id: $reference_id, customer_facing_business_name: $customer_facing_business_name, legal_info: $legal_info, apps: $apps, brand: $brand, contact_info: $contact_info, notes: $notes, activated_at: $activated_at)';
+  }
 }
 
 /// @nodoc
-abstract class $RazorpayAccountCopyWith<$Res> {
+abstract mixin class $RazorpayAccountCopyWith<$Res> {
   factory $RazorpayAccountCopyWith(
-          RazorpayAccount value, $Res Function(RazorpayAccount) then) =
-      _$RazorpayAccountCopyWithImpl<$Res, RazorpayAccount>;
+          RazorpayAccount value, $Res Function(RazorpayAccount) _then) =
+      _$RazorpayAccountCopyWithImpl;
   @useResult
   $Res call(
       {String id,
@@ -3562,14 +3760,12 @@ abstract class $RazorpayAccountCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$RazorpayAccountCopyWithImpl<$Res, $Val extends RazorpayAccount>
+class _$RazorpayAccountCopyWithImpl<$Res>
     implements $RazorpayAccountCopyWith<$Res> {
-  _$RazorpayAccountCopyWithImpl(this._value, this._then);
+  _$RazorpayAccountCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final RazorpayAccount _self;
+  final $Res Function(RazorpayAccount) _then;
 
   /// Create a copy of RazorpayAccount
   /// with the given fields replaced by the non-null parameter values.
@@ -3597,88 +3793,88 @@ class _$RazorpayAccountCopyWithImpl<$Res, $Val extends RazorpayAccount>
     Object? notes = freezed,
     Object? activated_at = freezed,
   }) {
-    return _then(_value.copyWith(
+    return _then(_self.copyWith(
       id: null == id
-          ? _value.id
+          ? _self.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
       email: null == email
-          ? _value.email
+          ? _self.email
           : email // ignore: cast_nullable_to_non_nullable
               as String,
       profile: null == profile
-          ? _value.profile
+          ? _self.profile
           : profile // ignore: cast_nullable_to_non_nullable
               as Profile,
       phone: freezed == phone
-          ? _value.phone
+          ? _self.phone
           : phone // ignore: cast_nullable_to_non_nullable
               as dynamic,
       business_type: null == business_type
-          ? _value.business_type
+          ? _self.business_type
           : business_type // ignore: cast_nullable_to_non_nullable
               as String,
       legal_business_name: null == legal_business_name
-          ? _value.legal_business_name
+          ? _self.legal_business_name
           : legal_business_name // ignore: cast_nullable_to_non_nullable
               as String,
       contact_name: null == contact_name
-          ? _value.contact_name
+          ? _self.contact_name
           : contact_name // ignore: cast_nullable_to_non_nullable
               as String,
       live: null == live
-          ? _value.live
+          ? _self.live
           : live // ignore: cast_nullable_to_non_nullable
               as bool,
       hold_funds: null == hold_funds
-          ? _value.hold_funds
+          ? _self.hold_funds
           : hold_funds // ignore: cast_nullable_to_non_nullable
               as bool,
       status: null == status
-          ? _value.status
+          ? _self.status
           : status // ignore: cast_nullable_to_non_nullable
               as String,
       created_at: null == created_at
-          ? _value.created_at
+          ? _self.created_at
           : created_at // ignore: cast_nullable_to_non_nullable
               as int,
       type: freezed == type
-          ? _value.type
+          ? _self.type
           : type // ignore: cast_nullable_to_non_nullable
               as String?,
       reference_id: freezed == reference_id
-          ? _value.reference_id
+          ? _self.reference_id
           : reference_id // ignore: cast_nullable_to_non_nullable
               as String?,
       customer_facing_business_name: freezed == customer_facing_business_name
-          ? _value.customer_facing_business_name
+          ? _self.customer_facing_business_name
           : customer_facing_business_name // ignore: cast_nullable_to_non_nullable
               as String?,
       legal_info: freezed == legal_info
-          ? _value.legal_info
+          ? _self.legal_info
           : legal_info // ignore: cast_nullable_to_non_nullable
               as LegalInfo?,
       apps: freezed == apps
-          ? _value.apps
+          ? _self.apps
           : apps // ignore: cast_nullable_to_non_nullable
               as Apps?,
       brand: freezed == brand
-          ? _value.brand
+          ? _self.brand
           : brand // ignore: cast_nullable_to_non_nullable
               as Brand?,
       contact_info: freezed == contact_info
-          ? _value.contact_info
+          ? _self.contact_info
           : contact_info // ignore: cast_nullable_to_non_nullable
               as ContactInfoSupport?,
       notes: freezed == notes
-          ? _value.notes
+          ? _self.notes
           : notes // ignore: cast_nullable_to_non_nullable
               as IMap<dynamic>?,
       activated_at: freezed == activated_at
-          ? _value.activated_at
+          ? _self.activated_at
           : activated_at // ignore: cast_nullable_to_non_nullable
               as int?,
-    ) as $Val);
+    ));
   }
 
   /// Create a copy of RazorpayAccount
@@ -3686,8 +3882,8 @@ class _$RazorpayAccountCopyWithImpl<$Res, $Val extends RazorpayAccount>
   @override
   @pragma('vm:prefer-inline')
   $ProfileCopyWith<$Res> get profile {
-    return $ProfileCopyWith<$Res>(_value.profile, (value) {
-      return _then(_value.copyWith(profile: value) as $Val);
+    return $ProfileCopyWith<$Res>(_self.profile, (value) {
+      return _then(_self.copyWith(profile: value));
     });
   }
 
@@ -3696,12 +3892,12 @@ class _$RazorpayAccountCopyWithImpl<$Res, $Val extends RazorpayAccount>
   @override
   @pragma('vm:prefer-inline')
   $LegalInfoCopyWith<$Res>? get legal_info {
-    if (_value.legal_info == null) {
+    if (_self.legal_info == null) {
       return null;
     }
 
-    return $LegalInfoCopyWith<$Res>(_value.legal_info!, (value) {
-      return _then(_value.copyWith(legal_info: value) as $Val);
+    return $LegalInfoCopyWith<$Res>(_self.legal_info!, (value) {
+      return _then(_self.copyWith(legal_info: value));
     });
   }
 
@@ -3710,12 +3906,12 @@ class _$RazorpayAccountCopyWithImpl<$Res, $Val extends RazorpayAccount>
   @override
   @pragma('vm:prefer-inline')
   $AppsCopyWith<$Res>? get apps {
-    if (_value.apps == null) {
+    if (_self.apps == null) {
       return null;
     }
 
-    return $AppsCopyWith<$Res>(_value.apps!, (value) {
-      return _then(_value.copyWith(apps: value) as $Val);
+    return $AppsCopyWith<$Res>(_self.apps!, (value) {
+      return _then(_self.copyWith(apps: value));
     });
   }
 
@@ -3724,12 +3920,12 @@ class _$RazorpayAccountCopyWithImpl<$Res, $Val extends RazorpayAccount>
   @override
   @pragma('vm:prefer-inline')
   $BrandCopyWith<$Res>? get brand {
-    if (_value.brand == null) {
+    if (_self.brand == null) {
       return null;
     }
 
-    return $BrandCopyWith<$Res>(_value.brand!, (value) {
-      return _then(_value.copyWith(brand: value) as $Val);
+    return $BrandCopyWith<$Res>(_self.brand!, (value) {
+      return _then(_self.copyWith(brand: value));
     });
   }
 
@@ -3738,182 +3934,21 @@ class _$RazorpayAccountCopyWithImpl<$Res, $Val extends RazorpayAccount>
   @override
   @pragma('vm:prefer-inline')
   $ContactInfoSupportCopyWith<$Res>? get contact_info {
-    if (_value.contact_info == null) {
+    if (_self.contact_info == null) {
       return null;
     }
 
-    return $ContactInfoSupportCopyWith<$Res>(_value.contact_info!, (value) {
-      return _then(_value.copyWith(contact_info: value) as $Val);
+    return $ContactInfoSupportCopyWith<$Res>(_self.contact_info!, (value) {
+      return _then(_self.copyWith(contact_info: value));
     });
-  }
-}
-
-/// @nodoc
-abstract class _$$RazorpayAccountImplCopyWith<$Res>
-    implements $RazorpayAccountCopyWith<$Res> {
-  factory _$$RazorpayAccountImplCopyWith(_$RazorpayAccountImpl value,
-          $Res Function(_$RazorpayAccountImpl) then) =
-      __$$RazorpayAccountImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {String id,
-      String email,
-      Profile profile,
-      dynamic phone,
-      String business_type,
-      String legal_business_name,
-      String contact_name,
-      bool live,
-      bool hold_funds,
-      String status,
-      int created_at,
-      String? type,
-      String? reference_id,
-      String? customer_facing_business_name,
-      LegalInfo? legal_info,
-      Apps? apps,
-      Brand? brand,
-      ContactInfoSupport? contact_info,
-      IMap<dynamic>? notes,
-      int? activated_at});
-
-  @override
-  $ProfileCopyWith<$Res> get profile;
-  @override
-  $LegalInfoCopyWith<$Res>? get legal_info;
-  @override
-  $AppsCopyWith<$Res>? get apps;
-  @override
-  $BrandCopyWith<$Res>? get brand;
-  @override
-  $ContactInfoSupportCopyWith<$Res>? get contact_info;
-}
-
-/// @nodoc
-class __$$RazorpayAccountImplCopyWithImpl<$Res>
-    extends _$RazorpayAccountCopyWithImpl<$Res, _$RazorpayAccountImpl>
-    implements _$$RazorpayAccountImplCopyWith<$Res> {
-  __$$RazorpayAccountImplCopyWithImpl(
-      _$RazorpayAccountImpl _value, $Res Function(_$RazorpayAccountImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of RazorpayAccount
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? id = null,
-    Object? email = null,
-    Object? profile = null,
-    Object? phone = freezed,
-    Object? business_type = null,
-    Object? legal_business_name = null,
-    Object? contact_name = null,
-    Object? live = null,
-    Object? hold_funds = null,
-    Object? status = null,
-    Object? created_at = null,
-    Object? type = freezed,
-    Object? reference_id = freezed,
-    Object? customer_facing_business_name = freezed,
-    Object? legal_info = freezed,
-    Object? apps = freezed,
-    Object? brand = freezed,
-    Object? contact_info = freezed,
-    Object? notes = freezed,
-    Object? activated_at = freezed,
-  }) {
-    return _then(_$RazorpayAccountImpl(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      email: null == email
-          ? _value.email
-          : email // ignore: cast_nullable_to_non_nullable
-              as String,
-      profile: null == profile
-          ? _value.profile
-          : profile // ignore: cast_nullable_to_non_nullable
-              as Profile,
-      phone: freezed == phone
-          ? _value.phone
-          : phone // ignore: cast_nullable_to_non_nullable
-              as dynamic,
-      business_type: null == business_type
-          ? _value.business_type
-          : business_type // ignore: cast_nullable_to_non_nullable
-              as String,
-      legal_business_name: null == legal_business_name
-          ? _value.legal_business_name
-          : legal_business_name // ignore: cast_nullable_to_non_nullable
-              as String,
-      contact_name: null == contact_name
-          ? _value.contact_name
-          : contact_name // ignore: cast_nullable_to_non_nullable
-              as String,
-      live: null == live
-          ? _value.live
-          : live // ignore: cast_nullable_to_non_nullable
-              as bool,
-      hold_funds: null == hold_funds
-          ? _value.hold_funds
-          : hold_funds // ignore: cast_nullable_to_non_nullable
-              as bool,
-      status: null == status
-          ? _value.status
-          : status // ignore: cast_nullable_to_non_nullable
-              as String,
-      created_at: null == created_at
-          ? _value.created_at
-          : created_at // ignore: cast_nullable_to_non_nullable
-              as int,
-      type: freezed == type
-          ? _value.type
-          : type // ignore: cast_nullable_to_non_nullable
-              as String?,
-      reference_id: freezed == reference_id
-          ? _value.reference_id
-          : reference_id // ignore: cast_nullable_to_non_nullable
-              as String?,
-      customer_facing_business_name: freezed == customer_facing_business_name
-          ? _value.customer_facing_business_name
-          : customer_facing_business_name // ignore: cast_nullable_to_non_nullable
-              as String?,
-      legal_info: freezed == legal_info
-          ? _value.legal_info
-          : legal_info // ignore: cast_nullable_to_non_nullable
-              as LegalInfo?,
-      apps: freezed == apps
-          ? _value.apps
-          : apps // ignore: cast_nullable_to_non_nullable
-              as Apps?,
-      brand: freezed == brand
-          ? _value.brand
-          : brand // ignore: cast_nullable_to_non_nullable
-              as Brand?,
-      contact_info: freezed == contact_info
-          ? _value.contact_info
-          : contact_info // ignore: cast_nullable_to_non_nullable
-              as ContactInfoSupport?,
-      notes: freezed == notes
-          ? _value._notes
-          : notes // ignore: cast_nullable_to_non_nullable
-              as IMap<dynamic>?,
-      activated_at: freezed == activated_at
-          ? _value.activated_at
-          : activated_at // ignore: cast_nullable_to_non_nullable
-              as int?,
-    ));
   }
 }
 
 /// @nodoc
 
 @JsonSerializable(includeIfNull: false)
-class _$RazorpayAccountImpl implements _RazorpayAccount {
-  const _$RazorpayAccountImpl(
+class _RazorpayAccount implements RazorpayAccount {
+  const _RazorpayAccount(
       {required this.id,
       required this.email,
       required this.profile,
@@ -3935,9 +3970,8 @@ class _$RazorpayAccountImpl implements _RazorpayAccount {
       final IMap<dynamic>? notes,
       this.activated_at})
       : _notes = notes;
-
-  factory _$RazorpayAccountImpl.fromJson(Map<String, dynamic> json) =>
-      _$$RazorpayAccountImplFromJson(json);
+  factory _RazorpayAccount.fromJson(Map<String, dynamic> json) =>
+      _$RazorpayAccountFromJson(json);
 
   @override
   final String id;
@@ -3990,16 +4024,26 @@ class _$RazorpayAccountImpl implements _RazorpayAccount {
   @override
   final int? activated_at;
 
+  /// Create a copy of RazorpayAccount
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'RazorpayAccount(id: $id, email: $email, profile: $profile, phone: $phone, business_type: $business_type, legal_business_name: $legal_business_name, contact_name: $contact_name, live: $live, hold_funds: $hold_funds, status: $status, created_at: $created_at, type: $type, reference_id: $reference_id, customer_facing_business_name: $customer_facing_business_name, legal_info: $legal_info, apps: $apps, brand: $brand, contact_info: $contact_info, notes: $notes, activated_at: $activated_at)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$RazorpayAccountCopyWith<_RazorpayAccount> get copyWith =>
+      __$RazorpayAccountCopyWithImpl<_RazorpayAccount>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$RazorpayAccountToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$RazorpayAccountImpl &&
+            other is _RazorpayAccount &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.email, email) || other.email == email) &&
             (identical(other.profile, profile) || other.profile == profile) &&
@@ -4060,226 +4104,260 @@ class _$RazorpayAccountImpl implements _RazorpayAccount {
         activated_at
       ]);
 
-  /// Create a copy of RazorpayAccount
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$RazorpayAccountImplCopyWith<_$RazorpayAccountImpl> get copyWith =>
-      __$$RazorpayAccountImplCopyWithImpl<_$RazorpayAccountImpl>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$RazorpayAccountImplToJson(
-      this,
-    );
+  String toString() {
+    return 'RazorpayAccount(id: $id, email: $email, profile: $profile, phone: $phone, business_type: $business_type, legal_business_name: $legal_business_name, contact_name: $contact_name, live: $live, hold_funds: $hold_funds, status: $status, created_at: $created_at, type: $type, reference_id: $reference_id, customer_facing_business_name: $customer_facing_business_name, legal_info: $legal_info, apps: $apps, brand: $brand, contact_info: $contact_info, notes: $notes, activated_at: $activated_at)';
   }
 }
 
-abstract class _RazorpayAccount implements RazorpayAccount {
-  const factory _RazorpayAccount(
-      {required final String id,
-      required final String email,
-      required final Profile profile,
-      required final dynamic phone,
-      required final String business_type,
-      required final String legal_business_name,
-      required final String contact_name,
-      required final bool live,
-      required final bool hold_funds,
-      required final String status,
-      required final int created_at,
-      final String? type,
-      final String? reference_id,
-      final String? customer_facing_business_name,
-      final LegalInfo? legal_info,
-      final Apps? apps,
-      final Brand? brand,
-      final ContactInfoSupport? contact_info,
-      final IMap<dynamic>? notes,
-      final int? activated_at}) = _$RazorpayAccountImpl;
+/// @nodoc
+abstract mixin class _$RazorpayAccountCopyWith<$Res>
+    implements $RazorpayAccountCopyWith<$Res> {
+  factory _$RazorpayAccountCopyWith(
+          _RazorpayAccount value, $Res Function(_RazorpayAccount) _then) =
+      __$RazorpayAccountCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {String id,
+      String email,
+      Profile profile,
+      dynamic phone,
+      String business_type,
+      String legal_business_name,
+      String contact_name,
+      bool live,
+      bool hold_funds,
+      String status,
+      int created_at,
+      String? type,
+      String? reference_id,
+      String? customer_facing_business_name,
+      LegalInfo? legal_info,
+      Apps? apps,
+      Brand? brand,
+      ContactInfoSupport? contact_info,
+      IMap<dynamic>? notes,
+      int? activated_at});
 
-  factory _RazorpayAccount.fromJson(Map<String, dynamic> json) =
-      _$RazorpayAccountImpl.fromJson;
+  @override
+  $ProfileCopyWith<$Res> get profile;
+  @override
+  $LegalInfoCopyWith<$Res>? get legal_info;
+  @override
+  $AppsCopyWith<$Res>? get apps;
+  @override
+  $BrandCopyWith<$Res>? get brand;
+  @override
+  $ContactInfoSupportCopyWith<$Res>? get contact_info;
+}
 
-  @override
-  String get id;
-  @override
-  String get email;
-  @override
-  Profile get profile;
-  @override
-  dynamic get phone;
-  @override
-  String get business_type;
-  @override
-  String get legal_business_name;
-  @override
-  String get contact_name;
-  @override
-  bool get live;
-  @override
-  bool get hold_funds;
-  @override
-  String get status;
-  @override
-  int get created_at; // string | number
-  @override
-  String? get type;
-  @override
-  String? get reference_id;
-  @override
-  String? get customer_facing_business_name;
-  @override
-  LegalInfo? get legal_info;
-  @override
-  Apps? get apps;
-  @override
-  Brand? get brand;
-  @override
-  ContactInfoSupport? get contact_info;
-  @override
-  IMap<dynamic>? get notes; // IMap<string | number>
-  @override
-  int? get activated_at;
+/// @nodoc
+class __$RazorpayAccountCopyWithImpl<$Res>
+    implements _$RazorpayAccountCopyWith<$Res> {
+  __$RazorpayAccountCopyWithImpl(this._self, this._then);
+
+  final _RazorpayAccount _self;
+  final $Res Function(_RazorpayAccount) _then;
 
   /// Create a copy of RazorpayAccount
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$RazorpayAccountImplCopyWith<_$RazorpayAccountImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? id = null,
+    Object? email = null,
+    Object? profile = null,
+    Object? phone = freezed,
+    Object? business_type = null,
+    Object? legal_business_name = null,
+    Object? contact_name = null,
+    Object? live = null,
+    Object? hold_funds = null,
+    Object? status = null,
+    Object? created_at = null,
+    Object? type = freezed,
+    Object? reference_id = freezed,
+    Object? customer_facing_business_name = freezed,
+    Object? legal_info = freezed,
+    Object? apps = freezed,
+    Object? brand = freezed,
+    Object? contact_info = freezed,
+    Object? notes = freezed,
+    Object? activated_at = freezed,
+  }) {
+    return _then(_RazorpayAccount(
+      id: null == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      email: null == email
+          ? _self.email
+          : email // ignore: cast_nullable_to_non_nullable
+              as String,
+      profile: null == profile
+          ? _self.profile
+          : profile // ignore: cast_nullable_to_non_nullable
+              as Profile,
+      phone: freezed == phone
+          ? _self.phone
+          : phone // ignore: cast_nullable_to_non_nullable
+              as dynamic,
+      business_type: null == business_type
+          ? _self.business_type
+          : business_type // ignore: cast_nullable_to_non_nullable
+              as String,
+      legal_business_name: null == legal_business_name
+          ? _self.legal_business_name
+          : legal_business_name // ignore: cast_nullable_to_non_nullable
+              as String,
+      contact_name: null == contact_name
+          ? _self.contact_name
+          : contact_name // ignore: cast_nullable_to_non_nullable
+              as String,
+      live: null == live
+          ? _self.live
+          : live // ignore: cast_nullable_to_non_nullable
+              as bool,
+      hold_funds: null == hold_funds
+          ? _self.hold_funds
+          : hold_funds // ignore: cast_nullable_to_non_nullable
+              as bool,
+      status: null == status
+          ? _self.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as String,
+      created_at: null == created_at
+          ? _self.created_at
+          : created_at // ignore: cast_nullable_to_non_nullable
+              as int,
+      type: freezed == type
+          ? _self.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as String?,
+      reference_id: freezed == reference_id
+          ? _self.reference_id
+          : reference_id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      customer_facing_business_name: freezed == customer_facing_business_name
+          ? _self.customer_facing_business_name
+          : customer_facing_business_name // ignore: cast_nullable_to_non_nullable
+              as String?,
+      legal_info: freezed == legal_info
+          ? _self.legal_info
+          : legal_info // ignore: cast_nullable_to_non_nullable
+              as LegalInfo?,
+      apps: freezed == apps
+          ? _self.apps
+          : apps // ignore: cast_nullable_to_non_nullable
+              as Apps?,
+      brand: freezed == brand
+          ? _self.brand
+          : brand // ignore: cast_nullable_to_non_nullable
+              as Brand?,
+      contact_info: freezed == contact_info
+          ? _self.contact_info
+          : contact_info // ignore: cast_nullable_to_non_nullable
+              as ContactInfoSupport?,
+      notes: freezed == notes
+          ? _self._notes
+          : notes // ignore: cast_nullable_to_non_nullable
+              as IMap<dynamic>?,
+      activated_at: freezed == activated_at
+          ? _self.activated_at
+          : activated_at // ignore: cast_nullable_to_non_nullable
+              as int?,
+    ));
+  }
 
-RazorpayAccountDocument _$RazorpayAccountDocumentFromJson(
-    Map<String, dynamic> json) {
-  return _RazorpayAccountDocument.fromJson(json);
+  /// Create a copy of RazorpayAccount
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $ProfileCopyWith<$Res> get profile {
+    return $ProfileCopyWith<$Res>(_self.profile, (value) {
+      return _then(_self.copyWith(profile: value));
+    });
+  }
+
+  /// Create a copy of RazorpayAccount
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $LegalInfoCopyWith<$Res>? get legal_info {
+    if (_self.legal_info == null) {
+      return null;
+    }
+
+    return $LegalInfoCopyWith<$Res>(_self.legal_info!, (value) {
+      return _then(_self.copyWith(legal_info: value));
+    });
+  }
+
+  /// Create a copy of RazorpayAccount
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $AppsCopyWith<$Res>? get apps {
+    if (_self.apps == null) {
+      return null;
+    }
+
+    return $AppsCopyWith<$Res>(_self.apps!, (value) {
+      return _then(_self.copyWith(apps: value));
+    });
+  }
+
+  /// Create a copy of RazorpayAccount
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $BrandCopyWith<$Res>? get brand {
+    if (_self.brand == null) {
+      return null;
+    }
+
+    return $BrandCopyWith<$Res>(_self.brand!, (value) {
+      return _then(_self.copyWith(brand: value));
+    });
+  }
+
+  /// Create a copy of RazorpayAccount
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $ContactInfoSupportCopyWith<$Res>? get contact_info {
+    if (_self.contact_info == null) {
+      return null;
+    }
+
+    return $ContactInfoSupportCopyWith<$Res>(_self.contact_info!, (value) {
+      return _then(_self.copyWith(contact_info: value));
+    });
+  }
 }
 
 /// @nodoc
 mixin _$RazorpayAccountDocument {
-  String get type => throw _privateConstructorUsedError;
-  String get url => throw _privateConstructorUsedError;
-
-  /// Serializes this RazorpayAccountDocument to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  String get type;
+  String get url;
 
   /// Create a copy of RazorpayAccountDocument
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
   $RazorpayAccountDocumentCopyWith<RazorpayAccountDocument> get copyWith =>
-      throw _privateConstructorUsedError;
-}
+      _$RazorpayAccountDocumentCopyWithImpl<RazorpayAccountDocument>(
+          this as RazorpayAccountDocument, _$identity);
 
-/// @nodoc
-abstract class $RazorpayAccountDocumentCopyWith<$Res> {
-  factory $RazorpayAccountDocumentCopyWith(RazorpayAccountDocument value,
-          $Res Function(RazorpayAccountDocument) then) =
-      _$RazorpayAccountDocumentCopyWithImpl<$Res, RazorpayAccountDocument>;
-  @useResult
-  $Res call({String type, String url});
-}
-
-/// @nodoc
-class _$RazorpayAccountDocumentCopyWithImpl<$Res,
-        $Val extends RazorpayAccountDocument>
-    implements $RazorpayAccountDocumentCopyWith<$Res> {
-  _$RazorpayAccountDocumentCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of RazorpayAccountDocument
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? type = null,
-    Object? url = null,
-  }) {
-    return _then(_value.copyWith(
-      type: null == type
-          ? _value.type
-          : type // ignore: cast_nullable_to_non_nullable
-              as String,
-      url: null == url
-          ? _value.url
-          : url // ignore: cast_nullable_to_non_nullable
-              as String,
-    ) as $Val);
-  }
-}
-
-/// @nodoc
-abstract class _$$RazorpayAccountDocumentImplCopyWith<$Res>
-    implements $RazorpayAccountDocumentCopyWith<$Res> {
-  factory _$$RazorpayAccountDocumentImplCopyWith(
-          _$RazorpayAccountDocumentImpl value,
-          $Res Function(_$RazorpayAccountDocumentImpl) then) =
-      __$$RazorpayAccountDocumentImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({String type, String url});
-}
-
-/// @nodoc
-class __$$RazorpayAccountDocumentImplCopyWithImpl<$Res>
-    extends _$RazorpayAccountDocumentCopyWithImpl<$Res,
-        _$RazorpayAccountDocumentImpl>
-    implements _$$RazorpayAccountDocumentImplCopyWith<$Res> {
-  __$$RazorpayAccountDocumentImplCopyWithImpl(
-      _$RazorpayAccountDocumentImpl _value,
-      $Res Function(_$RazorpayAccountDocumentImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of RazorpayAccountDocument
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? type = null,
-    Object? url = null,
-  }) {
-    return _then(_$RazorpayAccountDocumentImpl(
-      type: null == type
-          ? _value.type
-          : type // ignore: cast_nullable_to_non_nullable
-              as String,
-      url: null == url
-          ? _value.url
-          : url // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
-}
-
-/// @nodoc
-
-@JsonSerializable(includeIfNull: false)
-class _$RazorpayAccountDocumentImpl implements _RazorpayAccountDocument {
-  const _$RazorpayAccountDocumentImpl({required this.type, required this.url});
-
-  factory _$RazorpayAccountDocumentImpl.fromJson(Map<String, dynamic> json) =>
-      _$$RazorpayAccountDocumentImplFromJson(json);
-
-  @override
-  final String type;
-  @override
-  final String url;
-
-  @override
-  String toString() {
-    return 'RazorpayAccountDocument(type: $type, url: $url)';
-  }
+  /// Serializes this RazorpayAccountDocument to a JSON map.
+  Map<String, dynamic> toJson();
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$RazorpayAccountDocumentImpl &&
+            other is RazorpayAccountDocument &&
             (identical(other.type, type) || other.type == type) &&
             (identical(other.url, url) || other.url == url));
   }
@@ -4288,47 +4366,136 @@ class _$RazorpayAccountDocumentImpl implements _RazorpayAccountDocument {
   @override
   int get hashCode => Object.hash(runtimeType, type, url);
 
-  /// Create a copy of RazorpayAccountDocument
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$RazorpayAccountDocumentImplCopyWith<_$RazorpayAccountDocumentImpl>
-      get copyWith => __$$RazorpayAccountDocumentImplCopyWithImpl<
-          _$RazorpayAccountDocumentImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$RazorpayAccountDocumentImplToJson(
-      this,
-    );
+  String toString() {
+    return 'RazorpayAccountDocument(type: $type, url: $url)';
   }
 }
 
-abstract class _RazorpayAccountDocument implements RazorpayAccountDocument {
-  const factory _RazorpayAccountDocument(
-      {required final String type,
-      required final String url}) = _$RazorpayAccountDocumentImpl;
+/// @nodoc
+abstract mixin class $RazorpayAccountDocumentCopyWith<$Res> {
+  factory $RazorpayAccountDocumentCopyWith(RazorpayAccountDocument value,
+          $Res Function(RazorpayAccountDocument) _then) =
+      _$RazorpayAccountDocumentCopyWithImpl;
+  @useResult
+  $Res call({String type, String url});
+}
 
-  factory _RazorpayAccountDocument.fromJson(Map<String, dynamic> json) =
-      _$RazorpayAccountDocumentImpl.fromJson;
+/// @nodoc
+class _$RazorpayAccountDocumentCopyWithImpl<$Res>
+    implements $RazorpayAccountDocumentCopyWith<$Res> {
+  _$RazorpayAccountDocumentCopyWithImpl(this._self, this._then);
+
+  final RazorpayAccountDocument _self;
+  final $Res Function(RazorpayAccountDocument) _then;
+
+  /// Create a copy of RazorpayAccountDocument
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? type = null,
+    Object? url = null,
+  }) {
+    return _then(_self.copyWith(
+      type: null == type
+          ? _self.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as String,
+      url: null == url
+          ? _self.url
+          : url // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+@JsonSerializable(includeIfNull: false)
+class _RazorpayAccountDocument implements RazorpayAccountDocument {
+  const _RazorpayAccountDocument({required this.type, required this.url});
+  factory _RazorpayAccountDocument.fromJson(Map<String, dynamic> json) =>
+      _$RazorpayAccountDocumentFromJson(json);
 
   @override
-  String get type;
+  final String type;
   @override
-  String get url;
+  final String url;
 
   /// Create a copy of RazorpayAccountDocument
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$RazorpayAccountDocumentImplCopyWith<_$RazorpayAccountDocumentImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  @pragma('vm:prefer-inline')
+  _$RazorpayAccountDocumentCopyWith<_RazorpayAccountDocument> get copyWith =>
+      __$RazorpayAccountDocumentCopyWithImpl<_RazorpayAccountDocument>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$RazorpayAccountDocumentToJson(
+      this,
+    );
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _RazorpayAccountDocument &&
+            (identical(other.type, type) || other.type == type) &&
+            (identical(other.url, url) || other.url == url));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, type, url);
+
+  @override
+  String toString() {
+    return 'RazorpayAccountDocument(type: $type, url: $url)';
+  }
 }
 
-RazorpayAccountDocuments _$RazorpayAccountDocumentsFromJson(
-    Map<String, dynamic> json) {
-  return _RazorpayAccountDocuments.fromJson(json);
+/// @nodoc
+abstract mixin class _$RazorpayAccountDocumentCopyWith<$Res>
+    implements $RazorpayAccountDocumentCopyWith<$Res> {
+  factory _$RazorpayAccountDocumentCopyWith(_RazorpayAccountDocument value,
+          $Res Function(_RazorpayAccountDocument) _then) =
+      __$RazorpayAccountDocumentCopyWithImpl;
+  @override
+  @useResult
+  $Res call({String type, String url});
+}
+
+/// @nodoc
+class __$RazorpayAccountDocumentCopyWithImpl<$Res>
+    implements _$RazorpayAccountDocumentCopyWith<$Res> {
+  __$RazorpayAccountDocumentCopyWithImpl(this._self, this._then);
+
+  final _RazorpayAccountDocument _self;
+  final $Res Function(_RazorpayAccountDocument) _then;
+
+  /// Create a copy of RazorpayAccountDocument
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? type = null,
+    Object? url = null,
+  }) {
+    return _then(_RazorpayAccountDocument(
+      type: null == type
+          ? _self.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as String,
+      url: null == url
+          ? _self.url
+          : url // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
 }
 
 /// @nodoc
@@ -4336,77 +4503,56 @@ mixin _$RazorpayAccountDocuments {
 // The TS definition uses a tuple `[...]`, JSON will likely be a list.
 // Using List<RazorpayAccountDocument> for flexibility.
 // Adjust the key if the actual JSON key is different.
-  List<RazorpayAccountDocument>? get business_proof_of_identification =>
-      throw _privateConstructorUsedError;
-
-  /// Serializes this RazorpayAccountDocuments to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  List<RazorpayAccountDocument>? get business_proof_of_identification;
 
   /// Create a copy of RazorpayAccountDocuments
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $RazorpayAccountDocumentsCopyWith<RazorpayAccountDocuments> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $RazorpayAccountDocumentsCopyWith<$Res> {
-  factory $RazorpayAccountDocumentsCopyWith(RazorpayAccountDocuments value,
-          $Res Function(RazorpayAccountDocuments) then) =
-      _$RazorpayAccountDocumentsCopyWithImpl<$Res, RazorpayAccountDocuments>;
-  @useResult
-  $Res call({List<RazorpayAccountDocument>? business_proof_of_identification});
-}
-
-/// @nodoc
-class _$RazorpayAccountDocumentsCopyWithImpl<$Res,
-        $Val extends RazorpayAccountDocuments>
-    implements $RazorpayAccountDocumentsCopyWith<$Res> {
-  _$RazorpayAccountDocumentsCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of RazorpayAccountDocuments
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
+  $RazorpayAccountDocumentsCopyWith<RazorpayAccountDocuments> get copyWith =>
+      _$RazorpayAccountDocumentsCopyWithImpl<RazorpayAccountDocuments>(
+          this as RazorpayAccountDocuments, _$identity);
+
+  /// Serializes this RazorpayAccountDocuments to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? business_proof_of_identification = freezed,
-  }) {
-    return _then(_value.copyWith(
-      business_proof_of_identification: freezed ==
-              business_proof_of_identification
-          ? _value.business_proof_of_identification
-          : business_proof_of_identification // ignore: cast_nullable_to_non_nullable
-              as List<RazorpayAccountDocument>?,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is RazorpayAccountDocuments &&
+            const DeepCollectionEquality().equals(
+                other.business_proof_of_identification,
+                business_proof_of_identification));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType,
+      const DeepCollectionEquality().hash(business_proof_of_identification));
+
+  @override
+  String toString() {
+    return 'RazorpayAccountDocuments(business_proof_of_identification: $business_proof_of_identification)';
   }
 }
 
 /// @nodoc
-abstract class _$$RazorpayAccountDocumentsImplCopyWith<$Res>
-    implements $RazorpayAccountDocumentsCopyWith<$Res> {
-  factory _$$RazorpayAccountDocumentsImplCopyWith(
-          _$RazorpayAccountDocumentsImpl value,
-          $Res Function(_$RazorpayAccountDocumentsImpl) then) =
-      __$$RazorpayAccountDocumentsImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $RazorpayAccountDocumentsCopyWith<$Res> {
+  factory $RazorpayAccountDocumentsCopyWith(RazorpayAccountDocuments value,
+          $Res Function(RazorpayAccountDocuments) _then) =
+      _$RazorpayAccountDocumentsCopyWithImpl;
   @useResult
   $Res call({List<RazorpayAccountDocument>? business_proof_of_identification});
 }
 
 /// @nodoc
-class __$$RazorpayAccountDocumentsImplCopyWithImpl<$Res>
-    extends _$RazorpayAccountDocumentsCopyWithImpl<$Res,
-        _$RazorpayAccountDocumentsImpl>
-    implements _$$RazorpayAccountDocumentsImplCopyWith<$Res> {
-  __$$RazorpayAccountDocumentsImplCopyWithImpl(
-      _$RazorpayAccountDocumentsImpl _value,
-      $Res Function(_$RazorpayAccountDocumentsImpl) _then)
-      : super(_value, _then);
+class _$RazorpayAccountDocumentsCopyWithImpl<$Res>
+    implements $RazorpayAccountDocumentsCopyWith<$Res> {
+  _$RazorpayAccountDocumentsCopyWithImpl(this._self, this._then);
+
+  final RazorpayAccountDocuments _self;
+  final $Res Function(RazorpayAccountDocuments) _then;
 
   /// Create a copy of RazorpayAccountDocuments
   /// with the given fields replaced by the non-null parameter values.
@@ -4415,10 +4561,10 @@ class __$$RazorpayAccountDocumentsImplCopyWithImpl<$Res>
   $Res call({
     Object? business_proof_of_identification = freezed,
   }) {
-    return _then(_$RazorpayAccountDocumentsImpl(
+    return _then(_self.copyWith(
       business_proof_of_identification: freezed ==
               business_proof_of_identification
-          ? _value._business_proof_of_identification
+          ? _self.business_proof_of_identification
           : business_proof_of_identification // ignore: cast_nullable_to_non_nullable
               as List<RazorpayAccountDocument>?,
     ));
@@ -4428,13 +4574,12 @@ class __$$RazorpayAccountDocumentsImplCopyWithImpl<$Res>
 /// @nodoc
 
 @JsonSerializable(includeIfNull: false)
-class _$RazorpayAccountDocumentsImpl implements _RazorpayAccountDocuments {
-  const _$RazorpayAccountDocumentsImpl(
+class _RazorpayAccountDocuments implements RazorpayAccountDocuments {
+  const _RazorpayAccountDocuments(
       {final List<RazorpayAccountDocument>? business_proof_of_identification})
       : _business_proof_of_identification = business_proof_of_identification;
-
-  factory _$RazorpayAccountDocumentsImpl.fromJson(Map<String, dynamic> json) =>
-      _$$RazorpayAccountDocumentsImplFromJson(json);
+  factory _RazorpayAccountDocuments.fromJson(Map<String, dynamic> json) =>
+      _$RazorpayAccountDocumentsFromJson(json);
 
 // The TS definition uses a tuple `[...]`, JSON will likely be a list.
 // Using List<RazorpayAccountDocument> for flexibility.
@@ -4453,16 +4598,27 @@ class _$RazorpayAccountDocumentsImpl implements _RazorpayAccountDocuments {
     return EqualUnmodifiableListView(value);
   }
 
+  /// Create a copy of RazorpayAccountDocuments
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'RazorpayAccountDocuments(business_proof_of_identification: $business_proof_of_identification)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$RazorpayAccountDocumentsCopyWith<_RazorpayAccountDocuments> get copyWith =>
+      __$RazorpayAccountDocumentsCopyWithImpl<_RazorpayAccountDocuments>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$RazorpayAccountDocumentsToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$RazorpayAccountDocumentsImpl &&
+            other is _RazorpayAccountDocuments &&
             const DeepCollectionEquality().equals(
                 other._business_proof_of_identification,
                 _business_proof_of_identification));
@@ -4473,41 +4629,46 @@ class _$RazorpayAccountDocumentsImpl implements _RazorpayAccountDocuments {
   int get hashCode => Object.hash(runtimeType,
       const DeepCollectionEquality().hash(_business_proof_of_identification));
 
-  /// Create a copy of RazorpayAccountDocuments
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$RazorpayAccountDocumentsImplCopyWith<_$RazorpayAccountDocumentsImpl>
-      get copyWith => __$$RazorpayAccountDocumentsImplCopyWithImpl<
-          _$RazorpayAccountDocumentsImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$RazorpayAccountDocumentsImplToJson(
-      this,
-    );
+  String toString() {
+    return 'RazorpayAccountDocuments(business_proof_of_identification: $business_proof_of_identification)';
   }
 }
 
-abstract class _RazorpayAccountDocuments implements RazorpayAccountDocuments {
-  const factory _RazorpayAccountDocuments(
-      {final List<RazorpayAccountDocument>?
-          business_proof_of_identification}) = _$RazorpayAccountDocumentsImpl;
-
-  factory _RazorpayAccountDocuments.fromJson(Map<String, dynamic> json) =
-      _$RazorpayAccountDocumentsImpl.fromJson;
-
-// The TS definition uses a tuple `[...]`, JSON will likely be a list.
-// Using List<RazorpayAccountDocument> for flexibility.
-// Adjust the key if the actual JSON key is different.
+/// @nodoc
+abstract mixin class _$RazorpayAccountDocumentsCopyWith<$Res>
+    implements $RazorpayAccountDocumentsCopyWith<$Res> {
+  factory _$RazorpayAccountDocumentsCopyWith(_RazorpayAccountDocuments value,
+          $Res Function(_RazorpayAccountDocuments) _then) =
+      __$RazorpayAccountDocumentsCopyWithImpl;
   @override
-  List<RazorpayAccountDocument>? get business_proof_of_identification;
+  @useResult
+  $Res call({List<RazorpayAccountDocument>? business_proof_of_identification});
+}
+
+/// @nodoc
+class __$RazorpayAccountDocumentsCopyWithImpl<$Res>
+    implements _$RazorpayAccountDocumentsCopyWith<$Res> {
+  __$RazorpayAccountDocumentsCopyWithImpl(this._self, this._then);
+
+  final _RazorpayAccountDocuments _self;
+  final $Res Function(_RazorpayAccountDocuments) _then;
 
   /// Create a copy of RazorpayAccountDocuments
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$RazorpayAccountDocumentsImplCopyWith<_$RazorpayAccountDocumentsImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? business_proof_of_identification = freezed,
+  }) {
+    return _then(_RazorpayAccountDocuments(
+      business_proof_of_identification: freezed ==
+              business_proof_of_identification
+          ? _self._business_proof_of_identification
+          : business_proof_of_identification // ignore: cast_nullable_to_non_nullable
+              as List<RazorpayAccountDocument>?,
+    ));
+  }
 }
+
+// dart format on

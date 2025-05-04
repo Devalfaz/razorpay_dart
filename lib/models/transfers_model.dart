@@ -23,7 +23,7 @@ enum SettlementStatusTransfer {
 
 // --- Nested Error ---
 @freezed
-class TransferError with _$TransferError {
+abstract class TransferError with _$TransferError {
   @JsonSerializable(includeIfNull: false)
   const factory TransferError({
     String? code,
@@ -42,7 +42,8 @@ class TransferError with _$TransferError {
 
 // --- Base Request Body ---
 @freezed
-class RazorpayTransferBaseRequestBody with _$RazorpayTransferBaseRequestBody {
+abstract class RazorpayTransferBaseRequestBody
+    with _$RazorpayTransferBaseRequestBody {
   @JsonSerializable(includeIfNull: false)
   const factory RazorpayTransferBaseRequestBody({
     required String account, // Linked account ID
@@ -57,7 +58,7 @@ class RazorpayTransferBaseRequestBody with _$RazorpayTransferBaseRequestBody {
 
 // --- Create Request Body ---
 @freezed
-class RazorpayTransferCreateRequestBody
+abstract class RazorpayTransferCreateRequestBody
     with _$RazorpayTransferCreateRequestBody {
   // Inherits Base
   @JsonSerializable(includeIfNull: false)
@@ -76,7 +77,7 @@ class RazorpayTransferCreateRequestBody
 
 // --- Update Request Body ---
 @freezed
-class RazorpayTransferUpdateRequestBody
+abstract class RazorpayTransferUpdateRequestBody
     with _$RazorpayTransferUpdateRequestBody {
   @JsonSerializable(includeIfNull: false)
   const factory RazorpayTransferUpdateRequestBody({
@@ -96,7 +97,7 @@ bool? _intToBool(dynamic i) => i == null ? null : (i == 1 || i == true);
 
 // --- Transfer Request within Order/Payment ---
 @freezed
-class RazorpayOrderCreateTransferRequestBody
+abstract class RazorpayOrderCreateTransferRequestBody
     with _$RazorpayOrderCreateTransferRequestBody {
   // Extends Base + update fields + linked_account_notes
   @JsonSerializable(includeIfNull: false)
@@ -125,7 +126,7 @@ typedef RazorpayPaymentCreateTransferRequestBody
 
 // --- Response Body ---
 @freezed
-class RazorpayTransfer with _$RazorpayTransfer {
+abstract class RazorpayTransfer with _$RazorpayTransfer {
   // Omits 'account', Extends others + response fields
   @JsonSerializable(includeIfNull: false)
   const factory RazorpayTransfer({
@@ -155,7 +156,7 @@ class RazorpayTransfer with _$RazorpayTransfer {
 
 // --- Reversal Response Body ---
 @freezed
-class RazorpayReversal with _$RazorpayReversal {
+abstract class RazorpayReversal with _$RazorpayReversal {
   @JsonSerializable(includeIfNull: false)
   const factory RazorpayReversal({
     required String id,
@@ -175,7 +176,7 @@ class RazorpayReversal with _$RazorpayReversal {
 
 // --- Query Parameters ---
 @freezed
-class RazorpayTransferQuery with _$RazorpayTransferQuery {
+abstract class RazorpayTransferQuery with _$RazorpayTransferQuery {
   // Extends RazorpayPaginationOptions + specific fields
   @JsonSerializable(includeIfNull: false)
   const factory RazorpayTransferQuery({
@@ -193,7 +194,8 @@ class RazorpayTransferQuery with _$RazorpayTransferQuery {
 
 // --- Request for Reverse ---
 @freezed
-class RazorpayReverseTransferRequest with _$RazorpayReverseTransferRequest {
+abstract class RazorpayReverseTransferRequest
+    with _$RazorpayReverseTransferRequest {
   @JsonSerializable(includeIfNull: false)
   const factory RazorpayReverseTransferRequest({
     int? amount, // Optional amount for partial reversal

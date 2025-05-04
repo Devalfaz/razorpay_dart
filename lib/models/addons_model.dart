@@ -6,7 +6,7 @@ part 'addons_model.freezed.dart';
 part 'addons_model.g.dart';
 
 @freezed
-class RazorpayAddon with _$RazorpayAddon {
+abstract class RazorpayAddon with _$RazorpayAddon {
   @JsonSerializable(includeIfNull: false)
   const factory RazorpayAddon({
     required String id,

@@ -6,9 +6,9 @@ part of 'oauth_token_model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$InitiateAuthorisationRequestImpl _$$InitiateAuthorisationRequestImplFromJson(
+_InitiateAuthorisationRequest _$InitiateAuthorisationRequestFromJson(
         Map<String, dynamic> json) =>
-    _$InitiateAuthorisationRequestImpl(
+    _InitiateAuthorisationRequest(
       client_id: json['client_id'] as String,
       response_type: json['response_type'] as String,
       redirect_uri: json['redirect_uri'] as String,
@@ -17,8 +17,8 @@ _$InitiateAuthorisationRequestImpl _$$InitiateAuthorisationRequestImplFromJson(
       onboarding_signature: json['onboarding_signature'] as String?,
     );
 
-Map<String, dynamic> _$$InitiateAuthorisationRequestImplToJson(
-        _$InitiateAuthorisationRequestImpl instance) =>
+Map<String, dynamic> _$InitiateAuthorisationRequestToJson(
+        _InitiateAuthorisationRequest instance) =>
     <String, dynamic>{
       'client_id': instance.client_id,
       'response_type': instance.response_type,
@@ -29,9 +29,8 @@ Map<String, dynamic> _$$InitiateAuthorisationRequestImplToJson(
         'onboarding_signature': value,
     };
 
-_$OAuthTokenRequestImpl _$$OAuthTokenRequestImplFromJson(
-        Map<String, dynamic> json) =>
-    _$OAuthTokenRequestImpl(
+_OAuthTokenRequest _$OAuthTokenRequestFromJson(Map<String, dynamic> json) =>
+    _OAuthTokenRequest(
       client_id: json['client_id'] as String,
       client_secret: json['client_secret'] as String,
       grant_type: json['grant_type'] as String?,
@@ -43,8 +42,7 @@ _$OAuthTokenRequestImpl _$$OAuthTokenRequestImplFromJson(
       token: json['token'] as String?,
     );
 
-Map<String, dynamic> _$$OAuthTokenRequestImplToJson(
-        _$OAuthTokenRequestImpl instance) =>
+Map<String, dynamic> _$OAuthTokenRequestToJson(_OAuthTokenRequest instance) =>
     <String, dynamic>{
       'client_id': instance.client_id,
       'client_secret': instance.client_secret,
@@ -57,9 +55,8 @@ Map<String, dynamic> _$$OAuthTokenRequestImplToJson(
       if (instance.token case final value?) 'token': value,
     };
 
-_$OAuthTokenResponseImpl _$$OAuthTokenResponseImplFromJson(
-        Map<String, dynamic> json) =>
-    _$OAuthTokenResponseImpl(
+_OAuthTokenResponse _$OAuthTokenResponseFromJson(Map<String, dynamic> json) =>
+    _OAuthTokenResponse(
       public_token: json['public_token'] as String,
       token_type: json['token_type'] as String,
       expires_in: (json['expires_in'] as num).toInt(),
@@ -68,8 +65,7 @@ _$OAuthTokenResponseImpl _$$OAuthTokenResponseImplFromJson(
       razorpay_account_id: json['razorpay_account_id'] as String,
     );
 
-Map<String, dynamic> _$$OAuthTokenResponseImplToJson(
-        _$OAuthTokenResponseImpl instance) =>
+Map<String, dynamic> _$OAuthTokenResponseToJson(_OAuthTokenResponse instance) =>
     <String, dynamic>{
       'public_token': instance.public_token,
       'token_type': instance.token_type,
@@ -79,14 +75,14 @@ Map<String, dynamic> _$$OAuthTokenResponseImplToJson(
       'razorpay_account_id': instance.razorpay_account_id,
     };
 
-_$OAuthRevokeTokenResponseImpl _$$OAuthRevokeTokenResponseImplFromJson(
+_OAuthRevokeTokenResponse _$OAuthRevokeTokenResponseFromJson(
         Map<String, dynamic> json) =>
-    _$OAuthRevokeTokenResponseImpl(
+    _OAuthRevokeTokenResponse(
       message: json['message'] as String,
     );
 
-Map<String, dynamic> _$$OAuthRevokeTokenResponseImplToJson(
-        _$OAuthRevokeTokenResponseImpl instance) =>
+Map<String, dynamic> _$OAuthRevokeTokenResponseToJson(
+        _OAuthRevokeTokenResponse instance) =>
     <String, dynamic>{
       'message': instance.message,
     };

@@ -6,26 +6,24 @@ part of 'fund_account_model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$RazorpayBankAccountBaseRequestBodyImpl
-    _$$RazorpayBankAccountBaseRequestBodyImplFromJson(
-            Map<String, dynamic> json) =>
-        _$RazorpayBankAccountBaseRequestBodyImpl(
+_RazorpayBankAccountBaseRequestBody
+    _$RazorpayBankAccountBaseRequestBodyFromJson(Map<String, dynamic> json) =>
+        _RazorpayBankAccountBaseRequestBody(
           name: json['name'] as String,
           account_number: json['account_number'],
           ifsc: json['ifsc'] as String,
         );
 
-Map<String, dynamic> _$$RazorpayBankAccountBaseRequestBodyImplToJson(
-        _$RazorpayBankAccountBaseRequestBodyImpl instance) =>
+Map<String, dynamic> _$RazorpayBankAccountBaseRequestBodyToJson(
+        _RazorpayBankAccountBaseRequestBody instance) =>
     <String, dynamic>{
       'name': instance.name,
       if (instance.account_number case final value?) 'account_number': value,
       'ifsc': instance.ifsc,
     };
 
-_$RazorpayBankAccountImpl _$$RazorpayBankAccountImplFromJson(
-        Map<String, dynamic> json) =>
-    _$RazorpayBankAccountImpl(
+_RazorpayBankAccount _$RazorpayBankAccountFromJson(Map<String, dynamic> json) =>
+    _RazorpayBankAccount(
       name: json['name'] as String,
       account_number: json['account_number'],
       ifsc: json['ifsc'] as String,
@@ -33,8 +31,8 @@ _$RazorpayBankAccountImpl _$$RazorpayBankAccountImplFromJson(
       notes: json['notes'] as Map<String, dynamic>? ?? const {},
     );
 
-Map<String, dynamic> _$$RazorpayBankAccountImplToJson(
-        _$RazorpayBankAccountImpl instance) =>
+Map<String, dynamic> _$RazorpayBankAccountToJson(
+        _RazorpayBankAccount instance) =>
     <String, dynamic>{
       'name': instance.name,
       if (instance.account_number case final value?) 'account_number': value,
@@ -43,45 +41,42 @@ Map<String, dynamic> _$$RazorpayBankAccountImplToJson(
       if (instance.notes case final value?) 'notes': value,
     };
 
-_$RazorpayFundAccountBaseRequestBodyImpl
-    _$$RazorpayFundAccountBaseRequestBodyImplFromJson(
-            Map<String, dynamic> json) =>
-        _$RazorpayFundAccountBaseRequestBodyImpl(
+_RazorpayFundAccountBaseRequestBody
+    _$RazorpayFundAccountBaseRequestBodyFromJson(Map<String, dynamic> json) =>
+        _RazorpayFundAccountBaseRequestBody(
           customer_id: json['customer_id'] as String,
           account_type: json['account_type'] as String,
           bank_account: RazorpayBankAccountBaseRequestBody.fromJson(
               json['bank_account'] as Map<String, dynamic>),
         );
 
-Map<String, dynamic> _$$RazorpayFundAccountBaseRequestBodyImplToJson(
-        _$RazorpayFundAccountBaseRequestBodyImpl instance) =>
+Map<String, dynamic> _$RazorpayFundAccountBaseRequestBodyToJson(
+        _RazorpayFundAccountBaseRequestBody instance) =>
     <String, dynamic>{
       'customer_id': instance.customer_id,
       'account_type': instance.account_type,
       'bank_account': instance.bank_account,
     };
 
-_$RazorpayFundAccountCreateRequestBodyImpl
-    _$$RazorpayFundAccountCreateRequestBodyImplFromJson(
-            Map<String, dynamic> json) =>
-        _$RazorpayFundAccountCreateRequestBodyImpl(
+_RazorpayFundAccountCreateRequestBody
+    _$RazorpayFundAccountCreateRequestBodyFromJson(Map<String, dynamic> json) =>
+        _RazorpayFundAccountCreateRequestBody(
           customer_id: json['customer_id'] as String,
           account_type: json['account_type'] as String,
           bank_account: RazorpayBankAccountBaseRequestBody.fromJson(
               json['bank_account'] as Map<String, dynamic>),
         );
 
-Map<String, dynamic> _$$RazorpayFundAccountCreateRequestBodyImplToJson(
-        _$RazorpayFundAccountCreateRequestBodyImpl instance) =>
+Map<String, dynamic> _$RazorpayFundAccountCreateRequestBodyToJson(
+        _RazorpayFundAccountCreateRequestBody instance) =>
     <String, dynamic>{
       'customer_id': instance.customer_id,
       'account_type': instance.account_type,
       'bank_account': instance.bank_account,
     };
 
-_$RazorpayFundAccountImpl _$$RazorpayFundAccountImplFromJson(
-        Map<String, dynamic> json) =>
-    _$RazorpayFundAccountImpl(
+_RazorpayFundAccount _$RazorpayFundAccountFromJson(Map<String, dynamic> json) =>
+    _RazorpayFundAccount(
       id: json['id'] as String,
       entity: json['entity'] as String,
       customer_id: json['customer_id'] as String,
@@ -91,8 +86,8 @@ _$RazorpayFundAccountImpl _$$RazorpayFundAccountImplFromJson(
       created_at: (json['created_at'] as num).toInt(),
     );
 
-Map<String, dynamic> _$$RazorpayFundAccountImplToJson(
-        _$RazorpayFundAccountImpl instance) =>
+Map<String, dynamic> _$RazorpayFundAccountToJson(
+        _RazorpayFundAccount instance) =>
     <String, dynamic>{
       'id': instance.id,
       'entity': instance.entity,
@@ -102,20 +97,18 @@ Map<String, dynamic> _$$RazorpayFundAccountImplToJson(
       'created_at': instance.created_at,
     };
 
-_$RazorpayFundAccountFetchResponseImpl
-    _$$RazorpayFundAccountFetchResponseImplFromJson(
-            Map<String, dynamic> json) =>
-        _$RazorpayFundAccountFetchResponseImpl(
-          entity: json['entity'] as String,
-          count: (json['count'] as num).toInt(),
-          items: (json['items'] as List<dynamic>)
-              .map((e) =>
-                  RazorpayFundAccount.fromJson(e as Map<String, dynamic>))
-              .toList(),
-        );
+_RazorpayFundAccountFetchResponse _$RazorpayFundAccountFetchResponseFromJson(
+        Map<String, dynamic> json) =>
+    _RazorpayFundAccountFetchResponse(
+      entity: json['entity'] as String,
+      count: (json['count'] as num).toInt(),
+      items: (json['items'] as List<dynamic>)
+          .map((e) => RazorpayFundAccount.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
 
-Map<String, dynamic> _$$RazorpayFundAccountFetchResponseImplToJson(
-        _$RazorpayFundAccountFetchResponseImpl instance) =>
+Map<String, dynamic> _$RazorpayFundAccountFetchResponseToJson(
+        _RazorpayFundAccountFetchResponse instance) =>
     <String, dynamic>{
       'entity': instance.entity,
       'count': instance.count,

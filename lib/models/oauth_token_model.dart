@@ -7,7 +7,8 @@ part 'oauth_token_model.g.dart';
 
 // --- Request Bodies ---
 @freezed
-class InitiateAuthorisationRequest with _$InitiateAuthorisationRequest {
+abstract class InitiateAuthorisationRequest
+    with _$InitiateAuthorisationRequest {
   @JsonSerializable(includeIfNull: false)
   const factory InitiateAuthorisationRequest({
     required String client_id,
@@ -23,7 +24,7 @@ class InitiateAuthorisationRequest with _$InitiateAuthorisationRequest {
 }
 
 @freezed
-class OAuthTokenRequest with _$OAuthTokenRequest {
+abstract class OAuthTokenRequest with _$OAuthTokenRequest {
   @JsonSerializable(includeIfNull: false)
   const factory OAuthTokenRequest({
     required String client_id,
@@ -43,7 +44,7 @@ class OAuthTokenRequest with _$OAuthTokenRequest {
 
 // --- Response Bodies ---
 @freezed
-class OAuthTokenResponse with _$OAuthTokenResponse {
+abstract class OAuthTokenResponse with _$OAuthTokenResponse {
   @JsonSerializable(includeIfNull: false)
   const factory OAuthTokenResponse({
     required String
@@ -60,7 +61,7 @@ class OAuthTokenResponse with _$OAuthTokenResponse {
 }
 
 @freezed
-class OAuthRevokeTokenResponse with _$OAuthRevokeTokenResponse {
+abstract class OAuthRevokeTokenResponse with _$OAuthRevokeTokenResponse {
   @JsonSerializable(includeIfNull: false)
   const factory OAuthRevokeTokenResponse({
     required String message, // Success message

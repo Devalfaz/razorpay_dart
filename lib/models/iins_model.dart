@@ -50,7 +50,7 @@ enum IinSubType {
 
 // --- Nested Types ---
 @freezed
-class IinEmi with _$IinEmi {
+abstract class IinEmi with _$IinEmi {
   @JsonSerializable(includeIfNull: false)
   const factory IinEmi({
     required bool available,
@@ -60,7 +60,7 @@ class IinEmi with _$IinEmi {
 }
 
 @freezed
-class IinRecurring with _$IinRecurring {
+abstract class IinRecurring with _$IinRecurring {
   @JsonSerializable(includeIfNull: false)
   const factory IinRecurring({
     required bool available,
@@ -71,7 +71,7 @@ class IinRecurring with _$IinRecurring {
 }
 
 @freezed
-class IinAuthenticationType with _$IinAuthenticationType {
+abstract class IinAuthenticationType with _$IinAuthenticationType {
   @JsonSerializable(includeIfNull: false)
   const factory IinAuthenticationType({
     required String type, // '3ds' or 'otp'
@@ -83,7 +83,7 @@ class IinAuthenticationType with _$IinAuthenticationType {
 
 // --- Main IIN Response Body ---
 @freezed
-class RazorpayIin with _$RazorpayIin {
+abstract class RazorpayIin with _$RazorpayIin {
   @JsonSerializable(includeIfNull: false)
   const factory RazorpayIin({
     required String iin,
@@ -111,7 +111,7 @@ class RazorpayIin with _$RazorpayIin {
 
 // --- Response Body for List ---
 @freezed
-class RazorpayIinList with _$RazorpayIinList {
+abstract class RazorpayIinList with _$RazorpayIinList {
   @JsonSerializable(includeIfNull: false)
   const factory RazorpayIinList({
     required int count,

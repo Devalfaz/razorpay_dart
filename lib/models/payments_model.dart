@@ -69,7 +69,7 @@ enum S2SAuthChannel { browser, app }
 
 // --- Nested Types ---
 @freezed
-class PaymentAuthentication with _$PaymentAuthentication {
+abstract class PaymentAuthentication with _$PaymentAuthentication {
   @JsonSerializable(includeIfNull: false)
   const factory PaymentAuthentication({
     required String authentication_channel, // 'browser' | 'app'
@@ -80,7 +80,7 @@ class PaymentAuthentication with _$PaymentAuthentication {
 }
 
 @freezed
-class AcquirerData with _$AcquirerData {
+abstract class AcquirerData with _$AcquirerData {
   @JsonSerializable(includeIfNull: false)
   const factory AcquirerData({
     String? rrn,
@@ -95,7 +95,7 @@ class AcquirerData with _$AcquirerData {
 }
 
 @freezed
-class PaymentEmi with _$PaymentEmi {
+abstract class PaymentEmi with _$PaymentEmi {
   @JsonSerializable(includeIfNull: false)
   const factory PaymentEmi({
     required String issuer,
@@ -109,7 +109,7 @@ class PaymentEmi with _$PaymentEmi {
 }
 
 @freezed
-class PaymentOfferItem with _$PaymentOfferItem {
+abstract class PaymentOfferItem with _$PaymentOfferItem {
   @JsonSerializable(includeIfNull: false)
   const factory PaymentOfferItem({
     required String id,
@@ -120,7 +120,7 @@ class PaymentOfferItem with _$PaymentOfferItem {
 }
 
 @freezed
-class PaymentOffers with _$PaymentOffers {
+abstract class PaymentOffers with _$PaymentOffers {
   @JsonSerializable(includeIfNull: false)
   const factory PaymentOffers({
     required String entity,
@@ -134,7 +134,7 @@ class PaymentOffers with _$PaymentOffers {
 
 // --- Card Related ---
 @freezed
-class RazorpayCardBaseRequestBody with _$RazorpayCardBaseRequestBody {
+abstract class RazorpayCardBaseRequestBody with _$RazorpayCardBaseRequestBody {
   @JsonSerializable(includeIfNull: false)
   const factory RazorpayCardBaseRequestBody({
     required String number,
@@ -155,7 +155,7 @@ class RazorpayCardBaseRequestBody with _$RazorpayCardBaseRequestBody {
 
 // Card Create Request (same as base)
 @freezed
-class RazorpayCardCreateRequest with _$RazorpayCardCreateRequest {
+abstract class RazorpayCardCreateRequest with _$RazorpayCardCreateRequest {
   @JsonSerializable(includeIfNull: false)
   const factory RazorpayCardCreateRequest({
     required String number,
@@ -175,7 +175,7 @@ class RazorpayCardCreateRequest with _$RazorpayCardCreateRequest {
 }
 
 @freezed
-class CardFlows with _$CardFlows {
+abstract class CardFlows with _$CardFlows {
   @JsonSerializable(includeIfNull: false)
   const factory CardFlows({
     required bool recurring,
@@ -188,7 +188,7 @@ class CardFlows with _$CardFlows {
 
 // Card Response Body
 @freezed
-class RazorpayCard with _$RazorpayCard {
+abstract class RazorpayCard with _$RazorpayCard {
   // Extends Create Request + response fields
   @JsonSerializable(includeIfNull: false)
   const factory RazorpayCard({
@@ -219,7 +219,7 @@ class RazorpayCard with _$RazorpayCard {
 
 // --- Downtime Related ---
 @freezed
-class RazorpayPaymentDowntimeInstrument
+abstract class RazorpayPaymentDowntimeInstrument
     with _$RazorpayPaymentDowntimeInstrument {
   @JsonSerializable(includeIfNull: false)
   const factory RazorpayPaymentDowntimeInstrument({
@@ -236,7 +236,7 @@ class RazorpayPaymentDowntimeInstrument
 }
 
 @freezed
-class RazorpayPaymentDowntime with _$RazorpayPaymentDowntime {
+abstract class RazorpayPaymentDowntime with _$RazorpayPaymentDowntime {
   @JsonSerializable(includeIfNull: false)
   const factory RazorpayPaymentDowntime({
     required String id,
@@ -258,7 +258,7 @@ class RazorpayPaymentDowntime with _$RazorpayPaymentDowntime {
 
 // --- UPI Related ---
 @freezed
-class PaymentUpiDetails with _$PaymentUpiDetails {
+abstract class PaymentUpiDetails with _$PaymentUpiDetails {
   @JsonSerializable(includeIfNull: false)
   const factory PaymentUpiDetails({
     required String flow, // 'collect' | 'intent'
@@ -272,7 +272,7 @@ class PaymentUpiDetails with _$PaymentUpiDetails {
 
 // --- S2S Related ---
 @freezed
-class RazorpayCardS2SMethod with _$RazorpayCardS2SMethod {
+abstract class RazorpayCardS2SMethod with _$RazorpayCardS2SMethod {
   // Extends RazorpayCardBaseRequestBody + authentication
   @JsonSerializable(includeIfNull: false)
   const factory RazorpayCardS2SMethod({
@@ -296,7 +296,7 @@ class RazorpayCardS2SMethod with _$RazorpayCardS2SMethod {
 }
 
 @freezed
-class BrowserInfo with _$BrowserInfo {
+abstract class BrowserInfo with _$BrowserInfo {
   @JsonSerializable(includeIfNull: false)
   const factory BrowserInfo({
     bool? java_enabled,
@@ -314,7 +314,8 @@ class BrowserInfo with _$BrowserInfo {
 
 // --- Payment Base Request Body ---
 @freezed
-class RazorpayPaymentBaseRequestBody with _$RazorpayPaymentBaseRequestBody {
+abstract class RazorpayPaymentBaseRequestBody
+    with _$RazorpayPaymentBaseRequestBody {
   @JsonSerializable(includeIfNull: false)
   const factory RazorpayPaymentBaseRequestBody({
     required dynamic amount, // number | string
@@ -335,7 +336,8 @@ class RazorpayPaymentBaseRequestBody with _$RazorpayPaymentBaseRequestBody {
 
 // --- Create Request Bodies ---
 @freezed
-class RazorpayPaymentCreateRequestBody with _$RazorpayPaymentCreateRequestBody {
+abstract class RazorpayPaymentCreateRequestBody
+    with _$RazorpayPaymentCreateRequestBody {
   // Inherits Base
   @JsonSerializable(includeIfNull: false)
   const factory RazorpayPaymentCreateRequestBody({
@@ -358,7 +360,7 @@ class RazorpayPaymentCreateRequestBody with _$RazorpayPaymentCreateRequestBody {
 }
 
 @freezed
-class RazorpayRecurringPaymentCreateRequestBody
+abstract class RazorpayRecurringPaymentCreateRequestBody
     with _$RazorpayRecurringPaymentCreateRequestBody {
   // Extends Base + token, recurring
   @JsonSerializable(includeIfNull: false)
@@ -385,7 +387,7 @@ class RazorpayRecurringPaymentCreateRequestBody
 }
 
 @freezed
-class RazorpayPaymentThirdPartyCreateRequestBody
+abstract class RazorpayPaymentThirdPartyCreateRequestBody
     with _$RazorpayPaymentThirdPartyCreateRequestBody {
   // Omit<Base, 'customer_id' | 'notes' | 'description'> + bank, method
   @JsonSerializable(includeIfNull: false)
@@ -410,7 +412,7 @@ class RazorpayPaymentThirdPartyCreateRequestBody
 }
 
 @freezed
-class RazorpayPaymentUpiCreateRequestBody
+abstract class RazorpayPaymentUpiCreateRequestBody
     with _$RazorpayPaymentUpiCreateRequestBody {
   // PartialOptional<Base, 'customer_id'> + method, save, ip, etc.
   @JsonSerializable(includeIfNull: false)
@@ -441,7 +443,7 @@ class RazorpayPaymentUpiCreateRequestBody
 }
 
 @freezed
-class RazorpayPaymentS2SCreateRequestBody
+abstract class RazorpayPaymentS2SCreateRequestBody
     with _$RazorpayPaymentS2SCreateRequestBody {
   // Extends Base + save, token, account_id, card, ip, etc.
   @JsonSerializable(includeIfNull: false)
@@ -477,7 +479,8 @@ class RazorpayPaymentS2SCreateRequestBody
 
 // --- Update Request Body ---
 @freezed
-class RazorpayPaymentUpdateRequestBody with _$RazorpayPaymentUpdateRequestBody {
+abstract class RazorpayPaymentUpdateRequestBody
+    with _$RazorpayPaymentUpdateRequestBody {
   // Pick<Base, "notes">
   @JsonSerializable(includeIfNull: false)
   const factory RazorpayPaymentUpdateRequestBody({
@@ -492,7 +495,7 @@ class RazorpayPaymentUpdateRequestBody with _$RazorpayPaymentUpdateRequestBody {
 
 // --- Refund Request within Payment ---
 @freezed
-class RazorpayRefundPaymentLinkAccountCreateRequestBody
+abstract class RazorpayRefundPaymentLinkAccountCreateRequestBody
     with _$RazorpayRefundPaymentLinkAccountCreateRequestBody {
   // Pick<Base, "amount"> + reverse_all
   @JsonSerializable(includeIfNull: false)
@@ -514,7 +517,7 @@ class RazorpayRefundPaymentLinkAccountCreateRequestBody
 
 // --- Response Bodies ---
 @freezed
-class RazorpayPayment with _$RazorpayPayment {
+abstract class RazorpayPayment with _$RazorpayPayment {
   // Extends Create Request + response fields
   @JsonSerializable(includeIfNull: false)
   const factory RazorpayPayment({
@@ -558,7 +561,7 @@ class RazorpayPayment with _$RazorpayPayment {
 
 // S2S JSON Response
 @freezed
-class RazorpayPaymentS2SJson with _$RazorpayPaymentS2SJson {
+abstract class RazorpayPaymentS2SJson with _$RazorpayPaymentS2SJson {
   @JsonSerializable(includeIfNull: false)
   const factory RazorpayPaymentS2SJson({
     required String razorpay_payment_id,
@@ -574,7 +577,7 @@ class RazorpayPaymentS2SJson with _$RazorpayPaymentS2SJson {
 
 // OTP Submit Response
 @freezed
-class RazorpayOtpSubmitResponse with _$RazorpayOtpSubmitResponse {
+abstract class RazorpayOtpSubmitResponse with _$RazorpayOtpSubmitResponse {
   @JsonSerializable(includeIfNull: false)
   const factory RazorpayOtpSubmitResponse({
     required String razorpay_payment_id,
@@ -588,7 +591,7 @@ class RazorpayOtpSubmitResponse with _$RazorpayOtpSubmitResponse {
 
 // OTP Resend Response
 @freezed
-class RazorpayOtpResendResponse with _$RazorpayOtpResendResponse {
+abstract class RazorpayOtpResendResponse with _$RazorpayOtpResendResponse {
   @JsonSerializable(includeIfNull: false)
   const factory RazorpayOtpResendResponse({
     required List<String>
@@ -602,7 +605,7 @@ class RazorpayOtpResendResponse with _$RazorpayOtpResendResponse {
 
 // Create UPI Response
 @freezed
-class RazorpayCreateUpiResponse with _$RazorpayCreateUpiResponse {
+abstract class RazorpayCreateUpiResponse with _$RazorpayCreateUpiResponse {
   @JsonSerializable(includeIfNull: false)
   const factory RazorpayCreateUpiResponse({
     required String razorpay_payment_id,
@@ -615,7 +618,7 @@ class RazorpayCreateUpiResponse with _$RazorpayCreateUpiResponse {
 
 // Validate VPA Response
 @freezed
-class RazorpayValidateVpaResponse with _$RazorpayValidateVpaResponse {
+abstract class RazorpayValidateVpaResponse with _$RazorpayValidateVpaResponse {
   @JsonSerializable(includeIfNull: false)
   const factory RazorpayValidateVpaResponse({
     required String vpa,
@@ -633,7 +636,7 @@ class RazorpayValidateVpaResponse with _$RazorpayValidateVpaResponse {
 
 // Bank Transfer Payment Details Response
 @freezed
-class RazorpayPaymentDetails with _$RazorpayPaymentDetails {
+abstract class RazorpayPaymentDetails with _$RazorpayPaymentDetails {
   @JsonSerializable(includeIfNull: false)
   const factory RazorpayPaymentDetails({
     required String id, // Detail ID, not payment ID
@@ -658,7 +661,7 @@ bool? _intToBool(dynamic i) => i == null ? null : (i == 1 || i == true);
 
 // Query Parameters
 @freezed
-class RazorpayPaymentQuery with _$RazorpayPaymentQuery {
+abstract class RazorpayPaymentQuery with _$RazorpayPaymentQuery {
   // Extends RazorpayPaginationOptions + expand
   @JsonSerializable(includeIfNull: false)
   const factory RazorpayPaymentQuery({
@@ -678,7 +681,8 @@ class RazorpayPaymentQuery with _$RazorpayPaymentQuery {
 
 // Response for Fetch Multiple Refunds for Payment
 @freezed
-class RazorpayPaymentRefundsResponse with _$RazorpayPaymentRefundsResponse {
+abstract class RazorpayPaymentRefundsResponse
+    with _$RazorpayPaymentRefundsResponse {
   @JsonSerializable(includeIfNull: false)
   const factory RazorpayPaymentRefundsResponse({
     required String entity,
@@ -692,7 +696,8 @@ class RazorpayPaymentRefundsResponse with _$RazorpayPaymentRefundsResponse {
 
 // Response for Fetch Transfers for Payment
 @freezed
-class RazorpayPaymentTransfersResponse with _$RazorpayPaymentTransfersResponse {
+abstract class RazorpayPaymentTransfersResponse
+    with _$RazorpayPaymentTransfersResponse {
   @JsonSerializable(includeIfNull: false)
   const factory RazorpayPaymentTransfersResponse({
     required String entity,
@@ -708,7 +713,8 @@ class RazorpayPaymentTransfersResponse with _$RazorpayPaymentTransfersResponse {
 
 // Response for Create Transfer from Payment
 @freezed
-class RazorpayCreateTransferResponse with _$RazorpayCreateTransferResponse {
+abstract class RazorpayCreateTransferResponse
+    with _$RazorpayCreateTransferResponse {
   @JsonSerializable(includeIfNull: false)
   const factory RazorpayCreateTransferResponse({
     required String entity,
@@ -722,7 +728,8 @@ class RazorpayCreateTransferResponse with _$RazorpayCreateTransferResponse {
 
 // Response for Fetch Downtimes
 @freezed
-class RazorpayPaymentDowntimeResponse with _$RazorpayPaymentDowntimeResponse {
+abstract class RazorpayPaymentDowntimeResponse
+    with _$RazorpayPaymentDowntimeResponse {
   @JsonSerializable(includeIfNull: false)
   const factory RazorpayPaymentDowntimeResponse({
     required String entity,

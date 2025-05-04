@@ -14,7 +14,8 @@ enum ProcessedSpeed { instant, normal } // For speed_processed response field
 
 // --- Base Request Body ---
 @freezed
-class RazorpayRefundBaseRequestBody with _$RazorpayRefundBaseRequestBody {
+abstract class RazorpayRefundBaseRequestBody
+    with _$RazorpayRefundBaseRequestBody {
   @JsonSerializable(includeIfNull: false)
   const factory RazorpayRefundBaseRequestBody({
     int? amount, // Amount is optional for full refund, required for partial
@@ -29,7 +30,8 @@ class RazorpayRefundBaseRequestBody with _$RazorpayRefundBaseRequestBody {
 
 // --- Create Request Body ---
 @freezed
-class RazorpayRefundCreateRequestBody with _$RazorpayRefundCreateRequestBody {
+abstract class RazorpayRefundCreateRequestBody
+    with _$RazorpayRefundCreateRequestBody {
   // Inherits Base
   @JsonSerializable(includeIfNull: false)
   const factory RazorpayRefundCreateRequestBody({
@@ -45,7 +47,8 @@ class RazorpayRefundCreateRequestBody with _$RazorpayRefundCreateRequestBody {
 
 // --- Update Request Body ---
 @freezed
-class RazorpayRefundUpdateRequestBody with _$RazorpayRefundUpdateRequestBody {
+abstract class RazorpayRefundUpdateRequestBody
+    with _$RazorpayRefundUpdateRequestBody {
   // Only contains 'notes' according to d.ts (Base has optional fields, this only requires notes)
   // Let's make notes required based on d.ts structure for update.
   @JsonSerializable(includeIfNull: false)
@@ -59,7 +62,7 @@ class RazorpayRefundUpdateRequestBody with _$RazorpayRefundUpdateRequestBody {
 
 // --- Response Body ---
 @freezed
-class RazorpayRefund with _$RazorpayRefund {
+abstract class RazorpayRefund with _$RazorpayRefund {
   // Omit<Base, 'speed'> + response fields
   @JsonSerializable(includeIfNull: false)
   const factory RazorpayRefund({
@@ -87,7 +90,7 @@ class RazorpayRefund with _$RazorpayRefund {
 
 // --- Query Parameters for Fetch ---
 @freezed
-class RazorpayRefundFetchQuery with _$RazorpayRefundFetchQuery {
+abstract class RazorpayRefundFetchQuery with _$RazorpayRefundFetchQuery {
   @JsonSerializable(includeIfNull: false)
   const factory RazorpayRefundFetchQuery({
     String? payment_id, // Optional payment_id for context

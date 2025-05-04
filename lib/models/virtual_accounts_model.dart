@@ -20,7 +20,7 @@ enum ReceiverType {
 
 // --- Nested Allowed Payer ---
 @freezed
-class RazorpayAllowedPayerBaseRequestBody
+abstract class RazorpayAllowedPayerBaseRequestBody
     with _$RazorpayAllowedPayerBaseRequestBody {
   @JsonSerializable(includeIfNull: false)
   const factory RazorpayAllowedPayerBaseRequestBody({
@@ -35,7 +35,7 @@ class RazorpayAllowedPayerBaseRequestBody
 }
 
 @freezed
-class RazorpayAllowedPayer with _$RazorpayAllowedPayer {
+abstract class RazorpayAllowedPayer with _$RazorpayAllowedPayer {
   // Extends Base + response fields
   @JsonSerializable(includeIfNull: false)
   const factory RazorpayAllowedPayer({
@@ -53,7 +53,7 @@ class RazorpayAllowedPayer with _$RazorpayAllowedPayer {
 
 // --- Nested Receiver ---
 @freezed
-class VpaDescriptor with _$VpaDescriptor {
+abstract class VpaDescriptor with _$VpaDescriptor {
   @JsonSerializable(includeIfNull: false)
   const factory VpaDescriptor({
     required String descriptor,
@@ -64,7 +64,7 @@ class VpaDescriptor with _$VpaDescriptor {
 }
 
 @freezed
-class RazorpayVirtualAccountReceiverBaseRequestBody
+abstract class RazorpayVirtualAccountReceiverBaseRequestBody
     with _$RazorpayVirtualAccountReceiverBaseRequestBody {
   @JsonSerializable(includeIfNull: false)
   const factory RazorpayVirtualAccountReceiverBaseRequestBody({
@@ -79,7 +79,8 @@ class RazorpayVirtualAccountReceiverBaseRequestBody
 }
 
 @freezed
-class RazorpayVirtualAccountReceiver with _$RazorpayVirtualAccountReceiver {
+abstract class RazorpayVirtualAccountReceiver
+    with _$RazorpayVirtualAccountReceiver {
   // Response structure for a receiver
   @JsonSerializable(includeIfNull: false)
   const factory RazorpayVirtualAccountReceiver({
@@ -107,7 +108,7 @@ class RazorpayVirtualAccountReceiver with _$RazorpayVirtualAccountReceiver {
 
 // --- Base Virtual Account Request Body ---
 @freezed
-class RazorpayVirtualAccountBaseRequestBody
+abstract class RazorpayVirtualAccountBaseRequestBody
     with _$RazorpayVirtualAccountBaseRequestBody {
   @JsonSerializable(includeIfNull: false)
   const factory RazorpayVirtualAccountBaseRequestBody({
@@ -131,7 +132,7 @@ class RazorpayVirtualAccountBaseRequestBody
 
 // --- Create Request Bodies ---
 @freezed
-class RazorpayVirtualAccountCreateRequestBody
+abstract class RazorpayVirtualAccountCreateRequestBody
     with _$RazorpayVirtualAccountCreateRequestBody {
   // Inherits Base
   @JsonSerializable(includeIfNull: false)
@@ -153,7 +154,7 @@ class RazorpayVirtualAccountCreateRequestBody
 }
 
 @freezed
-class RazorpayVirtualAccountTPVCreateRequestBody
+abstract class RazorpayVirtualAccountTPVCreateRequestBody
     with _$RazorpayVirtualAccountTPVCreateRequestBody {
   // Extends Base + allowed_payers
   @JsonSerializable(includeIfNull: false)
@@ -178,7 +179,7 @@ class RazorpayVirtualAccountTPVCreateRequestBody
 
 // --- Response Body ---
 @freezed
-class RazorpayVirtualAccount with _$RazorpayVirtualAccount {
+abstract class RazorpayVirtualAccount with _$RazorpayVirtualAccount {
   // Omit<CreateRequest, 'receivers' | 'allowed_payers'> + response fields
   @JsonSerializable(includeIfNull: false)
   const factory RazorpayVirtualAccount({
@@ -204,7 +205,7 @@ class RazorpayVirtualAccount with _$RazorpayVirtualAccount {
 
 // Specific response for Fetch Payments for VA
 @freezed
-class RazorpayVirtualAccountPaymentsResponse
+abstract class RazorpayVirtualAccountPaymentsResponse
     with _$RazorpayVirtualAccountPaymentsResponse {
   @JsonSerializable(includeIfNull: false)
   const factory RazorpayVirtualAccountPaymentsResponse({
@@ -226,7 +227,7 @@ typedef RazorpayVirtualAccountCloseResponse = RazorpayVirtualAccount;
 // --- Delete Allowed Payer Response ---
 // JS API returns null. Use void or a specific empty model.
 @freezed
-class DeleteAllowedPayerResponse with _$DeleteAllowedPayerResponse {
+abstract class DeleteAllowedPayerResponse with _$DeleteAllowedPayerResponse {
   @JsonSerializable(includeIfNull: false)
   const factory DeleteAllowedPayerResponse() = _DeleteAllowedPayerResponse;
 

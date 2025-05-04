@@ -7,7 +7,7 @@ part 'cards_model.g.dart';
 
 // Request Bodies
 @freezed
-class RazorpayCardReferenceNumberBaseRequest
+abstract class RazorpayCardReferenceNumberBaseRequest
     with _$RazorpayCardReferenceNumberBaseRequest {
   @JsonSerializable(includeIfNull: false)
   const factory RazorpayCardReferenceNumberBaseRequest({
@@ -22,7 +22,7 @@ class RazorpayCardReferenceNumberBaseRequest
 }
 
 @freezed
-class RazorpayCardReferenceTokenBaseRequest
+abstract class RazorpayCardReferenceTokenBaseRequest
     with _$RazorpayCardReferenceTokenBaseRequest {
   @JsonSerializable(includeIfNull: false)
   const factory RazorpayCardReferenceTokenBaseRequest({
@@ -42,7 +42,7 @@ class RazorpayCardReferenceTokenBaseRequest
 
 // Response Body
 @freezed
-class RazorpayCardReference with _$RazorpayCardReference {
+abstract class RazorpayCardReference with _$RazorpayCardReference {
   @JsonSerializable(includeIfNull: false)
   const factory RazorpayCardReference({
     required String provider,

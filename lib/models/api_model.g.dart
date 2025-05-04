@@ -26,17 +26,17 @@ Map<String, dynamic> _$RazorpayApiResponseToJson<T>(
       'items': instance.items.map(toJsonT).toList(),
     };
 
-_$RazorpayPaginationOptionsImpl _$$RazorpayPaginationOptionsImplFromJson(
+_RazorpayPaginationOptions _$RazorpayPaginationOptionsFromJson(
         Map<String, dynamic> json) =>
-    _$RazorpayPaginationOptionsImpl(
+    _RazorpayPaginationOptions(
       from: (json['from'] as num?)?.toInt(),
       to: (json['to'] as num?)?.toInt(),
       count: (json['count'] as num?)?.toInt(),
       skip: (json['skip'] as num?)?.toInt(),
     );
 
-Map<String, dynamic> _$$RazorpayPaginationOptionsImplToJson(
-        _$RazorpayPaginationOptionsImpl instance) =>
+Map<String, dynamic> _$RazorpayPaginationOptionsToJson(
+        _RazorpayPaginationOptions instance) =>
     <String, dynamic>{
       if (instance.from case final value?) 'from': value,
       if (instance.to case final value?) 'to': value,

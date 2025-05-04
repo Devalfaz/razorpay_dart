@@ -9,7 +9,7 @@ part 'payment_link_model.g.dart';
 // --- Nested Types ---
 
 @freezed
-class RazorpayPaymentLinkCustomer with _$RazorpayPaymentLinkCustomer {
+abstract class RazorpayPaymentLinkCustomer with _$RazorpayPaymentLinkCustomer {
   // Pick<Customers.RazorpayCustomerCreateRequestBody, 'name' | 'email' | 'contact'>
   @JsonSerializable(includeIfNull: false)
   const factory RazorpayPaymentLinkCustomer({
@@ -23,7 +23,7 @@ class RazorpayPaymentLinkCustomer with _$RazorpayPaymentLinkCustomer {
 }
 
 @freezed
-class RazorpayPaymentLinkNotify with _$RazorpayPaymentLinkNotify {
+abstract class RazorpayPaymentLinkNotify with _$RazorpayPaymentLinkNotify {
   @JsonSerializable(includeIfNull: false)
   const factory RazorpayPaymentLinkNotify({
     bool? email,
@@ -36,7 +36,7 @@ class RazorpayPaymentLinkNotify with _$RazorpayPaymentLinkNotify {
 }
 
 @freezed
-class RazorpayPaymentLinkReminder with _$RazorpayPaymentLinkReminder {
+abstract class RazorpayPaymentLinkReminder with _$RazorpayPaymentLinkReminder {
   @JsonSerializable(includeIfNull: false)
   const factory RazorpayPaymentLinkReminder({
     required String status,
@@ -47,7 +47,7 @@ class RazorpayPaymentLinkReminder with _$RazorpayPaymentLinkReminder {
 }
 
 @freezed
-class RazorpayPaymentLinkPayment with _$RazorpayPaymentLinkPayment {
+abstract class RazorpayPaymentLinkPayment with _$RazorpayPaymentLinkPayment {
   // Corresponds to RazorpayPaymentBaseRequestBody in d.ts (but seems simplified)
   @JsonSerializable(includeIfNull: false)
   const factory RazorpayPaymentLinkPayment({
@@ -67,7 +67,7 @@ class RazorpayPaymentLinkPayment with _$RazorpayPaymentLinkPayment {
 
 // --- Base Request Body ---
 @freezed
-class RazorpayPaymentLinkBaseRequestBody
+abstract class RazorpayPaymentLinkBaseRequestBody
     with _$RazorpayPaymentLinkBaseRequestBody {
   @JsonSerializable(includeIfNull: false)
   const factory RazorpayPaymentLinkBaseRequestBody({
@@ -94,7 +94,7 @@ class RazorpayPaymentLinkBaseRequestBody
 
 // --- Create Request Body ---
 @freezed
-class RazorpayPaymentLinkCreateRequestBody
+abstract class RazorpayPaymentLinkCreateRequestBody
     with _$RazorpayPaymentLinkCreateRequestBody {
   // Inherits from Base
   @JsonSerializable(includeIfNull: false)
@@ -122,7 +122,7 @@ class RazorpayPaymentLinkCreateRequestBody
 
 // --- Update Request Body ---
 @freezed
-class RazorpayPaymentLinkUpdateRequestBody
+abstract class RazorpayPaymentLinkUpdateRequestBody
     with _$RazorpayPaymentLinkUpdateRequestBody {
   // Pick<Base, 'accept_partial' | 'reference_id' | 'expire_by' | 'notes' | 'reminder_enable'>
   @JsonSerializable(includeIfNull: false)
@@ -142,7 +142,7 @@ class RazorpayPaymentLinkUpdateRequestBody
 
 // --- Response Body ---
 @freezed
-class RazorpayPaymentLink with _$RazorpayPaymentLink {
+abstract class RazorpayPaymentLink with _$RazorpayPaymentLink {
   // Extends Base + response fields
   @JsonSerializable(includeIfNull: false)
   const factory RazorpayPaymentLink({
@@ -178,7 +178,8 @@ class RazorpayPaymentLink with _$RazorpayPaymentLink {
 
 // Example: Transfer Payment Option
 @freezed
-class RazorpayTransferPaymentOption with _$RazorpayTransferPaymentOption {
+abstract class RazorpayTransferPaymentOption
+    with _$RazorpayTransferPaymentOption {
   @JsonSerializable(includeIfNull: false)
   const factory RazorpayTransferPaymentOption({
     required RazorpayTransferPaymentOrder order,
@@ -193,7 +194,8 @@ class RazorpayTransferPaymentOption with _$RazorpayTransferPaymentOption {
 }
 
 @freezed
-class RazorpayTransferPaymentOrder with _$RazorpayTransferPaymentOrder {
+abstract class RazorpayTransferPaymentOrder
+    with _$RazorpayTransferPaymentOrder {
   @JsonSerializable(includeIfNull: false)
   const factory RazorpayTransferPaymentOrder({
     // Define RazorpayOrderCreateTransferRequestBody if not already done in transfers_model
@@ -214,7 +216,8 @@ class RazorpayTransferPaymentOrder with _$RazorpayTransferPaymentOrder {
 // --- Response for Get All ---
 // The JS API returns { payment_links: [...] } directly, not the standard ApiListResponse structure.
 @freezed
-class RazorpayPaymentLinkListResponse with _$RazorpayPaymentLinkListResponse {
+abstract class RazorpayPaymentLinkListResponse
+    with _$RazorpayPaymentLinkListResponse {
   @JsonSerializable(includeIfNull: false)
   const factory RazorpayPaymentLinkListResponse({
     required List<RazorpayPaymentLink> payment_links,

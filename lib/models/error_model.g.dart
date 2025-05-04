@@ -6,8 +6,8 @@ part of 'error_model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$RazorpayErrorImpl _$$RazorpayErrorImplFromJson(Map<String, dynamic> json) =>
-    _$RazorpayErrorImpl(
+_RazorpayError _$RazorpayErrorFromJson(Map<String, dynamic> json) =>
+    _RazorpayError(
       code: json['code'] as String,
       description: json['description'] as String,
       field: json['field'],
@@ -19,7 +19,7 @@ _$RazorpayErrorImpl _$$RazorpayErrorImplFromJson(Map<String, dynamic> json) =>
       ),
     );
 
-Map<String, dynamic> _$$RazorpayErrorImplToJson(_$RazorpayErrorImpl instance) =>
+Map<String, dynamic> _$RazorpayErrorToJson(_RazorpayError instance) =>
     <String, dynamic>{
       'code': instance.code,
       'description': instance.description,
@@ -30,15 +30,15 @@ Map<String, dynamic> _$$RazorpayErrorImplToJson(_$RazorpayErrorImpl instance) =>
       if (instance.metadata case final value?) 'metadata': value,
     };
 
-_$RazorpayApiErrorResponseImpl _$$RazorpayApiErrorResponseImplFromJson(
+_RazorpayApiErrorResponse _$RazorpayApiErrorResponseFromJson(
         Map<String, dynamic> json) =>
-    _$RazorpayApiErrorResponseImpl(
+    _RazorpayApiErrorResponse(
       error: RazorpayError.fromJson(json['error'] as Map<String, dynamic>),
       statusCode: (json['statusCode'] as num?)?.toInt(),
     );
 
-Map<String, dynamic> _$$RazorpayApiErrorResponseImplToJson(
-        _$RazorpayApiErrorResponseImpl instance) =>
+Map<String, dynamic> _$RazorpayApiErrorResponseToJson(
+        _RazorpayApiErrorResponse instance) =>
     <String, dynamic>{
       'error': instance.error,
       if (instance.statusCode case final value?) 'statusCode': value,

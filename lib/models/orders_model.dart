@@ -10,7 +10,7 @@ part 'orders_model.g.dart';
 
 // --- Nested Bank Account Details ---
 @freezed
-class RazorpayOrderBankDetailsBaseRequestBody
+abstract class RazorpayOrderBankDetailsBaseRequestBody
     with _$RazorpayOrderBankDetailsBaseRequestBody {
   @JsonSerializable(includeIfNull: false)
   const factory RazorpayOrderBankDetailsBaseRequestBody({
@@ -25,7 +25,7 @@ class RazorpayOrderBankDetailsBaseRequestBody
 }
 
 @freezed
-class RazorpayOrderBankDetailsCreateRequestBody
+abstract class RazorpayOrderBankDetailsCreateRequestBody
     with _$RazorpayOrderBankDetailsCreateRequestBody {
   // Extends Base + name
   @JsonSerializable(includeIfNull: false)
@@ -43,7 +43,7 @@ class RazorpayOrderBankDetailsCreateRequestBody
 
 // --- Nested Payment Capture Settings ---
 @freezed
-class RazorpayCaptureOptions with _$RazorpayCaptureOptions {
+abstract class RazorpayCaptureOptions with _$RazorpayCaptureOptions {
   @JsonSerializable(includeIfNull: false)
   const factory RazorpayCaptureOptions({
     int? automatic_expiry_period, // Required if capture=automatic
@@ -56,7 +56,7 @@ class RazorpayCaptureOptions with _$RazorpayCaptureOptions {
 }
 
 @freezed
-class RazorpayCapturePayment with _$RazorpayCapturePayment {
+abstract class RazorpayCapturePayment with _$RazorpayCapturePayment {
   @JsonSerializable(includeIfNull: false)
   const factory RazorpayCapturePayment({
     required String capture, // 'automatic' | 'manual'
@@ -69,7 +69,7 @@ class RazorpayCapturePayment with _$RazorpayCapturePayment {
 
 // --- Nested Line Items (RTO related) ---
 @freezed
-class Dimensions with _$Dimensions {
+abstract class Dimensions with _$Dimensions {
   @JsonSerializable(includeIfNull: false)
   const factory Dimensions({
     required String length,
@@ -82,7 +82,7 @@ class Dimensions with _$Dimensions {
 }
 
 @freezed
-class LineItems with _$LineItems {
+abstract class LineItems with _$LineItems {
   @JsonSerializable(includeIfNull: false)
   const factory LineItems({
     required String type, // 'mutual_funds' | 'e-commerce'
@@ -107,7 +107,7 @@ class LineItems with _$LineItems {
 
 // --- Nested Customer Details (RTO related) ---
 @freezed
-class CustomerDetails with _$CustomerDetails {
+abstract class CustomerDetails with _$CustomerDetails {
   @JsonSerializable(includeIfNull: false)
   const factory CustomerDetails({
     required String name,
@@ -124,7 +124,7 @@ class CustomerDetails with _$CustomerDetails {
 
 // Input version of address for CustomerDetails
 @freezed
-class RazorpayInvoiceAddressInput with _$RazorpayInvoiceAddressInput {
+abstract class RazorpayInvoiceAddressInput with _$RazorpayInvoiceAddressInput {
   @JsonSerializable(includeIfNull: false)
   const factory RazorpayInvoiceAddressInput({
     String? line1,
@@ -141,7 +141,7 @@ class RazorpayInvoiceAddressInput with _$RazorpayInvoiceAddressInput {
 
 // --- Nested Promotions (RTO related) ---
 @freezed
-class Promotion with _$Promotion {
+abstract class Promotion with _$Promotion {
   @JsonSerializable(includeIfNull: false)
   const factory Promotion({
     required String reference_id,
@@ -158,7 +158,7 @@ class Promotion with _$Promotion {
 
 // --- Nested Device Details (RTO related) ---
 @freezed
-class DeviceDetails with _$DeviceDetails {
+abstract class DeviceDetails with _$DeviceDetails {
   @JsonSerializable(includeIfNull: false)
   const factory DeviceDetails({
     required String ip,
@@ -171,7 +171,8 @@ class DeviceDetails with _$DeviceDetails {
 
 // --- Base Order Request Body ---
 @freezed
-class RazorpayOrderBaseRequestBody with _$RazorpayOrderBaseRequestBody {
+abstract class RazorpayOrderBaseRequestBody
+    with _$RazorpayOrderBaseRequestBody {
   @JsonSerializable(includeIfNull: false)
   const factory RazorpayOrderBaseRequestBody({
     required dynamic amount, // number | string
@@ -209,7 +210,8 @@ class RazorpayOrderBaseRequestBody with _$RazorpayOrderBaseRequestBody {
 
 // --- Create Request Bodies ---
 @freezed
-class RazorpayOrderCreateRequestBody with _$RazorpayOrderCreateRequestBody {
+abstract class RazorpayOrderCreateRequestBody
+    with _$RazorpayOrderCreateRequestBody {
   // Inherits from Base
   @JsonSerializable(includeIfNull: false)
   const factory RazorpayOrderCreateRequestBody({
@@ -240,7 +242,7 @@ class RazorpayOrderCreateRequestBody with _$RazorpayOrderCreateRequestBody {
 
 // Request body for creating an order with transfers
 @freezed
-class RazorpayTransferOrderCreateRequestBody
+abstract class RazorpayTransferOrderCreateRequestBody
     with _$RazorpayTransferOrderCreateRequestBody {
   @JsonSerializable(includeIfNull: false)
   const factory RazorpayTransferOrderCreateRequestBody({
@@ -260,7 +262,7 @@ class RazorpayTransferOrderCreateRequestBody
 
 // Request body for creating an authorization order
 @freezed
-class RazorpayAuthorizationOrderCreateRequestBody
+abstract class RazorpayAuthorizationOrderCreateRequestBody
     with _$RazorpayAuthorizationOrderCreateRequestBody {
   @JsonSerializable(includeIfNull: false)
   const factory RazorpayAuthorizationOrderCreateRequestBody({
@@ -297,7 +299,8 @@ class RazorpayAuthorizationOrderCreateRequestBody
 
 // --- Update Request Body ---
 @freezed
-class RazorpayOrderUpdateRequestBody with _$RazorpayOrderUpdateRequestBody {
+abstract class RazorpayOrderUpdateRequestBody
+    with _$RazorpayOrderUpdateRequestBody {
   // Pick<RazorpayOrderBaseRequestBody, "notes">
   @JsonSerializable(includeIfNull: false)
   const factory RazorpayOrderUpdateRequestBody({
@@ -310,7 +313,7 @@ class RazorpayOrderUpdateRequestBody with _$RazorpayOrderUpdateRequestBody {
 
 // --- Order Response Body ---
 @freezed
-class RazorpayOrder with _$RazorpayOrder {
+abstract class RazorpayOrder with _$RazorpayOrder {
   // Omit<Base, 'transfers' | 'payment'> + response fields
   @JsonSerializable(includeIfNull: false)
   const factory RazorpayOrder({
@@ -357,7 +360,7 @@ class RazorpayOrder with _$RazorpayOrder {
 
 // --- Order Query Parameters ---
 @freezed
-class RazorpayOrderQuery with _$RazorpayOrderQuery {
+abstract class RazorpayOrderQuery with _$RazorpayOrderQuery {
   // Extends RazorpayPaginationOptions + specific fields
   @JsonSerializable(includeIfNull: false)
   const factory RazorpayOrderQuery({
@@ -383,7 +386,7 @@ bool? _intToBool(dynamic i) => i == null ? null : (i == 1 || i == true);
 
 // --- RTO Review Response ---
 @freezed
-class Reason with _$Reason {
+abstract class Reason with _$Reason {
   @JsonSerializable(includeIfNull: false)
   const factory Reason({
     required String
@@ -396,7 +399,7 @@ class Reason with _$Reason {
 }
 
 @freezed
-class RazorpayRtoReview with _$RazorpayRtoReview {
+abstract class RazorpayRtoReview with _$RazorpayRtoReview {
   @JsonSerializable(includeIfNull: false)
   const factory RazorpayRtoReview({
     required String risk_tier, // 'high' | 'medium' | 'low'
@@ -409,7 +412,7 @@ class RazorpayRtoReview with _$RazorpayRtoReview {
 
 // --- Fulfillment Related ---
 @freezed
-class RazorpayShipping with _$RazorpayShipping {
+abstract class RazorpayShipping with _$RazorpayShipping {
   @JsonSerializable(includeIfNull: false)
   const factory RazorpayShipping({
     required String waybill,
@@ -422,7 +425,7 @@ class RazorpayShipping with _$RazorpayShipping {
 }
 
 @freezed
-class RazorpayFulFillmentBaseRequestBody
+abstract class RazorpayFulFillmentBaseRequestBody
     with _$RazorpayFulFillmentBaseRequestBody {
   @JsonSerializable(includeIfNull: false)
   const factory RazorpayFulFillmentBaseRequestBody({
@@ -438,7 +441,7 @@ class RazorpayFulFillmentBaseRequestBody
 
 // Fulfillment Response (JS returns 'any', need more info, assuming it mirrors request + ids)
 @freezed
-class RazorpayFulFillment with _$RazorpayFulFillment {
+abstract class RazorpayFulFillment with _$RazorpayFulFillment {
   // Extends Base + response fields
   @JsonSerializable(includeIfNull: false)
   const factory RazorpayFulFillment({
@@ -455,7 +458,8 @@ class RazorpayFulFillment with _$RazorpayFulFillment {
 
 // Specific response type for Fetch Payments for Order
 @freezed
-class RazorpayOrderPaymentsResponse with _$RazorpayOrderPaymentsResponse {
+abstract class RazorpayOrderPaymentsResponse
+    with _$RazorpayOrderPaymentsResponse {
   @JsonSerializable(includeIfNull: false)
   const factory RazorpayOrderPaymentsResponse({
     required String entity,

@@ -6,37 +6,37 @@ part of 'accounts_model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$RazorpayAccountBaseRequestBodyImpl
-    _$$RazorpayAccountBaseRequestBodyImplFromJson(Map<String, dynamic> json) =>
-        _$RazorpayAccountBaseRequestBodyImpl(
-          email: json['email'] as String,
-          profile: Profile.fromJson(json['profile'] as Map<String, dynamic>),
-          phone: json['phone'],
-          business_type: json['business_type'] as String,
-          legal_business_name: json['legal_business_name'] as String,
-          contact_name: json['contact_name'] as String,
-          type: json['type'] as String?,
-          reference_id: json['reference_id'] as String?,
-          customer_facing_business_name:
-              json['customer_facing_business_name'] as String?,
-          legal_info: json['legal_info'] == null
-              ? null
-              : LegalInfo.fromJson(json['legal_info'] as Map<String, dynamic>),
-          apps: json['apps'] == null
-              ? null
-              : Apps.fromJson(json['apps'] as Map<String, dynamic>),
-          brand: json['brand'] == null
-              ? null
-              : Brand.fromJson(json['brand'] as Map<String, dynamic>),
-          contact_info: json['contact_info'] == null
-              ? null
-              : ContactInfoSupport.fromJson(
-                  json['contact_info'] as Map<String, dynamic>),
-          notes: json['notes'] as Map<String, dynamic>?,
-        );
+_RazorpayAccountBaseRequestBody _$RazorpayAccountBaseRequestBodyFromJson(
+        Map<String, dynamic> json) =>
+    _RazorpayAccountBaseRequestBody(
+      email: json['email'] as String,
+      profile: Profile.fromJson(json['profile'] as Map<String, dynamic>),
+      phone: json['phone'],
+      business_type: json['business_type'] as String,
+      legal_business_name: json['legal_business_name'] as String,
+      contact_name: json['contact_name'] as String,
+      type: json['type'] as String?,
+      reference_id: json['reference_id'] as String?,
+      customer_facing_business_name:
+          json['customer_facing_business_name'] as String?,
+      legal_info: json['legal_info'] == null
+          ? null
+          : LegalInfo.fromJson(json['legal_info'] as Map<String, dynamic>),
+      apps: json['apps'] == null
+          ? null
+          : Apps.fromJson(json['apps'] as Map<String, dynamic>),
+      brand: json['brand'] == null
+          ? null
+          : Brand.fromJson(json['brand'] as Map<String, dynamic>),
+      contact_info: json['contact_info'] == null
+          ? null
+          : ContactInfoSupport.fromJson(
+              json['contact_info'] as Map<String, dynamic>),
+      notes: json['notes'] as Map<String, dynamic>?,
+    );
 
-Map<String, dynamic> _$$RazorpayAccountBaseRequestBodyImplToJson(
-        _$RazorpayAccountBaseRequestBodyImpl instance) =>
+Map<String, dynamic> _$RazorpayAccountBaseRequestBodyToJson(
+        _RazorpayAccountBaseRequestBody instance) =>
     <String, dynamic>{
       'email': instance.email,
       'profile': instance.profile,
@@ -55,20 +55,18 @@ Map<String, dynamic> _$$RazorpayAccountBaseRequestBodyImplToJson(
       if (instance.notes case final value?) 'notes': value,
     };
 
-_$AppDetailsImpl _$$AppDetailsImplFromJson(Map<String, dynamic> json) =>
-    _$AppDetailsImpl(
+_AppDetails _$AppDetailsFromJson(Map<String, dynamic> json) => _AppDetails(
       url: json['url'] as String,
       name: json['name'] as String,
     );
 
-Map<String, dynamic> _$$AppDetailsImplToJson(_$AppDetailsImpl instance) =>
+Map<String, dynamic> _$AppDetailsToJson(_AppDetails instance) =>
     <String, dynamic>{
       'url': instance.url,
       'name': instance.name,
     };
 
-_$ProfileImpl _$$ProfileImplFromJson(Map<String, dynamic> json) =>
-    _$ProfileImpl(
+_Profile _$ProfileFromJson(Map<String, dynamic> json) => _Profile(
       category: json['category'] as String?,
       subcategory: json['subcategory'] as String?,
       description: json['description'] as String?,
@@ -79,8 +77,7 @@ _$ProfileImpl _$$ProfileImplFromJson(Map<String, dynamic> json) =>
       business_model: json['business_model'] as String?,
     );
 
-Map<String, dynamic> _$$ProfileImplToJson(_$ProfileImpl instance) =>
-    <String, dynamic>{
+Map<String, dynamic> _$ProfileToJson(_Profile instance) => <String, dynamic>{
       if (instance.category case final value?) 'category': value,
       if (instance.subcategory case final value?) 'subcategory': value,
       if (instance.description case final value?) 'description': value,
@@ -88,9 +85,9 @@ Map<String, dynamic> _$$ProfileImplToJson(_$ProfileImpl instance) =>
       if (instance.business_model case final value?) 'business_model': value,
     };
 
-_$ProfileAddressesContainerImpl _$$ProfileAddressesContainerImplFromJson(
+_ProfileAddressesContainer _$ProfileAddressesContainerFromJson(
         Map<String, dynamic> json) =>
-    _$ProfileAddressesContainerImpl(
+    _ProfileAddressesContainer(
       registered: json['registered'] == null
           ? null
           : ProfileAddresses.fromJson(
@@ -101,16 +98,15 @@ _$ProfileAddressesContainerImpl _$$ProfileAddressesContainerImplFromJson(
               json['operation'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$$ProfileAddressesContainerImplToJson(
-        _$ProfileAddressesContainerImpl instance) =>
+Map<String, dynamic> _$ProfileAddressesContainerToJson(
+        _ProfileAddressesContainer instance) =>
     <String, dynamic>{
       if (instance.registered case final value?) 'registered': value,
       if (instance.operation case final value?) 'operation': value,
     };
 
-_$ProfileAddressesImpl _$$ProfileAddressesImplFromJson(
-        Map<String, dynamic> json) =>
-    _$ProfileAddressesImpl(
+_ProfileAddresses _$ProfileAddressesFromJson(Map<String, dynamic> json) =>
+    _ProfileAddresses(
       street1: json['street1'] as String,
       street2: json['street2'] as String,
       city: json['city'] as String,
@@ -119,8 +115,7 @@ _$ProfileAddressesImpl _$$ProfileAddressesImplFromJson(
       country: json['country'] as String,
     );
 
-Map<String, dynamic> _$$ProfileAddressesImplToJson(
-        _$ProfileAddressesImpl instance) =>
+Map<String, dynamic> _$ProfileAddressesToJson(_ProfileAddresses instance) =>
     <String, dynamic>{
       'street1': instance.street1,
       'street2': instance.street2,
@@ -130,21 +125,20 @@ Map<String, dynamic> _$$ProfileAddressesImplToJson(
       'country': instance.country,
     };
 
-_$LegalInfoImpl _$$LegalInfoImplFromJson(Map<String, dynamic> json) =>
-    _$LegalInfoImpl(
+_LegalInfo _$LegalInfoFromJson(Map<String, dynamic> json) => _LegalInfo(
       pan: json['pan'] as String?,
       gst: json['gst'] as String?,
       cin: json['cin'] as String?,
     );
 
-Map<String, dynamic> _$$LegalInfoImplToJson(_$LegalInfoImpl instance) =>
+Map<String, dynamic> _$LegalInfoToJson(_LegalInfo instance) =>
     <String, dynamic>{
       if (instance.pan case final value?) 'pan': value,
       if (instance.gst case final value?) 'gst': value,
       if (instance.cin case final value?) 'cin': value,
     };
 
-_$AppsImpl _$$AppsImplFromJson(Map<String, dynamic> json) => _$AppsImpl(
+_Apps _$AppsFromJson(Map<String, dynamic> json) => _Apps(
       websites:
           (json['websites'] as List<dynamic>).map((e) => e as String).toList(),
       android: (json['android'] as List<dynamic>?)
@@ -155,25 +149,22 @@ _$AppsImpl _$$AppsImplFromJson(Map<String, dynamic> json) => _$AppsImpl(
           .toList(),
     );
 
-Map<String, dynamic> _$$AppsImplToJson(_$AppsImpl instance) =>
-    <String, dynamic>{
+Map<String, dynamic> _$AppsToJson(_Apps instance) => <String, dynamic>{
       'websites': instance.websites,
       if (instance.android case final value?) 'android': value,
       if (instance.ios case final value?) 'ios': value,
     };
 
-_$BrandImpl _$$BrandImplFromJson(Map<String, dynamic> json) => _$BrandImpl(
+_Brand _$BrandFromJson(Map<String, dynamic> json) => _Brand(
       color: json['color'] as String?,
     );
 
-Map<String, dynamic> _$$BrandImplToJson(_$BrandImpl instance) =>
-    <String, dynamic>{
+Map<String, dynamic> _$BrandToJson(_Brand instance) => <String, dynamic>{
       if (instance.color case final value?) 'color': value,
     };
 
-_$ContactInfoSupportImpl _$$ContactInfoSupportImplFromJson(
-        Map<String, dynamic> json) =>
-    _$ContactInfoSupportImpl(
+_ContactInfoSupport _$ContactInfoSupportFromJson(Map<String, dynamic> json) =>
+    _ContactInfoSupport(
       chargeback: json['chargeback'] == null
           ? null
           : SupportType.fromJson(json['chargeback'] as Map<String, dynamic>),
@@ -185,60 +176,57 @@ _$ContactInfoSupportImpl _$$ContactInfoSupportImplFromJson(
           : SupportType.fromJson(json['support'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$$ContactInfoSupportImplToJson(
-        _$ContactInfoSupportImpl instance) =>
+Map<String, dynamic> _$ContactInfoSupportToJson(_ContactInfoSupport instance) =>
     <String, dynamic>{
       if (instance.chargeback case final value?) 'chargeback': value,
       if (instance.refund case final value?) 'refund': value,
       if (instance.support case final value?) 'support': value,
     };
 
-_$SupportTypeImpl _$$SupportTypeImplFromJson(Map<String, dynamic> json) =>
-    _$SupportTypeImpl(
+_SupportType _$SupportTypeFromJson(Map<String, dynamic> json) => _SupportType(
       email: json['email'] as String?,
       phone: json['phone'] as String?,
       policy_url: json['policy_url'] as String?,
     );
 
-Map<String, dynamic> _$$SupportTypeImplToJson(_$SupportTypeImpl instance) =>
+Map<String, dynamic> _$SupportTypeToJson(_SupportType instance) =>
     <String, dynamic>{
       if (instance.email case final value?) 'email': value,
       if (instance.phone case final value?) 'phone': value,
       if (instance.policy_url case final value?) 'policy_url': value,
     };
 
-_$RazorpayAccountCreateRequestBodyImpl
-    _$$RazorpayAccountCreateRequestBodyImplFromJson(
-            Map<String, dynamic> json) =>
-        _$RazorpayAccountCreateRequestBodyImpl(
-          email: json['email'] as String,
-          profile: Profile.fromJson(json['profile'] as Map<String, dynamic>),
-          phone: json['phone'],
-          business_type: json['business_type'] as String,
-          legal_business_name: json['legal_business_name'] as String,
-          contact_name: json['contact_name'] as String,
-          type: json['type'] as String?,
-          reference_id: json['reference_id'] as String?,
-          customer_facing_business_name:
-              json['customer_facing_business_name'] as String?,
-          legal_info: json['legal_info'] == null
-              ? null
-              : LegalInfo.fromJson(json['legal_info'] as Map<String, dynamic>),
-          apps: json['apps'] == null
-              ? null
-              : Apps.fromJson(json['apps'] as Map<String, dynamic>),
-          brand: json['brand'] == null
-              ? null
-              : Brand.fromJson(json['brand'] as Map<String, dynamic>),
-          contact_info: json['contact_info'] == null
-              ? null
-              : ContactInfoSupport.fromJson(
-                  json['contact_info'] as Map<String, dynamic>),
-          notes: json['notes'] as Map<String, dynamic>?,
-        );
+_RazorpayAccountCreateRequestBody _$RazorpayAccountCreateRequestBodyFromJson(
+        Map<String, dynamic> json) =>
+    _RazorpayAccountCreateRequestBody(
+      email: json['email'] as String,
+      profile: Profile.fromJson(json['profile'] as Map<String, dynamic>),
+      phone: json['phone'],
+      business_type: json['business_type'] as String,
+      legal_business_name: json['legal_business_name'] as String,
+      contact_name: json['contact_name'] as String,
+      type: json['type'] as String?,
+      reference_id: json['reference_id'] as String?,
+      customer_facing_business_name:
+          json['customer_facing_business_name'] as String?,
+      legal_info: json['legal_info'] == null
+          ? null
+          : LegalInfo.fromJson(json['legal_info'] as Map<String, dynamic>),
+      apps: json['apps'] == null
+          ? null
+          : Apps.fromJson(json['apps'] as Map<String, dynamic>),
+      brand: json['brand'] == null
+          ? null
+          : Brand.fromJson(json['brand'] as Map<String, dynamic>),
+      contact_info: json['contact_info'] == null
+          ? null
+          : ContactInfoSupport.fromJson(
+              json['contact_info'] as Map<String, dynamic>),
+      notes: json['notes'] as Map<String, dynamic>?,
+    );
 
-Map<String, dynamic> _$$RazorpayAccountCreateRequestBodyImplToJson(
-        _$RazorpayAccountCreateRequestBodyImpl instance) =>
+Map<String, dynamic> _$RazorpayAccountCreateRequestBodyToJson(
+        _RazorpayAccountCreateRequestBody instance) =>
     <String, dynamic>{
       'email': instance.email,
       'profile': instance.profile,
@@ -257,38 +245,37 @@ Map<String, dynamic> _$$RazorpayAccountCreateRequestBodyImplToJson(
       if (instance.notes case final value?) 'notes': value,
     };
 
-_$RazorpayAccountUpdateRequestBodyImpl
-    _$$RazorpayAccountUpdateRequestBodyImplFromJson(
-            Map<String, dynamic> json) =>
-        _$RazorpayAccountUpdateRequestBodyImpl(
-          profile: json['profile'] == null
-              ? null
-              : Profile.fromJson(json['profile'] as Map<String, dynamic>),
-          phone: json['phone'],
-          type: json['type'] as String?,
-          reference_id: json['reference_id'] as String?,
-          legal_business_name: json['legal_business_name'] as String?,
-          customer_facing_business_name:
-              json['customer_facing_business_name'] as String?,
-          legal_info: json['legal_info'] == null
-              ? null
-              : LegalInfo.fromJson(json['legal_info'] as Map<String, dynamic>),
-          apps: json['apps'] == null
-              ? null
-              : Apps.fromJson(json['apps'] as Map<String, dynamic>),
-          brand: json['brand'] == null
-              ? null
-              : Brand.fromJson(json['brand'] as Map<String, dynamic>),
-          contact_name: json['contact_name'] as String?,
-          contact_info: json['contact_info'] == null
-              ? null
-              : ContactInfoSupport.fromJson(
-                  json['contact_info'] as Map<String, dynamic>),
-          notes: json['notes'] as Map<String, dynamic>?,
-        );
+_RazorpayAccountUpdateRequestBody _$RazorpayAccountUpdateRequestBodyFromJson(
+        Map<String, dynamic> json) =>
+    _RazorpayAccountUpdateRequestBody(
+      profile: json['profile'] == null
+          ? null
+          : Profile.fromJson(json['profile'] as Map<String, dynamic>),
+      phone: json['phone'],
+      type: json['type'] as String?,
+      reference_id: json['reference_id'] as String?,
+      legal_business_name: json['legal_business_name'] as String?,
+      customer_facing_business_name:
+          json['customer_facing_business_name'] as String?,
+      legal_info: json['legal_info'] == null
+          ? null
+          : LegalInfo.fromJson(json['legal_info'] as Map<String, dynamic>),
+      apps: json['apps'] == null
+          ? null
+          : Apps.fromJson(json['apps'] as Map<String, dynamic>),
+      brand: json['brand'] == null
+          ? null
+          : Brand.fromJson(json['brand'] as Map<String, dynamic>),
+      contact_name: json['contact_name'] as String?,
+      contact_info: json['contact_info'] == null
+          ? null
+          : ContactInfoSupport.fromJson(
+              json['contact_info'] as Map<String, dynamic>),
+      notes: json['notes'] as Map<String, dynamic>?,
+    );
 
-Map<String, dynamic> _$$RazorpayAccountUpdateRequestBodyImplToJson(
-        _$RazorpayAccountUpdateRequestBodyImpl instance) =>
+Map<String, dynamic> _$RazorpayAccountUpdateRequestBodyToJson(
+        _RazorpayAccountUpdateRequestBody instance) =>
     <String, dynamic>{
       if (instance.profile case final value?) 'profile': value,
       if (instance.phone case final value?) 'phone': value,
@@ -306,9 +293,8 @@ Map<String, dynamic> _$$RazorpayAccountUpdateRequestBodyImplToJson(
       if (instance.notes case final value?) 'notes': value,
     };
 
-_$RazorpayAccountImpl _$$RazorpayAccountImplFromJson(
-        Map<String, dynamic> json) =>
-    _$RazorpayAccountImpl(
+_RazorpayAccount _$RazorpayAccountFromJson(Map<String, dynamic> json) =>
+    _RazorpayAccount(
       id: json['id'] as String,
       email: json['email'] as String,
       profile: Profile.fromJson(json['profile'] as Map<String, dynamic>),
@@ -341,8 +327,7 @@ _$RazorpayAccountImpl _$$RazorpayAccountImplFromJson(
       activated_at: (json['activated_at'] as num?)?.toInt(),
     );
 
-Map<String, dynamic> _$$RazorpayAccountImplToJson(
-        _$RazorpayAccountImpl instance) =>
+Map<String, dynamic> _$RazorpayAccountToJson(_RazorpayAccount instance) =>
     <String, dynamic>{
       'id': instance.id,
       'email': instance.email,
@@ -367,23 +352,23 @@ Map<String, dynamic> _$$RazorpayAccountImplToJson(
       if (instance.activated_at case final value?) 'activated_at': value,
     };
 
-_$RazorpayAccountDocumentImpl _$$RazorpayAccountDocumentImplFromJson(
+_RazorpayAccountDocument _$RazorpayAccountDocumentFromJson(
         Map<String, dynamic> json) =>
-    _$RazorpayAccountDocumentImpl(
+    _RazorpayAccountDocument(
       type: json['type'] as String,
       url: json['url'] as String,
     );
 
-Map<String, dynamic> _$$RazorpayAccountDocumentImplToJson(
-        _$RazorpayAccountDocumentImpl instance) =>
+Map<String, dynamic> _$RazorpayAccountDocumentToJson(
+        _RazorpayAccountDocument instance) =>
     <String, dynamic>{
       'type': instance.type,
       'url': instance.url,
     };
 
-_$RazorpayAccountDocumentsImpl _$$RazorpayAccountDocumentsImplFromJson(
+_RazorpayAccountDocuments _$RazorpayAccountDocumentsFromJson(
         Map<String, dynamic> json) =>
-    _$RazorpayAccountDocumentsImpl(
+    _RazorpayAccountDocuments(
       business_proof_of_identification:
           (json['business_proof_of_identification'] as List<dynamic>?)
               ?.map((e) =>
@@ -391,8 +376,8 @@ _$RazorpayAccountDocumentsImpl _$$RazorpayAccountDocumentsImplFromJson(
               .toList(),
     );
 
-Map<String, dynamic> _$$RazorpayAccountDocumentsImplToJson(
-        _$RazorpayAccountDocumentsImpl instance) =>
+Map<String, dynamic> _$RazorpayAccountDocumentsToJson(
+        _RazorpayAccountDocuments instance) =>
     <String, dynamic>{
       if (instance.business_proof_of_identification case final value?)
         'business_proof_of_identification': value,

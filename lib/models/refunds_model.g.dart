@@ -6,17 +6,17 @@ part of 'refunds_model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$RazorpayRefundBaseRequestBodyImpl
-    _$$RazorpayRefundBaseRequestBodyImplFromJson(Map<String, dynamic> json) =>
-        _$RazorpayRefundBaseRequestBodyImpl(
-          amount: (json['amount'] as num?)?.toInt(),
-          speed: $enumDecodeNullable(_$RefundSpeedEnumMap, json['speed']),
-          notes: json['notes'] as Map<String, dynamic>?,
-          receipt: json['receipt'] as String?,
-        );
+_RazorpayRefundBaseRequestBody _$RazorpayRefundBaseRequestBodyFromJson(
+        Map<String, dynamic> json) =>
+    _RazorpayRefundBaseRequestBody(
+      amount: (json['amount'] as num?)?.toInt(),
+      speed: $enumDecodeNullable(_$RefundSpeedEnumMap, json['speed']),
+      notes: json['notes'] as Map<String, dynamic>?,
+      receipt: json['receipt'] as String?,
+    );
 
-Map<String, dynamic> _$$RazorpayRefundBaseRequestBodyImplToJson(
-        _$RazorpayRefundBaseRequestBodyImpl instance) =>
+Map<String, dynamic> _$RazorpayRefundBaseRequestBodyToJson(
+        _RazorpayRefundBaseRequestBody instance) =>
     <String, dynamic>{
       if (instance.amount case final value?) 'amount': value,
       if (_$RefundSpeedEnumMap[instance.speed] case final value?)
@@ -30,17 +30,17 @@ const _$RefundSpeedEnumMap = {
   RefundSpeed.optimum: 'optimum',
 };
 
-_$RazorpayRefundCreateRequestBodyImpl
-    _$$RazorpayRefundCreateRequestBodyImplFromJson(Map<String, dynamic> json) =>
-        _$RazorpayRefundCreateRequestBodyImpl(
-          amount: (json['amount'] as num?)?.toInt(),
-          speed: $enumDecodeNullable(_$RefundSpeedEnumMap, json['speed']),
-          notes: json['notes'] as Map<String, dynamic>?,
-          receipt: json['receipt'] as String?,
-        );
+_RazorpayRefundCreateRequestBody _$RazorpayRefundCreateRequestBodyFromJson(
+        Map<String, dynamic> json) =>
+    _RazorpayRefundCreateRequestBody(
+      amount: (json['amount'] as num?)?.toInt(),
+      speed: $enumDecodeNullable(_$RefundSpeedEnumMap, json['speed']),
+      notes: json['notes'] as Map<String, dynamic>?,
+      receipt: json['receipt'] as String?,
+    );
 
-Map<String, dynamic> _$$RazorpayRefundCreateRequestBodyImplToJson(
-        _$RazorpayRefundCreateRequestBodyImpl instance) =>
+Map<String, dynamic> _$RazorpayRefundCreateRequestBodyToJson(
+        _RazorpayRefundCreateRequestBody instance) =>
     <String, dynamic>{
       if (instance.amount case final value?) 'amount': value,
       if (_$RefundSpeedEnumMap[instance.speed] case final value?)
@@ -49,20 +49,20 @@ Map<String, dynamic> _$$RazorpayRefundCreateRequestBodyImplToJson(
       if (instance.receipt case final value?) 'receipt': value,
     };
 
-_$RazorpayRefundUpdateRequestBodyImpl
-    _$$RazorpayRefundUpdateRequestBodyImplFromJson(Map<String, dynamic> json) =>
-        _$RazorpayRefundUpdateRequestBodyImpl(
-          notes: json['notes'] as Map<String, dynamic>,
-        );
+_RazorpayRefundUpdateRequestBody _$RazorpayRefundUpdateRequestBodyFromJson(
+        Map<String, dynamic> json) =>
+    _RazorpayRefundUpdateRequestBody(
+      notes: json['notes'] as Map<String, dynamic>,
+    );
 
-Map<String, dynamic> _$$RazorpayRefundUpdateRequestBodyImplToJson(
-        _$RazorpayRefundUpdateRequestBodyImpl instance) =>
+Map<String, dynamic> _$RazorpayRefundUpdateRequestBodyToJson(
+        _RazorpayRefundUpdateRequestBody instance) =>
     <String, dynamic>{
       'notes': instance.notes,
     };
 
-_$RazorpayRefundImpl _$$RazorpayRefundImplFromJson(Map<String, dynamic> json) =>
-    _$RazorpayRefundImpl(
+_RazorpayRefund _$RazorpayRefundFromJson(Map<String, dynamic> json) =>
+    _RazorpayRefund(
       id: json['id'] as String,
       entity: json['entity'] as String,
       currency: json['currency'] as String,
@@ -80,8 +80,7 @@ _$RazorpayRefundImpl _$$RazorpayRefundImplFromJson(Map<String, dynamic> json) =>
           $enumDecodeNullable(_$RefundSpeedEnumMap, json['speed_requested']),
     );
 
-Map<String, dynamic> _$$RazorpayRefundImplToJson(
-        _$RazorpayRefundImpl instance) =>
+Map<String, dynamic> _$RazorpayRefundToJson(_RazorpayRefund instance) =>
     <String, dynamic>{
       'id': instance.id,
       'entity': instance.entity,
@@ -111,14 +110,14 @@ const _$ProcessedSpeedEnumMap = {
   ProcessedSpeed.normal: 'normal',
 };
 
-_$RazorpayRefundFetchQueryImpl _$$RazorpayRefundFetchQueryImplFromJson(
+_RazorpayRefundFetchQuery _$RazorpayRefundFetchQueryFromJson(
         Map<String, dynamic> json) =>
-    _$RazorpayRefundFetchQueryImpl(
+    _RazorpayRefundFetchQuery(
       payment_id: json['payment_id'] as String?,
     );
 
-Map<String, dynamic> _$$RazorpayRefundFetchQueryImplToJson(
-        _$RazorpayRefundFetchQueryImpl instance) =>
+Map<String, dynamic> _$RazorpayRefundFetchQueryToJson(
+        _RazorpayRefundFetchQuery instance) =>
     <String, dynamic>{
       if (instance.payment_id case final value?) 'payment_id': value,
     };

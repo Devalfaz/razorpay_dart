@@ -7,7 +7,7 @@ part 'stakeholders_model.g.dart';
 
 // --- Nested Types ---
 @freezed
-class RelationShip with _$RelationShip {
+abstract class RelationShip with _$RelationShip {
   @JsonSerializable(includeIfNull: false)
   const factory RelationShip({
     bool? executive,
@@ -19,7 +19,7 @@ class RelationShip with _$RelationShip {
 }
 
 @freezed
-class Phone with _$Phone {
+abstract class Phone with _$Phone {
   @JsonSerializable(includeIfNull: false)
   const factory Phone({
     String? primary,
@@ -30,7 +30,7 @@ class Phone with _$Phone {
 }
 
 @freezed
-class Kyc with _$Kyc {
+abstract class Kyc with _$Kyc {
   @JsonSerializable(includeIfNull: false)
   const factory Kyc({
     required String pan,
@@ -40,7 +40,7 @@ class Kyc with _$Kyc {
 }
 
 @freezed
-class StakeholderAddresses with _$StakeholderAddresses {
+abstract class StakeholderAddresses with _$StakeholderAddresses {
   // Based on Accounts.ProfileAddresses but uses 'street' instead of 'street1'/'street2'
   @JsonSerializable(includeIfNull: false)
   const factory StakeholderAddresses({
@@ -56,7 +56,7 @@ class StakeholderAddresses with _$StakeholderAddresses {
 }
 
 @freezed
-class StakeholderAddressContainer with _$StakeholderAddressContainer {
+abstract class StakeholderAddressContainer with _$StakeholderAddressContainer {
   @JsonSerializable(includeIfNull: false)
   const factory StakeholderAddressContainer({
     // Partial<Address> -> Make fields nullable
@@ -69,7 +69,7 @@ class StakeholderAddressContainer with _$StakeholderAddressContainer {
 
 // --- Base Request Body ---
 @freezed
-class RazorpayStakeholderBaseRequestBody
+abstract class RazorpayStakeholderBaseRequestBody
     with _$RazorpayStakeholderBaseRequestBody {
   @JsonSerializable(includeIfNull: false)
   const factory RazorpayStakeholderBaseRequestBody({
@@ -91,7 +91,7 @@ class RazorpayStakeholderBaseRequestBody
 
 // --- Create Request Body ---
 @freezed
-class RazorpayStakeholderCreateRequestBody
+abstract class RazorpayStakeholderCreateRequestBody
     with _$RazorpayStakeholderCreateRequestBody {
   // Inherits Base
   @JsonSerializable(includeIfNull: false)
@@ -114,7 +114,7 @@ class RazorpayStakeholderCreateRequestBody
 
 // --- Update Request Body ---
 @freezed
-class RazorpayStakeholderUpdateRequestBody
+abstract class RazorpayStakeholderUpdateRequestBody
     with _$RazorpayStakeholderUpdateRequestBody {
   // Partial<Omit<Base, 'email'>>
   @JsonSerializable(includeIfNull: false)
@@ -136,7 +136,7 @@ class RazorpayStakeholderUpdateRequestBody
 
 // --- Response Body ---
 @freezed
-class RazorpayStakeholder with _$RazorpayStakeholder {
+abstract class RazorpayStakeholder with _$RazorpayStakeholder {
   // Extends Base + response fields
   @JsonSerializable(includeIfNull: false)
   const factory RazorpayStakeholder({
@@ -160,7 +160,7 @@ class RazorpayStakeholder with _$RazorpayStakeholder {
 // FileCreateParams is handled in the resource method
 
 @freezed
-class RazorpayStakeholderDocument with _$RazorpayStakeholderDocument {
+abstract class RazorpayStakeholderDocument with _$RazorpayStakeholderDocument {
   @JsonSerializable(includeIfNull: false)
   const factory RazorpayStakeholderDocument({
     required String type,
@@ -172,7 +172,8 @@ class RazorpayStakeholderDocument with _$RazorpayStakeholderDocument {
 }
 
 @freezed
-class RazorpayStakeholderDocuments with _$RazorpayStakeholderDocuments {
+abstract class RazorpayStakeholderDocuments
+    with _$RazorpayStakeholderDocuments {
   @JsonSerializable(includeIfNull: false)
   const factory RazorpayStakeholderDocuments({
     // Key name needs confirmation from actual API response, d.ts shows tuple `[...]`
@@ -186,7 +187,8 @@ class RazorpayStakeholderDocuments with _$RazorpayStakeholderDocuments {
 
 // --- Response for Fetch All ---
 @freezed
-class RazorpayStakeholderListResponse with _$RazorpayStakeholderListResponse {
+abstract class RazorpayStakeholderListResponse
+    with _$RazorpayStakeholderListResponse {
   @JsonSerializable(includeIfNull: false)
   const factory RazorpayStakeholderListResponse({
     required String entity, // Likely 'collection'

@@ -6,40 +6,39 @@ part of 'stakeholders_model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$RelationShipImpl _$$RelationShipImplFromJson(Map<String, dynamic> json) =>
-    _$RelationShipImpl(
+_RelationShip _$RelationShipFromJson(Map<String, dynamic> json) =>
+    _RelationShip(
       executive: json['executive'] as bool?,
       director: json['director'] as bool?,
     );
 
-Map<String, dynamic> _$$RelationShipImplToJson(_$RelationShipImpl instance) =>
+Map<String, dynamic> _$RelationShipToJson(_RelationShip instance) =>
     <String, dynamic>{
       if (instance.executive case final value?) 'executive': value,
       if (instance.director case final value?) 'director': value,
     };
 
-_$PhoneImpl _$$PhoneImplFromJson(Map<String, dynamic> json) => _$PhoneImpl(
+_Phone _$PhoneFromJson(Map<String, dynamic> json) => _Phone(
       primary: json['primary'] as String?,
       secondary: json['secondary'] as String?,
     );
 
-Map<String, dynamic> _$$PhoneImplToJson(_$PhoneImpl instance) =>
-    <String, dynamic>{
+Map<String, dynamic> _$PhoneToJson(_Phone instance) => <String, dynamic>{
       if (instance.primary case final value?) 'primary': value,
       if (instance.secondary case final value?) 'secondary': value,
     };
 
-_$KycImpl _$$KycImplFromJson(Map<String, dynamic> json) => _$KycImpl(
+_Kyc _$KycFromJson(Map<String, dynamic> json) => _Kyc(
       pan: json['pan'] as String,
     );
 
-Map<String, dynamic> _$$KycImplToJson(_$KycImpl instance) => <String, dynamic>{
+Map<String, dynamic> _$KycToJson(_Kyc instance) => <String, dynamic>{
       'pan': instance.pan,
     };
 
-_$StakeholderAddressesImpl _$$StakeholderAddressesImplFromJson(
+_StakeholderAddresses _$StakeholderAddressesFromJson(
         Map<String, dynamic> json) =>
-    _$StakeholderAddressesImpl(
+    _StakeholderAddresses(
       street: json['street'] as String,
       city: json['city'] as String,
       state: json['state'] as String,
@@ -47,8 +46,8 @@ _$StakeholderAddressesImpl _$$StakeholderAddressesImplFromJson(
       country: json['country'] as String,
     );
 
-Map<String, dynamic> _$$StakeholderAddressesImplToJson(
-        _$StakeholderAddressesImpl instance) =>
+Map<String, dynamic> _$StakeholderAddressesToJson(
+        _StakeholderAddresses instance) =>
     <String, dynamic>{
       'street': instance.street,
       'city': instance.city,
@@ -57,25 +56,24 @@ Map<String, dynamic> _$$StakeholderAddressesImplToJson(
       'country': instance.country,
     };
 
-_$StakeholderAddressContainerImpl _$$StakeholderAddressContainerImplFromJson(
+_StakeholderAddressContainer _$StakeholderAddressContainerFromJson(
         Map<String, dynamic> json) =>
-    _$StakeholderAddressContainerImpl(
+    _StakeholderAddressContainer(
       residential: json['residential'] == null
           ? null
           : StakeholderAddresses.fromJson(
               json['residential'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$$StakeholderAddressContainerImplToJson(
-        _$StakeholderAddressContainerImpl instance) =>
+Map<String, dynamic> _$StakeholderAddressContainerToJson(
+        _StakeholderAddressContainer instance) =>
     <String, dynamic>{
       if (instance.residential case final value?) 'residential': value,
     };
 
-_$RazorpayStakeholderBaseRequestBodyImpl
-    _$$RazorpayStakeholderBaseRequestBodyImplFromJson(
-            Map<String, dynamic> json) =>
-        _$RazorpayStakeholderBaseRequestBodyImpl(
+_RazorpayStakeholderBaseRequestBody
+    _$RazorpayStakeholderBaseRequestBodyFromJson(Map<String, dynamic> json) =>
+        _RazorpayStakeholderBaseRequestBody(
           phone: Phone.fromJson(json['phone'] as Map<String, dynamic>),
           kyc: Kyc.fromJson(json['kyc'] as Map<String, dynamic>),
           name: json['name'] as String,
@@ -92,8 +90,8 @@ _$RazorpayStakeholderBaseRequestBodyImpl
           notes: json['notes'] as Map<String, dynamic>?,
         );
 
-Map<String, dynamic> _$$RazorpayStakeholderBaseRequestBodyImplToJson(
-        _$RazorpayStakeholderBaseRequestBodyImpl instance) =>
+Map<String, dynamic> _$RazorpayStakeholderBaseRequestBodyToJson(
+        _RazorpayStakeholderBaseRequestBody instance) =>
     <String, dynamic>{
       'phone': instance.phone,
       'kyc': instance.kyc,
@@ -106,10 +104,9 @@ Map<String, dynamic> _$$RazorpayStakeholderBaseRequestBodyImplToJson(
       if (instance.notes case final value?) 'notes': value,
     };
 
-_$RazorpayStakeholderCreateRequestBodyImpl
-    _$$RazorpayStakeholderCreateRequestBodyImplFromJson(
-            Map<String, dynamic> json) =>
-        _$RazorpayStakeholderCreateRequestBodyImpl(
+_RazorpayStakeholderCreateRequestBody
+    _$RazorpayStakeholderCreateRequestBodyFromJson(Map<String, dynamic> json) =>
+        _RazorpayStakeholderCreateRequestBody(
           phone: Phone.fromJson(json['phone'] as Map<String, dynamic>),
           kyc: Kyc.fromJson(json['kyc'] as Map<String, dynamic>),
           name: json['name'] as String,
@@ -126,8 +123,8 @@ _$RazorpayStakeholderCreateRequestBodyImpl
           notes: json['notes'] as Map<String, dynamic>?,
         );
 
-Map<String, dynamic> _$$RazorpayStakeholderCreateRequestBodyImplToJson(
-        _$RazorpayStakeholderCreateRequestBodyImpl instance) =>
+Map<String, dynamic> _$RazorpayStakeholderCreateRequestBodyToJson(
+        _RazorpayStakeholderCreateRequestBody instance) =>
     <String, dynamic>{
       'phone': instance.phone,
       'kyc': instance.kyc,
@@ -140,10 +137,9 @@ Map<String, dynamic> _$$RazorpayStakeholderCreateRequestBodyImplToJson(
       if (instance.notes case final value?) 'notes': value,
     };
 
-_$RazorpayStakeholderUpdateRequestBodyImpl
-    _$$RazorpayStakeholderUpdateRequestBodyImplFromJson(
-            Map<String, dynamic> json) =>
-        _$RazorpayStakeholderUpdateRequestBodyImpl(
+_RazorpayStakeholderUpdateRequestBody
+    _$RazorpayStakeholderUpdateRequestBodyFromJson(Map<String, dynamic> json) =>
+        _RazorpayStakeholderUpdateRequestBody(
           relationship: json['relationship'] == null
               ? null
               : RelationShip.fromJson(
@@ -163,8 +159,8 @@ _$RazorpayStakeholderUpdateRequestBodyImpl
           notes: json['notes'] as Map<String, dynamic>?,
         );
 
-Map<String, dynamic> _$$RazorpayStakeholderUpdateRequestBodyImplToJson(
-        _$RazorpayStakeholderUpdateRequestBodyImpl instance) =>
+Map<String, dynamic> _$RazorpayStakeholderUpdateRequestBodyToJson(
+        _RazorpayStakeholderUpdateRequestBody instance) =>
     <String, dynamic>{
       if (instance.relationship case final value?) 'relationship': value,
       if (instance.phone case final value?) 'phone': value,
@@ -176,9 +172,8 @@ Map<String, dynamic> _$$RazorpayStakeholderUpdateRequestBodyImplToJson(
       if (instance.notes case final value?) 'notes': value,
     };
 
-_$RazorpayStakeholderImpl _$$RazorpayStakeholderImplFromJson(
-        Map<String, dynamic> json) =>
-    _$RazorpayStakeholderImpl(
+_RazorpayStakeholder _$RazorpayStakeholderFromJson(Map<String, dynamic> json) =>
+    _RazorpayStakeholder(
       id: json['id'] as String,
       entity: json['entity'] as String,
       phone: Phone.fromJson(json['phone'] as Map<String, dynamic>),
@@ -196,8 +191,8 @@ _$RazorpayStakeholderImpl _$$RazorpayStakeholderImplFromJson(
       notes: json['notes'] as Map<String, dynamic>?,
     );
 
-Map<String, dynamic> _$$RazorpayStakeholderImplToJson(
-        _$RazorpayStakeholderImpl instance) =>
+Map<String, dynamic> _$RazorpayStakeholderToJson(
+        _RazorpayStakeholder instance) =>
     <String, dynamic>{
       'id': instance.id,
       'entity': instance.entity,
@@ -212,23 +207,23 @@ Map<String, dynamic> _$$RazorpayStakeholderImplToJson(
       if (instance.notes case final value?) 'notes': value,
     };
 
-_$RazorpayStakeholderDocumentImpl _$$RazorpayStakeholderDocumentImplFromJson(
+_RazorpayStakeholderDocument _$RazorpayStakeholderDocumentFromJson(
         Map<String, dynamic> json) =>
-    _$RazorpayStakeholderDocumentImpl(
+    _RazorpayStakeholderDocument(
       type: json['type'] as String,
       url: json['url'] as String,
     );
 
-Map<String, dynamic> _$$RazorpayStakeholderDocumentImplToJson(
-        _$RazorpayStakeholderDocumentImpl instance) =>
+Map<String, dynamic> _$RazorpayStakeholderDocumentToJson(
+        _RazorpayStakeholderDocument instance) =>
     <String, dynamic>{
       'type': instance.type,
       'url': instance.url,
     };
 
-_$RazorpayStakeholderDocumentsImpl _$$RazorpayStakeholderDocumentsImplFromJson(
+_RazorpayStakeholderDocuments _$RazorpayStakeholderDocumentsFromJson(
         Map<String, dynamic> json) =>
-    _$RazorpayStakeholderDocumentsImpl(
+    _RazorpayStakeholderDocuments(
       individual_proof_of_address: (json['individual_proof_of_address']
               as List<dynamic>?)
           ?.map((e) =>
@@ -236,25 +231,24 @@ _$RazorpayStakeholderDocumentsImpl _$$RazorpayStakeholderDocumentsImplFromJson(
           .toList(),
     );
 
-Map<String, dynamic> _$$RazorpayStakeholderDocumentsImplToJson(
-        _$RazorpayStakeholderDocumentsImpl instance) =>
+Map<String, dynamic> _$RazorpayStakeholderDocumentsToJson(
+        _RazorpayStakeholderDocuments instance) =>
     <String, dynamic>{
       if (instance.individual_proof_of_address case final value?)
         'individual_proof_of_address': value,
     };
 
-_$RazorpayStakeholderListResponseImpl
-    _$$RazorpayStakeholderListResponseImplFromJson(Map<String, dynamic> json) =>
-        _$RazorpayStakeholderListResponseImpl(
-          entity: json['entity'] as String,
-          items: (json['items'] as List<dynamic>)
-              .map((e) =>
-                  RazorpayStakeholder.fromJson(e as Map<String, dynamic>))
-              .toList(),
-        );
+_RazorpayStakeholderListResponse _$RazorpayStakeholderListResponseFromJson(
+        Map<String, dynamic> json) =>
+    _RazorpayStakeholderListResponse(
+      entity: json['entity'] as String,
+      items: (json['items'] as List<dynamic>)
+          .map((e) => RazorpayStakeholder.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
 
-Map<String, dynamic> _$$RazorpayStakeholderListResponseImplToJson(
-        _$RazorpayStakeholderListResponseImpl instance) =>
+Map<String, dynamic> _$RazorpayStakeholderListResponseToJson(
+        _RazorpayStakeholderListResponse instance) =>
     <String, dynamic>{
       'entity': instance.entity,
       'items': instance.items,

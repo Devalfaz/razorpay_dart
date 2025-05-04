@@ -6,18 +6,18 @@ part of 'settlements_model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$RazorpayInstantSettlementBaseRequestBodyImpl
-    _$$RazorpayInstantSettlementBaseRequestBodyImplFromJson(
+_RazorpayInstantSettlementBaseRequestBody
+    _$RazorpayInstantSettlementBaseRequestBodyFromJson(
             Map<String, dynamic> json) =>
-        _$RazorpayInstantSettlementBaseRequestBodyImpl(
+        _RazorpayInstantSettlementBaseRequestBody(
           amount: json['amount'],
           settle_full_balance: _intToBool(json['settle_full_balance']),
           description: json['description'] as String?,
           notes: json['notes'] as Map<String, dynamic>?,
         );
 
-Map<String, dynamic> _$$RazorpayInstantSettlementBaseRequestBodyImplToJson(
-        _$RazorpayInstantSettlementBaseRequestBodyImpl instance) =>
+Map<String, dynamic> _$RazorpayInstantSettlementBaseRequestBodyToJson(
+        _RazorpayInstantSettlementBaseRequestBody instance) =>
     <String, dynamic>{
       if (instance.amount case final value?) 'amount': value,
       if (_boolToInt(instance.settle_full_balance) case final value?)
@@ -26,18 +26,18 @@ Map<String, dynamic> _$$RazorpayInstantSettlementBaseRequestBodyImplToJson(
       if (instance.notes case final value?) 'notes': value,
     };
 
-_$RazorpayInstantSettlementCreateRequestBodyImpl
-    _$$RazorpayInstantSettlementCreateRequestBodyImplFromJson(
+_RazorpayInstantSettlementCreateRequestBody
+    _$RazorpayInstantSettlementCreateRequestBodyFromJson(
             Map<String, dynamic> json) =>
-        _$RazorpayInstantSettlementCreateRequestBodyImpl(
+        _RazorpayInstantSettlementCreateRequestBody(
           amount: json['amount'],
           settle_full_balance: _intToBool(json['settle_full_balance']),
           description: json['description'] as String?,
           notes: json['notes'] as Map<String, dynamic>?,
         );
 
-Map<String, dynamic> _$$RazorpayInstantSettlementCreateRequestBodyImplToJson(
-        _$RazorpayInstantSettlementCreateRequestBodyImpl instance) =>
+Map<String, dynamic> _$RazorpayInstantSettlementCreateRequestBodyToJson(
+        _RazorpayInstantSettlementCreateRequestBody instance) =>
     <String, dynamic>{
       if (instance.amount case final value?) 'amount': value,
       if (_boolToInt(instance.settle_full_balance) case final value?)
@@ -46,9 +46,8 @@ Map<String, dynamic> _$$RazorpayInstantSettlementCreateRequestBodyImplToJson(
       if (instance.notes case final value?) 'notes': value,
     };
 
-_$RazorpaySettlementImpl _$$RazorpaySettlementImplFromJson(
-        Map<String, dynamic> json) =>
-    _$RazorpaySettlementImpl(
+_RazorpaySettlement _$RazorpaySettlementFromJson(Map<String, dynamic> json) =>
+    _RazorpaySettlement(
       id: json['id'] as String,
       entity: json['entity'] as String,
       amount: json['amount'],
@@ -66,8 +65,7 @@ _$RazorpaySettlementImpl _$$RazorpaySettlementImplFromJson(
       amount_settled: (json['amount_settled'] as num?)?.toInt(),
     );
 
-Map<String, dynamic> _$$RazorpaySettlementImplToJson(
-        _$RazorpaySettlementImpl instance) =>
+Map<String, dynamic> _$RazorpaySettlementToJson(_RazorpaySettlement instance) =>
     <String, dynamic>{
       'id': instance.id,
       'entity': instance.entity,
@@ -96,9 +94,9 @@ const _$SettlementStatusEnumMap = {
   SettlementStatus.partially_processed: 'partially_processed',
 };
 
-_$RazorpayOndemandPayoutItemImpl _$$RazorpayOndemandPayoutItemImplFromJson(
+_RazorpayOndemandPayoutItem _$RazorpayOndemandPayoutItemFromJson(
         Map<String, dynamic> json) =>
-    _$RazorpayOndemandPayoutItemImpl(
+    _RazorpayOndemandPayoutItem(
       id: json['id'] as String,
       entity: json['entity'] as String,
       amount: json['amount'],
@@ -113,8 +111,8 @@ _$RazorpayOndemandPayoutItemImpl _$$RazorpayOndemandPayoutItemImplFromJson(
       amount_settled: (json['amount_settled'] as num?)?.toInt(),
     );
 
-Map<String, dynamic> _$$RazorpayOndemandPayoutItemImplToJson(
-        _$RazorpayOndemandPayoutItemImpl instance) =>
+Map<String, dynamic> _$RazorpayOndemandPayoutItemToJson(
+        _RazorpayOndemandPayoutItem instance) =>
     <String, dynamic>{
       'id': instance.id,
       'entity': instance.entity,
@@ -130,9 +128,9 @@ Map<String, dynamic> _$$RazorpayOndemandPayoutItemImplToJson(
       if (instance.amount_settled case final value?) 'amount_settled': value,
     };
 
-_$RazorpayOndemandPayoutsImpl _$$RazorpayOndemandPayoutsImplFromJson(
+_RazorpayOndemandPayouts _$RazorpayOndemandPayoutsFromJson(
         Map<String, dynamic> json) =>
-    _$RazorpayOndemandPayoutsImpl(
+    _RazorpayOndemandPayouts(
       entity: json['entity'] as String,
       count: (json['count'] as num).toInt(),
       items: (json['items'] as List<dynamic>)
@@ -141,17 +139,17 @@ _$RazorpayOndemandPayoutsImpl _$$RazorpayOndemandPayoutsImplFromJson(
           .toList(),
     );
 
-Map<String, dynamic> _$$RazorpayOndemandPayoutsImplToJson(
-        _$RazorpayOndemandPayoutsImpl instance) =>
+Map<String, dynamic> _$RazorpayOndemandPayoutsToJson(
+        _RazorpayOndemandPayouts instance) =>
     <String, dynamic>{
       'entity': instance.entity,
       'count': instance.count,
       'items': instance.items,
     };
 
-_$RazorpayInstantSettlementImpl _$$RazorpayInstantSettlementImplFromJson(
+_RazorpayInstantSettlement _$RazorpayInstantSettlementFromJson(
         Map<String, dynamic> json) =>
-    _$RazorpayInstantSettlementImpl(
+    _RazorpayInstantSettlement(
       id: json['id'] as String,
       entity: json['entity'] as String,
       amount: json['amount'],
@@ -172,8 +170,8 @@ _$RazorpayInstantSettlementImpl _$$RazorpayInstantSettlementImplFromJson(
               json['ondemand_payouts'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$$RazorpayInstantSettlementImplToJson(
-        _$RazorpayInstantSettlementImpl instance) =>
+Map<String, dynamic> _$RazorpayInstantSettlementToJson(
+        _RazorpayInstantSettlement instance) =>
     <String, dynamic>{
       'id': instance.id,
       'entity': instance.entity,
@@ -194,10 +192,10 @@ Map<String, dynamic> _$$RazorpayInstantSettlementImplToJson(
         'ondemand_payouts': value,
     };
 
-_$RazorpaySettlementReconBaseRequestBodyImpl
-    _$$RazorpaySettlementReconBaseRequestBodyImplFromJson(
+_RazorpaySettlementReconBaseRequestBody
+    _$RazorpaySettlementReconBaseRequestBodyFromJson(
             Map<String, dynamic> json) =>
-        _$RazorpaySettlementReconBaseRequestBodyImpl(
+        _RazorpaySettlementReconBaseRequestBody(
           year: (json['year'] as num).toInt(),
           month: (json['month'] as num?)?.toInt(),
           day: (json['day'] as num?)?.toInt(),
@@ -205,8 +203,8 @@ _$RazorpaySettlementReconBaseRequestBodyImpl
           skip: (json['skip'] as num?)?.toInt(),
         );
 
-Map<String, dynamic> _$$RazorpaySettlementReconBaseRequestBodyImplToJson(
-        _$RazorpaySettlementReconBaseRequestBodyImpl instance) =>
+Map<String, dynamic> _$RazorpaySettlementReconBaseRequestBodyToJson(
+        _RazorpaySettlementReconBaseRequestBody instance) =>
     <String, dynamic>{
       'year': instance.year,
       if (instance.month case final value?) 'month': value,
@@ -215,9 +213,9 @@ Map<String, dynamic> _$$RazorpaySettlementReconBaseRequestBodyImplToJson(
       if (instance.skip case final value?) 'skip': value,
     };
 
-_$RazorpaySettlementReconItemImpl _$$RazorpaySettlementReconItemImplFromJson(
+_RazorpaySettlementReconItem _$RazorpaySettlementReconItemFromJson(
         Map<String, dynamic> json) =>
-    _$RazorpaySettlementReconItemImpl(
+    _RazorpaySettlementReconItem(
       entity_id: json['entity_id'] as String,
       type: json['type'] as String,
       debit: (json['debit'] as num).toInt(),
@@ -244,8 +242,8 @@ _$RazorpaySettlementReconItemImpl _$$RazorpaySettlementReconItemImplFromJson(
       dispute_id: json['dispute_id'] as String?,
     );
 
-Map<String, dynamic> _$$RazorpaySettlementReconItemImplToJson(
-        _$RazorpaySettlementReconItemImpl instance) =>
+Map<String, dynamic> _$RazorpaySettlementReconItemToJson(
+        _RazorpaySettlementReconItem instance) =>
     <String, dynamic>{
       'entity_id': instance.entity_id,
       'type': instance.type,
@@ -289,20 +287,20 @@ const _$CardTypeSettlementEnumMap = {
   CardTypeSettlement.debit: 'debit',
 };
 
-_$RazorpayOndemandSettlementQueryImpl
-    _$$RazorpayOndemandSettlementQueryImplFromJson(Map<String, dynamic> json) =>
-        _$RazorpayOndemandSettlementQueryImpl(
-          from: (json['from'] as num?)?.toInt(),
-          to: (json['to'] as num?)?.toInt(),
-          count: (json['count'] as num?)?.toInt(),
-          skip: (json['skip'] as num?)?.toInt(),
-          expand: (json['expand[]'] as List<dynamic>?)
-              ?.map((e) => e as String)
-              .toList(),
-        );
+_RazorpayOndemandSettlementQuery _$RazorpayOndemandSettlementQueryFromJson(
+        Map<String, dynamic> json) =>
+    _RazorpayOndemandSettlementQuery(
+      from: (json['from'] as num?)?.toInt(),
+      to: (json['to'] as num?)?.toInt(),
+      count: (json['count'] as num?)?.toInt(),
+      skip: (json['skip'] as num?)?.toInt(),
+      expand: (json['expand[]'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList(),
+    );
 
-Map<String, dynamic> _$$RazorpayOndemandSettlementQueryImplToJson(
-        _$RazorpayOndemandSettlementQueryImpl instance) =>
+Map<String, dynamic> _$RazorpayOndemandSettlementQueryToJson(
+        _RazorpayOndemandSettlementQuery instance) =>
     <String, dynamic>{
       if (instance.from case final value?) 'from': value,
       if (instance.to case final value?) 'to': value,
@@ -311,29 +309,28 @@ Map<String, dynamic> _$$RazorpayOndemandSettlementQueryImplToJson(
       if (instance.expand case final value?) 'expand[]': value,
     };
 
-_$RazorpaySettlementListResponseImpl
-    _$$RazorpaySettlementListResponseImplFromJson(Map<String, dynamic> json) =>
-        _$RazorpaySettlementListResponseImpl(
-          entity: json['entity'] as String,
-          count: (json['count'] as num).toInt(),
-          items: (json['items'] as List<dynamic>)
-              .map(
-                  (e) => RazorpaySettlement.fromJson(e as Map<String, dynamic>))
-              .toList(),
-        );
+_RazorpaySettlementListResponse _$RazorpaySettlementListResponseFromJson(
+        Map<String, dynamic> json) =>
+    _RazorpaySettlementListResponse(
+      entity: json['entity'] as String,
+      count: (json['count'] as num).toInt(),
+      items: (json['items'] as List<dynamic>)
+          .map((e) => RazorpaySettlement.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
 
-Map<String, dynamic> _$$RazorpaySettlementListResponseImplToJson(
-        _$RazorpaySettlementListResponseImpl instance) =>
+Map<String, dynamic> _$RazorpaySettlementListResponseToJson(
+        _RazorpaySettlementListResponse instance) =>
     <String, dynamic>{
       'entity': instance.entity,
       'count': instance.count,
       'items': instance.items,
     };
 
-_$RazorpayInstantSettlementListResponseImpl
-    _$$RazorpayInstantSettlementListResponseImplFromJson(
+_RazorpayInstantSettlementListResponse
+    _$RazorpayInstantSettlementListResponseFromJson(
             Map<String, dynamic> json) =>
-        _$RazorpayInstantSettlementListResponseImpl(
+        _RazorpayInstantSettlementListResponse(
           entity: json['entity'] as String,
           count: (json['count'] as num).toInt(),
           items: (json['items'] as List<dynamic>)
@@ -342,26 +339,26 @@ _$RazorpayInstantSettlementListResponseImpl
               .toList(),
         );
 
-Map<String, dynamic> _$$RazorpayInstantSettlementListResponseImplToJson(
-        _$RazorpayInstantSettlementListResponseImpl instance) =>
+Map<String, dynamic> _$RazorpayInstantSettlementListResponseToJson(
+        _RazorpayInstantSettlementListResponse instance) =>
     <String, dynamic>{
       'entity': instance.entity,
       'count': instance.count,
       'items': instance.items,
     };
 
-_$RazorpaySettlementReconResponseImpl
-    _$$RazorpaySettlementReconResponseImplFromJson(Map<String, dynamic> json) =>
-        _$RazorpaySettlementReconResponseImpl(
-          items: (json['items'] as List<dynamic>?)
-                  ?.map((e) => RazorpaySettlementReconItem.fromJson(
-                      e as Map<String, dynamic>))
-                  .toList() ??
-              const [],
-        );
+_RazorpaySettlementReconResponse _$RazorpaySettlementReconResponseFromJson(
+        Map<String, dynamic> json) =>
+    _RazorpaySettlementReconResponse(
+      items: (json['items'] as List<dynamic>?)
+              ?.map((e) => RazorpaySettlementReconItem.fromJson(
+                  e as Map<String, dynamic>))
+              .toList() ??
+          const [],
+    );
 
-Map<String, dynamic> _$$RazorpaySettlementReconResponseImplToJson(
-        _$RazorpaySettlementReconResponseImpl instance) =>
+Map<String, dynamic> _$RazorpaySettlementReconResponseToJson(
+        _RazorpaySettlementReconResponse instance) =>
     <String, dynamic>{
       'items': instance.items,
     };

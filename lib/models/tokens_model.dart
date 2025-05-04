@@ -48,7 +48,7 @@ enum TokenProvider {
 
 // --- Token Details for Authorization Orders ---
 @freezed
-class RazorpayTokenCard with _$RazorpayTokenCard {
+abstract class RazorpayTokenCard with _$RazorpayTokenCard {
   @JsonSerializable(includeIfNull: false)
   const factory RazorpayTokenCard({
     required int max_amount,
@@ -61,7 +61,7 @@ class RazorpayTokenCard with _$RazorpayTokenCard {
 }
 
 @freezed
-class RazorpayTokenEmandate with _$RazorpayTokenEmandate {
+abstract class RazorpayTokenEmandate with _$RazorpayTokenEmandate {
   @JsonSerializable(includeIfNull: false)
   const factory RazorpayTokenEmandate({
     EmandateAuthTypeToken? auth_type,
@@ -77,7 +77,7 @@ class RazorpayTokenEmandate with _$RazorpayTokenEmandate {
 }
 
 @freezed
-class NachInfo with _$NachInfo {
+abstract class NachInfo with _$NachInfo {
   @JsonSerializable(includeIfNull: false)
   const factory NachInfo({
     required String form_reference1,
@@ -95,7 +95,7 @@ class NachInfo with _$NachInfo {
 }
 
 @freezed
-class RazorpayTokenNach with _$RazorpayTokenNach {
+abstract class RazorpayTokenNach with _$RazorpayTokenNach {
   // Extends Emandate + Nach specific info
   @JsonSerializable(includeIfNull: false)
   const factory RazorpayTokenNach({
@@ -115,7 +115,7 @@ class RazorpayTokenNach with _$RazorpayTokenNach {
 
 // Response structure for Token within Order/Subscription/RegistrationLink responses
 @freezed
-class RazorpayAuthorizationToken with _$RazorpayAuthorizationToken {
+abstract class RazorpayAuthorizationToken with _$RazorpayAuthorizationToken {
   // Combines Emandate/Nach structure + response specific fields
   @JsonSerializable(includeIfNull: false)
   const factory RazorpayAuthorizationToken({
@@ -143,7 +143,7 @@ class RazorpayAuthorizationToken with _$RazorpayAuthorizationToken {
 
 // --- Token HQ Related ---
 @freezed
-class Authentication with _$Authentication {
+abstract class Authentication with _$Authentication {
   @JsonSerializable(includeIfNull: false)
   const factory Authentication({
     required TokenProvider provider,
@@ -157,7 +157,8 @@ class Authentication with _$Authentication {
 
 // Base Request for Token HQ
 @freezed
-class RazorpayTokenBaseRequestBody with _$RazorpayTokenBaseRequestBody {
+abstract class RazorpayTokenBaseRequestBody
+    with _$RazorpayTokenBaseRequestBody {
   @JsonSerializable(includeIfNull: false)
   const factory RazorpayTokenBaseRequestBody({
     required String method, // Currently 'card',
@@ -173,7 +174,7 @@ class RazorpayTokenBaseRequestBody with _$RazorpayTokenBaseRequestBody {
 
 // Nested VPA details in Token response
 @freezed
-class TokenVpaDetails with _$TokenVpaDetails {
+abstract class TokenVpaDetails with _$TokenVpaDetails {
   @JsonSerializable(includeIfNull: false)
   const factory TokenVpaDetails({
     String? username,
@@ -187,7 +188,7 @@ class TokenVpaDetails with _$TokenVpaDetails {
 
 // Nested recurring details in Token response
 @freezed
-class TokenRecurringDetails with _$TokenRecurringDetails {
+abstract class TokenRecurringDetails with _$TokenRecurringDetails {
   @JsonSerializable(includeIfNull: false)
   const factory TokenRecurringDetails({
     required String status, // e.g., 'confirmed', 'initiated', 'rejected'
@@ -200,7 +201,7 @@ class TokenRecurringDetails with _$TokenRecurringDetails {
 
 // Main Token HQ Response Body
 @freezed
-class RazorpayToken with _$RazorpayToken {
+abstract class RazorpayToken with _$RazorpayToken {
   @JsonSerializable(includeIfNull: false)
   const factory RazorpayToken({
     required String id,
@@ -236,7 +237,7 @@ class RazorpayToken with _$RazorpayToken {
 
 // Response for Process Payment on Alternate PA/PG
 @freezed
-class RazorpayProcessPaymentCardDetails
+abstract class RazorpayProcessPaymentCardDetails
     with _$RazorpayProcessPaymentCardDetails {
   @JsonSerializable(includeIfNull: false)
   const factory RazorpayProcessPaymentCardDetails({
@@ -252,7 +253,8 @@ class RazorpayProcessPaymentCardDetails
 }
 
 @freezed
-class RazorpayProcessPaymentResponse with _$RazorpayProcessPaymentResponse {
+abstract class RazorpayProcessPaymentResponse
+    with _$RazorpayProcessPaymentResponse {
   @JsonSerializable(includeIfNull: false)
   const factory RazorpayProcessPaymentResponse({
     required String token_number,
@@ -269,7 +271,7 @@ class RazorpayProcessPaymentResponse with _$RazorpayProcessPaymentResponse {
 
 // --- Request types for fetch/delete (simple ID) ---
 @freezed
-class RazorpayTokenFetchRequest with _$RazorpayTokenFetchRequest {
+abstract class RazorpayTokenFetchRequest with _$RazorpayTokenFetchRequest {
   @JsonSerializable(includeIfNull: false)
   const factory RazorpayTokenFetchRequest({required String id}) =
       _RazorpayTokenFetchRequest;
@@ -278,7 +280,7 @@ class RazorpayTokenFetchRequest with _$RazorpayTokenFetchRequest {
 }
 
 @freezed
-class RazorpayTokenDeleteRequest with _$RazorpayTokenDeleteRequest {
+abstract class RazorpayTokenDeleteRequest with _$RazorpayTokenDeleteRequest {
   @JsonSerializable(includeIfNull: false)
   const factory RazorpayTokenDeleteRequest({required String id}) =
       _RazorpayTokenDeleteRequest;
@@ -287,7 +289,7 @@ class RazorpayTokenDeleteRequest with _$RazorpayTokenDeleteRequest {
 }
 
 @freezed
-class RazorpayTokenProcessPaymentRequest
+abstract class RazorpayTokenProcessPaymentRequest
     with _$RazorpayTokenProcessPaymentRequest {
   @JsonSerializable(includeIfNull: false)
   const factory RazorpayTokenProcessPaymentRequest({required String id}) =
@@ -300,7 +302,7 @@ class RazorpayTokenProcessPaymentRequest
 
 // Response for Delete Token (Empty List/Object)
 @freezed
-class RazorpayTokenDeleteResponse with _$RazorpayTokenDeleteResponse {
+abstract class RazorpayTokenDeleteResponse with _$RazorpayTokenDeleteResponse {
   @JsonSerializable(includeIfNull: false)
   const factory RazorpayTokenDeleteResponse() =
       _RazorpayTokenDeleteResponse; // Empty model

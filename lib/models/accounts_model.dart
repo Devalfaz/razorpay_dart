@@ -10,7 +10,8 @@ part 'accounts_model.g.dart';
 
 // --- Base Request Body ---
 @freezed
-class RazorpayAccountBaseRequestBody with _$RazorpayAccountBaseRequestBody {
+abstract class RazorpayAccountBaseRequestBody
+    with _$RazorpayAccountBaseRequestBody {
   @JsonSerializable(includeIfNull: false)
   const factory RazorpayAccountBaseRequestBody({
     required String email,
@@ -35,7 +36,7 @@ class RazorpayAccountBaseRequestBody with _$RazorpayAccountBaseRequestBody {
 
 // --- Nested Types ---
 @freezed
-class AppDetails with _$AppDetails {
+abstract class AppDetails with _$AppDetails {
   @JsonSerializable(includeIfNull: false)
   const factory AppDetails({
     required String url,
@@ -47,7 +48,7 @@ class AppDetails with _$AppDetails {
 }
 
 @freezed
-class Profile with _$Profile {
+abstract class Profile with _$Profile {
   @JsonSerializable(includeIfNull: false)
   const factory Profile({
     String? category,
@@ -62,7 +63,7 @@ class Profile with _$Profile {
 }
 
 @freezed
-class ProfileAddressesContainer with _$ProfileAddressesContainer {
+abstract class ProfileAddressesContainer with _$ProfileAddressesContainer {
   @JsonSerializable(includeIfNull: false)
   const factory ProfileAddressesContainer({
     ProfileAddresses? registered,
@@ -74,7 +75,7 @@ class ProfileAddressesContainer with _$ProfileAddressesContainer {
 }
 
 @freezed
-class ProfileAddresses with _$ProfileAddresses {
+abstract class ProfileAddresses with _$ProfileAddresses {
   @JsonSerializable(includeIfNull: false)
   const factory ProfileAddresses({
     required String street1,
@@ -91,7 +92,7 @@ class ProfileAddresses with _$ProfileAddresses {
 }
 
 @freezed
-class LegalInfo with _$LegalInfo {
+abstract class LegalInfo with _$LegalInfo {
   @JsonSerializable(includeIfNull: false)
   const factory LegalInfo({
     String? pan,
@@ -104,7 +105,7 @@ class LegalInfo with _$LegalInfo {
 }
 
 @freezed
-class Apps with _$Apps {
+abstract class Apps with _$Apps {
   @JsonSerializable(includeIfNull: false)
   const factory Apps({
     required List<String> websites,
@@ -116,7 +117,7 @@ class Apps with _$Apps {
 }
 
 @freezed
-class Brand with _$Brand {
+abstract class Brand with _$Brand {
   @JsonSerializable(includeIfNull: false)
   const factory Brand({
     String? color,
@@ -126,7 +127,7 @@ class Brand with _$Brand {
 }
 
 @freezed
-class ContactInfoSupport with _$ContactInfoSupport {
+abstract class ContactInfoSupport with _$ContactInfoSupport {
   @JsonSerializable(includeIfNull: false)
   const factory ContactInfoSupport({
     SupportType? chargeback,
@@ -139,7 +140,7 @@ class ContactInfoSupport with _$ContactInfoSupport {
 }
 
 @freezed
-class SupportType with _$SupportType {
+abstract class SupportType with _$SupportType {
   @JsonSerializable(includeIfNull: false)
   const factory SupportType({
     String? email,
@@ -153,7 +154,8 @@ class SupportType with _$SupportType {
 
 // --- Create/Update Request Bodies ---
 @freezed
-class RazorpayAccountCreateRequestBody with _$RazorpayAccountCreateRequestBody {
+abstract class RazorpayAccountCreateRequestBody
+    with _$RazorpayAccountCreateRequestBody {
   // Inherits structure from Base
   @JsonSerializable(includeIfNull: false)
   const factory RazorpayAccountCreateRequestBody({
@@ -180,7 +182,8 @@ class RazorpayAccountCreateRequestBody with _$RazorpayAccountCreateRequestBody {
 }
 
 @freezed
-class RazorpayAccountUpdateRequestBody with _$RazorpayAccountUpdateRequestBody {
+abstract class RazorpayAccountUpdateRequestBody
+    with _$RazorpayAccountUpdateRequestBody {
   // Partial<Omit<RazorpayAccountBaseRequestBody, 'email' | 'business_type'>>
   @JsonSerializable(includeIfNull: false)
   const factory RazorpayAccountUpdateRequestBody({
@@ -206,7 +209,7 @@ class RazorpayAccountUpdateRequestBody with _$RazorpayAccountUpdateRequestBody {
 
 // --- Response Body ---
 @freezed
-class RazorpayAccount with _$RazorpayAccount {
+abstract class RazorpayAccount with _$RazorpayAccount {
   @JsonSerializable(includeIfNull: false)
   const factory RazorpayAccount({
     required String id,
@@ -240,7 +243,7 @@ class RazorpayAccount with _$RazorpayAccount {
 // We won't create a direct model for FileCreateParams as it's handled in the resource method.
 
 @freezed
-class RazorpayAccountDocument with _$RazorpayAccountDocument {
+abstract class RazorpayAccountDocument with _$RazorpayAccountDocument {
   @JsonSerializable(includeIfNull: false)
   const factory RazorpayAccountDocument({
     required String type,
@@ -252,7 +255,7 @@ class RazorpayAccountDocument with _$RazorpayAccountDocument {
 }
 
 @freezed
-class RazorpayAccountDocuments with _$RazorpayAccountDocuments {
+abstract class RazorpayAccountDocuments with _$RazorpayAccountDocuments {
   @JsonSerializable(includeIfNull: false)
   const factory RazorpayAccountDocuments({
     // The TS definition uses a tuple `[...]`, JSON will likely be a list.

@@ -7,7 +7,7 @@ part 'api_model.g.dart';
 typedef IMap<T> = Map<String, T?>;
 
 @freezed
-class RazorpayPaginationOptions with _$RazorpayPaginationOptions {
+abstract class RazorpayPaginationOptions with _$RazorpayPaginationOptions {
   @JsonSerializable(includeIfNull: false)
   const factory RazorpayPaginationOptions({
     /// The Unix timestamp from when data are to be fetched

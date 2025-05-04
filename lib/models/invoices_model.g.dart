@@ -6,26 +6,26 @@ part of 'invoices_model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$RazorpayInvoiceAddressBaseRequestBodyImpl
-    _$$RazorpayInvoiceAddressBaseRequestBodyImplFromJson(
+_RazorpayInvoiceAddressBaseRequestBody
+    _$RazorpayInvoiceAddressBaseRequestBodyFromJson(
             Map<String, dynamic> json) =>
-        _$RazorpayInvoiceAddressBaseRequestBodyImpl(
+        _RazorpayInvoiceAddressBaseRequestBody(
           line1: json['line1'] as String,
           zipcode: json['zipcode'],
           state: json['state'] as String?,
         );
 
-Map<String, dynamic> _$$RazorpayInvoiceAddressBaseRequestBodyImplToJson(
-        _$RazorpayInvoiceAddressBaseRequestBodyImpl instance) =>
+Map<String, dynamic> _$RazorpayInvoiceAddressBaseRequestBodyToJson(
+        _RazorpayInvoiceAddressBaseRequestBody instance) =>
     <String, dynamic>{
       'line1': instance.line1,
       if (instance.zipcode case final value?) 'zipcode': value,
       if (instance.state case final value?) 'state': value,
     };
 
-_$RazorpayInvoiceAddressImpl _$$RazorpayInvoiceAddressImplFromJson(
+_RazorpayInvoiceAddress _$RazorpayInvoiceAddressFromJson(
         Map<String, dynamic> json) =>
-    _$RazorpayInvoiceAddressImpl(
+    _RazorpayInvoiceAddress(
       id: json['id'] as String,
       type: json['type'] as String,
       primary: json['primary'] as bool,
@@ -38,8 +38,8 @@ _$RazorpayInvoiceAddressImpl _$$RazorpayInvoiceAddressImplFromJson(
       state: json['state'] as String?,
     );
 
-Map<String, dynamic> _$$RazorpayInvoiceAddressImplToJson(
-        _$RazorpayInvoiceAddressImpl instance) =>
+Map<String, dynamic> _$RazorpayInvoiceAddressToJson(
+        _RazorpayInvoiceAddress instance) =>
     <String, dynamic>{
       'id': instance.id,
       'type': instance.type,
@@ -53,10 +53,10 @@ Map<String, dynamic> _$$RazorpayInvoiceAddressImplToJson(
       if (instance.state case final value?) 'state': value,
     };
 
-_$RazorpayCustomerDetailsBaseRequestBodyImpl
-    _$$RazorpayCustomerDetailsBaseRequestBodyImplFromJson(
+_RazorpayCustomerDetailsBaseRequestBody
+    _$RazorpayCustomerDetailsBaseRequestBodyFromJson(
             Map<String, dynamic> json) =>
-        _$RazorpayCustomerDetailsBaseRequestBodyImpl(
+        _RazorpayCustomerDetailsBaseRequestBody(
           name: json['name'] as String?,
           email: json['email'] as String?,
           contact: json['contact'],
@@ -70,8 +70,8 @@ _$RazorpayCustomerDetailsBaseRequestBodyImpl
                   json['shipping_address'] as Map<String, dynamic>),
         );
 
-Map<String, dynamic> _$$RazorpayCustomerDetailsBaseRequestBodyImplToJson(
-        _$RazorpayCustomerDetailsBaseRequestBodyImpl instance) =>
+Map<String, dynamic> _$RazorpayCustomerDetailsBaseRequestBodyToJson(
+        _RazorpayCustomerDetailsBaseRequestBody instance) =>
     <String, dynamic>{
       if (instance.name case final value?) 'name': value,
       if (instance.email case final value?) 'email': value,
@@ -81,9 +81,9 @@ Map<String, dynamic> _$$RazorpayCustomerDetailsBaseRequestBodyImplToJson(
         'shipping_address': value,
     };
 
-_$RazorpayCustomerDetailsImpl _$$RazorpayCustomerDetailsImplFromJson(
+_RazorpayCustomerDetails _$RazorpayCustomerDetailsFromJson(
         Map<String, dynamic> json) =>
-    _$RazorpayCustomerDetailsImpl(
+    _RazorpayCustomerDetails(
       id: json['id'] as String?,
       name: json['name'] as String?,
       email: json['email'] as String?,
@@ -102,8 +102,8 @@ _$RazorpayCustomerDetailsImpl _$$RazorpayCustomerDetailsImplFromJson(
               json['shipping_address'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$$RazorpayCustomerDetailsImplToJson(
-        _$RazorpayCustomerDetailsImpl instance) =>
+Map<String, dynamic> _$RazorpayCustomerDetailsToJson(
+        _RazorpayCustomerDetails instance) =>
     <String, dynamic>{
       if (instance.id case final value?) 'id': value,
       if (instance.name case final value?) 'name': value,
@@ -119,21 +119,20 @@ Map<String, dynamic> _$$RazorpayCustomerDetailsImplToJson(
         'shipping_address': value,
     };
 
-_$RazorpayLineItemsBaseRequestBodyImpl
-    _$$RazorpayLineItemsBaseRequestBodyImplFromJson(
-            Map<String, dynamic> json) =>
-        _$RazorpayLineItemsBaseRequestBodyImpl(
-          name: json['name'] as String?,
-          amount: json['amount'],
-          currency: json['currency'] as String?,
-          description: json['description'] as String?,
-          id: json['id'] as String?,
-          item_id: json['item_id'] as String?,
-          quantity: (json['quantity'] as num?)?.toInt(),
-        );
+_RazorpayLineItemsBaseRequestBody _$RazorpayLineItemsBaseRequestBodyFromJson(
+        Map<String, dynamic> json) =>
+    _RazorpayLineItemsBaseRequestBody(
+      name: json['name'] as String?,
+      amount: json['amount'],
+      currency: json['currency'] as String?,
+      description: json['description'] as String?,
+      id: json['id'] as String?,
+      item_id: json['item_id'] as String?,
+      quantity: (json['quantity'] as num?)?.toInt(),
+    );
 
-Map<String, dynamic> _$$RazorpayLineItemsBaseRequestBodyImplToJson(
-        _$RazorpayLineItemsBaseRequestBodyImpl instance) =>
+Map<String, dynamic> _$RazorpayLineItemsBaseRequestBodyToJson(
+        _RazorpayLineItemsBaseRequestBody instance) =>
     <String, dynamic>{
       if (instance.name case final value?) 'name': value,
       if (instance.amount case final value?) 'amount': value,
@@ -144,9 +143,8 @@ Map<String, dynamic> _$$RazorpayLineItemsBaseRequestBodyImplToJson(
       if (instance.quantity case final value?) 'quantity': value,
     };
 
-_$RazorpayLineItemsImpl _$$RazorpayLineItemsImplFromJson(
-        Map<String, dynamic> json) =>
-    _$RazorpayLineItemsImpl(
+_RazorpayLineItems _$RazorpayLineItemsFromJson(Map<String, dynamic> json) =>
+    _RazorpayLineItems(
       id: json['id'] as String,
       name: json['name'] as String,
       amount: json['amount'],
@@ -175,8 +173,7 @@ _$RazorpayLineItemsImpl _$$RazorpayLineItemsImplFromJson(
       taxes: json['taxes'] as List<dynamic>? ?? const [],
     );
 
-Map<String, dynamic> _$$RazorpayLineItemsImplToJson(
-        _$RazorpayLineItemsImpl instance) =>
+Map<String, dynamic> _$RazorpayLineItemsToJson(_RazorpayLineItems instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
@@ -206,35 +203,35 @@ Map<String, dynamic> _$$RazorpayLineItemsImplToJson(
       'taxes': instance.taxes,
     };
 
-_$RazorpayInvoiceBaseRequestBodyImpl
-    _$$RazorpayInvoiceBaseRequestBodyImplFromJson(Map<String, dynamic> json) =>
-        _$RazorpayInvoiceBaseRequestBodyImpl(
-          type: json['type'] as String,
-          line_items: (json['line_items'] as List<dynamic>)
-              .map((e) => RazorpayLineItemsBaseRequestBody.fromJson(
-                  e as Map<String, dynamic>))
-              .toList(),
-          description: json['description'] as String?,
-          draft: json['draft'] as String?,
-          date: (json['date'] as num?)?.toInt(),
-          customer_id: json['customer_id'] as String?,
-          currency: json['currency'] as String?,
-          customer: json['customer'] == null
-              ? null
-              : RazorpayCustomerDetailsBaseRequestBody.fromJson(
-                  json['customer'] as Map<String, dynamic>),
-          order_id: json['order_id'] as String?,
-          expire_by: (json['expire_by'] as num?)?.toInt(),
-          sms_notify: _intToBool(json['sms_notify']),
-          email_notify: _intToBool(json['email_notify']),
-          partial_payment: _intToBool(json['partial_payment']),
-          notes: json['notes'] as Map<String, dynamic>?,
-          receipt: json['receipt'] as String?,
-          amount: json['amount'],
-        );
+_RazorpayInvoiceBaseRequestBody _$RazorpayInvoiceBaseRequestBodyFromJson(
+        Map<String, dynamic> json) =>
+    _RazorpayInvoiceBaseRequestBody(
+      type: json['type'] as String,
+      line_items: (json['line_items'] as List<dynamic>)
+          .map((e) => RazorpayLineItemsBaseRequestBody.fromJson(
+              e as Map<String, dynamic>))
+          .toList(),
+      description: json['description'] as String?,
+      draft: json['draft'] as String?,
+      date: (json['date'] as num?)?.toInt(),
+      customer_id: json['customer_id'] as String?,
+      currency: json['currency'] as String?,
+      customer: json['customer'] == null
+          ? null
+          : RazorpayCustomerDetailsBaseRequestBody.fromJson(
+              json['customer'] as Map<String, dynamic>),
+      order_id: json['order_id'] as String?,
+      expire_by: (json['expire_by'] as num?)?.toInt(),
+      sms_notify: _intToBool(json['sms_notify']),
+      email_notify: _intToBool(json['email_notify']),
+      partial_payment: _intToBool(json['partial_payment']),
+      notes: json['notes'] as Map<String, dynamic>?,
+      receipt: json['receipt'] as String?,
+      amount: json['amount'],
+    );
 
-Map<String, dynamic> _$$RazorpayInvoiceBaseRequestBodyImplToJson(
-        _$RazorpayInvoiceBaseRequestBodyImpl instance) =>
+Map<String, dynamic> _$RazorpayInvoiceBaseRequestBodyToJson(
+        _RazorpayInvoiceBaseRequestBody instance) =>
     <String, dynamic>{
       'type': instance.type,
       'line_items': instance.line_items,
@@ -257,36 +254,35 @@ Map<String, dynamic> _$$RazorpayInvoiceBaseRequestBodyImplToJson(
       if (instance.amount case final value?) 'amount': value,
     };
 
-_$RazorpayInvoiceCreateRequestBodyImpl
-    _$$RazorpayInvoiceCreateRequestBodyImplFromJson(
-            Map<String, dynamic> json) =>
-        _$RazorpayInvoiceCreateRequestBodyImpl(
-          type: json['type'] as String,
-          line_items: (json['line_items'] as List<dynamic>)
-              .map((e) => RazorpayLineItemsBaseRequestBody.fromJson(
-                  e as Map<String, dynamic>))
-              .toList(),
-          description: json['description'] as String?,
-          draft: json['draft'] as String?,
-          date: (json['date'] as num?)?.toInt(),
-          customer_id: json['customer_id'] as String?,
-          currency: json['currency'] as String?,
-          customer: json['customer'] == null
-              ? null
-              : RazorpayCustomerDetailsBaseRequestBody.fromJson(
-                  json['customer'] as Map<String, dynamic>),
-          order_id: json['order_id'] as String?,
-          expire_by: (json['expire_by'] as num?)?.toInt(),
-          sms_notify: _intToBool(json['sms_notify']),
-          email_notify: _intToBool(json['email_notify']),
-          partial_payment: _intToBool(json['partial_payment']),
-          notes: json['notes'] as Map<String, dynamic>?,
-          receipt: json['receipt'] as String?,
-          amount: json['amount'],
-        );
+_RazorpayInvoiceCreateRequestBody _$RazorpayInvoiceCreateRequestBodyFromJson(
+        Map<String, dynamic> json) =>
+    _RazorpayInvoiceCreateRequestBody(
+      type: json['type'] as String,
+      line_items: (json['line_items'] as List<dynamic>)
+          .map((e) => RazorpayLineItemsBaseRequestBody.fromJson(
+              e as Map<String, dynamic>))
+          .toList(),
+      description: json['description'] as String?,
+      draft: json['draft'] as String?,
+      date: (json['date'] as num?)?.toInt(),
+      customer_id: json['customer_id'] as String?,
+      currency: json['currency'] as String?,
+      customer: json['customer'] == null
+          ? null
+          : RazorpayCustomerDetailsBaseRequestBody.fromJson(
+              json['customer'] as Map<String, dynamic>),
+      order_id: json['order_id'] as String?,
+      expire_by: (json['expire_by'] as num?)?.toInt(),
+      sms_notify: _intToBool(json['sms_notify']),
+      email_notify: _intToBool(json['email_notify']),
+      partial_payment: _intToBool(json['partial_payment']),
+      notes: json['notes'] as Map<String, dynamic>?,
+      receipt: json['receipt'] as String?,
+      amount: json['amount'],
+    );
 
-Map<String, dynamic> _$$RazorpayInvoiceCreateRequestBodyImplToJson(
-        _$RazorpayInvoiceCreateRequestBodyImpl instance) =>
+Map<String, dynamic> _$RazorpayInvoiceCreateRequestBodyToJson(
+        _RazorpayInvoiceCreateRequestBody instance) =>
     <String, dynamic>{
       'type': instance.type,
       'line_items': instance.line_items,
@@ -309,36 +305,35 @@ Map<String, dynamic> _$$RazorpayInvoiceCreateRequestBodyImplToJson(
       if (instance.amount case final value?) 'amount': value,
     };
 
-_$RazorpayInvoiceUpdateRequestBodyImpl
-    _$$RazorpayInvoiceUpdateRequestBodyImplFromJson(
-            Map<String, dynamic> json) =>
-        _$RazorpayInvoiceUpdateRequestBodyImpl(
-          type: json['type'] as String?,
-          description: json['description'] as String?,
-          draft: json['draft'] as String?,
-          date: (json['date'] as num?)?.toInt(),
-          customer_id: json['customer_id'] as String?,
-          currency: json['currency'] as String?,
-          customer: json['customer'] == null
-              ? null
-              : RazorpayCustomerDetailsBaseRequestBody.fromJson(
-                  json['customer'] as Map<String, dynamic>),
-          order_id: json['order_id'] as String?,
-          line_items: (json['line_items'] as List<dynamic>?)
-              ?.map((e) => RazorpayLineItemsBaseRequestBody.fromJson(
-                  e as Map<String, dynamic>))
-              .toList(),
-          expire_by: (json['expire_by'] as num?)?.toInt(),
-          sms_notify: _intToBool(json['sms_notify']),
-          email_notify: _intToBool(json['email_notify']),
-          partial_payment: _intToBool(json['partial_payment']),
-          notes: json['notes'] as Map<String, dynamic>?,
-          receipt: json['receipt'] as String?,
-          amount: json['amount'],
-        );
+_RazorpayInvoiceUpdateRequestBody _$RazorpayInvoiceUpdateRequestBodyFromJson(
+        Map<String, dynamic> json) =>
+    _RazorpayInvoiceUpdateRequestBody(
+      type: json['type'] as String?,
+      description: json['description'] as String?,
+      draft: json['draft'] as String?,
+      date: (json['date'] as num?)?.toInt(),
+      customer_id: json['customer_id'] as String?,
+      currency: json['currency'] as String?,
+      customer: json['customer'] == null
+          ? null
+          : RazorpayCustomerDetailsBaseRequestBody.fromJson(
+              json['customer'] as Map<String, dynamic>),
+      order_id: json['order_id'] as String?,
+      line_items: (json['line_items'] as List<dynamic>?)
+          ?.map((e) => RazorpayLineItemsBaseRequestBody.fromJson(
+              e as Map<String, dynamic>))
+          .toList(),
+      expire_by: (json['expire_by'] as num?)?.toInt(),
+      sms_notify: _intToBool(json['sms_notify']),
+      email_notify: _intToBool(json['email_notify']),
+      partial_payment: _intToBool(json['partial_payment']),
+      notes: json['notes'] as Map<String, dynamic>?,
+      receipt: json['receipt'] as String?,
+      amount: json['amount'],
+    );
 
-Map<String, dynamic> _$$RazorpayInvoiceUpdateRequestBodyImplToJson(
-        _$RazorpayInvoiceUpdateRequestBodyImpl instance) =>
+Map<String, dynamic> _$RazorpayInvoiceUpdateRequestBodyToJson(
+        _RazorpayInvoiceUpdateRequestBody instance) =>
     <String, dynamic>{
       if (instance.type case final value?) 'type': value,
       if (instance.description case final value?) 'description': value,
@@ -361,9 +356,8 @@ Map<String, dynamic> _$$RazorpayInvoiceUpdateRequestBodyImplToJson(
       if (instance.amount case final value?) 'amount': value,
     };
 
-_$RazorpayInvoiceImpl _$$RazorpayInvoiceImplFromJson(
-        Map<String, dynamic> json) =>
-    _$RazorpayInvoiceImpl(
+_RazorpayInvoice _$RazorpayInvoiceFromJson(Map<String, dynamic> json) =>
+    _RazorpayInvoice(
       id: json['id'] as String,
       entity: json['entity'] as String,
       type: json['type'] as String,
@@ -420,8 +414,7 @@ _$RazorpayInvoiceImpl _$$RazorpayInvoiceImplFromJson(
               json['token'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$$RazorpayInvoiceImplToJson(
-        _$RazorpayInvoiceImpl instance) =>
+Map<String, dynamic> _$RazorpayInvoiceToJson(_RazorpayInvoice instance) =>
     <String, dynamic>{
       'id': instance.id,
       'entity': instance.entity,
@@ -492,9 +485,9 @@ const _$InvoiceStatusEnumMap = {
   InvoiceStatus.deleted: 'deleted',
 };
 
-_$RazorpayInvoiceQueryImpl _$$RazorpayInvoiceQueryImplFromJson(
+_RazorpayInvoiceQuery _$RazorpayInvoiceQueryFromJson(
         Map<String, dynamic> json) =>
-    _$RazorpayInvoiceQueryImpl(
+    _RazorpayInvoiceQuery(
       from: (json['from'] as num?)?.toInt(),
       to: (json['to'] as num?)?.toInt(),
       count: (json['count'] as num?)?.toInt(),
@@ -506,8 +499,8 @@ _$RazorpayInvoiceQueryImpl _$$RazorpayInvoiceQueryImplFromJson(
       subscription_id: json['subscription_id'] as String?,
     );
 
-Map<String, dynamic> _$$RazorpayInvoiceQueryImplToJson(
-        _$RazorpayInvoiceQueryImpl instance) =>
+Map<String, dynamic> _$RazorpayInvoiceQueryToJson(
+        _RazorpayInvoiceQuery instance) =>
     <String, dynamic>{
       if (instance.from case final value?) 'from': value,
       if (instance.to case final value?) 'to': value,
@@ -520,22 +513,22 @@ Map<String, dynamic> _$$RazorpayInvoiceQueryImplToJson(
       if (instance.subscription_id case final value?) 'subscription_id': value,
     };
 
-_$RazorpayNotifyResponseImpl _$$RazorpayNotifyResponseImplFromJson(
+_RazorpayNotifyResponse _$RazorpayNotifyResponseFromJson(
         Map<String, dynamic> json) =>
-    _$RazorpayNotifyResponseImpl(
+    _RazorpayNotifyResponse(
       success: json['success'] as bool,
     );
 
-Map<String, dynamic> _$$RazorpayNotifyResponseImplToJson(
-        _$RazorpayNotifyResponseImpl instance) =>
+Map<String, dynamic> _$RazorpayNotifyResponseToJson(
+        _RazorpayNotifyResponse instance) =>
     <String, dynamic>{
       'success': instance.success,
     };
 
-_$RazorpayDeleteResponseImpl _$$RazorpayDeleteResponseImplFromJson(
+_RazorpayDeleteResponse _$RazorpayDeleteResponseFromJson(
         Map<String, dynamic> json) =>
-    _$RazorpayDeleteResponseImpl();
+    _RazorpayDeleteResponse();
 
-Map<String, dynamic> _$$RazorpayDeleteResponseImplToJson(
-        _$RazorpayDeleteResponseImpl instance) =>
+Map<String, dynamic> _$RazorpayDeleteResponseToJson(
+        _RazorpayDeleteResponse instance) =>
     <String, dynamic>{};

@@ -42,7 +42,6 @@ class Payments {
       'skip': skip,
       if (params?.expand != null) 'expand[]': params!.expand,
     };
-    queryParams.removeWhere((key, value) => value == null);
 
     return api.get<RazorpayApiResponse<RazorpayPayment>>(
       {
@@ -74,7 +73,6 @@ class Payments {
     final queryParams = {
       if (expand != null) 'expand[]': expand,
     };
-    queryParams.removeWhere((key, value) => value == null);
 
     return api.get<RazorpayPayment>(
       {

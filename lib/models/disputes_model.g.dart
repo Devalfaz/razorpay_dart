@@ -6,25 +6,24 @@ part of 'disputes_model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$OthersEvidenceImpl _$$OthersEvidenceImplFromJson(Map<String, dynamic> json) =>
-    _$OthersEvidenceImpl(
+_OthersEvidence _$OthersEvidenceFromJson(Map<String, dynamic> json) =>
+    _OthersEvidence(
       type: json['type'] as String,
       document_ids: (json['document_ids'] as List<dynamic>)
           .map((e) => e as String)
           .toList(),
     );
 
-Map<String, dynamic> _$$OthersEvidenceImplToJson(
-        _$OthersEvidenceImpl instance) =>
+Map<String, dynamic> _$OthersEvidenceToJson(_OthersEvidence instance) =>
     <String, dynamic>{
       'type': instance.type,
       'document_ids': instance.document_ids,
     };
 
-_$RazorpayDisputesContestBaseRequestBodyImpl
-    _$$RazorpayDisputesContestBaseRequestBodyImplFromJson(
+_RazorpayDisputesContestBaseRequestBody
+    _$RazorpayDisputesContestBaseRequestBodyFromJson(
             Map<String, dynamic> json) =>
-        _$RazorpayDisputesContestBaseRequestBodyImpl(
+        _RazorpayDisputesContestBaseRequestBody(
           amount: (json['amount'] as num?)?.toInt(),
           summary: json['summary'] as String?,
           shipping_proof: (json['shipping_proof'] as List<dynamic>?)
@@ -66,8 +65,8 @@ _$RazorpayDisputesContestBaseRequestBodyImpl
           submitted_at: json['submitted_at'],
         );
 
-Map<String, dynamic> _$$RazorpayDisputesContestBaseRequestBodyImplToJson(
-        _$RazorpayDisputesContestBaseRequestBodyImpl instance) =>
+Map<String, dynamic> _$RazorpayDisputesContestBaseRequestBodyToJson(
+        _RazorpayDisputesContestBaseRequestBody instance) =>
     <String, dynamic>{
       if (instance.amount case final value?) 'amount': value,
       if (instance.summary case final value?) 'summary': value,
@@ -94,9 +93,8 @@ Map<String, dynamic> _$$RazorpayDisputesContestBaseRequestBodyImplToJson(
       if (instance.submitted_at case final value?) 'submitted_at': value,
     };
 
-_$RazorpayDisputeImpl _$$RazorpayDisputeImplFromJson(
-        Map<String, dynamic> json) =>
-    _$RazorpayDisputeImpl(
+_RazorpayDispute _$RazorpayDisputeFromJson(Map<String, dynamic> json) =>
+    _RazorpayDispute(
       id: json['id'] as String,
       entity: json['entity'] as String,
       payment_id: json['payment_id'] as String,
@@ -112,8 +110,7 @@ _$RazorpayDisputeImpl _$$RazorpayDisputeImplFromJson(
           json['evidence'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$$RazorpayDisputeImplToJson(
-        _$RazorpayDisputeImpl instance) =>
+Map<String, dynamic> _$RazorpayDisputeToJson(_RazorpayDispute instance) =>
     <String, dynamic>{
       'id': instance.id,
       'entity': instance.entity,

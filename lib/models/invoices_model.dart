@@ -24,7 +24,7 @@ enum NotificationStatus { pending, sent }
 
 // --- Address Types ---
 @freezed
-class RazorpayInvoiceAddressBaseRequestBody
+abstract class RazorpayInvoiceAddressBaseRequestBody
     with _$RazorpayInvoiceAddressBaseRequestBody {
   @JsonSerializable(includeIfNull: false)
   const factory RazorpayInvoiceAddressBaseRequestBody({
@@ -41,7 +41,7 @@ class RazorpayInvoiceAddressBaseRequestBody
 }
 
 @freezed
-class RazorpayInvoiceAddress with _$RazorpayInvoiceAddress {
+abstract class RazorpayInvoiceAddress with _$RazorpayInvoiceAddress {
   // Extends Base + response fields
   @JsonSerializable(includeIfNull: false)
   const factory RazorpayInvoiceAddress({
@@ -65,7 +65,7 @@ class RazorpayInvoiceAddress with _$RazorpayInvoiceAddress {
 
 // --- Customer Details Types ---
 @freezed
-class RazorpayCustomerDetailsBaseRequestBody
+abstract class RazorpayCustomerDetailsBaseRequestBody
     with _$RazorpayCustomerDetailsBaseRequestBody {
   @JsonSerializable(includeIfNull: false)
   const factory RazorpayCustomerDetailsBaseRequestBody({
@@ -83,7 +83,7 @@ class RazorpayCustomerDetailsBaseRequestBody
 }
 
 @freezed
-class RazorpayCustomerDetails with _$RazorpayCustomerDetails {
+abstract class RazorpayCustomerDetails with _$RazorpayCustomerDetails {
   // Omit<Base, 'billing_address' | 'shipping_address'> + response fields
   @JsonSerializable(includeIfNull: false)
   const factory RazorpayCustomerDetails({
@@ -105,7 +105,8 @@ class RazorpayCustomerDetails with _$RazorpayCustomerDetails {
 
 // --- Line Item Types ---
 @freezed
-class RazorpayLineItemsBaseRequestBody with _$RazorpayLineItemsBaseRequestBody {
+abstract class RazorpayLineItemsBaseRequestBody
+    with _$RazorpayLineItemsBaseRequestBody {
   // Partial<Items.RazorpayItemCreateRequestBody> + id, item_id, quantity
   @JsonSerializable(includeIfNull: false)
   const factory RazorpayLineItemsBaseRequestBody({
@@ -127,7 +128,7 @@ class RazorpayLineItemsBaseRequestBody with _$RazorpayLineItemsBaseRequestBody {
 }
 
 @freezed
-class RazorpayLineItems with _$RazorpayLineItems {
+abstract class RazorpayLineItems with _$RazorpayLineItems {
   // Extends Items.RazorpayItem + response fields
   @JsonSerializable(includeIfNull: false)
   const factory RazorpayLineItems({
@@ -168,7 +169,8 @@ class RazorpayLineItems with _$RazorpayLineItems {
 
 // --- Base Invoice Request Body ---
 @freezed
-class RazorpayInvoiceBaseRequestBody with _$RazorpayInvoiceBaseRequestBody {
+abstract class RazorpayInvoiceBaseRequestBody
+    with _$RazorpayInvoiceBaseRequestBody {
   @JsonSerializable(includeIfNull: false)
   const factory RazorpayInvoiceBaseRequestBody({
     required String type,
@@ -203,7 +205,8 @@ bool? _intToBool(dynamic i) => i == null ? null : (i == 1 || i == true);
 
 // --- Create/Update Request Bodies ---
 @freezed
-class RazorpayInvoiceCreateRequestBody with _$RazorpayInvoiceCreateRequestBody {
+abstract class RazorpayInvoiceCreateRequestBody
+    with _$RazorpayInvoiceCreateRequestBody {
   // Inherits structure from Base
   @JsonSerializable(includeIfNull: false)
   const factory RazorpayInvoiceCreateRequestBody({
@@ -236,7 +239,8 @@ class RazorpayInvoiceCreateRequestBody with _$RazorpayInvoiceCreateRequestBody {
 }
 
 @freezed
-class RazorpayInvoiceUpdateRequestBody with _$RazorpayInvoiceUpdateRequestBody {
+abstract class RazorpayInvoiceUpdateRequestBody
+    with _$RazorpayInvoiceUpdateRequestBody {
   // Partial<RazorpayInvoiceBaseRequestBody>
   @JsonSerializable(includeIfNull: false)
   const factory RazorpayInvoiceUpdateRequestBody({
@@ -269,7 +273,7 @@ class RazorpayInvoiceUpdateRequestBody with _$RazorpayInvoiceUpdateRequestBody {
 
 // --- Response Body ---
 @freezed
-class RazorpayInvoice with _$RazorpayInvoice {
+abstract class RazorpayInvoice with _$RazorpayInvoice {
   // Extends Base + response fields
   @JsonSerializable(includeIfNull: false)
   const factory RazorpayInvoice({
@@ -327,7 +331,7 @@ class RazorpayInvoice with _$RazorpayInvoice {
 
 // --- Query Parameters ---
 @freezed
-class RazorpayInvoiceQuery with _$RazorpayInvoiceQuery {
+abstract class RazorpayInvoiceQuery with _$RazorpayInvoiceQuery {
   @JsonSerializable(includeIfNull: false)
   const factory RazorpayInvoiceQuery({
     // Pagination options
@@ -349,7 +353,7 @@ class RazorpayInvoiceQuery with _$RazorpayInvoiceQuery {
 
 // --- Notify Response ---
 @freezed
-class RazorpayNotifyResponse with _$RazorpayNotifyResponse {
+abstract class RazorpayNotifyResponse with _$RazorpayNotifyResponse {
   @JsonSerializable(includeIfNull: false)
   const factory RazorpayNotifyResponse({
     required bool success,
@@ -362,7 +366,7 @@ class RazorpayNotifyResponse with _$RazorpayNotifyResponse {
 // --- Delete Response ---
 // API returns empty array `[]`. We can represent this as List<dynamic> or a specific empty model.
 @freezed
-class RazorpayDeleteResponse with _$RazorpayDeleteResponse {
+abstract class RazorpayDeleteResponse with _$RazorpayDeleteResponse {
   @JsonSerializable(includeIfNull: false)
   const factory RazorpayDeleteResponse() =
       _RazorpayDeleteResponse; // Empty model

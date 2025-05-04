@@ -7,7 +7,7 @@ part 'fund_account_model.g.dart';
 
 // --- Nested Bank Account Types ---
 @freezed
-class RazorpayBankAccountBaseRequestBody
+abstract class RazorpayBankAccountBaseRequestBody
     with _$RazorpayBankAccountBaseRequestBody {
   @JsonSerializable(includeIfNull: false)
   const factory RazorpayBankAccountBaseRequestBody({
@@ -23,7 +23,7 @@ class RazorpayBankAccountBaseRequestBody
 }
 
 @freezed
-class RazorpayBankAccount with _$RazorpayBankAccount {
+abstract class RazorpayBankAccount with _$RazorpayBankAccount {
   // Extends Base + bank_name, notes
   @JsonSerializable(includeIfNull: false)
   const factory RazorpayBankAccount({
@@ -41,7 +41,7 @@ class RazorpayBankAccount with _$RazorpayBankAccount {
 
 // --- Base Fund Account Request Body ---
 @freezed
-class RazorpayFundAccountBaseRequestBody
+abstract class RazorpayFundAccountBaseRequestBody
     with _$RazorpayFundAccountBaseRequestBody {
   @JsonSerializable(includeIfNull: false)
   const factory RazorpayFundAccountBaseRequestBody({
@@ -59,7 +59,7 @@ class RazorpayFundAccountBaseRequestBody
 
 // --- Create Request Body ---
 @freezed
-class RazorpayFundAccountCreateRequestBody
+abstract class RazorpayFundAccountCreateRequestBody
     with _$RazorpayFundAccountCreateRequestBody {
   // Inherits structure from Base
   @JsonSerializable(includeIfNull: false)
@@ -77,7 +77,7 @@ class RazorpayFundAccountCreateRequestBody
 
 // --- Response Body ---
 @freezed
-class RazorpayFundAccount with _$RazorpayFundAccount {
+abstract class RazorpayFundAccount with _$RazorpayFundAccount {
   // Omit<RazorpayFundAccountBaseRequestBody, 'bank_account'> + response fields
   @JsonSerializable(includeIfNull: false)
   const factory RazorpayFundAccount({
@@ -96,7 +96,8 @@ class RazorpayFundAccount with _$RazorpayFundAccount {
 
 // Specific response type for Fetch (list)
 @freezed
-class RazorpayFundAccountFetchResponse with _$RazorpayFundAccountFetchResponse {
+abstract class RazorpayFundAccountFetchResponse
+    with _$RazorpayFundAccountFetchResponse {
   @JsonSerializable(includeIfNull: false)
   const factory RazorpayFundAccountFetchResponse({
     required String entity,

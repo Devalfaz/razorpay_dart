@@ -6,17 +6,16 @@ part of 'virtual_accounts_model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$RazorpayAllowedPayerBaseRequestBodyImpl
-    _$$RazorpayAllowedPayerBaseRequestBodyImplFromJson(
-            Map<String, dynamic> json) =>
-        _$RazorpayAllowedPayerBaseRequestBodyImpl(
+_RazorpayAllowedPayerBaseRequestBody
+    _$RazorpayAllowedPayerBaseRequestBodyFromJson(Map<String, dynamic> json) =>
+        _RazorpayAllowedPayerBaseRequestBody(
           type: $enumDecode(_$AllowedPayerTypeEnumMap, json['type']),
           bank_account: RazorpayOrderBankDetailsBaseRequestBody.fromJson(
               json['bank_account'] as Map<String, dynamic>),
         );
 
-Map<String, dynamic> _$$RazorpayAllowedPayerBaseRequestBodyImplToJson(
-        _$RazorpayAllowedPayerBaseRequestBodyImpl instance) =>
+Map<String, dynamic> _$RazorpayAllowedPayerBaseRequestBodyToJson(
+        _RazorpayAllowedPayerBaseRequestBody instance) =>
     <String, dynamic>{
       'type': _$AllowedPayerTypeEnumMap[instance.type]!,
       'bank_account': instance.bank_account,
@@ -26,9 +25,9 @@ const _$AllowedPayerTypeEnumMap = {
   AllowedPayerType.bank_account: 'bank_account',
 };
 
-_$RazorpayAllowedPayerImpl _$$RazorpayAllowedPayerImplFromJson(
+_RazorpayAllowedPayer _$RazorpayAllowedPayerFromJson(
         Map<String, dynamic> json) =>
-    _$RazorpayAllowedPayerImpl(
+    _RazorpayAllowedPayer(
       id: json['id'] as String,
       entity: json['entity'] as String,
       type: $enumDecode(_$AllowedPayerTypeEnumMap, json['type']),
@@ -36,8 +35,8 @@ _$RazorpayAllowedPayerImpl _$$RazorpayAllowedPayerImplFromJson(
           json['bank_account'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$$RazorpayAllowedPayerImplToJson(
-        _$RazorpayAllowedPayerImpl instance) =>
+Map<String, dynamic> _$RazorpayAllowedPayerToJson(
+        _RazorpayAllowedPayer instance) =>
     <String, dynamic>{
       'id': instance.id,
       'entity': instance.entity,
@@ -45,20 +44,20 @@ Map<String, dynamic> _$$RazorpayAllowedPayerImplToJson(
       'bank_account': instance.bank_account,
     };
 
-_$VpaDescriptorImpl _$$VpaDescriptorImplFromJson(Map<String, dynamic> json) =>
-    _$VpaDescriptorImpl(
+_VpaDescriptor _$VpaDescriptorFromJson(Map<String, dynamic> json) =>
+    _VpaDescriptor(
       descriptor: json['descriptor'] as String,
     );
 
-Map<String, dynamic> _$$VpaDescriptorImplToJson(_$VpaDescriptorImpl instance) =>
+Map<String, dynamic> _$VpaDescriptorToJson(_VpaDescriptor instance) =>
     <String, dynamic>{
       'descriptor': instance.descriptor,
     };
 
-_$RazorpayVirtualAccountReceiverBaseRequestBodyImpl
-    _$$RazorpayVirtualAccountReceiverBaseRequestBodyImplFromJson(
+_RazorpayVirtualAccountReceiverBaseRequestBody
+    _$RazorpayVirtualAccountReceiverBaseRequestBodyFromJson(
             Map<String, dynamic> json) =>
-        _$RazorpayVirtualAccountReceiverBaseRequestBodyImpl(
+        _RazorpayVirtualAccountReceiverBaseRequestBody(
           types: (json['types'] as List<dynamic>?)
               ?.map((e) => $enumDecode(_$ReceiverTypeEnumMap, e))
               .toList(),
@@ -67,8 +66,8 @@ _$RazorpayVirtualAccountReceiverBaseRequestBodyImpl
               : VpaDescriptor.fromJson(json['vpa'] as Map<String, dynamic>),
         );
 
-Map<String, dynamic> _$$RazorpayVirtualAccountReceiverBaseRequestBodyImplToJson(
-        _$RazorpayVirtualAccountReceiverBaseRequestBodyImpl instance) =>
+Map<String, dynamic> _$RazorpayVirtualAccountReceiverBaseRequestBodyToJson(
+        _RazorpayVirtualAccountReceiverBaseRequestBody instance) =>
     <String, dynamic>{
       if (instance.types?.map((e) => _$ReceiverTypeEnumMap[e]!).toList()
           case final value?)
@@ -82,25 +81,25 @@ const _$ReceiverTypeEnumMap = {
   ReceiverType.qr_code: 'qr_code',
 };
 
-_$RazorpayVirtualAccountReceiverImpl
-    _$$RazorpayVirtualAccountReceiverImplFromJson(Map<String, dynamic> json) =>
-        _$RazorpayVirtualAccountReceiverImpl(
-          id: json['id'] as String,
-          entity: json['entity'] as String,
-          name: json['name'] as String,
-          ifsc: json['ifsc'] as String?,
-          bank_name: json['bank_name'] as String?,
-          account_number: json['account_number'] as String?,
-          username: json['username'] as String?,
-          handle: json['handle'] as String?,
-          address: json['address'] as String?,
-          short_url: json['short_url'] as String?,
-          reference: json['reference'] as String?,
-          status: json['status'] as String?,
-        );
+_RazorpayVirtualAccountReceiver _$RazorpayVirtualAccountReceiverFromJson(
+        Map<String, dynamic> json) =>
+    _RazorpayVirtualAccountReceiver(
+      id: json['id'] as String,
+      entity: json['entity'] as String,
+      name: json['name'] as String,
+      ifsc: json['ifsc'] as String?,
+      bank_name: json['bank_name'] as String?,
+      account_number: json['account_number'] as String?,
+      username: json['username'] as String?,
+      handle: json['handle'] as String?,
+      address: json['address'] as String?,
+      short_url: json['short_url'] as String?,
+      reference: json['reference'] as String?,
+      status: json['status'] as String?,
+    );
 
-Map<String, dynamic> _$$RazorpayVirtualAccountReceiverImplToJson(
-        _$RazorpayVirtualAccountReceiverImpl instance) =>
+Map<String, dynamic> _$RazorpayVirtualAccountReceiverToJson(
+        _RazorpayVirtualAccountReceiver instance) =>
     <String, dynamic>{
       'id': instance.id,
       'entity': instance.entity,
@@ -116,10 +115,10 @@ Map<String, dynamic> _$$RazorpayVirtualAccountReceiverImplToJson(
       if (instance.status case final value?) 'status': value,
     };
 
-_$RazorpayVirtualAccountBaseRequestBodyImpl
-    _$$RazorpayVirtualAccountBaseRequestBodyImplFromJson(
+_RazorpayVirtualAccountBaseRequestBody
+    _$RazorpayVirtualAccountBaseRequestBodyFromJson(
             Map<String, dynamic> json) =>
-        _$RazorpayVirtualAccountBaseRequestBodyImpl(
+        _RazorpayVirtualAccountBaseRequestBody(
           receivers: RazorpayVirtualAccountReceiverBaseRequestBody.fromJson(
               json['receivers'] as Map<String, dynamic>),
           name: json['name'] as String?,
@@ -131,8 +130,8 @@ _$RazorpayVirtualAccountBaseRequestBodyImpl
           notes: json['notes'] as Map<String, dynamic>?,
         );
 
-Map<String, dynamic> _$$RazorpayVirtualAccountBaseRequestBodyImplToJson(
-        _$RazorpayVirtualAccountBaseRequestBodyImpl instance) =>
+Map<String, dynamic> _$RazorpayVirtualAccountBaseRequestBodyToJson(
+        _RazorpayVirtualAccountBaseRequestBody instance) =>
     <String, dynamic>{
       'receivers': instance.receivers,
       if (instance.name case final value?) 'name': value,
@@ -144,10 +143,10 @@ Map<String, dynamic> _$$RazorpayVirtualAccountBaseRequestBodyImplToJson(
       if (instance.notes case final value?) 'notes': value,
     };
 
-_$RazorpayVirtualAccountCreateRequestBodyImpl
-    _$$RazorpayVirtualAccountCreateRequestBodyImplFromJson(
+_RazorpayVirtualAccountCreateRequestBody
+    _$RazorpayVirtualAccountCreateRequestBodyFromJson(
             Map<String, dynamic> json) =>
-        _$RazorpayVirtualAccountCreateRequestBodyImpl(
+        _RazorpayVirtualAccountCreateRequestBody(
           receivers: RazorpayVirtualAccountReceiverBaseRequestBody.fromJson(
               json['receivers'] as Map<String, dynamic>),
           name: json['name'] as String?,
@@ -158,8 +157,8 @@ _$RazorpayVirtualAccountCreateRequestBodyImpl
           notes: json['notes'] as Map<String, dynamic>?,
         );
 
-Map<String, dynamic> _$$RazorpayVirtualAccountCreateRequestBodyImplToJson(
-        _$RazorpayVirtualAccountCreateRequestBodyImpl instance) =>
+Map<String, dynamic> _$RazorpayVirtualAccountCreateRequestBodyToJson(
+        _RazorpayVirtualAccountCreateRequestBody instance) =>
     <String, dynamic>{
       'receivers': instance.receivers,
       if (instance.name case final value?) 'name': value,
@@ -170,10 +169,10 @@ Map<String, dynamic> _$$RazorpayVirtualAccountCreateRequestBodyImplToJson(
       if (instance.notes case final value?) 'notes': value,
     };
 
-_$RazorpayVirtualAccountTPVCreateRequestBodyImpl
-    _$$RazorpayVirtualAccountTPVCreateRequestBodyImplFromJson(
+_RazorpayVirtualAccountTPVCreateRequestBody
+    _$RazorpayVirtualAccountTPVCreateRequestBodyFromJson(
             Map<String, dynamic> json) =>
-        _$RazorpayVirtualAccountTPVCreateRequestBodyImpl(
+        _RazorpayVirtualAccountTPVCreateRequestBody(
           receivers: RazorpayVirtualAccountReceiverBaseRequestBody.fromJson(
               json['receivers'] as Map<String, dynamic>),
           allowed_payers: (json['allowed_payers'] as List<dynamic>)
@@ -188,8 +187,8 @@ _$RazorpayVirtualAccountTPVCreateRequestBodyImpl
           notes: json['notes'] as Map<String, dynamic>?,
         );
 
-Map<String, dynamic> _$$RazorpayVirtualAccountTPVCreateRequestBodyImplToJson(
-        _$RazorpayVirtualAccountTPVCreateRequestBodyImpl instance) =>
+Map<String, dynamic> _$RazorpayVirtualAccountTPVCreateRequestBodyToJson(
+        _RazorpayVirtualAccountTPVCreateRequestBody instance) =>
     <String, dynamic>{
       'receivers': instance.receivers,
       'allowed_payers': instance.allowed_payers,
@@ -201,9 +200,9 @@ Map<String, dynamic> _$$RazorpayVirtualAccountTPVCreateRequestBodyImplToJson(
       if (instance.notes case final value?) 'notes': value,
     };
 
-_$RazorpayVirtualAccountImpl _$$RazorpayVirtualAccountImplFromJson(
+_RazorpayVirtualAccount _$RazorpayVirtualAccountFromJson(
         Map<String, dynamic> json) =>
-    _$RazorpayVirtualAccountImpl(
+    _RazorpayVirtualAccount(
       id: json['id'] as String,
       entity: json['entity'] as String,
       amount_paid: json['amount_paid'],
@@ -223,8 +222,8 @@ _$RazorpayVirtualAccountImpl _$$RazorpayVirtualAccountImplFromJson(
       notes: json['notes'] as Map<String, dynamic>?,
     );
 
-Map<String, dynamic> _$$RazorpayVirtualAccountImplToJson(
-        _$RazorpayVirtualAccountImpl instance) =>
+Map<String, dynamic> _$RazorpayVirtualAccountToJson(
+        _RazorpayVirtualAccount instance) =>
     <String, dynamic>{
       'id': instance.id,
       'entity': instance.entity,
@@ -240,10 +239,10 @@ Map<String, dynamic> _$$RazorpayVirtualAccountImplToJson(
       if (instance.notes case final value?) 'notes': value,
     };
 
-_$RazorpayVirtualAccountPaymentsResponseImpl
-    _$$RazorpayVirtualAccountPaymentsResponseImplFromJson(
+_RazorpayVirtualAccountPaymentsResponse
+    _$RazorpayVirtualAccountPaymentsResponseFromJson(
             Map<String, dynamic> json) =>
-        _$RazorpayVirtualAccountPaymentsResponseImpl(
+        _RazorpayVirtualAccountPaymentsResponse(
           entity: json['entity'] as String,
           count: (json['count'] as num).toInt(),
           items: (json['items'] as List<dynamic>)
@@ -251,18 +250,18 @@ _$RazorpayVirtualAccountPaymentsResponseImpl
               .toList(),
         );
 
-Map<String, dynamic> _$$RazorpayVirtualAccountPaymentsResponseImplToJson(
-        _$RazorpayVirtualAccountPaymentsResponseImpl instance) =>
+Map<String, dynamic> _$RazorpayVirtualAccountPaymentsResponseToJson(
+        _RazorpayVirtualAccountPaymentsResponse instance) =>
     <String, dynamic>{
       'entity': instance.entity,
       'count': instance.count,
       'items': instance.items,
     };
 
-_$DeleteAllowedPayerResponseImpl _$$DeleteAllowedPayerResponseImplFromJson(
+_DeleteAllowedPayerResponse _$DeleteAllowedPayerResponseFromJson(
         Map<String, dynamic> json) =>
-    _$DeleteAllowedPayerResponseImpl();
+    _DeleteAllowedPayerResponse();
 
-Map<String, dynamic> _$$DeleteAllowedPayerResponseImplToJson(
-        _$DeleteAllowedPayerResponseImpl instance) =>
+Map<String, dynamic> _$DeleteAllowedPayerResponseToJson(
+        _DeleteAllowedPayerResponse instance) =>
     <String, dynamic>{};

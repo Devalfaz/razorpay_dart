@@ -6,37 +6,37 @@ part of 'cards_model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$RazorpayCardReferenceNumberBaseRequestImpl
-    _$$RazorpayCardReferenceNumberBaseRequestImplFromJson(
+_RazorpayCardReferenceNumberBaseRequest
+    _$RazorpayCardReferenceNumberBaseRequestFromJson(
             Map<String, dynamic> json) =>
-        _$RazorpayCardReferenceNumberBaseRequestImpl(
+        _RazorpayCardReferenceNumberBaseRequest(
           number: json['number'] as String,
           tokenised: json['tokenised'] as bool?,
         );
 
-Map<String, dynamic> _$$RazorpayCardReferenceNumberBaseRequestImplToJson(
-        _$RazorpayCardReferenceNumberBaseRequestImpl instance) =>
+Map<String, dynamic> _$RazorpayCardReferenceNumberBaseRequestToJson(
+        _RazorpayCardReferenceNumberBaseRequest instance) =>
     <String, dynamic>{
       'number': instance.number,
       if (instance.tokenised case final value?) 'tokenised': value,
     };
 
-_$RazorpayCardReferenceTokenBaseRequestImpl
-    _$$RazorpayCardReferenceTokenBaseRequestImplFromJson(
+_RazorpayCardReferenceTokenBaseRequest
+    _$RazorpayCardReferenceTokenBaseRequestFromJson(
             Map<String, dynamic> json) =>
-        _$RazorpayCardReferenceTokenBaseRequestImpl(
+        _RazorpayCardReferenceTokenBaseRequest(
           token: json['token'] as String,
         );
 
-Map<String, dynamic> _$$RazorpayCardReferenceTokenBaseRequestImplToJson(
-        _$RazorpayCardReferenceTokenBaseRequestImpl instance) =>
+Map<String, dynamic> _$RazorpayCardReferenceTokenBaseRequestToJson(
+        _RazorpayCardReferenceTokenBaseRequest instance) =>
     <String, dynamic>{
       'token': instance.token,
     };
 
-_$RazorpayCardReferenceImpl _$$RazorpayCardReferenceImplFromJson(
+_RazorpayCardReference _$RazorpayCardReferenceFromJson(
         Map<String, dynamic> json) =>
-    _$RazorpayCardReferenceImpl(
+    _RazorpayCardReference(
       provider: json['provider'] as String,
       network: json['network'] as String?,
       payment_account_reference: json['payment_account_reference'] as String?,
@@ -44,8 +44,8 @@ _$RazorpayCardReferenceImpl _$$RazorpayCardReferenceImplFromJson(
       card_reference_number: json['card_reference_number'] as String?,
     );
 
-Map<String, dynamic> _$$RazorpayCardReferenceImplToJson(
-        _$RazorpayCardReferenceImpl instance) =>
+Map<String, dynamic> _$RazorpayCardReferenceToJson(
+        _RazorpayCardReference instance) =>
     <String, dynamic>{
       'provider': instance.provider,
       if (instance.network case final value?) 'network': value,

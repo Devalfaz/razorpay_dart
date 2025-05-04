@@ -7,7 +7,7 @@ part 'documents_model.g.dart';
 // Note: FileCreateParams is handled in the resource method using MultipartFile
 
 @freezed
-class RazorpayDocument with _$RazorpayDocument {
+abstract class RazorpayDocument with _$RazorpayDocument {
   @JsonSerializable(includeIfNull: false)
   const factory RazorpayDocument({
     required String id,

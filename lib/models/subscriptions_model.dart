@@ -30,7 +30,8 @@ enum EmandateAuthType { netbanking, debitcard, aadhaar, physical }
 
 // --- Nested Types ---
 @freezed
-class RazorpaySubscriptionAddonsItem with _$RazorpaySubscriptionAddonsItem {
+abstract class RazorpaySubscriptionAddonsItem
+    with _$RazorpaySubscriptionAddonsItem {
   // Pick<RazorpaySubscriptionAddonsBaseRequestBody, 'item'>
   @JsonSerializable(includeIfNull: false)
   const factory RazorpaySubscriptionAddonsItem({
@@ -44,7 +45,7 @@ class RazorpaySubscriptionAddonsItem with _$RazorpaySubscriptionAddonsItem {
 }
 
 @freezed
-class RazorpaySubscriptionAddonsBaseRequestBody
+abstract class RazorpaySubscriptionAddonsBaseRequestBody
     with _$RazorpaySubscriptionAddonsBaseRequestBody {
   // Used for creating addons within subscription context
   @JsonSerializable(includeIfNull: false)
@@ -60,7 +61,8 @@ class RazorpaySubscriptionAddonsBaseRequestBody
 }
 
 @freezed
-class RazorpaySubscriptionNotifyInfo with _$RazorpaySubscriptionNotifyInfo {
+abstract class RazorpaySubscriptionNotifyInfo
+    with _$RazorpaySubscriptionNotifyInfo {
   @JsonSerializable(includeIfNull: false)
   const factory RazorpaySubscriptionNotifyInfo({
     dynamic notify_phone, // string | number
@@ -73,7 +75,7 @@ class RazorpaySubscriptionNotifyInfo with _$RazorpaySubscriptionNotifyInfo {
 
 // --- Base Request Body ---
 @freezed
-class RazorpaySubscriptionBaseRequestBody
+abstract class RazorpaySubscriptionBaseRequestBody
     with _$RazorpaySubscriptionBaseRequestBody {
   @JsonSerializable(includeIfNull: false)
   const factory RazorpaySubscriptionBaseRequestBody({
@@ -102,7 +104,7 @@ bool? _intToBool(dynamic i) => i == null ? null : (i == 1 || i == true);
 
 // --- Create Request Bodies ---
 @freezed
-class RazorpaySubscriptionCreateRequestBody
+abstract class RazorpaySubscriptionCreateRequestBody
     with _$RazorpaySubscriptionCreateRequestBody {
   // Inherits Base
   @JsonSerializable(includeIfNull: false)
@@ -128,7 +130,7 @@ class RazorpaySubscriptionCreateRequestBody
 
 // Request Body for creating a subscription link (auth link)
 @freezed
-class RazorpaySubscriptionLinkCreateRequestBody
+abstract class RazorpaySubscriptionLinkCreateRequestBody
     with _$RazorpaySubscriptionLinkCreateRequestBody {
   // Extends Base + notify_info
   @JsonSerializable(includeIfNull: false)
@@ -154,7 +156,7 @@ class RazorpaySubscriptionLinkCreateRequestBody
 
 // --- Update Request Body ---
 @freezed
-class RazorpaySubscriptionUpdateRequestBody
+abstract class RazorpaySubscriptionUpdateRequestBody
     with _$RazorpaySubscriptionUpdateRequestBody {
   // PartialOptional<Base, 'plan_id' | 'total_count'> + remaining_count
   @JsonSerializable(includeIfNull: false)
@@ -180,7 +182,7 @@ class RazorpaySubscriptionUpdateRequestBody
 
 // --- Response Body ---
 @freezed
-class RazorpaySubscription with _$RazorpaySubscription {
+abstract class RazorpaySubscription with _$RazorpaySubscription {
   // Extends Base + response fields
   @JsonSerializable(includeIfNull: false)
   const factory RazorpaySubscription({
@@ -218,7 +220,7 @@ class RazorpaySubscription with _$RazorpaySubscription {
 
 // --- Registration Link Related ---
 @freezed
-class RazorpaySubscriptionRegistrationBaseRequestBody
+abstract class RazorpaySubscriptionRegistrationBaseRequestBody
     with _$RazorpaySubscriptionRegistrationBaseRequestBody {
   @JsonSerializable(includeIfNull: false)
   const factory RazorpaySubscriptionRegistrationBaseRequestBody({
@@ -234,7 +236,7 @@ class RazorpaySubscriptionRegistrationBaseRequestBody
 }
 
 @freezed
-class RazorpaySubscriptionRegistrationUpi
+abstract class RazorpaySubscriptionRegistrationUpi
     with _$RazorpaySubscriptionRegistrationUpi {
   @JsonSerializable(includeIfNull: false)
   const factory RazorpaySubscriptionRegistrationUpi({
@@ -250,7 +252,7 @@ class RazorpaySubscriptionRegistrationUpi
 }
 
 @freezed
-class RazorpaySubscriptionRegistrationUpiTpv
+abstract class RazorpaySubscriptionRegistrationUpiTpv
     with _$RazorpaySubscriptionRegistrationUpiTpv {
   @JsonSerializable(includeIfNull: false)
   const factory RazorpaySubscriptionRegistrationUpiTpv({
@@ -269,7 +271,7 @@ class RazorpaySubscriptionRegistrationUpiTpv
 }
 
 @freezed
-class NachDetails with _$NachDetails {
+abstract class NachDetails with _$NachDetails {
   @JsonSerializable(includeIfNull: false)
   const factory NachDetails({
     String? form_reference1,
@@ -282,7 +284,7 @@ class NachDetails with _$NachDetails {
 }
 
 @freezed
-class RazorpaySubscriptionRegistrationNach
+abstract class RazorpaySubscriptionRegistrationNach
     with _$RazorpaySubscriptionRegistrationNach {
   @JsonSerializable(includeIfNull: false)
   const factory RazorpaySubscriptionRegistrationNach({
@@ -300,7 +302,7 @@ class RazorpaySubscriptionRegistrationNach
 }
 
 @freezed
-class RazorpaySubscriptionRegistrationEmandate
+abstract class RazorpaySubscriptionRegistrationEmandate
     with _$RazorpaySubscriptionRegistrationEmandate {
   @JsonSerializable(includeIfNull: false)
   const factory RazorpaySubscriptionRegistrationEmandate({
@@ -322,7 +324,7 @@ class RazorpaySubscriptionRegistrationEmandate
 // Use dynamic in the main request body or handle specific types
 
 @freezed
-class RazorpayRegistrationLinkBaseRequestBody
+abstract class RazorpayRegistrationLinkBaseRequestBody
     with _$RazorpayRegistrationLinkBaseRequestBody {
   // Omit<Invoices.RazorpayInvoiceBaseRequestBody, ...> + subscription_registration
   @JsonSerializable(includeIfNull: false)
@@ -356,7 +358,7 @@ class RazorpayRegistrationLinkBaseRequestBody
 
 // --- Registration Link Response ---
 @freezed
-class RazorpayRegistrationLink with _$RazorpayRegistrationLink {
+abstract class RazorpayRegistrationLink with _$RazorpayRegistrationLink {
   // Extends Invoices.RazorpayInvoice + specific fields
   @JsonSerializable(includeIfNull: false)
   const factory RazorpayRegistrationLink({
@@ -415,7 +417,7 @@ class RazorpayRegistrationLink with _$RazorpayRegistrationLink {
 
 // --- Query Parameters ---
 @freezed
-class RazorpaySubscriptionQuery with _$RazorpaySubscriptionQuery {
+abstract class RazorpaySubscriptionQuery with _$RazorpaySubscriptionQuery {
   // Extends RazorpayPaginationOptions + plan_id
   @JsonSerializable(includeIfNull: false)
   const factory RazorpaySubscriptionQuery({

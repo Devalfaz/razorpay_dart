@@ -19,7 +19,7 @@ enum SupplyType { interstate, intrastate }
 
 // --- Nested Tax Invoice ---
 @freezed
-class RazorpayTaxInvoice with _$RazorpayTaxInvoice {
+abstract class RazorpayTaxInvoice with _$RazorpayTaxInvoice {
   @JsonSerializable(includeIfNull: false)
   const factory RazorpayTaxInvoice({
     String? number,
@@ -37,7 +37,8 @@ class RazorpayTaxInvoice with _$RazorpayTaxInvoice {
 
 // --- Base Request Body ---
 @freezed
-class RazorpayQrCodeBaseRequestBody with _$RazorpayQrCodeBaseRequestBody {
+abstract class RazorpayQrCodeBaseRequestBody
+    with _$RazorpayQrCodeBaseRequestBody {
   @JsonSerializable(includeIfNull: false)
   const factory RazorpayQrCodeBaseRequestBody({
     required QrCodeType type,
@@ -57,7 +58,8 @@ class RazorpayQrCodeBaseRequestBody with _$RazorpayQrCodeBaseRequestBody {
 
 // --- Create Request Bodies ---
 @freezed
-class RazorpayQrCodeCreateRequestBody with _$RazorpayQrCodeCreateRequestBody {
+abstract class RazorpayQrCodeCreateRequestBody
+    with _$RazorpayQrCodeCreateRequestBody {
   // Inherits Base
   @JsonSerializable(includeIfNull: false)
   const factory RazorpayQrCodeCreateRequestBody({
@@ -77,7 +79,7 @@ class RazorpayQrCodeCreateRequestBody with _$RazorpayQrCodeCreateRequestBody {
 }
 
 @freezed
-class RazorpayQrCodeGstCreateRequestBody
+abstract class RazorpayQrCodeGstCreateRequestBody
     with _$RazorpayQrCodeGstCreateRequestBody {
   // Extends Base + tax_invoice
   @JsonSerializable(includeIfNull: false)
@@ -102,7 +104,7 @@ class RazorpayQrCodeGstCreateRequestBody
 
 // --- Response Body ---
 @freezed
-class RazorpayQrCode with _$RazorpayQrCode {
+abstract class RazorpayQrCode with _$RazorpayQrCode {
   // Extends Base/GST Request + response fields
   @JsonSerializable(includeIfNull: false)
   const factory RazorpayQrCode({
@@ -133,7 +135,7 @@ class RazorpayQrCode with _$RazorpayQrCode {
 
 // --- Query Parameters ---
 @freezed
-class RazorpayQrCodeQuery with _$RazorpayQrCodeQuery {
+abstract class RazorpayQrCodeQuery with _$RazorpayQrCodeQuery {
   // Extends RazorpayPaginationOptions + specific fields
   @JsonSerializable(includeIfNull: false)
   const factory RazorpayQrCodeQuery({
@@ -151,7 +153,8 @@ class RazorpayQrCodeQuery with _$RazorpayQrCodeQuery {
 
 // Specific response for Fetch All Payments for QR Code
 @freezed
-class RazorpayQrCodePaymentsResponse with _$RazorpayQrCodePaymentsResponse {
+abstract class RazorpayQrCodePaymentsResponse
+    with _$RazorpayQrCodePaymentsResponse {
   @JsonSerializable(includeIfNull: false)
   const factory RazorpayQrCodePaymentsResponse({
     required String entity,

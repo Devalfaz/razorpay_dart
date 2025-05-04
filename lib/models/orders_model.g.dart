@@ -6,49 +6,49 @@ part of 'orders_model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$RazorpayOrderBankDetailsBaseRequestBodyImpl
-    _$$RazorpayOrderBankDetailsBaseRequestBodyImplFromJson(
+_RazorpayOrderBankDetailsBaseRequestBody
+    _$RazorpayOrderBankDetailsBaseRequestBodyFromJson(
             Map<String, dynamic> json) =>
-        _$RazorpayOrderBankDetailsBaseRequestBodyImpl(
+        _RazorpayOrderBankDetailsBaseRequestBody(
           account_number: json['account_number'],
           ifsc: json['ifsc'] as String,
         );
 
-Map<String, dynamic> _$$RazorpayOrderBankDetailsBaseRequestBodyImplToJson(
-        _$RazorpayOrderBankDetailsBaseRequestBodyImpl instance) =>
+Map<String, dynamic> _$RazorpayOrderBankDetailsBaseRequestBodyToJson(
+        _RazorpayOrderBankDetailsBaseRequestBody instance) =>
     <String, dynamic>{
       if (instance.account_number case final value?) 'account_number': value,
       'ifsc': instance.ifsc,
     };
 
-_$RazorpayOrderBankDetailsCreateRequestBodyImpl
-    _$$RazorpayOrderBankDetailsCreateRequestBodyImplFromJson(
+_RazorpayOrderBankDetailsCreateRequestBody
+    _$RazorpayOrderBankDetailsCreateRequestBodyFromJson(
             Map<String, dynamic> json) =>
-        _$RazorpayOrderBankDetailsCreateRequestBodyImpl(
+        _RazorpayOrderBankDetailsCreateRequestBody(
           account_number: json['account_number'],
           ifsc: json['ifsc'] as String,
           name: json['name'] as String,
         );
 
-Map<String, dynamic> _$$RazorpayOrderBankDetailsCreateRequestBodyImplToJson(
-        _$RazorpayOrderBankDetailsCreateRequestBodyImpl instance) =>
+Map<String, dynamic> _$RazorpayOrderBankDetailsCreateRequestBodyToJson(
+        _RazorpayOrderBankDetailsCreateRequestBody instance) =>
     <String, dynamic>{
       if (instance.account_number case final value?) 'account_number': value,
       'ifsc': instance.ifsc,
       'name': instance.name,
     };
 
-_$RazorpayCaptureOptionsImpl _$$RazorpayCaptureOptionsImplFromJson(
+_RazorpayCaptureOptions _$RazorpayCaptureOptionsFromJson(
         Map<String, dynamic> json) =>
-    _$RazorpayCaptureOptionsImpl(
+    _RazorpayCaptureOptions(
       automatic_expiry_period:
           (json['automatic_expiry_period'] as num?)?.toInt(),
       manual_expiry_period: (json['manual_expiry_period'] as num?)?.toInt(),
       refund_speed: json['refund_speed'] as String?,
     );
 
-Map<String, dynamic> _$$RazorpayCaptureOptionsImplToJson(
-        _$RazorpayCaptureOptionsImpl instance) =>
+Map<String, dynamic> _$RazorpayCaptureOptionsToJson(
+        _RazorpayCaptureOptions instance) =>
     <String, dynamic>{
       if (instance.automatic_expiry_period case final value?)
         'automatic_expiry_period': value,
@@ -57,9 +57,9 @@ Map<String, dynamic> _$$RazorpayCaptureOptionsImplToJson(
       if (instance.refund_speed case final value?) 'refund_speed': value,
     };
 
-_$RazorpayCapturePaymentImpl _$$RazorpayCapturePaymentImplFromJson(
+_RazorpayCapturePayment _$RazorpayCapturePaymentFromJson(
         Map<String, dynamic> json) =>
-    _$RazorpayCapturePaymentImpl(
+    _RazorpayCapturePayment(
       capture: json['capture'] as String,
       capture_options: json['capture_options'] == null
           ? null
@@ -67,29 +67,27 @@ _$RazorpayCapturePaymentImpl _$$RazorpayCapturePaymentImplFromJson(
               json['capture_options'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$$RazorpayCapturePaymentImplToJson(
-        _$RazorpayCapturePaymentImpl instance) =>
+Map<String, dynamic> _$RazorpayCapturePaymentToJson(
+        _RazorpayCapturePayment instance) =>
     <String, dynamic>{
       'capture': instance.capture,
       if (instance.capture_options case final value?) 'capture_options': value,
     };
 
-_$DimensionsImpl _$$DimensionsImplFromJson(Map<String, dynamic> json) =>
-    _$DimensionsImpl(
+_Dimensions _$DimensionsFromJson(Map<String, dynamic> json) => _Dimensions(
       length: json['length'] as String,
       width: json['width'] as String,
       height: json['height'] as String,
     );
 
-Map<String, dynamic> _$$DimensionsImplToJson(_$DimensionsImpl instance) =>
+Map<String, dynamic> _$DimensionsToJson(_Dimensions instance) =>
     <String, dynamic>{
       'length': instance.length,
       'width': instance.width,
       'height': instance.height,
     };
 
-_$LineItemsImpl _$$LineItemsImplFromJson(Map<String, dynamic> json) =>
-    _$LineItemsImpl(
+_LineItems _$LineItemsFromJson(Map<String, dynamic> json) => _LineItems(
       type: json['type'] as String,
       sku: json['sku'] as String,
       variant_id: json['variant_id'] as String,
@@ -107,7 +105,7 @@ _$LineItemsImpl _$$LineItemsImplFromJson(Map<String, dynamic> json) =>
       notes: json['notes'] as Map<String, dynamic>?,
     );
 
-Map<String, dynamic> _$$LineItemsImplToJson(_$LineItemsImpl instance) =>
+Map<String, dynamic> _$LineItemsToJson(_LineItems instance) =>
     <String, dynamic>{
       'type': instance.type,
       'sku': instance.sku,
@@ -125,9 +123,8 @@ Map<String, dynamic> _$$LineItemsImplToJson(_$LineItemsImpl instance) =>
       if (instance.notes case final value?) 'notes': value,
     };
 
-_$CustomerDetailsImpl _$$CustomerDetailsImplFromJson(
-        Map<String, dynamic> json) =>
-    _$CustomerDetailsImpl(
+_CustomerDetails _$CustomerDetailsFromJson(Map<String, dynamic> json) =>
+    _CustomerDetails(
       name: json['name'] as String,
       contact: json['contact'] as String,
       email: json['email'] as String,
@@ -141,8 +138,7 @@ _$CustomerDetailsImpl _$$CustomerDetailsImplFromJson(
               json['billing_address'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$$CustomerDetailsImplToJson(
-        _$CustomerDetailsImpl instance) =>
+Map<String, dynamic> _$CustomerDetailsToJson(_CustomerDetails instance) =>
     <String, dynamic>{
       'name': instance.name,
       'contact': instance.contact,
@@ -152,9 +148,9 @@ Map<String, dynamic> _$$CustomerDetailsImplToJson(
       if (instance.billing_address case final value?) 'billing_address': value,
     };
 
-_$RazorpayInvoiceAddressInputImpl _$$RazorpayInvoiceAddressInputImplFromJson(
+_RazorpayInvoiceAddressInput _$RazorpayInvoiceAddressInputFromJson(
         Map<String, dynamic> json) =>
-    _$RazorpayInvoiceAddressInputImpl(
+    _RazorpayInvoiceAddressInput(
       line1: json['line1'] as String?,
       line2: json['line2'] as String?,
       zipcode: json['zipcode'],
@@ -163,8 +159,8 @@ _$RazorpayInvoiceAddressInputImpl _$$RazorpayInvoiceAddressInputImplFromJson(
       country: json['country'] as String?,
     );
 
-Map<String, dynamic> _$$RazorpayInvoiceAddressInputImplToJson(
-        _$RazorpayInvoiceAddressInputImpl instance) =>
+Map<String, dynamic> _$RazorpayInvoiceAddressInputToJson(
+        _RazorpayInvoiceAddressInput instance) =>
     <String, dynamic>{
       if (instance.line1 case final value?) 'line1': value,
       if (instance.line2 case final value?) 'line2': value,
@@ -174,8 +170,7 @@ Map<String, dynamic> _$$RazorpayInvoiceAddressInputImplToJson(
       if (instance.country case final value?) 'country': value,
     };
 
-_$PromotionImpl _$$PromotionImplFromJson(Map<String, dynamic> json) =>
-    _$PromotionImpl(
+_Promotion _$PromotionFromJson(Map<String, dynamic> json) => _Promotion(
       reference_id: json['reference_id'] as String,
       code: json['code'] as String,
       type: json['type'] as String,
@@ -184,7 +179,7 @@ _$PromotionImpl _$$PromotionImplFromJson(Map<String, dynamic> json) =>
       description: json['description'] as String?,
     );
 
-Map<String, dynamic> _$$PromotionImplToJson(_$PromotionImpl instance) =>
+Map<String, dynamic> _$PromotionToJson(_Promotion instance) =>
     <String, dynamic>{
       'reference_id': instance.reference_id,
       'code': instance.code,
@@ -194,21 +189,21 @@ Map<String, dynamic> _$$PromotionImplToJson(_$PromotionImpl instance) =>
       if (instance.description case final value?) 'description': value,
     };
 
-_$DeviceDetailsImpl _$$DeviceDetailsImplFromJson(Map<String, dynamic> json) =>
-    _$DeviceDetailsImpl(
+_DeviceDetails _$DeviceDetailsFromJson(Map<String, dynamic> json) =>
+    _DeviceDetails(
       ip: json['ip'] as String,
       user_agent: json['user_agent'] as String,
     );
 
-Map<String, dynamic> _$$DeviceDetailsImplToJson(_$DeviceDetailsImpl instance) =>
+Map<String, dynamic> _$DeviceDetailsToJson(_DeviceDetails instance) =>
     <String, dynamic>{
       'ip': instance.ip,
       'user_agent': instance.user_agent,
     };
 
-_$RazorpayOrderBaseRequestBodyImpl _$$RazorpayOrderBaseRequestBodyImplFromJson(
+_RazorpayOrderBaseRequestBody _$RazorpayOrderBaseRequestBodyFromJson(
         Map<String, dynamic> json) =>
-    _$RazorpayOrderBaseRequestBodyImpl(
+    _RazorpayOrderBaseRequestBody(
       amount: json['amount'],
       currency: json['currency'] as String,
       receipt: json['receipt'] as String?,
@@ -247,8 +242,8 @@ _$RazorpayOrderBaseRequestBodyImpl _$$RazorpayOrderBaseRequestBodyImplFromJson(
       phonepe_switch_context: json['phonepe_switch_context'] as String?,
     );
 
-Map<String, dynamic> _$$RazorpayOrderBaseRequestBodyImplToJson(
-        _$RazorpayOrderBaseRequestBodyImpl instance) =>
+Map<String, dynamic> _$RazorpayOrderBaseRequestBodyToJson(
+        _RazorpayOrderBaseRequestBody instance) =>
     <String, dynamic>{
       if (instance.amount case final value?) 'amount': value,
       'currency': instance.currency,
@@ -275,49 +270,49 @@ Map<String, dynamic> _$$RazorpayOrderBaseRequestBodyImplToJson(
         'phonepe_switch_context': value,
     };
 
-_$RazorpayOrderCreateRequestBodyImpl
-    _$$RazorpayOrderCreateRequestBodyImplFromJson(Map<String, dynamic> json) =>
-        _$RazorpayOrderCreateRequestBodyImpl(
-          amount: json['amount'],
-          currency: json['currency'] as String,
-          receipt: json['receipt'] as String?,
-          offer_id: json['offer_id'] as String?,
-          method: json['method'] as String?,
-          bank_account: json['bank_account'] == null
-              ? null
-              : RazorpayOrderBankDetailsCreateRequestBody.fromJson(
-                  json['bank_account'] as Map<String, dynamic>),
-          notes: json['notes'] as Map<String, dynamic>?,
-          partial_payment: json['partial_payment'] as bool?,
-          first_payment_min_amount:
-              (json['first_payment_min_amount'] as num?)?.toInt(),
-          payment: json['payment'] == null
-              ? null
-              : RazorpayCapturePayment.fromJson(
-                  json['payment'] as Map<String, dynamic>),
-          rto_review: json['rto_review'] as bool?,
-          line_items: (json['line_items'] as List<dynamic>?)
-              ?.map((e) => LineItems.fromJson(e as Map<String, dynamic>))
-              .toList(),
-          line_items_total: json['line_items_total'],
-          shipping_fee: (json['shipping_fee'] as num?)?.toInt(),
-          cod_fee: (json['cod_fee'] as num?)?.toInt(),
-          customer_details: json['customer_details'] == null
-              ? null
-              : CustomerDetails.fromJson(
-                  json['customer_details'] as Map<String, dynamic>),
-          promotions: (json['promotions'] as List<dynamic>?)
-              ?.map((e) => Promotion.fromJson(e as Map<String, dynamic>))
-              .toList(),
-          device_details: json['device_details'] == null
-              ? null
-              : DeviceDetails.fromJson(
-                  json['device_details'] as Map<String, dynamic>),
-          phonepe_switch_context: json['phonepe_switch_context'] as String?,
-        );
+_RazorpayOrderCreateRequestBody _$RazorpayOrderCreateRequestBodyFromJson(
+        Map<String, dynamic> json) =>
+    _RazorpayOrderCreateRequestBody(
+      amount: json['amount'],
+      currency: json['currency'] as String,
+      receipt: json['receipt'] as String?,
+      offer_id: json['offer_id'] as String?,
+      method: json['method'] as String?,
+      bank_account: json['bank_account'] == null
+          ? null
+          : RazorpayOrderBankDetailsCreateRequestBody.fromJson(
+              json['bank_account'] as Map<String, dynamic>),
+      notes: json['notes'] as Map<String, dynamic>?,
+      partial_payment: json['partial_payment'] as bool?,
+      first_payment_min_amount:
+          (json['first_payment_min_amount'] as num?)?.toInt(),
+      payment: json['payment'] == null
+          ? null
+          : RazorpayCapturePayment.fromJson(
+              json['payment'] as Map<String, dynamic>),
+      rto_review: json['rto_review'] as bool?,
+      line_items: (json['line_items'] as List<dynamic>?)
+          ?.map((e) => LineItems.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      line_items_total: json['line_items_total'],
+      shipping_fee: (json['shipping_fee'] as num?)?.toInt(),
+      cod_fee: (json['cod_fee'] as num?)?.toInt(),
+      customer_details: json['customer_details'] == null
+          ? null
+          : CustomerDetails.fromJson(
+              json['customer_details'] as Map<String, dynamic>),
+      promotions: (json['promotions'] as List<dynamic>?)
+          ?.map((e) => Promotion.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      device_details: json['device_details'] == null
+          ? null
+          : DeviceDetails.fromJson(
+              json['device_details'] as Map<String, dynamic>),
+      phonepe_switch_context: json['phonepe_switch_context'] as String?,
+    );
 
-Map<String, dynamic> _$$RazorpayOrderCreateRequestBodyImplToJson(
-        _$RazorpayOrderCreateRequestBodyImpl instance) =>
+Map<String, dynamic> _$RazorpayOrderCreateRequestBodyToJson(
+        _RazorpayOrderCreateRequestBody instance) =>
     <String, dynamic>{
       if (instance.amount case final value?) 'amount': value,
       'currency': instance.currency,
@@ -344,10 +339,10 @@ Map<String, dynamic> _$$RazorpayOrderCreateRequestBodyImplToJson(
         'phonepe_switch_context': value,
     };
 
-_$RazorpayTransferOrderCreateRequestBodyImpl
-    _$$RazorpayTransferOrderCreateRequestBodyImplFromJson(
+_RazorpayTransferOrderCreateRequestBody
+    _$RazorpayTransferOrderCreateRequestBodyFromJson(
             Map<String, dynamic> json) =>
-        _$RazorpayTransferOrderCreateRequestBodyImpl(
+        _RazorpayTransferOrderCreateRequestBody(
           amount: json['amount'],
           currency: json['currency'] as String,
           transfers: (json['transfers'] as List<dynamic>)
@@ -358,8 +353,8 @@ _$RazorpayTransferOrderCreateRequestBodyImpl
           notes: json['notes'] as Map<String, dynamic>?,
         );
 
-Map<String, dynamic> _$$RazorpayTransferOrderCreateRequestBodyImplToJson(
-        _$RazorpayTransferOrderCreateRequestBodyImpl instance) =>
+Map<String, dynamic> _$RazorpayTransferOrderCreateRequestBodyToJson(
+        _RazorpayTransferOrderCreateRequestBody instance) =>
     <String, dynamic>{
       if (instance.amount case final value?) 'amount': value,
       'currency': instance.currency,
@@ -368,10 +363,10 @@ Map<String, dynamic> _$$RazorpayTransferOrderCreateRequestBodyImplToJson(
       if (instance.notes case final value?) 'notes': value,
     };
 
-_$RazorpayAuthorizationOrderCreateRequestBodyImpl
-    _$$RazorpayAuthorizationOrderCreateRequestBodyImplFromJson(
+_RazorpayAuthorizationOrderCreateRequestBody
+    _$RazorpayAuthorizationOrderCreateRequestBodyFromJson(
             Map<String, dynamic> json) =>
-        _$RazorpayAuthorizationOrderCreateRequestBodyImpl(
+        _RazorpayAuthorizationOrderCreateRequestBody(
           amount: json['amount'],
           currency: json['currency'] as String,
           customer_id: json['customer_id'] as String,
@@ -404,8 +399,8 @@ _$RazorpayAuthorizationOrderCreateRequestBodyImpl
           payment_capture: json['payment_capture'] as bool?,
         );
 
-Map<String, dynamic> _$$RazorpayAuthorizationOrderCreateRequestBodyImplToJson(
-        _$RazorpayAuthorizationOrderCreateRequestBodyImpl instance) =>
+Map<String, dynamic> _$RazorpayAuthorizationOrderCreateRequestBodyToJson(
+        _RazorpayAuthorizationOrderCreateRequestBody instance) =>
     <String, dynamic>{
       if (instance.amount case final value?) 'amount': value,
       'currency': instance.currency,
@@ -429,20 +424,20 @@ Map<String, dynamic> _$$RazorpayAuthorizationOrderCreateRequestBodyImplToJson(
       if (instance.payment_capture case final value?) 'payment_capture': value,
     };
 
-_$RazorpayOrderUpdateRequestBodyImpl
-    _$$RazorpayOrderUpdateRequestBodyImplFromJson(Map<String, dynamic> json) =>
-        _$RazorpayOrderUpdateRequestBodyImpl(
-          notes: json['notes'] as Map<String, dynamic>?,
-        );
+_RazorpayOrderUpdateRequestBody _$RazorpayOrderUpdateRequestBodyFromJson(
+        Map<String, dynamic> json) =>
+    _RazorpayOrderUpdateRequestBody(
+      notes: json['notes'] as Map<String, dynamic>?,
+    );
 
-Map<String, dynamic> _$$RazorpayOrderUpdateRequestBodyImplToJson(
-        _$RazorpayOrderUpdateRequestBodyImpl instance) =>
+Map<String, dynamic> _$RazorpayOrderUpdateRequestBodyToJson(
+        _RazorpayOrderUpdateRequestBody instance) =>
     <String, dynamic>{
       if (instance.notes case final value?) 'notes': value,
     };
 
-_$RazorpayOrderImpl _$$RazorpayOrderImplFromJson(Map<String, dynamic> json) =>
-    _$RazorpayOrderImpl(
+_RazorpayOrder _$RazorpayOrderFromJson(Map<String, dynamic> json) =>
+    _RazorpayOrder(
       id: json['id'] as String,
       entity: json['entity'] as String,
       amount: json['amount'],
@@ -496,7 +491,7 @@ _$RazorpayOrderImpl _$$RazorpayOrderImplFromJson(Map<String, dynamic> json) =>
       phonepe_switch_context: json['phonepe_switch_context'] as String?,
     );
 
-Map<String, dynamic> _$$RazorpayOrderImplToJson(_$RazorpayOrderImpl instance) =>
+Map<String, dynamic> _$RazorpayOrderToJson(_RazorpayOrder instance) =>
     <String, dynamic>{
       'id': instance.id,
       'entity': instance.entity,
@@ -532,9 +527,8 @@ Map<String, dynamic> _$$RazorpayOrderImplToJson(_$RazorpayOrderImpl instance) =>
         'phonepe_switch_context': value,
     };
 
-_$RazorpayOrderQueryImpl _$$RazorpayOrderQueryImplFromJson(
-        Map<String, dynamic> json) =>
-    _$RazorpayOrderQueryImpl(
+_RazorpayOrderQuery _$RazorpayOrderQueryFromJson(Map<String, dynamic> json) =>
+    _RazorpayOrderQuery(
       from: (json['from'] as num?)?.toInt(),
       to: (json['to'] as num?)?.toInt(),
       count: (json['count'] as num?)?.toInt(),
@@ -546,8 +540,7 @@ _$RazorpayOrderQueryImpl _$$RazorpayOrderQueryImplFromJson(
           .toList(),
     );
 
-Map<String, dynamic> _$$RazorpayOrderQueryImplToJson(
-        _$RazorpayOrderQueryImpl instance) =>
+Map<String, dynamic> _$RazorpayOrderQueryToJson(_RazorpayOrderQuery instance) =>
     <String, dynamic>{
       if (instance.from case final value?) 'from': value,
       if (instance.to case final value?) 'to': value,
@@ -559,55 +552,49 @@ Map<String, dynamic> _$$RazorpayOrderQueryImplToJson(
       if (instance.expand case final value?) 'expand[]': value,
     };
 
-_$ReasonImpl _$$ReasonImplFromJson(Map<String, dynamic> json) => _$ReasonImpl(
+_Reason _$ReasonFromJson(Map<String, dynamic> json) => _Reason(
       reason: json['reason'] as String,
       description: json['description'] as String,
       bucket: json['bucket'] as String,
     );
 
-Map<String, dynamic> _$$ReasonImplToJson(_$ReasonImpl instance) =>
-    <String, dynamic>{
+Map<String, dynamic> _$ReasonToJson(_Reason instance) => <String, dynamic>{
       'reason': instance.reason,
       'description': instance.description,
       'bucket': instance.bucket,
     };
 
-_$RazorpayRtoReviewImpl _$$RazorpayRtoReviewImplFromJson(
-        Map<String, dynamic> json) =>
-    _$RazorpayRtoReviewImpl(
+_RazorpayRtoReview _$RazorpayRtoReviewFromJson(Map<String, dynamic> json) =>
+    _RazorpayRtoReview(
       risk_tier: json['risk_tier'] as String,
       rto_reasons: (json['rto_reasons'] as List<dynamic>)
           .map((e) => Reason.fromJson(e as Map<String, dynamic>))
           .toList(),
     );
 
-Map<String, dynamic> _$$RazorpayRtoReviewImplToJson(
-        _$RazorpayRtoReviewImpl instance) =>
+Map<String, dynamic> _$RazorpayRtoReviewToJson(_RazorpayRtoReview instance) =>
     <String, dynamic>{
       'risk_tier': instance.risk_tier,
       'rto_reasons': instance.rto_reasons,
     };
 
-_$RazorpayShippingImpl _$$RazorpayShippingImplFromJson(
-        Map<String, dynamic> json) =>
-    _$RazorpayShippingImpl(
+_RazorpayShipping _$RazorpayShippingFromJson(Map<String, dynamic> json) =>
+    _RazorpayShipping(
       waybill: json['waybill'] as String,
       status: json['status'] as String?,
       provider: json['provider'] as String?,
     );
 
-Map<String, dynamic> _$$RazorpayShippingImplToJson(
-        _$RazorpayShippingImpl instance) =>
+Map<String, dynamic> _$RazorpayShippingToJson(_RazorpayShipping instance) =>
     <String, dynamic>{
       'waybill': instance.waybill,
       if (instance.status case final value?) 'status': value,
       if (instance.provider case final value?) 'provider': value,
     };
 
-_$RazorpayFulFillmentBaseRequestBodyImpl
-    _$$RazorpayFulFillmentBaseRequestBodyImplFromJson(
-            Map<String, dynamic> json) =>
-        _$RazorpayFulFillmentBaseRequestBodyImpl(
+_RazorpayFulFillmentBaseRequestBody
+    _$RazorpayFulFillmentBaseRequestBodyFromJson(Map<String, dynamic> json) =>
+        _RazorpayFulFillmentBaseRequestBody(
           payment_method: json['payment_method'] as String?,
           shipping: json['shipping'] == null
               ? null
@@ -615,16 +602,15 @@ _$RazorpayFulFillmentBaseRequestBodyImpl
                   json['shipping'] as Map<String, dynamic>),
         );
 
-Map<String, dynamic> _$$RazorpayFulFillmentBaseRequestBodyImplToJson(
-        _$RazorpayFulFillmentBaseRequestBodyImpl instance) =>
+Map<String, dynamic> _$RazorpayFulFillmentBaseRequestBodyToJson(
+        _RazorpayFulFillmentBaseRequestBody instance) =>
     <String, dynamic>{
       if (instance.payment_method case final value?) 'payment_method': value,
       if (instance.shipping case final value?) 'shipping': value,
     };
 
-_$RazorpayFulFillmentImpl _$$RazorpayFulFillmentImplFromJson(
-        Map<String, dynamic> json) =>
-    _$RazorpayFulFillmentImpl(
+_RazorpayFulFillment _$RazorpayFulFillmentFromJson(Map<String, dynamic> json) =>
+    _RazorpayFulFillment(
       entity: json['entity'] as String,
       order_id: json['order_id'] as String,
       payment_method: json['payment_method'] as String?,
@@ -633,8 +619,8 @@ _$RazorpayFulFillmentImpl _$$RazorpayFulFillmentImplFromJson(
           : RazorpayShipping.fromJson(json['shipping'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$$RazorpayFulFillmentImplToJson(
-        _$RazorpayFulFillmentImpl instance) =>
+Map<String, dynamic> _$RazorpayFulFillmentToJson(
+        _RazorpayFulFillment instance) =>
     <String, dynamic>{
       'entity': instance.entity,
       'order_id': instance.order_id,
@@ -642,18 +628,18 @@ Map<String, dynamic> _$$RazorpayFulFillmentImplToJson(
       if (instance.shipping case final value?) 'shipping': value,
     };
 
-_$RazorpayOrderPaymentsResponseImpl
-    _$$RazorpayOrderPaymentsResponseImplFromJson(Map<String, dynamic> json) =>
-        _$RazorpayOrderPaymentsResponseImpl(
-          entity: json['entity'] as String,
-          count: (json['count'] as num).toInt(),
-          items: (json['items'] as List<dynamic>)
-              .map((e) => RazorpayPayment.fromJson(e as Map<String, dynamic>))
-              .toList(),
-        );
+_RazorpayOrderPaymentsResponse _$RazorpayOrderPaymentsResponseFromJson(
+        Map<String, dynamic> json) =>
+    _RazorpayOrderPaymentsResponse(
+      entity: json['entity'] as String,
+      count: (json['count'] as num).toInt(),
+      items: (json['items'] as List<dynamic>)
+          .map((e) => RazorpayPayment.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
 
-Map<String, dynamic> _$$RazorpayOrderPaymentsResponseImplToJson(
-        _$RazorpayOrderPaymentsResponseImpl instance) =>
+Map<String, dynamic> _$RazorpayOrderPaymentsResponseToJson(
+        _RazorpayOrderPaymentsResponse instance) =>
     <String, dynamic>{
       'entity': instance.entity,
       'count': instance.count,

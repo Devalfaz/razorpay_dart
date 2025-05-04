@@ -9,7 +9,8 @@ part 'customers_model.g.dart';
 
 // --- Base Request Body ---
 @freezed
-class RazorpayCustomerBaseRequestBody with _$RazorpayCustomerBaseRequestBody {
+abstract class RazorpayCustomerBaseRequestBody
+    with _$RazorpayCustomerBaseRequestBody {
   @JsonSerializable(includeIfNull: false)
   const factory RazorpayCustomerBaseRequestBody({
     String? name,
@@ -31,7 +32,7 @@ bool? _intToBool(dynamic i) => i == null ? null : (i == 1 || i == true);
 
 // --- Create/Update Request Bodies ---
 @freezed
-class RazorpayCustomerCreateRequestBody
+abstract class RazorpayCustomerCreateRequestBody
     with _$RazorpayCustomerCreateRequestBody {
   // Inherits structure from Base
   @JsonSerializable(includeIfNull: false)
@@ -52,7 +53,7 @@ class RazorpayCustomerCreateRequestBody
 }
 
 @freezed
-class RazorpayCustomerUpdateRequestBody
+abstract class RazorpayCustomerUpdateRequestBody
     with _$RazorpayCustomerUpdateRequestBody {
   // Partial<Omit<RazorpayCustomerBaseRequestBody, 'notes' | 'gstin' | 'fail_existing'>>
   @JsonSerializable(includeIfNull: false)
@@ -70,7 +71,7 @@ class RazorpayCustomerUpdateRequestBody
 
 // --- Response Body ---
 @freezed
-class RazorpayCustomer with _$RazorpayCustomer {
+abstract class RazorpayCustomer with _$RazorpayCustomer {
   @JsonSerializable(includeIfNull: false)
   const factory RazorpayCustomer({
     required String id,
@@ -94,7 +95,7 @@ class RazorpayCustomer with _$RazorpayCustomer {
 
 // --- Bank Account Related ---
 @freezed
-class RazorpayCustomerBankAccountRequestBody
+abstract class RazorpayCustomerBankAccountRequestBody
     with _$RazorpayCustomerBankAccountRequestBody {
   @JsonSerializable(includeIfNull: false)
   const factory RazorpayCustomerBankAccountRequestBody({
@@ -121,7 +122,7 @@ class RazorpayCustomerBankAccountRequestBody
 
 // Response for Add/Delete Bank Account
 @freezed
-class RazorpayCustomerBankAccount with _$RazorpayCustomerBankAccount {
+abstract class RazorpayCustomerBankAccount with _$RazorpayCustomerBankAccount {
   // Includes fields from RazorpayVirtualAccountReceiver plus 'success'
   @JsonSerializable(includeIfNull: false)
   const factory RazorpayCustomerBankAccount({
@@ -153,7 +154,7 @@ class RazorpayCustomerBankAccount with _$RazorpayCustomerBankAccount {
 
 // --- Eligibility Check Related ---
 @freezed
-class CustomersEligibility with _$CustomersEligibility {
+abstract class CustomersEligibility with _$CustomersEligibility {
   @JsonSerializable(includeIfNull: false)
   const factory CustomersEligibility({
     required String id,
@@ -168,7 +169,7 @@ class CustomersEligibility with _$CustomersEligibility {
 }
 
 @freezed
-class RazorpayCustomerEligibilityRequestBody
+abstract class RazorpayCustomerEligibilityRequestBody
     with _$RazorpayCustomerEligibilityRequestBody {
   @JsonSerializable(includeIfNull: false)
   const factory RazorpayCustomerEligibilityRequestBody({
@@ -186,7 +187,7 @@ class RazorpayCustomerEligibilityRequestBody
 
 // Input version of CustomersEligibility for the request body
 @freezed
-class CustomersEligibilityInput with _$CustomersEligibilityInput {
+abstract class CustomersEligibilityInput with _$CustomersEligibilityInput {
   @JsonSerializable(includeIfNull: false)
   const factory CustomersEligibilityInput({
     String? id,
@@ -201,7 +202,7 @@ class CustomersEligibilityInput with _$CustomersEligibilityInput {
 }
 
 @freezed
-class InstrumentEligibilityError with _$InstrumentEligibilityError {
+abstract class InstrumentEligibilityError with _$InstrumentEligibilityError {
   @JsonSerializable(includeIfNull: false)
   const factory InstrumentEligibilityError({
     // Omit<INormalizeError,'statusCode'> -> Map fields from RazorpayError
@@ -219,7 +220,7 @@ class InstrumentEligibilityError with _$InstrumentEligibilityError {
 }
 
 @freezed
-class InstrumentEligibility with _$InstrumentEligibility {
+abstract class InstrumentEligibility with _$InstrumentEligibility {
   @JsonSerializable(includeIfNull: false)
   const factory InstrumentEligibility({
     required String status,
@@ -231,7 +232,7 @@ class InstrumentEligibility with _$InstrumentEligibility {
 }
 
 @freezed
-class Instruments with _$Instruments {
+abstract class Instruments with _$Instruments {
   @JsonSerializable(includeIfNull: false)
   const factory Instruments({
     required String method,
@@ -248,7 +249,7 @@ class Instruments with _$Instruments {
 
 // Response for Eligibility Check
 @freezed
-class RazorpayCustomerEligibility with _$RazorpayCustomerEligibility {
+abstract class RazorpayCustomerEligibility with _$RazorpayCustomerEligibility {
   // Extends RequestBody + instruments array
   @JsonSerializable(includeIfNull: false)
   const factory RazorpayCustomerEligibility({
@@ -268,7 +269,8 @@ class RazorpayCustomerEligibility with _$RazorpayCustomerEligibility {
 
 // Specific response for Fetch Tokens
 @freezed
-class RazorpayCustomerTokensResponse with _$RazorpayCustomerTokensResponse {
+abstract class RazorpayCustomerTokensResponse
+    with _$RazorpayCustomerTokensResponse {
   @JsonSerializable(includeIfNull: false)
   const factory RazorpayCustomerTokensResponse({
     required String entity,
@@ -282,7 +284,7 @@ class RazorpayCustomerTokensResponse with _$RazorpayCustomerTokensResponse {
 
 // Specific response for Delete Token
 @freezed
-class RazorpayDeleteTokenResponse with _$RazorpayDeleteTokenResponse {
+abstract class RazorpayDeleteTokenResponse with _$RazorpayDeleteTokenResponse {
   @JsonSerializable(includeIfNull: false)
   const factory RazorpayDeleteTokenResponse({
     required bool deleted,

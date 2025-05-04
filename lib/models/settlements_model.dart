@@ -51,7 +51,7 @@ enum PaymentMethodSettlement { card, netbanking, wallet, emi, upi } // Renamed
 
 // --- Instant Settlement ---
 @freezed
-class RazorpayInstantSettlementBaseRequestBody
+abstract class RazorpayInstantSettlementBaseRequestBody
     with _$RazorpayInstantSettlementBaseRequestBody {
   @JsonSerializable(includeIfNull: false)
   const factory RazorpayInstantSettlementBaseRequestBody({
@@ -73,7 +73,7 @@ int? _boolToInt(bool? b) => b == null ? null : (b ? 1 : 0);
 bool? _intToBool(dynamic i) => i == null ? null : (i == 1 || i == true);
 
 @freezed
-class RazorpayInstantSettlementCreateRequestBody
+abstract class RazorpayInstantSettlementCreateRequestBody
     with _$RazorpayInstantSettlementCreateRequestBody {
   // Inherits Base
   @JsonSerializable(includeIfNull: false)
@@ -93,7 +93,7 @@ class RazorpayInstantSettlementCreateRequestBody
 
 // --- Standard Settlement (part of lists/details, not created directly via API) ---
 @freezed
-class RazorpaySettlement with _$RazorpaySettlement {
+abstract class RazorpaySettlement with _$RazorpaySettlement {
   // Matches structure of settlement item in list responses
   @JsonSerializable(includeIfNull: false)
   const factory RazorpaySettlement({
@@ -126,7 +126,7 @@ class RazorpaySettlement with _$RazorpaySettlement {
 
 // --- Ondemand Settlement Response ---
 @freezed
-class RazorpayOndemandPayoutItem with _$RazorpayOndemandPayoutItem {
+abstract class RazorpayOndemandPayoutItem with _$RazorpayOndemandPayoutItem {
   @JsonSerializable(includeIfNull: false)
   const factory RazorpayOndemandPayoutItem({
     // This seems to be the standard settlement structure
@@ -150,7 +150,7 @@ class RazorpayOndemandPayoutItem with _$RazorpayOndemandPayoutItem {
 }
 
 @freezed
-class RazorpayOndemandPayouts with _$RazorpayOndemandPayouts {
+abstract class RazorpayOndemandPayouts with _$RazorpayOndemandPayouts {
   @JsonSerializable(includeIfNull: false)
   const factory RazorpayOndemandPayouts({
     required String entity, // e.g., 'collection'
@@ -163,7 +163,7 @@ class RazorpayOndemandPayouts with _$RazorpayOndemandPayouts {
 }
 
 @freezed
-class RazorpayInstantSettlement with _$RazorpayInstantSettlement {
+abstract class RazorpayInstantSettlement with _$RazorpayInstantSettlement {
   // Extends Base + response fields
   @JsonSerializable(includeIfNull: false)
   const factory RazorpayInstantSettlement({
@@ -192,7 +192,7 @@ class RazorpayInstantSettlement with _$RazorpayInstantSettlement {
 
 // --- Settlement Recon ---
 @freezed
-class RazorpaySettlementReconBaseRequestBody
+abstract class RazorpaySettlementReconBaseRequestBody
     with _$RazorpaySettlementReconBaseRequestBody {
   @JsonSerializable(includeIfNull: false)
   const factory RazorpaySettlementReconBaseRequestBody({
@@ -210,7 +210,7 @@ class RazorpaySettlementReconBaseRequestBody
 }
 
 @freezed
-class RazorpaySettlementReconItem with _$RazorpaySettlementReconItem {
+abstract class RazorpaySettlementReconItem with _$RazorpaySettlementReconItem {
   // Note: This model represents ONE item within the recon report response.
   @JsonSerializable(includeIfNull: false)
   const factory RazorpaySettlementReconItem({
@@ -250,7 +250,8 @@ class RazorpaySettlementReconItem with _$RazorpaySettlementReconItem {
 
 // --- Query Parameters for Ondemand Fetch ---
 @freezed
-class RazorpayOndemandSettlementQuery with _$RazorpayOndemandSettlementQuery {
+abstract class RazorpayOndemandSettlementQuery
+    with _$RazorpayOndemandSettlementQuery {
   // Extends RazorpayPaginationOptions + expand
   @JsonSerializable(includeIfNull: false)
   const factory RazorpayOndemandSettlementQuery({
@@ -269,7 +270,8 @@ class RazorpayOndemandSettlementQuery with _$RazorpayOndemandSettlementQuery {
 // --- Specific Response Types ---
 // Response for Fetch All Standard Settlements
 @freezed
-class RazorpaySettlementListResponse with _$RazorpaySettlementListResponse {
+abstract class RazorpaySettlementListResponse
+    with _$RazorpaySettlementListResponse {
   @JsonSerializable(includeIfNull: false)
   const factory RazorpaySettlementListResponse({
     required String entity,
@@ -284,7 +286,7 @@ class RazorpaySettlementListResponse with _$RazorpaySettlementListResponse {
 
 // Response for Fetch All Ondemand Settlements
 @freezed
-class RazorpayInstantSettlementListResponse
+abstract class RazorpayInstantSettlementListResponse
     with _$RazorpayInstantSettlementListResponse {
   @JsonSerializable(includeIfNull: false)
   const factory RazorpayInstantSettlementListResponse({
@@ -303,7 +305,8 @@ class RazorpayInstantSettlementListResponse
 // Response for Settlement Reports (Recon)
 // Assuming it returns a list directly, not the standard ApiListResponse
 @freezed
-class RazorpaySettlementReconResponse with _$RazorpaySettlementReconResponse {
+abstract class RazorpaySettlementReconResponse
+    with _$RazorpaySettlementReconResponse {
   // The actual API might return a list directly or within a structure.
   // Adjust based on testing. Assuming a list for now.
   @JsonSerializable(includeIfNull: false)

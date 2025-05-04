@@ -7,7 +7,8 @@ part 'webhooks_model.g.dart';
 
 // --- Base Request Body ---
 @freezed
-class RazorpayWebhookBaseRequestBody with _$RazorpayWebhookBaseRequestBody {
+abstract class RazorpayWebhookBaseRequestBody
+    with _$RazorpayWebhookBaseRequestBody {
   @JsonSerializable(includeIfNull: false)
   const factory RazorpayWebhookBaseRequestBody({
     required String url,
@@ -23,7 +24,8 @@ class RazorpayWebhookBaseRequestBody with _$RazorpayWebhookBaseRequestBody {
 
 // --- Create Request Body ---
 @freezed
-class RazorpayWebhookCreateRequestBody with _$RazorpayWebhookCreateRequestBody {
+abstract class RazorpayWebhookCreateRequestBody
+    with _$RazorpayWebhookCreateRequestBody {
   // Inherits Base
   @JsonSerializable(includeIfNull: false)
   const factory RazorpayWebhookCreateRequestBody({
@@ -42,7 +44,8 @@ class RazorpayWebhookCreateRequestBody with _$RazorpayWebhookCreateRequestBody {
 
 // --- Update Request Body ---
 @freezed
-class RazorpayWebhookUpdateRequestBody with _$RazorpayWebhookUpdateRequestBody {
+abstract class RazorpayWebhookUpdateRequestBody
+    with _$RazorpayWebhookUpdateRequestBody {
   // Same as Base according to d.ts
   @JsonSerializable(includeIfNull: false)
   const factory RazorpayWebhookUpdateRequestBody({
@@ -61,7 +64,7 @@ class RazorpayWebhookUpdateRequestBody with _$RazorpayWebhookUpdateRequestBody {
 
 // --- Response Body ---
 @freezed
-class RazorpayWebhook with _$RazorpayWebhook {
+abstract class RazorpayWebhook with _$RazorpayWebhook {
   // Extends Base + response fields
   @JsonSerializable(includeIfNull: false)
   const factory RazorpayWebhook({
@@ -83,7 +86,7 @@ class RazorpayWebhook with _$RazorpayWebhook {
 
 // --- Response for Fetch All ---
 @freezed
-class RazorpayWebhookListResponse with _$RazorpayWebhookListResponse {
+abstract class RazorpayWebhookListResponse with _$RazorpayWebhookListResponse {
   @JsonSerializable(includeIfNull: false)
   const factory RazorpayWebhookListResponse({
     required String entity,
@@ -98,7 +101,8 @@ class RazorpayWebhookListResponse with _$RazorpayWebhookListResponse {
 // --- Response for Delete ---
 // JS API returns `[]` -> empty list/object
 @freezed
-class RazorpayWebhookDeleteResponse with _$RazorpayWebhookDeleteResponse {
+abstract class RazorpayWebhookDeleteResponse
+    with _$RazorpayWebhookDeleteResponse {
   @JsonSerializable(includeIfNull: false)
   const factory RazorpayWebhookDeleteResponse() =
       _RazorpayWebhookDeleteResponse; // Empty model

@@ -6,16 +6,14 @@ part of 'tokens_model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$RazorpayTokenCardImpl _$$RazorpayTokenCardImplFromJson(
-        Map<String, dynamic> json) =>
-    _$RazorpayTokenCardImpl(
+_RazorpayTokenCard _$RazorpayTokenCardFromJson(Map<String, dynamic> json) =>
+    _RazorpayTokenCard(
       max_amount: (json['max_amount'] as num).toInt(),
       expire_at: (json['expire_at'] as num).toInt(),
       frequency: $enumDecode(_$TokenFrequencyEnumMap, json['frequency']),
     );
 
-Map<String, dynamic> _$$RazorpayTokenCardImplToJson(
-        _$RazorpayTokenCardImpl instance) =>
+Map<String, dynamic> _$RazorpayTokenCardToJson(_RazorpayTokenCard instance) =>
     <String, dynamic>{
       'max_amount': instance.max_amount,
       'expire_at': instance.expire_at,
@@ -27,9 +25,9 @@ const _$TokenFrequencyEnumMap = {
   TokenFrequency.monthly: 'monthly',
 };
 
-_$RazorpayTokenEmandateImpl _$$RazorpayTokenEmandateImplFromJson(
+_RazorpayTokenEmandate _$RazorpayTokenEmandateFromJson(
         Map<String, dynamic> json) =>
-    _$RazorpayTokenEmandateImpl(
+    _RazorpayTokenEmandate(
       auth_type: $enumDecodeNullable(
           _$EmandateAuthTypeTokenEnumMap, json['auth_type']),
       max_amount: (json['max_amount'] as num?)?.toInt(),
@@ -42,8 +40,8 @@ _$RazorpayTokenEmandateImpl _$$RazorpayTokenEmandateImplFromJson(
       first_payment_amount: (json['first_payment_amount'] as num?)?.toInt(),
     );
 
-Map<String, dynamic> _$$RazorpayTokenEmandateImplToJson(
-        _$RazorpayTokenEmandateImpl instance) =>
+Map<String, dynamic> _$RazorpayTokenEmandateToJson(
+        _RazorpayTokenEmandate instance) =>
     <String, dynamic>{
       if (_$EmandateAuthTypeTokenEnumMap[instance.auth_type] case final value?)
         'auth_type': value,
@@ -62,8 +60,7 @@ const _$EmandateAuthTypeTokenEnumMap = {
   EmandateAuthTypeToken.physical: 'physical',
 };
 
-_$NachInfoImpl _$$NachInfoImplFromJson(Map<String, dynamic> json) =>
-    _$NachInfoImpl(
+_NachInfo _$NachInfoFromJson(Map<String, dynamic> json) => _NachInfo(
       form_reference1: json['form_reference1'] as String,
       form_reference2: json['form_reference2'] as String,
       description: json['description'] as String,
@@ -73,8 +70,7 @@ _$NachInfoImpl _$$NachInfoImplFromJson(Map<String, dynamic> json) =>
       upload_form_url: json['upload_form_url'] as String?,
     );
 
-Map<String, dynamic> _$$NachInfoImplToJson(_$NachInfoImpl instance) =>
-    <String, dynamic>{
+Map<String, dynamic> _$NachInfoToJson(_NachInfo instance) => <String, dynamic>{
       'form_reference1': instance.form_reference1,
       'form_reference2': instance.form_reference2,
       'description': instance.description,
@@ -85,9 +81,8 @@ Map<String, dynamic> _$$NachInfoImplToJson(_$NachInfoImpl instance) =>
       if (instance.upload_form_url case final value?) 'upload_form_url': value,
     };
 
-_$RazorpayTokenNachImpl _$$RazorpayTokenNachImplFromJson(
-        Map<String, dynamic> json) =>
-    _$RazorpayTokenNachImpl(
+_RazorpayTokenNach _$RazorpayTokenNachFromJson(Map<String, dynamic> json) =>
+    _RazorpayTokenNach(
       nach: NachInfo.fromJson(json['nach'] as Map<String, dynamic>),
       auth_type: $enumDecodeNullable(
           _$EmandateAuthTypeTokenEnumMap, json['auth_type']),
@@ -101,8 +96,7 @@ _$RazorpayTokenNachImpl _$$RazorpayTokenNachImplFromJson(
       first_payment_amount: (json['first_payment_amount'] as num?)?.toInt(),
     );
 
-Map<String, dynamic> _$$RazorpayTokenNachImplToJson(
-        _$RazorpayTokenNachImpl instance) =>
+Map<String, dynamic> _$RazorpayTokenNachToJson(_RazorpayTokenNach instance) =>
     <String, dynamic>{
       'nach': instance.nach,
       if (_$EmandateAuthTypeTokenEnumMap[instance.auth_type] case final value?)
@@ -115,9 +109,9 @@ Map<String, dynamic> _$$RazorpayTokenNachImplToJson(
         'first_payment_amount': value,
     };
 
-_$RazorpayAuthorizationTokenImpl _$$RazorpayAuthorizationTokenImplFromJson(
+_RazorpayAuthorizationToken _$RazorpayAuthorizationTokenFromJson(
         Map<String, dynamic> json) =>
-    _$RazorpayAuthorizationTokenImpl(
+    _RazorpayAuthorizationToken(
       method: json['method'] as String,
       auth_type: $enumDecodeNullable(
           _$EmandateAuthTypeTokenEnumMap, json['auth_type']),
@@ -136,8 +130,8 @@ _$RazorpayAuthorizationTokenImpl _$$RazorpayAuthorizationTokenImplFromJson(
       failure_reason: json['failure_reason'],
     );
 
-Map<String, dynamic> _$$RazorpayAuthorizationTokenImplToJson(
-        _$RazorpayAuthorizationTokenImpl instance) =>
+Map<String, dynamic> _$RazorpayAuthorizationTokenToJson(
+        _RazorpayAuthorizationToken instance) =>
     <String, dynamic>{
       'method': instance.method,
       if (_$EmandateAuthTypeTokenEnumMap[instance.auth_type] case final value?)
@@ -154,16 +148,15 @@ Map<String, dynamic> _$$RazorpayAuthorizationTokenImplToJson(
       if (instance.failure_reason case final value?) 'failure_reason': value,
     };
 
-_$AuthenticationImpl _$$AuthenticationImplFromJson(Map<String, dynamic> json) =>
-    _$AuthenticationImpl(
+_Authentication _$AuthenticationFromJson(Map<String, dynamic> json) =>
+    _Authentication(
       provider: $enumDecode(_$TokenProviderEnumMap, json['provider']),
       provider_reference_id: json['provider_reference_id'] as String,
       authentication_reference_number:
           json['authentication_reference_number'] as String,
     );
 
-Map<String, dynamic> _$$AuthenticationImplToJson(
-        _$AuthenticationImpl instance) =>
+Map<String, dynamic> _$AuthenticationToJson(_Authentication instance) =>
     <String, dynamic>{
       'provider': _$TokenProviderEnumMap[instance.provider]!,
       'provider_reference_id': instance.provider_reference_id,
@@ -188,9 +181,9 @@ const _$TokenProviderEnumMap = {
   TokenProvider.razorpay: 'razorpay',
 };
 
-_$RazorpayTokenBaseRequestBodyImpl _$$RazorpayTokenBaseRequestBodyImplFromJson(
+_RazorpayTokenBaseRequestBody _$RazorpayTokenBaseRequestBodyFromJson(
         Map<String, dynamic> json) =>
-    _$RazorpayTokenBaseRequestBodyImpl(
+    _RazorpayTokenBaseRequestBody(
       method: json['method'] as String,
       card: RazorpayCardBaseRequestBody.fromJson(
           json['card'] as Map<String, dynamic>),
@@ -200,8 +193,8 @@ _$RazorpayTokenBaseRequestBodyImpl _$$RazorpayTokenBaseRequestBodyImplFromJson(
       notes: json['notes'] as Map<String, dynamic>? ?? const {},
     );
 
-Map<String, dynamic> _$$RazorpayTokenBaseRequestBodyImplToJson(
-        _$RazorpayTokenBaseRequestBodyImpl instance) =>
+Map<String, dynamic> _$RazorpayTokenBaseRequestBodyToJson(
+        _RazorpayTokenBaseRequestBody instance) =>
     <String, dynamic>{
       'method': instance.method,
       'card': instance.card,
@@ -210,38 +203,36 @@ Map<String, dynamic> _$$RazorpayTokenBaseRequestBodyImplToJson(
       if (instance.notes case final value?) 'notes': value,
     };
 
-_$TokenVpaDetailsImpl _$$TokenVpaDetailsImplFromJson(
-        Map<String, dynamic> json) =>
-    _$TokenVpaDetailsImpl(
+_TokenVpaDetails _$TokenVpaDetailsFromJson(Map<String, dynamic> json) =>
+    _TokenVpaDetails(
       username: json['username'] as String?,
       handle: json['handle'] as String?,
       name: json['name'] as String?,
     );
 
-Map<String, dynamic> _$$TokenVpaDetailsImplToJson(
-        _$TokenVpaDetailsImpl instance) =>
+Map<String, dynamic> _$TokenVpaDetailsToJson(_TokenVpaDetails instance) =>
     <String, dynamic>{
       if (instance.username case final value?) 'username': value,
       if (instance.handle case final value?) 'handle': value,
       if (instance.name case final value?) 'name': value,
     };
 
-_$TokenRecurringDetailsImpl _$$TokenRecurringDetailsImplFromJson(
+_TokenRecurringDetails _$TokenRecurringDetailsFromJson(
         Map<String, dynamic> json) =>
-    _$TokenRecurringDetailsImpl(
+    _TokenRecurringDetails(
       status: json['status'] as String,
       failure_reason: json['failure_reason'] as String?,
     );
 
-Map<String, dynamic> _$$TokenRecurringDetailsImplToJson(
-        _$TokenRecurringDetailsImpl instance) =>
+Map<String, dynamic> _$TokenRecurringDetailsToJson(
+        _TokenRecurringDetails instance) =>
     <String, dynamic>{
       'status': instance.status,
       if (instance.failure_reason case final value?) 'failure_reason': value,
     };
 
-_$RazorpayTokenImpl _$$RazorpayTokenImplFromJson(Map<String, dynamic> json) =>
-    _$RazorpayTokenImpl(
+_RazorpayToken _$RazorpayTokenFromJson(Map<String, dynamic> json) =>
+    _RazorpayToken(
       id: json['id'] as String,
       entity: json['entity'] as String,
       token: json['token'] as String,
@@ -281,7 +272,7 @@ _$RazorpayTokenImpl _$$RazorpayTokenImplFromJson(Map<String, dynamic> json) =>
               json['billing_address'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$$RazorpayTokenImplToJson(_$RazorpayTokenImpl instance) =>
+Map<String, dynamic> _$RazorpayTokenToJson(_RazorpayToken instance) =>
     <String, dynamic>{
       'id': instance.id,
       'entity': instance.entity,
@@ -319,37 +310,36 @@ const _$TokenStatusEnumMap = {
   TokenStatus.deactivated: 'deactivated',
 };
 
-_$RazorpayProcessPaymentCardDetailsImpl
-    _$$RazorpayProcessPaymentCardDetailsImplFromJson(
-            Map<String, dynamic> json) =>
-        _$RazorpayProcessPaymentCardDetailsImpl(
-          number: json['number'] as String,
-          expiry_month: json['expiry_month'] as String,
-          expiry_year: (json['expiry_year'] as num).toInt(),
-        );
+_RazorpayProcessPaymentCardDetails _$RazorpayProcessPaymentCardDetailsFromJson(
+        Map<String, dynamic> json) =>
+    _RazorpayProcessPaymentCardDetails(
+      number: json['number'] as String,
+      expiry_month: json['expiry_month'] as String,
+      expiry_year: (json['expiry_year'] as num).toInt(),
+    );
 
-Map<String, dynamic> _$$RazorpayProcessPaymentCardDetailsImplToJson(
-        _$RazorpayProcessPaymentCardDetailsImpl instance) =>
+Map<String, dynamic> _$RazorpayProcessPaymentCardDetailsToJson(
+        _RazorpayProcessPaymentCardDetails instance) =>
     <String, dynamic>{
       'number': instance.number,
       'expiry_month': instance.expiry_month,
       'expiry_year': instance.expiry_year,
     };
 
-_$RazorpayProcessPaymentResponseImpl
-    _$$RazorpayProcessPaymentResponseImplFromJson(Map<String, dynamic> json) =>
-        _$RazorpayProcessPaymentResponseImpl(
-          token_number: json['token_number'] as String,
-          cryptogram_value: json['cryptogram_value'] as String,
-          cvv: json['cvv'] as String,
-          token_expiry_month: (json['token_expiry_month'] as num).toInt(),
-          token_expiry_year: (json['token_expiry_year'] as num).toInt(),
-          card: RazorpayProcessPaymentCardDetails.fromJson(
-              json['card'] as Map<String, dynamic>),
-        );
+_RazorpayProcessPaymentResponse _$RazorpayProcessPaymentResponseFromJson(
+        Map<String, dynamic> json) =>
+    _RazorpayProcessPaymentResponse(
+      token_number: json['token_number'] as String,
+      cryptogram_value: json['cryptogram_value'] as String,
+      cvv: json['cvv'] as String,
+      token_expiry_month: (json['token_expiry_month'] as num).toInt(),
+      token_expiry_year: (json['token_expiry_year'] as num).toInt(),
+      card: RazorpayProcessPaymentCardDetails.fromJson(
+          json['card'] as Map<String, dynamic>),
+    );
 
-Map<String, dynamic> _$$RazorpayProcessPaymentResponseImplToJson(
-        _$RazorpayProcessPaymentResponseImpl instance) =>
+Map<String, dynamic> _$RazorpayProcessPaymentResponseToJson(
+        _RazorpayProcessPaymentResponse instance) =>
     <String, dynamic>{
       'token_number': instance.token_number,
       'cryptogram_value': instance.cryptogram_value,
@@ -359,47 +349,46 @@ Map<String, dynamic> _$$RazorpayProcessPaymentResponseImplToJson(
       'card': instance.card,
     };
 
-_$RazorpayTokenFetchRequestImpl _$$RazorpayTokenFetchRequestImplFromJson(
+_RazorpayTokenFetchRequest _$RazorpayTokenFetchRequestFromJson(
         Map<String, dynamic> json) =>
-    _$RazorpayTokenFetchRequestImpl(
+    _RazorpayTokenFetchRequest(
       id: json['id'] as String,
     );
 
-Map<String, dynamic> _$$RazorpayTokenFetchRequestImplToJson(
-        _$RazorpayTokenFetchRequestImpl instance) =>
+Map<String, dynamic> _$RazorpayTokenFetchRequestToJson(
+        _RazorpayTokenFetchRequest instance) =>
     <String, dynamic>{
       'id': instance.id,
     };
 
-_$RazorpayTokenDeleteRequestImpl _$$RazorpayTokenDeleteRequestImplFromJson(
+_RazorpayTokenDeleteRequest _$RazorpayTokenDeleteRequestFromJson(
         Map<String, dynamic> json) =>
-    _$RazorpayTokenDeleteRequestImpl(
+    _RazorpayTokenDeleteRequest(
       id: json['id'] as String,
     );
 
-Map<String, dynamic> _$$RazorpayTokenDeleteRequestImplToJson(
-        _$RazorpayTokenDeleteRequestImpl instance) =>
+Map<String, dynamic> _$RazorpayTokenDeleteRequestToJson(
+        _RazorpayTokenDeleteRequest instance) =>
     <String, dynamic>{
       'id': instance.id,
     };
 
-_$RazorpayTokenProcessPaymentRequestImpl
-    _$$RazorpayTokenProcessPaymentRequestImplFromJson(
-            Map<String, dynamic> json) =>
-        _$RazorpayTokenProcessPaymentRequestImpl(
+_RazorpayTokenProcessPaymentRequest
+    _$RazorpayTokenProcessPaymentRequestFromJson(Map<String, dynamic> json) =>
+        _RazorpayTokenProcessPaymentRequest(
           id: json['id'] as String,
         );
 
-Map<String, dynamic> _$$RazorpayTokenProcessPaymentRequestImplToJson(
-        _$RazorpayTokenProcessPaymentRequestImpl instance) =>
+Map<String, dynamic> _$RazorpayTokenProcessPaymentRequestToJson(
+        _RazorpayTokenProcessPaymentRequest instance) =>
     <String, dynamic>{
       'id': instance.id,
     };
 
-_$RazorpayTokenDeleteResponseImpl _$$RazorpayTokenDeleteResponseImplFromJson(
+_RazorpayTokenDeleteResponse _$RazorpayTokenDeleteResponseFromJson(
         Map<String, dynamic> json) =>
-    _$RazorpayTokenDeleteResponseImpl();
+    _RazorpayTokenDeleteResponse();
 
-Map<String, dynamic> _$$RazorpayTokenDeleteResponseImplToJson(
-        _$RazorpayTokenDeleteResponseImpl instance) =>
+Map<String, dynamic> _$RazorpayTokenDeleteResponseToJson(
+        _RazorpayTokenDeleteResponse instance) =>
     <String, dynamic>{};

@@ -9,7 +9,7 @@ part 'products_model.g.dart';
 
 // Payment Methods detailed structure
 @freezed
-class Instrument with _$Instrument {
+abstract class Instrument with _$Instrument {
   @JsonSerializable(includeIfNull: false)
   const factory Instrument({
     required String type, // e.g., 'retail', 'corporate' for netbanking
@@ -21,7 +21,7 @@ class Instrument with _$Instrument {
 }
 
 @freezed
-class InstrumentCard with _$InstrumentCard {
+abstract class InstrumentCard with _$InstrumentCard {
   @JsonSerializable(includeIfNull: false)
   const factory InstrumentCard({
     required String issuer, // e.g., 'HDFC', 'ICIC'
@@ -33,7 +33,7 @@ class InstrumentCard with _$InstrumentCard {
 }
 
 @freezed
-class InstrumentEmi with _$InstrumentEmi {
+abstract class InstrumentEmi with _$InstrumentEmi {
   @JsonSerializable(includeIfNull: false)
   const factory InstrumentEmi({
     required String type, // e.g., 'credit_card', 'debit_card'
@@ -45,7 +45,7 @@ class InstrumentEmi with _$InstrumentEmi {
 }
 
 @freezed
-class NetbankingConfig with _$NetbankingConfig {
+abstract class NetbankingConfig with _$NetbankingConfig {
   @JsonSerializable(includeIfNull: false)
   const factory NetbankingConfig({
     required bool enabled,
@@ -57,7 +57,7 @@ class NetbankingConfig with _$NetbankingConfig {
 }
 
 @freezed
-class CardsConfig with _$CardsConfig {
+abstract class CardsConfig with _$CardsConfig {
   @JsonSerializable(includeIfNull: false)
   const factory CardsConfig({
     required bool enabled,
@@ -69,7 +69,7 @@ class CardsConfig with _$CardsConfig {
 }
 
 @freezed
-class WalletConfig with _$WalletConfig {
+abstract class WalletConfig with _$WalletConfig {
   @JsonSerializable(includeIfNull: false)
   const factory WalletConfig({
     required bool enabled,
@@ -81,7 +81,7 @@ class WalletConfig with _$WalletConfig {
 }
 
 @freezed
-class PaylaterConfig with _$PaylaterConfig {
+abstract class PaylaterConfig with _$PaylaterConfig {
   @JsonSerializable(includeIfNull: false)
   const factory PaylaterConfig({
     required bool enabled,
@@ -93,7 +93,7 @@ class PaylaterConfig with _$PaylaterConfig {
 }
 
 @freezed
-class UpiConfig with _$UpiConfig {
+abstract class UpiConfig with _$UpiConfig {
   @JsonSerializable(includeIfNull: false)
   const factory UpiConfig({
     required bool enabled,
@@ -106,7 +106,7 @@ class UpiConfig with _$UpiConfig {
 }
 
 @freezed
-class EmiConfig with _$EmiConfig {
+abstract class EmiConfig with _$EmiConfig {
   @JsonSerializable(includeIfNull: false)
   const factory EmiConfig({
     required bool enabled,
@@ -118,7 +118,7 @@ class EmiConfig with _$EmiConfig {
 }
 
 @freezed
-class PaymentMethods with _$PaymentMethods {
+abstract class PaymentMethods with _$PaymentMethods {
   @JsonSerializable(includeIfNull: false)
   const factory PaymentMethods({
     NetbankingConfig? netbanking,
@@ -135,7 +135,7 @@ class PaymentMethods with _$PaymentMethods {
 
 // Other Configuration sections
 @freezed
-class PaymentCapture with _$PaymentCapture {
+abstract class PaymentCapture with _$PaymentCapture {
   @JsonSerializable(includeIfNull: false)
   const factory PaymentCapture({
     required String mode, // 'automatic' or 'manual'
@@ -149,7 +149,7 @@ class PaymentCapture with _$PaymentCapture {
 
 // Settlements uses Bank Account details from Orders/FundAccount
 @freezed
-class SettlementsConfig with _$SettlementsConfig {
+abstract class SettlementsConfig with _$SettlementsConfig {
   @JsonSerializable(includeIfNull: false)
   const factory SettlementsConfig({
     required String account_number,
@@ -162,7 +162,7 @@ class SettlementsConfig with _$SettlementsConfig {
 }
 
 @freezed
-class CheckoutConfig with _$CheckoutConfig {
+abstract class CheckoutConfig with _$CheckoutConfig {
   @JsonSerializable(includeIfNull: false)
   const factory CheckoutConfig({
     String? theme_color,
@@ -174,7 +174,7 @@ class CheckoutConfig with _$CheckoutConfig {
 }
 
 @freezed
-class RefundConfig with _$RefundConfig {
+abstract class RefundConfig with _$RefundConfig {
   @JsonSerializable(includeIfNull: false)
   const factory RefundConfig({
     required String default_refund_speed, // 'normal' or 'optimum'
@@ -185,7 +185,7 @@ class RefundConfig with _$RefundConfig {
 }
 
 @freezed
-class NotificationsConfig with _$NotificationsConfig {
+abstract class NotificationsConfig with _$NotificationsConfig {
   @JsonSerializable(includeIfNull: false)
   const factory NotificationsConfig({
     bool? whatsapp,
@@ -198,7 +198,7 @@ class NotificationsConfig with _$NotificationsConfig {
 }
 
 @freezed
-class ActiveConfiguration with _$ActiveConfiguration {
+abstract class ActiveConfiguration with _$ActiveConfiguration {
   @JsonSerializable(includeIfNull: false)
   const factory ActiveConfiguration({
     PaymentCapture? payment_capture,
@@ -215,7 +215,7 @@ class ActiveConfiguration with _$ActiveConfiguration {
 
 // Requested Configuration only has payment methods in d.ts
 @freezed
-class RequestedConfiguration with _$RequestedConfiguration {
+abstract class RequestedConfiguration with _$RequestedConfiguration {
   @JsonSerializable(includeIfNull: false)
   const factory RequestedConfiguration({
     // Note: d.ts has List<PaymentMethods>, but JSON structure is likely
@@ -229,7 +229,7 @@ class RequestedConfiguration with _$RequestedConfiguration {
 
 // Requirements
 @freezed
-class Requirement with _$Requirement {
+abstract class Requirement with _$Requirement {
   @JsonSerializable(includeIfNull: false)
   const factory Requirement({
     required String field_reference,
@@ -244,7 +244,7 @@ class Requirement with _$Requirement {
 
 // TNC
 @freezed
-class Tnc with _$Tnc {
+abstract class Tnc with _$Tnc {
   @JsonSerializable(includeIfNull: false)
   const factory Tnc({
     required String id,
@@ -257,7 +257,8 @@ class Tnc with _$Tnc {
 
 // --- Base Request Body ---
 @freezed
-class RazorpayProductBaseRequestBody with _$RazorpayProductBaseRequestBody {
+abstract class RazorpayProductBaseRequestBody
+    with _$RazorpayProductBaseRequestBody {
   @JsonSerializable(includeIfNull: false)
   const factory RazorpayProductBaseRequestBody({
     required String product_name, // 'payment_gateway' | 'payment_links'
@@ -271,7 +272,8 @@ class RazorpayProductBaseRequestBody with _$RazorpayProductBaseRequestBody {
 
 // --- Create Request Body ---
 @freezed
-class RazorpayProductCreateRequestBody with _$RazorpayProductCreateRequestBody {
+abstract class RazorpayProductCreateRequestBody
+    with _$RazorpayProductCreateRequestBody {
   // Inherits Base
   @JsonSerializable(includeIfNull: false)
   const factory RazorpayProductCreateRequestBody({
@@ -288,7 +290,8 @@ class RazorpayProductCreateRequestBody with _$RazorpayProductCreateRequestBody {
 
 // --- Update Request Body ---
 @freezed
-class RazorpayProductUpdateRequestBody with _$RazorpayProductUpdateRequestBody {
+abstract class RazorpayProductUpdateRequestBody
+    with _$RazorpayProductUpdateRequestBody {
   // PartialOptional<Omit<Base, 'product_name'>, 'tnc_accepted' | 'ip'> + config sections
   @JsonSerializable(includeIfNull: false)
   const factory RazorpayProductUpdateRequestBody({
@@ -310,7 +313,7 @@ class RazorpayProductUpdateRequestBody with _$RazorpayProductUpdateRequestBody {
 
 // --- Product Response Body ---
 @freezed
-class RazorpayProduct with _$RazorpayProduct {
+abstract class RazorpayProduct with _$RazorpayProduct {
   // Extends Base + response fields
   @JsonSerializable(includeIfNull: false)
   const factory RazorpayProduct({
@@ -333,7 +336,7 @@ class RazorpayProduct with _$RazorpayProduct {
 
 // --- TNC Fetch Response ---
 @freezed
-class ProductsTncContent with _$ProductsTncContent {
+abstract class ProductsTncContent with _$ProductsTncContent {
   @JsonSerializable(includeIfNull: false)
   const factory ProductsTncContent({
     required String terms,
@@ -346,7 +349,7 @@ class ProductsTncContent with _$ProductsTncContent {
 }
 
 @freezed
-class RazorpayProductTnc with _$RazorpayProductTnc {
+abstract class RazorpayProductTnc with _$RazorpayProductTnc {
   @JsonSerializable(includeIfNull: false)
   const factory RazorpayProductTnc({
     required String entity,

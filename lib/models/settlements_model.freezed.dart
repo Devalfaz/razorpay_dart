@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,300 +10,64 @@ part of 'settlements_model.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-RazorpayInstantSettlementBaseRequestBody
-    _$RazorpayInstantSettlementBaseRequestBodyFromJson(
-        Map<String, dynamic> json) {
-  return _RazorpayInstantSettlementBaseRequestBody.fromJson(json);
-}
 
 /// @nodoc
 mixin _$RazorpayInstantSettlementBaseRequestBody {
-  dynamic get amount => throw _privateConstructorUsedError; // number | string
+  dynamic get amount; // number | string
   @JsonKey(toJson: _boolToInt, fromJson: _intToBool)
-  bool? get settle_full_balance => throw _privateConstructorUsedError; // 0 | 1
-  String? get description => throw _privateConstructorUsedError;
-  IMap<dynamic>? get notes => throw _privateConstructorUsedError;
-
-  /// Serializes this RazorpayInstantSettlementBaseRequestBody to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  bool? get settle_full_balance; // 0 | 1
+  String? get description;
+  IMap<dynamic>? get notes;
 
   /// Create a copy of RazorpayInstantSettlementBaseRequestBody
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
   $RazorpayInstantSettlementBaseRequestBodyCopyWith<
           RazorpayInstantSettlementBaseRequestBody>
-      get copyWith => throw _privateConstructorUsedError;
-}
+      get copyWith => _$RazorpayInstantSettlementBaseRequestBodyCopyWithImpl<
+              RazorpayInstantSettlementBaseRequestBody>(
+          this as RazorpayInstantSettlementBaseRequestBody, _$identity);
 
-/// @nodoc
-abstract class $RazorpayInstantSettlementBaseRequestBodyCopyWith<$Res> {
-  factory $RazorpayInstantSettlementBaseRequestBodyCopyWith(
-          RazorpayInstantSettlementBaseRequestBody value,
-          $Res Function(RazorpayInstantSettlementBaseRequestBody) then) =
-      _$RazorpayInstantSettlementBaseRequestBodyCopyWithImpl<$Res,
-          RazorpayInstantSettlementBaseRequestBody>;
-  @useResult
-  $Res call(
-      {dynamic amount,
-      @JsonKey(toJson: _boolToInt, fromJson: _intToBool)
-      bool? settle_full_balance,
-      String? description,
-      IMap<dynamic>? notes});
-}
+  /// Serializes this RazorpayInstantSettlementBaseRequestBody to a JSON map.
+  Map<String, dynamic> toJson();
 
-/// @nodoc
-class _$RazorpayInstantSettlementBaseRequestBodyCopyWithImpl<$Res,
-        $Val extends RazorpayInstantSettlementBaseRequestBody>
-    implements $RazorpayInstantSettlementBaseRequestBodyCopyWith<$Res> {
-  _$RazorpayInstantSettlementBaseRequestBodyCopyWithImpl(
-      this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of RazorpayInstantSettlementBaseRequestBody
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? amount = freezed,
-    Object? settle_full_balance = freezed,
-    Object? description = freezed,
-    Object? notes = freezed,
-  }) {
-    return _then(_value.copyWith(
-      amount: freezed == amount
-          ? _value.amount
-          : amount // ignore: cast_nullable_to_non_nullable
-              as dynamic,
-      settle_full_balance: freezed == settle_full_balance
-          ? _value.settle_full_balance
-          : settle_full_balance // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      description: freezed == description
-          ? _value.description
-          : description // ignore: cast_nullable_to_non_nullable
-              as String?,
-      notes: freezed == notes
-          ? _value.notes
-          : notes // ignore: cast_nullable_to_non_nullable
-              as IMap<dynamic>?,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is RazorpayInstantSettlementBaseRequestBody &&
+            const DeepCollectionEquality().equals(other.amount, amount) &&
+            (identical(other.settle_full_balance, settle_full_balance) ||
+                other.settle_full_balance == settle_full_balance) &&
+            (identical(other.description, description) ||
+                other.description == description) &&
+            const DeepCollectionEquality().equals(other.notes, notes));
   }
-}
 
-/// @nodoc
-abstract class _$$RazorpayInstantSettlementBaseRequestBodyImplCopyWith<$Res>
-    implements $RazorpayInstantSettlementBaseRequestBodyCopyWith<$Res> {
-  factory _$$RazorpayInstantSettlementBaseRequestBodyImplCopyWith(
-          _$RazorpayInstantSettlementBaseRequestBodyImpl value,
-          $Res Function(_$RazorpayInstantSettlementBaseRequestBodyImpl) then) =
-      __$$RazorpayInstantSettlementBaseRequestBodyImplCopyWithImpl<$Res>;
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @useResult
-  $Res call(
-      {dynamic amount,
-      @JsonKey(toJson: _boolToInt, fromJson: _intToBool)
-      bool? settle_full_balance,
-      String? description,
-      IMap<dynamic>? notes});
-}
-
-/// @nodoc
-class __$$RazorpayInstantSettlementBaseRequestBodyImplCopyWithImpl<$Res>
-    extends _$RazorpayInstantSettlementBaseRequestBodyCopyWithImpl<$Res,
-        _$RazorpayInstantSettlementBaseRequestBodyImpl>
-    implements _$$RazorpayInstantSettlementBaseRequestBodyImplCopyWith<$Res> {
-  __$$RazorpayInstantSettlementBaseRequestBodyImplCopyWithImpl(
-      _$RazorpayInstantSettlementBaseRequestBodyImpl _value,
-      $Res Function(_$RazorpayInstantSettlementBaseRequestBodyImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of RazorpayInstantSettlementBaseRequestBody
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? amount = freezed,
-    Object? settle_full_balance = freezed,
-    Object? description = freezed,
-    Object? notes = freezed,
-  }) {
-    return _then(_$RazorpayInstantSettlementBaseRequestBodyImpl(
-      amount: freezed == amount
-          ? _value.amount
-          : amount // ignore: cast_nullable_to_non_nullable
-              as dynamic,
-      settle_full_balance: freezed == settle_full_balance
-          ? _value.settle_full_balance
-          : settle_full_balance // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      description: freezed == description
-          ? _value.description
-          : description // ignore: cast_nullable_to_non_nullable
-              as String?,
-      notes: freezed == notes
-          ? _value._notes
-          : notes // ignore: cast_nullable_to_non_nullable
-              as IMap<dynamic>?,
-    ));
-  }
-}
-
-/// @nodoc
-
-@JsonSerializable(includeIfNull: false)
-class _$RazorpayInstantSettlementBaseRequestBodyImpl
-    implements _RazorpayInstantSettlementBaseRequestBody {
-  const _$RazorpayInstantSettlementBaseRequestBodyImpl(
-      {required this.amount,
-      @JsonKey(toJson: _boolToInt, fromJson: _intToBool)
-      this.settle_full_balance,
-      this.description,
-      final IMap<dynamic>? notes})
-      : _notes = notes;
-
-  factory _$RazorpayInstantSettlementBaseRequestBodyImpl.fromJson(
-          Map<String, dynamic> json) =>
-      _$$RazorpayInstantSettlementBaseRequestBodyImplFromJson(json);
-
-  @override
-  final dynamic amount;
-// number | string
-  @override
-  @JsonKey(toJson: _boolToInt, fromJson: _intToBool)
-  final bool? settle_full_balance;
-// 0 | 1
-  @override
-  final String? description;
-  final IMap<dynamic>? _notes;
-  @override
-  IMap<dynamic>? get notes {
-    final value = _notes;
-    if (value == null) return null;
-    if (_notes is EqualUnmodifiableMapView) return _notes;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableMapView(value);
-  }
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(amount),
+      settle_full_balance,
+      description,
+      const DeepCollectionEquality().hash(notes));
 
   @override
   String toString() {
     return 'RazorpayInstantSettlementBaseRequestBody(amount: $amount, settle_full_balance: $settle_full_balance, description: $description, notes: $notes)';
   }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$RazorpayInstantSettlementBaseRequestBodyImpl &&
-            const DeepCollectionEquality().equals(other.amount, amount) &&
-            (identical(other.settle_full_balance, settle_full_balance) ||
-                other.settle_full_balance == settle_full_balance) &&
-            (identical(other.description, description) ||
-                other.description == description) &&
-            const DeepCollectionEquality().equals(other._notes, _notes));
-  }
-
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(amount),
-      settle_full_balance,
-      description,
-      const DeepCollectionEquality().hash(_notes));
-
-  /// Create a copy of RazorpayInstantSettlementBaseRequestBody
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$RazorpayInstantSettlementBaseRequestBodyImplCopyWith<
-          _$RazorpayInstantSettlementBaseRequestBodyImpl>
-      get copyWith =>
-          __$$RazorpayInstantSettlementBaseRequestBodyImplCopyWithImpl<
-              _$RazorpayInstantSettlementBaseRequestBodyImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$RazorpayInstantSettlementBaseRequestBodyImplToJson(
-      this,
-    );
-  }
-}
-
-abstract class _RazorpayInstantSettlementBaseRequestBody
-    implements RazorpayInstantSettlementBaseRequestBody {
-  const factory _RazorpayInstantSettlementBaseRequestBody(
-          {required final dynamic amount,
-          @JsonKey(toJson: _boolToInt, fromJson: _intToBool)
-          final bool? settle_full_balance,
-          final String? description,
-          final IMap<dynamic>? notes}) =
-      _$RazorpayInstantSettlementBaseRequestBodyImpl;
-
-  factory _RazorpayInstantSettlementBaseRequestBody.fromJson(
-          Map<String, dynamic> json) =
-      _$RazorpayInstantSettlementBaseRequestBodyImpl.fromJson;
-
-  @override
-  dynamic get amount; // number | string
-  @override
-  @JsonKey(toJson: _boolToInt, fromJson: _intToBool)
-  bool? get settle_full_balance; // 0 | 1
-  @override
-  String? get description;
-  @override
-  IMap<dynamic>? get notes;
-
-  /// Create a copy of RazorpayInstantSettlementBaseRequestBody
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$RazorpayInstantSettlementBaseRequestBodyImplCopyWith<
-          _$RazorpayInstantSettlementBaseRequestBodyImpl>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-RazorpayInstantSettlementCreateRequestBody
-    _$RazorpayInstantSettlementCreateRequestBodyFromJson(
-        Map<String, dynamic> json) {
-  return _RazorpayInstantSettlementCreateRequestBody.fromJson(json);
 }
 
 /// @nodoc
-mixin _$RazorpayInstantSettlementCreateRequestBody {
-  dynamic get amount => throw _privateConstructorUsedError; // number | string
-  @JsonKey(toJson: _boolToInt, fromJson: _intToBool)
-  bool? get settle_full_balance => throw _privateConstructorUsedError; // 0 | 1
-  String? get description => throw _privateConstructorUsedError;
-  IMap<dynamic>? get notes => throw _privateConstructorUsedError;
-
-  /// Serializes this RazorpayInstantSettlementCreateRequestBody to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of RazorpayInstantSettlementCreateRequestBody
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  $RazorpayInstantSettlementCreateRequestBodyCopyWith<
-          RazorpayInstantSettlementCreateRequestBody>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $RazorpayInstantSettlementCreateRequestBodyCopyWith<$Res> {
-  factory $RazorpayInstantSettlementCreateRequestBodyCopyWith(
-          RazorpayInstantSettlementCreateRequestBody value,
-          $Res Function(RazorpayInstantSettlementCreateRequestBody) then) =
-      _$RazorpayInstantSettlementCreateRequestBodyCopyWithImpl<$Res,
-          RazorpayInstantSettlementCreateRequestBody>;
+abstract mixin class $RazorpayInstantSettlementBaseRequestBodyCopyWith<$Res> {
+  factory $RazorpayInstantSettlementBaseRequestBodyCopyWith(
+          RazorpayInstantSettlementBaseRequestBody value,
+          $Res Function(RazorpayInstantSettlementBaseRequestBody) _then) =
+      _$RazorpayInstantSettlementBaseRequestBodyCopyWithImpl;
   @useResult
   $Res call(
       {dynamic amount,
@@ -313,18 +78,15 @@ abstract class $RazorpayInstantSettlementCreateRequestBodyCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$RazorpayInstantSettlementCreateRequestBodyCopyWithImpl<$Res,
-        $Val extends RazorpayInstantSettlementCreateRequestBody>
-    implements $RazorpayInstantSettlementCreateRequestBodyCopyWith<$Res> {
-  _$RazorpayInstantSettlementCreateRequestBodyCopyWithImpl(
-      this._value, this._then);
+class _$RazorpayInstantSettlementBaseRequestBodyCopyWithImpl<$Res>
+    implements $RazorpayInstantSettlementBaseRequestBodyCopyWith<$Res> {
+  _$RazorpayInstantSettlementBaseRequestBodyCopyWithImpl(
+      this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final RazorpayInstantSettlementBaseRequestBody _self;
+  final $Res Function(RazorpayInstantSettlementBaseRequestBody) _then;
 
-  /// Create a copy of RazorpayInstantSettlementCreateRequestBody
+  /// Create a copy of RazorpayInstantSettlementBaseRequestBody
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
@@ -334,80 +96,21 @@ class _$RazorpayInstantSettlementCreateRequestBodyCopyWithImpl<$Res,
     Object? description = freezed,
     Object? notes = freezed,
   }) {
-    return _then(_value.copyWith(
+    return _then(_self.copyWith(
       amount: freezed == amount
-          ? _value.amount
+          ? _self.amount
           : amount // ignore: cast_nullable_to_non_nullable
               as dynamic,
       settle_full_balance: freezed == settle_full_balance
-          ? _value.settle_full_balance
+          ? _self.settle_full_balance
           : settle_full_balance // ignore: cast_nullable_to_non_nullable
               as bool?,
       description: freezed == description
-          ? _value.description
+          ? _self.description
           : description // ignore: cast_nullable_to_non_nullable
               as String?,
       notes: freezed == notes
-          ? _value.notes
-          : notes // ignore: cast_nullable_to_non_nullable
-              as IMap<dynamic>?,
-    ) as $Val);
-  }
-}
-
-/// @nodoc
-abstract class _$$RazorpayInstantSettlementCreateRequestBodyImplCopyWith<$Res>
-    implements $RazorpayInstantSettlementCreateRequestBodyCopyWith<$Res> {
-  factory _$$RazorpayInstantSettlementCreateRequestBodyImplCopyWith(
-          _$RazorpayInstantSettlementCreateRequestBodyImpl value,
-          $Res Function(_$RazorpayInstantSettlementCreateRequestBodyImpl)
-              then) =
-      __$$RazorpayInstantSettlementCreateRequestBodyImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {dynamic amount,
-      @JsonKey(toJson: _boolToInt, fromJson: _intToBool)
-      bool? settle_full_balance,
-      String? description,
-      IMap<dynamic>? notes});
-}
-
-/// @nodoc
-class __$$RazorpayInstantSettlementCreateRequestBodyImplCopyWithImpl<$Res>
-    extends _$RazorpayInstantSettlementCreateRequestBodyCopyWithImpl<$Res,
-        _$RazorpayInstantSettlementCreateRequestBodyImpl>
-    implements _$$RazorpayInstantSettlementCreateRequestBodyImplCopyWith<$Res> {
-  __$$RazorpayInstantSettlementCreateRequestBodyImplCopyWithImpl(
-      _$RazorpayInstantSettlementCreateRequestBodyImpl _value,
-      $Res Function(_$RazorpayInstantSettlementCreateRequestBodyImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of RazorpayInstantSettlementCreateRequestBody
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? amount = freezed,
-    Object? settle_full_balance = freezed,
-    Object? description = freezed,
-    Object? notes = freezed,
-  }) {
-    return _then(_$RazorpayInstantSettlementCreateRequestBodyImpl(
-      amount: freezed == amount
-          ? _value.amount
-          : amount // ignore: cast_nullable_to_non_nullable
-              as dynamic,
-      settle_full_balance: freezed == settle_full_balance
-          ? _value.settle_full_balance
-          : settle_full_balance // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      description: freezed == description
-          ? _value.description
-          : description // ignore: cast_nullable_to_non_nullable
-              as String?,
-      notes: freezed == notes
-          ? _value._notes
+          ? _self.notes
           : notes // ignore: cast_nullable_to_non_nullable
               as IMap<dynamic>?,
     ));
@@ -417,19 +120,18 @@ class __$$RazorpayInstantSettlementCreateRequestBodyImplCopyWithImpl<$Res>
 /// @nodoc
 
 @JsonSerializable(includeIfNull: false)
-class _$RazorpayInstantSettlementCreateRequestBodyImpl
-    implements _RazorpayInstantSettlementCreateRequestBody {
-  const _$RazorpayInstantSettlementCreateRequestBodyImpl(
+class _RazorpayInstantSettlementBaseRequestBody
+    implements RazorpayInstantSettlementBaseRequestBody {
+  const _RazorpayInstantSettlementBaseRequestBody(
       {required this.amount,
       @JsonKey(toJson: _boolToInt, fromJson: _intToBool)
       this.settle_full_balance,
       this.description,
       final IMap<dynamic>? notes})
       : _notes = notes;
-
-  factory _$RazorpayInstantSettlementCreateRequestBodyImpl.fromJson(
+  factory _RazorpayInstantSettlementBaseRequestBody.fromJson(
           Map<String, dynamic> json) =>
-      _$$RazorpayInstantSettlementCreateRequestBodyImplFromJson(json);
+      _$RazorpayInstantSettlementBaseRequestBodyFromJson(json);
 
   @override
   final dynamic amount;
@@ -450,16 +152,28 @@ class _$RazorpayInstantSettlementCreateRequestBodyImpl
     return EqualUnmodifiableMapView(value);
   }
 
+  /// Create a copy of RazorpayInstantSettlementBaseRequestBody
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'RazorpayInstantSettlementCreateRequestBody(amount: $amount, settle_full_balance: $settle_full_balance, description: $description, notes: $notes)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$RazorpayInstantSettlementBaseRequestBodyCopyWith<
+          _RazorpayInstantSettlementBaseRequestBody>
+      get copyWith => __$RazorpayInstantSettlementBaseRequestBodyCopyWithImpl<
+          _RazorpayInstantSettlementBaseRequestBody>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$RazorpayInstantSettlementBaseRequestBodyToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$RazorpayInstantSettlementCreateRequestBodyImpl &&
+            other is _RazorpayInstantSettlementBaseRequestBody &&
             const DeepCollectionEquality().equals(other.amount, amount) &&
             (identical(other.settle_full_balance, settle_full_balance) ||
                 other.settle_full_balance == settle_full_balance) &&
@@ -477,223 +191,401 @@ class _$RazorpayInstantSettlementCreateRequestBodyImpl
       description,
       const DeepCollectionEquality().hash(_notes));
 
-  /// Create a copy of RazorpayInstantSettlementCreateRequestBody
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$RazorpayInstantSettlementCreateRequestBodyImplCopyWith<
-          _$RazorpayInstantSettlementCreateRequestBodyImpl>
-      get copyWith =>
-          __$$RazorpayInstantSettlementCreateRequestBodyImplCopyWithImpl<
-                  _$RazorpayInstantSettlementCreateRequestBodyImpl>(
-              this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$RazorpayInstantSettlementCreateRequestBodyImplToJson(
-      this,
-    );
+  String toString() {
+    return 'RazorpayInstantSettlementBaseRequestBody(amount: $amount, settle_full_balance: $settle_full_balance, description: $description, notes: $notes)';
   }
 }
 
-abstract class _RazorpayInstantSettlementCreateRequestBody
-    implements RazorpayInstantSettlementCreateRequestBody {
-  const factory _RazorpayInstantSettlementCreateRequestBody(
-          {required final dynamic amount,
-          @JsonKey(toJson: _boolToInt, fromJson: _intToBool)
-          final bool? settle_full_balance,
-          final String? description,
-          final IMap<dynamic>? notes}) =
-      _$RazorpayInstantSettlementCreateRequestBodyImpl;
-
-  factory _RazorpayInstantSettlementCreateRequestBody.fromJson(
-          Map<String, dynamic> json) =
-      _$RazorpayInstantSettlementCreateRequestBodyImpl.fromJson;
-
+/// @nodoc
+abstract mixin class _$RazorpayInstantSettlementBaseRequestBodyCopyWith<$Res>
+    implements $RazorpayInstantSettlementBaseRequestBodyCopyWith<$Res> {
+  factory _$RazorpayInstantSettlementBaseRequestBodyCopyWith(
+          _RazorpayInstantSettlementBaseRequestBody value,
+          $Res Function(_RazorpayInstantSettlementBaseRequestBody) _then) =
+      __$RazorpayInstantSettlementBaseRequestBodyCopyWithImpl;
   @override
+  @useResult
+  $Res call(
+      {dynamic amount,
+      @JsonKey(toJson: _boolToInt, fromJson: _intToBool)
+      bool? settle_full_balance,
+      String? description,
+      IMap<dynamic>? notes});
+}
+
+/// @nodoc
+class __$RazorpayInstantSettlementBaseRequestBodyCopyWithImpl<$Res>
+    implements _$RazorpayInstantSettlementBaseRequestBodyCopyWith<$Res> {
+  __$RazorpayInstantSettlementBaseRequestBodyCopyWithImpl(
+      this._self, this._then);
+
+  final _RazorpayInstantSettlementBaseRequestBody _self;
+  final $Res Function(_RazorpayInstantSettlementBaseRequestBody) _then;
+
+  /// Create a copy of RazorpayInstantSettlementBaseRequestBody
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? amount = freezed,
+    Object? settle_full_balance = freezed,
+    Object? description = freezed,
+    Object? notes = freezed,
+  }) {
+    return _then(_RazorpayInstantSettlementBaseRequestBody(
+      amount: freezed == amount
+          ? _self.amount
+          : amount // ignore: cast_nullable_to_non_nullable
+              as dynamic,
+      settle_full_balance: freezed == settle_full_balance
+          ? _self.settle_full_balance
+          : settle_full_balance // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      description: freezed == description
+          ? _self.description
+          : description // ignore: cast_nullable_to_non_nullable
+              as String?,
+      notes: freezed == notes
+          ? _self._notes
+          : notes // ignore: cast_nullable_to_non_nullable
+              as IMap<dynamic>?,
+    ));
+  }
+}
+
+/// @nodoc
+mixin _$RazorpayInstantSettlementCreateRequestBody {
   dynamic get amount; // number | string
-  @override
   @JsonKey(toJson: _boolToInt, fromJson: _intToBool)
   bool? get settle_full_balance; // 0 | 1
-  @override
   String? get description;
-  @override
   IMap<dynamic>? get notes;
 
   /// Create a copy of RazorpayInstantSettlementCreateRequestBody
   /// with the given fields replaced by the non-null parameter values.
-  @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$RazorpayInstantSettlementCreateRequestBodyImplCopyWith<
-          _$RazorpayInstantSettlementCreateRequestBodyImpl>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-RazorpaySettlement _$RazorpaySettlementFromJson(Map<String, dynamic> json) {
-  return _RazorpaySettlement.fromJson(json);
-}
-
-/// @nodoc
-mixin _$RazorpaySettlement {
-  String get id => throw _privateConstructorUsedError;
-  String get entity => throw _privateConstructorUsedError; // 'settlement'
-  dynamic get amount =>
-      throw _privateConstructorUsedError; // Amount requested/processed for this specific part
-  SettlementStatus get status => throw _privateConstructorUsedError;
-  int get fees => throw _privateConstructorUsedError; // Fees for this part
-  int get tax => throw _privateConstructorUsedError;
-  int get created_at => throw _privateConstructorUsedError; // Tax for this part
-  String? get utr => throw _privateConstructorUsedError; // Nullable UTR
-// Fields from InstantSettlementBaseRequestBody (might be present)
-  @JsonKey(toJson: _boolToInt, fromJson: _intToBool)
-  bool? get settle_full_balance => throw _privateConstructorUsedError;
-  String? get description => throw _privateConstructorUsedError;
-  IMap<dynamic>? get notes =>
-      throw _privateConstructorUsedError; // Additional detailed fields (might be nullable)
-  int? get initiated_at => throw _privateConstructorUsedError;
-  int? get processed_at => throw _privateConstructorUsedError;
-  int? get reversed_at => throw _privateConstructorUsedError;
-  int? get amount_settled => throw _privateConstructorUsedError;
-
-  /// Serializes this RazorpaySettlement to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of RazorpaySettlement
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  $RazorpaySettlementCopyWith<RazorpaySettlement> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $RazorpaySettlementCopyWith<$Res> {
-  factory $RazorpaySettlementCopyWith(
-          RazorpaySettlement value, $Res Function(RazorpaySettlement) then) =
-      _$RazorpaySettlementCopyWithImpl<$Res, RazorpaySettlement>;
-  @useResult
-  $Res call(
-      {String id,
-      String entity,
-      dynamic amount,
-      SettlementStatus status,
-      int fees,
-      int tax,
-      int created_at,
-      String? utr,
-      @JsonKey(toJson: _boolToInt, fromJson: _intToBool)
-      bool? settle_full_balance,
-      String? description,
-      IMap<dynamic>? notes,
-      int? initiated_at,
-      int? processed_at,
-      int? reversed_at,
-      int? amount_settled});
-}
-
-/// @nodoc
-class _$RazorpaySettlementCopyWithImpl<$Res, $Val extends RazorpaySettlement>
-    implements $RazorpaySettlementCopyWith<$Res> {
-  _$RazorpaySettlementCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of RazorpaySettlement
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
+  $RazorpayInstantSettlementCreateRequestBodyCopyWith<
+          RazorpayInstantSettlementCreateRequestBody>
+      get copyWith => _$RazorpayInstantSettlementCreateRequestBodyCopyWithImpl<
+              RazorpayInstantSettlementCreateRequestBody>(
+          this as RazorpayInstantSettlementCreateRequestBody, _$identity);
+
+  /// Serializes this RazorpayInstantSettlementCreateRequestBody to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? id = null,
-    Object? entity = null,
-    Object? amount = freezed,
-    Object? status = null,
-    Object? fees = null,
-    Object? tax = null,
-    Object? created_at = null,
-    Object? utr = freezed,
-    Object? settle_full_balance = freezed,
-    Object? description = freezed,
-    Object? notes = freezed,
-    Object? initiated_at = freezed,
-    Object? processed_at = freezed,
-    Object? reversed_at = freezed,
-    Object? amount_settled = freezed,
-  }) {
-    return _then(_value.copyWith(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      entity: null == entity
-          ? _value.entity
-          : entity // ignore: cast_nullable_to_non_nullable
-              as String,
-      amount: freezed == amount
-          ? _value.amount
-          : amount // ignore: cast_nullable_to_non_nullable
-              as dynamic,
-      status: null == status
-          ? _value.status
-          : status // ignore: cast_nullable_to_non_nullable
-              as SettlementStatus,
-      fees: null == fees
-          ? _value.fees
-          : fees // ignore: cast_nullable_to_non_nullable
-              as int,
-      tax: null == tax
-          ? _value.tax
-          : tax // ignore: cast_nullable_to_non_nullable
-              as int,
-      created_at: null == created_at
-          ? _value.created_at
-          : created_at // ignore: cast_nullable_to_non_nullable
-              as int,
-      utr: freezed == utr
-          ? _value.utr
-          : utr // ignore: cast_nullable_to_non_nullable
-              as String?,
-      settle_full_balance: freezed == settle_full_balance
-          ? _value.settle_full_balance
-          : settle_full_balance // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      description: freezed == description
-          ? _value.description
-          : description // ignore: cast_nullable_to_non_nullable
-              as String?,
-      notes: freezed == notes
-          ? _value.notes
-          : notes // ignore: cast_nullable_to_non_nullable
-              as IMap<dynamic>?,
-      initiated_at: freezed == initiated_at
-          ? _value.initiated_at
-          : initiated_at // ignore: cast_nullable_to_non_nullable
-              as int?,
-      processed_at: freezed == processed_at
-          ? _value.processed_at
-          : processed_at // ignore: cast_nullable_to_non_nullable
-              as int?,
-      reversed_at: freezed == reversed_at
-          ? _value.reversed_at
-          : reversed_at // ignore: cast_nullable_to_non_nullable
-              as int?,
-      amount_settled: freezed == amount_settled
-          ? _value.amount_settled
-          : amount_settled // ignore: cast_nullable_to_non_nullable
-              as int?,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is RazorpayInstantSettlementCreateRequestBody &&
+            const DeepCollectionEquality().equals(other.amount, amount) &&
+            (identical(other.settle_full_balance, settle_full_balance) ||
+                other.settle_full_balance == settle_full_balance) &&
+            (identical(other.description, description) ||
+                other.description == description) &&
+            const DeepCollectionEquality().equals(other.notes, notes));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(amount),
+      settle_full_balance,
+      description,
+      const DeepCollectionEquality().hash(notes));
+
+  @override
+  String toString() {
+    return 'RazorpayInstantSettlementCreateRequestBody(amount: $amount, settle_full_balance: $settle_full_balance, description: $description, notes: $notes)';
   }
 }
 
 /// @nodoc
-abstract class _$$RazorpaySettlementImplCopyWith<$Res>
-    implements $RazorpaySettlementCopyWith<$Res> {
-  factory _$$RazorpaySettlementImplCopyWith(_$RazorpaySettlementImpl value,
-          $Res Function(_$RazorpaySettlementImpl) then) =
-      __$$RazorpaySettlementImplCopyWithImpl<$Res>;
+abstract mixin class $RazorpayInstantSettlementCreateRequestBodyCopyWith<$Res> {
+  factory $RazorpayInstantSettlementCreateRequestBodyCopyWith(
+          RazorpayInstantSettlementCreateRequestBody value,
+          $Res Function(RazorpayInstantSettlementCreateRequestBody) _then) =
+      _$RazorpayInstantSettlementCreateRequestBodyCopyWithImpl;
+  @useResult
+  $Res call(
+      {dynamic amount,
+      @JsonKey(toJson: _boolToInt, fromJson: _intToBool)
+      bool? settle_full_balance,
+      String? description,
+      IMap<dynamic>? notes});
+}
+
+/// @nodoc
+class _$RazorpayInstantSettlementCreateRequestBodyCopyWithImpl<$Res>
+    implements $RazorpayInstantSettlementCreateRequestBodyCopyWith<$Res> {
+  _$RazorpayInstantSettlementCreateRequestBodyCopyWithImpl(
+      this._self, this._then);
+
+  final RazorpayInstantSettlementCreateRequestBody _self;
+  final $Res Function(RazorpayInstantSettlementCreateRequestBody) _then;
+
+  /// Create a copy of RazorpayInstantSettlementCreateRequestBody
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
   @override
+  $Res call({
+    Object? amount = freezed,
+    Object? settle_full_balance = freezed,
+    Object? description = freezed,
+    Object? notes = freezed,
+  }) {
+    return _then(_self.copyWith(
+      amount: freezed == amount
+          ? _self.amount
+          : amount // ignore: cast_nullable_to_non_nullable
+              as dynamic,
+      settle_full_balance: freezed == settle_full_balance
+          ? _self.settle_full_balance
+          : settle_full_balance // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      description: freezed == description
+          ? _self.description
+          : description // ignore: cast_nullable_to_non_nullable
+              as String?,
+      notes: freezed == notes
+          ? _self.notes
+          : notes // ignore: cast_nullable_to_non_nullable
+              as IMap<dynamic>?,
+    ));
+  }
+}
+
+/// @nodoc
+
+@JsonSerializable(includeIfNull: false)
+class _RazorpayInstantSettlementCreateRequestBody
+    implements RazorpayInstantSettlementCreateRequestBody {
+  const _RazorpayInstantSettlementCreateRequestBody(
+      {required this.amount,
+      @JsonKey(toJson: _boolToInt, fromJson: _intToBool)
+      this.settle_full_balance,
+      this.description,
+      final IMap<dynamic>? notes})
+      : _notes = notes;
+  factory _RazorpayInstantSettlementCreateRequestBody.fromJson(
+          Map<String, dynamic> json) =>
+      _$RazorpayInstantSettlementCreateRequestBodyFromJson(json);
+
+  @override
+  final dynamic amount;
+// number | string
+  @override
+  @JsonKey(toJson: _boolToInt, fromJson: _intToBool)
+  final bool? settle_full_balance;
+// 0 | 1
+  @override
+  final String? description;
+  final IMap<dynamic>? _notes;
+  @override
+  IMap<dynamic>? get notes {
+    final value = _notes;
+    if (value == null) return null;
+    if (_notes is EqualUnmodifiableMapView) return _notes;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(value);
+  }
+
+  /// Create a copy of RazorpayInstantSettlementCreateRequestBody
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$RazorpayInstantSettlementCreateRequestBodyCopyWith<
+          _RazorpayInstantSettlementCreateRequestBody>
+      get copyWith => __$RazorpayInstantSettlementCreateRequestBodyCopyWithImpl<
+          _RazorpayInstantSettlementCreateRequestBody>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$RazorpayInstantSettlementCreateRequestBodyToJson(
+      this,
+    );
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _RazorpayInstantSettlementCreateRequestBody &&
+            const DeepCollectionEquality().equals(other.amount, amount) &&
+            (identical(other.settle_full_balance, settle_full_balance) ||
+                other.settle_full_balance == settle_full_balance) &&
+            (identical(other.description, description) ||
+                other.description == description) &&
+            const DeepCollectionEquality().equals(other._notes, _notes));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(amount),
+      settle_full_balance,
+      description,
+      const DeepCollectionEquality().hash(_notes));
+
+  @override
+  String toString() {
+    return 'RazorpayInstantSettlementCreateRequestBody(amount: $amount, settle_full_balance: $settle_full_balance, description: $description, notes: $notes)';
+  }
+}
+
+/// @nodoc
+abstract mixin class _$RazorpayInstantSettlementCreateRequestBodyCopyWith<$Res>
+    implements $RazorpayInstantSettlementCreateRequestBodyCopyWith<$Res> {
+  factory _$RazorpayInstantSettlementCreateRequestBodyCopyWith(
+          _RazorpayInstantSettlementCreateRequestBody value,
+          $Res Function(_RazorpayInstantSettlementCreateRequestBody) _then) =
+      __$RazorpayInstantSettlementCreateRequestBodyCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {dynamic amount,
+      @JsonKey(toJson: _boolToInt, fromJson: _intToBool)
+      bool? settle_full_balance,
+      String? description,
+      IMap<dynamic>? notes});
+}
+
+/// @nodoc
+class __$RazorpayInstantSettlementCreateRequestBodyCopyWithImpl<$Res>
+    implements _$RazorpayInstantSettlementCreateRequestBodyCopyWith<$Res> {
+  __$RazorpayInstantSettlementCreateRequestBodyCopyWithImpl(
+      this._self, this._then);
+
+  final _RazorpayInstantSettlementCreateRequestBody _self;
+  final $Res Function(_RazorpayInstantSettlementCreateRequestBody) _then;
+
+  /// Create a copy of RazorpayInstantSettlementCreateRequestBody
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? amount = freezed,
+    Object? settle_full_balance = freezed,
+    Object? description = freezed,
+    Object? notes = freezed,
+  }) {
+    return _then(_RazorpayInstantSettlementCreateRequestBody(
+      amount: freezed == amount
+          ? _self.amount
+          : amount // ignore: cast_nullable_to_non_nullable
+              as dynamic,
+      settle_full_balance: freezed == settle_full_balance
+          ? _self.settle_full_balance
+          : settle_full_balance // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      description: freezed == description
+          ? _self.description
+          : description // ignore: cast_nullable_to_non_nullable
+              as String?,
+      notes: freezed == notes
+          ? _self._notes
+          : notes // ignore: cast_nullable_to_non_nullable
+              as IMap<dynamic>?,
+    ));
+  }
+}
+
+/// @nodoc
+mixin _$RazorpaySettlement {
+  String get id;
+  String get entity; // 'settlement'
+  dynamic get amount; // Amount requested/processed for this specific part
+  SettlementStatus get status;
+  int get fees; // Fees for this part
+  int get tax;
+  int get created_at; // Tax for this part
+  String? get utr; // Nullable UTR
+// Fields from InstantSettlementBaseRequestBody (might be present)
+  @JsonKey(toJson: _boolToInt, fromJson: _intToBool)
+  bool? get settle_full_balance;
+  String? get description;
+  IMap<dynamic>? get notes; // Additional detailed fields (might be nullable)
+  int? get initiated_at;
+  int? get processed_at;
+  int? get reversed_at;
+  int? get amount_settled;
+
+  /// Create a copy of RazorpaySettlement
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $RazorpaySettlementCopyWith<RazorpaySettlement> get copyWith =>
+      _$RazorpaySettlementCopyWithImpl<RazorpaySettlement>(
+          this as RazorpaySettlement, _$identity);
+
+  /// Serializes this RazorpaySettlement to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is RazorpaySettlement &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.entity, entity) || other.entity == entity) &&
+            const DeepCollectionEquality().equals(other.amount, amount) &&
+            (identical(other.status, status) || other.status == status) &&
+            (identical(other.fees, fees) || other.fees == fees) &&
+            (identical(other.tax, tax) || other.tax == tax) &&
+            (identical(other.created_at, created_at) ||
+                other.created_at == created_at) &&
+            (identical(other.utr, utr) || other.utr == utr) &&
+            (identical(other.settle_full_balance, settle_full_balance) ||
+                other.settle_full_balance == settle_full_balance) &&
+            (identical(other.description, description) ||
+                other.description == description) &&
+            const DeepCollectionEquality().equals(other.notes, notes) &&
+            (identical(other.initiated_at, initiated_at) ||
+                other.initiated_at == initiated_at) &&
+            (identical(other.processed_at, processed_at) ||
+                other.processed_at == processed_at) &&
+            (identical(other.reversed_at, reversed_at) ||
+                other.reversed_at == reversed_at) &&
+            (identical(other.amount_settled, amount_settled) ||
+                other.amount_settled == amount_settled));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      entity,
+      const DeepCollectionEquality().hash(amount),
+      status,
+      fees,
+      tax,
+      created_at,
+      utr,
+      settle_full_balance,
+      description,
+      const DeepCollectionEquality().hash(notes),
+      initiated_at,
+      processed_at,
+      reversed_at,
+      amount_settled);
+
+  @override
+  String toString() {
+    return 'RazorpaySettlement(id: $id, entity: $entity, amount: $amount, status: $status, fees: $fees, tax: $tax, created_at: $created_at, utr: $utr, settle_full_balance: $settle_full_balance, description: $description, notes: $notes, initiated_at: $initiated_at, processed_at: $processed_at, reversed_at: $reversed_at, amount_settled: $amount_settled)';
+  }
+}
+
+/// @nodoc
+abstract mixin class $RazorpaySettlementCopyWith<$Res> {
+  factory $RazorpaySettlementCopyWith(
+          RazorpaySettlement value, $Res Function(RazorpaySettlement) _then) =
+      _$RazorpaySettlementCopyWithImpl;
   @useResult
   $Res call(
       {String id,
@@ -715,12 +607,12 @@ abstract class _$$RazorpaySettlementImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$RazorpaySettlementImplCopyWithImpl<$Res>
-    extends _$RazorpaySettlementCopyWithImpl<$Res, _$RazorpaySettlementImpl>
-    implements _$$RazorpaySettlementImplCopyWith<$Res> {
-  __$$RazorpaySettlementImplCopyWithImpl(_$RazorpaySettlementImpl _value,
-      $Res Function(_$RazorpaySettlementImpl) _then)
-      : super(_value, _then);
+class _$RazorpaySettlementCopyWithImpl<$Res>
+    implements $RazorpaySettlementCopyWith<$Res> {
+  _$RazorpaySettlementCopyWithImpl(this._self, this._then);
+
+  final RazorpaySettlement _self;
+  final $Res Function(RazorpaySettlement) _then;
 
   /// Create a copy of RazorpaySettlement
   /// with the given fields replaced by the non-null parameter values.
@@ -743,65 +635,65 @@ class __$$RazorpaySettlementImplCopyWithImpl<$Res>
     Object? reversed_at = freezed,
     Object? amount_settled = freezed,
   }) {
-    return _then(_$RazorpaySettlementImpl(
+    return _then(_self.copyWith(
       id: null == id
-          ? _value.id
+          ? _self.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
       entity: null == entity
-          ? _value.entity
+          ? _self.entity
           : entity // ignore: cast_nullable_to_non_nullable
               as String,
       amount: freezed == amount
-          ? _value.amount
+          ? _self.amount
           : amount // ignore: cast_nullable_to_non_nullable
               as dynamic,
       status: null == status
-          ? _value.status
+          ? _self.status
           : status // ignore: cast_nullable_to_non_nullable
               as SettlementStatus,
       fees: null == fees
-          ? _value.fees
+          ? _self.fees
           : fees // ignore: cast_nullable_to_non_nullable
               as int,
       tax: null == tax
-          ? _value.tax
+          ? _self.tax
           : tax // ignore: cast_nullable_to_non_nullable
               as int,
       created_at: null == created_at
-          ? _value.created_at
+          ? _self.created_at
           : created_at // ignore: cast_nullable_to_non_nullable
               as int,
       utr: freezed == utr
-          ? _value.utr
+          ? _self.utr
           : utr // ignore: cast_nullable_to_non_nullable
               as String?,
       settle_full_balance: freezed == settle_full_balance
-          ? _value.settle_full_balance
+          ? _self.settle_full_balance
           : settle_full_balance // ignore: cast_nullable_to_non_nullable
               as bool?,
       description: freezed == description
-          ? _value.description
+          ? _self.description
           : description // ignore: cast_nullable_to_non_nullable
               as String?,
       notes: freezed == notes
-          ? _value._notes
+          ? _self.notes
           : notes // ignore: cast_nullable_to_non_nullable
               as IMap<dynamic>?,
       initiated_at: freezed == initiated_at
-          ? _value.initiated_at
+          ? _self.initiated_at
           : initiated_at // ignore: cast_nullable_to_non_nullable
               as int?,
       processed_at: freezed == processed_at
-          ? _value.processed_at
+          ? _self.processed_at
           : processed_at // ignore: cast_nullable_to_non_nullable
               as int?,
       reversed_at: freezed == reversed_at
-          ? _value.reversed_at
+          ? _self.reversed_at
           : reversed_at // ignore: cast_nullable_to_non_nullable
               as int?,
       amount_settled: freezed == amount_settled
-          ? _value.amount_settled
+          ? _self.amount_settled
           : amount_settled // ignore: cast_nullable_to_non_nullable
               as int?,
     ));
@@ -811,8 +703,8 @@ class __$$RazorpaySettlementImplCopyWithImpl<$Res>
 /// @nodoc
 
 @JsonSerializable(includeIfNull: false)
-class _$RazorpaySettlementImpl implements _RazorpaySettlement {
-  const _$RazorpaySettlementImpl(
+class _RazorpaySettlement implements RazorpaySettlement {
+  const _RazorpaySettlement(
       {required this.id,
       required this.entity,
       required this.amount,
@@ -830,9 +722,8 @@ class _$RazorpaySettlementImpl implements _RazorpaySettlement {
       this.reversed_at,
       this.amount_settled})
       : _notes = notes;
-
-  factory _$RazorpaySettlementImpl.fromJson(Map<String, dynamic> json) =>
-      _$$RazorpaySettlementImplFromJson(json);
+  factory _RazorpaySettlement.fromJson(Map<String, dynamic> json) =>
+      _$RazorpaySettlementFromJson(json);
 
   @override
   final String id;
@@ -881,16 +772,26 @@ class _$RazorpaySettlementImpl implements _RazorpaySettlement {
   @override
   final int? amount_settled;
 
+  /// Create a copy of RazorpaySettlement
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'RazorpaySettlement(id: $id, entity: $entity, amount: $amount, status: $status, fees: $fees, tax: $tax, created_at: $created_at, utr: $utr, settle_full_balance: $settle_full_balance, description: $description, notes: $notes, initiated_at: $initiated_at, processed_at: $processed_at, reversed_at: $reversed_at, amount_settled: $amount_settled)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$RazorpaySettlementCopyWith<_RazorpaySettlement> get copyWith =>
+      __$RazorpaySettlementCopyWithImpl<_RazorpaySettlement>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$RazorpaySettlementToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$RazorpaySettlementImpl &&
+            other is _RazorpaySettlement &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.entity, entity) || other.entity == entity) &&
             const DeepCollectionEquality().equals(other.amount, amount) &&
@@ -935,155 +836,51 @@ class _$RazorpaySettlementImpl implements _RazorpaySettlement {
       reversed_at,
       amount_settled);
 
-  /// Create a copy of RazorpaySettlement
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$RazorpaySettlementImplCopyWith<_$RazorpaySettlementImpl> get copyWith =>
-      __$$RazorpaySettlementImplCopyWithImpl<_$RazorpaySettlementImpl>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$RazorpaySettlementImplToJson(
-      this,
-    );
+  String toString() {
+    return 'RazorpaySettlement(id: $id, entity: $entity, amount: $amount, status: $status, fees: $fees, tax: $tax, created_at: $created_at, utr: $utr, settle_full_balance: $settle_full_balance, description: $description, notes: $notes, initiated_at: $initiated_at, processed_at: $processed_at, reversed_at: $reversed_at, amount_settled: $amount_settled)';
   }
 }
 
-abstract class _RazorpaySettlement implements RazorpaySettlement {
-  const factory _RazorpaySettlement(
-      {required final String id,
-      required final String entity,
-      required final dynamic amount,
-      required final SettlementStatus status,
-      required final int fees,
-      required final int tax,
-      required final int created_at,
-      final String? utr,
+/// @nodoc
+abstract mixin class _$RazorpaySettlementCopyWith<$Res>
+    implements $RazorpaySettlementCopyWith<$Res> {
+  factory _$RazorpaySettlementCopyWith(
+          _RazorpaySettlement value, $Res Function(_RazorpaySettlement) _then) =
+      __$RazorpaySettlementCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {String id,
+      String entity,
+      dynamic amount,
+      SettlementStatus status,
+      int fees,
+      int tax,
+      int created_at,
+      String? utr,
       @JsonKey(toJson: _boolToInt, fromJson: _intToBool)
-      final bool? settle_full_balance,
-      final String? description,
-      final IMap<dynamic>? notes,
-      final int? initiated_at,
-      final int? processed_at,
-      final int? reversed_at,
-      final int? amount_settled}) = _$RazorpaySettlementImpl;
+      bool? settle_full_balance,
+      String? description,
+      IMap<dynamic>? notes,
+      int? initiated_at,
+      int? processed_at,
+      int? reversed_at,
+      int? amount_settled});
+}
 
-  factory _RazorpaySettlement.fromJson(Map<String, dynamic> json) =
-      _$RazorpaySettlementImpl.fromJson;
+/// @nodoc
+class __$RazorpaySettlementCopyWithImpl<$Res>
+    implements _$RazorpaySettlementCopyWith<$Res> {
+  __$RazorpaySettlementCopyWithImpl(this._self, this._then);
 
-  @override
-  String get id;
-  @override
-  String get entity; // 'settlement'
-  @override
-  dynamic get amount; // Amount requested/processed for this specific part
-  @override
-  SettlementStatus get status;
-  @override
-  int get fees; // Fees for this part
-  @override
-  int get tax;
-  @override
-  int get created_at; // Tax for this part
-  @override
-  String? get utr; // Nullable UTR
-// Fields from InstantSettlementBaseRequestBody (might be present)
-  @override
-  @JsonKey(toJson: _boolToInt, fromJson: _intToBool)
-  bool? get settle_full_balance;
-  @override
-  String? get description;
-  @override
-  IMap<dynamic>? get notes; // Additional detailed fields (might be nullable)
-  @override
-  int? get initiated_at;
-  @override
-  int? get processed_at;
-  @override
-  int? get reversed_at;
-  @override
-  int? get amount_settled;
+  final _RazorpaySettlement _self;
+  final $Res Function(_RazorpaySettlement) _then;
 
   /// Create a copy of RazorpaySettlement
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$RazorpaySettlementImplCopyWith<_$RazorpaySettlementImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-RazorpayOndemandPayoutItem _$RazorpayOndemandPayoutItemFromJson(
-    Map<String, dynamic> json) {
-  return _RazorpayOndemandPayoutItem.fromJson(json);
-}
-
-/// @nodoc
-mixin _$RazorpayOndemandPayoutItem {
-// This seems to be the standard settlement structure
-  String get id => throw _privateConstructorUsedError;
-  String get entity =>
-      throw _privateConstructorUsedError; // Should be 'settlement'
-  dynamic get amount => throw _privateConstructorUsedError;
-  SettlementStatus get status => throw _privateConstructorUsedError;
-  int get fees => throw _privateConstructorUsedError;
-  int get tax => throw _privateConstructorUsedError;
-  int get created_at => throw _privateConstructorUsedError;
-  String? get utr => throw _privateConstructorUsedError;
-  int? get initiated_at => throw _privateConstructorUsedError;
-  int? get processed_at => throw _privateConstructorUsedError;
-  int? get reversed_at => throw _privateConstructorUsedError;
-  int? get amount_settled => throw _privateConstructorUsedError;
-
-  /// Serializes this RazorpayOndemandPayoutItem to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of RazorpayOndemandPayoutItem
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  $RazorpayOndemandPayoutItemCopyWith<RazorpayOndemandPayoutItem>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $RazorpayOndemandPayoutItemCopyWith<$Res> {
-  factory $RazorpayOndemandPayoutItemCopyWith(RazorpayOndemandPayoutItem value,
-          $Res Function(RazorpayOndemandPayoutItem) then) =
-      _$RazorpayOndemandPayoutItemCopyWithImpl<$Res,
-          RazorpayOndemandPayoutItem>;
-  @useResult
-  $Res call(
-      {String id,
-      String entity,
-      dynamic amount,
-      SettlementStatus status,
-      int fees,
-      int tax,
-      int created_at,
-      String? utr,
-      int? initiated_at,
-      int? processed_at,
-      int? reversed_at,
-      int? amount_settled});
-}
-
-/// @nodoc
-class _$RazorpayOndemandPayoutItemCopyWithImpl<$Res,
-        $Val extends RazorpayOndemandPayoutItem>
-    implements $RazorpayOndemandPayoutItemCopyWith<$Res> {
-  _$RazorpayOndemandPayoutItemCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of RazorpayOndemandPayoutItem
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
-  @override
   $Res call({
     Object? id = null,
     Object? entity = null,
@@ -1093,163 +890,73 @@ class _$RazorpayOndemandPayoutItemCopyWithImpl<$Res,
     Object? tax = null,
     Object? created_at = null,
     Object? utr = freezed,
+    Object? settle_full_balance = freezed,
+    Object? description = freezed,
+    Object? notes = freezed,
     Object? initiated_at = freezed,
     Object? processed_at = freezed,
     Object? reversed_at = freezed,
     Object? amount_settled = freezed,
   }) {
-    return _then(_value.copyWith(
+    return _then(_RazorpaySettlement(
       id: null == id
-          ? _value.id
+          ? _self.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
       entity: null == entity
-          ? _value.entity
+          ? _self.entity
           : entity // ignore: cast_nullable_to_non_nullable
               as String,
       amount: freezed == amount
-          ? _value.amount
+          ? _self.amount
           : amount // ignore: cast_nullable_to_non_nullable
               as dynamic,
       status: null == status
-          ? _value.status
+          ? _self.status
           : status // ignore: cast_nullable_to_non_nullable
               as SettlementStatus,
       fees: null == fees
-          ? _value.fees
+          ? _self.fees
           : fees // ignore: cast_nullable_to_non_nullable
               as int,
       tax: null == tax
-          ? _value.tax
+          ? _self.tax
           : tax // ignore: cast_nullable_to_non_nullable
               as int,
       created_at: null == created_at
-          ? _value.created_at
+          ? _self.created_at
           : created_at // ignore: cast_nullable_to_non_nullable
               as int,
       utr: freezed == utr
-          ? _value.utr
+          ? _self.utr
           : utr // ignore: cast_nullable_to_non_nullable
               as String?,
+      settle_full_balance: freezed == settle_full_balance
+          ? _self.settle_full_balance
+          : settle_full_balance // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      description: freezed == description
+          ? _self.description
+          : description // ignore: cast_nullable_to_non_nullable
+              as String?,
+      notes: freezed == notes
+          ? _self._notes
+          : notes // ignore: cast_nullable_to_non_nullable
+              as IMap<dynamic>?,
       initiated_at: freezed == initiated_at
-          ? _value.initiated_at
+          ? _self.initiated_at
           : initiated_at // ignore: cast_nullable_to_non_nullable
               as int?,
       processed_at: freezed == processed_at
-          ? _value.processed_at
+          ? _self.processed_at
           : processed_at // ignore: cast_nullable_to_non_nullable
               as int?,
       reversed_at: freezed == reversed_at
-          ? _value.reversed_at
+          ? _self.reversed_at
           : reversed_at // ignore: cast_nullable_to_non_nullable
               as int?,
       amount_settled: freezed == amount_settled
-          ? _value.amount_settled
-          : amount_settled // ignore: cast_nullable_to_non_nullable
-              as int?,
-    ) as $Val);
-  }
-}
-
-/// @nodoc
-abstract class _$$RazorpayOndemandPayoutItemImplCopyWith<$Res>
-    implements $RazorpayOndemandPayoutItemCopyWith<$Res> {
-  factory _$$RazorpayOndemandPayoutItemImplCopyWith(
-          _$RazorpayOndemandPayoutItemImpl value,
-          $Res Function(_$RazorpayOndemandPayoutItemImpl) then) =
-      __$$RazorpayOndemandPayoutItemImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {String id,
-      String entity,
-      dynamic amount,
-      SettlementStatus status,
-      int fees,
-      int tax,
-      int created_at,
-      String? utr,
-      int? initiated_at,
-      int? processed_at,
-      int? reversed_at,
-      int? amount_settled});
-}
-
-/// @nodoc
-class __$$RazorpayOndemandPayoutItemImplCopyWithImpl<$Res>
-    extends _$RazorpayOndemandPayoutItemCopyWithImpl<$Res,
-        _$RazorpayOndemandPayoutItemImpl>
-    implements _$$RazorpayOndemandPayoutItemImplCopyWith<$Res> {
-  __$$RazorpayOndemandPayoutItemImplCopyWithImpl(
-      _$RazorpayOndemandPayoutItemImpl _value,
-      $Res Function(_$RazorpayOndemandPayoutItemImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of RazorpayOndemandPayoutItem
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? id = null,
-    Object? entity = null,
-    Object? amount = freezed,
-    Object? status = null,
-    Object? fees = null,
-    Object? tax = null,
-    Object? created_at = null,
-    Object? utr = freezed,
-    Object? initiated_at = freezed,
-    Object? processed_at = freezed,
-    Object? reversed_at = freezed,
-    Object? amount_settled = freezed,
-  }) {
-    return _then(_$RazorpayOndemandPayoutItemImpl(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      entity: null == entity
-          ? _value.entity
-          : entity // ignore: cast_nullable_to_non_nullable
-              as String,
-      amount: freezed == amount
-          ? _value.amount
-          : amount // ignore: cast_nullable_to_non_nullable
-              as dynamic,
-      status: null == status
-          ? _value.status
-          : status // ignore: cast_nullable_to_non_nullable
-              as SettlementStatus,
-      fees: null == fees
-          ? _value.fees
-          : fees // ignore: cast_nullable_to_non_nullable
-              as int,
-      tax: null == tax
-          ? _value.tax
-          : tax // ignore: cast_nullable_to_non_nullable
-              as int,
-      created_at: null == created_at
-          ? _value.created_at
-          : created_at // ignore: cast_nullable_to_non_nullable
-              as int,
-      utr: freezed == utr
-          ? _value.utr
-          : utr // ignore: cast_nullable_to_non_nullable
-              as String?,
-      initiated_at: freezed == initiated_at
-          ? _value.initiated_at
-          : initiated_at // ignore: cast_nullable_to_non_nullable
-              as int?,
-      processed_at: freezed == processed_at
-          ? _value.processed_at
-          : processed_at // ignore: cast_nullable_to_non_nullable
-              as int?,
-      reversed_at: freezed == reversed_at
-          ? _value.reversed_at
-          : reversed_at // ignore: cast_nullable_to_non_nullable
-              as int?,
-      amount_settled: freezed == amount_settled
-          ? _value.amount_settled
+          ? _self.amount_settled
           : amount_settled // ignore: cast_nullable_to_non_nullable
               as int?,
     ));
@@ -1257,64 +964,38 @@ class __$$RazorpayOndemandPayoutItemImplCopyWithImpl<$Res>
 }
 
 /// @nodoc
-
-@JsonSerializable(includeIfNull: false)
-class _$RazorpayOndemandPayoutItemImpl implements _RazorpayOndemandPayoutItem {
-  const _$RazorpayOndemandPayoutItemImpl(
-      {required this.id,
-      required this.entity,
-      required this.amount,
-      required this.status,
-      required this.fees,
-      required this.tax,
-      required this.created_at,
-      this.utr,
-      this.initiated_at,
-      this.processed_at,
-      this.reversed_at,
-      this.amount_settled});
-
-  factory _$RazorpayOndemandPayoutItemImpl.fromJson(
-          Map<String, dynamic> json) =>
-      _$$RazorpayOndemandPayoutItemImplFromJson(json);
-
+mixin _$RazorpayOndemandPayoutItem {
 // This seems to be the standard settlement structure
-  @override
-  final String id;
-  @override
-  final String entity;
-// Should be 'settlement'
-  @override
-  final dynamic amount;
-  @override
-  final SettlementStatus status;
-  @override
-  final int fees;
-  @override
-  final int tax;
-  @override
-  final int created_at;
-  @override
-  final String? utr;
-  @override
-  final int? initiated_at;
-  @override
-  final int? processed_at;
-  @override
-  final int? reversed_at;
-  @override
-  final int? amount_settled;
+  String get id;
+  String get entity; // Should be 'settlement'
+  dynamic get amount;
+  SettlementStatus get status;
+  int get fees;
+  int get tax;
+  int get created_at;
+  String? get utr;
+  int? get initiated_at;
+  int? get processed_at;
+  int? get reversed_at;
+  int? get amount_settled;
 
-  @override
-  String toString() {
-    return 'RazorpayOndemandPayoutItem(id: $id, entity: $entity, amount: $amount, status: $status, fees: $fees, tax: $tax, created_at: $created_at, utr: $utr, initiated_at: $initiated_at, processed_at: $processed_at, reversed_at: $reversed_at, amount_settled: $amount_settled)';
-  }
+  /// Create a copy of RazorpayOndemandPayoutItem
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $RazorpayOndemandPayoutItemCopyWith<RazorpayOndemandPayoutItem>
+      get copyWith =>
+          _$RazorpayOndemandPayoutItemCopyWithImpl<RazorpayOndemandPayoutItem>(
+              this as RazorpayOndemandPayoutItem, _$identity);
+
+  /// Serializes this RazorpayOndemandPayoutItem to a JSON map.
+  Map<String, dynamic> toJson();
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$RazorpayOndemandPayoutItemImpl &&
+            other is RazorpayOndemandPayoutItem &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.entity, entity) || other.entity == entity) &&
             const DeepCollectionEquality().equals(other.amount, amount) &&
@@ -1351,165 +1032,379 @@ class _$RazorpayOndemandPayoutItemImpl implements _RazorpayOndemandPayoutItem {
       reversed_at,
       amount_settled);
 
-  /// Create a copy of RazorpayOndemandPayoutItem
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$RazorpayOndemandPayoutItemImplCopyWith<_$RazorpayOndemandPayoutItemImpl>
-      get copyWith => __$$RazorpayOndemandPayoutItemImplCopyWithImpl<
-          _$RazorpayOndemandPayoutItemImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$RazorpayOndemandPayoutItemImplToJson(
-      this,
-    );
+  String toString() {
+    return 'RazorpayOndemandPayoutItem(id: $id, entity: $entity, amount: $amount, status: $status, fees: $fees, tax: $tax, created_at: $created_at, utr: $utr, initiated_at: $initiated_at, processed_at: $processed_at, reversed_at: $reversed_at, amount_settled: $amount_settled)';
   }
 }
 
-abstract class _RazorpayOndemandPayoutItem
-    implements RazorpayOndemandPayoutItem {
-  const factory _RazorpayOndemandPayoutItem(
-      {required final String id,
-      required final String entity,
-      required final dynamic amount,
-      required final SettlementStatus status,
-      required final int fees,
-      required final int tax,
-      required final int created_at,
-      final String? utr,
-      final int? initiated_at,
-      final int? processed_at,
-      final int? reversed_at,
-      final int? amount_settled}) = _$RazorpayOndemandPayoutItemImpl;
+/// @nodoc
+abstract mixin class $RazorpayOndemandPayoutItemCopyWith<$Res> {
+  factory $RazorpayOndemandPayoutItemCopyWith(RazorpayOndemandPayoutItem value,
+          $Res Function(RazorpayOndemandPayoutItem) _then) =
+      _$RazorpayOndemandPayoutItemCopyWithImpl;
+  @useResult
+  $Res call(
+      {String id,
+      String entity,
+      dynamic amount,
+      SettlementStatus status,
+      int fees,
+      int tax,
+      int created_at,
+      String? utr,
+      int? initiated_at,
+      int? processed_at,
+      int? reversed_at,
+      int? amount_settled});
+}
 
-  factory _RazorpayOndemandPayoutItem.fromJson(Map<String, dynamic> json) =
-      _$RazorpayOndemandPayoutItemImpl.fromJson;
+/// @nodoc
+class _$RazorpayOndemandPayoutItemCopyWithImpl<$Res>
+    implements $RazorpayOndemandPayoutItemCopyWith<$Res> {
+  _$RazorpayOndemandPayoutItemCopyWithImpl(this._self, this._then);
+
+  final RazorpayOndemandPayoutItem _self;
+  final $Res Function(RazorpayOndemandPayoutItem) _then;
+
+  /// Create a copy of RazorpayOndemandPayoutItem
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? entity = null,
+    Object? amount = freezed,
+    Object? status = null,
+    Object? fees = null,
+    Object? tax = null,
+    Object? created_at = null,
+    Object? utr = freezed,
+    Object? initiated_at = freezed,
+    Object? processed_at = freezed,
+    Object? reversed_at = freezed,
+    Object? amount_settled = freezed,
+  }) {
+    return _then(_self.copyWith(
+      id: null == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      entity: null == entity
+          ? _self.entity
+          : entity // ignore: cast_nullable_to_non_nullable
+              as String,
+      amount: freezed == amount
+          ? _self.amount
+          : amount // ignore: cast_nullable_to_non_nullable
+              as dynamic,
+      status: null == status
+          ? _self.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as SettlementStatus,
+      fees: null == fees
+          ? _self.fees
+          : fees // ignore: cast_nullable_to_non_nullable
+              as int,
+      tax: null == tax
+          ? _self.tax
+          : tax // ignore: cast_nullable_to_non_nullable
+              as int,
+      created_at: null == created_at
+          ? _self.created_at
+          : created_at // ignore: cast_nullable_to_non_nullable
+              as int,
+      utr: freezed == utr
+          ? _self.utr
+          : utr // ignore: cast_nullable_to_non_nullable
+              as String?,
+      initiated_at: freezed == initiated_at
+          ? _self.initiated_at
+          : initiated_at // ignore: cast_nullable_to_non_nullable
+              as int?,
+      processed_at: freezed == processed_at
+          ? _self.processed_at
+          : processed_at // ignore: cast_nullable_to_non_nullable
+              as int?,
+      reversed_at: freezed == reversed_at
+          ? _self.reversed_at
+          : reversed_at // ignore: cast_nullable_to_non_nullable
+              as int?,
+      amount_settled: freezed == amount_settled
+          ? _self.amount_settled
+          : amount_settled // ignore: cast_nullable_to_non_nullable
+              as int?,
+    ));
+  }
+}
+
+/// @nodoc
+
+@JsonSerializable(includeIfNull: false)
+class _RazorpayOndemandPayoutItem implements RazorpayOndemandPayoutItem {
+  const _RazorpayOndemandPayoutItem(
+      {required this.id,
+      required this.entity,
+      required this.amount,
+      required this.status,
+      required this.fees,
+      required this.tax,
+      required this.created_at,
+      this.utr,
+      this.initiated_at,
+      this.processed_at,
+      this.reversed_at,
+      this.amount_settled});
+  factory _RazorpayOndemandPayoutItem.fromJson(Map<String, dynamic> json) =>
+      _$RazorpayOndemandPayoutItemFromJson(json);
 
 // This seems to be the standard settlement structure
   @override
-  String get id;
+  final String id;
   @override
-  String get entity; // Should be 'settlement'
+  final String entity;
+// Should be 'settlement'
   @override
-  dynamic get amount;
+  final dynamic amount;
   @override
-  SettlementStatus get status;
+  final SettlementStatus status;
   @override
-  int get fees;
+  final int fees;
   @override
-  int get tax;
+  final int tax;
   @override
-  int get created_at;
+  final int created_at;
   @override
-  String? get utr;
+  final String? utr;
   @override
-  int? get initiated_at;
+  final int? initiated_at;
   @override
-  int? get processed_at;
+  final int? processed_at;
   @override
-  int? get reversed_at;
+  final int? reversed_at;
   @override
-  int? get amount_settled;
+  final int? amount_settled;
 
   /// Create a copy of RazorpayOndemandPayoutItem
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$RazorpayOndemandPayoutItemImplCopyWith<_$RazorpayOndemandPayoutItemImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  @pragma('vm:prefer-inline')
+  _$RazorpayOndemandPayoutItemCopyWith<_RazorpayOndemandPayoutItem>
+      get copyWith => __$RazorpayOndemandPayoutItemCopyWithImpl<
+          _RazorpayOndemandPayoutItem>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$RazorpayOndemandPayoutItemToJson(
+      this,
+    );
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _RazorpayOndemandPayoutItem &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.entity, entity) || other.entity == entity) &&
+            const DeepCollectionEquality().equals(other.amount, amount) &&
+            (identical(other.status, status) || other.status == status) &&
+            (identical(other.fees, fees) || other.fees == fees) &&
+            (identical(other.tax, tax) || other.tax == tax) &&
+            (identical(other.created_at, created_at) ||
+                other.created_at == created_at) &&
+            (identical(other.utr, utr) || other.utr == utr) &&
+            (identical(other.initiated_at, initiated_at) ||
+                other.initiated_at == initiated_at) &&
+            (identical(other.processed_at, processed_at) ||
+                other.processed_at == processed_at) &&
+            (identical(other.reversed_at, reversed_at) ||
+                other.reversed_at == reversed_at) &&
+            (identical(other.amount_settled, amount_settled) ||
+                other.amount_settled == amount_settled));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      entity,
+      const DeepCollectionEquality().hash(amount),
+      status,
+      fees,
+      tax,
+      created_at,
+      utr,
+      initiated_at,
+      processed_at,
+      reversed_at,
+      amount_settled);
+
+  @override
+  String toString() {
+    return 'RazorpayOndemandPayoutItem(id: $id, entity: $entity, amount: $amount, status: $status, fees: $fees, tax: $tax, created_at: $created_at, utr: $utr, initiated_at: $initiated_at, processed_at: $processed_at, reversed_at: $reversed_at, amount_settled: $amount_settled)';
+  }
 }
 
-RazorpayOndemandPayouts _$RazorpayOndemandPayoutsFromJson(
-    Map<String, dynamic> json) {
-  return _RazorpayOndemandPayouts.fromJson(json);
+/// @nodoc
+abstract mixin class _$RazorpayOndemandPayoutItemCopyWith<$Res>
+    implements $RazorpayOndemandPayoutItemCopyWith<$Res> {
+  factory _$RazorpayOndemandPayoutItemCopyWith(
+          _RazorpayOndemandPayoutItem value,
+          $Res Function(_RazorpayOndemandPayoutItem) _then) =
+      __$RazorpayOndemandPayoutItemCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {String id,
+      String entity,
+      dynamic amount,
+      SettlementStatus status,
+      int fees,
+      int tax,
+      int created_at,
+      String? utr,
+      int? initiated_at,
+      int? processed_at,
+      int? reversed_at,
+      int? amount_settled});
+}
+
+/// @nodoc
+class __$RazorpayOndemandPayoutItemCopyWithImpl<$Res>
+    implements _$RazorpayOndemandPayoutItemCopyWith<$Res> {
+  __$RazorpayOndemandPayoutItemCopyWithImpl(this._self, this._then);
+
+  final _RazorpayOndemandPayoutItem _self;
+  final $Res Function(_RazorpayOndemandPayoutItem) _then;
+
+  /// Create a copy of RazorpayOndemandPayoutItem
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? id = null,
+    Object? entity = null,
+    Object? amount = freezed,
+    Object? status = null,
+    Object? fees = null,
+    Object? tax = null,
+    Object? created_at = null,
+    Object? utr = freezed,
+    Object? initiated_at = freezed,
+    Object? processed_at = freezed,
+    Object? reversed_at = freezed,
+    Object? amount_settled = freezed,
+  }) {
+    return _then(_RazorpayOndemandPayoutItem(
+      id: null == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      entity: null == entity
+          ? _self.entity
+          : entity // ignore: cast_nullable_to_non_nullable
+              as String,
+      amount: freezed == amount
+          ? _self.amount
+          : amount // ignore: cast_nullable_to_non_nullable
+              as dynamic,
+      status: null == status
+          ? _self.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as SettlementStatus,
+      fees: null == fees
+          ? _self.fees
+          : fees // ignore: cast_nullable_to_non_nullable
+              as int,
+      tax: null == tax
+          ? _self.tax
+          : tax // ignore: cast_nullable_to_non_nullable
+              as int,
+      created_at: null == created_at
+          ? _self.created_at
+          : created_at // ignore: cast_nullable_to_non_nullable
+              as int,
+      utr: freezed == utr
+          ? _self.utr
+          : utr // ignore: cast_nullable_to_non_nullable
+              as String?,
+      initiated_at: freezed == initiated_at
+          ? _self.initiated_at
+          : initiated_at // ignore: cast_nullable_to_non_nullable
+              as int?,
+      processed_at: freezed == processed_at
+          ? _self.processed_at
+          : processed_at // ignore: cast_nullable_to_non_nullable
+              as int?,
+      reversed_at: freezed == reversed_at
+          ? _self.reversed_at
+          : reversed_at // ignore: cast_nullable_to_non_nullable
+              as int?,
+      amount_settled: freezed == amount_settled
+          ? _self.amount_settled
+          : amount_settled // ignore: cast_nullable_to_non_nullable
+              as int?,
+    ));
+  }
 }
 
 /// @nodoc
 mixin _$RazorpayOndemandPayouts {
-  String get entity => throw _privateConstructorUsedError; // e.g., 'collection'
-  int get count => throw _privateConstructorUsedError;
-  List<RazorpayOndemandPayoutItem> get items =>
-      throw _privateConstructorUsedError;
-
-  /// Serializes this RazorpayOndemandPayouts to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  String get entity; // e.g., 'collection'
+  int get count;
+  List<RazorpayOndemandPayoutItem> get items;
 
   /// Create a copy of RazorpayOndemandPayouts
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $RazorpayOndemandPayoutsCopyWith<RazorpayOndemandPayouts> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $RazorpayOndemandPayoutsCopyWith<$Res> {
-  factory $RazorpayOndemandPayoutsCopyWith(RazorpayOndemandPayouts value,
-          $Res Function(RazorpayOndemandPayouts) then) =
-      _$RazorpayOndemandPayoutsCopyWithImpl<$Res, RazorpayOndemandPayouts>;
-  @useResult
-  $Res call({String entity, int count, List<RazorpayOndemandPayoutItem> items});
-}
-
-/// @nodoc
-class _$RazorpayOndemandPayoutsCopyWithImpl<$Res,
-        $Val extends RazorpayOndemandPayouts>
-    implements $RazorpayOndemandPayoutsCopyWith<$Res> {
-  _$RazorpayOndemandPayoutsCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of RazorpayOndemandPayouts
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
+  $RazorpayOndemandPayoutsCopyWith<RazorpayOndemandPayouts> get copyWith =>
+      _$RazorpayOndemandPayoutsCopyWithImpl<RazorpayOndemandPayouts>(
+          this as RazorpayOndemandPayouts, _$identity);
+
+  /// Serializes this RazorpayOndemandPayouts to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? entity = null,
-    Object? count = null,
-    Object? items = null,
-  }) {
-    return _then(_value.copyWith(
-      entity: null == entity
-          ? _value.entity
-          : entity // ignore: cast_nullable_to_non_nullable
-              as String,
-      count: null == count
-          ? _value.count
-          : count // ignore: cast_nullable_to_non_nullable
-              as int,
-      items: null == items
-          ? _value.items
-          : items // ignore: cast_nullable_to_non_nullable
-              as List<RazorpayOndemandPayoutItem>,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is RazorpayOndemandPayouts &&
+            (identical(other.entity, entity) || other.entity == entity) &&
+            (identical(other.count, count) || other.count == count) &&
+            const DeepCollectionEquality().equals(other.items, items));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, entity, count, const DeepCollectionEquality().hash(items));
+
+  @override
+  String toString() {
+    return 'RazorpayOndemandPayouts(entity: $entity, count: $count, items: $items)';
   }
 }
 
 /// @nodoc
-abstract class _$$RazorpayOndemandPayoutsImplCopyWith<$Res>
-    implements $RazorpayOndemandPayoutsCopyWith<$Res> {
-  factory _$$RazorpayOndemandPayoutsImplCopyWith(
-          _$RazorpayOndemandPayoutsImpl value,
-          $Res Function(_$RazorpayOndemandPayoutsImpl) then) =
-      __$$RazorpayOndemandPayoutsImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $RazorpayOndemandPayoutsCopyWith<$Res> {
+  factory $RazorpayOndemandPayoutsCopyWith(RazorpayOndemandPayouts value,
+          $Res Function(RazorpayOndemandPayouts) _then) =
+      _$RazorpayOndemandPayoutsCopyWithImpl;
   @useResult
   $Res call({String entity, int count, List<RazorpayOndemandPayoutItem> items});
 }
 
 /// @nodoc
-class __$$RazorpayOndemandPayoutsImplCopyWithImpl<$Res>
-    extends _$RazorpayOndemandPayoutsCopyWithImpl<$Res,
-        _$RazorpayOndemandPayoutsImpl>
-    implements _$$RazorpayOndemandPayoutsImplCopyWith<$Res> {
-  __$$RazorpayOndemandPayoutsImplCopyWithImpl(
-      _$RazorpayOndemandPayoutsImpl _value,
-      $Res Function(_$RazorpayOndemandPayoutsImpl) _then)
-      : super(_value, _then);
+class _$RazorpayOndemandPayoutsCopyWithImpl<$Res>
+    implements $RazorpayOndemandPayoutsCopyWith<$Res> {
+  _$RazorpayOndemandPayoutsCopyWithImpl(this._self, this._then);
+
+  final RazorpayOndemandPayouts _self;
+  final $Res Function(RazorpayOndemandPayouts) _then;
 
   /// Create a copy of RazorpayOndemandPayouts
   /// with the given fields replaced by the non-null parameter values.
@@ -1520,17 +1415,17 @@ class __$$RazorpayOndemandPayoutsImplCopyWithImpl<$Res>
     Object? count = null,
     Object? items = null,
   }) {
-    return _then(_$RazorpayOndemandPayoutsImpl(
+    return _then(_self.copyWith(
       entity: null == entity
-          ? _value.entity
+          ? _self.entity
           : entity // ignore: cast_nullable_to_non_nullable
               as String,
       count: null == count
-          ? _value.count
+          ? _self.count
           : count // ignore: cast_nullable_to_non_nullable
               as int,
       items: null == items
-          ? _value._items
+          ? _self.items
           : items // ignore: cast_nullable_to_non_nullable
               as List<RazorpayOndemandPayoutItem>,
     ));
@@ -1540,15 +1435,14 @@ class __$$RazorpayOndemandPayoutsImplCopyWithImpl<$Res>
 /// @nodoc
 
 @JsonSerializable(includeIfNull: false)
-class _$RazorpayOndemandPayoutsImpl implements _RazorpayOndemandPayouts {
-  const _$RazorpayOndemandPayoutsImpl(
+class _RazorpayOndemandPayouts implements RazorpayOndemandPayouts {
+  const _RazorpayOndemandPayouts(
       {required this.entity,
       required this.count,
       required final List<RazorpayOndemandPayoutItem> items})
       : _items = items;
-
-  factory _$RazorpayOndemandPayoutsImpl.fromJson(Map<String, dynamic> json) =>
-      _$$RazorpayOndemandPayoutsImplFromJson(json);
+  factory _RazorpayOndemandPayouts.fromJson(Map<String, dynamic> json) =>
+      _$RazorpayOndemandPayoutsFromJson(json);
 
   @override
   final String entity;
@@ -1563,16 +1457,27 @@ class _$RazorpayOndemandPayoutsImpl implements _RazorpayOndemandPayouts {
     return EqualUnmodifiableListView(_items);
   }
 
+  /// Create a copy of RazorpayOndemandPayouts
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'RazorpayOndemandPayouts(entity: $entity, count: $count, items: $items)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$RazorpayOndemandPayoutsCopyWith<_RazorpayOndemandPayouts> get copyWith =>
+      __$RazorpayOndemandPayoutsCopyWithImpl<_RazorpayOndemandPayouts>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$RazorpayOndemandPayoutsToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$RazorpayOndemandPayoutsImpl &&
+            other is _RazorpayOndemandPayouts &&
             (identical(other.entity, entity) || other.entity == entity) &&
             (identical(other.count, count) || other.count == count) &&
             const DeepCollectionEquality().equals(other._items, _items));
@@ -1583,91 +1488,149 @@ class _$RazorpayOndemandPayoutsImpl implements _RazorpayOndemandPayouts {
   int get hashCode => Object.hash(
       runtimeType, entity, count, const DeepCollectionEquality().hash(_items));
 
-  /// Create a copy of RazorpayOndemandPayouts
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$RazorpayOndemandPayoutsImplCopyWith<_$RazorpayOndemandPayoutsImpl>
-      get copyWith => __$$RazorpayOndemandPayoutsImplCopyWithImpl<
-          _$RazorpayOndemandPayoutsImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$RazorpayOndemandPayoutsImplToJson(
-      this,
-    );
+  String toString() {
+    return 'RazorpayOndemandPayouts(entity: $entity, count: $count, items: $items)';
   }
 }
 
-abstract class _RazorpayOndemandPayouts implements RazorpayOndemandPayouts {
-  const factory _RazorpayOndemandPayouts(
-          {required final String entity,
-          required final int count,
-          required final List<RazorpayOndemandPayoutItem> items}) =
-      _$RazorpayOndemandPayoutsImpl;
+/// @nodoc
+abstract mixin class _$RazorpayOndemandPayoutsCopyWith<$Res>
+    implements $RazorpayOndemandPayoutsCopyWith<$Res> {
+  factory _$RazorpayOndemandPayoutsCopyWith(_RazorpayOndemandPayouts value,
+          $Res Function(_RazorpayOndemandPayouts) _then) =
+      __$RazorpayOndemandPayoutsCopyWithImpl;
+  @override
+  @useResult
+  $Res call({String entity, int count, List<RazorpayOndemandPayoutItem> items});
+}
 
-  factory _RazorpayOndemandPayouts.fromJson(Map<String, dynamic> json) =
-      _$RazorpayOndemandPayoutsImpl.fromJson;
+/// @nodoc
+class __$RazorpayOndemandPayoutsCopyWithImpl<$Res>
+    implements _$RazorpayOndemandPayoutsCopyWith<$Res> {
+  __$RazorpayOndemandPayoutsCopyWithImpl(this._self, this._then);
 
-  @override
-  String get entity; // e.g., 'collection'
-  @override
-  int get count;
-  @override
-  List<RazorpayOndemandPayoutItem> get items;
+  final _RazorpayOndemandPayouts _self;
+  final $Res Function(_RazorpayOndemandPayouts) _then;
 
   /// Create a copy of RazorpayOndemandPayouts
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$RazorpayOndemandPayoutsImplCopyWith<_$RazorpayOndemandPayoutsImpl>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-RazorpayInstantSettlement _$RazorpayInstantSettlementFromJson(
-    Map<String, dynamic> json) {
-  return _RazorpayInstantSettlement.fromJson(json);
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? entity = null,
+    Object? count = null,
+    Object? items = null,
+  }) {
+    return _then(_RazorpayOndemandPayouts(
+      entity: null == entity
+          ? _self.entity
+          : entity // ignore: cast_nullable_to_non_nullable
+              as String,
+      count: null == count
+          ? _self.count
+          : count // ignore: cast_nullable_to_non_nullable
+              as int,
+      items: null == items
+          ? _self._items
+          : items // ignore: cast_nullable_to_non_nullable
+              as List<RazorpayOndemandPayoutItem>,
+    ));
+  }
 }
 
 /// @nodoc
 mixin _$RazorpayInstantSettlement {
-  String get id => throw _privateConstructorUsedError;
-  String get entity =>
-      throw _privateConstructorUsedError; // 'ondemand_settlement' ?
-  dynamic get amount =>
-      throw _privateConstructorUsedError; // Response specific fields
-  int get amount_requested => throw _privateConstructorUsedError;
-  int get amount_settled => throw _privateConstructorUsedError;
-  int get amount_pending => throw _privateConstructorUsedError;
-  int get amount_reversed => throw _privateConstructorUsedError;
-  int get fees => throw _privateConstructorUsedError;
-  int get tax => throw _privateConstructorUsedError;
-  String get currency => throw _privateConstructorUsedError;
-  int get created_at =>
-      throw _privateConstructorUsedError; // Typically INR, required SettlementStatus status, required int created_at, required bool scheduled, // Was it scheduled? (Usually false for instant), // Base Amount requested
+  String get id;
+  String get entity; // 'ondemand_settlement' ?
+  dynamic get amount; // Response specific fields
+  int get amount_requested;
+  int get amount_settled;
+  int get amount_pending;
+  int get amount_reversed;
+  int get fees;
+  int get tax;
+  String get currency;
+  int get created_at; // Typically INR, required SettlementStatus status, required int created_at, required bool scheduled, // Was it scheduled? (Usually false for instant), // Base Amount requested
   @JsonKey(toJson: _boolToInt, fromJson: _intToBool)
-  bool? get settle_full_balance => throw _privateConstructorUsedError; // Base
-  String? get description => throw _privateConstructorUsedError; // Base
-  IMap<dynamic>? get notes => throw _privateConstructorUsedError; // Base
-  RazorpayOndemandPayouts? get ondemand_payouts =>
-      throw _privateConstructorUsedError;
-
-  /// Serializes this RazorpayInstantSettlement to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  bool? get settle_full_balance; // Base
+  String? get description; // Base
+  IMap<dynamic>? get notes; // Base
+  RazorpayOndemandPayouts? get ondemand_payouts;
 
   /// Create a copy of RazorpayInstantSettlement
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
   $RazorpayInstantSettlementCopyWith<RazorpayInstantSettlement> get copyWith =>
-      throw _privateConstructorUsedError;
+      _$RazorpayInstantSettlementCopyWithImpl<RazorpayInstantSettlement>(
+          this as RazorpayInstantSettlement, _$identity);
+
+  /// Serializes this RazorpayInstantSettlement to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is RazorpayInstantSettlement &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.entity, entity) || other.entity == entity) &&
+            const DeepCollectionEquality().equals(other.amount, amount) &&
+            (identical(other.amount_requested, amount_requested) ||
+                other.amount_requested == amount_requested) &&
+            (identical(other.amount_settled, amount_settled) ||
+                other.amount_settled == amount_settled) &&
+            (identical(other.amount_pending, amount_pending) ||
+                other.amount_pending == amount_pending) &&
+            (identical(other.amount_reversed, amount_reversed) ||
+                other.amount_reversed == amount_reversed) &&
+            (identical(other.fees, fees) || other.fees == fees) &&
+            (identical(other.tax, tax) || other.tax == tax) &&
+            (identical(other.currency, currency) ||
+                other.currency == currency) &&
+            (identical(other.created_at, created_at) ||
+                other.created_at == created_at) &&
+            (identical(other.settle_full_balance, settle_full_balance) ||
+                other.settle_full_balance == settle_full_balance) &&
+            (identical(other.description, description) ||
+                other.description == description) &&
+            const DeepCollectionEquality().equals(other.notes, notes) &&
+            (identical(other.ondemand_payouts, ondemand_payouts) ||
+                other.ondemand_payouts == ondemand_payouts));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      entity,
+      const DeepCollectionEquality().hash(amount),
+      amount_requested,
+      amount_settled,
+      amount_pending,
+      amount_reversed,
+      fees,
+      tax,
+      currency,
+      created_at,
+      settle_full_balance,
+      description,
+      const DeepCollectionEquality().hash(notes),
+      ondemand_payouts);
+
+  @override
+  String toString() {
+    return 'RazorpayInstantSettlement(id: $id, entity: $entity, amount: $amount, amount_requested: $amount_requested, amount_settled: $amount_settled, amount_pending: $amount_pending, amount_reversed: $amount_reversed, fees: $fees, tax: $tax, currency: $currency, created_at: $created_at, settle_full_balance: $settle_full_balance, description: $description, notes: $notes, ondemand_payouts: $ondemand_payouts)';
+  }
 }
 
 /// @nodoc
-abstract class $RazorpayInstantSettlementCopyWith<$Res> {
+abstract mixin class $RazorpayInstantSettlementCopyWith<$Res> {
   factory $RazorpayInstantSettlementCopyWith(RazorpayInstantSettlement value,
-          $Res Function(RazorpayInstantSettlement) then) =
-      _$RazorpayInstantSettlementCopyWithImpl<$Res, RazorpayInstantSettlement>;
+          $Res Function(RazorpayInstantSettlement) _then) =
+      _$RazorpayInstantSettlementCopyWithImpl;
   @useResult
   $Res call(
       {String id,
@@ -1691,15 +1654,12 @@ abstract class $RazorpayInstantSettlementCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$RazorpayInstantSettlementCopyWithImpl<$Res,
-        $Val extends RazorpayInstantSettlement>
+class _$RazorpayInstantSettlementCopyWithImpl<$Res>
     implements $RazorpayInstantSettlementCopyWith<$Res> {
-  _$RazorpayInstantSettlementCopyWithImpl(this._value, this._then);
+  _$RazorpayInstantSettlementCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final RazorpayInstantSettlement _self;
+  final $Res Function(RazorpayInstantSettlement) _then;
 
   /// Create a copy of RazorpayInstantSettlement
   /// with the given fields replaced by the non-null parameter values.
@@ -1722,68 +1682,68 @@ class _$RazorpayInstantSettlementCopyWithImpl<$Res,
     Object? notes = freezed,
     Object? ondemand_payouts = freezed,
   }) {
-    return _then(_value.copyWith(
+    return _then(_self.copyWith(
       id: null == id
-          ? _value.id
+          ? _self.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
       entity: null == entity
-          ? _value.entity
+          ? _self.entity
           : entity // ignore: cast_nullable_to_non_nullable
               as String,
       amount: freezed == amount
-          ? _value.amount
+          ? _self.amount
           : amount // ignore: cast_nullable_to_non_nullable
               as dynamic,
       amount_requested: null == amount_requested
-          ? _value.amount_requested
+          ? _self.amount_requested
           : amount_requested // ignore: cast_nullable_to_non_nullable
               as int,
       amount_settled: null == amount_settled
-          ? _value.amount_settled
+          ? _self.amount_settled
           : amount_settled // ignore: cast_nullable_to_non_nullable
               as int,
       amount_pending: null == amount_pending
-          ? _value.amount_pending
+          ? _self.amount_pending
           : amount_pending // ignore: cast_nullable_to_non_nullable
               as int,
       amount_reversed: null == amount_reversed
-          ? _value.amount_reversed
+          ? _self.amount_reversed
           : amount_reversed // ignore: cast_nullable_to_non_nullable
               as int,
       fees: null == fees
-          ? _value.fees
+          ? _self.fees
           : fees // ignore: cast_nullable_to_non_nullable
               as int,
       tax: null == tax
-          ? _value.tax
+          ? _self.tax
           : tax // ignore: cast_nullable_to_non_nullable
               as int,
       currency: null == currency
-          ? _value.currency
+          ? _self.currency
           : currency // ignore: cast_nullable_to_non_nullable
               as String,
       created_at: null == created_at
-          ? _value.created_at
+          ? _self.created_at
           : created_at // ignore: cast_nullable_to_non_nullable
               as int,
       settle_full_balance: freezed == settle_full_balance
-          ? _value.settle_full_balance
+          ? _self.settle_full_balance
           : settle_full_balance // ignore: cast_nullable_to_non_nullable
               as bool?,
       description: freezed == description
-          ? _value.description
+          ? _self.description
           : description // ignore: cast_nullable_to_non_nullable
               as String?,
       notes: freezed == notes
-          ? _value.notes
+          ? _self.notes
           : notes // ignore: cast_nullable_to_non_nullable
               as IMap<dynamic>?,
       ondemand_payouts: freezed == ondemand_payouts
-          ? _value.ondemand_payouts
+          ? _self.ondemand_payouts
           : ondemand_payouts // ignore: cast_nullable_to_non_nullable
               as RazorpayOndemandPayouts?,
-    ) as $Val);
+    ));
   }
 
   /// Create a copy of RazorpayInstantSettlement
@@ -1791,149 +1751,22 @@ class _$RazorpayInstantSettlementCopyWithImpl<$Res,
   @override
   @pragma('vm:prefer-inline')
   $RazorpayOndemandPayoutsCopyWith<$Res>? get ondemand_payouts {
-    if (_value.ondemand_payouts == null) {
+    if (_self.ondemand_payouts == null) {
       return null;
     }
 
-    return $RazorpayOndemandPayoutsCopyWith<$Res>(_value.ondemand_payouts!,
+    return $RazorpayOndemandPayoutsCopyWith<$Res>(_self.ondemand_payouts!,
         (value) {
-      return _then(_value.copyWith(ondemand_payouts: value) as $Val);
+      return _then(_self.copyWith(ondemand_payouts: value));
     });
-  }
-}
-
-/// @nodoc
-abstract class _$$RazorpayInstantSettlementImplCopyWith<$Res>
-    implements $RazorpayInstantSettlementCopyWith<$Res> {
-  factory _$$RazorpayInstantSettlementImplCopyWith(
-          _$RazorpayInstantSettlementImpl value,
-          $Res Function(_$RazorpayInstantSettlementImpl) then) =
-      __$$RazorpayInstantSettlementImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {String id,
-      String entity,
-      dynamic amount,
-      int amount_requested,
-      int amount_settled,
-      int amount_pending,
-      int amount_reversed,
-      int fees,
-      int tax,
-      String currency,
-      int created_at,
-      @JsonKey(toJson: _boolToInt, fromJson: _intToBool)
-      bool? settle_full_balance,
-      String? description,
-      IMap<dynamic>? notes,
-      RazorpayOndemandPayouts? ondemand_payouts});
-
-  @override
-  $RazorpayOndemandPayoutsCopyWith<$Res>? get ondemand_payouts;
-}
-
-/// @nodoc
-class __$$RazorpayInstantSettlementImplCopyWithImpl<$Res>
-    extends _$RazorpayInstantSettlementCopyWithImpl<$Res,
-        _$RazorpayInstantSettlementImpl>
-    implements _$$RazorpayInstantSettlementImplCopyWith<$Res> {
-  __$$RazorpayInstantSettlementImplCopyWithImpl(
-      _$RazorpayInstantSettlementImpl _value,
-      $Res Function(_$RazorpayInstantSettlementImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of RazorpayInstantSettlement
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? id = null,
-    Object? entity = null,
-    Object? amount = freezed,
-    Object? amount_requested = null,
-    Object? amount_settled = null,
-    Object? amount_pending = null,
-    Object? amount_reversed = null,
-    Object? fees = null,
-    Object? tax = null,
-    Object? currency = null,
-    Object? created_at = null,
-    Object? settle_full_balance = freezed,
-    Object? description = freezed,
-    Object? notes = freezed,
-    Object? ondemand_payouts = freezed,
-  }) {
-    return _then(_$RazorpayInstantSettlementImpl(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      entity: null == entity
-          ? _value.entity
-          : entity // ignore: cast_nullable_to_non_nullable
-              as String,
-      amount: freezed == amount
-          ? _value.amount
-          : amount // ignore: cast_nullable_to_non_nullable
-              as dynamic,
-      amount_requested: null == amount_requested
-          ? _value.amount_requested
-          : amount_requested // ignore: cast_nullable_to_non_nullable
-              as int,
-      amount_settled: null == amount_settled
-          ? _value.amount_settled
-          : amount_settled // ignore: cast_nullable_to_non_nullable
-              as int,
-      amount_pending: null == amount_pending
-          ? _value.amount_pending
-          : amount_pending // ignore: cast_nullable_to_non_nullable
-              as int,
-      amount_reversed: null == amount_reversed
-          ? _value.amount_reversed
-          : amount_reversed // ignore: cast_nullable_to_non_nullable
-              as int,
-      fees: null == fees
-          ? _value.fees
-          : fees // ignore: cast_nullable_to_non_nullable
-              as int,
-      tax: null == tax
-          ? _value.tax
-          : tax // ignore: cast_nullable_to_non_nullable
-              as int,
-      currency: null == currency
-          ? _value.currency
-          : currency // ignore: cast_nullable_to_non_nullable
-              as String,
-      created_at: null == created_at
-          ? _value.created_at
-          : created_at // ignore: cast_nullable_to_non_nullable
-              as int,
-      settle_full_balance: freezed == settle_full_balance
-          ? _value.settle_full_balance
-          : settle_full_balance // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      description: freezed == description
-          ? _value.description
-          : description // ignore: cast_nullable_to_non_nullable
-              as String?,
-      notes: freezed == notes
-          ? _value._notes
-          : notes // ignore: cast_nullable_to_non_nullable
-              as IMap<dynamic>?,
-      ondemand_payouts: freezed == ondemand_payouts
-          ? _value.ondemand_payouts
-          : ondemand_payouts // ignore: cast_nullable_to_non_nullable
-              as RazorpayOndemandPayouts?,
-    ));
   }
 }
 
 /// @nodoc
 
 @JsonSerializable(includeIfNull: false)
-class _$RazorpayInstantSettlementImpl implements _RazorpayInstantSettlement {
-  const _$RazorpayInstantSettlementImpl(
+class _RazorpayInstantSettlement implements RazorpayInstantSettlement {
+  const _RazorpayInstantSettlement(
       {required this.id,
       required this.entity,
       required this.amount,
@@ -1951,9 +1784,8 @@ class _$RazorpayInstantSettlementImpl implements _RazorpayInstantSettlement {
       final IMap<dynamic>? notes,
       this.ondemand_payouts})
       : _notes = notes;
-
-  factory _$RazorpayInstantSettlementImpl.fromJson(Map<String, dynamic> json) =>
-      _$$RazorpayInstantSettlementImplFromJson(json);
+  factory _RazorpayInstantSettlement.fromJson(Map<String, dynamic> json) =>
+      _$RazorpayInstantSettlementFromJson(json);
 
   @override
   final String id;
@@ -2002,16 +1834,28 @@ class _$RazorpayInstantSettlementImpl implements _RazorpayInstantSettlement {
   @override
   final RazorpayOndemandPayouts? ondemand_payouts;
 
+  /// Create a copy of RazorpayInstantSettlement
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'RazorpayInstantSettlement(id: $id, entity: $entity, amount: $amount, amount_requested: $amount_requested, amount_settled: $amount_settled, amount_pending: $amount_pending, amount_reversed: $amount_reversed, fees: $fees, tax: $tax, currency: $currency, created_at: $created_at, settle_full_balance: $settle_full_balance, description: $description, notes: $notes, ondemand_payouts: $ondemand_payouts)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$RazorpayInstantSettlementCopyWith<_RazorpayInstantSettlement>
+      get copyWith =>
+          __$RazorpayInstantSettlementCopyWithImpl<_RazorpayInstantSettlement>(
+              this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$RazorpayInstantSettlementToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$RazorpayInstantSettlementImpl &&
+            other is _RazorpayInstantSettlement &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.entity, entity) || other.entity == entity) &&
             const DeepCollectionEquality().equals(other.amount, amount) &&
@@ -2058,190 +1902,211 @@ class _$RazorpayInstantSettlementImpl implements _RazorpayInstantSettlement {
       const DeepCollectionEquality().hash(_notes),
       ondemand_payouts);
 
-  /// Create a copy of RazorpayInstantSettlement
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$RazorpayInstantSettlementImplCopyWith<_$RazorpayInstantSettlementImpl>
-      get copyWith => __$$RazorpayInstantSettlementImplCopyWithImpl<
-          _$RazorpayInstantSettlementImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$RazorpayInstantSettlementImplToJson(
-      this,
-    );
+  String toString() {
+    return 'RazorpayInstantSettlement(id: $id, entity: $entity, amount: $amount, amount_requested: $amount_requested, amount_settled: $amount_settled, amount_pending: $amount_pending, amount_reversed: $amount_reversed, fees: $fees, tax: $tax, currency: $currency, created_at: $created_at, settle_full_balance: $settle_full_balance, description: $description, notes: $notes, ondemand_payouts: $ondemand_payouts)';
   }
 }
 
-abstract class _RazorpayInstantSettlement implements RazorpayInstantSettlement {
-  const factory _RazorpayInstantSettlement(
-          {required final String id,
-          required final String entity,
-          required final dynamic amount,
-          required final int amount_requested,
-          required final int amount_settled,
-          required final int amount_pending,
-          required final int amount_reversed,
-          required final int fees,
-          required final int tax,
-          required final String currency,
-          required final int created_at,
-          @JsonKey(toJson: _boolToInt, fromJson: _intToBool)
-          final bool? settle_full_balance,
-          final String? description,
-          final IMap<dynamic>? notes,
-          final RazorpayOndemandPayouts? ondemand_payouts}) =
-      _$RazorpayInstantSettlementImpl;
+/// @nodoc
+abstract mixin class _$RazorpayInstantSettlementCopyWith<$Res>
+    implements $RazorpayInstantSettlementCopyWith<$Res> {
+  factory _$RazorpayInstantSettlementCopyWith(_RazorpayInstantSettlement value,
+          $Res Function(_RazorpayInstantSettlement) _then) =
+      __$RazorpayInstantSettlementCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {String id,
+      String entity,
+      dynamic amount,
+      int amount_requested,
+      int amount_settled,
+      int amount_pending,
+      int amount_reversed,
+      int fees,
+      int tax,
+      String currency,
+      int created_at,
+      @JsonKey(toJson: _boolToInt, fromJson: _intToBool)
+      bool? settle_full_balance,
+      String? description,
+      IMap<dynamic>? notes,
+      RazorpayOndemandPayouts? ondemand_payouts});
 
-  factory _RazorpayInstantSettlement.fromJson(Map<String, dynamic> json) =
-      _$RazorpayInstantSettlementImpl.fromJson;
+  @override
+  $RazorpayOndemandPayoutsCopyWith<$Res>? get ondemand_payouts;
+}
 
-  @override
-  String get id;
-  @override
-  String get entity; // 'ondemand_settlement' ?
-  @override
-  dynamic get amount; // Response specific fields
-  @override
-  int get amount_requested;
-  @override
-  int get amount_settled;
-  @override
-  int get amount_pending;
-  @override
-  int get amount_reversed;
-  @override
-  int get fees;
-  @override
-  int get tax;
-  @override
-  String get currency;
-  @override
-  int get created_at; // Typically INR, required SettlementStatus status, required int created_at, required bool scheduled, // Was it scheduled? (Usually false for instant), // Base Amount requested
-  @override
-  @JsonKey(toJson: _boolToInt, fromJson: _intToBool)
-  bool? get settle_full_balance; // Base
-  @override
-  String? get description; // Base
-  @override
-  IMap<dynamic>? get notes; // Base
-  @override
-  RazorpayOndemandPayouts? get ondemand_payouts;
+/// @nodoc
+class __$RazorpayInstantSettlementCopyWithImpl<$Res>
+    implements _$RazorpayInstantSettlementCopyWith<$Res> {
+  __$RazorpayInstantSettlementCopyWithImpl(this._self, this._then);
+
+  final _RazorpayInstantSettlement _self;
+  final $Res Function(_RazorpayInstantSettlement) _then;
 
   /// Create a copy of RazorpayInstantSettlement
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$RazorpayInstantSettlementImplCopyWith<_$RazorpayInstantSettlementImpl>
-      get copyWith => throw _privateConstructorUsedError;
-}
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? id = null,
+    Object? entity = null,
+    Object? amount = freezed,
+    Object? amount_requested = null,
+    Object? amount_settled = null,
+    Object? amount_pending = null,
+    Object? amount_reversed = null,
+    Object? fees = null,
+    Object? tax = null,
+    Object? currency = null,
+    Object? created_at = null,
+    Object? settle_full_balance = freezed,
+    Object? description = freezed,
+    Object? notes = freezed,
+    Object? ondemand_payouts = freezed,
+  }) {
+    return _then(_RazorpayInstantSettlement(
+      id: null == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      entity: null == entity
+          ? _self.entity
+          : entity // ignore: cast_nullable_to_non_nullable
+              as String,
+      amount: freezed == amount
+          ? _self.amount
+          : amount // ignore: cast_nullable_to_non_nullable
+              as dynamic,
+      amount_requested: null == amount_requested
+          ? _self.amount_requested
+          : amount_requested // ignore: cast_nullable_to_non_nullable
+              as int,
+      amount_settled: null == amount_settled
+          ? _self.amount_settled
+          : amount_settled // ignore: cast_nullable_to_non_nullable
+              as int,
+      amount_pending: null == amount_pending
+          ? _self.amount_pending
+          : amount_pending // ignore: cast_nullable_to_non_nullable
+              as int,
+      amount_reversed: null == amount_reversed
+          ? _self.amount_reversed
+          : amount_reversed // ignore: cast_nullable_to_non_nullable
+              as int,
+      fees: null == fees
+          ? _self.fees
+          : fees // ignore: cast_nullable_to_non_nullable
+              as int,
+      tax: null == tax
+          ? _self.tax
+          : tax // ignore: cast_nullable_to_non_nullable
+              as int,
+      currency: null == currency
+          ? _self.currency
+          : currency // ignore: cast_nullable_to_non_nullable
+              as String,
+      created_at: null == created_at
+          ? _self.created_at
+          : created_at // ignore: cast_nullable_to_non_nullable
+              as int,
+      settle_full_balance: freezed == settle_full_balance
+          ? _self.settle_full_balance
+          : settle_full_balance // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      description: freezed == description
+          ? _self.description
+          : description // ignore: cast_nullable_to_non_nullable
+              as String?,
+      notes: freezed == notes
+          ? _self._notes
+          : notes // ignore: cast_nullable_to_non_nullable
+              as IMap<dynamic>?,
+      ondemand_payouts: freezed == ondemand_payouts
+          ? _self.ondemand_payouts
+          : ondemand_payouts // ignore: cast_nullable_to_non_nullable
+              as RazorpayOndemandPayouts?,
+    ));
+  }
 
-RazorpaySettlementReconBaseRequestBody
-    _$RazorpaySettlementReconBaseRequestBodyFromJson(
-        Map<String, dynamic> json) {
-  return _RazorpaySettlementReconBaseRequestBody.fromJson(json);
+  /// Create a copy of RazorpayInstantSettlement
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $RazorpayOndemandPayoutsCopyWith<$Res>? get ondemand_payouts {
+    if (_self.ondemand_payouts == null) {
+      return null;
+    }
+
+    return $RazorpayOndemandPayoutsCopyWith<$Res>(_self.ondemand_payouts!,
+        (value) {
+      return _then(_self.copyWith(ondemand_payouts: value));
+    });
+  }
 }
 
 /// @nodoc
 mixin _$RazorpaySettlementReconBaseRequestBody {
-  int get year => throw _privateConstructorUsedError;
-  int? get month => throw _privateConstructorUsedError;
-  int? get day => throw _privateConstructorUsedError;
-  int? get count => throw _privateConstructorUsedError;
-  int? get skip => throw _privateConstructorUsedError;
-
-  /// Serializes this RazorpaySettlementReconBaseRequestBody to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  int get year;
+  int? get month;
+  int? get day;
+  int? get count;
+  int? get skip;
 
   /// Create a copy of RazorpaySettlementReconBaseRequestBody
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
   $RazorpaySettlementReconBaseRequestBodyCopyWith<
           RazorpaySettlementReconBaseRequestBody>
-      get copyWith => throw _privateConstructorUsedError;
-}
+      get copyWith => _$RazorpaySettlementReconBaseRequestBodyCopyWithImpl<
+              RazorpaySettlementReconBaseRequestBody>(
+          this as RazorpaySettlementReconBaseRequestBody, _$identity);
 
-/// @nodoc
-abstract class $RazorpaySettlementReconBaseRequestBodyCopyWith<$Res> {
-  factory $RazorpaySettlementReconBaseRequestBodyCopyWith(
-          RazorpaySettlementReconBaseRequestBody value,
-          $Res Function(RazorpaySettlementReconBaseRequestBody) then) =
-      _$RazorpaySettlementReconBaseRequestBodyCopyWithImpl<$Res,
-          RazorpaySettlementReconBaseRequestBody>;
-  @useResult
-  $Res call({int year, int? month, int? day, int? count, int? skip});
-}
+  /// Serializes this RazorpaySettlementReconBaseRequestBody to a JSON map.
+  Map<String, dynamic> toJson();
 
-/// @nodoc
-class _$RazorpaySettlementReconBaseRequestBodyCopyWithImpl<$Res,
-        $Val extends RazorpaySettlementReconBaseRequestBody>
-    implements $RazorpaySettlementReconBaseRequestBodyCopyWith<$Res> {
-  _$RazorpaySettlementReconBaseRequestBodyCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of RazorpaySettlementReconBaseRequestBody
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? year = null,
-    Object? month = freezed,
-    Object? day = freezed,
-    Object? count = freezed,
-    Object? skip = freezed,
-  }) {
-    return _then(_value.copyWith(
-      year: null == year
-          ? _value.year
-          : year // ignore: cast_nullable_to_non_nullable
-              as int,
-      month: freezed == month
-          ? _value.month
-          : month // ignore: cast_nullable_to_non_nullable
-              as int?,
-      day: freezed == day
-          ? _value.day
-          : day // ignore: cast_nullable_to_non_nullable
-              as int?,
-      count: freezed == count
-          ? _value.count
-          : count // ignore: cast_nullable_to_non_nullable
-              as int?,
-      skip: freezed == skip
-          ? _value.skip
-          : skip // ignore: cast_nullable_to_non_nullable
-              as int?,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is RazorpaySettlementReconBaseRequestBody &&
+            (identical(other.year, year) || other.year == year) &&
+            (identical(other.month, month) || other.month == month) &&
+            (identical(other.day, day) || other.day == day) &&
+            (identical(other.count, count) || other.count == count) &&
+            (identical(other.skip, skip) || other.skip == skip));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, year, month, day, count, skip);
+
+  @override
+  String toString() {
+    return 'RazorpaySettlementReconBaseRequestBody(year: $year, month: $month, day: $day, count: $count, skip: $skip)';
   }
 }
 
 /// @nodoc
-abstract class _$$RazorpaySettlementReconBaseRequestBodyImplCopyWith<$Res>
-    implements $RazorpaySettlementReconBaseRequestBodyCopyWith<$Res> {
-  factory _$$RazorpaySettlementReconBaseRequestBodyImplCopyWith(
-          _$RazorpaySettlementReconBaseRequestBodyImpl value,
-          $Res Function(_$RazorpaySettlementReconBaseRequestBodyImpl) then) =
-      __$$RazorpaySettlementReconBaseRequestBodyImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $RazorpaySettlementReconBaseRequestBodyCopyWith<$Res> {
+  factory $RazorpaySettlementReconBaseRequestBodyCopyWith(
+          RazorpaySettlementReconBaseRequestBody value,
+          $Res Function(RazorpaySettlementReconBaseRequestBody) _then) =
+      _$RazorpaySettlementReconBaseRequestBodyCopyWithImpl;
   @useResult
   $Res call({int year, int? month, int? day, int? count, int? skip});
 }
 
 /// @nodoc
-class __$$RazorpaySettlementReconBaseRequestBodyImplCopyWithImpl<$Res>
-    extends _$RazorpaySettlementReconBaseRequestBodyCopyWithImpl<$Res,
-        _$RazorpaySettlementReconBaseRequestBodyImpl>
-    implements _$$RazorpaySettlementReconBaseRequestBodyImplCopyWith<$Res> {
-  __$$RazorpaySettlementReconBaseRequestBodyImplCopyWithImpl(
-      _$RazorpaySettlementReconBaseRequestBodyImpl _value,
-      $Res Function(_$RazorpaySettlementReconBaseRequestBodyImpl) _then)
-      : super(_value, _then);
+class _$RazorpaySettlementReconBaseRequestBodyCopyWithImpl<$Res>
+    implements $RazorpaySettlementReconBaseRequestBodyCopyWith<$Res> {
+  _$RazorpaySettlementReconBaseRequestBodyCopyWithImpl(this._self, this._then);
+
+  final RazorpaySettlementReconBaseRequestBody _self;
+  final $Res Function(RazorpaySettlementReconBaseRequestBody) _then;
 
   /// Create a copy of RazorpaySettlementReconBaseRequestBody
   /// with the given fields replaced by the non-null parameter values.
@@ -2254,25 +2119,25 @@ class __$$RazorpaySettlementReconBaseRequestBodyImplCopyWithImpl<$Res>
     Object? count = freezed,
     Object? skip = freezed,
   }) {
-    return _then(_$RazorpaySettlementReconBaseRequestBodyImpl(
+    return _then(_self.copyWith(
       year: null == year
-          ? _value.year
+          ? _self.year
           : year // ignore: cast_nullable_to_non_nullable
               as int,
       month: freezed == month
-          ? _value.month
+          ? _self.month
           : month // ignore: cast_nullable_to_non_nullable
               as int?,
       day: freezed == day
-          ? _value.day
+          ? _self.day
           : day // ignore: cast_nullable_to_non_nullable
               as int?,
       count: freezed == count
-          ? _value.count
+          ? _self.count
           : count // ignore: cast_nullable_to_non_nullable
               as int?,
       skip: freezed == skip
-          ? _value.skip
+          ? _self.skip
           : skip // ignore: cast_nullable_to_non_nullable
               as int?,
     ));
@@ -2282,14 +2147,13 @@ class __$$RazorpaySettlementReconBaseRequestBodyImplCopyWithImpl<$Res>
 /// @nodoc
 
 @JsonSerializable(includeIfNull: false)
-class _$RazorpaySettlementReconBaseRequestBodyImpl
-    implements _RazorpaySettlementReconBaseRequestBody {
-  const _$RazorpaySettlementReconBaseRequestBodyImpl(
+class _RazorpaySettlementReconBaseRequestBody
+    implements RazorpaySettlementReconBaseRequestBody {
+  const _RazorpaySettlementReconBaseRequestBody(
       {required this.year, this.month, this.day, this.count, this.skip});
-
-  factory _$RazorpaySettlementReconBaseRequestBodyImpl.fromJson(
+  factory _RazorpaySettlementReconBaseRequestBody.fromJson(
           Map<String, dynamic> json) =>
-      _$$RazorpaySettlementReconBaseRequestBodyImplFromJson(json);
+      _$RazorpaySettlementReconBaseRequestBodyFromJson(json);
 
   @override
   final int year;
@@ -2302,16 +2166,28 @@ class _$RazorpaySettlementReconBaseRequestBodyImpl
   @override
   final int? skip;
 
+  /// Create a copy of RazorpaySettlementReconBaseRequestBody
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'RazorpaySettlementReconBaseRequestBody(year: $year, month: $month, day: $day, count: $count, skip: $skip)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$RazorpaySettlementReconBaseRequestBodyCopyWith<
+          _RazorpaySettlementReconBaseRequestBody>
+      get copyWith => __$RazorpaySettlementReconBaseRequestBodyCopyWithImpl<
+          _RazorpaySettlementReconBaseRequestBody>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$RazorpaySettlementReconBaseRequestBodyToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$RazorpaySettlementReconBaseRequestBodyImpl &&
+            other is _RazorpaySettlementReconBaseRequestBody &&
             (identical(other.year, year) || other.year == year) &&
             (identical(other.month, month) || other.month == month) &&
             (identical(other.day, day) || other.day == day) &&
@@ -2323,538 +2199,111 @@ class _$RazorpaySettlementReconBaseRequestBodyImpl
   @override
   int get hashCode => Object.hash(runtimeType, year, month, day, count, skip);
 
-  /// Create a copy of RazorpaySettlementReconBaseRequestBody
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$RazorpaySettlementReconBaseRequestBodyImplCopyWith<
-          _$RazorpaySettlementReconBaseRequestBodyImpl>
-      get copyWith =>
-          __$$RazorpaySettlementReconBaseRequestBodyImplCopyWithImpl<
-              _$RazorpaySettlementReconBaseRequestBodyImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$RazorpaySettlementReconBaseRequestBodyImplToJson(
-      this,
-    );
-  }
-}
-
-abstract class _RazorpaySettlementReconBaseRequestBody
-    implements RazorpaySettlementReconBaseRequestBody {
-  const factory _RazorpaySettlementReconBaseRequestBody(
-      {required final int year,
-      final int? month,
-      final int? day,
-      final int? count,
-      final int? skip}) = _$RazorpaySettlementReconBaseRequestBodyImpl;
-
-  factory _RazorpaySettlementReconBaseRequestBody.fromJson(
-          Map<String, dynamic> json) =
-      _$RazorpaySettlementReconBaseRequestBodyImpl.fromJson;
-
-  @override
-  int get year;
-  @override
-  int? get month;
-  @override
-  int? get day;
-  @override
-  int? get count;
-  @override
-  int? get skip;
-
-  /// Create a copy of RazorpaySettlementReconBaseRequestBody
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$RazorpaySettlementReconBaseRequestBodyImplCopyWith<
-          _$RazorpaySettlementReconBaseRequestBodyImpl>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-RazorpaySettlementReconItem _$RazorpaySettlementReconItemFromJson(
-    Map<String, dynamic> json) {
-  return _RazorpaySettlementReconItem.fromJson(json);
-}
-
-/// @nodoc
-mixin _$RazorpaySettlementReconItem {
-  String get entity_id =>
-      throw _privateConstructorUsedError; // ID of the payment/refund/transfer etc.
-  String get type =>
-      throw _privateConstructorUsedError; // 'payment', 'refund', 'transfer', etc.
-  int get debit => throw _privateConstructorUsedError;
-  int get credit => throw _privateConstructorUsedError;
-  dynamic get amount =>
-      throw _privateConstructorUsedError; // Total amount (debit or credit)
-  String get currency => throw _privateConstructorUsedError;
-  int get fee => throw _privateConstructorUsedError;
-  int get tax => throw _privateConstructorUsedError;
-  bool get on_hold => throw _privateConstructorUsedError;
-  bool get settled => throw _privateConstructorUsedError;
-  int get created_at =>
-      throw _privateConstructorUsedError; // Timestamp of original transaction
-  int get settled_at =>
-      throw _privateConstructorUsedError; // Timestamp of settlement inclusion
-  String get settlement_id => throw _privateConstructorUsedError;
-  String get credit_type => throw _privateConstructorUsedError;
-  String get order_id =>
-      throw _privateConstructorUsedError; // e.g., 'default', 'instant', required IMap<dynamic> notes, // Notes of original transaction, required String settlement_utr, required String order_id, required PaymentMethodSettlement method, int? posted_at, // Nullable
-  String? get description => throw _privateConstructorUsedError; // Nullable
-  String? get payment_id =>
-      throw _privateConstructorUsedError; // Present for refunds/transfers
-  String? get order_receipt => throw _privateConstructorUsedError; // Nullable
-  CardNetworkSettlement? get card_network =>
-      throw _privateConstructorUsedError; // Nullable for non-card
-  String? get card_issuer =>
-      throw _privateConstructorUsedError; // Nullable for non-card
-  CardTypeSettlement? get card_type =>
-      throw _privateConstructorUsedError; // Nullable for non-card
-  String? get dispute_id => throw _privateConstructorUsedError;
-
-  /// Serializes this RazorpaySettlementReconItem to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of RazorpaySettlementReconItem
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  $RazorpaySettlementReconItemCopyWith<RazorpaySettlementReconItem>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $RazorpaySettlementReconItemCopyWith<$Res> {
-  factory $RazorpaySettlementReconItemCopyWith(
-          RazorpaySettlementReconItem value,
-          $Res Function(RazorpaySettlementReconItem) then) =
-      _$RazorpaySettlementReconItemCopyWithImpl<$Res,
-          RazorpaySettlementReconItem>;
-  @useResult
-  $Res call(
-      {String entity_id,
-      String type,
-      int debit,
-      int credit,
-      dynamic amount,
-      String currency,
-      int fee,
-      int tax,
-      bool on_hold,
-      bool settled,
-      int created_at,
-      int settled_at,
-      String settlement_id,
-      String credit_type,
-      String order_id,
-      String? description,
-      String? payment_id,
-      String? order_receipt,
-      CardNetworkSettlement? card_network,
-      String? card_issuer,
-      CardTypeSettlement? card_type,
-      String? dispute_id});
-}
-
-/// @nodoc
-class _$RazorpaySettlementReconItemCopyWithImpl<$Res,
-        $Val extends RazorpaySettlementReconItem>
-    implements $RazorpaySettlementReconItemCopyWith<$Res> {
-  _$RazorpaySettlementReconItemCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of RazorpaySettlementReconItem
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? entity_id = null,
-    Object? type = null,
-    Object? debit = null,
-    Object? credit = null,
-    Object? amount = freezed,
-    Object? currency = null,
-    Object? fee = null,
-    Object? tax = null,
-    Object? on_hold = null,
-    Object? settled = null,
-    Object? created_at = null,
-    Object? settled_at = null,
-    Object? settlement_id = null,
-    Object? credit_type = null,
-    Object? order_id = null,
-    Object? description = freezed,
-    Object? payment_id = freezed,
-    Object? order_receipt = freezed,
-    Object? card_network = freezed,
-    Object? card_issuer = freezed,
-    Object? card_type = freezed,
-    Object? dispute_id = freezed,
-  }) {
-    return _then(_value.copyWith(
-      entity_id: null == entity_id
-          ? _value.entity_id
-          : entity_id // ignore: cast_nullable_to_non_nullable
-              as String,
-      type: null == type
-          ? _value.type
-          : type // ignore: cast_nullable_to_non_nullable
-              as String,
-      debit: null == debit
-          ? _value.debit
-          : debit // ignore: cast_nullable_to_non_nullable
-              as int,
-      credit: null == credit
-          ? _value.credit
-          : credit // ignore: cast_nullable_to_non_nullable
-              as int,
-      amount: freezed == amount
-          ? _value.amount
-          : amount // ignore: cast_nullable_to_non_nullable
-              as dynamic,
-      currency: null == currency
-          ? _value.currency
-          : currency // ignore: cast_nullable_to_non_nullable
-              as String,
-      fee: null == fee
-          ? _value.fee
-          : fee // ignore: cast_nullable_to_non_nullable
-              as int,
-      tax: null == tax
-          ? _value.tax
-          : tax // ignore: cast_nullable_to_non_nullable
-              as int,
-      on_hold: null == on_hold
-          ? _value.on_hold
-          : on_hold // ignore: cast_nullable_to_non_nullable
-              as bool,
-      settled: null == settled
-          ? _value.settled
-          : settled // ignore: cast_nullable_to_non_nullable
-              as bool,
-      created_at: null == created_at
-          ? _value.created_at
-          : created_at // ignore: cast_nullable_to_non_nullable
-              as int,
-      settled_at: null == settled_at
-          ? _value.settled_at
-          : settled_at // ignore: cast_nullable_to_non_nullable
-              as int,
-      settlement_id: null == settlement_id
-          ? _value.settlement_id
-          : settlement_id // ignore: cast_nullable_to_non_nullable
-              as String,
-      credit_type: null == credit_type
-          ? _value.credit_type
-          : credit_type // ignore: cast_nullable_to_non_nullable
-              as String,
-      order_id: null == order_id
-          ? _value.order_id
-          : order_id // ignore: cast_nullable_to_non_nullable
-              as String,
-      description: freezed == description
-          ? _value.description
-          : description // ignore: cast_nullable_to_non_nullable
-              as String?,
-      payment_id: freezed == payment_id
-          ? _value.payment_id
-          : payment_id // ignore: cast_nullable_to_non_nullable
-              as String?,
-      order_receipt: freezed == order_receipt
-          ? _value.order_receipt
-          : order_receipt // ignore: cast_nullable_to_non_nullable
-              as String?,
-      card_network: freezed == card_network
-          ? _value.card_network
-          : card_network // ignore: cast_nullable_to_non_nullable
-              as CardNetworkSettlement?,
-      card_issuer: freezed == card_issuer
-          ? _value.card_issuer
-          : card_issuer // ignore: cast_nullable_to_non_nullable
-              as String?,
-      card_type: freezed == card_type
-          ? _value.card_type
-          : card_type // ignore: cast_nullable_to_non_nullable
-              as CardTypeSettlement?,
-      dispute_id: freezed == dispute_id
-          ? _value.dispute_id
-          : dispute_id // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ) as $Val);
+  String toString() {
+    return 'RazorpaySettlementReconBaseRequestBody(year: $year, month: $month, day: $day, count: $count, skip: $skip)';
   }
 }
 
 /// @nodoc
-abstract class _$$RazorpaySettlementReconItemImplCopyWith<$Res>
-    implements $RazorpaySettlementReconItemCopyWith<$Res> {
-  factory _$$RazorpaySettlementReconItemImplCopyWith(
-          _$RazorpaySettlementReconItemImpl value,
-          $Res Function(_$RazorpaySettlementReconItemImpl) then) =
-      __$$RazorpaySettlementReconItemImplCopyWithImpl<$Res>;
+abstract mixin class _$RazorpaySettlementReconBaseRequestBodyCopyWith<$Res>
+    implements $RazorpaySettlementReconBaseRequestBodyCopyWith<$Res> {
+  factory _$RazorpaySettlementReconBaseRequestBodyCopyWith(
+          _RazorpaySettlementReconBaseRequestBody value,
+          $Res Function(_RazorpaySettlementReconBaseRequestBody) _then) =
+      __$RazorpaySettlementReconBaseRequestBodyCopyWithImpl;
   @override
   @useResult
-  $Res call(
-      {String entity_id,
-      String type,
-      int debit,
-      int credit,
-      dynamic amount,
-      String currency,
-      int fee,
-      int tax,
-      bool on_hold,
-      bool settled,
-      int created_at,
-      int settled_at,
-      String settlement_id,
-      String credit_type,
-      String order_id,
-      String? description,
-      String? payment_id,
-      String? order_receipt,
-      CardNetworkSettlement? card_network,
-      String? card_issuer,
-      CardTypeSettlement? card_type,
-      String? dispute_id});
+  $Res call({int year, int? month, int? day, int? count, int? skip});
 }
 
 /// @nodoc
-class __$$RazorpaySettlementReconItemImplCopyWithImpl<$Res>
-    extends _$RazorpaySettlementReconItemCopyWithImpl<$Res,
-        _$RazorpaySettlementReconItemImpl>
-    implements _$$RazorpaySettlementReconItemImplCopyWith<$Res> {
-  __$$RazorpaySettlementReconItemImplCopyWithImpl(
-      _$RazorpaySettlementReconItemImpl _value,
-      $Res Function(_$RazorpaySettlementReconItemImpl) _then)
-      : super(_value, _then);
+class __$RazorpaySettlementReconBaseRequestBodyCopyWithImpl<$Res>
+    implements _$RazorpaySettlementReconBaseRequestBodyCopyWith<$Res> {
+  __$RazorpaySettlementReconBaseRequestBodyCopyWithImpl(this._self, this._then);
 
-  /// Create a copy of RazorpaySettlementReconItem
+  final _RazorpaySettlementReconBaseRequestBody _self;
+  final $Res Function(_RazorpaySettlementReconBaseRequestBody) _then;
+
+  /// Create a copy of RazorpaySettlementReconBaseRequestBody
   /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
   @override
+  @pragma('vm:prefer-inline')
   $Res call({
-    Object? entity_id = null,
-    Object? type = null,
-    Object? debit = null,
-    Object? credit = null,
-    Object? amount = freezed,
-    Object? currency = null,
-    Object? fee = null,
-    Object? tax = null,
-    Object? on_hold = null,
-    Object? settled = null,
-    Object? created_at = null,
-    Object? settled_at = null,
-    Object? settlement_id = null,
-    Object? credit_type = null,
-    Object? order_id = null,
-    Object? description = freezed,
-    Object? payment_id = freezed,
-    Object? order_receipt = freezed,
-    Object? card_network = freezed,
-    Object? card_issuer = freezed,
-    Object? card_type = freezed,
-    Object? dispute_id = freezed,
+    Object? year = null,
+    Object? month = freezed,
+    Object? day = freezed,
+    Object? count = freezed,
+    Object? skip = freezed,
   }) {
-    return _then(_$RazorpaySettlementReconItemImpl(
-      entity_id: null == entity_id
-          ? _value.entity_id
-          : entity_id // ignore: cast_nullable_to_non_nullable
-              as String,
-      type: null == type
-          ? _value.type
-          : type // ignore: cast_nullable_to_non_nullable
-              as String,
-      debit: null == debit
-          ? _value.debit
-          : debit // ignore: cast_nullable_to_non_nullable
+    return _then(_RazorpaySettlementReconBaseRequestBody(
+      year: null == year
+          ? _self.year
+          : year // ignore: cast_nullable_to_non_nullable
               as int,
-      credit: null == credit
-          ? _value.credit
-          : credit // ignore: cast_nullable_to_non_nullable
-              as int,
-      amount: freezed == amount
-          ? _value.amount
-          : amount // ignore: cast_nullable_to_non_nullable
-              as dynamic,
-      currency: null == currency
-          ? _value.currency
-          : currency // ignore: cast_nullable_to_non_nullable
-              as String,
-      fee: null == fee
-          ? _value.fee
-          : fee // ignore: cast_nullable_to_non_nullable
-              as int,
-      tax: null == tax
-          ? _value.tax
-          : tax // ignore: cast_nullable_to_non_nullable
-              as int,
-      on_hold: null == on_hold
-          ? _value.on_hold
-          : on_hold // ignore: cast_nullable_to_non_nullable
-              as bool,
-      settled: null == settled
-          ? _value.settled
-          : settled // ignore: cast_nullable_to_non_nullable
-              as bool,
-      created_at: null == created_at
-          ? _value.created_at
-          : created_at // ignore: cast_nullable_to_non_nullable
-              as int,
-      settled_at: null == settled_at
-          ? _value.settled_at
-          : settled_at // ignore: cast_nullable_to_non_nullable
-              as int,
-      settlement_id: null == settlement_id
-          ? _value.settlement_id
-          : settlement_id // ignore: cast_nullable_to_non_nullable
-              as String,
-      credit_type: null == credit_type
-          ? _value.credit_type
-          : credit_type // ignore: cast_nullable_to_non_nullable
-              as String,
-      order_id: null == order_id
-          ? _value.order_id
-          : order_id // ignore: cast_nullable_to_non_nullable
-              as String,
-      description: freezed == description
-          ? _value.description
-          : description // ignore: cast_nullable_to_non_nullable
-              as String?,
-      payment_id: freezed == payment_id
-          ? _value.payment_id
-          : payment_id // ignore: cast_nullable_to_non_nullable
-              as String?,
-      order_receipt: freezed == order_receipt
-          ? _value.order_receipt
-          : order_receipt // ignore: cast_nullable_to_non_nullable
-              as String?,
-      card_network: freezed == card_network
-          ? _value.card_network
-          : card_network // ignore: cast_nullable_to_non_nullable
-              as CardNetworkSettlement?,
-      card_issuer: freezed == card_issuer
-          ? _value.card_issuer
-          : card_issuer // ignore: cast_nullable_to_non_nullable
-              as String?,
-      card_type: freezed == card_type
-          ? _value.card_type
-          : card_type // ignore: cast_nullable_to_non_nullable
-              as CardTypeSettlement?,
-      dispute_id: freezed == dispute_id
-          ? _value.dispute_id
-          : dispute_id // ignore: cast_nullable_to_non_nullable
-              as String?,
+      month: freezed == month
+          ? _self.month
+          : month // ignore: cast_nullable_to_non_nullable
+              as int?,
+      day: freezed == day
+          ? _self.day
+          : day // ignore: cast_nullable_to_non_nullable
+              as int?,
+      count: freezed == count
+          ? _self.count
+          : count // ignore: cast_nullable_to_non_nullable
+              as int?,
+      skip: freezed == skip
+          ? _self.skip
+          : skip // ignore: cast_nullable_to_non_nullable
+              as int?,
     ));
   }
 }
 
 /// @nodoc
+mixin _$RazorpaySettlementReconItem {
+  String get entity_id; // ID of the payment/refund/transfer etc.
+  String get type; // 'payment', 'refund', 'transfer', etc.
+  int get debit;
+  int get credit;
+  dynamic get amount; // Total amount (debit or credit)
+  String get currency;
+  int get fee;
+  int get tax;
+  bool get on_hold;
+  bool get settled;
+  int get created_at; // Timestamp of original transaction
+  int get settled_at; // Timestamp of settlement inclusion
+  String get settlement_id;
+  String get credit_type;
+  String
+      get order_id; // e.g., 'default', 'instant', required IMap<dynamic> notes, // Notes of original transaction, required String settlement_utr, required String order_id, required PaymentMethodSettlement method, int? posted_at, // Nullable
+  String? get description; // Nullable
+  String? get payment_id; // Present for refunds/transfers
+  String? get order_receipt; // Nullable
+  CardNetworkSettlement? get card_network; // Nullable for non-card
+  String? get card_issuer; // Nullable for non-card
+  CardTypeSettlement? get card_type; // Nullable for non-card
+  String? get dispute_id;
 
-@JsonSerializable(includeIfNull: false)
-class _$RazorpaySettlementReconItemImpl
-    implements _RazorpaySettlementReconItem {
-  const _$RazorpaySettlementReconItemImpl(
-      {required this.entity_id,
-      required this.type,
-      required this.debit,
-      required this.credit,
-      required this.amount,
-      required this.currency,
-      required this.fee,
-      required this.tax,
-      required this.on_hold,
-      required this.settled,
-      required this.created_at,
-      required this.settled_at,
-      required this.settlement_id,
-      required this.credit_type,
-      required this.order_id,
-      this.description,
-      this.payment_id,
-      this.order_receipt,
-      this.card_network,
-      this.card_issuer,
-      this.card_type,
-      this.dispute_id});
+  /// Create a copy of RazorpaySettlementReconItem
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $RazorpaySettlementReconItemCopyWith<RazorpaySettlementReconItem>
+      get copyWith => _$RazorpaySettlementReconItemCopyWithImpl<
+              RazorpaySettlementReconItem>(
+          this as RazorpaySettlementReconItem, _$identity);
 
-  factory _$RazorpaySettlementReconItemImpl.fromJson(
-          Map<String, dynamic> json) =>
-      _$$RazorpaySettlementReconItemImplFromJson(json);
-
-  @override
-  final String entity_id;
-// ID of the payment/refund/transfer etc.
-  @override
-  final String type;
-// 'payment', 'refund', 'transfer', etc.
-  @override
-  final int debit;
-  @override
-  final int credit;
-  @override
-  final dynamic amount;
-// Total amount (debit or credit)
-  @override
-  final String currency;
-  @override
-  final int fee;
-  @override
-  final int tax;
-  @override
-  final bool on_hold;
-  @override
-  final bool settled;
-  @override
-  final int created_at;
-// Timestamp of original transaction
-  @override
-  final int settled_at;
-// Timestamp of settlement inclusion
-  @override
-  final String settlement_id;
-  @override
-  final String credit_type;
-  @override
-  final String order_id;
-// e.g., 'default', 'instant', required IMap<dynamic> notes, // Notes of original transaction, required String settlement_utr, required String order_id, required PaymentMethodSettlement method, int? posted_at, // Nullable
-  @override
-  final String? description;
-// Nullable
-  @override
-  final String? payment_id;
-// Present for refunds/transfers
-  @override
-  final String? order_receipt;
-// Nullable
-  @override
-  final CardNetworkSettlement? card_network;
-// Nullable for non-card
-  @override
-  final String? card_issuer;
-// Nullable for non-card
-  @override
-  final CardTypeSettlement? card_type;
-// Nullable for non-card
-  @override
-  final String? dispute_id;
-
-  @override
-  String toString() {
-    return 'RazorpaySettlementReconItem(entity_id: $entity_id, type: $type, debit: $debit, credit: $credit, amount: $amount, currency: $currency, fee: $fee, tax: $tax, on_hold: $on_hold, settled: $settled, created_at: $created_at, settled_at: $settled_at, settlement_id: $settlement_id, credit_type: $credit_type, order_id: $order_id, description: $description, payment_id: $payment_id, order_receipt: $order_receipt, card_network: $card_network, card_issuer: $card_issuer, card_type: $card_type, dispute_id: $dispute_id)';
-  }
+  /// Serializes this RazorpaySettlementReconItem to a JSON map.
+  Map<String, dynamic> toJson();
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$RazorpaySettlementReconItemImpl &&
+            other is RazorpaySettlementReconItem &&
             (identical(other.entity_id, entity_id) ||
                 other.entity_id == entity_id) &&
             (identical(other.type, type) || other.type == type) &&
@@ -2921,201 +2370,566 @@ class _$RazorpaySettlementReconItemImpl
         dispute_id
       ]);
 
-  /// Create a copy of RazorpaySettlementReconItem
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$RazorpaySettlementReconItemImplCopyWith<_$RazorpaySettlementReconItemImpl>
-      get copyWith => __$$RazorpaySettlementReconItemImplCopyWithImpl<
-          _$RazorpaySettlementReconItemImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$RazorpaySettlementReconItemImplToJson(
-      this,
-    );
+  String toString() {
+    return 'RazorpaySettlementReconItem(entity_id: $entity_id, type: $type, debit: $debit, credit: $credit, amount: $amount, currency: $currency, fee: $fee, tax: $tax, on_hold: $on_hold, settled: $settled, created_at: $created_at, settled_at: $settled_at, settlement_id: $settlement_id, credit_type: $credit_type, order_id: $order_id, description: $description, payment_id: $payment_id, order_receipt: $order_receipt, card_network: $card_network, card_issuer: $card_issuer, card_type: $card_type, dispute_id: $dispute_id)';
   }
 }
 
-abstract class _RazorpaySettlementReconItem
-    implements RazorpaySettlementReconItem {
-  const factory _RazorpaySettlementReconItem(
-      {required final String entity_id,
-      required final String type,
-      required final int debit,
-      required final int credit,
-      required final dynamic amount,
-      required final String currency,
-      required final int fee,
-      required final int tax,
-      required final bool on_hold,
-      required final bool settled,
-      required final int created_at,
-      required final int settled_at,
-      required final String settlement_id,
-      required final String credit_type,
-      required final String order_id,
-      final String? description,
-      final String? payment_id,
-      final String? order_receipt,
-      final CardNetworkSettlement? card_network,
-      final String? card_issuer,
-      final CardTypeSettlement? card_type,
-      final String? dispute_id}) = _$RazorpaySettlementReconItemImpl;
+/// @nodoc
+abstract mixin class $RazorpaySettlementReconItemCopyWith<$Res> {
+  factory $RazorpaySettlementReconItemCopyWith(
+          RazorpaySettlementReconItem value,
+          $Res Function(RazorpaySettlementReconItem) _then) =
+      _$RazorpaySettlementReconItemCopyWithImpl;
+  @useResult
+  $Res call(
+      {String entity_id,
+      String type,
+      int debit,
+      int credit,
+      dynamic amount,
+      String currency,
+      int fee,
+      int tax,
+      bool on_hold,
+      bool settled,
+      int created_at,
+      int settled_at,
+      String settlement_id,
+      String credit_type,
+      String order_id,
+      String? description,
+      String? payment_id,
+      String? order_receipt,
+      CardNetworkSettlement? card_network,
+      String? card_issuer,
+      CardTypeSettlement? card_type,
+      String? dispute_id});
+}
 
-  factory _RazorpaySettlementReconItem.fromJson(Map<String, dynamic> json) =
-      _$RazorpaySettlementReconItemImpl.fromJson;
+/// @nodoc
+class _$RazorpaySettlementReconItemCopyWithImpl<$Res>
+    implements $RazorpaySettlementReconItemCopyWith<$Res> {
+  _$RazorpaySettlementReconItemCopyWithImpl(this._self, this._then);
+
+  final RazorpaySettlementReconItem _self;
+  final $Res Function(RazorpaySettlementReconItem) _then;
+
+  /// Create a copy of RazorpaySettlementReconItem
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? entity_id = null,
+    Object? type = null,
+    Object? debit = null,
+    Object? credit = null,
+    Object? amount = freezed,
+    Object? currency = null,
+    Object? fee = null,
+    Object? tax = null,
+    Object? on_hold = null,
+    Object? settled = null,
+    Object? created_at = null,
+    Object? settled_at = null,
+    Object? settlement_id = null,
+    Object? credit_type = null,
+    Object? order_id = null,
+    Object? description = freezed,
+    Object? payment_id = freezed,
+    Object? order_receipt = freezed,
+    Object? card_network = freezed,
+    Object? card_issuer = freezed,
+    Object? card_type = freezed,
+    Object? dispute_id = freezed,
+  }) {
+    return _then(_self.copyWith(
+      entity_id: null == entity_id
+          ? _self.entity_id
+          : entity_id // ignore: cast_nullable_to_non_nullable
+              as String,
+      type: null == type
+          ? _self.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as String,
+      debit: null == debit
+          ? _self.debit
+          : debit // ignore: cast_nullable_to_non_nullable
+              as int,
+      credit: null == credit
+          ? _self.credit
+          : credit // ignore: cast_nullable_to_non_nullable
+              as int,
+      amount: freezed == amount
+          ? _self.amount
+          : amount // ignore: cast_nullable_to_non_nullable
+              as dynamic,
+      currency: null == currency
+          ? _self.currency
+          : currency // ignore: cast_nullable_to_non_nullable
+              as String,
+      fee: null == fee
+          ? _self.fee
+          : fee // ignore: cast_nullable_to_non_nullable
+              as int,
+      tax: null == tax
+          ? _self.tax
+          : tax // ignore: cast_nullable_to_non_nullable
+              as int,
+      on_hold: null == on_hold
+          ? _self.on_hold
+          : on_hold // ignore: cast_nullable_to_non_nullable
+              as bool,
+      settled: null == settled
+          ? _self.settled
+          : settled // ignore: cast_nullable_to_non_nullable
+              as bool,
+      created_at: null == created_at
+          ? _self.created_at
+          : created_at // ignore: cast_nullable_to_non_nullable
+              as int,
+      settled_at: null == settled_at
+          ? _self.settled_at
+          : settled_at // ignore: cast_nullable_to_non_nullable
+              as int,
+      settlement_id: null == settlement_id
+          ? _self.settlement_id
+          : settlement_id // ignore: cast_nullable_to_non_nullable
+              as String,
+      credit_type: null == credit_type
+          ? _self.credit_type
+          : credit_type // ignore: cast_nullable_to_non_nullable
+              as String,
+      order_id: null == order_id
+          ? _self.order_id
+          : order_id // ignore: cast_nullable_to_non_nullable
+              as String,
+      description: freezed == description
+          ? _self.description
+          : description // ignore: cast_nullable_to_non_nullable
+              as String?,
+      payment_id: freezed == payment_id
+          ? _self.payment_id
+          : payment_id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      order_receipt: freezed == order_receipt
+          ? _self.order_receipt
+          : order_receipt // ignore: cast_nullable_to_non_nullable
+              as String?,
+      card_network: freezed == card_network
+          ? _self.card_network
+          : card_network // ignore: cast_nullable_to_non_nullable
+              as CardNetworkSettlement?,
+      card_issuer: freezed == card_issuer
+          ? _self.card_issuer
+          : card_issuer // ignore: cast_nullable_to_non_nullable
+              as String?,
+      card_type: freezed == card_type
+          ? _self.card_type
+          : card_type // ignore: cast_nullable_to_non_nullable
+              as CardTypeSettlement?,
+      dispute_id: freezed == dispute_id
+          ? _self.dispute_id
+          : dispute_id // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+
+@JsonSerializable(includeIfNull: false)
+class _RazorpaySettlementReconItem implements RazorpaySettlementReconItem {
+  const _RazorpaySettlementReconItem(
+      {required this.entity_id,
+      required this.type,
+      required this.debit,
+      required this.credit,
+      required this.amount,
+      required this.currency,
+      required this.fee,
+      required this.tax,
+      required this.on_hold,
+      required this.settled,
+      required this.created_at,
+      required this.settled_at,
+      required this.settlement_id,
+      required this.credit_type,
+      required this.order_id,
+      this.description,
+      this.payment_id,
+      this.order_receipt,
+      this.card_network,
+      this.card_issuer,
+      this.card_type,
+      this.dispute_id});
+  factory _RazorpaySettlementReconItem.fromJson(Map<String, dynamic> json) =>
+      _$RazorpaySettlementReconItemFromJson(json);
 
   @override
-  String get entity_id; // ID of the payment/refund/transfer etc.
+  final String entity_id;
+// ID of the payment/refund/transfer etc.
   @override
-  String get type; // 'payment', 'refund', 'transfer', etc.
+  final String type;
+// 'payment', 'refund', 'transfer', etc.
   @override
-  int get debit;
+  final int debit;
   @override
-  int get credit;
+  final int credit;
   @override
-  dynamic get amount; // Total amount (debit or credit)
+  final dynamic amount;
+// Total amount (debit or credit)
   @override
-  String get currency;
+  final String currency;
   @override
-  int get fee;
+  final int fee;
   @override
-  int get tax;
+  final int tax;
   @override
-  bool get on_hold;
+  final bool on_hold;
   @override
-  bool get settled;
+  final bool settled;
   @override
-  int get created_at; // Timestamp of original transaction
+  final int created_at;
+// Timestamp of original transaction
   @override
-  int get settled_at; // Timestamp of settlement inclusion
+  final int settled_at;
+// Timestamp of settlement inclusion
   @override
-  String get settlement_id;
+  final String settlement_id;
   @override
-  String get credit_type;
+  final String credit_type;
   @override
-  String
-      get order_id; // e.g., 'default', 'instant', required IMap<dynamic> notes, // Notes of original transaction, required String settlement_utr, required String order_id, required PaymentMethodSettlement method, int? posted_at, // Nullable
+  final String order_id;
+// e.g., 'default', 'instant', required IMap<dynamic> notes, // Notes of original transaction, required String settlement_utr, required String order_id, required PaymentMethodSettlement method, int? posted_at, // Nullable
   @override
-  String? get description; // Nullable
+  final String? description;
+// Nullable
   @override
-  String? get payment_id; // Present for refunds/transfers
+  final String? payment_id;
+// Present for refunds/transfers
   @override
-  String? get order_receipt; // Nullable
+  final String? order_receipt;
+// Nullable
   @override
-  CardNetworkSettlement? get card_network; // Nullable for non-card
+  final CardNetworkSettlement? card_network;
+// Nullable for non-card
   @override
-  String? get card_issuer; // Nullable for non-card
+  final String? card_issuer;
+// Nullable for non-card
   @override
-  CardTypeSettlement? get card_type; // Nullable for non-card
+  final CardTypeSettlement? card_type;
+// Nullable for non-card
   @override
-  String? get dispute_id;
+  final String? dispute_id;
 
   /// Create a copy of RazorpaySettlementReconItem
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$RazorpaySettlementReconItemImplCopyWith<_$RazorpaySettlementReconItemImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  @pragma('vm:prefer-inline')
+  _$RazorpaySettlementReconItemCopyWith<_RazorpaySettlementReconItem>
+      get copyWith => __$RazorpaySettlementReconItemCopyWithImpl<
+          _RazorpaySettlementReconItem>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$RazorpaySettlementReconItemToJson(
+      this,
+    );
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _RazorpaySettlementReconItem &&
+            (identical(other.entity_id, entity_id) ||
+                other.entity_id == entity_id) &&
+            (identical(other.type, type) || other.type == type) &&
+            (identical(other.debit, debit) || other.debit == debit) &&
+            (identical(other.credit, credit) || other.credit == credit) &&
+            const DeepCollectionEquality().equals(other.amount, amount) &&
+            (identical(other.currency, currency) ||
+                other.currency == currency) &&
+            (identical(other.fee, fee) || other.fee == fee) &&
+            (identical(other.tax, tax) || other.tax == tax) &&
+            (identical(other.on_hold, on_hold) || other.on_hold == on_hold) &&
+            (identical(other.settled, settled) || other.settled == settled) &&
+            (identical(other.created_at, created_at) ||
+                other.created_at == created_at) &&
+            (identical(other.settled_at, settled_at) ||
+                other.settled_at == settled_at) &&
+            (identical(other.settlement_id, settlement_id) ||
+                other.settlement_id == settlement_id) &&
+            (identical(other.credit_type, credit_type) ||
+                other.credit_type == credit_type) &&
+            (identical(other.order_id, order_id) ||
+                other.order_id == order_id) &&
+            (identical(other.description, description) ||
+                other.description == description) &&
+            (identical(other.payment_id, payment_id) ||
+                other.payment_id == payment_id) &&
+            (identical(other.order_receipt, order_receipt) ||
+                other.order_receipt == order_receipt) &&
+            (identical(other.card_network, card_network) ||
+                other.card_network == card_network) &&
+            (identical(other.card_issuer, card_issuer) ||
+                other.card_issuer == card_issuer) &&
+            (identical(other.card_type, card_type) ||
+                other.card_type == card_type) &&
+            (identical(other.dispute_id, dispute_id) ||
+                other.dispute_id == dispute_id));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hashAll([
+        runtimeType,
+        entity_id,
+        type,
+        debit,
+        credit,
+        const DeepCollectionEquality().hash(amount),
+        currency,
+        fee,
+        tax,
+        on_hold,
+        settled,
+        created_at,
+        settled_at,
+        settlement_id,
+        credit_type,
+        order_id,
+        description,
+        payment_id,
+        order_receipt,
+        card_network,
+        card_issuer,
+        card_type,
+        dispute_id
+      ]);
+
+  @override
+  String toString() {
+    return 'RazorpaySettlementReconItem(entity_id: $entity_id, type: $type, debit: $debit, credit: $credit, amount: $amount, currency: $currency, fee: $fee, tax: $tax, on_hold: $on_hold, settled: $settled, created_at: $created_at, settled_at: $settled_at, settlement_id: $settlement_id, credit_type: $credit_type, order_id: $order_id, description: $description, payment_id: $payment_id, order_receipt: $order_receipt, card_network: $card_network, card_issuer: $card_issuer, card_type: $card_type, dispute_id: $dispute_id)';
+  }
 }
 
-RazorpayOndemandSettlementQuery _$RazorpayOndemandSettlementQueryFromJson(
-    Map<String, dynamic> json) {
-  return _RazorpayOndemandSettlementQuery.fromJson(json);
+/// @nodoc
+abstract mixin class _$RazorpaySettlementReconItemCopyWith<$Res>
+    implements $RazorpaySettlementReconItemCopyWith<$Res> {
+  factory _$RazorpaySettlementReconItemCopyWith(
+          _RazorpaySettlementReconItem value,
+          $Res Function(_RazorpaySettlementReconItem) _then) =
+      __$RazorpaySettlementReconItemCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {String entity_id,
+      String type,
+      int debit,
+      int credit,
+      dynamic amount,
+      String currency,
+      int fee,
+      int tax,
+      bool on_hold,
+      bool settled,
+      int created_at,
+      int settled_at,
+      String settlement_id,
+      String credit_type,
+      String order_id,
+      String? description,
+      String? payment_id,
+      String? order_receipt,
+      CardNetworkSettlement? card_network,
+      String? card_issuer,
+      CardTypeSettlement? card_type,
+      String? dispute_id});
+}
+
+/// @nodoc
+class __$RazorpaySettlementReconItemCopyWithImpl<$Res>
+    implements _$RazorpaySettlementReconItemCopyWith<$Res> {
+  __$RazorpaySettlementReconItemCopyWithImpl(this._self, this._then);
+
+  final _RazorpaySettlementReconItem _self;
+  final $Res Function(_RazorpaySettlementReconItem) _then;
+
+  /// Create a copy of RazorpaySettlementReconItem
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? entity_id = null,
+    Object? type = null,
+    Object? debit = null,
+    Object? credit = null,
+    Object? amount = freezed,
+    Object? currency = null,
+    Object? fee = null,
+    Object? tax = null,
+    Object? on_hold = null,
+    Object? settled = null,
+    Object? created_at = null,
+    Object? settled_at = null,
+    Object? settlement_id = null,
+    Object? credit_type = null,
+    Object? order_id = null,
+    Object? description = freezed,
+    Object? payment_id = freezed,
+    Object? order_receipt = freezed,
+    Object? card_network = freezed,
+    Object? card_issuer = freezed,
+    Object? card_type = freezed,
+    Object? dispute_id = freezed,
+  }) {
+    return _then(_RazorpaySettlementReconItem(
+      entity_id: null == entity_id
+          ? _self.entity_id
+          : entity_id // ignore: cast_nullable_to_non_nullable
+              as String,
+      type: null == type
+          ? _self.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as String,
+      debit: null == debit
+          ? _self.debit
+          : debit // ignore: cast_nullable_to_non_nullable
+              as int,
+      credit: null == credit
+          ? _self.credit
+          : credit // ignore: cast_nullable_to_non_nullable
+              as int,
+      amount: freezed == amount
+          ? _self.amount
+          : amount // ignore: cast_nullable_to_non_nullable
+              as dynamic,
+      currency: null == currency
+          ? _self.currency
+          : currency // ignore: cast_nullable_to_non_nullable
+              as String,
+      fee: null == fee
+          ? _self.fee
+          : fee // ignore: cast_nullable_to_non_nullable
+              as int,
+      tax: null == tax
+          ? _self.tax
+          : tax // ignore: cast_nullable_to_non_nullable
+              as int,
+      on_hold: null == on_hold
+          ? _self.on_hold
+          : on_hold // ignore: cast_nullable_to_non_nullable
+              as bool,
+      settled: null == settled
+          ? _self.settled
+          : settled // ignore: cast_nullable_to_non_nullable
+              as bool,
+      created_at: null == created_at
+          ? _self.created_at
+          : created_at // ignore: cast_nullable_to_non_nullable
+              as int,
+      settled_at: null == settled_at
+          ? _self.settled_at
+          : settled_at // ignore: cast_nullable_to_non_nullable
+              as int,
+      settlement_id: null == settlement_id
+          ? _self.settlement_id
+          : settlement_id // ignore: cast_nullable_to_non_nullable
+              as String,
+      credit_type: null == credit_type
+          ? _self.credit_type
+          : credit_type // ignore: cast_nullable_to_non_nullable
+              as String,
+      order_id: null == order_id
+          ? _self.order_id
+          : order_id // ignore: cast_nullable_to_non_nullable
+              as String,
+      description: freezed == description
+          ? _self.description
+          : description // ignore: cast_nullable_to_non_nullable
+              as String?,
+      payment_id: freezed == payment_id
+          ? _self.payment_id
+          : payment_id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      order_receipt: freezed == order_receipt
+          ? _self.order_receipt
+          : order_receipt // ignore: cast_nullable_to_non_nullable
+              as String?,
+      card_network: freezed == card_network
+          ? _self.card_network
+          : card_network // ignore: cast_nullable_to_non_nullable
+              as CardNetworkSettlement?,
+      card_issuer: freezed == card_issuer
+          ? _self.card_issuer
+          : card_issuer // ignore: cast_nullable_to_non_nullable
+              as String?,
+      card_type: freezed == card_type
+          ? _self.card_type
+          : card_type // ignore: cast_nullable_to_non_nullable
+              as CardTypeSettlement?,
+      dispute_id: freezed == dispute_id
+          ? _self.dispute_id
+          : dispute_id // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
 }
 
 /// @nodoc
 mixin _$RazorpayOndemandSettlementQuery {
-  int? get from => throw _privateConstructorUsedError;
-  int? get to => throw _privateConstructorUsedError;
-  int? get count => throw _privateConstructorUsedError;
-  int? get skip => throw _privateConstructorUsedError;
+  int? get from;
+  int? get to;
+  int? get count;
+  int? get skip;
   @JsonKey(name: 'expand[]')
-  List<String>? get expand => throw _privateConstructorUsedError;
-
-  /// Serializes this RazorpayOndemandSettlementQuery to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  List<String>? get expand;
 
   /// Create a copy of RazorpayOndemandSettlementQuery
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $RazorpayOndemandSettlementQueryCopyWith<RazorpayOndemandSettlementQuery>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $RazorpayOndemandSettlementQueryCopyWith<$Res> {
-  factory $RazorpayOndemandSettlementQueryCopyWith(
-          RazorpayOndemandSettlementQuery value,
-          $Res Function(RazorpayOndemandSettlementQuery) then) =
-      _$RazorpayOndemandSettlementQueryCopyWithImpl<$Res,
-          RazorpayOndemandSettlementQuery>;
-  @useResult
-  $Res call(
-      {int? from,
-      int? to,
-      int? count,
-      int? skip,
-      @JsonKey(name: 'expand[]') List<String>? expand});
-}
-
-/// @nodoc
-class _$RazorpayOndemandSettlementQueryCopyWithImpl<$Res,
-        $Val extends RazorpayOndemandSettlementQuery>
-    implements $RazorpayOndemandSettlementQueryCopyWith<$Res> {
-  _$RazorpayOndemandSettlementQueryCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of RazorpayOndemandSettlementQuery
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
+  $RazorpayOndemandSettlementQueryCopyWith<RazorpayOndemandSettlementQuery>
+      get copyWith => _$RazorpayOndemandSettlementQueryCopyWithImpl<
+              RazorpayOndemandSettlementQuery>(
+          this as RazorpayOndemandSettlementQuery, _$identity);
+
+  /// Serializes this RazorpayOndemandSettlementQuery to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? from = freezed,
-    Object? to = freezed,
-    Object? count = freezed,
-    Object? skip = freezed,
-    Object? expand = freezed,
-  }) {
-    return _then(_value.copyWith(
-      from: freezed == from
-          ? _value.from
-          : from // ignore: cast_nullable_to_non_nullable
-              as int?,
-      to: freezed == to
-          ? _value.to
-          : to // ignore: cast_nullable_to_non_nullable
-              as int?,
-      count: freezed == count
-          ? _value.count
-          : count // ignore: cast_nullable_to_non_nullable
-              as int?,
-      skip: freezed == skip
-          ? _value.skip
-          : skip // ignore: cast_nullable_to_non_nullable
-              as int?,
-      expand: freezed == expand
-          ? _value.expand
-          : expand // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is RazorpayOndemandSettlementQuery &&
+            (identical(other.from, from) || other.from == from) &&
+            (identical(other.to, to) || other.to == to) &&
+            (identical(other.count, count) || other.count == count) &&
+            (identical(other.skip, skip) || other.skip == skip) &&
+            const DeepCollectionEquality().equals(other.expand, expand));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, from, to, count, skip,
+      const DeepCollectionEquality().hash(expand));
+
+  @override
+  String toString() {
+    return 'RazorpayOndemandSettlementQuery(from: $from, to: $to, count: $count, skip: $skip, expand: $expand)';
   }
 }
 
 /// @nodoc
-abstract class _$$RazorpayOndemandSettlementQueryImplCopyWith<$Res>
-    implements $RazorpayOndemandSettlementQueryCopyWith<$Res> {
-  factory _$$RazorpayOndemandSettlementQueryImplCopyWith(
-          _$RazorpayOndemandSettlementQueryImpl value,
-          $Res Function(_$RazorpayOndemandSettlementQueryImpl) then) =
-      __$$RazorpayOndemandSettlementQueryImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $RazorpayOndemandSettlementQueryCopyWith<$Res> {
+  factory $RazorpayOndemandSettlementQueryCopyWith(
+          RazorpayOndemandSettlementQuery value,
+          $Res Function(RazorpayOndemandSettlementQuery) _then) =
+      _$RazorpayOndemandSettlementQueryCopyWithImpl;
   @useResult
   $Res call(
       {int? from,
@@ -3126,14 +2940,12 @@ abstract class _$$RazorpayOndemandSettlementQueryImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$RazorpayOndemandSettlementQueryImplCopyWithImpl<$Res>
-    extends _$RazorpayOndemandSettlementQueryCopyWithImpl<$Res,
-        _$RazorpayOndemandSettlementQueryImpl>
-    implements _$$RazorpayOndemandSettlementQueryImplCopyWith<$Res> {
-  __$$RazorpayOndemandSettlementQueryImplCopyWithImpl(
-      _$RazorpayOndemandSettlementQueryImpl _value,
-      $Res Function(_$RazorpayOndemandSettlementQueryImpl) _then)
-      : super(_value, _then);
+class _$RazorpayOndemandSettlementQueryCopyWithImpl<$Res>
+    implements $RazorpayOndemandSettlementQueryCopyWith<$Res> {
+  _$RazorpayOndemandSettlementQueryCopyWithImpl(this._self, this._then);
+
+  final RazorpayOndemandSettlementQuery _self;
+  final $Res Function(RazorpayOndemandSettlementQuery) _then;
 
   /// Create a copy of RazorpayOndemandSettlementQuery
   /// with the given fields replaced by the non-null parameter values.
@@ -3146,25 +2958,25 @@ class __$$RazorpayOndemandSettlementQueryImplCopyWithImpl<$Res>
     Object? skip = freezed,
     Object? expand = freezed,
   }) {
-    return _then(_$RazorpayOndemandSettlementQueryImpl(
+    return _then(_self.copyWith(
       from: freezed == from
-          ? _value.from
+          ? _self.from
           : from // ignore: cast_nullable_to_non_nullable
               as int?,
       to: freezed == to
-          ? _value.to
+          ? _self.to
           : to // ignore: cast_nullable_to_non_nullable
               as int?,
       count: freezed == count
-          ? _value.count
+          ? _self.count
           : count // ignore: cast_nullable_to_non_nullable
               as int?,
       skip: freezed == skip
-          ? _value.skip
+          ? _self.skip
           : skip // ignore: cast_nullable_to_non_nullable
               as int?,
       expand: freezed == expand
-          ? _value._expand
+          ? _self.expand
           : expand // ignore: cast_nullable_to_non_nullable
               as List<String>?,
     ));
@@ -3174,19 +2986,18 @@ class __$$RazorpayOndemandSettlementQueryImplCopyWithImpl<$Res>
 /// @nodoc
 
 @JsonSerializable(includeIfNull: false)
-class _$RazorpayOndemandSettlementQueryImpl
-    implements _RazorpayOndemandSettlementQuery {
-  const _$RazorpayOndemandSettlementQueryImpl(
+class _RazorpayOndemandSettlementQuery
+    implements RazorpayOndemandSettlementQuery {
+  const _RazorpayOndemandSettlementQuery(
       {this.from,
       this.to,
       this.count,
       this.skip,
       @JsonKey(name: 'expand[]') final List<String>? expand})
       : _expand = expand;
-
-  factory _$RazorpayOndemandSettlementQueryImpl.fromJson(
+  factory _RazorpayOndemandSettlementQuery.fromJson(
           Map<String, dynamic> json) =>
-      _$$RazorpayOndemandSettlementQueryImplFromJson(json);
+      _$RazorpayOndemandSettlementQueryFromJson(json);
 
   @override
   final int? from;
@@ -3207,16 +3018,27 @@ class _$RazorpayOndemandSettlementQueryImpl
     return EqualUnmodifiableListView(value);
   }
 
+  /// Create a copy of RazorpayOndemandSettlementQuery
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'RazorpayOndemandSettlementQuery(from: $from, to: $to, count: $count, skip: $skip, expand: $expand)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$RazorpayOndemandSettlementQueryCopyWith<_RazorpayOndemandSettlementQuery>
+      get copyWith => __$RazorpayOndemandSettlementQueryCopyWithImpl<
+          _RazorpayOndemandSettlementQuery>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$RazorpayOndemandSettlementQueryToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$RazorpayOndemandSettlementQueryImpl &&
+            other is _RazorpayOndemandSettlementQuery &&
             (identical(other.from, from) || other.from == from) &&
             (identical(other.to, to) || other.to == to) &&
             (identical(other.count, count) || other.count == count) &&
@@ -3229,148 +3051,129 @@ class _$RazorpayOndemandSettlementQueryImpl
   int get hashCode => Object.hash(runtimeType, from, to, count, skip,
       const DeepCollectionEquality().hash(_expand));
 
-  /// Create a copy of RazorpayOndemandSettlementQuery
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$RazorpayOndemandSettlementQueryImplCopyWith<
-          _$RazorpayOndemandSettlementQueryImpl>
-      get copyWith => __$$RazorpayOndemandSettlementQueryImplCopyWithImpl<
-          _$RazorpayOndemandSettlementQueryImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$RazorpayOndemandSettlementQueryImplToJson(
-      this,
-    );
+  String toString() {
+    return 'RazorpayOndemandSettlementQuery(from: $from, to: $to, count: $count, skip: $skip, expand: $expand)';
   }
 }
 
-abstract class _RazorpayOndemandSettlementQuery
-    implements RazorpayOndemandSettlementQuery {
-  const factory _RazorpayOndemandSettlementQuery(
-          {final int? from,
-          final int? to,
-          final int? count,
-          final int? skip,
-          @JsonKey(name: 'expand[]') final List<String>? expand}) =
-      _$RazorpayOndemandSettlementQueryImpl;
+/// @nodoc
+abstract mixin class _$RazorpayOndemandSettlementQueryCopyWith<$Res>
+    implements $RazorpayOndemandSettlementQueryCopyWith<$Res> {
+  factory _$RazorpayOndemandSettlementQueryCopyWith(
+          _RazorpayOndemandSettlementQuery value,
+          $Res Function(_RazorpayOndemandSettlementQuery) _then) =
+      __$RazorpayOndemandSettlementQueryCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {int? from,
+      int? to,
+      int? count,
+      int? skip,
+      @JsonKey(name: 'expand[]') List<String>? expand});
+}
 
-  factory _RazorpayOndemandSettlementQuery.fromJson(Map<String, dynamic> json) =
-      _$RazorpayOndemandSettlementQueryImpl.fromJson;
+/// @nodoc
+class __$RazorpayOndemandSettlementQueryCopyWithImpl<$Res>
+    implements _$RazorpayOndemandSettlementQueryCopyWith<$Res> {
+  __$RazorpayOndemandSettlementQueryCopyWithImpl(this._self, this._then);
 
-  @override
-  int? get from;
-  @override
-  int? get to;
-  @override
-  int? get count;
-  @override
-  int? get skip;
-  @override
-  @JsonKey(name: 'expand[]')
-  List<String>? get expand;
+  final _RazorpayOndemandSettlementQuery _self;
+  final $Res Function(_RazorpayOndemandSettlementQuery) _then;
 
   /// Create a copy of RazorpayOndemandSettlementQuery
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$RazorpayOndemandSettlementQueryImplCopyWith<
-          _$RazorpayOndemandSettlementQueryImpl>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-RazorpaySettlementListResponse _$RazorpaySettlementListResponseFromJson(
-    Map<String, dynamic> json) {
-  return _RazorpaySettlementListResponse.fromJson(json);
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? from = freezed,
+    Object? to = freezed,
+    Object? count = freezed,
+    Object? skip = freezed,
+    Object? expand = freezed,
+  }) {
+    return _then(_RazorpayOndemandSettlementQuery(
+      from: freezed == from
+          ? _self.from
+          : from // ignore: cast_nullable_to_non_nullable
+              as int?,
+      to: freezed == to
+          ? _self.to
+          : to // ignore: cast_nullable_to_non_nullable
+              as int?,
+      count: freezed == count
+          ? _self.count
+          : count // ignore: cast_nullable_to_non_nullable
+              as int?,
+      skip: freezed == skip
+          ? _self.skip
+          : skip // ignore: cast_nullable_to_non_nullable
+              as int?,
+      expand: freezed == expand
+          ? _self._expand
+          : expand // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
+    ));
+  }
 }
 
 /// @nodoc
 mixin _$RazorpaySettlementListResponse {
-  String get entity => throw _privateConstructorUsedError;
-  int get count => throw _privateConstructorUsedError;
-  List<RazorpaySettlement> get items => throw _privateConstructorUsedError;
-
-  /// Serializes this RazorpaySettlementListResponse to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  String get entity;
+  int get count;
+  List<RazorpaySettlement> get items;
 
   /// Create a copy of RazorpaySettlementListResponse
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $RazorpaySettlementListResponseCopyWith<RazorpaySettlementListResponse>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $RazorpaySettlementListResponseCopyWith<$Res> {
-  factory $RazorpaySettlementListResponseCopyWith(
-          RazorpaySettlementListResponse value,
-          $Res Function(RazorpaySettlementListResponse) then) =
-      _$RazorpaySettlementListResponseCopyWithImpl<$Res,
-          RazorpaySettlementListResponse>;
-  @useResult
-  $Res call({String entity, int count, List<RazorpaySettlement> items});
-}
-
-/// @nodoc
-class _$RazorpaySettlementListResponseCopyWithImpl<$Res,
-        $Val extends RazorpaySettlementListResponse>
-    implements $RazorpaySettlementListResponseCopyWith<$Res> {
-  _$RazorpaySettlementListResponseCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of RazorpaySettlementListResponse
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
+  $RazorpaySettlementListResponseCopyWith<RazorpaySettlementListResponse>
+      get copyWith => _$RazorpaySettlementListResponseCopyWithImpl<
+              RazorpaySettlementListResponse>(
+          this as RazorpaySettlementListResponse, _$identity);
+
+  /// Serializes this RazorpaySettlementListResponse to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? entity = null,
-    Object? count = null,
-    Object? items = null,
-  }) {
-    return _then(_value.copyWith(
-      entity: null == entity
-          ? _value.entity
-          : entity // ignore: cast_nullable_to_non_nullable
-              as String,
-      count: null == count
-          ? _value.count
-          : count // ignore: cast_nullable_to_non_nullable
-              as int,
-      items: null == items
-          ? _value.items
-          : items // ignore: cast_nullable_to_non_nullable
-              as List<RazorpaySettlement>,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is RazorpaySettlementListResponse &&
+            (identical(other.entity, entity) || other.entity == entity) &&
+            (identical(other.count, count) || other.count == count) &&
+            const DeepCollectionEquality().equals(other.items, items));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, entity, count, const DeepCollectionEquality().hash(items));
+
+  @override
+  String toString() {
+    return 'RazorpaySettlementListResponse(entity: $entity, count: $count, items: $items)';
   }
 }
 
 /// @nodoc
-abstract class _$$RazorpaySettlementListResponseImplCopyWith<$Res>
-    implements $RazorpaySettlementListResponseCopyWith<$Res> {
-  factory _$$RazorpaySettlementListResponseImplCopyWith(
-          _$RazorpaySettlementListResponseImpl value,
-          $Res Function(_$RazorpaySettlementListResponseImpl) then) =
-      __$$RazorpaySettlementListResponseImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $RazorpaySettlementListResponseCopyWith<$Res> {
+  factory $RazorpaySettlementListResponseCopyWith(
+          RazorpaySettlementListResponse value,
+          $Res Function(RazorpaySettlementListResponse) _then) =
+      _$RazorpaySettlementListResponseCopyWithImpl;
   @useResult
   $Res call({String entity, int count, List<RazorpaySettlement> items});
 }
 
 /// @nodoc
-class __$$RazorpaySettlementListResponseImplCopyWithImpl<$Res>
-    extends _$RazorpaySettlementListResponseCopyWithImpl<$Res,
-        _$RazorpaySettlementListResponseImpl>
-    implements _$$RazorpaySettlementListResponseImplCopyWith<$Res> {
-  __$$RazorpaySettlementListResponseImplCopyWithImpl(
-      _$RazorpaySettlementListResponseImpl _value,
-      $Res Function(_$RazorpaySettlementListResponseImpl) _then)
-      : super(_value, _then);
+class _$RazorpaySettlementListResponseCopyWithImpl<$Res>
+    implements $RazorpaySettlementListResponseCopyWith<$Res> {
+  _$RazorpaySettlementListResponseCopyWithImpl(this._self, this._then);
+
+  final RazorpaySettlementListResponse _self;
+  final $Res Function(RazorpaySettlementListResponse) _then;
 
   /// Create a copy of RazorpaySettlementListResponse
   /// with the given fields replaced by the non-null parameter values.
@@ -3381,17 +3184,17 @@ class __$$RazorpaySettlementListResponseImplCopyWithImpl<$Res>
     Object? count = null,
     Object? items = null,
   }) {
-    return _then(_$RazorpaySettlementListResponseImpl(
+    return _then(_self.copyWith(
       entity: null == entity
-          ? _value.entity
+          ? _self.entity
           : entity // ignore: cast_nullable_to_non_nullable
               as String,
       count: null == count
-          ? _value.count
+          ? _self.count
           : count // ignore: cast_nullable_to_non_nullable
               as int,
       items: null == items
-          ? _value._items
+          ? _self.items
           : items // ignore: cast_nullable_to_non_nullable
               as List<RazorpaySettlement>,
     ));
@@ -3401,17 +3204,15 @@ class __$$RazorpaySettlementListResponseImplCopyWithImpl<$Res>
 /// @nodoc
 
 @JsonSerializable(includeIfNull: false)
-class _$RazorpaySettlementListResponseImpl
-    implements _RazorpaySettlementListResponse {
-  const _$RazorpaySettlementListResponseImpl(
+class _RazorpaySettlementListResponse
+    implements RazorpaySettlementListResponse {
+  const _RazorpaySettlementListResponse(
       {required this.entity,
       required this.count,
       required final List<RazorpaySettlement> items})
       : _items = items;
-
-  factory _$RazorpaySettlementListResponseImpl.fromJson(
-          Map<String, dynamic> json) =>
-      _$$RazorpaySettlementListResponseImplFromJson(json);
+  factory _RazorpaySettlementListResponse.fromJson(Map<String, dynamic> json) =>
+      _$RazorpaySettlementListResponseFromJson(json);
 
   @override
   final String entity;
@@ -3425,16 +3226,27 @@ class _$RazorpaySettlementListResponseImpl
     return EqualUnmodifiableListView(_items);
   }
 
+  /// Create a copy of RazorpaySettlementListResponse
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'RazorpaySettlementListResponse(entity: $entity, count: $count, items: $items)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$RazorpaySettlementListResponseCopyWith<_RazorpaySettlementListResponse>
+      get copyWith => __$RazorpaySettlementListResponseCopyWithImpl<
+          _RazorpaySettlementListResponse>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$RazorpaySettlementListResponseToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$RazorpaySettlementListResponseImpl &&
+            other is _RazorpaySettlementListResponse &&
             (identical(other.entity, entity) || other.entity == entity) &&
             (identical(other.count, count) || other.count == count) &&
             const DeepCollectionEquality().equals(other._items, _items));
@@ -3445,143 +3257,115 @@ class _$RazorpaySettlementListResponseImpl
   int get hashCode => Object.hash(
       runtimeType, entity, count, const DeepCollectionEquality().hash(_items));
 
-  /// Create a copy of RazorpaySettlementListResponse
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$RazorpaySettlementListResponseImplCopyWith<
-          _$RazorpaySettlementListResponseImpl>
-      get copyWith => __$$RazorpaySettlementListResponseImplCopyWithImpl<
-          _$RazorpaySettlementListResponseImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$RazorpaySettlementListResponseImplToJson(
-      this,
-    );
+  String toString() {
+    return 'RazorpaySettlementListResponse(entity: $entity, count: $count, items: $items)';
   }
 }
 
-abstract class _RazorpaySettlementListResponse
-    implements RazorpaySettlementListResponse {
-  const factory _RazorpaySettlementListResponse(
-          {required final String entity,
-          required final int count,
-          required final List<RazorpaySettlement> items}) =
-      _$RazorpaySettlementListResponseImpl;
+/// @nodoc
+abstract mixin class _$RazorpaySettlementListResponseCopyWith<$Res>
+    implements $RazorpaySettlementListResponseCopyWith<$Res> {
+  factory _$RazorpaySettlementListResponseCopyWith(
+          _RazorpaySettlementListResponse value,
+          $Res Function(_RazorpaySettlementListResponse) _then) =
+      __$RazorpaySettlementListResponseCopyWithImpl;
+  @override
+  @useResult
+  $Res call({String entity, int count, List<RazorpaySettlement> items});
+}
 
-  factory _RazorpaySettlementListResponse.fromJson(Map<String, dynamic> json) =
-      _$RazorpaySettlementListResponseImpl.fromJson;
+/// @nodoc
+class __$RazorpaySettlementListResponseCopyWithImpl<$Res>
+    implements _$RazorpaySettlementListResponseCopyWith<$Res> {
+  __$RazorpaySettlementListResponseCopyWithImpl(this._self, this._then);
 
-  @override
-  String get entity;
-  @override
-  int get count;
-  @override
-  List<RazorpaySettlement> get items;
+  final _RazorpaySettlementListResponse _self;
+  final $Res Function(_RazorpaySettlementListResponse) _then;
 
   /// Create a copy of RazorpaySettlementListResponse
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$RazorpaySettlementListResponseImplCopyWith<
-          _$RazorpaySettlementListResponseImpl>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-RazorpayInstantSettlementListResponse
-    _$RazorpayInstantSettlementListResponseFromJson(Map<String, dynamic> json) {
-  return _RazorpayInstantSettlementListResponse.fromJson(json);
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? entity = null,
+    Object? count = null,
+    Object? items = null,
+  }) {
+    return _then(_RazorpaySettlementListResponse(
+      entity: null == entity
+          ? _self.entity
+          : entity // ignore: cast_nullable_to_non_nullable
+              as String,
+      count: null == count
+          ? _self.count
+          : count // ignore: cast_nullable_to_non_nullable
+              as int,
+      items: null == items
+          ? _self._items
+          : items // ignore: cast_nullable_to_non_nullable
+              as List<RazorpaySettlement>,
+    ));
+  }
 }
 
 /// @nodoc
 mixin _$RazorpayInstantSettlementListResponse {
-  String get entity => throw _privateConstructorUsedError;
-  int get count => throw _privateConstructorUsedError;
-  List<RazorpayInstantSettlement> get items =>
-      throw _privateConstructorUsedError;
-
-  /// Serializes this RazorpayInstantSettlementListResponse to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  String get entity;
+  int get count;
+  List<RazorpayInstantSettlement> get items;
 
   /// Create a copy of RazorpayInstantSettlementListResponse
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
   $RazorpayInstantSettlementListResponseCopyWith<
           RazorpayInstantSettlementListResponse>
-      get copyWith => throw _privateConstructorUsedError;
-}
+      get copyWith => _$RazorpayInstantSettlementListResponseCopyWithImpl<
+              RazorpayInstantSettlementListResponse>(
+          this as RazorpayInstantSettlementListResponse, _$identity);
 
-/// @nodoc
-abstract class $RazorpayInstantSettlementListResponseCopyWith<$Res> {
-  factory $RazorpayInstantSettlementListResponseCopyWith(
-          RazorpayInstantSettlementListResponse value,
-          $Res Function(RazorpayInstantSettlementListResponse) then) =
-      _$RazorpayInstantSettlementListResponseCopyWithImpl<$Res,
-          RazorpayInstantSettlementListResponse>;
-  @useResult
-  $Res call({String entity, int count, List<RazorpayInstantSettlement> items});
-}
+  /// Serializes this RazorpayInstantSettlementListResponse to a JSON map.
+  Map<String, dynamic> toJson();
 
-/// @nodoc
-class _$RazorpayInstantSettlementListResponseCopyWithImpl<$Res,
-        $Val extends RazorpayInstantSettlementListResponse>
-    implements $RazorpayInstantSettlementListResponseCopyWith<$Res> {
-  _$RazorpayInstantSettlementListResponseCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of RazorpayInstantSettlementListResponse
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? entity = null,
-    Object? count = null,
-    Object? items = null,
-  }) {
-    return _then(_value.copyWith(
-      entity: null == entity
-          ? _value.entity
-          : entity // ignore: cast_nullable_to_non_nullable
-              as String,
-      count: null == count
-          ? _value.count
-          : count // ignore: cast_nullable_to_non_nullable
-              as int,
-      items: null == items
-          ? _value.items
-          : items // ignore: cast_nullable_to_non_nullable
-              as List<RazorpayInstantSettlement>,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is RazorpayInstantSettlementListResponse &&
+            (identical(other.entity, entity) || other.entity == entity) &&
+            (identical(other.count, count) || other.count == count) &&
+            const DeepCollectionEquality().equals(other.items, items));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, entity, count, const DeepCollectionEquality().hash(items));
+
+  @override
+  String toString() {
+    return 'RazorpayInstantSettlementListResponse(entity: $entity, count: $count, items: $items)';
   }
 }
 
 /// @nodoc
-abstract class _$$RazorpayInstantSettlementListResponseImplCopyWith<$Res>
-    implements $RazorpayInstantSettlementListResponseCopyWith<$Res> {
-  factory _$$RazorpayInstantSettlementListResponseImplCopyWith(
-          _$RazorpayInstantSettlementListResponseImpl value,
-          $Res Function(_$RazorpayInstantSettlementListResponseImpl) then) =
-      __$$RazorpayInstantSettlementListResponseImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $RazorpayInstantSettlementListResponseCopyWith<$Res> {
+  factory $RazorpayInstantSettlementListResponseCopyWith(
+          RazorpayInstantSettlementListResponse value,
+          $Res Function(RazorpayInstantSettlementListResponse) _then) =
+      _$RazorpayInstantSettlementListResponseCopyWithImpl;
   @useResult
   $Res call({String entity, int count, List<RazorpayInstantSettlement> items});
 }
 
 /// @nodoc
-class __$$RazorpayInstantSettlementListResponseImplCopyWithImpl<$Res>
-    extends _$RazorpayInstantSettlementListResponseCopyWithImpl<$Res,
-        _$RazorpayInstantSettlementListResponseImpl>
-    implements _$$RazorpayInstantSettlementListResponseImplCopyWith<$Res> {
-  __$$RazorpayInstantSettlementListResponseImplCopyWithImpl(
-      _$RazorpayInstantSettlementListResponseImpl _value,
-      $Res Function(_$RazorpayInstantSettlementListResponseImpl) _then)
-      : super(_value, _then);
+class _$RazorpayInstantSettlementListResponseCopyWithImpl<$Res>
+    implements $RazorpayInstantSettlementListResponseCopyWith<$Res> {
+  _$RazorpayInstantSettlementListResponseCopyWithImpl(this._self, this._then);
+
+  final RazorpayInstantSettlementListResponse _self;
+  final $Res Function(RazorpayInstantSettlementListResponse) _then;
 
   /// Create a copy of RazorpayInstantSettlementListResponse
   /// with the given fields replaced by the non-null parameter values.
@@ -3592,17 +3376,17 @@ class __$$RazorpayInstantSettlementListResponseImplCopyWithImpl<$Res>
     Object? count = null,
     Object? items = null,
   }) {
-    return _then(_$RazorpayInstantSettlementListResponseImpl(
+    return _then(_self.copyWith(
       entity: null == entity
-          ? _value.entity
+          ? _self.entity
           : entity // ignore: cast_nullable_to_non_nullable
               as String,
       count: null == count
-          ? _value.count
+          ? _self.count
           : count // ignore: cast_nullable_to_non_nullable
               as int,
       items: null == items
-          ? _value._items
+          ? _self.items
           : items // ignore: cast_nullable_to_non_nullable
               as List<RazorpayInstantSettlement>,
     ));
@@ -3612,17 +3396,16 @@ class __$$RazorpayInstantSettlementListResponseImplCopyWithImpl<$Res>
 /// @nodoc
 
 @JsonSerializable(includeIfNull: false)
-class _$RazorpayInstantSettlementListResponseImpl
-    implements _RazorpayInstantSettlementListResponse {
-  const _$RazorpayInstantSettlementListResponseImpl(
+class _RazorpayInstantSettlementListResponse
+    implements RazorpayInstantSettlementListResponse {
+  const _RazorpayInstantSettlementListResponse(
       {required this.entity,
       required this.count,
       required final List<RazorpayInstantSettlement> items})
       : _items = items;
-
-  factory _$RazorpayInstantSettlementListResponseImpl.fromJson(
+  factory _RazorpayInstantSettlementListResponse.fromJson(
           Map<String, dynamic> json) =>
-      _$$RazorpayInstantSettlementListResponseImplFromJson(json);
+      _$RazorpayInstantSettlementListResponseFromJson(json);
 
   @override
   final String entity;
@@ -3636,16 +3419,28 @@ class _$RazorpayInstantSettlementListResponseImpl
     return EqualUnmodifiableListView(_items);
   }
 
+  /// Create a copy of RazorpayInstantSettlementListResponse
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'RazorpayInstantSettlementListResponse(entity: $entity, count: $count, items: $items)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$RazorpayInstantSettlementListResponseCopyWith<
+          _RazorpayInstantSettlementListResponse>
+      get copyWith => __$RazorpayInstantSettlementListResponseCopyWithImpl<
+          _RazorpayInstantSettlementListResponse>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$RazorpayInstantSettlementListResponseToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$RazorpayInstantSettlementListResponseImpl &&
+            other is _RazorpayInstantSettlementListResponse &&
             (identical(other.entity, entity) || other.entity == entity) &&
             (identical(other.count, count) || other.count == count) &&
             const DeepCollectionEquality().equals(other._items, _items));
@@ -3656,132 +3451,111 @@ class _$RazorpayInstantSettlementListResponseImpl
   int get hashCode => Object.hash(
       runtimeType, entity, count, const DeepCollectionEquality().hash(_items));
 
-  /// Create a copy of RazorpayInstantSettlementListResponse
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$RazorpayInstantSettlementListResponseImplCopyWith<
-          _$RazorpayInstantSettlementListResponseImpl>
-      get copyWith => __$$RazorpayInstantSettlementListResponseImplCopyWithImpl<
-          _$RazorpayInstantSettlementListResponseImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$RazorpayInstantSettlementListResponseImplToJson(
-      this,
-    );
+  String toString() {
+    return 'RazorpayInstantSettlementListResponse(entity: $entity, count: $count, items: $items)';
   }
 }
 
-abstract class _RazorpayInstantSettlementListResponse
-    implements RazorpayInstantSettlementListResponse {
-  const factory _RazorpayInstantSettlementListResponse(
-          {required final String entity,
-          required final int count,
-          required final List<RazorpayInstantSettlement> items}) =
-      _$RazorpayInstantSettlementListResponseImpl;
+/// @nodoc
+abstract mixin class _$RazorpayInstantSettlementListResponseCopyWith<$Res>
+    implements $RazorpayInstantSettlementListResponseCopyWith<$Res> {
+  factory _$RazorpayInstantSettlementListResponseCopyWith(
+          _RazorpayInstantSettlementListResponse value,
+          $Res Function(_RazorpayInstantSettlementListResponse) _then) =
+      __$RazorpayInstantSettlementListResponseCopyWithImpl;
+  @override
+  @useResult
+  $Res call({String entity, int count, List<RazorpayInstantSettlement> items});
+}
 
-  factory _RazorpayInstantSettlementListResponse.fromJson(
-          Map<String, dynamic> json) =
-      _$RazorpayInstantSettlementListResponseImpl.fromJson;
+/// @nodoc
+class __$RazorpayInstantSettlementListResponseCopyWithImpl<$Res>
+    implements _$RazorpayInstantSettlementListResponseCopyWith<$Res> {
+  __$RazorpayInstantSettlementListResponseCopyWithImpl(this._self, this._then);
 
-  @override
-  String get entity;
-  @override
-  int get count;
-  @override
-  List<RazorpayInstantSettlement> get items;
+  final _RazorpayInstantSettlementListResponse _self;
+  final $Res Function(_RazorpayInstantSettlementListResponse) _then;
 
   /// Create a copy of RazorpayInstantSettlementListResponse
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$RazorpayInstantSettlementListResponseImplCopyWith<
-          _$RazorpayInstantSettlementListResponseImpl>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-RazorpaySettlementReconResponse _$RazorpaySettlementReconResponseFromJson(
-    Map<String, dynamic> json) {
-  return _RazorpaySettlementReconResponse.fromJson(json);
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? entity = null,
+    Object? count = null,
+    Object? items = null,
+  }) {
+    return _then(_RazorpayInstantSettlementListResponse(
+      entity: null == entity
+          ? _self.entity
+          : entity // ignore: cast_nullable_to_non_nullable
+              as String,
+      count: null == count
+          ? _self.count
+          : count // ignore: cast_nullable_to_non_nullable
+              as int,
+      items: null == items
+          ? _self._items
+          : items // ignore: cast_nullable_to_non_nullable
+              as List<RazorpayInstantSettlement>,
+    ));
+  }
 }
 
 /// @nodoc
 mixin _$RazorpaySettlementReconResponse {
 // If the response is just the list:
-  List<RazorpaySettlementReconItem> get items =>
-      throw _privateConstructorUsedError;
-
-  /// Serializes this RazorpaySettlementReconResponse to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  List<RazorpaySettlementReconItem> get items;
 
   /// Create a copy of RazorpaySettlementReconResponse
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $RazorpaySettlementReconResponseCopyWith<RazorpaySettlementReconResponse>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $RazorpaySettlementReconResponseCopyWith<$Res> {
-  factory $RazorpaySettlementReconResponseCopyWith(
-          RazorpaySettlementReconResponse value,
-          $Res Function(RazorpaySettlementReconResponse) then) =
-      _$RazorpaySettlementReconResponseCopyWithImpl<$Res,
-          RazorpaySettlementReconResponse>;
-  @useResult
-  $Res call({List<RazorpaySettlementReconItem> items});
-}
-
-/// @nodoc
-class _$RazorpaySettlementReconResponseCopyWithImpl<$Res,
-        $Val extends RazorpaySettlementReconResponse>
-    implements $RazorpaySettlementReconResponseCopyWith<$Res> {
-  _$RazorpaySettlementReconResponseCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of RazorpaySettlementReconResponse
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
+  $RazorpaySettlementReconResponseCopyWith<RazorpaySettlementReconResponse>
+      get copyWith => _$RazorpaySettlementReconResponseCopyWithImpl<
+              RazorpaySettlementReconResponse>(
+          this as RazorpaySettlementReconResponse, _$identity);
+
+  /// Serializes this RazorpaySettlementReconResponse to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? items = null,
-  }) {
-    return _then(_value.copyWith(
-      items: null == items
-          ? _value.items
-          : items // ignore: cast_nullable_to_non_nullable
-              as List<RazorpaySettlementReconItem>,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is RazorpaySettlementReconResponse &&
+            const DeepCollectionEquality().equals(other.items, items));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(items));
+
+  @override
+  String toString() {
+    return 'RazorpaySettlementReconResponse(items: $items)';
   }
 }
 
 /// @nodoc
-abstract class _$$RazorpaySettlementReconResponseImplCopyWith<$Res>
-    implements $RazorpaySettlementReconResponseCopyWith<$Res> {
-  factory _$$RazorpaySettlementReconResponseImplCopyWith(
-          _$RazorpaySettlementReconResponseImpl value,
-          $Res Function(_$RazorpaySettlementReconResponseImpl) then) =
-      __$$RazorpaySettlementReconResponseImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $RazorpaySettlementReconResponseCopyWith<$Res> {
+  factory $RazorpaySettlementReconResponseCopyWith(
+          RazorpaySettlementReconResponse value,
+          $Res Function(RazorpaySettlementReconResponse) _then) =
+      _$RazorpaySettlementReconResponseCopyWithImpl;
   @useResult
   $Res call({List<RazorpaySettlementReconItem> items});
 }
 
 /// @nodoc
-class __$$RazorpaySettlementReconResponseImplCopyWithImpl<$Res>
-    extends _$RazorpaySettlementReconResponseCopyWithImpl<$Res,
-        _$RazorpaySettlementReconResponseImpl>
-    implements _$$RazorpaySettlementReconResponseImplCopyWith<$Res> {
-  __$$RazorpaySettlementReconResponseImplCopyWithImpl(
-      _$RazorpaySettlementReconResponseImpl _value,
-      $Res Function(_$RazorpaySettlementReconResponseImpl) _then)
-      : super(_value, _then);
+class _$RazorpaySettlementReconResponseCopyWithImpl<$Res>
+    implements $RazorpaySettlementReconResponseCopyWith<$Res> {
+  _$RazorpaySettlementReconResponseCopyWithImpl(this._self, this._then);
+
+  final RazorpaySettlementReconResponse _self;
+  final $Res Function(RazorpaySettlementReconResponse) _then;
 
   /// Create a copy of RazorpaySettlementReconResponse
   /// with the given fields replaced by the non-null parameter values.
@@ -3790,9 +3564,9 @@ class __$$RazorpaySettlementReconResponseImplCopyWithImpl<$Res>
   $Res call({
     Object? items = null,
   }) {
-    return _then(_$RazorpaySettlementReconResponseImpl(
+    return _then(_self.copyWith(
       items: null == items
-          ? _value._items
+          ? _self.items
           : items // ignore: cast_nullable_to_non_nullable
               as List<RazorpaySettlementReconItem>,
     ));
@@ -3802,15 +3576,14 @@ class __$$RazorpaySettlementReconResponseImplCopyWithImpl<$Res>
 /// @nodoc
 
 @JsonSerializable(includeIfNull: false)
-class _$RazorpaySettlementReconResponseImpl
-    implements _RazorpaySettlementReconResponse {
-  const _$RazorpaySettlementReconResponseImpl(
+class _RazorpaySettlementReconResponse
+    implements RazorpaySettlementReconResponse {
+  const _RazorpaySettlementReconResponse(
       {final List<RazorpaySettlementReconItem> items = const []})
       : _items = items;
-
-  factory _$RazorpaySettlementReconResponseImpl.fromJson(
+  factory _RazorpaySettlementReconResponse.fromJson(
           Map<String, dynamic> json) =>
-      _$$RazorpaySettlementReconResponseImplFromJson(json);
+      _$RazorpaySettlementReconResponseFromJson(json);
 
 // If the response is just the list:
   final List<RazorpaySettlementReconItem> _items;
@@ -3823,16 +3596,27 @@ class _$RazorpaySettlementReconResponseImpl
     return EqualUnmodifiableListView(_items);
   }
 
+  /// Create a copy of RazorpaySettlementReconResponse
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'RazorpaySettlementReconResponse(items: $items)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$RazorpaySettlementReconResponseCopyWith<_RazorpaySettlementReconResponse>
+      get copyWith => __$RazorpaySettlementReconResponseCopyWithImpl<
+          _RazorpaySettlementReconResponse>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$RazorpaySettlementReconResponseToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$RazorpaySettlementReconResponseImpl &&
+            other is _RazorpaySettlementReconResponse &&
             const DeepCollectionEquality().equals(other._items, _items));
   }
 
@@ -3841,42 +3625,46 @@ class _$RazorpaySettlementReconResponseImpl
   int get hashCode =>
       Object.hash(runtimeType, const DeepCollectionEquality().hash(_items));
 
-  /// Create a copy of RazorpaySettlementReconResponse
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$RazorpaySettlementReconResponseImplCopyWith<
-          _$RazorpaySettlementReconResponseImpl>
-      get copyWith => __$$RazorpaySettlementReconResponseImplCopyWithImpl<
-          _$RazorpaySettlementReconResponseImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$RazorpaySettlementReconResponseImplToJson(
-      this,
-    );
+  String toString() {
+    return 'RazorpaySettlementReconResponse(items: $items)';
   }
 }
 
-abstract class _RazorpaySettlementReconResponse
-    implements RazorpaySettlementReconResponse {
-  const factory _RazorpaySettlementReconResponse(
-          {final List<RazorpaySettlementReconItem> items}) =
-      _$RazorpaySettlementReconResponseImpl;
-
-  factory _RazorpaySettlementReconResponse.fromJson(Map<String, dynamic> json) =
-      _$RazorpaySettlementReconResponseImpl.fromJson;
-
-// If the response is just the list:
+/// @nodoc
+abstract mixin class _$RazorpaySettlementReconResponseCopyWith<$Res>
+    implements $RazorpaySettlementReconResponseCopyWith<$Res> {
+  factory _$RazorpaySettlementReconResponseCopyWith(
+          _RazorpaySettlementReconResponse value,
+          $Res Function(_RazorpaySettlementReconResponse) _then) =
+      __$RazorpaySettlementReconResponseCopyWithImpl;
   @override
-  List<RazorpaySettlementReconItem> get items;
+  @useResult
+  $Res call({List<RazorpaySettlementReconItem> items});
+}
+
+/// @nodoc
+class __$RazorpaySettlementReconResponseCopyWithImpl<$Res>
+    implements _$RazorpaySettlementReconResponseCopyWith<$Res> {
+  __$RazorpaySettlementReconResponseCopyWithImpl(this._self, this._then);
+
+  final _RazorpaySettlementReconResponse _self;
+  final $Res Function(_RazorpaySettlementReconResponse) _then;
 
   /// Create a copy of RazorpaySettlementReconResponse
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$RazorpaySettlementReconResponseImplCopyWith<
-          _$RazorpaySettlementReconResponseImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? items = null,
+  }) {
+    return _then(_RazorpaySettlementReconResponse(
+      items: null == items
+          ? _self._items
+          : items // ignore: cast_nullable_to_non_nullable
+              as List<RazorpaySettlementReconItem>,
+    ));
+  }
 }
+
+// dart format on

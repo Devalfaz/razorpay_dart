@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,108 +10,67 @@ part of 'webhooks_model.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-RazorpayWebhookBaseRequestBody _$RazorpayWebhookBaseRequestBodyFromJson(
-    Map<String, dynamic> json) {
-  return _RazorpayWebhookBaseRequestBody.fromJson(json);
-}
 
 /// @nodoc
 mixin _$RazorpayWebhookBaseRequestBody {
-  String get url => throw _privateConstructorUsedError;
-  List<String> get events =>
-      throw _privateConstructorUsedError; // List of event names, String? alert_email,
-  String? get secret => throw _privateConstructorUsedError;
-  String? get active => throw _privateConstructorUsedError;
-
-  /// Serializes this RazorpayWebhookBaseRequestBody to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  String get url;
+  List<String> get events; // List of event names, String? alert_email,
+  String? get secret;
+  String? get active;
 
   /// Create a copy of RazorpayWebhookBaseRequestBody
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $RazorpayWebhookBaseRequestBodyCopyWith<RazorpayWebhookBaseRequestBody>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $RazorpayWebhookBaseRequestBodyCopyWith<$Res> {
-  factory $RazorpayWebhookBaseRequestBodyCopyWith(
-          RazorpayWebhookBaseRequestBody value,
-          $Res Function(RazorpayWebhookBaseRequestBody) then) =
-      _$RazorpayWebhookBaseRequestBodyCopyWithImpl<$Res,
-          RazorpayWebhookBaseRequestBody>;
-  @useResult
-  $Res call({String url, List<String> events, String? secret, String? active});
-}
-
-/// @nodoc
-class _$RazorpayWebhookBaseRequestBodyCopyWithImpl<$Res,
-        $Val extends RazorpayWebhookBaseRequestBody>
-    implements $RazorpayWebhookBaseRequestBodyCopyWith<$Res> {
-  _$RazorpayWebhookBaseRequestBodyCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of RazorpayWebhookBaseRequestBody
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
+  $RazorpayWebhookBaseRequestBodyCopyWith<RazorpayWebhookBaseRequestBody>
+      get copyWith => _$RazorpayWebhookBaseRequestBodyCopyWithImpl<
+              RazorpayWebhookBaseRequestBody>(
+          this as RazorpayWebhookBaseRequestBody, _$identity);
+
+  /// Serializes this RazorpayWebhookBaseRequestBody to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? url = null,
-    Object? events = null,
-    Object? secret = freezed,
-    Object? active = freezed,
-  }) {
-    return _then(_value.copyWith(
-      url: null == url
-          ? _value.url
-          : url // ignore: cast_nullable_to_non_nullable
-              as String,
-      events: null == events
-          ? _value.events
-          : events // ignore: cast_nullable_to_non_nullable
-              as List<String>,
-      secret: freezed == secret
-          ? _value.secret
-          : secret // ignore: cast_nullable_to_non_nullable
-              as String?,
-      active: freezed == active
-          ? _value.active
-          : active // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is RazorpayWebhookBaseRequestBody &&
+            (identical(other.url, url) || other.url == url) &&
+            const DeepCollectionEquality().equals(other.events, events) &&
+            (identical(other.secret, secret) || other.secret == secret) &&
+            (identical(other.active, active) || other.active == active));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, url,
+      const DeepCollectionEquality().hash(events), secret, active);
+
+  @override
+  String toString() {
+    return 'RazorpayWebhookBaseRequestBody(url: $url, events: $events, secret: $secret, active: $active)';
   }
 }
 
 /// @nodoc
-abstract class _$$RazorpayWebhookBaseRequestBodyImplCopyWith<$Res>
-    implements $RazorpayWebhookBaseRequestBodyCopyWith<$Res> {
-  factory _$$RazorpayWebhookBaseRequestBodyImplCopyWith(
-          _$RazorpayWebhookBaseRequestBodyImpl value,
-          $Res Function(_$RazorpayWebhookBaseRequestBodyImpl) then) =
-      __$$RazorpayWebhookBaseRequestBodyImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $RazorpayWebhookBaseRequestBodyCopyWith<$Res> {
+  factory $RazorpayWebhookBaseRequestBodyCopyWith(
+          RazorpayWebhookBaseRequestBody value,
+          $Res Function(RazorpayWebhookBaseRequestBody) _then) =
+      _$RazorpayWebhookBaseRequestBodyCopyWithImpl;
   @useResult
   $Res call({String url, List<String> events, String? secret, String? active});
 }
 
 /// @nodoc
-class __$$RazorpayWebhookBaseRequestBodyImplCopyWithImpl<$Res>
-    extends _$RazorpayWebhookBaseRequestBodyCopyWithImpl<$Res,
-        _$RazorpayWebhookBaseRequestBodyImpl>
-    implements _$$RazorpayWebhookBaseRequestBodyImplCopyWith<$Res> {
-  __$$RazorpayWebhookBaseRequestBodyImplCopyWithImpl(
-      _$RazorpayWebhookBaseRequestBodyImpl _value,
-      $Res Function(_$RazorpayWebhookBaseRequestBodyImpl) _then)
-      : super(_value, _then);
+class _$RazorpayWebhookBaseRequestBodyCopyWithImpl<$Res>
+    implements $RazorpayWebhookBaseRequestBodyCopyWith<$Res> {
+  _$RazorpayWebhookBaseRequestBodyCopyWithImpl(this._self, this._then);
+
+  final RazorpayWebhookBaseRequestBody _self;
+  final $Res Function(RazorpayWebhookBaseRequestBody) _then;
 
   /// Create a copy of RazorpayWebhookBaseRequestBody
   /// with the given fields replaced by the non-null parameter values.
@@ -122,21 +82,21 @@ class __$$RazorpayWebhookBaseRequestBodyImplCopyWithImpl<$Res>
     Object? secret = freezed,
     Object? active = freezed,
   }) {
-    return _then(_$RazorpayWebhookBaseRequestBodyImpl(
+    return _then(_self.copyWith(
       url: null == url
-          ? _value.url
+          ? _self.url
           : url // ignore: cast_nullable_to_non_nullable
               as String,
       events: null == events
-          ? _value._events
+          ? _self.events
           : events // ignore: cast_nullable_to_non_nullable
               as List<String>,
       secret: freezed == secret
-          ? _value.secret
+          ? _self.secret
           : secret // ignore: cast_nullable_to_non_nullable
               as String?,
       active: freezed == active
-          ? _value.active
+          ? _self.active
           : active // ignore: cast_nullable_to_non_nullable
               as String?,
     ));
@@ -146,18 +106,16 @@ class __$$RazorpayWebhookBaseRequestBodyImplCopyWithImpl<$Res>
 /// @nodoc
 
 @JsonSerializable(includeIfNull: false)
-class _$RazorpayWebhookBaseRequestBodyImpl
-    implements _RazorpayWebhookBaseRequestBody {
-  const _$RazorpayWebhookBaseRequestBodyImpl(
+class _RazorpayWebhookBaseRequestBody
+    implements RazorpayWebhookBaseRequestBody {
+  const _RazorpayWebhookBaseRequestBody(
       {required this.url,
       required final List<String> events,
       this.secret,
       this.active})
       : _events = events;
-
-  factory _$RazorpayWebhookBaseRequestBodyImpl.fromJson(
-          Map<String, dynamic> json) =>
-      _$$RazorpayWebhookBaseRequestBodyImplFromJson(json);
+  factory _RazorpayWebhookBaseRequestBody.fromJson(Map<String, dynamic> json) =>
+      _$RazorpayWebhookBaseRequestBodyFromJson(json);
 
   @override
   final String url;
@@ -175,16 +133,27 @@ class _$RazorpayWebhookBaseRequestBodyImpl
   @override
   final String? active;
 
+  /// Create a copy of RazorpayWebhookBaseRequestBody
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'RazorpayWebhookBaseRequestBody(url: $url, events: $events, secret: $secret, active: $active)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$RazorpayWebhookBaseRequestBodyCopyWith<_RazorpayWebhookBaseRequestBody>
+      get copyWith => __$RazorpayWebhookBaseRequestBodyCopyWithImpl<
+          _RazorpayWebhookBaseRequestBody>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$RazorpayWebhookBaseRequestBodyToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$RazorpayWebhookBaseRequestBodyImpl &&
+            other is _RazorpayWebhookBaseRequestBody &&
             (identical(other.url, url) || other.url == url) &&
             const DeepCollectionEquality().equals(other._events, _events) &&
             (identical(other.secret, secret) || other.secret == secret) &&
@@ -196,196 +165,57 @@ class _$RazorpayWebhookBaseRequestBodyImpl
   int get hashCode => Object.hash(runtimeType, url,
       const DeepCollectionEquality().hash(_events), secret, active);
 
-  /// Create a copy of RazorpayWebhookBaseRequestBody
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$RazorpayWebhookBaseRequestBodyImplCopyWith<
-          _$RazorpayWebhookBaseRequestBodyImpl>
-      get copyWith => __$$RazorpayWebhookBaseRequestBodyImplCopyWithImpl<
-          _$RazorpayWebhookBaseRequestBodyImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$RazorpayWebhookBaseRequestBodyImplToJson(
-      this,
-    );
-  }
-}
-
-abstract class _RazorpayWebhookBaseRequestBody
-    implements RazorpayWebhookBaseRequestBody {
-  const factory _RazorpayWebhookBaseRequestBody(
-      {required final String url,
-      required final List<String> events,
-      final String? secret,
-      final String? active}) = _$RazorpayWebhookBaseRequestBodyImpl;
-
-  factory _RazorpayWebhookBaseRequestBody.fromJson(Map<String, dynamic> json) =
-      _$RazorpayWebhookBaseRequestBodyImpl.fromJson;
-
-  @override
-  String get url;
-  @override
-  List<String> get events; // List of event names, String? alert_email,
-  @override
-  String? get secret;
-  @override
-  String? get active;
-
-  /// Create a copy of RazorpayWebhookBaseRequestBody
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$RazorpayWebhookBaseRequestBodyImplCopyWith<
-          _$RazorpayWebhookBaseRequestBodyImpl>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-RazorpayWebhookCreateRequestBody _$RazorpayWebhookCreateRequestBodyFromJson(
-    Map<String, dynamic> json) {
-  return _RazorpayWebhookCreateRequestBody.fromJson(json);
-}
-
-/// @nodoc
-mixin _$RazorpayWebhookCreateRequestBody {
-  String get url => throw _privateConstructorUsedError;
-  List<String> get events => throw _privateConstructorUsedError;
-  String? get alert_email => throw _privateConstructorUsedError;
-  String? get secret => throw _privateConstructorUsedError;
-  String? get active => throw _privateConstructorUsedError;
-
-  /// Serializes this RazorpayWebhookCreateRequestBody to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of RazorpayWebhookCreateRequestBody
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  $RazorpayWebhookCreateRequestBodyCopyWith<RazorpayWebhookCreateRequestBody>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $RazorpayWebhookCreateRequestBodyCopyWith<$Res> {
-  factory $RazorpayWebhookCreateRequestBodyCopyWith(
-          RazorpayWebhookCreateRequestBody value,
-          $Res Function(RazorpayWebhookCreateRequestBody) then) =
-      _$RazorpayWebhookCreateRequestBodyCopyWithImpl<$Res,
-          RazorpayWebhookCreateRequestBody>;
-  @useResult
-  $Res call(
-      {String url,
-      List<String> events,
-      String? alert_email,
-      String? secret,
-      String? active});
-}
-
-/// @nodoc
-class _$RazorpayWebhookCreateRequestBodyCopyWithImpl<$Res,
-        $Val extends RazorpayWebhookCreateRequestBody>
-    implements $RazorpayWebhookCreateRequestBodyCopyWith<$Res> {
-  _$RazorpayWebhookCreateRequestBodyCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of RazorpayWebhookCreateRequestBody
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? url = null,
-    Object? events = null,
-    Object? alert_email = freezed,
-    Object? secret = freezed,
-    Object? active = freezed,
-  }) {
-    return _then(_value.copyWith(
-      url: null == url
-          ? _value.url
-          : url // ignore: cast_nullable_to_non_nullable
-              as String,
-      events: null == events
-          ? _value.events
-          : events // ignore: cast_nullable_to_non_nullable
-              as List<String>,
-      alert_email: freezed == alert_email
-          ? _value.alert_email
-          : alert_email // ignore: cast_nullable_to_non_nullable
-              as String?,
-      secret: freezed == secret
-          ? _value.secret
-          : secret // ignore: cast_nullable_to_non_nullable
-              as String?,
-      active: freezed == active
-          ? _value.active
-          : active // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ) as $Val);
+  String toString() {
+    return 'RazorpayWebhookBaseRequestBody(url: $url, events: $events, secret: $secret, active: $active)';
   }
 }
 
 /// @nodoc
-abstract class _$$RazorpayWebhookCreateRequestBodyImplCopyWith<$Res>
-    implements $RazorpayWebhookCreateRequestBodyCopyWith<$Res> {
-  factory _$$RazorpayWebhookCreateRequestBodyImplCopyWith(
-          _$RazorpayWebhookCreateRequestBodyImpl value,
-          $Res Function(_$RazorpayWebhookCreateRequestBodyImpl) then) =
-      __$$RazorpayWebhookCreateRequestBodyImplCopyWithImpl<$Res>;
+abstract mixin class _$RazorpayWebhookBaseRequestBodyCopyWith<$Res>
+    implements $RazorpayWebhookBaseRequestBodyCopyWith<$Res> {
+  factory _$RazorpayWebhookBaseRequestBodyCopyWith(
+          _RazorpayWebhookBaseRequestBody value,
+          $Res Function(_RazorpayWebhookBaseRequestBody) _then) =
+      __$RazorpayWebhookBaseRequestBodyCopyWithImpl;
   @override
   @useResult
-  $Res call(
-      {String url,
-      List<String> events,
-      String? alert_email,
-      String? secret,
-      String? active});
+  $Res call({String url, List<String> events, String? secret, String? active});
 }
 
 /// @nodoc
-class __$$RazorpayWebhookCreateRequestBodyImplCopyWithImpl<$Res>
-    extends _$RazorpayWebhookCreateRequestBodyCopyWithImpl<$Res,
-        _$RazorpayWebhookCreateRequestBodyImpl>
-    implements _$$RazorpayWebhookCreateRequestBodyImplCopyWith<$Res> {
-  __$$RazorpayWebhookCreateRequestBodyImplCopyWithImpl(
-      _$RazorpayWebhookCreateRequestBodyImpl _value,
-      $Res Function(_$RazorpayWebhookCreateRequestBodyImpl) _then)
-      : super(_value, _then);
+class __$RazorpayWebhookBaseRequestBodyCopyWithImpl<$Res>
+    implements _$RazorpayWebhookBaseRequestBodyCopyWith<$Res> {
+  __$RazorpayWebhookBaseRequestBodyCopyWithImpl(this._self, this._then);
 
-  /// Create a copy of RazorpayWebhookCreateRequestBody
+  final _RazorpayWebhookBaseRequestBody _self;
+  final $Res Function(_RazorpayWebhookBaseRequestBody) _then;
+
+  /// Create a copy of RazorpayWebhookBaseRequestBody
   /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
   @override
+  @pragma('vm:prefer-inline')
   $Res call({
     Object? url = null,
     Object? events = null,
-    Object? alert_email = freezed,
     Object? secret = freezed,
     Object? active = freezed,
   }) {
-    return _then(_$RazorpayWebhookCreateRequestBodyImpl(
+    return _then(_RazorpayWebhookBaseRequestBody(
       url: null == url
-          ? _value.url
+          ? _self.url
           : url // ignore: cast_nullable_to_non_nullable
               as String,
       events: null == events
-          ? _value._events
+          ? _self._events
           : events // ignore: cast_nullable_to_non_nullable
               as List<String>,
-      alert_email: freezed == alert_email
-          ? _value.alert_email
-          : alert_email // ignore: cast_nullable_to_non_nullable
-              as String?,
       secret: freezed == secret
-          ? _value.secret
+          ? _self.secret
           : secret // ignore: cast_nullable_to_non_nullable
               as String?,
       active: freezed == active
-          ? _value.active
+          ? _self.active
           : active // ignore: cast_nullable_to_non_nullable
               as String?,
     ));
@@ -393,148 +223,55 @@ class __$$RazorpayWebhookCreateRequestBodyImplCopyWithImpl<$Res>
 }
 
 /// @nodoc
+mixin _$RazorpayWebhookCreateRequestBody {
+  String get url;
+  List<String> get events;
+  String? get alert_email;
+  String? get secret;
+  String? get active;
 
-@JsonSerializable(includeIfNull: false)
-class _$RazorpayWebhookCreateRequestBodyImpl
-    implements _RazorpayWebhookCreateRequestBody {
-  const _$RazorpayWebhookCreateRequestBodyImpl(
-      {required this.url,
-      required final List<String> events,
-      this.alert_email,
-      this.secret,
-      this.active})
-      : _events = events;
+  /// Create a copy of RazorpayWebhookCreateRequestBody
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $RazorpayWebhookCreateRequestBodyCopyWith<RazorpayWebhookCreateRequestBody>
+      get copyWith => _$RazorpayWebhookCreateRequestBodyCopyWithImpl<
+              RazorpayWebhookCreateRequestBody>(
+          this as RazorpayWebhookCreateRequestBody, _$identity);
 
-  factory _$RazorpayWebhookCreateRequestBodyImpl.fromJson(
-          Map<String, dynamic> json) =>
-      _$$RazorpayWebhookCreateRequestBodyImplFromJson(json);
+  /// Serializes this RazorpayWebhookCreateRequestBody to a JSON map.
+  Map<String, dynamic> toJson();
 
   @override
-  final String url;
-  final List<String> _events;
-  @override
-  List<String> get events {
-    if (_events is EqualUnmodifiableListView) return _events;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_events);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is RazorpayWebhookCreateRequestBody &&
+            (identical(other.url, url) || other.url == url) &&
+            const DeepCollectionEquality().equals(other.events, events) &&
+            (identical(other.alert_email, alert_email) ||
+                other.alert_email == alert_email) &&
+            (identical(other.secret, secret) || other.secret == secret) &&
+            (identical(other.active, active) || other.active == active));
   }
 
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  final String? alert_email;
-  @override
-  final String? secret;
-  @override
-  final String? active;
+  int get hashCode => Object.hash(runtimeType, url,
+      const DeepCollectionEquality().hash(events), alert_email, secret, active);
 
   @override
   String toString() {
     return 'RazorpayWebhookCreateRequestBody(url: $url, events: $events, alert_email: $alert_email, secret: $secret, active: $active)';
   }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$RazorpayWebhookCreateRequestBodyImpl &&
-            (identical(other.url, url) || other.url == url) &&
-            const DeepCollectionEquality().equals(other._events, _events) &&
-            (identical(other.alert_email, alert_email) ||
-                other.alert_email == alert_email) &&
-            (identical(other.secret, secret) || other.secret == secret) &&
-            (identical(other.active, active) || other.active == active));
-  }
-
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      url,
-      const DeepCollectionEquality().hash(_events),
-      alert_email,
-      secret,
-      active);
-
-  /// Create a copy of RazorpayWebhookCreateRequestBody
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$RazorpayWebhookCreateRequestBodyImplCopyWith<
-          _$RazorpayWebhookCreateRequestBodyImpl>
-      get copyWith => __$$RazorpayWebhookCreateRequestBodyImplCopyWithImpl<
-          _$RazorpayWebhookCreateRequestBodyImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$RazorpayWebhookCreateRequestBodyImplToJson(
-      this,
-    );
-  }
-}
-
-abstract class _RazorpayWebhookCreateRequestBody
-    implements RazorpayWebhookCreateRequestBody {
-  const factory _RazorpayWebhookCreateRequestBody(
-      {required final String url,
-      required final List<String> events,
-      final String? alert_email,
-      final String? secret,
-      final String? active}) = _$RazorpayWebhookCreateRequestBodyImpl;
-
-  factory _RazorpayWebhookCreateRequestBody.fromJson(
-          Map<String, dynamic> json) =
-      _$RazorpayWebhookCreateRequestBodyImpl.fromJson;
-
-  @override
-  String get url;
-  @override
-  List<String> get events;
-  @override
-  String? get alert_email;
-  @override
-  String? get secret;
-  @override
-  String? get active;
-
-  /// Create a copy of RazorpayWebhookCreateRequestBody
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$RazorpayWebhookCreateRequestBodyImplCopyWith<
-          _$RazorpayWebhookCreateRequestBodyImpl>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-RazorpayWebhookUpdateRequestBody _$RazorpayWebhookUpdateRequestBodyFromJson(
-    Map<String, dynamic> json) {
-  return _RazorpayWebhookUpdateRequestBody.fromJson(json);
 }
 
 /// @nodoc
-mixin _$RazorpayWebhookUpdateRequestBody {
-  String get url => throw _privateConstructorUsedError;
-  List<String> get events => throw _privateConstructorUsedError;
-  String? get alert_email => throw _privateConstructorUsedError;
-  String? get secret => throw _privateConstructorUsedError;
-  String? get active => throw _privateConstructorUsedError;
-
-  /// Serializes this RazorpayWebhookUpdateRequestBody to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of RazorpayWebhookUpdateRequestBody
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  $RazorpayWebhookUpdateRequestBodyCopyWith<RazorpayWebhookUpdateRequestBody>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $RazorpayWebhookUpdateRequestBodyCopyWith<$Res> {
-  factory $RazorpayWebhookUpdateRequestBodyCopyWith(
-          RazorpayWebhookUpdateRequestBody value,
-          $Res Function(RazorpayWebhookUpdateRequestBody) then) =
-      _$RazorpayWebhookUpdateRequestBodyCopyWithImpl<$Res,
-          RazorpayWebhookUpdateRequestBody>;
+abstract mixin class $RazorpayWebhookCreateRequestBodyCopyWith<$Res> {
+  factory $RazorpayWebhookCreateRequestBodyCopyWith(
+          RazorpayWebhookCreateRequestBody value,
+          $Res Function(RazorpayWebhookCreateRequestBody) _then) =
+      _$RazorpayWebhookCreateRequestBodyCopyWithImpl;
   @useResult
   $Res call(
       {String url,
@@ -545,17 +282,14 @@ abstract class $RazorpayWebhookUpdateRequestBodyCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$RazorpayWebhookUpdateRequestBodyCopyWithImpl<$Res,
-        $Val extends RazorpayWebhookUpdateRequestBody>
-    implements $RazorpayWebhookUpdateRequestBodyCopyWith<$Res> {
-  _$RazorpayWebhookUpdateRequestBodyCopyWithImpl(this._value, this._then);
+class _$RazorpayWebhookCreateRequestBodyCopyWithImpl<$Res>
+    implements $RazorpayWebhookCreateRequestBodyCopyWith<$Res> {
+  _$RazorpayWebhookCreateRequestBodyCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final RazorpayWebhookCreateRequestBody _self;
+  final $Res Function(RazorpayWebhookCreateRequestBody) _then;
 
-  /// Create a copy of RazorpayWebhookUpdateRequestBody
+  /// Create a copy of RazorpayWebhookCreateRequestBody
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
@@ -566,88 +300,25 @@ class _$RazorpayWebhookUpdateRequestBodyCopyWithImpl<$Res,
     Object? secret = freezed,
     Object? active = freezed,
   }) {
-    return _then(_value.copyWith(
+    return _then(_self.copyWith(
       url: null == url
-          ? _value.url
+          ? _self.url
           : url // ignore: cast_nullable_to_non_nullable
               as String,
       events: null == events
-          ? _value.events
+          ? _self.events
           : events // ignore: cast_nullable_to_non_nullable
               as List<String>,
       alert_email: freezed == alert_email
-          ? _value.alert_email
+          ? _self.alert_email
           : alert_email // ignore: cast_nullable_to_non_nullable
               as String?,
       secret: freezed == secret
-          ? _value.secret
+          ? _self.secret
           : secret // ignore: cast_nullable_to_non_nullable
               as String?,
       active: freezed == active
-          ? _value.active
-          : active // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ) as $Val);
-  }
-}
-
-/// @nodoc
-abstract class _$$RazorpayWebhookUpdateRequestBodyImplCopyWith<$Res>
-    implements $RazorpayWebhookUpdateRequestBodyCopyWith<$Res> {
-  factory _$$RazorpayWebhookUpdateRequestBodyImplCopyWith(
-          _$RazorpayWebhookUpdateRequestBodyImpl value,
-          $Res Function(_$RazorpayWebhookUpdateRequestBodyImpl) then) =
-      __$$RazorpayWebhookUpdateRequestBodyImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {String url,
-      List<String> events,
-      String? alert_email,
-      String? secret,
-      String? active});
-}
-
-/// @nodoc
-class __$$RazorpayWebhookUpdateRequestBodyImplCopyWithImpl<$Res>
-    extends _$RazorpayWebhookUpdateRequestBodyCopyWithImpl<$Res,
-        _$RazorpayWebhookUpdateRequestBodyImpl>
-    implements _$$RazorpayWebhookUpdateRequestBodyImplCopyWith<$Res> {
-  __$$RazorpayWebhookUpdateRequestBodyImplCopyWithImpl(
-      _$RazorpayWebhookUpdateRequestBodyImpl _value,
-      $Res Function(_$RazorpayWebhookUpdateRequestBodyImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of RazorpayWebhookUpdateRequestBody
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? url = null,
-    Object? events = null,
-    Object? alert_email = freezed,
-    Object? secret = freezed,
-    Object? active = freezed,
-  }) {
-    return _then(_$RazorpayWebhookUpdateRequestBodyImpl(
-      url: null == url
-          ? _value.url
-          : url // ignore: cast_nullable_to_non_nullable
-              as String,
-      events: null == events
-          ? _value._events
-          : events // ignore: cast_nullable_to_non_nullable
-              as List<String>,
-      alert_email: freezed == alert_email
-          ? _value.alert_email
-          : alert_email // ignore: cast_nullable_to_non_nullable
-              as String?,
-      secret: freezed == secret
-          ? _value.secret
-          : secret // ignore: cast_nullable_to_non_nullable
-              as String?,
-      active: freezed == active
-          ? _value.active
+          ? _self.active
           : active // ignore: cast_nullable_to_non_nullable
               as String?,
     ));
@@ -657,19 +328,18 @@ class __$$RazorpayWebhookUpdateRequestBodyImplCopyWithImpl<$Res>
 /// @nodoc
 
 @JsonSerializable(includeIfNull: false)
-class _$RazorpayWebhookUpdateRequestBodyImpl
-    implements _RazorpayWebhookUpdateRequestBody {
-  const _$RazorpayWebhookUpdateRequestBodyImpl(
+class _RazorpayWebhookCreateRequestBody
+    implements RazorpayWebhookCreateRequestBody {
+  const _RazorpayWebhookCreateRequestBody(
       {required this.url,
       required final List<String> events,
       this.alert_email,
       this.secret,
       this.active})
       : _events = events;
-
-  factory _$RazorpayWebhookUpdateRequestBodyImpl.fromJson(
+  factory _RazorpayWebhookCreateRequestBody.fromJson(
           Map<String, dynamic> json) =>
-      _$$RazorpayWebhookUpdateRequestBodyImplFromJson(json);
+      _$RazorpayWebhookCreateRequestBodyFromJson(json);
 
   @override
   final String url;
@@ -688,16 +358,27 @@ class _$RazorpayWebhookUpdateRequestBodyImpl
   @override
   final String? active;
 
+  /// Create a copy of RazorpayWebhookCreateRequestBody
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'RazorpayWebhookUpdateRequestBody(url: $url, events: $events, alert_email: $alert_email, secret: $secret, active: $active)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$RazorpayWebhookCreateRequestBodyCopyWith<_RazorpayWebhookCreateRequestBody>
+      get copyWith => __$RazorpayWebhookCreateRequestBodyCopyWithImpl<
+          _RazorpayWebhookCreateRequestBody>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$RazorpayWebhookCreateRequestBodyToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$RazorpayWebhookUpdateRequestBodyImpl &&
+            other is _RazorpayWebhookCreateRequestBody &&
             (identical(other.url, url) || other.url == url) &&
             const DeepCollectionEquality().equals(other._events, _events) &&
             (identical(other.alert_email, alert_email) ||
@@ -716,172 +397,381 @@ class _$RazorpayWebhookUpdateRequestBodyImpl
       secret,
       active);
 
-  /// Create a copy of RazorpayWebhookUpdateRequestBody
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$RazorpayWebhookUpdateRequestBodyImplCopyWith<
-          _$RazorpayWebhookUpdateRequestBodyImpl>
-      get copyWith => __$$RazorpayWebhookUpdateRequestBodyImplCopyWithImpl<
-          _$RazorpayWebhookUpdateRequestBodyImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$RazorpayWebhookUpdateRequestBodyImplToJson(
-      this,
-    );
+  String toString() {
+    return 'RazorpayWebhookCreateRequestBody(url: $url, events: $events, alert_email: $alert_email, secret: $secret, active: $active)';
   }
 }
 
-abstract class _RazorpayWebhookUpdateRequestBody
-    implements RazorpayWebhookUpdateRequestBody {
-  const factory _RazorpayWebhookUpdateRequestBody(
-      {required final String url,
-      required final List<String> events,
-      final String? alert_email,
-      final String? secret,
-      final String? active}) = _$RazorpayWebhookUpdateRequestBodyImpl;
-
-  factory _RazorpayWebhookUpdateRequestBody.fromJson(
-          Map<String, dynamic> json) =
-      _$RazorpayWebhookUpdateRequestBodyImpl.fromJson;
-
+/// @nodoc
+abstract mixin class _$RazorpayWebhookCreateRequestBodyCopyWith<$Res>
+    implements $RazorpayWebhookCreateRequestBodyCopyWith<$Res> {
+  factory _$RazorpayWebhookCreateRequestBodyCopyWith(
+          _RazorpayWebhookCreateRequestBody value,
+          $Res Function(_RazorpayWebhookCreateRequestBody) _then) =
+      __$RazorpayWebhookCreateRequestBodyCopyWithImpl;
   @override
+  @useResult
+  $Res call(
+      {String url,
+      List<String> events,
+      String? alert_email,
+      String? secret,
+      String? active});
+}
+
+/// @nodoc
+class __$RazorpayWebhookCreateRequestBodyCopyWithImpl<$Res>
+    implements _$RazorpayWebhookCreateRequestBodyCopyWith<$Res> {
+  __$RazorpayWebhookCreateRequestBodyCopyWithImpl(this._self, this._then);
+
+  final _RazorpayWebhookCreateRequestBody _self;
+  final $Res Function(_RazorpayWebhookCreateRequestBody) _then;
+
+  /// Create a copy of RazorpayWebhookCreateRequestBody
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? url = null,
+    Object? events = null,
+    Object? alert_email = freezed,
+    Object? secret = freezed,
+    Object? active = freezed,
+  }) {
+    return _then(_RazorpayWebhookCreateRequestBody(
+      url: null == url
+          ? _self.url
+          : url // ignore: cast_nullable_to_non_nullable
+              as String,
+      events: null == events
+          ? _self._events
+          : events // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      alert_email: freezed == alert_email
+          ? _self.alert_email
+          : alert_email // ignore: cast_nullable_to_non_nullable
+              as String?,
+      secret: freezed == secret
+          ? _self.secret
+          : secret // ignore: cast_nullable_to_non_nullable
+              as String?,
+      active: freezed == active
+          ? _self.active
+          : active // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+mixin _$RazorpayWebhookUpdateRequestBody {
   String get url;
-  @override
   List<String> get events;
-  @override
   String? get alert_email;
-  @override
   String? get secret;
-  @override
   String? get active;
 
   /// Create a copy of RazorpayWebhookUpdateRequestBody
   /// with the given fields replaced by the non-null parameter values.
-  @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$RazorpayWebhookUpdateRequestBodyImplCopyWith<
-          _$RazorpayWebhookUpdateRequestBodyImpl>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-RazorpayWebhook _$RazorpayWebhookFromJson(Map<String, dynamic> json) {
-  return _RazorpayWebhook.fromJson(json);
-}
-
-/// @nodoc
-mixin _$RazorpayWebhook {
-  String get id => throw _privateConstructorUsedError;
-  String get entity => throw _privateConstructorUsedError; // 'webhook'
-  String get url =>
-      throw _privateConstructorUsedError; // secret is not usually returned in fetch response for security
-  bool get secret_exists =>
-      throw _privateConstructorUsedError; // derived from presence of secret, required List<String> events, required String active, // Assuming bool in response too, required String owner_id, // Account ID, required String owner_type, // 'account' or 'application'?, required int created_at, String? alert_email,
-  List<String> get context =>
-      throw _privateConstructorUsedError; // Seems empty in d.ts example
-  int? get disabled_at =>
-      throw _privateConstructorUsedError; // Nullable timestamp
-  bool get service =>
-      throw _privateConstructorUsedError; // default to false if not present
-  int? get updated_at => throw _privateConstructorUsedError;
-
-  /// Serializes this RazorpayWebhook to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of RazorpayWebhook
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  $RazorpayWebhookCopyWith<RazorpayWebhook> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $RazorpayWebhookCopyWith<$Res> {
-  factory $RazorpayWebhookCopyWith(
-          RazorpayWebhook value, $Res Function(RazorpayWebhook) then) =
-      _$RazorpayWebhookCopyWithImpl<$Res, RazorpayWebhook>;
-  @useResult
-  $Res call(
-      {String id,
-      String entity,
-      String url,
-      bool secret_exists,
-      List<String> context,
-      int? disabled_at,
-      bool service,
-      int? updated_at});
-}
-
-/// @nodoc
-class _$RazorpayWebhookCopyWithImpl<$Res, $Val extends RazorpayWebhook>
-    implements $RazorpayWebhookCopyWith<$Res> {
-  _$RazorpayWebhookCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of RazorpayWebhook
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
+  $RazorpayWebhookUpdateRequestBodyCopyWith<RazorpayWebhookUpdateRequestBody>
+      get copyWith => _$RazorpayWebhookUpdateRequestBodyCopyWithImpl<
+              RazorpayWebhookUpdateRequestBody>(
+          this as RazorpayWebhookUpdateRequestBody, _$identity);
+
+  /// Serializes this RazorpayWebhookUpdateRequestBody to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? id = null,
-    Object? entity = null,
-    Object? url = null,
-    Object? secret_exists = null,
-    Object? context = null,
-    Object? disabled_at = freezed,
-    Object? service = null,
-    Object? updated_at = freezed,
-  }) {
-    return _then(_value.copyWith(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      entity: null == entity
-          ? _value.entity
-          : entity // ignore: cast_nullable_to_non_nullable
-              as String,
-      url: null == url
-          ? _value.url
-          : url // ignore: cast_nullable_to_non_nullable
-              as String,
-      secret_exists: null == secret_exists
-          ? _value.secret_exists
-          : secret_exists // ignore: cast_nullable_to_non_nullable
-              as bool,
-      context: null == context
-          ? _value.context
-          : context // ignore: cast_nullable_to_non_nullable
-              as List<String>,
-      disabled_at: freezed == disabled_at
-          ? _value.disabled_at
-          : disabled_at // ignore: cast_nullable_to_non_nullable
-              as int?,
-      service: null == service
-          ? _value.service
-          : service // ignore: cast_nullable_to_non_nullable
-              as bool,
-      updated_at: freezed == updated_at
-          ? _value.updated_at
-          : updated_at // ignore: cast_nullable_to_non_nullable
-              as int?,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is RazorpayWebhookUpdateRequestBody &&
+            (identical(other.url, url) || other.url == url) &&
+            const DeepCollectionEquality().equals(other.events, events) &&
+            (identical(other.alert_email, alert_email) ||
+                other.alert_email == alert_email) &&
+            (identical(other.secret, secret) || other.secret == secret) &&
+            (identical(other.active, active) || other.active == active));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, url,
+      const DeepCollectionEquality().hash(events), alert_email, secret, active);
+
+  @override
+  String toString() {
+    return 'RazorpayWebhookUpdateRequestBody(url: $url, events: $events, alert_email: $alert_email, secret: $secret, active: $active)';
   }
 }
 
 /// @nodoc
-abstract class _$$RazorpayWebhookImplCopyWith<$Res>
-    implements $RazorpayWebhookCopyWith<$Res> {
-  factory _$$RazorpayWebhookImplCopyWith(_$RazorpayWebhookImpl value,
-          $Res Function(_$RazorpayWebhookImpl) then) =
-      __$$RazorpayWebhookImplCopyWithImpl<$Res>;
+abstract mixin class $RazorpayWebhookUpdateRequestBodyCopyWith<$Res> {
+  factory $RazorpayWebhookUpdateRequestBodyCopyWith(
+          RazorpayWebhookUpdateRequestBody value,
+          $Res Function(RazorpayWebhookUpdateRequestBody) _then) =
+      _$RazorpayWebhookUpdateRequestBodyCopyWithImpl;
+  @useResult
+  $Res call(
+      {String url,
+      List<String> events,
+      String? alert_email,
+      String? secret,
+      String? active});
+}
+
+/// @nodoc
+class _$RazorpayWebhookUpdateRequestBodyCopyWithImpl<$Res>
+    implements $RazorpayWebhookUpdateRequestBodyCopyWith<$Res> {
+  _$RazorpayWebhookUpdateRequestBodyCopyWithImpl(this._self, this._then);
+
+  final RazorpayWebhookUpdateRequestBody _self;
+  final $Res Function(RazorpayWebhookUpdateRequestBody) _then;
+
+  /// Create a copy of RazorpayWebhookUpdateRequestBody
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
   @override
+  $Res call({
+    Object? url = null,
+    Object? events = null,
+    Object? alert_email = freezed,
+    Object? secret = freezed,
+    Object? active = freezed,
+  }) {
+    return _then(_self.copyWith(
+      url: null == url
+          ? _self.url
+          : url // ignore: cast_nullable_to_non_nullable
+              as String,
+      events: null == events
+          ? _self.events
+          : events // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      alert_email: freezed == alert_email
+          ? _self.alert_email
+          : alert_email // ignore: cast_nullable_to_non_nullable
+              as String?,
+      secret: freezed == secret
+          ? _self.secret
+          : secret // ignore: cast_nullable_to_non_nullable
+              as String?,
+      active: freezed == active
+          ? _self.active
+          : active // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+
+@JsonSerializable(includeIfNull: false)
+class _RazorpayWebhookUpdateRequestBody
+    implements RazorpayWebhookUpdateRequestBody {
+  const _RazorpayWebhookUpdateRequestBody(
+      {required this.url,
+      required final List<String> events,
+      this.alert_email,
+      this.secret,
+      this.active})
+      : _events = events;
+  factory _RazorpayWebhookUpdateRequestBody.fromJson(
+          Map<String, dynamic> json) =>
+      _$RazorpayWebhookUpdateRequestBodyFromJson(json);
+
+  @override
+  final String url;
+  final List<String> _events;
+  @override
+  List<String> get events {
+    if (_events is EqualUnmodifiableListView) return _events;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_events);
+  }
+
+  @override
+  final String? alert_email;
+  @override
+  final String? secret;
+  @override
+  final String? active;
+
+  /// Create a copy of RazorpayWebhookUpdateRequestBody
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$RazorpayWebhookUpdateRequestBodyCopyWith<_RazorpayWebhookUpdateRequestBody>
+      get copyWith => __$RazorpayWebhookUpdateRequestBodyCopyWithImpl<
+          _RazorpayWebhookUpdateRequestBody>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$RazorpayWebhookUpdateRequestBodyToJson(
+      this,
+    );
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _RazorpayWebhookUpdateRequestBody &&
+            (identical(other.url, url) || other.url == url) &&
+            const DeepCollectionEquality().equals(other._events, _events) &&
+            (identical(other.alert_email, alert_email) ||
+                other.alert_email == alert_email) &&
+            (identical(other.secret, secret) || other.secret == secret) &&
+            (identical(other.active, active) || other.active == active));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      url,
+      const DeepCollectionEquality().hash(_events),
+      alert_email,
+      secret,
+      active);
+
+  @override
+  String toString() {
+    return 'RazorpayWebhookUpdateRequestBody(url: $url, events: $events, alert_email: $alert_email, secret: $secret, active: $active)';
+  }
+}
+
+/// @nodoc
+abstract mixin class _$RazorpayWebhookUpdateRequestBodyCopyWith<$Res>
+    implements $RazorpayWebhookUpdateRequestBodyCopyWith<$Res> {
+  factory _$RazorpayWebhookUpdateRequestBodyCopyWith(
+          _RazorpayWebhookUpdateRequestBody value,
+          $Res Function(_RazorpayWebhookUpdateRequestBody) _then) =
+      __$RazorpayWebhookUpdateRequestBodyCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {String url,
+      List<String> events,
+      String? alert_email,
+      String? secret,
+      String? active});
+}
+
+/// @nodoc
+class __$RazorpayWebhookUpdateRequestBodyCopyWithImpl<$Res>
+    implements _$RazorpayWebhookUpdateRequestBodyCopyWith<$Res> {
+  __$RazorpayWebhookUpdateRequestBodyCopyWithImpl(this._self, this._then);
+
+  final _RazorpayWebhookUpdateRequestBody _self;
+  final $Res Function(_RazorpayWebhookUpdateRequestBody) _then;
+
+  /// Create a copy of RazorpayWebhookUpdateRequestBody
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? url = null,
+    Object? events = null,
+    Object? alert_email = freezed,
+    Object? secret = freezed,
+    Object? active = freezed,
+  }) {
+    return _then(_RazorpayWebhookUpdateRequestBody(
+      url: null == url
+          ? _self.url
+          : url // ignore: cast_nullable_to_non_nullable
+              as String,
+      events: null == events
+          ? _self._events
+          : events // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      alert_email: freezed == alert_email
+          ? _self.alert_email
+          : alert_email // ignore: cast_nullable_to_non_nullable
+              as String?,
+      secret: freezed == secret
+          ? _self.secret
+          : secret // ignore: cast_nullable_to_non_nullable
+              as String?,
+      active: freezed == active
+          ? _self.active
+          : active // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+mixin _$RazorpayWebhook {
+  String get id;
+  String get entity; // 'webhook'
+  String
+      get url; // secret is not usually returned in fetch response for security
+  bool
+      get secret_exists; // derived from presence of secret, required List<String> events, required String active, // Assuming bool in response too, required String owner_id, // Account ID, required String owner_type, // 'account' or 'application'?, required int created_at, String? alert_email,
+  List<String> get context; // Seems empty in d.ts example
+  int? get disabled_at; // Nullable timestamp
+  bool get service; // default to false if not present
+  int? get updated_at;
+
+  /// Create a copy of RazorpayWebhook
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $RazorpayWebhookCopyWith<RazorpayWebhook> get copyWith =>
+      _$RazorpayWebhookCopyWithImpl<RazorpayWebhook>(
+          this as RazorpayWebhook, _$identity);
+
+  /// Serializes this RazorpayWebhook to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is RazorpayWebhook &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.entity, entity) || other.entity == entity) &&
+            (identical(other.url, url) || other.url == url) &&
+            (identical(other.secret_exists, secret_exists) ||
+                other.secret_exists == secret_exists) &&
+            const DeepCollectionEquality().equals(other.context, context) &&
+            (identical(other.disabled_at, disabled_at) ||
+                other.disabled_at == disabled_at) &&
+            (identical(other.service, service) || other.service == service) &&
+            (identical(other.updated_at, updated_at) ||
+                other.updated_at == updated_at));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      entity,
+      url,
+      secret_exists,
+      const DeepCollectionEquality().hash(context),
+      disabled_at,
+      service,
+      updated_at);
+
+  @override
+  String toString() {
+    return 'RazorpayWebhook(id: $id, entity: $entity, url: $url, secret_exists: $secret_exists, context: $context, disabled_at: $disabled_at, service: $service, updated_at: $updated_at)';
+  }
+}
+
+/// @nodoc
+abstract mixin class $RazorpayWebhookCopyWith<$Res> {
+  factory $RazorpayWebhookCopyWith(
+          RazorpayWebhook value, $Res Function(RazorpayWebhook) _then) =
+      _$RazorpayWebhookCopyWithImpl;
   @useResult
   $Res call(
       {String id,
@@ -895,12 +785,12 @@ abstract class _$$RazorpayWebhookImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$RazorpayWebhookImplCopyWithImpl<$Res>
-    extends _$RazorpayWebhookCopyWithImpl<$Res, _$RazorpayWebhookImpl>
-    implements _$$RazorpayWebhookImplCopyWith<$Res> {
-  __$$RazorpayWebhookImplCopyWithImpl(
-      _$RazorpayWebhookImpl _value, $Res Function(_$RazorpayWebhookImpl) _then)
-      : super(_value, _then);
+class _$RazorpayWebhookCopyWithImpl<$Res>
+    implements $RazorpayWebhookCopyWith<$Res> {
+  _$RazorpayWebhookCopyWithImpl(this._self, this._then);
+
+  final RazorpayWebhook _self;
+  final $Res Function(RazorpayWebhook) _then;
 
   /// Create a copy of RazorpayWebhook
   /// with the given fields replaced by the non-null parameter values.
@@ -916,37 +806,37 @@ class __$$RazorpayWebhookImplCopyWithImpl<$Res>
     Object? service = null,
     Object? updated_at = freezed,
   }) {
-    return _then(_$RazorpayWebhookImpl(
+    return _then(_self.copyWith(
       id: null == id
-          ? _value.id
+          ? _self.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
       entity: null == entity
-          ? _value.entity
+          ? _self.entity
           : entity // ignore: cast_nullable_to_non_nullable
               as String,
       url: null == url
-          ? _value.url
+          ? _self.url
           : url // ignore: cast_nullable_to_non_nullable
               as String,
       secret_exists: null == secret_exists
-          ? _value.secret_exists
+          ? _self.secret_exists
           : secret_exists // ignore: cast_nullable_to_non_nullable
               as bool,
       context: null == context
-          ? _value._context
+          ? _self.context
           : context // ignore: cast_nullable_to_non_nullable
               as List<String>,
       disabled_at: freezed == disabled_at
-          ? _value.disabled_at
+          ? _self.disabled_at
           : disabled_at // ignore: cast_nullable_to_non_nullable
               as int?,
       service: null == service
-          ? _value.service
+          ? _self.service
           : service // ignore: cast_nullable_to_non_nullable
               as bool,
       updated_at: freezed == updated_at
-          ? _value.updated_at
+          ? _self.updated_at
           : updated_at // ignore: cast_nullable_to_non_nullable
               as int?,
     ));
@@ -956,8 +846,8 @@ class __$$RazorpayWebhookImplCopyWithImpl<$Res>
 /// @nodoc
 
 @JsonSerializable(includeIfNull: false)
-class _$RazorpayWebhookImpl implements _RazorpayWebhook {
-  const _$RazorpayWebhookImpl(
+class _RazorpayWebhook implements RazorpayWebhook {
+  const _RazorpayWebhook(
       {required this.id,
       required this.entity,
       required this.url,
@@ -967,9 +857,8 @@ class _$RazorpayWebhookImpl implements _RazorpayWebhook {
       this.service = false,
       this.updated_at})
       : _context = context;
-
-  factory _$RazorpayWebhookImpl.fromJson(Map<String, dynamic> json) =>
-      _$$RazorpayWebhookImplFromJson(json);
+  factory _RazorpayWebhook.fromJson(Map<String, dynamic> json) =>
+      _$RazorpayWebhookFromJson(json);
 
   @override
   final String id;
@@ -1003,16 +892,26 @@ class _$RazorpayWebhookImpl implements _RazorpayWebhook {
   @override
   final int? updated_at;
 
+  /// Create a copy of RazorpayWebhook
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'RazorpayWebhook(id: $id, entity: $entity, url: $url, secret_exists: $secret_exists, context: $context, disabled_at: $disabled_at, service: $service, updated_at: $updated_at)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$RazorpayWebhookCopyWith<_RazorpayWebhook> get copyWith =>
+      __$RazorpayWebhookCopyWithImpl<_RazorpayWebhook>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$RazorpayWebhookToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$RazorpayWebhookImpl &&
+            other is _RazorpayWebhook &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.entity, entity) || other.entity == entity) &&
             (identical(other.url, url) || other.url == url) &&
@@ -1039,155 +938,146 @@ class _$RazorpayWebhookImpl implements _RazorpayWebhook {
       service,
       updated_at);
 
-  /// Create a copy of RazorpayWebhook
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$RazorpayWebhookImplCopyWith<_$RazorpayWebhookImpl> get copyWith =>
-      __$$RazorpayWebhookImplCopyWithImpl<_$RazorpayWebhookImpl>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$RazorpayWebhookImplToJson(
-      this,
-    );
+  String toString() {
+    return 'RazorpayWebhook(id: $id, entity: $entity, url: $url, secret_exists: $secret_exists, context: $context, disabled_at: $disabled_at, service: $service, updated_at: $updated_at)';
   }
 }
 
-abstract class _RazorpayWebhook implements RazorpayWebhook {
-  const factory _RazorpayWebhook(
-      {required final String id,
-      required final String entity,
-      required final String url,
-      required final bool secret_exists,
-      final List<String> context,
-      final int? disabled_at,
-      final bool service,
-      final int? updated_at}) = _$RazorpayWebhookImpl;
+/// @nodoc
+abstract mixin class _$RazorpayWebhookCopyWith<$Res>
+    implements $RazorpayWebhookCopyWith<$Res> {
+  factory _$RazorpayWebhookCopyWith(
+          _RazorpayWebhook value, $Res Function(_RazorpayWebhook) _then) =
+      __$RazorpayWebhookCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {String id,
+      String entity,
+      String url,
+      bool secret_exists,
+      List<String> context,
+      int? disabled_at,
+      bool service,
+      int? updated_at});
+}
 
-  factory _RazorpayWebhook.fromJson(Map<String, dynamic> json) =
-      _$RazorpayWebhookImpl.fromJson;
+/// @nodoc
+class __$RazorpayWebhookCopyWithImpl<$Res>
+    implements _$RazorpayWebhookCopyWith<$Res> {
+  __$RazorpayWebhookCopyWithImpl(this._self, this._then);
 
-  @override
-  String get id;
-  @override
-  String get entity; // 'webhook'
-  @override
-  String
-      get url; // secret is not usually returned in fetch response for security
-  @override
-  bool
-      get secret_exists; // derived from presence of secret, required List<String> events, required String active, // Assuming bool in response too, required String owner_id, // Account ID, required String owner_type, // 'account' or 'application'?, required int created_at, String? alert_email,
-  @override
-  List<String> get context; // Seems empty in d.ts example
-  @override
-  int? get disabled_at; // Nullable timestamp
-  @override
-  bool get service; // default to false if not present
-  @override
-  int? get updated_at;
+  final _RazorpayWebhook _self;
+  final $Res Function(_RazorpayWebhook) _then;
 
   /// Create a copy of RazorpayWebhook
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$RazorpayWebhookImplCopyWith<_$RazorpayWebhookImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-RazorpayWebhookListResponse _$RazorpayWebhookListResponseFromJson(
-    Map<String, dynamic> json) {
-  return _RazorpayWebhookListResponse.fromJson(json);
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? id = null,
+    Object? entity = null,
+    Object? url = null,
+    Object? secret_exists = null,
+    Object? context = null,
+    Object? disabled_at = freezed,
+    Object? service = null,
+    Object? updated_at = freezed,
+  }) {
+    return _then(_RazorpayWebhook(
+      id: null == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      entity: null == entity
+          ? _self.entity
+          : entity // ignore: cast_nullable_to_non_nullable
+              as String,
+      url: null == url
+          ? _self.url
+          : url // ignore: cast_nullable_to_non_nullable
+              as String,
+      secret_exists: null == secret_exists
+          ? _self.secret_exists
+          : secret_exists // ignore: cast_nullable_to_non_nullable
+              as bool,
+      context: null == context
+          ? _self._context
+          : context // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      disabled_at: freezed == disabled_at
+          ? _self.disabled_at
+          : disabled_at // ignore: cast_nullable_to_non_nullable
+              as int?,
+      service: null == service
+          ? _self.service
+          : service // ignore: cast_nullable_to_non_nullable
+              as bool,
+      updated_at: freezed == updated_at
+          ? _self.updated_at
+          : updated_at // ignore: cast_nullable_to_non_nullable
+              as int?,
+    ));
+  }
 }
 
 /// @nodoc
 mixin _$RazorpayWebhookListResponse {
-  String get entity => throw _privateConstructorUsedError;
-  List<RazorpayWebhook> get items =>
-      throw _privateConstructorUsedError; // Usually 'collection'
-  int? get count => throw _privateConstructorUsedError;
-
-  /// Serializes this RazorpayWebhookListResponse to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  String get entity;
+  List<RazorpayWebhook> get items; // Usually 'collection'
+  int? get count;
 
   /// Create a copy of RazorpayWebhookListResponse
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $RazorpayWebhookListResponseCopyWith<RazorpayWebhookListResponse>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $RazorpayWebhookListResponseCopyWith<$Res> {
-  factory $RazorpayWebhookListResponseCopyWith(
-          RazorpayWebhookListResponse value,
-          $Res Function(RazorpayWebhookListResponse) then) =
-      _$RazorpayWebhookListResponseCopyWithImpl<$Res,
-          RazorpayWebhookListResponse>;
-  @useResult
-  $Res call({String entity, List<RazorpayWebhook> items, int? count});
-}
-
-/// @nodoc
-class _$RazorpayWebhookListResponseCopyWithImpl<$Res,
-        $Val extends RazorpayWebhookListResponse>
-    implements $RazorpayWebhookListResponseCopyWith<$Res> {
-  _$RazorpayWebhookListResponseCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of RazorpayWebhookListResponse
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
+  $RazorpayWebhookListResponseCopyWith<RazorpayWebhookListResponse>
+      get copyWith => _$RazorpayWebhookListResponseCopyWithImpl<
+              RazorpayWebhookListResponse>(
+          this as RazorpayWebhookListResponse, _$identity);
+
+  /// Serializes this RazorpayWebhookListResponse to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? entity = null,
-    Object? items = null,
-    Object? count = freezed,
-  }) {
-    return _then(_value.copyWith(
-      entity: null == entity
-          ? _value.entity
-          : entity // ignore: cast_nullable_to_non_nullable
-              as String,
-      items: null == items
-          ? _value.items
-          : items // ignore: cast_nullable_to_non_nullable
-              as List<RazorpayWebhook>,
-      count: freezed == count
-          ? _value.count
-          : count // ignore: cast_nullable_to_non_nullable
-              as int?,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is RazorpayWebhookListResponse &&
+            (identical(other.entity, entity) || other.entity == entity) &&
+            const DeepCollectionEquality().equals(other.items, items) &&
+            (identical(other.count, count) || other.count == count));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, entity, const DeepCollectionEquality().hash(items), count);
+
+  @override
+  String toString() {
+    return 'RazorpayWebhookListResponse(entity: $entity, items: $items, count: $count)';
   }
 }
 
 /// @nodoc
-abstract class _$$RazorpayWebhookListResponseImplCopyWith<$Res>
-    implements $RazorpayWebhookListResponseCopyWith<$Res> {
-  factory _$$RazorpayWebhookListResponseImplCopyWith(
-          _$RazorpayWebhookListResponseImpl value,
-          $Res Function(_$RazorpayWebhookListResponseImpl) then) =
-      __$$RazorpayWebhookListResponseImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $RazorpayWebhookListResponseCopyWith<$Res> {
+  factory $RazorpayWebhookListResponseCopyWith(
+          RazorpayWebhookListResponse value,
+          $Res Function(RazorpayWebhookListResponse) _then) =
+      _$RazorpayWebhookListResponseCopyWithImpl;
   @useResult
   $Res call({String entity, List<RazorpayWebhook> items, int? count});
 }
 
 /// @nodoc
-class __$$RazorpayWebhookListResponseImplCopyWithImpl<$Res>
-    extends _$RazorpayWebhookListResponseCopyWithImpl<$Res,
-        _$RazorpayWebhookListResponseImpl>
-    implements _$$RazorpayWebhookListResponseImplCopyWith<$Res> {
-  __$$RazorpayWebhookListResponseImplCopyWithImpl(
-      _$RazorpayWebhookListResponseImpl _value,
-      $Res Function(_$RazorpayWebhookListResponseImpl) _then)
-      : super(_value, _then);
+class _$RazorpayWebhookListResponseCopyWithImpl<$Res>
+    implements $RazorpayWebhookListResponseCopyWith<$Res> {
+  _$RazorpayWebhookListResponseCopyWithImpl(this._self, this._then);
+
+  final RazorpayWebhookListResponse _self;
+  final $Res Function(RazorpayWebhookListResponse) _then;
 
   /// Create a copy of RazorpayWebhookListResponse
   /// with the given fields replaced by the non-null parameter values.
@@ -1198,17 +1088,17 @@ class __$$RazorpayWebhookListResponseImplCopyWithImpl<$Res>
     Object? items = null,
     Object? count = freezed,
   }) {
-    return _then(_$RazorpayWebhookListResponseImpl(
+    return _then(_self.copyWith(
       entity: null == entity
-          ? _value.entity
+          ? _self.entity
           : entity // ignore: cast_nullable_to_non_nullable
               as String,
       items: null == items
-          ? _value._items
+          ? _self.items
           : items // ignore: cast_nullable_to_non_nullable
               as List<RazorpayWebhook>,
       count: freezed == count
-          ? _value.count
+          ? _self.count
           : count // ignore: cast_nullable_to_non_nullable
               as int?,
     ));
@@ -1218,17 +1108,14 @@ class __$$RazorpayWebhookListResponseImplCopyWithImpl<$Res>
 /// @nodoc
 
 @JsonSerializable(includeIfNull: false)
-class _$RazorpayWebhookListResponseImpl
-    implements _RazorpayWebhookListResponse {
-  const _$RazorpayWebhookListResponseImpl(
+class _RazorpayWebhookListResponse implements RazorpayWebhookListResponse {
+  const _RazorpayWebhookListResponse(
       {required this.entity,
       required final List<RazorpayWebhook> items,
       this.count})
       : _items = items;
-
-  factory _$RazorpayWebhookListResponseImpl.fromJson(
-          Map<String, dynamic> json) =>
-      _$$RazorpayWebhookListResponseImplFromJson(json);
+  factory _RazorpayWebhookListResponse.fromJson(Map<String, dynamic> json) =>
+      _$RazorpayWebhookListResponseFromJson(json);
 
   @override
   final String entity;
@@ -1244,16 +1131,27 @@ class _$RazorpayWebhookListResponseImpl
   @override
   final int? count;
 
+  /// Create a copy of RazorpayWebhookListResponse
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'RazorpayWebhookListResponse(entity: $entity, items: $items, count: $count)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$RazorpayWebhookListResponseCopyWith<_RazorpayWebhookListResponse>
+      get copyWith => __$RazorpayWebhookListResponseCopyWithImpl<
+          _RazorpayWebhookListResponse>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$RazorpayWebhookListResponseToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$RazorpayWebhookListResponseImpl &&
+            other is _RazorpayWebhookListResponse &&
             (identical(other.entity, entity) || other.entity == entity) &&
             const DeepCollectionEquality().equals(other._items, _items) &&
             (identical(other.count, count) || other.count == count));
@@ -1264,126 +1162,68 @@ class _$RazorpayWebhookListResponseImpl
   int get hashCode => Object.hash(
       runtimeType, entity, const DeepCollectionEquality().hash(_items), count);
 
-  /// Create a copy of RazorpayWebhookListResponse
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$RazorpayWebhookListResponseImplCopyWith<_$RazorpayWebhookListResponseImpl>
-      get copyWith => __$$RazorpayWebhookListResponseImplCopyWithImpl<
-          _$RazorpayWebhookListResponseImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$RazorpayWebhookListResponseImplToJson(
-      this,
-    );
+  String toString() {
+    return 'RazorpayWebhookListResponse(entity: $entity, items: $items, count: $count)';
   }
 }
 
-abstract class _RazorpayWebhookListResponse
-    implements RazorpayWebhookListResponse {
-  const factory _RazorpayWebhookListResponse(
-      {required final String entity,
-      required final List<RazorpayWebhook> items,
-      final int? count}) = _$RazorpayWebhookListResponseImpl;
+/// @nodoc
+abstract mixin class _$RazorpayWebhookListResponseCopyWith<$Res>
+    implements $RazorpayWebhookListResponseCopyWith<$Res> {
+  factory _$RazorpayWebhookListResponseCopyWith(
+          _RazorpayWebhookListResponse value,
+          $Res Function(_RazorpayWebhookListResponse) _then) =
+      __$RazorpayWebhookListResponseCopyWithImpl;
+  @override
+  @useResult
+  $Res call({String entity, List<RazorpayWebhook> items, int? count});
+}
 
-  factory _RazorpayWebhookListResponse.fromJson(Map<String, dynamic> json) =
-      _$RazorpayWebhookListResponseImpl.fromJson;
+/// @nodoc
+class __$RazorpayWebhookListResponseCopyWithImpl<$Res>
+    implements _$RazorpayWebhookListResponseCopyWith<$Res> {
+  __$RazorpayWebhookListResponseCopyWithImpl(this._self, this._then);
 
-  @override
-  String get entity;
-  @override
-  List<RazorpayWebhook> get items; // Usually 'collection'
-  @override
-  int? get count;
+  final _RazorpayWebhookListResponse _self;
+  final $Res Function(_RazorpayWebhookListResponse) _then;
 
   /// Create a copy of RazorpayWebhookListResponse
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$RazorpayWebhookListResponseImplCopyWith<_$RazorpayWebhookListResponseImpl>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-RazorpayWebhookDeleteResponse _$RazorpayWebhookDeleteResponseFromJson(
-    Map<String, dynamic> json) {
-  return _RazorpayWebhookDeleteResponse.fromJson(json);
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? entity = null,
+    Object? items = null,
+    Object? count = freezed,
+  }) {
+    return _then(_RazorpayWebhookListResponse(
+      entity: null == entity
+          ? _self.entity
+          : entity // ignore: cast_nullable_to_non_nullable
+              as String,
+      items: null == items
+          ? _self._items
+          : items // ignore: cast_nullable_to_non_nullable
+              as List<RazorpayWebhook>,
+      count: freezed == count
+          ? _self.count
+          : count // ignore: cast_nullable_to_non_nullable
+              as int?,
+    ));
+  }
 }
 
 /// @nodoc
 mixin _$RazorpayWebhookDeleteResponse {
   /// Serializes this RazorpayWebhookDeleteResponse to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $RazorpayWebhookDeleteResponseCopyWith<$Res> {
-  factory $RazorpayWebhookDeleteResponseCopyWith(
-          RazorpayWebhookDeleteResponse value,
-          $Res Function(RazorpayWebhookDeleteResponse) then) =
-      _$RazorpayWebhookDeleteResponseCopyWithImpl<$Res,
-          RazorpayWebhookDeleteResponse>;
-}
-
-/// @nodoc
-class _$RazorpayWebhookDeleteResponseCopyWithImpl<$Res,
-        $Val extends RazorpayWebhookDeleteResponse>
-    implements $RazorpayWebhookDeleteResponseCopyWith<$Res> {
-  _$RazorpayWebhookDeleteResponseCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of RazorpayWebhookDeleteResponse
-  /// with the given fields replaced by the non-null parameter values.
-}
-
-/// @nodoc
-abstract class _$$RazorpayWebhookDeleteResponseImplCopyWith<$Res> {
-  factory _$$RazorpayWebhookDeleteResponseImplCopyWith(
-          _$RazorpayWebhookDeleteResponseImpl value,
-          $Res Function(_$RazorpayWebhookDeleteResponseImpl) then) =
-      __$$RazorpayWebhookDeleteResponseImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$RazorpayWebhookDeleteResponseImplCopyWithImpl<$Res>
-    extends _$RazorpayWebhookDeleteResponseCopyWithImpl<$Res,
-        _$RazorpayWebhookDeleteResponseImpl>
-    implements _$$RazorpayWebhookDeleteResponseImplCopyWith<$Res> {
-  __$$RazorpayWebhookDeleteResponseImplCopyWithImpl(
-      _$RazorpayWebhookDeleteResponseImpl _value,
-      $Res Function(_$RazorpayWebhookDeleteResponseImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of RazorpayWebhookDeleteResponse
-  /// with the given fields replaced by the non-null parameter values.
-}
-
-/// @nodoc
-
-@JsonSerializable(includeIfNull: false)
-class _$RazorpayWebhookDeleteResponseImpl
-    implements _RazorpayWebhookDeleteResponse {
-  const _$RazorpayWebhookDeleteResponseImpl();
-
-  factory _$RazorpayWebhookDeleteResponseImpl.fromJson(
-          Map<String, dynamic> json) =>
-      _$$RazorpayWebhookDeleteResponseImplFromJson(json);
-
-  @override
-  String toString() {
-    return 'RazorpayWebhookDeleteResponse()';
-  }
+  Map<String, dynamic> toJson();
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$RazorpayWebhookDeleteResponseImpl);
+            other is RazorpayWebhookDeleteResponse);
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -1391,18 +1231,47 @@ class _$RazorpayWebhookDeleteResponseImpl
   int get hashCode => runtimeType.hashCode;
 
   @override
-  Map<String, dynamic> toJson() {
-    return _$$RazorpayWebhookDeleteResponseImplToJson(
-      this,
-    );
+  String toString() {
+    return 'RazorpayWebhookDeleteResponse()';
   }
 }
 
-abstract class _RazorpayWebhookDeleteResponse
-    implements RazorpayWebhookDeleteResponse {
-  const factory _RazorpayWebhookDeleteResponse() =
-      _$RazorpayWebhookDeleteResponseImpl;
-
-  factory _RazorpayWebhookDeleteResponse.fromJson(Map<String, dynamic> json) =
-      _$RazorpayWebhookDeleteResponseImpl.fromJson;
+/// @nodoc
+class $RazorpayWebhookDeleteResponseCopyWith<$Res> {
+  $RazorpayWebhookDeleteResponseCopyWith(RazorpayWebhookDeleteResponse _,
+      $Res Function(RazorpayWebhookDeleteResponse) __);
 }
+
+/// @nodoc
+
+@JsonSerializable(includeIfNull: false)
+class _RazorpayWebhookDeleteResponse implements RazorpayWebhookDeleteResponse {
+  const _RazorpayWebhookDeleteResponse();
+  factory _RazorpayWebhookDeleteResponse.fromJson(Map<String, dynamic> json) =>
+      _$RazorpayWebhookDeleteResponseFromJson(json);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$RazorpayWebhookDeleteResponseToJson(
+      this,
+    );
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _RazorpayWebhookDeleteResponse);
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  String toString() {
+    return 'RazorpayWebhookDeleteResponse()';
+  }
+}
+
+// dart format on

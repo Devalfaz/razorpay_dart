@@ -6,75 +6,69 @@ part of 'webhooks_model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$RazorpayWebhookBaseRequestBodyImpl
-    _$$RazorpayWebhookBaseRequestBodyImplFromJson(Map<String, dynamic> json) =>
-        _$RazorpayWebhookBaseRequestBodyImpl(
-          url: json['url'] as String,
-          events: (json['events'] as List<dynamic>)
-              .map((e) => e as String)
-              .toList(),
-          secret: json['secret'] as String?,
-          active: json['active'] as String?,
-        );
-
-Map<String, dynamic> _$$RazorpayWebhookBaseRequestBodyImplToJson(
-        _$RazorpayWebhookBaseRequestBodyImpl instance) =>
-    <String, dynamic>{
-      'url': instance.url,
-      'events': instance.events,
-      if (instance.secret case final value?) 'secret': value,
-      if (instance.active case final value?) 'active': value,
-    };
-
-_$RazorpayWebhookCreateRequestBodyImpl
-    _$$RazorpayWebhookCreateRequestBodyImplFromJson(
-            Map<String, dynamic> json) =>
-        _$RazorpayWebhookCreateRequestBodyImpl(
-          url: json['url'] as String,
-          events: (json['events'] as List<dynamic>)
-              .map((e) => e as String)
-              .toList(),
-          alert_email: json['alert_email'] as String?,
-          secret: json['secret'] as String?,
-          active: json['active'] as String?,
-        );
-
-Map<String, dynamic> _$$RazorpayWebhookCreateRequestBodyImplToJson(
-        _$RazorpayWebhookCreateRequestBodyImpl instance) =>
-    <String, dynamic>{
-      'url': instance.url,
-      'events': instance.events,
-      if (instance.alert_email case final value?) 'alert_email': value,
-      if (instance.secret case final value?) 'secret': value,
-      if (instance.active case final value?) 'active': value,
-    };
-
-_$RazorpayWebhookUpdateRequestBodyImpl
-    _$$RazorpayWebhookUpdateRequestBodyImplFromJson(
-            Map<String, dynamic> json) =>
-        _$RazorpayWebhookUpdateRequestBodyImpl(
-          url: json['url'] as String,
-          events: (json['events'] as List<dynamic>)
-              .map((e) => e as String)
-              .toList(),
-          alert_email: json['alert_email'] as String?,
-          secret: json['secret'] as String?,
-          active: json['active'] as String?,
-        );
-
-Map<String, dynamic> _$$RazorpayWebhookUpdateRequestBodyImplToJson(
-        _$RazorpayWebhookUpdateRequestBodyImpl instance) =>
-    <String, dynamic>{
-      'url': instance.url,
-      'events': instance.events,
-      if (instance.alert_email case final value?) 'alert_email': value,
-      if (instance.secret case final value?) 'secret': value,
-      if (instance.active case final value?) 'active': value,
-    };
-
-_$RazorpayWebhookImpl _$$RazorpayWebhookImplFromJson(
+_RazorpayWebhookBaseRequestBody _$RazorpayWebhookBaseRequestBodyFromJson(
         Map<String, dynamic> json) =>
-    _$RazorpayWebhookImpl(
+    _RazorpayWebhookBaseRequestBody(
+      url: json['url'] as String,
+      events:
+          (json['events'] as List<dynamic>).map((e) => e as String).toList(),
+      secret: json['secret'] as String?,
+      active: json['active'] as String?,
+    );
+
+Map<String, dynamic> _$RazorpayWebhookBaseRequestBodyToJson(
+        _RazorpayWebhookBaseRequestBody instance) =>
+    <String, dynamic>{
+      'url': instance.url,
+      'events': instance.events,
+      if (instance.secret case final value?) 'secret': value,
+      if (instance.active case final value?) 'active': value,
+    };
+
+_RazorpayWebhookCreateRequestBody _$RazorpayWebhookCreateRequestBodyFromJson(
+        Map<String, dynamic> json) =>
+    _RazorpayWebhookCreateRequestBody(
+      url: json['url'] as String,
+      events:
+          (json['events'] as List<dynamic>).map((e) => e as String).toList(),
+      alert_email: json['alert_email'] as String?,
+      secret: json['secret'] as String?,
+      active: json['active'] as String?,
+    );
+
+Map<String, dynamic> _$RazorpayWebhookCreateRequestBodyToJson(
+        _RazorpayWebhookCreateRequestBody instance) =>
+    <String, dynamic>{
+      'url': instance.url,
+      'events': instance.events,
+      if (instance.alert_email case final value?) 'alert_email': value,
+      if (instance.secret case final value?) 'secret': value,
+      if (instance.active case final value?) 'active': value,
+    };
+
+_RazorpayWebhookUpdateRequestBody _$RazorpayWebhookUpdateRequestBodyFromJson(
+        Map<String, dynamic> json) =>
+    _RazorpayWebhookUpdateRequestBody(
+      url: json['url'] as String,
+      events:
+          (json['events'] as List<dynamic>).map((e) => e as String).toList(),
+      alert_email: json['alert_email'] as String?,
+      secret: json['secret'] as String?,
+      active: json['active'] as String?,
+    );
+
+Map<String, dynamic> _$RazorpayWebhookUpdateRequestBodyToJson(
+        _RazorpayWebhookUpdateRequestBody instance) =>
+    <String, dynamic>{
+      'url': instance.url,
+      'events': instance.events,
+      if (instance.alert_email case final value?) 'alert_email': value,
+      if (instance.secret case final value?) 'secret': value,
+      if (instance.active case final value?) 'active': value,
+    };
+
+_RazorpayWebhook _$RazorpayWebhookFromJson(Map<String, dynamic> json) =>
+    _RazorpayWebhook(
       id: json['id'] as String,
       entity: json['entity'] as String,
       url: json['url'] as String,
@@ -88,8 +82,7 @@ _$RazorpayWebhookImpl _$$RazorpayWebhookImplFromJson(
       updated_at: (json['updated_at'] as num?)?.toInt(),
     );
 
-Map<String, dynamic> _$$RazorpayWebhookImplToJson(
-        _$RazorpayWebhookImpl instance) =>
+Map<String, dynamic> _$RazorpayWebhookToJson(_RazorpayWebhook instance) =>
     <String, dynamic>{
       'id': instance.id,
       'entity': instance.entity,
@@ -101,9 +94,9 @@ Map<String, dynamic> _$$RazorpayWebhookImplToJson(
       if (instance.updated_at case final value?) 'updated_at': value,
     };
 
-_$RazorpayWebhookListResponseImpl _$$RazorpayWebhookListResponseImplFromJson(
+_RazorpayWebhookListResponse _$RazorpayWebhookListResponseFromJson(
         Map<String, dynamic> json) =>
-    _$RazorpayWebhookListResponseImpl(
+    _RazorpayWebhookListResponse(
       entity: json['entity'] as String,
       items: (json['items'] as List<dynamic>)
           .map((e) => RazorpayWebhook.fromJson(e as Map<String, dynamic>))
@@ -111,18 +104,18 @@ _$RazorpayWebhookListResponseImpl _$$RazorpayWebhookListResponseImplFromJson(
       count: (json['count'] as num?)?.toInt(),
     );
 
-Map<String, dynamic> _$$RazorpayWebhookListResponseImplToJson(
-        _$RazorpayWebhookListResponseImpl instance) =>
+Map<String, dynamic> _$RazorpayWebhookListResponseToJson(
+        _RazorpayWebhookListResponse instance) =>
     <String, dynamic>{
       'entity': instance.entity,
       'items': instance.items,
       if (instance.count case final value?) 'count': value,
     };
 
-_$RazorpayWebhookDeleteResponseImpl
-    _$$RazorpayWebhookDeleteResponseImplFromJson(Map<String, dynamic> json) =>
-        _$RazorpayWebhookDeleteResponseImpl();
+_RazorpayWebhookDeleteResponse _$RazorpayWebhookDeleteResponseFromJson(
+        Map<String, dynamic> json) =>
+    _RazorpayWebhookDeleteResponse();
 
-Map<String, dynamic> _$$RazorpayWebhookDeleteResponseImplToJson(
-        _$RazorpayWebhookDeleteResponseImpl instance) =>
+Map<String, dynamic> _$RazorpayWebhookDeleteResponseToJson(
+        _RazorpayWebhookDeleteResponse instance) =>
     <String, dynamic>{};

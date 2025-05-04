@@ -1,5 +1,4 @@
 // lib/resources/items.dart
-import 'package:dio/dio.dart';
 import 'package:razorpay_dart/api.dart';
 import 'package:razorpay_dart/models/api_model.dart';
 import 'package:razorpay_dart/models/items_model.dart';
@@ -12,12 +11,8 @@ class Items {
   /// Get all Items
   ///
   /// @param params - Check [doc](https://razorpay.com/docs/api/payments/items#fetch-multiple-items) for required params
-  Future<Response<RazorpayApiResponse<RazorpayItem>>> all({
+  Future<RazorpayApiResponse<RazorpayItem>> all({
     RazorpayItemQuery? params,
-    void Function(
-      RazorpayApiException?,
-      Response<RazorpayApiResponse<RazorpayItem>>?,
-    )? callback,
   }) async {
     var from = params?.from;
     var to = params?.to;
@@ -38,27 +33,24 @@ class Items {
       'skip': skip,
       ...?params?.toJson(),
     };
-    queryParams.removeWhere((key, value) => value == null);
 
     return api.get<RazorpayApiResponse<RazorpayItem>>(
       {
         'url': '/items',
         'data': queryParams,
       },
-      callback: callback,
       fromJsonFactory: (json) => RazorpayApiResponse<RazorpayItem>.fromJson(
         json,
         (itemJson) => RazorpayItem.fromJson(itemJson! as Map<String, dynamic>),
       ),
-    );
+    ).then((value) => value.data!);
   }
 
   /// Fetch an item given Item ID
   ///
   /// @param itemId - The unique identifier of the item.
-  Future<Response<RazorpayItem>> fetch({
+  Future<RazorpayItem> fetch({
     required String itemId,
-    void Function(RazorpayApiException?, Response<RazorpayItem>?)? callback,
   }) async {
     if (itemId.isEmpty) {
       throw ArgumentError('`item_id` is mandatory');
@@ -66,16 +58,14 @@ class Items {
     return api.get<RazorpayItem>(
       {'url': '/items/$itemId'},
       fromJsonFactory: RazorpayItem.fromJson,
-      callback: callback,
-    );
+    ).then((value) => value.data!);
   }
 
   /// Create an Item
   ///
   /// @param params - Check [doc](https://razorpay.com/docs/api/payments/items#create-an-item) for required params
-  Future<Response<RazorpayItem>> create({
+  Future<RazorpayItem> create({
     required RazorpayItemCreateRequestBody params,
-    void Function(RazorpayApiException?, Response<RazorpayItem>?)? callback,
   }) async {
     // Input validation (amount is required in the model)
     // JS check: if (!params.amount) throw Error('`amount` is mandatory')
@@ -93,18 +83,16 @@ class Items {
         'data': data,
       },
       fromJsonFactory: RazorpayItem.fromJson,
-      callback: callback,
-    );
+    ).then((value) => value.data!);
   }
 
   /// Edit an item given Item ID
   ///
   /// @param itemId - The unique identifier of the item.
   /// @param params - Check [doc](https://razorpay.com/docs/api/payments/items#update-an-item) for required params
-  Future<Response<RazorpayItem>> edit({
+  Future<RazorpayItem> edit({
     required String itemId,
     required RazorpayItemUpdateRequestBody params,
-    void Function(RazorpayApiException?, Response<RazorpayItem>?)? callback,
   }) async {
     if (itemId.isEmpty) {
       throw ArgumentError('`item_id` is mandatory');
@@ -115,18 +103,15 @@ class Items {
         'data': params.toJson(),
       },
       fromJsonFactory: RazorpayItem.fromJson,
-      callback: callback,
-    );
+    ).then((value) => value.data!);
   }
 
   /// Delete an item given Item ID
   ///
   /// @param itemId - The unique identifier of the item.
-  Future<Response<RazorpayItemDeleteResponse>> delete({
+  Future<RazorpayItemDeleteResponse> delete({
     // Use specific empty model
     required String itemId,
-    void Function(RazorpayApiException?, Response<RazorpayItemDeleteResponse>?)?
-        callback,
   }) async {
     if (itemId.isEmpty) {
       throw ArgumentError('`item_id` is mandatory');
@@ -134,7 +119,6 @@ class Items {
     return api.delete<RazorpayItemDeleteResponse>(
       {'url': '/items/$itemId'},
       fromJsonFactory: RazorpayItemDeleteResponse.fromJson,
-      callback: callback,
-    );
+    ).then((value) => value.data!);
   }
 }

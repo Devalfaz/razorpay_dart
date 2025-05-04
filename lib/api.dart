@@ -381,11 +381,23 @@ class API {
         // Handle non-empty map response
         resultData = fromJsonFactory(data);
       } else if (data is List) {
-        // The factory expects a Map, but received a List.
-        throw FormatException(
-          'Unexpected List response format for DELETE request to ${getEntityUrl(params)}. Expected Map<String, dynamic> for FromJsonFactory<$T>. Status: ${rawResponse.statusCode}',
-          data,
-        );
+        if (data.isEmpty) {
+          // Handle empty list response: treat it like an empty map for the factory.
+          try {
+            resultData = fromJsonFactory({});
+          } catch (e, s) {
+            throw FormatException(
+              'Failed to construct type $T from empty list response body. Check fromJson for $T. Status: ${rawResponse.statusCode}. Error: $e\n$s',
+              data,
+            );
+          }
+        } else {
+          // The factory expects a Map, but received a non-empty List.
+          throw FormatException(
+            'Unexpected non-empty List response format for DELETE request to ${getEntityUrl(params)}. Expected Map<String, dynamic> for FromJsonFactory<$T>. Status: ${rawResponse.statusCode}',
+            data,
+          );
+        }
       } else {
         // Handle other unexpected response data formats
         throw FormatException(

@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,157 +10,32 @@ part of 'payment_link_model.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-RazorpayPaymentLinkCustomer _$RazorpayPaymentLinkCustomerFromJson(
-    Map<String, dynamic> json) {
-  return _RazorpayPaymentLinkCustomer.fromJson(json);
-}
 
 /// @nodoc
 mixin _$RazorpayPaymentLinkCustomer {
-  String? get name => throw _privateConstructorUsedError;
-  String? get email => throw _privateConstructorUsedError;
-  dynamic get contact => throw _privateConstructorUsedError;
-
-  /// Serializes this RazorpayPaymentLinkCustomer to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  String? get name;
+  String? get email;
+  dynamic get contact;
 
   /// Create a copy of RazorpayPaymentLinkCustomer
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
   $RazorpayPaymentLinkCustomerCopyWith<RazorpayPaymentLinkCustomer>
-      get copyWith => throw _privateConstructorUsedError;
-}
+      get copyWith => _$RazorpayPaymentLinkCustomerCopyWithImpl<
+              RazorpayPaymentLinkCustomer>(
+          this as RazorpayPaymentLinkCustomer, _$identity);
 
-/// @nodoc
-abstract class $RazorpayPaymentLinkCustomerCopyWith<$Res> {
-  factory $RazorpayPaymentLinkCustomerCopyWith(
-          RazorpayPaymentLinkCustomer value,
-          $Res Function(RazorpayPaymentLinkCustomer) then) =
-      _$RazorpayPaymentLinkCustomerCopyWithImpl<$Res,
-          RazorpayPaymentLinkCustomer>;
-  @useResult
-  $Res call({String? name, String? email, dynamic contact});
-}
-
-/// @nodoc
-class _$RazorpayPaymentLinkCustomerCopyWithImpl<$Res,
-        $Val extends RazorpayPaymentLinkCustomer>
-    implements $RazorpayPaymentLinkCustomerCopyWith<$Res> {
-  _$RazorpayPaymentLinkCustomerCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of RazorpayPaymentLinkCustomer
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? name = freezed,
-    Object? email = freezed,
-    Object? contact = freezed,
-  }) {
-    return _then(_value.copyWith(
-      name: freezed == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String?,
-      email: freezed == email
-          ? _value.email
-          : email // ignore: cast_nullable_to_non_nullable
-              as String?,
-      contact: freezed == contact
-          ? _value.contact
-          : contact // ignore: cast_nullable_to_non_nullable
-              as dynamic,
-    ) as $Val);
-  }
-}
-
-/// @nodoc
-abstract class _$$RazorpayPaymentLinkCustomerImplCopyWith<$Res>
-    implements $RazorpayPaymentLinkCustomerCopyWith<$Res> {
-  factory _$$RazorpayPaymentLinkCustomerImplCopyWith(
-          _$RazorpayPaymentLinkCustomerImpl value,
-          $Res Function(_$RazorpayPaymentLinkCustomerImpl) then) =
-      __$$RazorpayPaymentLinkCustomerImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({String? name, String? email, dynamic contact});
-}
-
-/// @nodoc
-class __$$RazorpayPaymentLinkCustomerImplCopyWithImpl<$Res>
-    extends _$RazorpayPaymentLinkCustomerCopyWithImpl<$Res,
-        _$RazorpayPaymentLinkCustomerImpl>
-    implements _$$RazorpayPaymentLinkCustomerImplCopyWith<$Res> {
-  __$$RazorpayPaymentLinkCustomerImplCopyWithImpl(
-      _$RazorpayPaymentLinkCustomerImpl _value,
-      $Res Function(_$RazorpayPaymentLinkCustomerImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of RazorpayPaymentLinkCustomer
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? name = freezed,
-    Object? email = freezed,
-    Object? contact = freezed,
-  }) {
-    return _then(_$RazorpayPaymentLinkCustomerImpl(
-      name: freezed == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String?,
-      email: freezed == email
-          ? _value.email
-          : email // ignore: cast_nullable_to_non_nullable
-              as String?,
-      contact: freezed == contact
-          ? _value.contact
-          : contact // ignore: cast_nullable_to_non_nullable
-              as dynamic,
-    ));
-  }
-}
-
-/// @nodoc
-
-@JsonSerializable(includeIfNull: false)
-class _$RazorpayPaymentLinkCustomerImpl
-    implements _RazorpayPaymentLinkCustomer {
-  const _$RazorpayPaymentLinkCustomerImpl(
-      {this.name, this.email, this.contact});
-
-  factory _$RazorpayPaymentLinkCustomerImpl.fromJson(
-          Map<String, dynamic> json) =>
-      _$$RazorpayPaymentLinkCustomerImplFromJson(json);
-
-  @override
-  final String? name;
-  @override
-  final String? email;
-  @override
-  final dynamic contact;
-
-  @override
-  String toString() {
-    return 'RazorpayPaymentLinkCustomer(name: $name, email: $email, contact: $contact)';
-  }
+  /// Serializes this RazorpayPaymentLinkCustomer to a JSON map.
+  Map<String, dynamic> toJson();
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$RazorpayPaymentLinkCustomerImpl &&
+            other is RazorpayPaymentLinkCustomer &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.email, email) || other.email == email) &&
             const DeepCollectionEquality().equals(other.contact, contact));
@@ -170,159 +46,52 @@ class _$RazorpayPaymentLinkCustomerImpl
   int get hashCode => Object.hash(
       runtimeType, name, email, const DeepCollectionEquality().hash(contact));
 
-  /// Create a copy of RazorpayPaymentLinkCustomer
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$RazorpayPaymentLinkCustomerImplCopyWith<_$RazorpayPaymentLinkCustomerImpl>
-      get copyWith => __$$RazorpayPaymentLinkCustomerImplCopyWithImpl<
-          _$RazorpayPaymentLinkCustomerImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$RazorpayPaymentLinkCustomerImplToJson(
-      this,
-    );
-  }
-}
-
-abstract class _RazorpayPaymentLinkCustomer
-    implements RazorpayPaymentLinkCustomer {
-  const factory _RazorpayPaymentLinkCustomer(
-      {final String? name,
-      final String? email,
-      final dynamic contact}) = _$RazorpayPaymentLinkCustomerImpl;
-
-  factory _RazorpayPaymentLinkCustomer.fromJson(Map<String, dynamic> json) =
-      _$RazorpayPaymentLinkCustomerImpl.fromJson;
-
-  @override
-  String? get name;
-  @override
-  String? get email;
-  @override
-  dynamic get contact;
-
-  /// Create a copy of RazorpayPaymentLinkCustomer
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$RazorpayPaymentLinkCustomerImplCopyWith<_$RazorpayPaymentLinkCustomerImpl>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-RazorpayPaymentLinkNotify _$RazorpayPaymentLinkNotifyFromJson(
-    Map<String, dynamic> json) {
-  return _RazorpayPaymentLinkNotify.fromJson(json);
-}
-
-/// @nodoc
-mixin _$RazorpayPaymentLinkNotify {
-  bool? get email => throw _privateConstructorUsedError;
-  bool? get sms => throw _privateConstructorUsedError;
-  bool? get whatsapp => throw _privateConstructorUsedError;
-
-  /// Serializes this RazorpayPaymentLinkNotify to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of RazorpayPaymentLinkNotify
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  $RazorpayPaymentLinkNotifyCopyWith<RazorpayPaymentLinkNotify> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $RazorpayPaymentLinkNotifyCopyWith<$Res> {
-  factory $RazorpayPaymentLinkNotifyCopyWith(RazorpayPaymentLinkNotify value,
-          $Res Function(RazorpayPaymentLinkNotify) then) =
-      _$RazorpayPaymentLinkNotifyCopyWithImpl<$Res, RazorpayPaymentLinkNotify>;
-  @useResult
-  $Res call({bool? email, bool? sms, bool? whatsapp});
-}
-
-/// @nodoc
-class _$RazorpayPaymentLinkNotifyCopyWithImpl<$Res,
-        $Val extends RazorpayPaymentLinkNotify>
-    implements $RazorpayPaymentLinkNotifyCopyWith<$Res> {
-  _$RazorpayPaymentLinkNotifyCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of RazorpayPaymentLinkNotify
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? email = freezed,
-    Object? sms = freezed,
-    Object? whatsapp = freezed,
-  }) {
-    return _then(_value.copyWith(
-      email: freezed == email
-          ? _value.email
-          : email // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      sms: freezed == sms
-          ? _value.sms
-          : sms // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      whatsapp: freezed == whatsapp
-          ? _value.whatsapp
-          : whatsapp // ignore: cast_nullable_to_non_nullable
-              as bool?,
-    ) as $Val);
+  String toString() {
+    return 'RazorpayPaymentLinkCustomer(name: $name, email: $email, contact: $contact)';
   }
 }
 
 /// @nodoc
-abstract class _$$RazorpayPaymentLinkNotifyImplCopyWith<$Res>
-    implements $RazorpayPaymentLinkNotifyCopyWith<$Res> {
-  factory _$$RazorpayPaymentLinkNotifyImplCopyWith(
-          _$RazorpayPaymentLinkNotifyImpl value,
-          $Res Function(_$RazorpayPaymentLinkNotifyImpl) then) =
-      __$$RazorpayPaymentLinkNotifyImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $RazorpayPaymentLinkCustomerCopyWith<$Res> {
+  factory $RazorpayPaymentLinkCustomerCopyWith(
+          RazorpayPaymentLinkCustomer value,
+          $Res Function(RazorpayPaymentLinkCustomer) _then) =
+      _$RazorpayPaymentLinkCustomerCopyWithImpl;
   @useResult
-  $Res call({bool? email, bool? sms, bool? whatsapp});
+  $Res call({String? name, String? email, dynamic contact});
 }
 
 /// @nodoc
-class __$$RazorpayPaymentLinkNotifyImplCopyWithImpl<$Res>
-    extends _$RazorpayPaymentLinkNotifyCopyWithImpl<$Res,
-        _$RazorpayPaymentLinkNotifyImpl>
-    implements _$$RazorpayPaymentLinkNotifyImplCopyWith<$Res> {
-  __$$RazorpayPaymentLinkNotifyImplCopyWithImpl(
-      _$RazorpayPaymentLinkNotifyImpl _value,
-      $Res Function(_$RazorpayPaymentLinkNotifyImpl) _then)
-      : super(_value, _then);
+class _$RazorpayPaymentLinkCustomerCopyWithImpl<$Res>
+    implements $RazorpayPaymentLinkCustomerCopyWith<$Res> {
+  _$RazorpayPaymentLinkCustomerCopyWithImpl(this._self, this._then);
 
-  /// Create a copy of RazorpayPaymentLinkNotify
+  final RazorpayPaymentLinkCustomer _self;
+  final $Res Function(RazorpayPaymentLinkCustomer) _then;
+
+  /// Create a copy of RazorpayPaymentLinkCustomer
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? name = freezed,
     Object? email = freezed,
-    Object? sms = freezed,
-    Object? whatsapp = freezed,
+    Object? contact = freezed,
   }) {
-    return _then(_$RazorpayPaymentLinkNotifyImpl(
+    return _then(_self.copyWith(
+      name: freezed == name
+          ? _self.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String?,
       email: freezed == email
-          ? _value.email
+          ? _self.email
           : email // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      sms: freezed == sms
-          ? _value.sms
-          : sms // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      whatsapp: freezed == whatsapp
-          ? _value.whatsapp
-          : whatsapp // ignore: cast_nullable_to_non_nullable
-              as bool?,
+              as String?,
+      contact: freezed == contact
+          ? _self.contact
+          : contact // ignore: cast_nullable_to_non_nullable
+              as dynamic,
     ));
   }
 }
@@ -330,29 +99,123 @@ class __$$RazorpayPaymentLinkNotifyImplCopyWithImpl<$Res>
 /// @nodoc
 
 @JsonSerializable(includeIfNull: false)
-class _$RazorpayPaymentLinkNotifyImpl implements _RazorpayPaymentLinkNotify {
-  const _$RazorpayPaymentLinkNotifyImpl({this.email, this.sms, this.whatsapp});
-
-  factory _$RazorpayPaymentLinkNotifyImpl.fromJson(Map<String, dynamic> json) =>
-      _$$RazorpayPaymentLinkNotifyImplFromJson(json);
-
-  @override
-  final bool? email;
-  @override
-  final bool? sms;
-  @override
-  final bool? whatsapp;
+class _RazorpayPaymentLinkCustomer implements RazorpayPaymentLinkCustomer {
+  const _RazorpayPaymentLinkCustomer({this.name, this.email, this.contact});
+  factory _RazorpayPaymentLinkCustomer.fromJson(Map<String, dynamic> json) =>
+      _$RazorpayPaymentLinkCustomerFromJson(json);
 
   @override
-  String toString() {
-    return 'RazorpayPaymentLinkNotify(email: $email, sms: $sms, whatsapp: $whatsapp)';
+  final String? name;
+  @override
+  final String? email;
+  @override
+  final dynamic contact;
+
+  /// Create a copy of RazorpayPaymentLinkCustomer
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$RazorpayPaymentLinkCustomerCopyWith<_RazorpayPaymentLinkCustomer>
+      get copyWith => __$RazorpayPaymentLinkCustomerCopyWithImpl<
+          _RazorpayPaymentLinkCustomer>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$RazorpayPaymentLinkCustomerToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$RazorpayPaymentLinkNotifyImpl &&
+            other is _RazorpayPaymentLinkCustomer &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.email, email) || other.email == email) &&
+            const DeepCollectionEquality().equals(other.contact, contact));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, name, email, const DeepCollectionEquality().hash(contact));
+
+  @override
+  String toString() {
+    return 'RazorpayPaymentLinkCustomer(name: $name, email: $email, contact: $contact)';
+  }
+}
+
+/// @nodoc
+abstract mixin class _$RazorpayPaymentLinkCustomerCopyWith<$Res>
+    implements $RazorpayPaymentLinkCustomerCopyWith<$Res> {
+  factory _$RazorpayPaymentLinkCustomerCopyWith(
+          _RazorpayPaymentLinkCustomer value,
+          $Res Function(_RazorpayPaymentLinkCustomer) _then) =
+      __$RazorpayPaymentLinkCustomerCopyWithImpl;
+  @override
+  @useResult
+  $Res call({String? name, String? email, dynamic contact});
+}
+
+/// @nodoc
+class __$RazorpayPaymentLinkCustomerCopyWithImpl<$Res>
+    implements _$RazorpayPaymentLinkCustomerCopyWith<$Res> {
+  __$RazorpayPaymentLinkCustomerCopyWithImpl(this._self, this._then);
+
+  final _RazorpayPaymentLinkCustomer _self;
+  final $Res Function(_RazorpayPaymentLinkCustomer) _then;
+
+  /// Create a copy of RazorpayPaymentLinkCustomer
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? name = freezed,
+    Object? email = freezed,
+    Object? contact = freezed,
+  }) {
+    return _then(_RazorpayPaymentLinkCustomer(
+      name: freezed == name
+          ? _self.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String?,
+      email: freezed == email
+          ? _self.email
+          : email // ignore: cast_nullable_to_non_nullable
+              as String?,
+      contact: freezed == contact
+          ? _self.contact
+          : contact // ignore: cast_nullable_to_non_nullable
+              as dynamic,
+    ));
+  }
+}
+
+/// @nodoc
+mixin _$RazorpayPaymentLinkNotify {
+  bool? get email;
+  bool? get sms;
+  bool? get whatsapp;
+
+  /// Create a copy of RazorpayPaymentLinkNotify
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $RazorpayPaymentLinkNotifyCopyWith<RazorpayPaymentLinkNotify> get copyWith =>
+      _$RazorpayPaymentLinkNotifyCopyWithImpl<RazorpayPaymentLinkNotify>(
+          this as RazorpayPaymentLinkNotify, _$identity);
+
+  /// Serializes this RazorpayPaymentLinkNotify to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is RazorpayPaymentLinkNotify &&
             (identical(other.email, email) || other.email == email) &&
             (identical(other.sms, sms) || other.sms == sms) &&
             (identical(other.whatsapp, whatsapp) ||
@@ -363,138 +226,51 @@ class _$RazorpayPaymentLinkNotifyImpl implements _RazorpayPaymentLinkNotify {
   @override
   int get hashCode => Object.hash(runtimeType, email, sms, whatsapp);
 
-  /// Create a copy of RazorpayPaymentLinkNotify
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$RazorpayPaymentLinkNotifyImplCopyWith<_$RazorpayPaymentLinkNotifyImpl>
-      get copyWith => __$$RazorpayPaymentLinkNotifyImplCopyWithImpl<
-          _$RazorpayPaymentLinkNotifyImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$RazorpayPaymentLinkNotifyImplToJson(
-      this,
-    );
-  }
-}
-
-abstract class _RazorpayPaymentLinkNotify implements RazorpayPaymentLinkNotify {
-  const factory _RazorpayPaymentLinkNotify(
-      {final bool? email,
-      final bool? sms,
-      final bool? whatsapp}) = _$RazorpayPaymentLinkNotifyImpl;
-
-  factory _RazorpayPaymentLinkNotify.fromJson(Map<String, dynamic> json) =
-      _$RazorpayPaymentLinkNotifyImpl.fromJson;
-
-  @override
-  bool? get email;
-  @override
-  bool? get sms;
-  @override
-  bool? get whatsapp;
-
-  /// Create a copy of RazorpayPaymentLinkNotify
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$RazorpayPaymentLinkNotifyImplCopyWith<_$RazorpayPaymentLinkNotifyImpl>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-RazorpayPaymentLinkReminder _$RazorpayPaymentLinkReminderFromJson(
-    Map<String, dynamic> json) {
-  return _RazorpayPaymentLinkReminder.fromJson(json);
-}
-
-/// @nodoc
-mixin _$RazorpayPaymentLinkReminder {
-  String get status => throw _privateConstructorUsedError;
-
-  /// Serializes this RazorpayPaymentLinkReminder to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of RazorpayPaymentLinkReminder
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  $RazorpayPaymentLinkReminderCopyWith<RazorpayPaymentLinkReminder>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $RazorpayPaymentLinkReminderCopyWith<$Res> {
-  factory $RazorpayPaymentLinkReminderCopyWith(
-          RazorpayPaymentLinkReminder value,
-          $Res Function(RazorpayPaymentLinkReminder) then) =
-      _$RazorpayPaymentLinkReminderCopyWithImpl<$Res,
-          RazorpayPaymentLinkReminder>;
-  @useResult
-  $Res call({String status});
-}
-
-/// @nodoc
-class _$RazorpayPaymentLinkReminderCopyWithImpl<$Res,
-        $Val extends RazorpayPaymentLinkReminder>
-    implements $RazorpayPaymentLinkReminderCopyWith<$Res> {
-  _$RazorpayPaymentLinkReminderCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of RazorpayPaymentLinkReminder
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? status = null,
-  }) {
-    return _then(_value.copyWith(
-      status: null == status
-          ? _value.status
-          : status // ignore: cast_nullable_to_non_nullable
-              as String,
-    ) as $Val);
+  String toString() {
+    return 'RazorpayPaymentLinkNotify(email: $email, sms: $sms, whatsapp: $whatsapp)';
   }
 }
 
 /// @nodoc
-abstract class _$$RazorpayPaymentLinkReminderImplCopyWith<$Res>
-    implements $RazorpayPaymentLinkReminderCopyWith<$Res> {
-  factory _$$RazorpayPaymentLinkReminderImplCopyWith(
-          _$RazorpayPaymentLinkReminderImpl value,
-          $Res Function(_$RazorpayPaymentLinkReminderImpl) then) =
-      __$$RazorpayPaymentLinkReminderImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $RazorpayPaymentLinkNotifyCopyWith<$Res> {
+  factory $RazorpayPaymentLinkNotifyCopyWith(RazorpayPaymentLinkNotify value,
+          $Res Function(RazorpayPaymentLinkNotify) _then) =
+      _$RazorpayPaymentLinkNotifyCopyWithImpl;
   @useResult
-  $Res call({String status});
+  $Res call({bool? email, bool? sms, bool? whatsapp});
 }
 
 /// @nodoc
-class __$$RazorpayPaymentLinkReminderImplCopyWithImpl<$Res>
-    extends _$RazorpayPaymentLinkReminderCopyWithImpl<$Res,
-        _$RazorpayPaymentLinkReminderImpl>
-    implements _$$RazorpayPaymentLinkReminderImplCopyWith<$Res> {
-  __$$RazorpayPaymentLinkReminderImplCopyWithImpl(
-      _$RazorpayPaymentLinkReminderImpl _value,
-      $Res Function(_$RazorpayPaymentLinkReminderImpl) _then)
-      : super(_value, _then);
+class _$RazorpayPaymentLinkNotifyCopyWithImpl<$Res>
+    implements $RazorpayPaymentLinkNotifyCopyWith<$Res> {
+  _$RazorpayPaymentLinkNotifyCopyWithImpl(this._self, this._then);
 
-  /// Create a copy of RazorpayPaymentLinkReminder
+  final RazorpayPaymentLinkNotify _self;
+  final $Res Function(RazorpayPaymentLinkNotify) _then;
+
+  /// Create a copy of RazorpayPaymentLinkNotify
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? status = null,
+    Object? email = freezed,
+    Object? sms = freezed,
+    Object? whatsapp = freezed,
   }) {
-    return _then(_$RazorpayPaymentLinkReminderImpl(
-      status: null == status
-          ? _value.status
-          : status // ignore: cast_nullable_to_non_nullable
-              as String,
+    return _then(_self.copyWith(
+      email: freezed == email
+          ? _self.email
+          : email // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      sms: freezed == sms
+          ? _self.sms
+          : sms // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      whatsapp: freezed == whatsapp
+          ? _self.whatsapp
+          : whatsapp // ignore: cast_nullable_to_non_nullable
+              as bool?,
     ));
   }
 }
@@ -502,27 +278,122 @@ class __$$RazorpayPaymentLinkReminderImplCopyWithImpl<$Res>
 /// @nodoc
 
 @JsonSerializable(includeIfNull: false)
-class _$RazorpayPaymentLinkReminderImpl
-    implements _RazorpayPaymentLinkReminder {
-  const _$RazorpayPaymentLinkReminderImpl({required this.status});
-
-  factory _$RazorpayPaymentLinkReminderImpl.fromJson(
-          Map<String, dynamic> json) =>
-      _$$RazorpayPaymentLinkReminderImplFromJson(json);
+class _RazorpayPaymentLinkNotify implements RazorpayPaymentLinkNotify {
+  const _RazorpayPaymentLinkNotify({this.email, this.sms, this.whatsapp});
+  factory _RazorpayPaymentLinkNotify.fromJson(Map<String, dynamic> json) =>
+      _$RazorpayPaymentLinkNotifyFromJson(json);
 
   @override
-  final String status;
+  final bool? email;
+  @override
+  final bool? sms;
+  @override
+  final bool? whatsapp;
+
+  /// Create a copy of RazorpayPaymentLinkNotify
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$RazorpayPaymentLinkNotifyCopyWith<_RazorpayPaymentLinkNotify>
+      get copyWith =>
+          __$RazorpayPaymentLinkNotifyCopyWithImpl<_RazorpayPaymentLinkNotify>(
+              this, _$identity);
 
   @override
-  String toString() {
-    return 'RazorpayPaymentLinkReminder(status: $status)';
+  Map<String, dynamic> toJson() {
+    return _$RazorpayPaymentLinkNotifyToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$RazorpayPaymentLinkReminderImpl &&
+            other is _RazorpayPaymentLinkNotify &&
+            (identical(other.email, email) || other.email == email) &&
+            (identical(other.sms, sms) || other.sms == sms) &&
+            (identical(other.whatsapp, whatsapp) ||
+                other.whatsapp == whatsapp));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, email, sms, whatsapp);
+
+  @override
+  String toString() {
+    return 'RazorpayPaymentLinkNotify(email: $email, sms: $sms, whatsapp: $whatsapp)';
+  }
+}
+
+/// @nodoc
+abstract mixin class _$RazorpayPaymentLinkNotifyCopyWith<$Res>
+    implements $RazorpayPaymentLinkNotifyCopyWith<$Res> {
+  factory _$RazorpayPaymentLinkNotifyCopyWith(_RazorpayPaymentLinkNotify value,
+          $Res Function(_RazorpayPaymentLinkNotify) _then) =
+      __$RazorpayPaymentLinkNotifyCopyWithImpl;
+  @override
+  @useResult
+  $Res call({bool? email, bool? sms, bool? whatsapp});
+}
+
+/// @nodoc
+class __$RazorpayPaymentLinkNotifyCopyWithImpl<$Res>
+    implements _$RazorpayPaymentLinkNotifyCopyWith<$Res> {
+  __$RazorpayPaymentLinkNotifyCopyWithImpl(this._self, this._then);
+
+  final _RazorpayPaymentLinkNotify _self;
+  final $Res Function(_RazorpayPaymentLinkNotify) _then;
+
+  /// Create a copy of RazorpayPaymentLinkNotify
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? email = freezed,
+    Object? sms = freezed,
+    Object? whatsapp = freezed,
+  }) {
+    return _then(_RazorpayPaymentLinkNotify(
+      email: freezed == email
+          ? _self.email
+          : email // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      sms: freezed == sms
+          ? _self.sms
+          : sms // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      whatsapp: freezed == whatsapp
+          ? _self.whatsapp
+          : whatsapp // ignore: cast_nullable_to_non_nullable
+              as bool?,
+    ));
+  }
+}
+
+/// @nodoc
+mixin _$RazorpayPaymentLinkReminder {
+  String get status;
+
+  /// Create a copy of RazorpayPaymentLinkReminder
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $RazorpayPaymentLinkReminderCopyWith<RazorpayPaymentLinkReminder>
+      get copyWith => _$RazorpayPaymentLinkReminderCopyWithImpl<
+              RazorpayPaymentLinkReminder>(
+          this as RazorpayPaymentLinkReminder, _$identity);
+
+  /// Serializes this RazorpayPaymentLinkReminder to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is RazorpayPaymentLinkReminder &&
             (identical(other.status, status) || other.status == status));
   }
 
@@ -530,154 +401,184 @@ class _$RazorpayPaymentLinkReminderImpl
   @override
   int get hashCode => Object.hash(runtimeType, status);
 
-  /// Create a copy of RazorpayPaymentLinkReminder
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$RazorpayPaymentLinkReminderImplCopyWith<_$RazorpayPaymentLinkReminderImpl>
-      get copyWith => __$$RazorpayPaymentLinkReminderImplCopyWithImpl<
-          _$RazorpayPaymentLinkReminderImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$RazorpayPaymentLinkReminderImplToJson(
-      this,
-    );
+  String toString() {
+    return 'RazorpayPaymentLinkReminder(status: $status)';
   }
 }
 
-abstract class _RazorpayPaymentLinkReminder
-    implements RazorpayPaymentLinkReminder {
-  const factory _RazorpayPaymentLinkReminder({required final String status}) =
-      _$RazorpayPaymentLinkReminderImpl;
+/// @nodoc
+abstract mixin class $RazorpayPaymentLinkReminderCopyWith<$Res> {
+  factory $RazorpayPaymentLinkReminderCopyWith(
+          RazorpayPaymentLinkReminder value,
+          $Res Function(RazorpayPaymentLinkReminder) _then) =
+      _$RazorpayPaymentLinkReminderCopyWithImpl;
+  @useResult
+  $Res call({String status});
+}
 
-  factory _RazorpayPaymentLinkReminder.fromJson(Map<String, dynamic> json) =
-      _$RazorpayPaymentLinkReminderImpl.fromJson;
+/// @nodoc
+class _$RazorpayPaymentLinkReminderCopyWithImpl<$Res>
+    implements $RazorpayPaymentLinkReminderCopyWith<$Res> {
+  _$RazorpayPaymentLinkReminderCopyWithImpl(this._self, this._then);
+
+  final RazorpayPaymentLinkReminder _self;
+  final $Res Function(RazorpayPaymentLinkReminder) _then;
+
+  /// Create a copy of RazorpayPaymentLinkReminder
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? status = null,
+  }) {
+    return _then(_self.copyWith(
+      status: null == status
+          ? _self.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+@JsonSerializable(includeIfNull: false)
+class _RazorpayPaymentLinkReminder implements RazorpayPaymentLinkReminder {
+  const _RazorpayPaymentLinkReminder({required this.status});
+  factory _RazorpayPaymentLinkReminder.fromJson(Map<String, dynamic> json) =>
+      _$RazorpayPaymentLinkReminderFromJson(json);
 
   @override
-  String get status;
+  final String status;
 
   /// Create a copy of RazorpayPaymentLinkReminder
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$RazorpayPaymentLinkReminderImplCopyWith<_$RazorpayPaymentLinkReminderImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  @pragma('vm:prefer-inline')
+  _$RazorpayPaymentLinkReminderCopyWith<_RazorpayPaymentLinkReminder>
+      get copyWith => __$RazorpayPaymentLinkReminderCopyWithImpl<
+          _RazorpayPaymentLinkReminder>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$RazorpayPaymentLinkReminderToJson(
+      this,
+    );
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _RazorpayPaymentLinkReminder &&
+            (identical(other.status, status) || other.status == status));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, status);
+
+  @override
+  String toString() {
+    return 'RazorpayPaymentLinkReminder(status: $status)';
+  }
 }
 
-RazorpayPaymentLinkPayment _$RazorpayPaymentLinkPaymentFromJson(
-    Map<String, dynamic> json) {
-  return _RazorpayPaymentLinkPayment.fromJson(json);
+/// @nodoc
+abstract mixin class _$RazorpayPaymentLinkReminderCopyWith<$Res>
+    implements $RazorpayPaymentLinkReminderCopyWith<$Res> {
+  factory _$RazorpayPaymentLinkReminderCopyWith(
+          _RazorpayPaymentLinkReminder value,
+          $Res Function(_RazorpayPaymentLinkReminder) _then) =
+      __$RazorpayPaymentLinkReminderCopyWithImpl;
+  @override
+  @useResult
+  $Res call({String status});
+}
+
+/// @nodoc
+class __$RazorpayPaymentLinkReminderCopyWithImpl<$Res>
+    implements _$RazorpayPaymentLinkReminderCopyWith<$Res> {
+  __$RazorpayPaymentLinkReminderCopyWithImpl(this._self, this._then);
+
+  final _RazorpayPaymentLinkReminder _self;
+  final $Res Function(_RazorpayPaymentLinkReminder) _then;
+
+  /// Create a copy of RazorpayPaymentLinkReminder
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? status = null,
+  }) {
+    return _then(_RazorpayPaymentLinkReminder(
+      status: null == status
+          ? _self.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
 }
 
 /// @nodoc
 mixin _$RazorpayPaymentLinkPayment {
-  String get amount =>
-      throw _privateConstructorUsedError; // Assuming string based on d.ts, might be int
-  String get created_at =>
-      throw _privateConstructorUsedError; // Assuming string timestamp, might be int
-  String get method =>
-      throw _privateConstructorUsedError; // 'card' | 'netbanking' | 'wallet' | 'emi' | 'upi' | 'bank_transfer'
-  String get payment_id => throw _privateConstructorUsedError;
-  String get plink_id =>
-      throw _privateConstructorUsedError; // Alias for payment_link_id?
-  String get status =>
-      throw _privateConstructorUsedError; // 'captured' | 'failed'
-  int get updated_at => throw _privateConstructorUsedError;
-
-  /// Serializes this RazorpayPaymentLinkPayment to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  String get amount; // Assuming string based on d.ts, might be int
+  String get created_at; // Assuming string timestamp, might be int
+  String
+      get method; // 'card' | 'netbanking' | 'wallet' | 'emi' | 'upi' | 'bank_transfer'
+  String get payment_id;
+  String get plink_id; // Alias for payment_link_id?
+  String get status; // 'captured' | 'failed'
+  int get updated_at;
 
   /// Create a copy of RazorpayPaymentLinkPayment
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $RazorpayPaymentLinkPaymentCopyWith<RazorpayPaymentLinkPayment>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $RazorpayPaymentLinkPaymentCopyWith<$Res> {
-  factory $RazorpayPaymentLinkPaymentCopyWith(RazorpayPaymentLinkPayment value,
-          $Res Function(RazorpayPaymentLinkPayment) then) =
-      _$RazorpayPaymentLinkPaymentCopyWithImpl<$Res,
-          RazorpayPaymentLinkPayment>;
-  @useResult
-  $Res call(
-      {String amount,
-      String created_at,
-      String method,
-      String payment_id,
-      String plink_id,
-      String status,
-      int updated_at});
-}
-
-/// @nodoc
-class _$RazorpayPaymentLinkPaymentCopyWithImpl<$Res,
-        $Val extends RazorpayPaymentLinkPayment>
-    implements $RazorpayPaymentLinkPaymentCopyWith<$Res> {
-  _$RazorpayPaymentLinkPaymentCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of RazorpayPaymentLinkPayment
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
+  $RazorpayPaymentLinkPaymentCopyWith<RazorpayPaymentLinkPayment>
+      get copyWith =>
+          _$RazorpayPaymentLinkPaymentCopyWithImpl<RazorpayPaymentLinkPayment>(
+              this as RazorpayPaymentLinkPayment, _$identity);
+
+  /// Serializes this RazorpayPaymentLinkPayment to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? amount = null,
-    Object? created_at = null,
-    Object? method = null,
-    Object? payment_id = null,
-    Object? plink_id = null,
-    Object? status = null,
-    Object? updated_at = null,
-  }) {
-    return _then(_value.copyWith(
-      amount: null == amount
-          ? _value.amount
-          : amount // ignore: cast_nullable_to_non_nullable
-              as String,
-      created_at: null == created_at
-          ? _value.created_at
-          : created_at // ignore: cast_nullable_to_non_nullable
-              as String,
-      method: null == method
-          ? _value.method
-          : method // ignore: cast_nullable_to_non_nullable
-              as String,
-      payment_id: null == payment_id
-          ? _value.payment_id
-          : payment_id // ignore: cast_nullable_to_non_nullable
-              as String,
-      plink_id: null == plink_id
-          ? _value.plink_id
-          : plink_id // ignore: cast_nullable_to_non_nullable
-              as String,
-      status: null == status
-          ? _value.status
-          : status // ignore: cast_nullable_to_non_nullable
-              as String,
-      updated_at: null == updated_at
-          ? _value.updated_at
-          : updated_at // ignore: cast_nullable_to_non_nullable
-              as int,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is RazorpayPaymentLinkPayment &&
+            (identical(other.amount, amount) || other.amount == amount) &&
+            (identical(other.created_at, created_at) ||
+                other.created_at == created_at) &&
+            (identical(other.method, method) || other.method == method) &&
+            (identical(other.payment_id, payment_id) ||
+                other.payment_id == payment_id) &&
+            (identical(other.plink_id, plink_id) ||
+                other.plink_id == plink_id) &&
+            (identical(other.status, status) || other.status == status) &&
+            (identical(other.updated_at, updated_at) ||
+                other.updated_at == updated_at));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, amount, created_at, method,
+      payment_id, plink_id, status, updated_at);
+
+  @override
+  String toString() {
+    return 'RazorpayPaymentLinkPayment(amount: $amount, created_at: $created_at, method: $method, payment_id: $payment_id, plink_id: $plink_id, status: $status, updated_at: $updated_at)';
   }
 }
 
 /// @nodoc
-abstract class _$$RazorpayPaymentLinkPaymentImplCopyWith<$Res>
-    implements $RazorpayPaymentLinkPaymentCopyWith<$Res> {
-  factory _$$RazorpayPaymentLinkPaymentImplCopyWith(
-          _$RazorpayPaymentLinkPaymentImpl value,
-          $Res Function(_$RazorpayPaymentLinkPaymentImpl) then) =
-      __$$RazorpayPaymentLinkPaymentImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $RazorpayPaymentLinkPaymentCopyWith<$Res> {
+  factory $RazorpayPaymentLinkPaymentCopyWith(RazorpayPaymentLinkPayment value,
+          $Res Function(RazorpayPaymentLinkPayment) _then) =
+      _$RazorpayPaymentLinkPaymentCopyWithImpl;
   @useResult
   $Res call(
       {String amount,
@@ -690,14 +591,12 @@ abstract class _$$RazorpayPaymentLinkPaymentImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$RazorpayPaymentLinkPaymentImplCopyWithImpl<$Res>
-    extends _$RazorpayPaymentLinkPaymentCopyWithImpl<$Res,
-        _$RazorpayPaymentLinkPaymentImpl>
-    implements _$$RazorpayPaymentLinkPaymentImplCopyWith<$Res> {
-  __$$RazorpayPaymentLinkPaymentImplCopyWithImpl(
-      _$RazorpayPaymentLinkPaymentImpl _value,
-      $Res Function(_$RazorpayPaymentLinkPaymentImpl) _then)
-      : super(_value, _then);
+class _$RazorpayPaymentLinkPaymentCopyWithImpl<$Res>
+    implements $RazorpayPaymentLinkPaymentCopyWith<$Res> {
+  _$RazorpayPaymentLinkPaymentCopyWithImpl(this._self, this._then);
+
+  final RazorpayPaymentLinkPayment _self;
+  final $Res Function(RazorpayPaymentLinkPayment) _then;
 
   /// Create a copy of RazorpayPaymentLinkPayment
   /// with the given fields replaced by the non-null parameter values.
@@ -712,33 +611,33 @@ class __$$RazorpayPaymentLinkPaymentImplCopyWithImpl<$Res>
     Object? status = null,
     Object? updated_at = null,
   }) {
-    return _then(_$RazorpayPaymentLinkPaymentImpl(
+    return _then(_self.copyWith(
       amount: null == amount
-          ? _value.amount
+          ? _self.amount
           : amount // ignore: cast_nullable_to_non_nullable
               as String,
       created_at: null == created_at
-          ? _value.created_at
+          ? _self.created_at
           : created_at // ignore: cast_nullable_to_non_nullable
               as String,
       method: null == method
-          ? _value.method
+          ? _self.method
           : method // ignore: cast_nullable_to_non_nullable
               as String,
       payment_id: null == payment_id
-          ? _value.payment_id
+          ? _self.payment_id
           : payment_id // ignore: cast_nullable_to_non_nullable
               as String,
       plink_id: null == plink_id
-          ? _value.plink_id
+          ? _self.plink_id
           : plink_id // ignore: cast_nullable_to_non_nullable
               as String,
       status: null == status
-          ? _value.status
+          ? _self.status
           : status // ignore: cast_nullable_to_non_nullable
               as String,
       updated_at: null == updated_at
-          ? _value.updated_at
+          ? _self.updated_at
           : updated_at // ignore: cast_nullable_to_non_nullable
               as int,
     ));
@@ -748,8 +647,8 @@ class __$$RazorpayPaymentLinkPaymentImplCopyWithImpl<$Res>
 /// @nodoc
 
 @JsonSerializable(includeIfNull: false)
-class _$RazorpayPaymentLinkPaymentImpl implements _RazorpayPaymentLinkPayment {
-  const _$RazorpayPaymentLinkPaymentImpl(
+class _RazorpayPaymentLinkPayment implements RazorpayPaymentLinkPayment {
+  const _RazorpayPaymentLinkPayment(
       {required this.amount,
       required this.created_at,
       required this.method,
@@ -757,10 +656,8 @@ class _$RazorpayPaymentLinkPaymentImpl implements _RazorpayPaymentLinkPayment {
       required this.plink_id,
       required this.status,
       required this.updated_at});
-
-  factory _$RazorpayPaymentLinkPaymentImpl.fromJson(
-          Map<String, dynamic> json) =>
-      _$$RazorpayPaymentLinkPaymentImplFromJson(json);
+  factory _RazorpayPaymentLinkPayment.fromJson(Map<String, dynamic> json) =>
+      _$RazorpayPaymentLinkPaymentFromJson(json);
 
   @override
   final String amount;
@@ -782,16 +679,27 @@ class _$RazorpayPaymentLinkPaymentImpl implements _RazorpayPaymentLinkPayment {
   @override
   final int updated_at;
 
+  /// Create a copy of RazorpayPaymentLinkPayment
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'RazorpayPaymentLinkPayment(amount: $amount, created_at: $created_at, method: $method, payment_id: $payment_id, plink_id: $plink_id, status: $status, updated_at: $updated_at)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$RazorpayPaymentLinkPaymentCopyWith<_RazorpayPaymentLinkPayment>
+      get copyWith => __$RazorpayPaymentLinkPaymentCopyWithImpl<
+          _RazorpayPaymentLinkPayment>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$RazorpayPaymentLinkPaymentToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$RazorpayPaymentLinkPaymentImpl &&
+            other is _RazorpayPaymentLinkPayment &&
             (identical(other.amount, amount) || other.amount == amount) &&
             (identical(other.created_at, created_at) ||
                 other.created_at == created_at) &&
@@ -810,546 +718,172 @@ class _$RazorpayPaymentLinkPaymentImpl implements _RazorpayPaymentLinkPayment {
   int get hashCode => Object.hash(runtimeType, amount, created_at, method,
       payment_id, plink_id, status, updated_at);
 
-  /// Create a copy of RazorpayPaymentLinkPayment
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$RazorpayPaymentLinkPaymentImplCopyWith<_$RazorpayPaymentLinkPaymentImpl>
-      get copyWith => __$$RazorpayPaymentLinkPaymentImplCopyWithImpl<
-          _$RazorpayPaymentLinkPaymentImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$RazorpayPaymentLinkPaymentImplToJson(
-      this,
-    );
+  String toString() {
+    return 'RazorpayPaymentLinkPayment(amount: $amount, created_at: $created_at, method: $method, payment_id: $payment_id, plink_id: $plink_id, status: $status, updated_at: $updated_at)';
   }
 }
 
-abstract class _RazorpayPaymentLinkPayment
-    implements RazorpayPaymentLinkPayment {
-  const factory _RazorpayPaymentLinkPayment(
-      {required final String amount,
-      required final String created_at,
-      required final String method,
-      required final String payment_id,
-      required final String plink_id,
-      required final String status,
-      required final int updated_at}) = _$RazorpayPaymentLinkPaymentImpl;
+/// @nodoc
+abstract mixin class _$RazorpayPaymentLinkPaymentCopyWith<$Res>
+    implements $RazorpayPaymentLinkPaymentCopyWith<$Res> {
+  factory _$RazorpayPaymentLinkPaymentCopyWith(
+          _RazorpayPaymentLinkPayment value,
+          $Res Function(_RazorpayPaymentLinkPayment) _then) =
+      __$RazorpayPaymentLinkPaymentCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {String amount,
+      String created_at,
+      String method,
+      String payment_id,
+      String plink_id,
+      String status,
+      int updated_at});
+}
 
-  factory _RazorpayPaymentLinkPayment.fromJson(Map<String, dynamic> json) =
-      _$RazorpayPaymentLinkPaymentImpl.fromJson;
+/// @nodoc
+class __$RazorpayPaymentLinkPaymentCopyWithImpl<$Res>
+    implements _$RazorpayPaymentLinkPaymentCopyWith<$Res> {
+  __$RazorpayPaymentLinkPaymentCopyWithImpl(this._self, this._then);
 
-  @override
-  String get amount; // Assuming string based on d.ts, might be int
-  @override
-  String get created_at; // Assuming string timestamp, might be int
-  @override
-  String
-      get method; // 'card' | 'netbanking' | 'wallet' | 'emi' | 'upi' | 'bank_transfer'
-  @override
-  String get payment_id;
-  @override
-  String get plink_id; // Alias for payment_link_id?
-  @override
-  String get status; // 'captured' | 'failed'
-  @override
-  int get updated_at;
+  final _RazorpayPaymentLinkPayment _self;
+  final $Res Function(_RazorpayPaymentLinkPayment) _then;
 
   /// Create a copy of RazorpayPaymentLinkPayment
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$RazorpayPaymentLinkPaymentImplCopyWith<_$RazorpayPaymentLinkPaymentImpl>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-RazorpayPaymentLinkBaseRequestBody _$RazorpayPaymentLinkBaseRequestBodyFromJson(
-    Map<String, dynamic> json) {
-  return _RazorpayPaymentLinkBaseRequestBody.fromJson(json);
-}
-
-/// @nodoc
-mixin _$RazorpayPaymentLinkBaseRequestBody {
-  dynamic get amount =>
-      throw _privateConstructorUsedError; // number | string, required RazorpayPaymentLinkCustomer customer, bool? upi_link,
-  String? get currency => throw _privateConstructorUsedError; // Default INR
-  bool? get accept_partial => throw _privateConstructorUsedError;
-  int? get expire_by => throw _privateConstructorUsedError; // Unix timestamp
-  String? get reference_id => throw _privateConstructorUsedError;
-  int? get first_min_partial_amount => throw _privateConstructorUsedError;
-  String? get description => throw _privateConstructorUsedError;
-  RazorpayPaymentLinkNotify? get notify => throw _privateConstructorUsedError;
-  bool? get reminder_enable => throw _privateConstructorUsedError;
-  IMap<dynamic>? get notes => throw _privateConstructorUsedError;
-  String? get callback_url => throw _privateConstructorUsedError;
-  String? get callback_method => throw _privateConstructorUsedError;
-
-  /// Serializes this RazorpayPaymentLinkBaseRequestBody to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of RazorpayPaymentLinkBaseRequestBody
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  $RazorpayPaymentLinkBaseRequestBodyCopyWith<
-          RazorpayPaymentLinkBaseRequestBody>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $RazorpayPaymentLinkBaseRequestBodyCopyWith<$Res> {
-  factory $RazorpayPaymentLinkBaseRequestBodyCopyWith(
-          RazorpayPaymentLinkBaseRequestBody value,
-          $Res Function(RazorpayPaymentLinkBaseRequestBody) then) =
-      _$RazorpayPaymentLinkBaseRequestBodyCopyWithImpl<$Res,
-          RazorpayPaymentLinkBaseRequestBody>;
-  @useResult
-  $Res call(
-      {dynamic amount,
-      String? currency,
-      bool? accept_partial,
-      int? expire_by,
-      String? reference_id,
-      int? first_min_partial_amount,
-      String? description,
-      RazorpayPaymentLinkNotify? notify,
-      bool? reminder_enable,
-      IMap<dynamic>? notes,
-      String? callback_url,
-      String? callback_method});
-
-  $RazorpayPaymentLinkNotifyCopyWith<$Res>? get notify;
-}
-
-/// @nodoc
-class _$RazorpayPaymentLinkBaseRequestBodyCopyWithImpl<$Res,
-        $Val extends RazorpayPaymentLinkBaseRequestBody>
-    implements $RazorpayPaymentLinkBaseRequestBodyCopyWith<$Res> {
-  _$RazorpayPaymentLinkBaseRequestBodyCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of RazorpayPaymentLinkBaseRequestBody
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
-  @override
   $Res call({
-    Object? amount = freezed,
-    Object? currency = freezed,
-    Object? accept_partial = freezed,
-    Object? expire_by = freezed,
-    Object? reference_id = freezed,
-    Object? first_min_partial_amount = freezed,
-    Object? description = freezed,
-    Object? notify = freezed,
-    Object? reminder_enable = freezed,
-    Object? notes = freezed,
-    Object? callback_url = freezed,
-    Object? callback_method = freezed,
+    Object? amount = null,
+    Object? created_at = null,
+    Object? method = null,
+    Object? payment_id = null,
+    Object? plink_id = null,
+    Object? status = null,
+    Object? updated_at = null,
   }) {
-    return _then(_value.copyWith(
-      amount: freezed == amount
-          ? _value.amount
+    return _then(_RazorpayPaymentLinkPayment(
+      amount: null == amount
+          ? _self.amount
           : amount // ignore: cast_nullable_to_non_nullable
-              as dynamic,
-      currency: freezed == currency
-          ? _value.currency
-          : currency // ignore: cast_nullable_to_non_nullable
-              as String?,
-      accept_partial: freezed == accept_partial
-          ? _value.accept_partial
-          : accept_partial // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      expire_by: freezed == expire_by
-          ? _value.expire_by
-          : expire_by // ignore: cast_nullable_to_non_nullable
-              as int?,
-      reference_id: freezed == reference_id
-          ? _value.reference_id
-          : reference_id // ignore: cast_nullable_to_non_nullable
-              as String?,
-      first_min_partial_amount: freezed == first_min_partial_amount
-          ? _value.first_min_partial_amount
-          : first_min_partial_amount // ignore: cast_nullable_to_non_nullable
-              as int?,
-      description: freezed == description
-          ? _value.description
-          : description // ignore: cast_nullable_to_non_nullable
-              as String?,
-      notify: freezed == notify
-          ? _value.notify
-          : notify // ignore: cast_nullable_to_non_nullable
-              as RazorpayPaymentLinkNotify?,
-      reminder_enable: freezed == reminder_enable
-          ? _value.reminder_enable
-          : reminder_enable // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      notes: freezed == notes
-          ? _value.notes
-          : notes // ignore: cast_nullable_to_non_nullable
-              as IMap<dynamic>?,
-      callback_url: freezed == callback_url
-          ? _value.callback_url
-          : callback_url // ignore: cast_nullable_to_non_nullable
-              as String?,
-      callback_method: freezed == callback_method
-          ? _value.callback_method
-          : callback_method // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ) as $Val);
-  }
-
-  /// Create a copy of RazorpayPaymentLinkBaseRequestBody
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $RazorpayPaymentLinkNotifyCopyWith<$Res>? get notify {
-    if (_value.notify == null) {
-      return null;
-    }
-
-    return $RazorpayPaymentLinkNotifyCopyWith<$Res>(_value.notify!, (value) {
-      return _then(_value.copyWith(notify: value) as $Val);
-    });
-  }
-}
-
-/// @nodoc
-abstract class _$$RazorpayPaymentLinkBaseRequestBodyImplCopyWith<$Res>
-    implements $RazorpayPaymentLinkBaseRequestBodyCopyWith<$Res> {
-  factory _$$RazorpayPaymentLinkBaseRequestBodyImplCopyWith(
-          _$RazorpayPaymentLinkBaseRequestBodyImpl value,
-          $Res Function(_$RazorpayPaymentLinkBaseRequestBodyImpl) then) =
-      __$$RazorpayPaymentLinkBaseRequestBodyImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {dynamic amount,
-      String? currency,
-      bool? accept_partial,
-      int? expire_by,
-      String? reference_id,
-      int? first_min_partial_amount,
-      String? description,
-      RazorpayPaymentLinkNotify? notify,
-      bool? reminder_enable,
-      IMap<dynamic>? notes,
-      String? callback_url,
-      String? callback_method});
-
-  @override
-  $RazorpayPaymentLinkNotifyCopyWith<$Res>? get notify;
-}
-
-/// @nodoc
-class __$$RazorpayPaymentLinkBaseRequestBodyImplCopyWithImpl<$Res>
-    extends _$RazorpayPaymentLinkBaseRequestBodyCopyWithImpl<$Res,
-        _$RazorpayPaymentLinkBaseRequestBodyImpl>
-    implements _$$RazorpayPaymentLinkBaseRequestBodyImplCopyWith<$Res> {
-  __$$RazorpayPaymentLinkBaseRequestBodyImplCopyWithImpl(
-      _$RazorpayPaymentLinkBaseRequestBodyImpl _value,
-      $Res Function(_$RazorpayPaymentLinkBaseRequestBodyImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of RazorpayPaymentLinkBaseRequestBody
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? amount = freezed,
-    Object? currency = freezed,
-    Object? accept_partial = freezed,
-    Object? expire_by = freezed,
-    Object? reference_id = freezed,
-    Object? first_min_partial_amount = freezed,
-    Object? description = freezed,
-    Object? notify = freezed,
-    Object? reminder_enable = freezed,
-    Object? notes = freezed,
-    Object? callback_url = freezed,
-    Object? callback_method = freezed,
-  }) {
-    return _then(_$RazorpayPaymentLinkBaseRequestBodyImpl(
-      amount: freezed == amount
-          ? _value.amount
-          : amount // ignore: cast_nullable_to_non_nullable
-              as dynamic,
-      currency: freezed == currency
-          ? _value.currency
-          : currency // ignore: cast_nullable_to_non_nullable
-              as String?,
-      accept_partial: freezed == accept_partial
-          ? _value.accept_partial
-          : accept_partial // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      expire_by: freezed == expire_by
-          ? _value.expire_by
-          : expire_by // ignore: cast_nullable_to_non_nullable
-              as int?,
-      reference_id: freezed == reference_id
-          ? _value.reference_id
-          : reference_id // ignore: cast_nullable_to_non_nullable
-              as String?,
-      first_min_partial_amount: freezed == first_min_partial_amount
-          ? _value.first_min_partial_amount
-          : first_min_partial_amount // ignore: cast_nullable_to_non_nullable
-              as int?,
-      description: freezed == description
-          ? _value.description
-          : description // ignore: cast_nullable_to_non_nullable
-              as String?,
-      notify: freezed == notify
-          ? _value.notify
-          : notify // ignore: cast_nullable_to_non_nullable
-              as RazorpayPaymentLinkNotify?,
-      reminder_enable: freezed == reminder_enable
-          ? _value.reminder_enable
-          : reminder_enable // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      notes: freezed == notes
-          ? _value._notes
-          : notes // ignore: cast_nullable_to_non_nullable
-              as IMap<dynamic>?,
-      callback_url: freezed == callback_url
-          ? _value.callback_url
-          : callback_url // ignore: cast_nullable_to_non_nullable
-              as String?,
-      callback_method: freezed == callback_method
-          ? _value.callback_method
-          : callback_method // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
+      created_at: null == created_at
+          ? _self.created_at
+          : created_at // ignore: cast_nullable_to_non_nullable
+              as String,
+      method: null == method
+          ? _self.method
+          : method // ignore: cast_nullable_to_non_nullable
+              as String,
+      payment_id: null == payment_id
+          ? _self.payment_id
+          : payment_id // ignore: cast_nullable_to_non_nullable
+              as String,
+      plink_id: null == plink_id
+          ? _self.plink_id
+          : plink_id // ignore: cast_nullable_to_non_nullable
+              as String,
+      status: null == status
+          ? _self.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as String,
+      updated_at: null == updated_at
+          ? _self.updated_at
+          : updated_at // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
 
 /// @nodoc
+mixin _$RazorpayPaymentLinkBaseRequestBody {
+  dynamic
+      get amount; // number | string, required RazorpayPaymentLinkCustomer customer, bool? upi_link,
+  String? get currency; // Default INR
+  bool? get accept_partial;
+  int? get expire_by; // Unix timestamp
+  String? get reference_id;
+  int? get first_min_partial_amount;
+  String? get description;
+  RazorpayPaymentLinkNotify? get notify;
+  bool? get reminder_enable;
+  IMap<dynamic>? get notes;
+  String? get callback_url;
+  String? get callback_method;
 
-@JsonSerializable(includeIfNull: false)
-class _$RazorpayPaymentLinkBaseRequestBodyImpl
-    implements _RazorpayPaymentLinkBaseRequestBody {
-  const _$RazorpayPaymentLinkBaseRequestBodyImpl(
-      {required this.amount,
-      this.currency,
-      this.accept_partial,
-      this.expire_by,
-      this.reference_id,
-      this.first_min_partial_amount,
-      this.description,
-      this.notify,
-      this.reminder_enable,
-      final IMap<dynamic>? notes,
-      this.callback_url,
-      this.callback_method})
-      : _notes = notes;
+  /// Create a copy of RazorpayPaymentLinkBaseRequestBody
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $RazorpayPaymentLinkBaseRequestBodyCopyWith<
+          RazorpayPaymentLinkBaseRequestBody>
+      get copyWith => _$RazorpayPaymentLinkBaseRequestBodyCopyWithImpl<
+              RazorpayPaymentLinkBaseRequestBody>(
+          this as RazorpayPaymentLinkBaseRequestBody, _$identity);
 
-  factory _$RazorpayPaymentLinkBaseRequestBodyImpl.fromJson(
-          Map<String, dynamic> json) =>
-      _$$RazorpayPaymentLinkBaseRequestBodyImplFromJson(json);
+  /// Serializes this RazorpayPaymentLinkBaseRequestBody to a JSON map.
+  Map<String, dynamic> toJson();
 
   @override
-  final dynamic amount;
-// number | string, required RazorpayPaymentLinkCustomer customer, bool? upi_link,
-  @override
-  final String? currency;
-// Default INR
-  @override
-  final bool? accept_partial;
-  @override
-  final int? expire_by;
-// Unix timestamp
-  @override
-  final String? reference_id;
-  @override
-  final int? first_min_partial_amount;
-  @override
-  final String? description;
-  @override
-  final RazorpayPaymentLinkNotify? notify;
-  @override
-  final bool? reminder_enable;
-  final IMap<dynamic>? _notes;
-  @override
-  IMap<dynamic>? get notes {
-    final value = _notes;
-    if (value == null) return null;
-    if (_notes is EqualUnmodifiableMapView) return _notes;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableMapView(value);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is RazorpayPaymentLinkBaseRequestBody &&
+            const DeepCollectionEquality().equals(other.amount, amount) &&
+            (identical(other.currency, currency) ||
+                other.currency == currency) &&
+            (identical(other.accept_partial, accept_partial) ||
+                other.accept_partial == accept_partial) &&
+            (identical(other.expire_by, expire_by) ||
+                other.expire_by == expire_by) &&
+            (identical(other.reference_id, reference_id) ||
+                other.reference_id == reference_id) &&
+            (identical(
+                    other.first_min_partial_amount, first_min_partial_amount) ||
+                other.first_min_partial_amount == first_min_partial_amount) &&
+            (identical(other.description, description) ||
+                other.description == description) &&
+            (identical(other.notify, notify) || other.notify == notify) &&
+            (identical(other.reminder_enable, reminder_enable) ||
+                other.reminder_enable == reminder_enable) &&
+            const DeepCollectionEquality().equals(other.notes, notes) &&
+            (identical(other.callback_url, callback_url) ||
+                other.callback_url == callback_url) &&
+            (identical(other.callback_method, callback_method) ||
+                other.callback_method == callback_method));
   }
 
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  final String? callback_url;
-  @override
-  final String? callback_method;
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(amount),
+      currency,
+      accept_partial,
+      expire_by,
+      reference_id,
+      first_min_partial_amount,
+      description,
+      notify,
+      reminder_enable,
+      const DeepCollectionEquality().hash(notes),
+      callback_url,
+      callback_method);
 
   @override
   String toString() {
     return 'RazorpayPaymentLinkBaseRequestBody(amount: $amount, currency: $currency, accept_partial: $accept_partial, expire_by: $expire_by, reference_id: $reference_id, first_min_partial_amount: $first_min_partial_amount, description: $description, notify: $notify, reminder_enable: $reminder_enable, notes: $notes, callback_url: $callback_url, callback_method: $callback_method)';
   }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$RazorpayPaymentLinkBaseRequestBodyImpl &&
-            const DeepCollectionEquality().equals(other.amount, amount) &&
-            (identical(other.currency, currency) ||
-                other.currency == currency) &&
-            (identical(other.accept_partial, accept_partial) ||
-                other.accept_partial == accept_partial) &&
-            (identical(other.expire_by, expire_by) ||
-                other.expire_by == expire_by) &&
-            (identical(other.reference_id, reference_id) ||
-                other.reference_id == reference_id) &&
-            (identical(
-                    other.first_min_partial_amount, first_min_partial_amount) ||
-                other.first_min_partial_amount == first_min_partial_amount) &&
-            (identical(other.description, description) ||
-                other.description == description) &&
-            (identical(other.notify, notify) || other.notify == notify) &&
-            (identical(other.reminder_enable, reminder_enable) ||
-                other.reminder_enable == reminder_enable) &&
-            const DeepCollectionEquality().equals(other._notes, _notes) &&
-            (identical(other.callback_url, callback_url) ||
-                other.callback_url == callback_url) &&
-            (identical(other.callback_method, callback_method) ||
-                other.callback_method == callback_method));
-  }
-
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(amount),
-      currency,
-      accept_partial,
-      expire_by,
-      reference_id,
-      first_min_partial_amount,
-      description,
-      notify,
-      reminder_enable,
-      const DeepCollectionEquality().hash(_notes),
-      callback_url,
-      callback_method);
-
-  /// Create a copy of RazorpayPaymentLinkBaseRequestBody
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$RazorpayPaymentLinkBaseRequestBodyImplCopyWith<
-          _$RazorpayPaymentLinkBaseRequestBodyImpl>
-      get copyWith => __$$RazorpayPaymentLinkBaseRequestBodyImplCopyWithImpl<
-          _$RazorpayPaymentLinkBaseRequestBodyImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$RazorpayPaymentLinkBaseRequestBodyImplToJson(
-      this,
-    );
-  }
-}
-
-abstract class _RazorpayPaymentLinkBaseRequestBody
-    implements RazorpayPaymentLinkBaseRequestBody {
-  const factory _RazorpayPaymentLinkBaseRequestBody(
-          {required final dynamic amount,
-          final String? currency,
-          final bool? accept_partial,
-          final int? expire_by,
-          final String? reference_id,
-          final int? first_min_partial_amount,
-          final String? description,
-          final RazorpayPaymentLinkNotify? notify,
-          final bool? reminder_enable,
-          final IMap<dynamic>? notes,
-          final String? callback_url,
-          final String? callback_method}) =
-      _$RazorpayPaymentLinkBaseRequestBodyImpl;
-
-  factory _RazorpayPaymentLinkBaseRequestBody.fromJson(
-          Map<String, dynamic> json) =
-      _$RazorpayPaymentLinkBaseRequestBodyImpl.fromJson;
-
-  @override
-  dynamic
-      get amount; // number | string, required RazorpayPaymentLinkCustomer customer, bool? upi_link,
-  @override
-  String? get currency; // Default INR
-  @override
-  bool? get accept_partial;
-  @override
-  int? get expire_by; // Unix timestamp
-  @override
-  String? get reference_id;
-  @override
-  int? get first_min_partial_amount;
-  @override
-  String? get description;
-  @override
-  RazorpayPaymentLinkNotify? get notify;
-  @override
-  bool? get reminder_enable;
-  @override
-  IMap<dynamic>? get notes;
-  @override
-  String? get callback_url;
-  @override
-  String? get callback_method;
-
-  /// Create a copy of RazorpayPaymentLinkBaseRequestBody
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$RazorpayPaymentLinkBaseRequestBodyImplCopyWith<
-          _$RazorpayPaymentLinkBaseRequestBodyImpl>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-RazorpayPaymentLinkCreateRequestBody
-    _$RazorpayPaymentLinkCreateRequestBodyFromJson(Map<String, dynamic> json) {
-  return _RazorpayPaymentLinkCreateRequestBody.fromJson(json);
 }
 
 /// @nodoc
-mixin _$RazorpayPaymentLinkCreateRequestBody {
-  dynamic get amount =>
-      throw _privateConstructorUsedError; // number | string, required RazorpayPaymentLinkCustomer customer, bool? upi_link,
-  String? get currency => throw _privateConstructorUsedError; // Default INR
-  bool? get accept_partial => throw _privateConstructorUsedError;
-  int? get expire_by => throw _privateConstructorUsedError; // Unix timestamp
-  String? get reference_id => throw _privateConstructorUsedError;
-  int? get first_min_partial_amount => throw _privateConstructorUsedError;
-  String? get description => throw _privateConstructorUsedError;
-  RazorpayPaymentLinkNotify? get notify => throw _privateConstructorUsedError;
-  bool? get reminder_enable => throw _privateConstructorUsedError;
-  IMap<dynamic>? get notes => throw _privateConstructorUsedError;
-  String? get callback_url => throw _privateConstructorUsedError;
-  String? get callback_method => throw _privateConstructorUsedError;
-
-  /// Serializes this RazorpayPaymentLinkCreateRequestBody to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of RazorpayPaymentLinkCreateRequestBody
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  $RazorpayPaymentLinkCreateRequestBodyCopyWith<
-          RazorpayPaymentLinkCreateRequestBody>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $RazorpayPaymentLinkCreateRequestBodyCopyWith<$Res> {
-  factory $RazorpayPaymentLinkCreateRequestBodyCopyWith(
-          RazorpayPaymentLinkCreateRequestBody value,
-          $Res Function(RazorpayPaymentLinkCreateRequestBody) then) =
-      _$RazorpayPaymentLinkCreateRequestBodyCopyWithImpl<$Res,
-          RazorpayPaymentLinkCreateRequestBody>;
+abstract mixin class $RazorpayPaymentLinkBaseRequestBodyCopyWith<$Res> {
+  factory $RazorpayPaymentLinkBaseRequestBodyCopyWith(
+          RazorpayPaymentLinkBaseRequestBody value,
+          $Res Function(RazorpayPaymentLinkBaseRequestBody) _then) =
+      _$RazorpayPaymentLinkBaseRequestBodyCopyWithImpl;
   @useResult
   $Res call(
       {dynamic amount,
@@ -1369,17 +903,14 @@ abstract class $RazorpayPaymentLinkCreateRequestBodyCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$RazorpayPaymentLinkCreateRequestBodyCopyWithImpl<$Res,
-        $Val extends RazorpayPaymentLinkCreateRequestBody>
-    implements $RazorpayPaymentLinkCreateRequestBodyCopyWith<$Res> {
-  _$RazorpayPaymentLinkCreateRequestBodyCopyWithImpl(this._value, this._then);
+class _$RazorpayPaymentLinkBaseRequestBodyCopyWithImpl<$Res>
+    implements $RazorpayPaymentLinkBaseRequestBodyCopyWith<$Res> {
+  _$RazorpayPaymentLinkBaseRequestBodyCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final RazorpayPaymentLinkBaseRequestBody _self;
+  final $Res Function(RazorpayPaymentLinkBaseRequestBody) _then;
 
-  /// Create a copy of RazorpayPaymentLinkCreateRequestBody
+  /// Create a copy of RazorpayPaymentLinkBaseRequestBody
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
@@ -1397,187 +928,79 @@ class _$RazorpayPaymentLinkCreateRequestBodyCopyWithImpl<$Res,
     Object? callback_url = freezed,
     Object? callback_method = freezed,
   }) {
-    return _then(_value.copyWith(
+    return _then(_self.copyWith(
       amount: freezed == amount
-          ? _value.amount
+          ? _self.amount
           : amount // ignore: cast_nullable_to_non_nullable
               as dynamic,
       currency: freezed == currency
-          ? _value.currency
+          ? _self.currency
           : currency // ignore: cast_nullable_to_non_nullable
               as String?,
       accept_partial: freezed == accept_partial
-          ? _value.accept_partial
+          ? _self.accept_partial
           : accept_partial // ignore: cast_nullable_to_non_nullable
               as bool?,
       expire_by: freezed == expire_by
-          ? _value.expire_by
+          ? _self.expire_by
           : expire_by // ignore: cast_nullable_to_non_nullable
               as int?,
       reference_id: freezed == reference_id
-          ? _value.reference_id
+          ? _self.reference_id
           : reference_id // ignore: cast_nullable_to_non_nullable
               as String?,
       first_min_partial_amount: freezed == first_min_partial_amount
-          ? _value.first_min_partial_amount
+          ? _self.first_min_partial_amount
           : first_min_partial_amount // ignore: cast_nullable_to_non_nullable
               as int?,
       description: freezed == description
-          ? _value.description
+          ? _self.description
           : description // ignore: cast_nullable_to_non_nullable
               as String?,
       notify: freezed == notify
-          ? _value.notify
+          ? _self.notify
           : notify // ignore: cast_nullable_to_non_nullable
               as RazorpayPaymentLinkNotify?,
       reminder_enable: freezed == reminder_enable
-          ? _value.reminder_enable
+          ? _self.reminder_enable
           : reminder_enable // ignore: cast_nullable_to_non_nullable
               as bool?,
       notes: freezed == notes
-          ? _value.notes
+          ? _self.notes
           : notes // ignore: cast_nullable_to_non_nullable
               as IMap<dynamic>?,
       callback_url: freezed == callback_url
-          ? _value.callback_url
+          ? _self.callback_url
           : callback_url // ignore: cast_nullable_to_non_nullable
               as String?,
       callback_method: freezed == callback_method
-          ? _value.callback_method
+          ? _self.callback_method
           : callback_method // ignore: cast_nullable_to_non_nullable
               as String?,
-    ) as $Val);
+    ));
   }
 
-  /// Create a copy of RazorpayPaymentLinkCreateRequestBody
+  /// Create a copy of RazorpayPaymentLinkBaseRequestBody
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $RazorpayPaymentLinkNotifyCopyWith<$Res>? get notify {
-    if (_value.notify == null) {
+    if (_self.notify == null) {
       return null;
     }
 
-    return $RazorpayPaymentLinkNotifyCopyWith<$Res>(_value.notify!, (value) {
-      return _then(_value.copyWith(notify: value) as $Val);
+    return $RazorpayPaymentLinkNotifyCopyWith<$Res>(_self.notify!, (value) {
+      return _then(_self.copyWith(notify: value));
     });
-  }
-}
-
-/// @nodoc
-abstract class _$$RazorpayPaymentLinkCreateRequestBodyImplCopyWith<$Res>
-    implements $RazorpayPaymentLinkCreateRequestBodyCopyWith<$Res> {
-  factory _$$RazorpayPaymentLinkCreateRequestBodyImplCopyWith(
-          _$RazorpayPaymentLinkCreateRequestBodyImpl value,
-          $Res Function(_$RazorpayPaymentLinkCreateRequestBodyImpl) then) =
-      __$$RazorpayPaymentLinkCreateRequestBodyImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {dynamic amount,
-      String? currency,
-      bool? accept_partial,
-      int? expire_by,
-      String? reference_id,
-      int? first_min_partial_amount,
-      String? description,
-      RazorpayPaymentLinkNotify? notify,
-      bool? reminder_enable,
-      IMap<dynamic>? notes,
-      String? callback_url,
-      String? callback_method});
-
-  @override
-  $RazorpayPaymentLinkNotifyCopyWith<$Res>? get notify;
-}
-
-/// @nodoc
-class __$$RazorpayPaymentLinkCreateRequestBodyImplCopyWithImpl<$Res>
-    extends _$RazorpayPaymentLinkCreateRequestBodyCopyWithImpl<$Res,
-        _$RazorpayPaymentLinkCreateRequestBodyImpl>
-    implements _$$RazorpayPaymentLinkCreateRequestBodyImplCopyWith<$Res> {
-  __$$RazorpayPaymentLinkCreateRequestBodyImplCopyWithImpl(
-      _$RazorpayPaymentLinkCreateRequestBodyImpl _value,
-      $Res Function(_$RazorpayPaymentLinkCreateRequestBodyImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of RazorpayPaymentLinkCreateRequestBody
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? amount = freezed,
-    Object? currency = freezed,
-    Object? accept_partial = freezed,
-    Object? expire_by = freezed,
-    Object? reference_id = freezed,
-    Object? first_min_partial_amount = freezed,
-    Object? description = freezed,
-    Object? notify = freezed,
-    Object? reminder_enable = freezed,
-    Object? notes = freezed,
-    Object? callback_url = freezed,
-    Object? callback_method = freezed,
-  }) {
-    return _then(_$RazorpayPaymentLinkCreateRequestBodyImpl(
-      amount: freezed == amount
-          ? _value.amount
-          : amount // ignore: cast_nullable_to_non_nullable
-              as dynamic,
-      currency: freezed == currency
-          ? _value.currency
-          : currency // ignore: cast_nullable_to_non_nullable
-              as String?,
-      accept_partial: freezed == accept_partial
-          ? _value.accept_partial
-          : accept_partial // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      expire_by: freezed == expire_by
-          ? _value.expire_by
-          : expire_by // ignore: cast_nullable_to_non_nullable
-              as int?,
-      reference_id: freezed == reference_id
-          ? _value.reference_id
-          : reference_id // ignore: cast_nullable_to_non_nullable
-              as String?,
-      first_min_partial_amount: freezed == first_min_partial_amount
-          ? _value.first_min_partial_amount
-          : first_min_partial_amount // ignore: cast_nullable_to_non_nullable
-              as int?,
-      description: freezed == description
-          ? _value.description
-          : description // ignore: cast_nullable_to_non_nullable
-              as String?,
-      notify: freezed == notify
-          ? _value.notify
-          : notify // ignore: cast_nullable_to_non_nullable
-              as RazorpayPaymentLinkNotify?,
-      reminder_enable: freezed == reminder_enable
-          ? _value.reminder_enable
-          : reminder_enable // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      notes: freezed == notes
-          ? _value._notes
-          : notes // ignore: cast_nullable_to_non_nullable
-              as IMap<dynamic>?,
-      callback_url: freezed == callback_url
-          ? _value.callback_url
-          : callback_url // ignore: cast_nullable_to_non_nullable
-              as String?,
-      callback_method: freezed == callback_method
-          ? _value.callback_method
-          : callback_method // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
   }
 }
 
 /// @nodoc
 
 @JsonSerializable(includeIfNull: false)
-class _$RazorpayPaymentLinkCreateRequestBodyImpl
-    implements _RazorpayPaymentLinkCreateRequestBody {
-  const _$RazorpayPaymentLinkCreateRequestBodyImpl(
+class _RazorpayPaymentLinkBaseRequestBody
+    implements RazorpayPaymentLinkBaseRequestBody {
+  const _RazorpayPaymentLinkBaseRequestBody(
       {required this.amount,
       this.currency,
       this.accept_partial,
@@ -1591,10 +1014,9 @@ class _$RazorpayPaymentLinkCreateRequestBodyImpl
       this.callback_url,
       this.callback_method})
       : _notes = notes;
-
-  factory _$RazorpayPaymentLinkCreateRequestBodyImpl.fromJson(
+  factory _RazorpayPaymentLinkBaseRequestBody.fromJson(
           Map<String, dynamic> json) =>
-      _$$RazorpayPaymentLinkCreateRequestBodyImplFromJson(json);
+      _$RazorpayPaymentLinkBaseRequestBodyFromJson(json);
 
   @override
   final dynamic amount;
@@ -1632,16 +1054,28 @@ class _$RazorpayPaymentLinkCreateRequestBodyImpl
   @override
   final String? callback_method;
 
+  /// Create a copy of RazorpayPaymentLinkBaseRequestBody
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'RazorpayPaymentLinkCreateRequestBody(amount: $amount, currency: $currency, accept_partial: $accept_partial, expire_by: $expire_by, reference_id: $reference_id, first_min_partial_amount: $first_min_partial_amount, description: $description, notify: $notify, reminder_enable: $reminder_enable, notes: $notes, callback_url: $callback_url, callback_method: $callback_method)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$RazorpayPaymentLinkBaseRequestBodyCopyWith<
+          _RazorpayPaymentLinkBaseRequestBody>
+      get copyWith => __$RazorpayPaymentLinkBaseRequestBodyCopyWithImpl<
+          _RazorpayPaymentLinkBaseRequestBody>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$RazorpayPaymentLinkBaseRequestBodyToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$RazorpayPaymentLinkCreateRequestBodyImpl &&
+            other is _RazorpayPaymentLinkBaseRequestBody &&
             const DeepCollectionEquality().equals(other.amount, amount) &&
             (identical(other.currency, currency) ||
                 other.currency == currency) &&
@@ -1683,175 +1117,632 @@ class _$RazorpayPaymentLinkCreateRequestBodyImpl
       callback_url,
       callback_method);
 
-  /// Create a copy of RazorpayPaymentLinkCreateRequestBody
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$RazorpayPaymentLinkCreateRequestBodyImplCopyWith<
-          _$RazorpayPaymentLinkCreateRequestBodyImpl>
-      get copyWith => __$$RazorpayPaymentLinkCreateRequestBodyImplCopyWithImpl<
-          _$RazorpayPaymentLinkCreateRequestBodyImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$RazorpayPaymentLinkCreateRequestBodyImplToJson(
-      this,
-    );
+  String toString() {
+    return 'RazorpayPaymentLinkBaseRequestBody(amount: $amount, currency: $currency, accept_partial: $accept_partial, expire_by: $expire_by, reference_id: $reference_id, first_min_partial_amount: $first_min_partial_amount, description: $description, notify: $notify, reminder_enable: $reminder_enable, notes: $notes, callback_url: $callback_url, callback_method: $callback_method)';
   }
 }
 
-abstract class _RazorpayPaymentLinkCreateRequestBody
-    implements RazorpayPaymentLinkCreateRequestBody {
-  const factory _RazorpayPaymentLinkCreateRequestBody(
-          {required final dynamic amount,
-          final String? currency,
-          final bool? accept_partial,
-          final int? expire_by,
-          final String? reference_id,
-          final int? first_min_partial_amount,
-          final String? description,
-          final RazorpayPaymentLinkNotify? notify,
-          final bool? reminder_enable,
-          final IMap<dynamic>? notes,
-          final String? callback_url,
-          final String? callback_method}) =
-      _$RazorpayPaymentLinkCreateRequestBodyImpl;
-
-  factory _RazorpayPaymentLinkCreateRequestBody.fromJson(
-          Map<String, dynamic> json) =
-      _$RazorpayPaymentLinkCreateRequestBodyImpl.fromJson;
+/// @nodoc
+abstract mixin class _$RazorpayPaymentLinkBaseRequestBodyCopyWith<$Res>
+    implements $RazorpayPaymentLinkBaseRequestBodyCopyWith<$Res> {
+  factory _$RazorpayPaymentLinkBaseRequestBodyCopyWith(
+          _RazorpayPaymentLinkBaseRequestBody value,
+          $Res Function(_RazorpayPaymentLinkBaseRequestBody) _then) =
+      __$RazorpayPaymentLinkBaseRequestBodyCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {dynamic amount,
+      String? currency,
+      bool? accept_partial,
+      int? expire_by,
+      String? reference_id,
+      int? first_min_partial_amount,
+      String? description,
+      RazorpayPaymentLinkNotify? notify,
+      bool? reminder_enable,
+      IMap<dynamic>? notes,
+      String? callback_url,
+      String? callback_method});
 
   @override
+  $RazorpayPaymentLinkNotifyCopyWith<$Res>? get notify;
+}
+
+/// @nodoc
+class __$RazorpayPaymentLinkBaseRequestBodyCopyWithImpl<$Res>
+    implements _$RazorpayPaymentLinkBaseRequestBodyCopyWith<$Res> {
+  __$RazorpayPaymentLinkBaseRequestBodyCopyWithImpl(this._self, this._then);
+
+  final _RazorpayPaymentLinkBaseRequestBody _self;
+  final $Res Function(_RazorpayPaymentLinkBaseRequestBody) _then;
+
+  /// Create a copy of RazorpayPaymentLinkBaseRequestBody
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? amount = freezed,
+    Object? currency = freezed,
+    Object? accept_partial = freezed,
+    Object? expire_by = freezed,
+    Object? reference_id = freezed,
+    Object? first_min_partial_amount = freezed,
+    Object? description = freezed,
+    Object? notify = freezed,
+    Object? reminder_enable = freezed,
+    Object? notes = freezed,
+    Object? callback_url = freezed,
+    Object? callback_method = freezed,
+  }) {
+    return _then(_RazorpayPaymentLinkBaseRequestBody(
+      amount: freezed == amount
+          ? _self.amount
+          : amount // ignore: cast_nullable_to_non_nullable
+              as dynamic,
+      currency: freezed == currency
+          ? _self.currency
+          : currency // ignore: cast_nullable_to_non_nullable
+              as String?,
+      accept_partial: freezed == accept_partial
+          ? _self.accept_partial
+          : accept_partial // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      expire_by: freezed == expire_by
+          ? _self.expire_by
+          : expire_by // ignore: cast_nullable_to_non_nullable
+              as int?,
+      reference_id: freezed == reference_id
+          ? _self.reference_id
+          : reference_id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      first_min_partial_amount: freezed == first_min_partial_amount
+          ? _self.first_min_partial_amount
+          : first_min_partial_amount // ignore: cast_nullable_to_non_nullable
+              as int?,
+      description: freezed == description
+          ? _self.description
+          : description // ignore: cast_nullable_to_non_nullable
+              as String?,
+      notify: freezed == notify
+          ? _self.notify
+          : notify // ignore: cast_nullable_to_non_nullable
+              as RazorpayPaymentLinkNotify?,
+      reminder_enable: freezed == reminder_enable
+          ? _self.reminder_enable
+          : reminder_enable // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      notes: freezed == notes
+          ? _self._notes
+          : notes // ignore: cast_nullable_to_non_nullable
+              as IMap<dynamic>?,
+      callback_url: freezed == callback_url
+          ? _self.callback_url
+          : callback_url // ignore: cast_nullable_to_non_nullable
+              as String?,
+      callback_method: freezed == callback_method
+          ? _self.callback_method
+          : callback_method // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+
+  /// Create a copy of RazorpayPaymentLinkBaseRequestBody
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $RazorpayPaymentLinkNotifyCopyWith<$Res>? get notify {
+    if (_self.notify == null) {
+      return null;
+    }
+
+    return $RazorpayPaymentLinkNotifyCopyWith<$Res>(_self.notify!, (value) {
+      return _then(_self.copyWith(notify: value));
+    });
+  }
+}
+
+/// @nodoc
+mixin _$RazorpayPaymentLinkCreateRequestBody {
   dynamic
       get amount; // number | string, required RazorpayPaymentLinkCustomer customer, bool? upi_link,
-  @override
   String? get currency; // Default INR
-  @override
   bool? get accept_partial;
-  @override
   int? get expire_by; // Unix timestamp
-  @override
   String? get reference_id;
-  @override
   int? get first_min_partial_amount;
-  @override
   String? get description;
-  @override
   RazorpayPaymentLinkNotify? get notify;
-  @override
   bool? get reminder_enable;
-  @override
   IMap<dynamic>? get notes;
-  @override
   String? get callback_url;
-  @override
   String? get callback_method;
 
   /// Create a copy of RazorpayPaymentLinkCreateRequestBody
   /// with the given fields replaced by the non-null parameter values.
-  @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$RazorpayPaymentLinkCreateRequestBodyImplCopyWith<
-          _$RazorpayPaymentLinkCreateRequestBodyImpl>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-RazorpayPaymentLinkUpdateRequestBody
-    _$RazorpayPaymentLinkUpdateRequestBodyFromJson(Map<String, dynamic> json) {
-  return _RazorpayPaymentLinkUpdateRequestBody.fromJson(json);
-}
-
-/// @nodoc
-mixin _$RazorpayPaymentLinkUpdateRequestBody {
-  bool? get accept_partial => throw _privateConstructorUsedError;
-  String? get reference_id => throw _privateConstructorUsedError;
-  int? get expire_by => throw _privateConstructorUsedError;
-  IMap<dynamic>? get notes => throw _privateConstructorUsedError;
-  bool? get reminder_enable => throw _privateConstructorUsedError;
-
-  /// Serializes this RazorpayPaymentLinkUpdateRequestBody to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of RazorpayPaymentLinkUpdateRequestBody
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  $RazorpayPaymentLinkUpdateRequestBodyCopyWith<
-          RazorpayPaymentLinkUpdateRequestBody>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $RazorpayPaymentLinkUpdateRequestBodyCopyWith<$Res> {
-  factory $RazorpayPaymentLinkUpdateRequestBodyCopyWith(
-          RazorpayPaymentLinkUpdateRequestBody value,
-          $Res Function(RazorpayPaymentLinkUpdateRequestBody) then) =
-      _$RazorpayPaymentLinkUpdateRequestBodyCopyWithImpl<$Res,
-          RazorpayPaymentLinkUpdateRequestBody>;
-  @useResult
-  $Res call(
-      {bool? accept_partial,
-      String? reference_id,
-      int? expire_by,
-      IMap<dynamic>? notes,
-      bool? reminder_enable});
-}
-
-/// @nodoc
-class _$RazorpayPaymentLinkUpdateRequestBodyCopyWithImpl<$Res,
-        $Val extends RazorpayPaymentLinkUpdateRequestBody>
-    implements $RazorpayPaymentLinkUpdateRequestBodyCopyWith<$Res> {
-  _$RazorpayPaymentLinkUpdateRequestBodyCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of RazorpayPaymentLinkUpdateRequestBody
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
+  $RazorpayPaymentLinkCreateRequestBodyCopyWith<
+          RazorpayPaymentLinkCreateRequestBody>
+      get copyWith => _$RazorpayPaymentLinkCreateRequestBodyCopyWithImpl<
+              RazorpayPaymentLinkCreateRequestBody>(
+          this as RazorpayPaymentLinkCreateRequestBody, _$identity);
+
+  /// Serializes this RazorpayPaymentLinkCreateRequestBody to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? accept_partial = freezed,
-    Object? reference_id = freezed,
-    Object? expire_by = freezed,
-    Object? notes = freezed,
-    Object? reminder_enable = freezed,
-  }) {
-    return _then(_value.copyWith(
-      accept_partial: freezed == accept_partial
-          ? _value.accept_partial
-          : accept_partial // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      reference_id: freezed == reference_id
-          ? _value.reference_id
-          : reference_id // ignore: cast_nullable_to_non_nullable
-              as String?,
-      expire_by: freezed == expire_by
-          ? _value.expire_by
-          : expire_by // ignore: cast_nullable_to_non_nullable
-              as int?,
-      notes: freezed == notes
-          ? _value.notes
-          : notes // ignore: cast_nullable_to_non_nullable
-              as IMap<dynamic>?,
-      reminder_enable: freezed == reminder_enable
-          ? _value.reminder_enable
-          : reminder_enable // ignore: cast_nullable_to_non_nullable
-              as bool?,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is RazorpayPaymentLinkCreateRequestBody &&
+            const DeepCollectionEquality().equals(other.amount, amount) &&
+            (identical(other.currency, currency) ||
+                other.currency == currency) &&
+            (identical(other.accept_partial, accept_partial) ||
+                other.accept_partial == accept_partial) &&
+            (identical(other.expire_by, expire_by) ||
+                other.expire_by == expire_by) &&
+            (identical(other.reference_id, reference_id) ||
+                other.reference_id == reference_id) &&
+            (identical(
+                    other.first_min_partial_amount, first_min_partial_amount) ||
+                other.first_min_partial_amount == first_min_partial_amount) &&
+            (identical(other.description, description) ||
+                other.description == description) &&
+            (identical(other.notify, notify) || other.notify == notify) &&
+            (identical(other.reminder_enable, reminder_enable) ||
+                other.reminder_enable == reminder_enable) &&
+            const DeepCollectionEquality().equals(other.notes, notes) &&
+            (identical(other.callback_url, callback_url) ||
+                other.callback_url == callback_url) &&
+            (identical(other.callback_method, callback_method) ||
+                other.callback_method == callback_method));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(amount),
+      currency,
+      accept_partial,
+      expire_by,
+      reference_id,
+      first_min_partial_amount,
+      description,
+      notify,
+      reminder_enable,
+      const DeepCollectionEquality().hash(notes),
+      callback_url,
+      callback_method);
+
+  @override
+  String toString() {
+    return 'RazorpayPaymentLinkCreateRequestBody(amount: $amount, currency: $currency, accept_partial: $accept_partial, expire_by: $expire_by, reference_id: $reference_id, first_min_partial_amount: $first_min_partial_amount, description: $description, notify: $notify, reminder_enable: $reminder_enable, notes: $notes, callback_url: $callback_url, callback_method: $callback_method)';
   }
 }
 
 /// @nodoc
-abstract class _$$RazorpayPaymentLinkUpdateRequestBodyImplCopyWith<$Res>
-    implements $RazorpayPaymentLinkUpdateRequestBodyCopyWith<$Res> {
-  factory _$$RazorpayPaymentLinkUpdateRequestBodyImplCopyWith(
-          _$RazorpayPaymentLinkUpdateRequestBodyImpl value,
-          $Res Function(_$RazorpayPaymentLinkUpdateRequestBodyImpl) then) =
-      __$$RazorpayPaymentLinkUpdateRequestBodyImplCopyWithImpl<$Res>;
+abstract mixin class $RazorpayPaymentLinkCreateRequestBodyCopyWith<$Res> {
+  factory $RazorpayPaymentLinkCreateRequestBodyCopyWith(
+          RazorpayPaymentLinkCreateRequestBody value,
+          $Res Function(RazorpayPaymentLinkCreateRequestBody) _then) =
+      _$RazorpayPaymentLinkCreateRequestBodyCopyWithImpl;
+  @useResult
+  $Res call(
+      {dynamic amount,
+      String? currency,
+      bool? accept_partial,
+      int? expire_by,
+      String? reference_id,
+      int? first_min_partial_amount,
+      String? description,
+      RazorpayPaymentLinkNotify? notify,
+      bool? reminder_enable,
+      IMap<dynamic>? notes,
+      String? callback_url,
+      String? callback_method});
+
+  $RazorpayPaymentLinkNotifyCopyWith<$Res>? get notify;
+}
+
+/// @nodoc
+class _$RazorpayPaymentLinkCreateRequestBodyCopyWithImpl<$Res>
+    implements $RazorpayPaymentLinkCreateRequestBodyCopyWith<$Res> {
+  _$RazorpayPaymentLinkCreateRequestBodyCopyWithImpl(this._self, this._then);
+
+  final RazorpayPaymentLinkCreateRequestBody _self;
+  final $Res Function(RazorpayPaymentLinkCreateRequestBody) _then;
+
+  /// Create a copy of RazorpayPaymentLinkCreateRequestBody
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
   @override
+  $Res call({
+    Object? amount = freezed,
+    Object? currency = freezed,
+    Object? accept_partial = freezed,
+    Object? expire_by = freezed,
+    Object? reference_id = freezed,
+    Object? first_min_partial_amount = freezed,
+    Object? description = freezed,
+    Object? notify = freezed,
+    Object? reminder_enable = freezed,
+    Object? notes = freezed,
+    Object? callback_url = freezed,
+    Object? callback_method = freezed,
+  }) {
+    return _then(_self.copyWith(
+      amount: freezed == amount
+          ? _self.amount
+          : amount // ignore: cast_nullable_to_non_nullable
+              as dynamic,
+      currency: freezed == currency
+          ? _self.currency
+          : currency // ignore: cast_nullable_to_non_nullable
+              as String?,
+      accept_partial: freezed == accept_partial
+          ? _self.accept_partial
+          : accept_partial // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      expire_by: freezed == expire_by
+          ? _self.expire_by
+          : expire_by // ignore: cast_nullable_to_non_nullable
+              as int?,
+      reference_id: freezed == reference_id
+          ? _self.reference_id
+          : reference_id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      first_min_partial_amount: freezed == first_min_partial_amount
+          ? _self.first_min_partial_amount
+          : first_min_partial_amount // ignore: cast_nullable_to_non_nullable
+              as int?,
+      description: freezed == description
+          ? _self.description
+          : description // ignore: cast_nullable_to_non_nullable
+              as String?,
+      notify: freezed == notify
+          ? _self.notify
+          : notify // ignore: cast_nullable_to_non_nullable
+              as RazorpayPaymentLinkNotify?,
+      reminder_enable: freezed == reminder_enable
+          ? _self.reminder_enable
+          : reminder_enable // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      notes: freezed == notes
+          ? _self.notes
+          : notes // ignore: cast_nullable_to_non_nullable
+              as IMap<dynamic>?,
+      callback_url: freezed == callback_url
+          ? _self.callback_url
+          : callback_url // ignore: cast_nullable_to_non_nullable
+              as String?,
+      callback_method: freezed == callback_method
+          ? _self.callback_method
+          : callback_method // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+
+  /// Create a copy of RazorpayPaymentLinkCreateRequestBody
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $RazorpayPaymentLinkNotifyCopyWith<$Res>? get notify {
+    if (_self.notify == null) {
+      return null;
+    }
+
+    return $RazorpayPaymentLinkNotifyCopyWith<$Res>(_self.notify!, (value) {
+      return _then(_self.copyWith(notify: value));
+    });
+  }
+}
+
+/// @nodoc
+
+@JsonSerializable(includeIfNull: false)
+class _RazorpayPaymentLinkCreateRequestBody
+    implements RazorpayPaymentLinkCreateRequestBody {
+  const _RazorpayPaymentLinkCreateRequestBody(
+      {required this.amount,
+      this.currency,
+      this.accept_partial,
+      this.expire_by,
+      this.reference_id,
+      this.first_min_partial_amount,
+      this.description,
+      this.notify,
+      this.reminder_enable,
+      final IMap<dynamic>? notes,
+      this.callback_url,
+      this.callback_method})
+      : _notes = notes;
+  factory _RazorpayPaymentLinkCreateRequestBody.fromJson(
+          Map<String, dynamic> json) =>
+      _$RazorpayPaymentLinkCreateRequestBodyFromJson(json);
+
+  @override
+  final dynamic amount;
+// number | string, required RazorpayPaymentLinkCustomer customer, bool? upi_link,
+  @override
+  final String? currency;
+// Default INR
+  @override
+  final bool? accept_partial;
+  @override
+  final int? expire_by;
+// Unix timestamp
+  @override
+  final String? reference_id;
+  @override
+  final int? first_min_partial_amount;
+  @override
+  final String? description;
+  @override
+  final RazorpayPaymentLinkNotify? notify;
+  @override
+  final bool? reminder_enable;
+  final IMap<dynamic>? _notes;
+  @override
+  IMap<dynamic>? get notes {
+    final value = _notes;
+    if (value == null) return null;
+    if (_notes is EqualUnmodifiableMapView) return _notes;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(value);
+  }
+
+  @override
+  final String? callback_url;
+  @override
+  final String? callback_method;
+
+  /// Create a copy of RazorpayPaymentLinkCreateRequestBody
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$RazorpayPaymentLinkCreateRequestBodyCopyWith<
+          _RazorpayPaymentLinkCreateRequestBody>
+      get copyWith => __$RazorpayPaymentLinkCreateRequestBodyCopyWithImpl<
+          _RazorpayPaymentLinkCreateRequestBody>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$RazorpayPaymentLinkCreateRequestBodyToJson(
+      this,
+    );
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _RazorpayPaymentLinkCreateRequestBody &&
+            const DeepCollectionEquality().equals(other.amount, amount) &&
+            (identical(other.currency, currency) ||
+                other.currency == currency) &&
+            (identical(other.accept_partial, accept_partial) ||
+                other.accept_partial == accept_partial) &&
+            (identical(other.expire_by, expire_by) ||
+                other.expire_by == expire_by) &&
+            (identical(other.reference_id, reference_id) ||
+                other.reference_id == reference_id) &&
+            (identical(
+                    other.first_min_partial_amount, first_min_partial_amount) ||
+                other.first_min_partial_amount == first_min_partial_amount) &&
+            (identical(other.description, description) ||
+                other.description == description) &&
+            (identical(other.notify, notify) || other.notify == notify) &&
+            (identical(other.reminder_enable, reminder_enable) ||
+                other.reminder_enable == reminder_enable) &&
+            const DeepCollectionEquality().equals(other._notes, _notes) &&
+            (identical(other.callback_url, callback_url) ||
+                other.callback_url == callback_url) &&
+            (identical(other.callback_method, callback_method) ||
+                other.callback_method == callback_method));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(amount),
+      currency,
+      accept_partial,
+      expire_by,
+      reference_id,
+      first_min_partial_amount,
+      description,
+      notify,
+      reminder_enable,
+      const DeepCollectionEquality().hash(_notes),
+      callback_url,
+      callback_method);
+
+  @override
+  String toString() {
+    return 'RazorpayPaymentLinkCreateRequestBody(amount: $amount, currency: $currency, accept_partial: $accept_partial, expire_by: $expire_by, reference_id: $reference_id, first_min_partial_amount: $first_min_partial_amount, description: $description, notify: $notify, reminder_enable: $reminder_enable, notes: $notes, callback_url: $callback_url, callback_method: $callback_method)';
+  }
+}
+
+/// @nodoc
+abstract mixin class _$RazorpayPaymentLinkCreateRequestBodyCopyWith<$Res>
+    implements $RazorpayPaymentLinkCreateRequestBodyCopyWith<$Res> {
+  factory _$RazorpayPaymentLinkCreateRequestBodyCopyWith(
+          _RazorpayPaymentLinkCreateRequestBody value,
+          $Res Function(_RazorpayPaymentLinkCreateRequestBody) _then) =
+      __$RazorpayPaymentLinkCreateRequestBodyCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {dynamic amount,
+      String? currency,
+      bool? accept_partial,
+      int? expire_by,
+      String? reference_id,
+      int? first_min_partial_amount,
+      String? description,
+      RazorpayPaymentLinkNotify? notify,
+      bool? reminder_enable,
+      IMap<dynamic>? notes,
+      String? callback_url,
+      String? callback_method});
+
+  @override
+  $RazorpayPaymentLinkNotifyCopyWith<$Res>? get notify;
+}
+
+/// @nodoc
+class __$RazorpayPaymentLinkCreateRequestBodyCopyWithImpl<$Res>
+    implements _$RazorpayPaymentLinkCreateRequestBodyCopyWith<$Res> {
+  __$RazorpayPaymentLinkCreateRequestBodyCopyWithImpl(this._self, this._then);
+
+  final _RazorpayPaymentLinkCreateRequestBody _self;
+  final $Res Function(_RazorpayPaymentLinkCreateRequestBody) _then;
+
+  /// Create a copy of RazorpayPaymentLinkCreateRequestBody
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? amount = freezed,
+    Object? currency = freezed,
+    Object? accept_partial = freezed,
+    Object? expire_by = freezed,
+    Object? reference_id = freezed,
+    Object? first_min_partial_amount = freezed,
+    Object? description = freezed,
+    Object? notify = freezed,
+    Object? reminder_enable = freezed,
+    Object? notes = freezed,
+    Object? callback_url = freezed,
+    Object? callback_method = freezed,
+  }) {
+    return _then(_RazorpayPaymentLinkCreateRequestBody(
+      amount: freezed == amount
+          ? _self.amount
+          : amount // ignore: cast_nullable_to_non_nullable
+              as dynamic,
+      currency: freezed == currency
+          ? _self.currency
+          : currency // ignore: cast_nullable_to_non_nullable
+              as String?,
+      accept_partial: freezed == accept_partial
+          ? _self.accept_partial
+          : accept_partial // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      expire_by: freezed == expire_by
+          ? _self.expire_by
+          : expire_by // ignore: cast_nullable_to_non_nullable
+              as int?,
+      reference_id: freezed == reference_id
+          ? _self.reference_id
+          : reference_id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      first_min_partial_amount: freezed == first_min_partial_amount
+          ? _self.first_min_partial_amount
+          : first_min_partial_amount // ignore: cast_nullable_to_non_nullable
+              as int?,
+      description: freezed == description
+          ? _self.description
+          : description // ignore: cast_nullable_to_non_nullable
+              as String?,
+      notify: freezed == notify
+          ? _self.notify
+          : notify // ignore: cast_nullable_to_non_nullable
+              as RazorpayPaymentLinkNotify?,
+      reminder_enable: freezed == reminder_enable
+          ? _self.reminder_enable
+          : reminder_enable // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      notes: freezed == notes
+          ? _self._notes
+          : notes // ignore: cast_nullable_to_non_nullable
+              as IMap<dynamic>?,
+      callback_url: freezed == callback_url
+          ? _self.callback_url
+          : callback_url // ignore: cast_nullable_to_non_nullable
+              as String?,
+      callback_method: freezed == callback_method
+          ? _self.callback_method
+          : callback_method // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+
+  /// Create a copy of RazorpayPaymentLinkCreateRequestBody
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $RazorpayPaymentLinkNotifyCopyWith<$Res>? get notify {
+    if (_self.notify == null) {
+      return null;
+    }
+
+    return $RazorpayPaymentLinkNotifyCopyWith<$Res>(_self.notify!, (value) {
+      return _then(_self.copyWith(notify: value));
+    });
+  }
+}
+
+/// @nodoc
+mixin _$RazorpayPaymentLinkUpdateRequestBody {
+  bool? get accept_partial;
+  String? get reference_id;
+  int? get expire_by;
+  IMap<dynamic>? get notes;
+  bool? get reminder_enable;
+
+  /// Create a copy of RazorpayPaymentLinkUpdateRequestBody
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $RazorpayPaymentLinkUpdateRequestBodyCopyWith<
+          RazorpayPaymentLinkUpdateRequestBody>
+      get copyWith => _$RazorpayPaymentLinkUpdateRequestBodyCopyWithImpl<
+              RazorpayPaymentLinkUpdateRequestBody>(
+          this as RazorpayPaymentLinkUpdateRequestBody, _$identity);
+
+  /// Serializes this RazorpayPaymentLinkUpdateRequestBody to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is RazorpayPaymentLinkUpdateRequestBody &&
+            (identical(other.accept_partial, accept_partial) ||
+                other.accept_partial == accept_partial) &&
+            (identical(other.reference_id, reference_id) ||
+                other.reference_id == reference_id) &&
+            (identical(other.expire_by, expire_by) ||
+                other.expire_by == expire_by) &&
+            const DeepCollectionEquality().equals(other.notes, notes) &&
+            (identical(other.reminder_enable, reminder_enable) ||
+                other.reminder_enable == reminder_enable));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, accept_partial, reference_id,
+      expire_by, const DeepCollectionEquality().hash(notes), reminder_enable);
+
+  @override
+  String toString() {
+    return 'RazorpayPaymentLinkUpdateRequestBody(accept_partial: $accept_partial, reference_id: $reference_id, expire_by: $expire_by, notes: $notes, reminder_enable: $reminder_enable)';
+  }
+}
+
+/// @nodoc
+abstract mixin class $RazorpayPaymentLinkUpdateRequestBodyCopyWith<$Res> {
+  factory $RazorpayPaymentLinkUpdateRequestBodyCopyWith(
+          RazorpayPaymentLinkUpdateRequestBody value,
+          $Res Function(RazorpayPaymentLinkUpdateRequestBody) _then) =
+      _$RazorpayPaymentLinkUpdateRequestBodyCopyWithImpl;
   @useResult
   $Res call(
       {bool? accept_partial,
@@ -1862,14 +1753,12 @@ abstract class _$$RazorpayPaymentLinkUpdateRequestBodyImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$RazorpayPaymentLinkUpdateRequestBodyImplCopyWithImpl<$Res>
-    extends _$RazorpayPaymentLinkUpdateRequestBodyCopyWithImpl<$Res,
-        _$RazorpayPaymentLinkUpdateRequestBodyImpl>
-    implements _$$RazorpayPaymentLinkUpdateRequestBodyImplCopyWith<$Res> {
-  __$$RazorpayPaymentLinkUpdateRequestBodyImplCopyWithImpl(
-      _$RazorpayPaymentLinkUpdateRequestBodyImpl _value,
-      $Res Function(_$RazorpayPaymentLinkUpdateRequestBodyImpl) _then)
-      : super(_value, _then);
+class _$RazorpayPaymentLinkUpdateRequestBodyCopyWithImpl<$Res>
+    implements $RazorpayPaymentLinkUpdateRequestBodyCopyWith<$Res> {
+  _$RazorpayPaymentLinkUpdateRequestBodyCopyWithImpl(this._self, this._then);
+
+  final RazorpayPaymentLinkUpdateRequestBody _self;
+  final $Res Function(RazorpayPaymentLinkUpdateRequestBody) _then;
 
   /// Create a copy of RazorpayPaymentLinkUpdateRequestBody
   /// with the given fields replaced by the non-null parameter values.
@@ -1882,25 +1771,25 @@ class __$$RazorpayPaymentLinkUpdateRequestBodyImplCopyWithImpl<$Res>
     Object? notes = freezed,
     Object? reminder_enable = freezed,
   }) {
-    return _then(_$RazorpayPaymentLinkUpdateRequestBodyImpl(
+    return _then(_self.copyWith(
       accept_partial: freezed == accept_partial
-          ? _value.accept_partial
+          ? _self.accept_partial
           : accept_partial // ignore: cast_nullable_to_non_nullable
               as bool?,
       reference_id: freezed == reference_id
-          ? _value.reference_id
+          ? _self.reference_id
           : reference_id // ignore: cast_nullable_to_non_nullable
               as String?,
       expire_by: freezed == expire_by
-          ? _value.expire_by
+          ? _self.expire_by
           : expire_by // ignore: cast_nullable_to_non_nullable
               as int?,
       notes: freezed == notes
-          ? _value._notes
+          ? _self.notes
           : notes // ignore: cast_nullable_to_non_nullable
               as IMap<dynamic>?,
       reminder_enable: freezed == reminder_enable
-          ? _value.reminder_enable
+          ? _self.reminder_enable
           : reminder_enable // ignore: cast_nullable_to_non_nullable
               as bool?,
     ));
@@ -1910,19 +1799,18 @@ class __$$RazorpayPaymentLinkUpdateRequestBodyImplCopyWithImpl<$Res>
 /// @nodoc
 
 @JsonSerializable(includeIfNull: false)
-class _$RazorpayPaymentLinkUpdateRequestBodyImpl
-    implements _RazorpayPaymentLinkUpdateRequestBody {
-  const _$RazorpayPaymentLinkUpdateRequestBodyImpl(
+class _RazorpayPaymentLinkUpdateRequestBody
+    implements RazorpayPaymentLinkUpdateRequestBody {
+  const _RazorpayPaymentLinkUpdateRequestBody(
       {this.accept_partial,
       this.reference_id,
       this.expire_by,
       final IMap<dynamic>? notes,
       this.reminder_enable})
       : _notes = notes;
-
-  factory _$RazorpayPaymentLinkUpdateRequestBodyImpl.fromJson(
+  factory _RazorpayPaymentLinkUpdateRequestBody.fromJson(
           Map<String, dynamic> json) =>
-      _$$RazorpayPaymentLinkUpdateRequestBodyImplFromJson(json);
+      _$RazorpayPaymentLinkUpdateRequestBodyFromJson(json);
 
   @override
   final bool? accept_partial;
@@ -1943,16 +1831,28 @@ class _$RazorpayPaymentLinkUpdateRequestBodyImpl
   @override
   final bool? reminder_enable;
 
+  /// Create a copy of RazorpayPaymentLinkUpdateRequestBody
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'RazorpayPaymentLinkUpdateRequestBody(accept_partial: $accept_partial, reference_id: $reference_id, expire_by: $expire_by, notes: $notes, reminder_enable: $reminder_enable)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$RazorpayPaymentLinkUpdateRequestBodyCopyWith<
+          _RazorpayPaymentLinkUpdateRequestBody>
+      get copyWith => __$RazorpayPaymentLinkUpdateRequestBodyCopyWithImpl<
+          _RazorpayPaymentLinkUpdateRequestBody>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$RazorpayPaymentLinkUpdateRequestBodyToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$RazorpayPaymentLinkUpdateRequestBodyImpl &&
+            other is _RazorpayPaymentLinkUpdateRequestBody &&
             (identical(other.accept_partial, accept_partial) ||
                 other.accept_partial == accept_partial) &&
             (identical(other.reference_id, reference_id) ||
@@ -1969,100 +1869,175 @@ class _$RazorpayPaymentLinkUpdateRequestBodyImpl
   int get hashCode => Object.hash(runtimeType, accept_partial, reference_id,
       expire_by, const DeepCollectionEquality().hash(_notes), reminder_enable);
 
-  /// Create a copy of RazorpayPaymentLinkUpdateRequestBody
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$RazorpayPaymentLinkUpdateRequestBodyImplCopyWith<
-          _$RazorpayPaymentLinkUpdateRequestBodyImpl>
-      get copyWith => __$$RazorpayPaymentLinkUpdateRequestBodyImplCopyWithImpl<
-          _$RazorpayPaymentLinkUpdateRequestBodyImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$RazorpayPaymentLinkUpdateRequestBodyImplToJson(
-      this,
-    );
+  String toString() {
+    return 'RazorpayPaymentLinkUpdateRequestBody(accept_partial: $accept_partial, reference_id: $reference_id, expire_by: $expire_by, notes: $notes, reminder_enable: $reminder_enable)';
   }
 }
 
-abstract class _RazorpayPaymentLinkUpdateRequestBody
-    implements RazorpayPaymentLinkUpdateRequestBody {
-  const factory _RazorpayPaymentLinkUpdateRequestBody(
-          {final bool? accept_partial,
-          final String? reference_id,
-          final int? expire_by,
-          final IMap<dynamic>? notes,
-          final bool? reminder_enable}) =
-      _$RazorpayPaymentLinkUpdateRequestBodyImpl;
+/// @nodoc
+abstract mixin class _$RazorpayPaymentLinkUpdateRequestBodyCopyWith<$Res>
+    implements $RazorpayPaymentLinkUpdateRequestBodyCopyWith<$Res> {
+  factory _$RazorpayPaymentLinkUpdateRequestBodyCopyWith(
+          _RazorpayPaymentLinkUpdateRequestBody value,
+          $Res Function(_RazorpayPaymentLinkUpdateRequestBody) _then) =
+      __$RazorpayPaymentLinkUpdateRequestBodyCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {bool? accept_partial,
+      String? reference_id,
+      int? expire_by,
+      IMap<dynamic>? notes,
+      bool? reminder_enable});
+}
 
-  factory _RazorpayPaymentLinkUpdateRequestBody.fromJson(
-          Map<String, dynamic> json) =
-      _$RazorpayPaymentLinkUpdateRequestBodyImpl.fromJson;
+/// @nodoc
+class __$RazorpayPaymentLinkUpdateRequestBodyCopyWithImpl<$Res>
+    implements _$RazorpayPaymentLinkUpdateRequestBodyCopyWith<$Res> {
+  __$RazorpayPaymentLinkUpdateRequestBodyCopyWithImpl(this._self, this._then);
 
-  @override
-  bool? get accept_partial;
-  @override
-  String? get reference_id;
-  @override
-  int? get expire_by;
-  @override
-  IMap<dynamic>? get notes;
-  @override
-  bool? get reminder_enable;
+  final _RazorpayPaymentLinkUpdateRequestBody _self;
+  final $Res Function(_RazorpayPaymentLinkUpdateRequestBody) _then;
 
   /// Create a copy of RazorpayPaymentLinkUpdateRequestBody
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$RazorpayPaymentLinkUpdateRequestBodyImplCopyWith<
-          _$RazorpayPaymentLinkUpdateRequestBodyImpl>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-RazorpayPaymentLink _$RazorpayPaymentLinkFromJson(Map<String, dynamic> json) {
-  return _RazorpayPaymentLink.fromJson(json);
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? accept_partial = freezed,
+    Object? reference_id = freezed,
+    Object? expire_by = freezed,
+    Object? notes = freezed,
+    Object? reminder_enable = freezed,
+  }) {
+    return _then(_RazorpayPaymentLinkUpdateRequestBody(
+      accept_partial: freezed == accept_partial
+          ? _self.accept_partial
+          : accept_partial // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      reference_id: freezed == reference_id
+          ? _self.reference_id
+          : reference_id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      expire_by: freezed == expire_by
+          ? _self.expire_by
+          : expire_by // ignore: cast_nullable_to_non_nullable
+              as int?,
+      notes: freezed == notes
+          ? _self._notes
+          : notes // ignore: cast_nullable_to_non_nullable
+              as IMap<dynamic>?,
+      reminder_enable: freezed == reminder_enable
+          ? _self.reminder_enable
+          : reminder_enable // ignore: cast_nullable_to_non_nullable
+              as bool?,
+    ));
+  }
 }
 
 /// @nodoc
 mixin _$RazorpayPaymentLink {
-  String get id => throw _privateConstructorUsedError;
-  dynamic get amount =>
-      throw _privateConstructorUsedError; // number | string, required int amount_paid, required int expired_at, // Unix timestamp, required int cancelled_at, // Unix timestamp, required RazorpayPaymentLinkCustomer customer, required RazorpayPaymentLinkReminder reminders, // Use Reminder model, // Response specific fields
-  List<RazorpayPaymentLinkPayment>? get payments =>
-      throw _privateConstructorUsedError; // Nullable list, required String short_url, required String
-  String get status =>
-      throw _privateConstructorUsedError; // 'created' | 'partially_paid' | 'expired' | 'cancelled' | 'paid', required int updated_at, // Unix timestamp, required String user_id, required String created_at, // String timestamp? Or int? d.ts says string., bool? upi_link,
-  String? get currency => throw _privateConstructorUsedError;
-  bool? get accept_partial => throw _privateConstructorUsedError;
-  int? get expire_by => throw _privateConstructorUsedError;
-  String? get reference_id => throw _privateConstructorUsedError;
-  int? get first_min_partial_amount => throw _privateConstructorUsedError;
-  String? get description => throw _privateConstructorUsedError;
-  RazorpayPaymentLinkNotify? get notify => throw _privateConstructorUsedError;
-  bool? get reminder_enable => throw _privateConstructorUsedError;
-  IMap<dynamic>? get notes => throw _privateConstructorUsedError;
-  String? get callback_url => throw _privateConstructorUsedError;
-  String? get callback_method => throw _privateConstructorUsedError;
-  String? get source => throw _privateConstructorUsedError;
-  String? get source_id => throw _privateConstructorUsedError;
-
-  /// Serializes this RazorpayPaymentLink to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  String get id;
+  dynamic
+      get amount; // number | string, required int amount_paid, required int expired_at, // Unix timestamp, required int cancelled_at, // Unix timestamp, required RazorpayPaymentLinkCustomer customer, required RazorpayPaymentLinkReminder reminders, // Use Reminder model, // Response specific fields
+  List<RazorpayPaymentLinkPayment>?
+      get payments; // Nullable list, required String short_url, required String
+  String
+      get status; // 'created' | 'partially_paid' | 'expired' | 'cancelled' | 'paid', required int updated_at, // Unix timestamp, required String user_id, required String created_at, // String timestamp? Or int? d.ts says string., bool? upi_link,
+  String? get currency;
+  bool? get accept_partial;
+  int? get expire_by;
+  String? get reference_id;
+  int? get first_min_partial_amount;
+  String? get description;
+  RazorpayPaymentLinkNotify? get notify;
+  bool? get reminder_enable;
+  IMap<dynamic>? get notes;
+  String? get callback_url;
+  String? get callback_method;
+  String? get source;
+  String? get source_id;
 
   /// Create a copy of RazorpayPaymentLink
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
   $RazorpayPaymentLinkCopyWith<RazorpayPaymentLink> get copyWith =>
-      throw _privateConstructorUsedError;
+      _$RazorpayPaymentLinkCopyWithImpl<RazorpayPaymentLink>(
+          this as RazorpayPaymentLink, _$identity);
+
+  /// Serializes this RazorpayPaymentLink to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is RazorpayPaymentLink &&
+            (identical(other.id, id) || other.id == id) &&
+            const DeepCollectionEquality().equals(other.amount, amount) &&
+            const DeepCollectionEquality().equals(other.payments, payments) &&
+            (identical(other.status, status) || other.status == status) &&
+            (identical(other.currency, currency) ||
+                other.currency == currency) &&
+            (identical(other.accept_partial, accept_partial) ||
+                other.accept_partial == accept_partial) &&
+            (identical(other.expire_by, expire_by) ||
+                other.expire_by == expire_by) &&
+            (identical(other.reference_id, reference_id) ||
+                other.reference_id == reference_id) &&
+            (identical(
+                    other.first_min_partial_amount, first_min_partial_amount) ||
+                other.first_min_partial_amount == first_min_partial_amount) &&
+            (identical(other.description, description) ||
+                other.description == description) &&
+            (identical(other.notify, notify) || other.notify == notify) &&
+            (identical(other.reminder_enable, reminder_enable) ||
+                other.reminder_enable == reminder_enable) &&
+            const DeepCollectionEquality().equals(other.notes, notes) &&
+            (identical(other.callback_url, callback_url) ||
+                other.callback_url == callback_url) &&
+            (identical(other.callback_method, callback_method) ||
+                other.callback_method == callback_method) &&
+            (identical(other.source, source) || other.source == source) &&
+            (identical(other.source_id, source_id) ||
+                other.source_id == source_id));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      const DeepCollectionEquality().hash(amount),
+      const DeepCollectionEquality().hash(payments),
+      status,
+      currency,
+      accept_partial,
+      expire_by,
+      reference_id,
+      first_min_partial_amount,
+      description,
+      notify,
+      reminder_enable,
+      const DeepCollectionEquality().hash(notes),
+      callback_url,
+      callback_method,
+      source,
+      source_id);
+
+  @override
+  String toString() {
+    return 'RazorpayPaymentLink(id: $id, amount: $amount, payments: $payments, status: $status, currency: $currency, accept_partial: $accept_partial, expire_by: $expire_by, reference_id: $reference_id, first_min_partial_amount: $first_min_partial_amount, description: $description, notify: $notify, reminder_enable: $reminder_enable, notes: $notes, callback_url: $callback_url, callback_method: $callback_method, source: $source, source_id: $source_id)';
+  }
 }
 
 /// @nodoc
-abstract class $RazorpayPaymentLinkCopyWith<$Res> {
+abstract mixin class $RazorpayPaymentLinkCopyWith<$Res> {
   factory $RazorpayPaymentLinkCopyWith(
-          RazorpayPaymentLink value, $Res Function(RazorpayPaymentLink) then) =
-      _$RazorpayPaymentLinkCopyWithImpl<$Res, RazorpayPaymentLink>;
+          RazorpayPaymentLink value, $Res Function(RazorpayPaymentLink) _then) =
+      _$RazorpayPaymentLinkCopyWithImpl;
   @useResult
   $Res call(
       {String id,
@@ -2087,14 +2062,12 @@ abstract class $RazorpayPaymentLinkCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$RazorpayPaymentLinkCopyWithImpl<$Res, $Val extends RazorpayPaymentLink>
+class _$RazorpayPaymentLinkCopyWithImpl<$Res>
     implements $RazorpayPaymentLinkCopyWith<$Res> {
-  _$RazorpayPaymentLinkCopyWithImpl(this._value, this._then);
+  _$RazorpayPaymentLinkCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final RazorpayPaymentLink _self;
+  final $Res Function(RazorpayPaymentLink) _then;
 
   /// Create a copy of RazorpayPaymentLink
   /// with the given fields replaced by the non-null parameter values.
@@ -2119,76 +2092,76 @@ class _$RazorpayPaymentLinkCopyWithImpl<$Res, $Val extends RazorpayPaymentLink>
     Object? source = freezed,
     Object? source_id = freezed,
   }) {
-    return _then(_value.copyWith(
+    return _then(_self.copyWith(
       id: null == id
-          ? _value.id
+          ? _self.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
       amount: freezed == amount
-          ? _value.amount
+          ? _self.amount
           : amount // ignore: cast_nullable_to_non_nullable
               as dynamic,
       payments: freezed == payments
-          ? _value.payments
+          ? _self.payments
           : payments // ignore: cast_nullable_to_non_nullable
               as List<RazorpayPaymentLinkPayment>?,
       status: null == status
-          ? _value.status
+          ? _self.status
           : status // ignore: cast_nullable_to_non_nullable
               as String,
       currency: freezed == currency
-          ? _value.currency
+          ? _self.currency
           : currency // ignore: cast_nullable_to_non_nullable
               as String?,
       accept_partial: freezed == accept_partial
-          ? _value.accept_partial
+          ? _self.accept_partial
           : accept_partial // ignore: cast_nullable_to_non_nullable
               as bool?,
       expire_by: freezed == expire_by
-          ? _value.expire_by
+          ? _self.expire_by
           : expire_by // ignore: cast_nullable_to_non_nullable
               as int?,
       reference_id: freezed == reference_id
-          ? _value.reference_id
+          ? _self.reference_id
           : reference_id // ignore: cast_nullable_to_non_nullable
               as String?,
       first_min_partial_amount: freezed == first_min_partial_amount
-          ? _value.first_min_partial_amount
+          ? _self.first_min_partial_amount
           : first_min_partial_amount // ignore: cast_nullable_to_non_nullable
               as int?,
       description: freezed == description
-          ? _value.description
+          ? _self.description
           : description // ignore: cast_nullable_to_non_nullable
               as String?,
       notify: freezed == notify
-          ? _value.notify
+          ? _self.notify
           : notify // ignore: cast_nullable_to_non_nullable
               as RazorpayPaymentLinkNotify?,
       reminder_enable: freezed == reminder_enable
-          ? _value.reminder_enable
+          ? _self.reminder_enable
           : reminder_enable // ignore: cast_nullable_to_non_nullable
               as bool?,
       notes: freezed == notes
-          ? _value.notes
+          ? _self.notes
           : notes // ignore: cast_nullable_to_non_nullable
               as IMap<dynamic>?,
       callback_url: freezed == callback_url
-          ? _value.callback_url
+          ? _self.callback_url
           : callback_url // ignore: cast_nullable_to_non_nullable
               as String?,
       callback_method: freezed == callback_method
-          ? _value.callback_method
+          ? _self.callback_method
           : callback_method // ignore: cast_nullable_to_non_nullable
               as String?,
       source: freezed == source
-          ? _value.source
+          ? _self.source
           : source // ignore: cast_nullable_to_non_nullable
               as String?,
       source_id: freezed == source_id
-          ? _value.source_id
+          ? _self.source_id
           : source_id // ignore: cast_nullable_to_non_nullable
               as String?,
-    ) as $Val);
+    ));
   }
 
   /// Create a copy of RazorpayPaymentLink
@@ -2196,156 +2169,21 @@ class _$RazorpayPaymentLinkCopyWithImpl<$Res, $Val extends RazorpayPaymentLink>
   @override
   @pragma('vm:prefer-inline')
   $RazorpayPaymentLinkNotifyCopyWith<$Res>? get notify {
-    if (_value.notify == null) {
+    if (_self.notify == null) {
       return null;
     }
 
-    return $RazorpayPaymentLinkNotifyCopyWith<$Res>(_value.notify!, (value) {
-      return _then(_value.copyWith(notify: value) as $Val);
+    return $RazorpayPaymentLinkNotifyCopyWith<$Res>(_self.notify!, (value) {
+      return _then(_self.copyWith(notify: value));
     });
-  }
-}
-
-/// @nodoc
-abstract class _$$RazorpayPaymentLinkImplCopyWith<$Res>
-    implements $RazorpayPaymentLinkCopyWith<$Res> {
-  factory _$$RazorpayPaymentLinkImplCopyWith(_$RazorpayPaymentLinkImpl value,
-          $Res Function(_$RazorpayPaymentLinkImpl) then) =
-      __$$RazorpayPaymentLinkImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {String id,
-      dynamic amount,
-      List<RazorpayPaymentLinkPayment>? payments,
-      String status,
-      String? currency,
-      bool? accept_partial,
-      int? expire_by,
-      String? reference_id,
-      int? first_min_partial_amount,
-      String? description,
-      RazorpayPaymentLinkNotify? notify,
-      bool? reminder_enable,
-      IMap<dynamic>? notes,
-      String? callback_url,
-      String? callback_method,
-      String? source,
-      String? source_id});
-
-  @override
-  $RazorpayPaymentLinkNotifyCopyWith<$Res>? get notify;
-}
-
-/// @nodoc
-class __$$RazorpayPaymentLinkImplCopyWithImpl<$Res>
-    extends _$RazorpayPaymentLinkCopyWithImpl<$Res, _$RazorpayPaymentLinkImpl>
-    implements _$$RazorpayPaymentLinkImplCopyWith<$Res> {
-  __$$RazorpayPaymentLinkImplCopyWithImpl(_$RazorpayPaymentLinkImpl _value,
-      $Res Function(_$RazorpayPaymentLinkImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of RazorpayPaymentLink
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? id = null,
-    Object? amount = freezed,
-    Object? payments = freezed,
-    Object? status = null,
-    Object? currency = freezed,
-    Object? accept_partial = freezed,
-    Object? expire_by = freezed,
-    Object? reference_id = freezed,
-    Object? first_min_partial_amount = freezed,
-    Object? description = freezed,
-    Object? notify = freezed,
-    Object? reminder_enable = freezed,
-    Object? notes = freezed,
-    Object? callback_url = freezed,
-    Object? callback_method = freezed,
-    Object? source = freezed,
-    Object? source_id = freezed,
-  }) {
-    return _then(_$RazorpayPaymentLinkImpl(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      amount: freezed == amount
-          ? _value.amount
-          : amount // ignore: cast_nullable_to_non_nullable
-              as dynamic,
-      payments: freezed == payments
-          ? _value._payments
-          : payments // ignore: cast_nullable_to_non_nullable
-              as List<RazorpayPaymentLinkPayment>?,
-      status: null == status
-          ? _value.status
-          : status // ignore: cast_nullable_to_non_nullable
-              as String,
-      currency: freezed == currency
-          ? _value.currency
-          : currency // ignore: cast_nullable_to_non_nullable
-              as String?,
-      accept_partial: freezed == accept_partial
-          ? _value.accept_partial
-          : accept_partial // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      expire_by: freezed == expire_by
-          ? _value.expire_by
-          : expire_by // ignore: cast_nullable_to_non_nullable
-              as int?,
-      reference_id: freezed == reference_id
-          ? _value.reference_id
-          : reference_id // ignore: cast_nullable_to_non_nullable
-              as String?,
-      first_min_partial_amount: freezed == first_min_partial_amount
-          ? _value.first_min_partial_amount
-          : first_min_partial_amount // ignore: cast_nullable_to_non_nullable
-              as int?,
-      description: freezed == description
-          ? _value.description
-          : description // ignore: cast_nullable_to_non_nullable
-              as String?,
-      notify: freezed == notify
-          ? _value.notify
-          : notify // ignore: cast_nullable_to_non_nullable
-              as RazorpayPaymentLinkNotify?,
-      reminder_enable: freezed == reminder_enable
-          ? _value.reminder_enable
-          : reminder_enable // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      notes: freezed == notes
-          ? _value._notes
-          : notes // ignore: cast_nullable_to_non_nullable
-              as IMap<dynamic>?,
-      callback_url: freezed == callback_url
-          ? _value.callback_url
-          : callback_url // ignore: cast_nullable_to_non_nullable
-              as String?,
-      callback_method: freezed == callback_method
-          ? _value.callback_method
-          : callback_method // ignore: cast_nullable_to_non_nullable
-              as String?,
-      source: freezed == source
-          ? _value.source
-          : source // ignore: cast_nullable_to_non_nullable
-              as String?,
-      source_id: freezed == source_id
-          ? _value.source_id
-          : source_id // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
   }
 }
 
 /// @nodoc
 
 @JsonSerializable(includeIfNull: false)
-class _$RazorpayPaymentLinkImpl implements _RazorpayPaymentLink {
-  const _$RazorpayPaymentLinkImpl(
+class _RazorpayPaymentLink implements RazorpayPaymentLink {
+  const _RazorpayPaymentLink(
       {required this.id,
       required this.amount,
       required final List<RazorpayPaymentLinkPayment>? payments,
@@ -2365,9 +2203,8 @@ class _$RazorpayPaymentLinkImpl implements _RazorpayPaymentLink {
       this.source_id})
       : _payments = payments,
         _notes = notes;
-
-  factory _$RazorpayPaymentLinkImpl.fromJson(Map<String, dynamic> json) =>
-      _$$RazorpayPaymentLinkImplFromJson(json);
+  factory _RazorpayPaymentLink.fromJson(Map<String, dynamic> json) =>
+      _$RazorpayPaymentLinkFromJson(json);
 
   @override
   final String id;
@@ -2424,16 +2261,27 @@ class _$RazorpayPaymentLinkImpl implements _RazorpayPaymentLink {
   @override
   final String? source_id;
 
+  /// Create a copy of RazorpayPaymentLink
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'RazorpayPaymentLink(id: $id, amount: $amount, payments: $payments, status: $status, currency: $currency, accept_partial: $accept_partial, expire_by: $expire_by, reference_id: $reference_id, first_min_partial_amount: $first_min_partial_amount, description: $description, notify: $notify, reminder_enable: $reminder_enable, notes: $notes, callback_url: $callback_url, callback_method: $callback_method, source: $source, source_id: $source_id)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$RazorpayPaymentLinkCopyWith<_RazorpayPaymentLink> get copyWith =>
+      __$RazorpayPaymentLinkCopyWithImpl<_RazorpayPaymentLink>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$RazorpayPaymentLinkToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$RazorpayPaymentLinkImpl &&
+            other is _RazorpayPaymentLink &&
             (identical(other.id, id) || other.id == id) &&
             const DeepCollectionEquality().equals(other.amount, amount) &&
             const DeepCollectionEquality().equals(other._payments, _payments) &&
@@ -2486,275 +2334,185 @@ class _$RazorpayPaymentLinkImpl implements _RazorpayPaymentLink {
       source,
       source_id);
 
-  /// Create a copy of RazorpayPaymentLink
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$RazorpayPaymentLinkImplCopyWith<_$RazorpayPaymentLinkImpl> get copyWith =>
-      __$$RazorpayPaymentLinkImplCopyWithImpl<_$RazorpayPaymentLinkImpl>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$RazorpayPaymentLinkImplToJson(
-      this,
-    );
+  String toString() {
+    return 'RazorpayPaymentLink(id: $id, amount: $amount, payments: $payments, status: $status, currency: $currency, accept_partial: $accept_partial, expire_by: $expire_by, reference_id: $reference_id, first_min_partial_amount: $first_min_partial_amount, description: $description, notify: $notify, reminder_enable: $reminder_enable, notes: $notes, callback_url: $callback_url, callback_method: $callback_method, source: $source, source_id: $source_id)';
   }
 }
 
-abstract class _RazorpayPaymentLink implements RazorpayPaymentLink {
-  const factory _RazorpayPaymentLink(
-      {required final String id,
-      required final dynamic amount,
-      required final List<RazorpayPaymentLinkPayment>? payments,
-      required final String status,
-      final String? currency,
-      final bool? accept_partial,
-      final int? expire_by,
-      final String? reference_id,
-      final int? first_min_partial_amount,
-      final String? description,
-      final RazorpayPaymentLinkNotify? notify,
-      final bool? reminder_enable,
-      final IMap<dynamic>? notes,
-      final String? callback_url,
-      final String? callback_method,
-      final String? source,
-      final String? source_id}) = _$RazorpayPaymentLinkImpl;
+/// @nodoc
+abstract mixin class _$RazorpayPaymentLinkCopyWith<$Res>
+    implements $RazorpayPaymentLinkCopyWith<$Res> {
+  factory _$RazorpayPaymentLinkCopyWith(_RazorpayPaymentLink value,
+          $Res Function(_RazorpayPaymentLink) _then) =
+      __$RazorpayPaymentLinkCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {String id,
+      dynamic amount,
+      List<RazorpayPaymentLinkPayment>? payments,
+      String status,
+      String? currency,
+      bool? accept_partial,
+      int? expire_by,
+      String? reference_id,
+      int? first_min_partial_amount,
+      String? description,
+      RazorpayPaymentLinkNotify? notify,
+      bool? reminder_enable,
+      IMap<dynamic>? notes,
+      String? callback_url,
+      String? callback_method,
+      String? source,
+      String? source_id});
 
-  factory _RazorpayPaymentLink.fromJson(Map<String, dynamic> json) =
-      _$RazorpayPaymentLinkImpl.fromJson;
+  @override
+  $RazorpayPaymentLinkNotifyCopyWith<$Res>? get notify;
+}
 
-  @override
-  String get id;
-  @override
-  dynamic
-      get amount; // number | string, required int amount_paid, required int expired_at, // Unix timestamp, required int cancelled_at, // Unix timestamp, required RazorpayPaymentLinkCustomer customer, required RazorpayPaymentLinkReminder reminders, // Use Reminder model, // Response specific fields
-  @override
-  List<RazorpayPaymentLinkPayment>?
-      get payments; // Nullable list, required String short_url, required String
-  @override
-  String
-      get status; // 'created' | 'partially_paid' | 'expired' | 'cancelled' | 'paid', required int updated_at, // Unix timestamp, required String user_id, required String created_at, // String timestamp? Or int? d.ts says string., bool? upi_link,
-  @override
-  String? get currency;
-  @override
-  bool? get accept_partial;
-  @override
-  int? get expire_by;
-  @override
-  String? get reference_id;
-  @override
-  int? get first_min_partial_amount;
-  @override
-  String? get description;
-  @override
-  RazorpayPaymentLinkNotify? get notify;
-  @override
-  bool? get reminder_enable;
-  @override
-  IMap<dynamic>? get notes;
-  @override
-  String? get callback_url;
-  @override
-  String? get callback_method;
-  @override
-  String? get source;
-  @override
-  String? get source_id;
+/// @nodoc
+class __$RazorpayPaymentLinkCopyWithImpl<$Res>
+    implements _$RazorpayPaymentLinkCopyWith<$Res> {
+  __$RazorpayPaymentLinkCopyWithImpl(this._self, this._then);
+
+  final _RazorpayPaymentLink _self;
+  final $Res Function(_RazorpayPaymentLink) _then;
 
   /// Create a copy of RazorpayPaymentLink
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$RazorpayPaymentLinkImplCopyWith<_$RazorpayPaymentLinkImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? id = null,
+    Object? amount = freezed,
+    Object? payments = freezed,
+    Object? status = null,
+    Object? currency = freezed,
+    Object? accept_partial = freezed,
+    Object? expire_by = freezed,
+    Object? reference_id = freezed,
+    Object? first_min_partial_amount = freezed,
+    Object? description = freezed,
+    Object? notify = freezed,
+    Object? reminder_enable = freezed,
+    Object? notes = freezed,
+    Object? callback_url = freezed,
+    Object? callback_method = freezed,
+    Object? source = freezed,
+    Object? source_id = freezed,
+  }) {
+    return _then(_RazorpayPaymentLink(
+      id: null == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      amount: freezed == amount
+          ? _self.amount
+          : amount // ignore: cast_nullable_to_non_nullable
+              as dynamic,
+      payments: freezed == payments
+          ? _self._payments
+          : payments // ignore: cast_nullable_to_non_nullable
+              as List<RazorpayPaymentLinkPayment>?,
+      status: null == status
+          ? _self.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as String,
+      currency: freezed == currency
+          ? _self.currency
+          : currency // ignore: cast_nullable_to_non_nullable
+              as String?,
+      accept_partial: freezed == accept_partial
+          ? _self.accept_partial
+          : accept_partial // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      expire_by: freezed == expire_by
+          ? _self.expire_by
+          : expire_by // ignore: cast_nullable_to_non_nullable
+              as int?,
+      reference_id: freezed == reference_id
+          ? _self.reference_id
+          : reference_id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      first_min_partial_amount: freezed == first_min_partial_amount
+          ? _self.first_min_partial_amount
+          : first_min_partial_amount // ignore: cast_nullable_to_non_nullable
+              as int?,
+      description: freezed == description
+          ? _self.description
+          : description // ignore: cast_nullable_to_non_nullable
+              as String?,
+      notify: freezed == notify
+          ? _self.notify
+          : notify // ignore: cast_nullable_to_non_nullable
+              as RazorpayPaymentLinkNotify?,
+      reminder_enable: freezed == reminder_enable
+          ? _self.reminder_enable
+          : reminder_enable // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      notes: freezed == notes
+          ? _self._notes
+          : notes // ignore: cast_nullable_to_non_nullable
+              as IMap<dynamic>?,
+      callback_url: freezed == callback_url
+          ? _self.callback_url
+          : callback_url // ignore: cast_nullable_to_non_nullable
+              as String?,
+      callback_method: freezed == callback_method
+          ? _self.callback_method
+          : callback_method // ignore: cast_nullable_to_non_nullable
+              as String?,
+      source: freezed == source
+          ? _self.source
+          : source // ignore: cast_nullable_to_non_nullable
+              as String?,
+      source_id: freezed == source_id
+          ? _self.source_id
+          : source_id // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
 
-RazorpayTransferPaymentOption _$RazorpayTransferPaymentOptionFromJson(
-    Map<String, dynamic> json) {
-  return _RazorpayTransferPaymentOption.fromJson(json);
+  /// Create a copy of RazorpayPaymentLink
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $RazorpayPaymentLinkNotifyCopyWith<$Res>? get notify {
+    if (_self.notify == null) {
+      return null;
+    }
+
+    return $RazorpayPaymentLinkNotifyCopyWith<$Res>(_self.notify!, (value) {
+      return _then(_self.copyWith(notify: value));
+    });
+  }
 }
 
 /// @nodoc
 mixin _$RazorpayTransferPaymentOption {
-  RazorpayTransferPaymentOrder get order =>
-      throw _privateConstructorUsedError; // Include base PaymentLink fields needed when using this option
-  dynamic get amount => throw _privateConstructorUsedError;
-  RazorpayPaymentLinkCustomer get customer =>
-      throw _privateConstructorUsedError;
-
-  /// Serializes this RazorpayTransferPaymentOption to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  RazorpayTransferPaymentOrder
+      get order; // Include base PaymentLink fields needed when using this option
+  dynamic get amount;
+  RazorpayPaymentLinkCustomer get customer;
 
   /// Create a copy of RazorpayTransferPaymentOption
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
   $RazorpayTransferPaymentOptionCopyWith<RazorpayTransferPaymentOption>
-      get copyWith => throw _privateConstructorUsedError;
-}
+      get copyWith => _$RazorpayTransferPaymentOptionCopyWithImpl<
+              RazorpayTransferPaymentOption>(
+          this as RazorpayTransferPaymentOption, _$identity);
 
-/// @nodoc
-abstract class $RazorpayTransferPaymentOptionCopyWith<$Res> {
-  factory $RazorpayTransferPaymentOptionCopyWith(
-          RazorpayTransferPaymentOption value,
-          $Res Function(RazorpayTransferPaymentOption) then) =
-      _$RazorpayTransferPaymentOptionCopyWithImpl<$Res,
-          RazorpayTransferPaymentOption>;
-  @useResult
-  $Res call(
-      {RazorpayTransferPaymentOrder order,
-      dynamic amount,
-      RazorpayPaymentLinkCustomer customer});
-
-  $RazorpayTransferPaymentOrderCopyWith<$Res> get order;
-  $RazorpayPaymentLinkCustomerCopyWith<$Res> get customer;
-}
-
-/// @nodoc
-class _$RazorpayTransferPaymentOptionCopyWithImpl<$Res,
-        $Val extends RazorpayTransferPaymentOption>
-    implements $RazorpayTransferPaymentOptionCopyWith<$Res> {
-  _$RazorpayTransferPaymentOptionCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of RazorpayTransferPaymentOption
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? order = null,
-    Object? amount = freezed,
-    Object? customer = null,
-  }) {
-    return _then(_value.copyWith(
-      order: null == order
-          ? _value.order
-          : order // ignore: cast_nullable_to_non_nullable
-              as RazorpayTransferPaymentOrder,
-      amount: freezed == amount
-          ? _value.amount
-          : amount // ignore: cast_nullable_to_non_nullable
-              as dynamic,
-      customer: null == customer
-          ? _value.customer
-          : customer // ignore: cast_nullable_to_non_nullable
-              as RazorpayPaymentLinkCustomer,
-    ) as $Val);
-  }
-
-  /// Create a copy of RazorpayTransferPaymentOption
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $RazorpayTransferPaymentOrderCopyWith<$Res> get order {
-    return $RazorpayTransferPaymentOrderCopyWith<$Res>(_value.order, (value) {
-      return _then(_value.copyWith(order: value) as $Val);
-    });
-  }
-
-  /// Create a copy of RazorpayTransferPaymentOption
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $RazorpayPaymentLinkCustomerCopyWith<$Res> get customer {
-    return $RazorpayPaymentLinkCustomerCopyWith<$Res>(_value.customer, (value) {
-      return _then(_value.copyWith(customer: value) as $Val);
-    });
-  }
-}
-
-/// @nodoc
-abstract class _$$RazorpayTransferPaymentOptionImplCopyWith<$Res>
-    implements $RazorpayTransferPaymentOptionCopyWith<$Res> {
-  factory _$$RazorpayTransferPaymentOptionImplCopyWith(
-          _$RazorpayTransferPaymentOptionImpl value,
-          $Res Function(_$RazorpayTransferPaymentOptionImpl) then) =
-      __$$RazorpayTransferPaymentOptionImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {RazorpayTransferPaymentOrder order,
-      dynamic amount,
-      RazorpayPaymentLinkCustomer customer});
-
-  @override
-  $RazorpayTransferPaymentOrderCopyWith<$Res> get order;
-  @override
-  $RazorpayPaymentLinkCustomerCopyWith<$Res> get customer;
-}
-
-/// @nodoc
-class __$$RazorpayTransferPaymentOptionImplCopyWithImpl<$Res>
-    extends _$RazorpayTransferPaymentOptionCopyWithImpl<$Res,
-        _$RazorpayTransferPaymentOptionImpl>
-    implements _$$RazorpayTransferPaymentOptionImplCopyWith<$Res> {
-  __$$RazorpayTransferPaymentOptionImplCopyWithImpl(
-      _$RazorpayTransferPaymentOptionImpl _value,
-      $Res Function(_$RazorpayTransferPaymentOptionImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of RazorpayTransferPaymentOption
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? order = null,
-    Object? amount = freezed,
-    Object? customer = null,
-  }) {
-    return _then(_$RazorpayTransferPaymentOptionImpl(
-      order: null == order
-          ? _value.order
-          : order // ignore: cast_nullable_to_non_nullable
-              as RazorpayTransferPaymentOrder,
-      amount: freezed == amount
-          ? _value.amount
-          : amount // ignore: cast_nullable_to_non_nullable
-              as dynamic,
-      customer: null == customer
-          ? _value.customer
-          : customer // ignore: cast_nullable_to_non_nullable
-              as RazorpayPaymentLinkCustomer,
-    ));
-  }
-}
-
-/// @nodoc
-
-@JsonSerializable(includeIfNull: false)
-class _$RazorpayTransferPaymentOptionImpl
-    implements _RazorpayTransferPaymentOption {
-  const _$RazorpayTransferPaymentOptionImpl(
-      {required this.order, required this.amount, required this.customer});
-
-  factory _$RazorpayTransferPaymentOptionImpl.fromJson(
-          Map<String, dynamic> json) =>
-      _$$RazorpayTransferPaymentOptionImplFromJson(json);
-
-  @override
-  final RazorpayTransferPaymentOrder order;
-// Include base PaymentLink fields needed when using this option
-  @override
-  final dynamic amount;
-  @override
-  final RazorpayPaymentLinkCustomer customer;
-
-  @override
-  String toString() {
-    return 'RazorpayTransferPaymentOption(order: $order, amount: $amount, customer: $customer)';
-  }
+  /// Serializes this RazorpayTransferPaymentOption to a JSON map.
+  Map<String, dynamic> toJson();
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$RazorpayTransferPaymentOptionImpl &&
+            other is RazorpayTransferPaymentOption &&
             (identical(other.order, order) || other.order == order) &&
             const DeepCollectionEquality().equals(other.amount, amount) &&
             (identical(other.customer, customer) ||
@@ -2766,132 +2524,264 @@ class _$RazorpayTransferPaymentOptionImpl
   int get hashCode => Object.hash(runtimeType, order,
       const DeepCollectionEquality().hash(amount), customer);
 
-  /// Create a copy of RazorpayTransferPaymentOption
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$RazorpayTransferPaymentOptionImplCopyWith<
-          _$RazorpayTransferPaymentOptionImpl>
-      get copyWith => __$$RazorpayTransferPaymentOptionImplCopyWithImpl<
-          _$RazorpayTransferPaymentOptionImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$RazorpayTransferPaymentOptionImplToJson(
-      this,
-    );
+  String toString() {
+    return 'RazorpayTransferPaymentOption(order: $order, amount: $amount, customer: $customer)';
   }
 }
 
-abstract class _RazorpayTransferPaymentOption
-    implements RazorpayTransferPaymentOption {
-  const factory _RazorpayTransferPaymentOption(
-          {required final RazorpayTransferPaymentOrder order,
-          required final dynamic amount,
-          required final RazorpayPaymentLinkCustomer customer}) =
-      _$RazorpayTransferPaymentOptionImpl;
+/// @nodoc
+abstract mixin class $RazorpayTransferPaymentOptionCopyWith<$Res> {
+  factory $RazorpayTransferPaymentOptionCopyWith(
+          RazorpayTransferPaymentOption value,
+          $Res Function(RazorpayTransferPaymentOption) _then) =
+      _$RazorpayTransferPaymentOptionCopyWithImpl;
+  @useResult
+  $Res call(
+      {RazorpayTransferPaymentOrder order,
+      dynamic amount,
+      RazorpayPaymentLinkCustomer customer});
 
-  factory _RazorpayTransferPaymentOption.fromJson(Map<String, dynamic> json) =
-      _$RazorpayTransferPaymentOptionImpl.fromJson;
+  $RazorpayTransferPaymentOrderCopyWith<$Res> get order;
+  $RazorpayPaymentLinkCustomerCopyWith<$Res> get customer;
+}
+
+/// @nodoc
+class _$RazorpayTransferPaymentOptionCopyWithImpl<$Res>
+    implements $RazorpayTransferPaymentOptionCopyWith<$Res> {
+  _$RazorpayTransferPaymentOptionCopyWithImpl(this._self, this._then);
+
+  final RazorpayTransferPaymentOption _self;
+  final $Res Function(RazorpayTransferPaymentOption) _then;
+
+  /// Create a copy of RazorpayTransferPaymentOption
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? order = null,
+    Object? amount = freezed,
+    Object? customer = null,
+  }) {
+    return _then(_self.copyWith(
+      order: null == order
+          ? _self.order
+          : order // ignore: cast_nullable_to_non_nullable
+              as RazorpayTransferPaymentOrder,
+      amount: freezed == amount
+          ? _self.amount
+          : amount // ignore: cast_nullable_to_non_nullable
+              as dynamic,
+      customer: null == customer
+          ? _self.customer
+          : customer // ignore: cast_nullable_to_non_nullable
+              as RazorpayPaymentLinkCustomer,
+    ));
+  }
+
+  /// Create a copy of RazorpayTransferPaymentOption
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $RazorpayTransferPaymentOrderCopyWith<$Res> get order {
+    return $RazorpayTransferPaymentOrderCopyWith<$Res>(_self.order, (value) {
+      return _then(_self.copyWith(order: value));
+    });
+  }
+
+  /// Create a copy of RazorpayTransferPaymentOption
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $RazorpayPaymentLinkCustomerCopyWith<$Res> get customer {
+    return $RazorpayPaymentLinkCustomerCopyWith<$Res>(_self.customer, (value) {
+      return _then(_self.copyWith(customer: value));
+    });
+  }
+}
+
+/// @nodoc
+
+@JsonSerializable(includeIfNull: false)
+class _RazorpayTransferPaymentOption implements RazorpayTransferPaymentOption {
+  const _RazorpayTransferPaymentOption(
+      {required this.order, required this.amount, required this.customer});
+  factory _RazorpayTransferPaymentOption.fromJson(Map<String, dynamic> json) =>
+      _$RazorpayTransferPaymentOptionFromJson(json);
 
   @override
-  RazorpayTransferPaymentOrder
-      get order; // Include base PaymentLink fields needed when using this option
+  final RazorpayTransferPaymentOrder order;
+// Include base PaymentLink fields needed when using this option
   @override
-  dynamic get amount;
+  final dynamic amount;
   @override
-  RazorpayPaymentLinkCustomer get customer;
+  final RazorpayPaymentLinkCustomer customer;
 
   /// Create a copy of RazorpayTransferPaymentOption
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$RazorpayTransferPaymentOptionImplCopyWith<
-          _$RazorpayTransferPaymentOptionImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  @pragma('vm:prefer-inline')
+  _$RazorpayTransferPaymentOptionCopyWith<_RazorpayTransferPaymentOption>
+      get copyWith => __$RazorpayTransferPaymentOptionCopyWithImpl<
+          _RazorpayTransferPaymentOption>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$RazorpayTransferPaymentOptionToJson(
+      this,
+    );
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _RazorpayTransferPaymentOption &&
+            (identical(other.order, order) || other.order == order) &&
+            const DeepCollectionEquality().equals(other.amount, amount) &&
+            (identical(other.customer, customer) ||
+                other.customer == customer));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, order,
+      const DeepCollectionEquality().hash(amount), customer);
+
+  @override
+  String toString() {
+    return 'RazorpayTransferPaymentOption(order: $order, amount: $amount, customer: $customer)';
+  }
 }
 
-RazorpayTransferPaymentOrder _$RazorpayTransferPaymentOrderFromJson(
-    Map<String, dynamic> json) {
-  return _RazorpayTransferPaymentOrder.fromJson(json);
+/// @nodoc
+abstract mixin class _$RazorpayTransferPaymentOptionCopyWith<$Res>
+    implements $RazorpayTransferPaymentOptionCopyWith<$Res> {
+  factory _$RazorpayTransferPaymentOptionCopyWith(
+          _RazorpayTransferPaymentOption value,
+          $Res Function(_RazorpayTransferPaymentOption) _then) =
+      __$RazorpayTransferPaymentOptionCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {RazorpayTransferPaymentOrder order,
+      dynamic amount,
+      RazorpayPaymentLinkCustomer customer});
+
+  @override
+  $RazorpayTransferPaymentOrderCopyWith<$Res> get order;
+  @override
+  $RazorpayPaymentLinkCustomerCopyWith<$Res> get customer;
+}
+
+/// @nodoc
+class __$RazorpayTransferPaymentOptionCopyWithImpl<$Res>
+    implements _$RazorpayTransferPaymentOptionCopyWith<$Res> {
+  __$RazorpayTransferPaymentOptionCopyWithImpl(this._self, this._then);
+
+  final _RazorpayTransferPaymentOption _self;
+  final $Res Function(_RazorpayTransferPaymentOption) _then;
+
+  /// Create a copy of RazorpayTransferPaymentOption
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? order = null,
+    Object? amount = freezed,
+    Object? customer = null,
+  }) {
+    return _then(_RazorpayTransferPaymentOption(
+      order: null == order
+          ? _self.order
+          : order // ignore: cast_nullable_to_non_nullable
+              as RazorpayTransferPaymentOrder,
+      amount: freezed == amount
+          ? _self.amount
+          : amount // ignore: cast_nullable_to_non_nullable
+              as dynamic,
+      customer: null == customer
+          ? _self.customer
+          : customer // ignore: cast_nullable_to_non_nullable
+              as RazorpayPaymentLinkCustomer,
+    ));
+  }
+
+  /// Create a copy of RazorpayTransferPaymentOption
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $RazorpayTransferPaymentOrderCopyWith<$Res> get order {
+    return $RazorpayTransferPaymentOrderCopyWith<$Res>(_self.order, (value) {
+      return _then(_self.copyWith(order: value));
+    });
+  }
+
+  /// Create a copy of RazorpayTransferPaymentOption
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $RazorpayPaymentLinkCustomerCopyWith<$Res> get customer {
+    return $RazorpayPaymentLinkCustomerCopyWith<$Res>(_self.customer, (value) {
+      return _then(_self.copyWith(customer: value));
+    });
+  }
 }
 
 /// @nodoc
 mixin _$RazorpayTransferPaymentOrder {
 // Define RazorpayOrderCreateTransferRequestBody if not already done in transfers_model
-  List<RazorpayOrderCreateTransferRequestBody>? get transfers =>
-      throw _privateConstructorUsedError;
-
-  /// Serializes this RazorpayTransferPaymentOrder to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  List<RazorpayOrderCreateTransferRequestBody>? get transfers;
 
   /// Create a copy of RazorpayTransferPaymentOrder
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $RazorpayTransferPaymentOrderCopyWith<RazorpayTransferPaymentOrder>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $RazorpayTransferPaymentOrderCopyWith<$Res> {
-  factory $RazorpayTransferPaymentOrderCopyWith(
-          RazorpayTransferPaymentOrder value,
-          $Res Function(RazorpayTransferPaymentOrder) then) =
-      _$RazorpayTransferPaymentOrderCopyWithImpl<$Res,
-          RazorpayTransferPaymentOrder>;
-  @useResult
-  $Res call({List<RazorpayOrderCreateTransferRequestBody>? transfers});
-}
-
-/// @nodoc
-class _$RazorpayTransferPaymentOrderCopyWithImpl<$Res,
-        $Val extends RazorpayTransferPaymentOrder>
-    implements $RazorpayTransferPaymentOrderCopyWith<$Res> {
-  _$RazorpayTransferPaymentOrderCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of RazorpayTransferPaymentOrder
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
+  $RazorpayTransferPaymentOrderCopyWith<RazorpayTransferPaymentOrder>
+      get copyWith => _$RazorpayTransferPaymentOrderCopyWithImpl<
+              RazorpayTransferPaymentOrder>(
+          this as RazorpayTransferPaymentOrder, _$identity);
+
+  /// Serializes this RazorpayTransferPaymentOrder to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? transfers = freezed,
-  }) {
-    return _then(_value.copyWith(
-      transfers: freezed == transfers
-          ? _value.transfers
-          : transfers // ignore: cast_nullable_to_non_nullable
-              as List<RazorpayOrderCreateTransferRequestBody>?,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is RazorpayTransferPaymentOrder &&
+            const DeepCollectionEquality().equals(other.transfers, transfers));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(transfers));
+
+  @override
+  String toString() {
+    return 'RazorpayTransferPaymentOrder(transfers: $transfers)';
   }
 }
 
 /// @nodoc
-abstract class _$$RazorpayTransferPaymentOrderImplCopyWith<$Res>
-    implements $RazorpayTransferPaymentOrderCopyWith<$Res> {
-  factory _$$RazorpayTransferPaymentOrderImplCopyWith(
-          _$RazorpayTransferPaymentOrderImpl value,
-          $Res Function(_$RazorpayTransferPaymentOrderImpl) then) =
-      __$$RazorpayTransferPaymentOrderImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $RazorpayTransferPaymentOrderCopyWith<$Res> {
+  factory $RazorpayTransferPaymentOrderCopyWith(
+          RazorpayTransferPaymentOrder value,
+          $Res Function(RazorpayTransferPaymentOrder) _then) =
+      _$RazorpayTransferPaymentOrderCopyWithImpl;
   @useResult
   $Res call({List<RazorpayOrderCreateTransferRequestBody>? transfers});
 }
 
 /// @nodoc
-class __$$RazorpayTransferPaymentOrderImplCopyWithImpl<$Res>
-    extends _$RazorpayTransferPaymentOrderCopyWithImpl<$Res,
-        _$RazorpayTransferPaymentOrderImpl>
-    implements _$$RazorpayTransferPaymentOrderImplCopyWith<$Res> {
-  __$$RazorpayTransferPaymentOrderImplCopyWithImpl(
-      _$RazorpayTransferPaymentOrderImpl _value,
-      $Res Function(_$RazorpayTransferPaymentOrderImpl) _then)
-      : super(_value, _then);
+class _$RazorpayTransferPaymentOrderCopyWithImpl<$Res>
+    implements $RazorpayTransferPaymentOrderCopyWith<$Res> {
+  _$RazorpayTransferPaymentOrderCopyWithImpl(this._self, this._then);
+
+  final RazorpayTransferPaymentOrder _self;
+  final $Res Function(RazorpayTransferPaymentOrder) _then;
 
   /// Create a copy of RazorpayTransferPaymentOrder
   /// with the given fields replaced by the non-null parameter values.
@@ -2900,9 +2790,9 @@ class __$$RazorpayTransferPaymentOrderImplCopyWithImpl<$Res>
   $Res call({
     Object? transfers = freezed,
   }) {
-    return _then(_$RazorpayTransferPaymentOrderImpl(
+    return _then(_self.copyWith(
       transfers: freezed == transfers
-          ? _value._transfers
+          ? _self.transfers
           : transfers // ignore: cast_nullable_to_non_nullable
               as List<RazorpayOrderCreateTransferRequestBody>?,
     ));
@@ -2912,15 +2802,12 @@ class __$$RazorpayTransferPaymentOrderImplCopyWithImpl<$Res>
 /// @nodoc
 
 @JsonSerializable(includeIfNull: false)
-class _$RazorpayTransferPaymentOrderImpl
-    implements _RazorpayTransferPaymentOrder {
-  const _$RazorpayTransferPaymentOrderImpl(
+class _RazorpayTransferPaymentOrder implements RazorpayTransferPaymentOrder {
+  const _RazorpayTransferPaymentOrder(
       {final List<RazorpayOrderCreateTransferRequestBody>? transfers})
       : _transfers = transfers;
-
-  factory _$RazorpayTransferPaymentOrderImpl.fromJson(
-          Map<String, dynamic> json) =>
-      _$$RazorpayTransferPaymentOrderImplFromJson(json);
+  factory _RazorpayTransferPaymentOrder.fromJson(Map<String, dynamic> json) =>
+      _$RazorpayTransferPaymentOrderFromJson(json);
 
 // Define RazorpayOrderCreateTransferRequestBody if not already done in transfers_model
   final List<RazorpayOrderCreateTransferRequestBody>? _transfers;
@@ -2934,16 +2821,27 @@ class _$RazorpayTransferPaymentOrderImpl
     return EqualUnmodifiableListView(value);
   }
 
+  /// Create a copy of RazorpayTransferPaymentOrder
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'RazorpayTransferPaymentOrder(transfers: $transfers)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$RazorpayTransferPaymentOrderCopyWith<_RazorpayTransferPaymentOrder>
+      get copyWith => __$RazorpayTransferPaymentOrderCopyWithImpl<
+          _RazorpayTransferPaymentOrder>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$RazorpayTransferPaymentOrderToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$RazorpayTransferPaymentOrderImpl &&
+            other is _RazorpayTransferPaymentOrder &&
             const DeepCollectionEquality()
                 .equals(other._transfers, _transfers));
   }
@@ -2953,125 +2851,101 @@ class _$RazorpayTransferPaymentOrderImpl
   int get hashCode =>
       Object.hash(runtimeType, const DeepCollectionEquality().hash(_transfers));
 
-  /// Create a copy of RazorpayTransferPaymentOrder
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$RazorpayTransferPaymentOrderImplCopyWith<
-          _$RazorpayTransferPaymentOrderImpl>
-      get copyWith => __$$RazorpayTransferPaymentOrderImplCopyWithImpl<
-          _$RazorpayTransferPaymentOrderImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$RazorpayTransferPaymentOrderImplToJson(
-      this,
-    );
+  String toString() {
+    return 'RazorpayTransferPaymentOrder(transfers: $transfers)';
   }
 }
 
-abstract class _RazorpayTransferPaymentOrder
-    implements RazorpayTransferPaymentOrder {
-  const factory _RazorpayTransferPaymentOrder(
-          {final List<RazorpayOrderCreateTransferRequestBody>? transfers}) =
-      _$RazorpayTransferPaymentOrderImpl;
-
-  factory _RazorpayTransferPaymentOrder.fromJson(Map<String, dynamic> json) =
-      _$RazorpayTransferPaymentOrderImpl.fromJson;
-
-// Define RazorpayOrderCreateTransferRequestBody if not already done in transfers_model
+/// @nodoc
+abstract mixin class _$RazorpayTransferPaymentOrderCopyWith<$Res>
+    implements $RazorpayTransferPaymentOrderCopyWith<$Res> {
+  factory _$RazorpayTransferPaymentOrderCopyWith(
+          _RazorpayTransferPaymentOrder value,
+          $Res Function(_RazorpayTransferPaymentOrder) _then) =
+      __$RazorpayTransferPaymentOrderCopyWithImpl;
   @override
-  List<RazorpayOrderCreateTransferRequestBody>? get transfers;
+  @useResult
+  $Res call({List<RazorpayOrderCreateTransferRequestBody>? transfers});
+}
+
+/// @nodoc
+class __$RazorpayTransferPaymentOrderCopyWithImpl<$Res>
+    implements _$RazorpayTransferPaymentOrderCopyWith<$Res> {
+  __$RazorpayTransferPaymentOrderCopyWithImpl(this._self, this._then);
+
+  final _RazorpayTransferPaymentOrder _self;
+  final $Res Function(_RazorpayTransferPaymentOrder) _then;
 
   /// Create a copy of RazorpayTransferPaymentOrder
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$RazorpayTransferPaymentOrderImplCopyWith<
-          _$RazorpayTransferPaymentOrderImpl>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-RazorpayPaymentLinkListResponse _$RazorpayPaymentLinkListResponseFromJson(
-    Map<String, dynamic> json) {
-  return _RazorpayPaymentLinkListResponse.fromJson(json);
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? transfers = freezed,
+  }) {
+    return _then(_RazorpayTransferPaymentOrder(
+      transfers: freezed == transfers
+          ? _self._transfers
+          : transfers // ignore: cast_nullable_to_non_nullable
+              as List<RazorpayOrderCreateTransferRequestBody>?,
+    ));
+  }
 }
 
 /// @nodoc
 mixin _$RazorpayPaymentLinkListResponse {
-  List<RazorpayPaymentLink> get payment_links =>
-      throw _privateConstructorUsedError;
-
-  /// Serializes this RazorpayPaymentLinkListResponse to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  List<RazorpayPaymentLink> get payment_links;
 
   /// Create a copy of RazorpayPaymentLinkListResponse
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $RazorpayPaymentLinkListResponseCopyWith<RazorpayPaymentLinkListResponse>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $RazorpayPaymentLinkListResponseCopyWith<$Res> {
-  factory $RazorpayPaymentLinkListResponseCopyWith(
-          RazorpayPaymentLinkListResponse value,
-          $Res Function(RazorpayPaymentLinkListResponse) then) =
-      _$RazorpayPaymentLinkListResponseCopyWithImpl<$Res,
-          RazorpayPaymentLinkListResponse>;
-  @useResult
-  $Res call({List<RazorpayPaymentLink> payment_links});
-}
-
-/// @nodoc
-class _$RazorpayPaymentLinkListResponseCopyWithImpl<$Res,
-        $Val extends RazorpayPaymentLinkListResponse>
-    implements $RazorpayPaymentLinkListResponseCopyWith<$Res> {
-  _$RazorpayPaymentLinkListResponseCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of RazorpayPaymentLinkListResponse
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
+  $RazorpayPaymentLinkListResponseCopyWith<RazorpayPaymentLinkListResponse>
+      get copyWith => _$RazorpayPaymentLinkListResponseCopyWithImpl<
+              RazorpayPaymentLinkListResponse>(
+          this as RazorpayPaymentLinkListResponse, _$identity);
+
+  /// Serializes this RazorpayPaymentLinkListResponse to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? payment_links = null,
-  }) {
-    return _then(_value.copyWith(
-      payment_links: null == payment_links
-          ? _value.payment_links
-          : payment_links // ignore: cast_nullable_to_non_nullable
-              as List<RazorpayPaymentLink>,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is RazorpayPaymentLinkListResponse &&
+            const DeepCollectionEquality()
+                .equals(other.payment_links, payment_links));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(payment_links));
+
+  @override
+  String toString() {
+    return 'RazorpayPaymentLinkListResponse(payment_links: $payment_links)';
   }
 }
 
 /// @nodoc
-abstract class _$$RazorpayPaymentLinkListResponseImplCopyWith<$Res>
-    implements $RazorpayPaymentLinkListResponseCopyWith<$Res> {
-  factory _$$RazorpayPaymentLinkListResponseImplCopyWith(
-          _$RazorpayPaymentLinkListResponseImpl value,
-          $Res Function(_$RazorpayPaymentLinkListResponseImpl) then) =
-      __$$RazorpayPaymentLinkListResponseImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $RazorpayPaymentLinkListResponseCopyWith<$Res> {
+  factory $RazorpayPaymentLinkListResponseCopyWith(
+          RazorpayPaymentLinkListResponse value,
+          $Res Function(RazorpayPaymentLinkListResponse) _then) =
+      _$RazorpayPaymentLinkListResponseCopyWithImpl;
   @useResult
   $Res call({List<RazorpayPaymentLink> payment_links});
 }
 
 /// @nodoc
-class __$$RazorpayPaymentLinkListResponseImplCopyWithImpl<$Res>
-    extends _$RazorpayPaymentLinkListResponseCopyWithImpl<$Res,
-        _$RazorpayPaymentLinkListResponseImpl>
-    implements _$$RazorpayPaymentLinkListResponseImplCopyWith<$Res> {
-  __$$RazorpayPaymentLinkListResponseImplCopyWithImpl(
-      _$RazorpayPaymentLinkListResponseImpl _value,
-      $Res Function(_$RazorpayPaymentLinkListResponseImpl) _then)
-      : super(_value, _then);
+class _$RazorpayPaymentLinkListResponseCopyWithImpl<$Res>
+    implements $RazorpayPaymentLinkListResponseCopyWith<$Res> {
+  _$RazorpayPaymentLinkListResponseCopyWithImpl(this._self, this._then);
+
+  final RazorpayPaymentLinkListResponse _self;
+  final $Res Function(RazorpayPaymentLinkListResponse) _then;
 
   /// Create a copy of RazorpayPaymentLinkListResponse
   /// with the given fields replaced by the non-null parameter values.
@@ -3080,9 +2954,9 @@ class __$$RazorpayPaymentLinkListResponseImplCopyWithImpl<$Res>
   $Res call({
     Object? payment_links = null,
   }) {
-    return _then(_$RazorpayPaymentLinkListResponseImpl(
+    return _then(_self.copyWith(
       payment_links: null == payment_links
-          ? _value._payment_links
+          ? _self.payment_links
           : payment_links // ignore: cast_nullable_to_non_nullable
               as List<RazorpayPaymentLink>,
     ));
@@ -3092,15 +2966,14 @@ class __$$RazorpayPaymentLinkListResponseImplCopyWithImpl<$Res>
 /// @nodoc
 
 @JsonSerializable(includeIfNull: false)
-class _$RazorpayPaymentLinkListResponseImpl
-    implements _RazorpayPaymentLinkListResponse {
-  const _$RazorpayPaymentLinkListResponseImpl(
+class _RazorpayPaymentLinkListResponse
+    implements RazorpayPaymentLinkListResponse {
+  const _RazorpayPaymentLinkListResponse(
       {required final List<RazorpayPaymentLink> payment_links})
       : _payment_links = payment_links;
-
-  factory _$RazorpayPaymentLinkListResponseImpl.fromJson(
+  factory _RazorpayPaymentLinkListResponse.fromJson(
           Map<String, dynamic> json) =>
-      _$$RazorpayPaymentLinkListResponseImplFromJson(json);
+      _$RazorpayPaymentLinkListResponseFromJson(json);
 
   final List<RazorpayPaymentLink> _payment_links;
   @override
@@ -3110,16 +2983,27 @@ class _$RazorpayPaymentLinkListResponseImpl
     return EqualUnmodifiableListView(_payment_links);
   }
 
+  /// Create a copy of RazorpayPaymentLinkListResponse
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'RazorpayPaymentLinkListResponse(payment_links: $payment_links)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$RazorpayPaymentLinkListResponseCopyWith<_RazorpayPaymentLinkListResponse>
+      get copyWith => __$RazorpayPaymentLinkListResponseCopyWithImpl<
+          _RazorpayPaymentLinkListResponse>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$RazorpayPaymentLinkListResponseToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$RazorpayPaymentLinkListResponseImpl &&
+            other is _RazorpayPaymentLinkListResponse &&
             const DeepCollectionEquality()
                 .equals(other._payment_links, _payment_links));
   }
@@ -3129,41 +3013,46 @@ class _$RazorpayPaymentLinkListResponseImpl
   int get hashCode => Object.hash(
       runtimeType, const DeepCollectionEquality().hash(_payment_links));
 
-  /// Create a copy of RazorpayPaymentLinkListResponse
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$RazorpayPaymentLinkListResponseImplCopyWith<
-          _$RazorpayPaymentLinkListResponseImpl>
-      get copyWith => __$$RazorpayPaymentLinkListResponseImplCopyWithImpl<
-          _$RazorpayPaymentLinkListResponseImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$RazorpayPaymentLinkListResponseImplToJson(
-      this,
-    );
+  String toString() {
+    return 'RazorpayPaymentLinkListResponse(payment_links: $payment_links)';
   }
 }
 
-abstract class _RazorpayPaymentLinkListResponse
-    implements RazorpayPaymentLinkListResponse {
-  const factory _RazorpayPaymentLinkListResponse(
-          {required final List<RazorpayPaymentLink> payment_links}) =
-      _$RazorpayPaymentLinkListResponseImpl;
-
-  factory _RazorpayPaymentLinkListResponse.fromJson(Map<String, dynamic> json) =
-      _$RazorpayPaymentLinkListResponseImpl.fromJson;
-
+/// @nodoc
+abstract mixin class _$RazorpayPaymentLinkListResponseCopyWith<$Res>
+    implements $RazorpayPaymentLinkListResponseCopyWith<$Res> {
+  factory _$RazorpayPaymentLinkListResponseCopyWith(
+          _RazorpayPaymentLinkListResponse value,
+          $Res Function(_RazorpayPaymentLinkListResponse) _then) =
+      __$RazorpayPaymentLinkListResponseCopyWithImpl;
   @override
-  List<RazorpayPaymentLink> get payment_links;
+  @useResult
+  $Res call({List<RazorpayPaymentLink> payment_links});
+}
+
+/// @nodoc
+class __$RazorpayPaymentLinkListResponseCopyWithImpl<$Res>
+    implements _$RazorpayPaymentLinkListResponseCopyWith<$Res> {
+  __$RazorpayPaymentLinkListResponseCopyWithImpl(this._self, this._then);
+
+  final _RazorpayPaymentLinkListResponse _self;
+  final $Res Function(_RazorpayPaymentLinkListResponse) _then;
 
   /// Create a copy of RazorpayPaymentLinkListResponse
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$RazorpayPaymentLinkListResponseImplCopyWith<
-          _$RazorpayPaymentLinkListResponseImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? payment_links = null,
+  }) {
+    return _then(_RazorpayPaymentLinkListResponse(
+      payment_links: null == payment_links
+          ? _self._payment_links
+          : payment_links // ignore: cast_nullable_to_non_nullable
+              as List<RazorpayPaymentLink>,
+    ));
+  }
 }
+
+// dart format on

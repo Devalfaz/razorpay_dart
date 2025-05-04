@@ -1,7 +1,7 @@
 // lib/models/plans_model.dart
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:razorpay_dart/models/api_model.dart'; // For IMap
-import 'items_model.dart'; // For Item types
+import 'package:razorpay_dart/models/items_model.dart'; // For Item types
 
 part 'plans_model.freezed.dart';
 part 'plans_model.g.dart';
@@ -35,7 +35,7 @@ enum PlanPeriod { daily, weekly, monthly, yearly }
 
 // --- Base Request Body ---
 @freezed
-class RazorpayPlanBaseRequestBody with _$RazorpayPlanBaseRequestBody {
+abstract class RazorpayPlanBaseRequestBody with _$RazorpayPlanBaseRequestBody {
   @JsonSerializable(includeIfNull: false)
   const factory RazorpayPlanBaseRequestBody({
     required RazorpayItemBaseRequestBody item,
@@ -50,7 +50,8 @@ class RazorpayPlanBaseRequestBody with _$RazorpayPlanBaseRequestBody {
 
 // --- Create Request Body ---
 @freezed
-class RazorpayPlanCreateRequestBody with _$RazorpayPlanCreateRequestBody {
+abstract class RazorpayPlanCreateRequestBody
+    with _$RazorpayPlanCreateRequestBody {
   // Inherits structure from Base
   @JsonSerializable(includeIfNull: false)
   const factory RazorpayPlanCreateRequestBody({
@@ -66,7 +67,7 @@ class RazorpayPlanCreateRequestBody with _$RazorpayPlanCreateRequestBody {
 
 // --- Response Body ---
 @freezed
-class RazorpayPlan with _$RazorpayPlan {
+abstract class RazorpayPlan with _$RazorpayPlan {
   // Extends Base + response fields
   @JsonSerializable(includeIfNull: false)
   const factory RazorpayPlan({

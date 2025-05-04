@@ -1,13 +1,38 @@
 // lib/models/items_model.dart
 import 'package:freezed_annotation/freezed_annotation.dart';
-// For pagination options
 
 part 'items_model.freezed.dart';
 part 'items_model.g.dart';
 
+/// Converts a DateTime field that can be represented in JSON as either
+/// an ISO 8601 String or an integer (Unix timestamp in seconds).
+class DateTimeConverter implements JsonConverter<DateTime, dynamic> {
+  const DateTimeConverter();
+
+  @override
+  DateTime fromJson(dynamic json) {
+    if (json is int) {
+      // Assume the integer is a Unix timestamp in seconds, convert to UTC DateTime
+      return DateTime.fromMillisecondsSinceEpoch(json * 1000, isUtc: true);
+    } else if (json is String) {
+      // Assume the string is in ISO 8601 format
+      return DateTime.parse(json).toUtc();
+    }
+    // Handle unexpected type
+    throw FormatException(
+        'Invalid date format: expected int (Unix timestamp) or String (ISO 8601), got ${json.runtimeType}');
+  }
+
+  @override
+  dynamic toJson(DateTime object) {
+    // Convert DateTime back to Unix timestamp in seconds (integer)
+    return object.toUtc().millisecondsSinceEpoch ~/ 1000;
+  }
+}
+
 // --- Base Request Body ---
 @freezed
-class RazorpayItemBaseRequestBody with _$RazorpayItemBaseRequestBody {
+abstract class RazorpayItemBaseRequestBody with _$RazorpayItemBaseRequestBody {
   @JsonSerializable(includeIfNull: false)
   const factory RazorpayItemBaseRequestBody({
     required String name,
@@ -22,7 +47,8 @@ class RazorpayItemBaseRequestBody with _$RazorpayItemBaseRequestBody {
 
 // --- Create/Update Request Bodies ---
 @freezed
-class RazorpayItemCreateRequestBody with _$RazorpayItemCreateRequestBody {
+abstract class RazorpayItemCreateRequestBody
+    with _$RazorpayItemCreateRequestBody {
   // Inherits from Base
   @JsonSerializable(includeIfNull: false)
   const factory RazorpayItemCreateRequestBody({
@@ -37,7 +63,8 @@ class RazorpayItemCreateRequestBody with _$RazorpayItemCreateRequestBody {
 }
 
 @freezed
-class RazorpayItemUpdateRequestBody with _$RazorpayItemUpdateRequestBody {
+abstract class RazorpayItemUpdateRequestBody
+    with _$RazorpayItemUpdateRequestBody {
   // Partial<RazorpayItemBaseRequestBody> + active
   @JsonSerializable(includeIfNull: false)
   const factory RazorpayItemUpdateRequestBody({
@@ -54,19 +81,21 @@ class RazorpayItemUpdateRequestBody with _$RazorpayItemUpdateRequestBody {
 
 // --- Response Body ---
 @freezed
-class RazorpayItem with _$RazorpayItem {
+abstract class RazorpayItem with _$RazorpayItem {
   // Extends Base + response fields
   @JsonSerializable(includeIfNull: false)
   const factory RazorpayItem({
     required String id,
     required String name,
-    required dynamic amount, // number | string
+    required int amount, // number | string
     required String currency,
     // Response specific fields
     required int unit_amount,
     required String type,
-    required int
-        updated_at, // Typically 'invoice', required bool tax_inclusive, required int created_at, required int updated_at, required bool active, String? description,
+    @DateTimeConverter() required DateTime created_at, // Typically 'invoice',
+    required bool tax_inclusive,
+    required bool active,
+    String? description,
     int? unit, // Nullable number
     int? hsn_code, // Nullable number
     int? sac_code, // Nullable number
@@ -81,7 +110,7 @@ class RazorpayItem with _$RazorpayItem {
 
 // --- Query Parameters ---
 @freezed
-class RazorpayItemQuery with _$RazorpayItemQuery {
+abstract class RazorpayItemQuery with _$RazorpayItemQuery {
   // Extends RazorpayPaginationOptions + active
   @JsonSerializable(includeIfNull: false)
   const factory RazorpayItemQuery({
@@ -100,7 +129,7 @@ class RazorpayItemQuery with _$RazorpayItemQuery {
 // Delete Response: Use the generic RazorpayDeleteResponse if defined, or create one.
 // Assuming it's similar to Invoice delete: returns `[]` -> empty list/object
 @freezed
-class RazorpayItemDeleteResponse with _$RazorpayItemDeleteResponse {
+abstract class RazorpayItemDeleteResponse with _$RazorpayItemDeleteResponse {
   @JsonSerializable(includeIfNull: false)
   const factory RazorpayItemDeleteResponse() = _RazorpayItemDeleteResponse;
 

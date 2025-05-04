@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,115 +10,68 @@ part of 'error_model.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-RazorpayError _$RazorpayErrorFromJson(Map<String, dynamic> json) {
-  return _RazorpayError.fromJson(json);
-}
 
 /// @nodoc
 mixin _$RazorpayError {
-  String get code => throw _privateConstructorUsedError;
-  String get description => throw _privateConstructorUsedError;
-  dynamic get field =>
-      throw _privateConstructorUsedError; // Can be string, list, etc. depending on context
-  String? get source => throw _privateConstructorUsedError;
-  String? get step => throw _privateConstructorUsedError;
-  String? get reason => throw _privateConstructorUsedError;
-  Map<String, String>? get metadata => throw _privateConstructorUsedError;
-
-  /// Serializes this RazorpayError to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  String get code;
+  String get description;
+  dynamic get field; // Can be string, list, etc. depending on context
+  String? get source;
+  String? get step;
+  String? get reason;
+  Map<String, String>? get metadata;
 
   /// Create a copy of RazorpayError
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $RazorpayErrorCopyWith<RazorpayError> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $RazorpayErrorCopyWith<$Res> {
-  factory $RazorpayErrorCopyWith(
-          RazorpayError value, $Res Function(RazorpayError) then) =
-      _$RazorpayErrorCopyWithImpl<$Res, RazorpayError>;
-  @useResult
-  $Res call(
-      {String code,
-      String description,
-      dynamic field,
-      String? source,
-      String? step,
-      String? reason,
-      Map<String, String>? metadata});
-}
-
-/// @nodoc
-class _$RazorpayErrorCopyWithImpl<$Res, $Val extends RazorpayError>
-    implements $RazorpayErrorCopyWith<$Res> {
-  _$RazorpayErrorCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of RazorpayError
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
+  $RazorpayErrorCopyWith<RazorpayError> get copyWith =>
+      _$RazorpayErrorCopyWithImpl<RazorpayError>(
+          this as RazorpayError, _$identity);
+
+  /// Serializes this RazorpayError to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? code = null,
-    Object? description = null,
-    Object? field = freezed,
-    Object? source = freezed,
-    Object? step = freezed,
-    Object? reason = freezed,
-    Object? metadata = freezed,
-  }) {
-    return _then(_value.copyWith(
-      code: null == code
-          ? _value.code
-          : code // ignore: cast_nullable_to_non_nullable
-              as String,
-      description: null == description
-          ? _value.description
-          : description // ignore: cast_nullable_to_non_nullable
-              as String,
-      field: freezed == field
-          ? _value.field
-          : field // ignore: cast_nullable_to_non_nullable
-              as dynamic,
-      source: freezed == source
-          ? _value.source
-          : source // ignore: cast_nullable_to_non_nullable
-              as String?,
-      step: freezed == step
-          ? _value.step
-          : step // ignore: cast_nullable_to_non_nullable
-              as String?,
-      reason: freezed == reason
-          ? _value.reason
-          : reason // ignore: cast_nullable_to_non_nullable
-              as String?,
-      metadata: freezed == metadata
-          ? _value.metadata
-          : metadata // ignore: cast_nullable_to_non_nullable
-              as Map<String, String>?,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is RazorpayError &&
+            (identical(other.code, code) || other.code == code) &&
+            (identical(other.description, description) ||
+                other.description == description) &&
+            const DeepCollectionEquality().equals(other.field, field) &&
+            (identical(other.source, source) || other.source == source) &&
+            (identical(other.step, step) || other.step == step) &&
+            (identical(other.reason, reason) || other.reason == reason) &&
+            const DeepCollectionEquality().equals(other.metadata, metadata));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      code,
+      description,
+      const DeepCollectionEquality().hash(field),
+      source,
+      step,
+      reason,
+      const DeepCollectionEquality().hash(metadata));
+
+  @override
+  String toString() {
+    return 'RazorpayError(code: $code, description: $description, field: $field, source: $source, step: $step, reason: $reason, metadata: $metadata)';
   }
 }
 
 /// @nodoc
-abstract class _$$RazorpayErrorImplCopyWith<$Res>
-    implements $RazorpayErrorCopyWith<$Res> {
-  factory _$$RazorpayErrorImplCopyWith(
-          _$RazorpayErrorImpl value, $Res Function(_$RazorpayErrorImpl) then) =
-      __$$RazorpayErrorImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $RazorpayErrorCopyWith<$Res> {
+  factory $RazorpayErrorCopyWith(
+          RazorpayError value, $Res Function(RazorpayError) _then) =
+      _$RazorpayErrorCopyWithImpl;
   @useResult
   $Res call(
       {String code,
@@ -130,12 +84,12 @@ abstract class _$$RazorpayErrorImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$RazorpayErrorImplCopyWithImpl<$Res>
-    extends _$RazorpayErrorCopyWithImpl<$Res, _$RazorpayErrorImpl>
-    implements _$$RazorpayErrorImplCopyWith<$Res> {
-  __$$RazorpayErrorImplCopyWithImpl(
-      _$RazorpayErrorImpl _value, $Res Function(_$RazorpayErrorImpl) _then)
-      : super(_value, _then);
+class _$RazorpayErrorCopyWithImpl<$Res>
+    implements $RazorpayErrorCopyWith<$Res> {
+  _$RazorpayErrorCopyWithImpl(this._self, this._then);
+
+  final RazorpayError _self;
+  final $Res Function(RazorpayError) _then;
 
   /// Create a copy of RazorpayError
   /// with the given fields replaced by the non-null parameter values.
@@ -150,33 +104,33 @@ class __$$RazorpayErrorImplCopyWithImpl<$Res>
     Object? reason = freezed,
     Object? metadata = freezed,
   }) {
-    return _then(_$RazorpayErrorImpl(
+    return _then(_self.copyWith(
       code: null == code
-          ? _value.code
+          ? _self.code
           : code // ignore: cast_nullable_to_non_nullable
               as String,
       description: null == description
-          ? _value.description
+          ? _self.description
           : description // ignore: cast_nullable_to_non_nullable
               as String,
       field: freezed == field
-          ? _value.field
+          ? _self.field
           : field // ignore: cast_nullable_to_non_nullable
               as dynamic,
       source: freezed == source
-          ? _value.source
+          ? _self.source
           : source // ignore: cast_nullable_to_non_nullable
               as String?,
       step: freezed == step
-          ? _value.step
+          ? _self.step
           : step // ignore: cast_nullable_to_non_nullable
               as String?,
       reason: freezed == reason
-          ? _value.reason
+          ? _self.reason
           : reason // ignore: cast_nullable_to_non_nullable
               as String?,
       metadata: freezed == metadata
-          ? _value._metadata
+          ? _self.metadata
           : metadata // ignore: cast_nullable_to_non_nullable
               as Map<String, String>?,
     ));
@@ -186,8 +140,8 @@ class __$$RazorpayErrorImplCopyWithImpl<$Res>
 /// @nodoc
 
 @JsonSerializable(includeIfNull: false)
-class _$RazorpayErrorImpl implements _RazorpayError {
-  const _$RazorpayErrorImpl(
+class _RazorpayError implements RazorpayError {
+  const _RazorpayError(
       {required this.code,
       required this.description,
       this.field,
@@ -196,9 +150,8 @@ class _$RazorpayErrorImpl implements _RazorpayError {
       this.reason,
       final Map<String, String>? metadata})
       : _metadata = metadata;
-
-  factory _$RazorpayErrorImpl.fromJson(Map<String, dynamic> json) =>
-      _$$RazorpayErrorImplFromJson(json);
+  factory _RazorpayError.fromJson(Map<String, dynamic> json) =>
+      _$RazorpayErrorFromJson(json);
 
   @override
   final String code;
@@ -223,16 +176,26 @@ class _$RazorpayErrorImpl implements _RazorpayError {
     return EqualUnmodifiableMapView(value);
   }
 
+  /// Create a copy of RazorpayError
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'RazorpayError(code: $code, description: $description, field: $field, source: $source, step: $step, reason: $reason, metadata: $metadata)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$RazorpayErrorCopyWith<_RazorpayError> get copyWith =>
+      __$RazorpayErrorCopyWithImpl<_RazorpayError>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$RazorpayErrorToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$RazorpayErrorImpl &&
+            other is _RazorpayError &&
             (identical(other.code, code) || other.code == code) &&
             (identical(other.description, description) ||
                 other.description == description) &&
@@ -255,201 +218,105 @@ class _$RazorpayErrorImpl implements _RazorpayError {
       reason,
       const DeepCollectionEquality().hash(_metadata));
 
-  /// Create a copy of RazorpayError
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$RazorpayErrorImplCopyWith<_$RazorpayErrorImpl> get copyWith =>
-      __$$RazorpayErrorImplCopyWithImpl<_$RazorpayErrorImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$RazorpayErrorImplToJson(
-      this,
-    );
+  String toString() {
+    return 'RazorpayError(code: $code, description: $description, field: $field, source: $source, step: $step, reason: $reason, metadata: $metadata)';
   }
 }
 
-abstract class _RazorpayError implements RazorpayError {
-  const factory _RazorpayError(
-      {required final String code,
-      required final String description,
-      final dynamic field,
-      final String? source,
-      final String? step,
-      final String? reason,
-      final Map<String, String>? metadata}) = _$RazorpayErrorImpl;
+/// @nodoc
+abstract mixin class _$RazorpayErrorCopyWith<$Res>
+    implements $RazorpayErrorCopyWith<$Res> {
+  factory _$RazorpayErrorCopyWith(
+          _RazorpayError value, $Res Function(_RazorpayError) _then) =
+      __$RazorpayErrorCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {String code,
+      String description,
+      dynamic field,
+      String? source,
+      String? step,
+      String? reason,
+      Map<String, String>? metadata});
+}
 
-  factory _RazorpayError.fromJson(Map<String, dynamic> json) =
-      _$RazorpayErrorImpl.fromJson;
+/// @nodoc
+class __$RazorpayErrorCopyWithImpl<$Res>
+    implements _$RazorpayErrorCopyWith<$Res> {
+  __$RazorpayErrorCopyWithImpl(this._self, this._then);
 
-  @override
-  String get code;
-  @override
-  String get description;
-  @override
-  dynamic get field; // Can be string, list, etc. depending on context
-  @override
-  String? get source;
-  @override
-  String? get step;
-  @override
-  String? get reason;
-  @override
-  Map<String, String>? get metadata;
+  final _RazorpayError _self;
+  final $Res Function(_RazorpayError) _then;
 
   /// Create a copy of RazorpayError
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$RazorpayErrorImplCopyWith<_$RazorpayErrorImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-RazorpayApiErrorResponse _$RazorpayApiErrorResponseFromJson(
-    Map<String, dynamic> json) {
-  return _RazorpayApiErrorResponse.fromJson(json);
-}
-
-/// @nodoc
-mixin _$RazorpayApiErrorResponse {
-  RazorpayError get error => throw _privateConstructorUsedError;
-  int? get statusCode => throw _privateConstructorUsedError;
-
-  /// Serializes this RazorpayApiErrorResponse to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of RazorpayApiErrorResponse
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  $RazorpayApiErrorResponseCopyWith<RazorpayApiErrorResponse> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $RazorpayApiErrorResponseCopyWith<$Res> {
-  factory $RazorpayApiErrorResponseCopyWith(RazorpayApiErrorResponse value,
-          $Res Function(RazorpayApiErrorResponse) then) =
-      _$RazorpayApiErrorResponseCopyWithImpl<$Res, RazorpayApiErrorResponse>;
-  @useResult
-  $Res call({RazorpayError error, int? statusCode});
-
-  $RazorpayErrorCopyWith<$Res> get error;
-}
-
-/// @nodoc
-class _$RazorpayApiErrorResponseCopyWithImpl<$Res,
-        $Val extends RazorpayApiErrorResponse>
-    implements $RazorpayApiErrorResponseCopyWith<$Res> {
-  _$RazorpayApiErrorResponseCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of RazorpayApiErrorResponse
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
-  @override
   $Res call({
-    Object? error = null,
-    Object? statusCode = freezed,
+    Object? code = null,
+    Object? description = null,
+    Object? field = freezed,
+    Object? source = freezed,
+    Object? step = freezed,
+    Object? reason = freezed,
+    Object? metadata = freezed,
   }) {
-    return _then(_value.copyWith(
-      error: null == error
-          ? _value.error
-          : error // ignore: cast_nullable_to_non_nullable
-              as RazorpayError,
-      statusCode: freezed == statusCode
-          ? _value.statusCode
-          : statusCode // ignore: cast_nullable_to_non_nullable
-              as int?,
-    ) as $Val);
-  }
-
-  /// Create a copy of RazorpayApiErrorResponse
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $RazorpayErrorCopyWith<$Res> get error {
-    return $RazorpayErrorCopyWith<$Res>(_value.error, (value) {
-      return _then(_value.copyWith(error: value) as $Val);
-    });
-  }
-}
-
-/// @nodoc
-abstract class _$$RazorpayApiErrorResponseImplCopyWith<$Res>
-    implements $RazorpayApiErrorResponseCopyWith<$Res> {
-  factory _$$RazorpayApiErrorResponseImplCopyWith(
-          _$RazorpayApiErrorResponseImpl value,
-          $Res Function(_$RazorpayApiErrorResponseImpl) then) =
-      __$$RazorpayApiErrorResponseImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({RazorpayError error, int? statusCode});
-
-  @override
-  $RazorpayErrorCopyWith<$Res> get error;
-}
-
-/// @nodoc
-class __$$RazorpayApiErrorResponseImplCopyWithImpl<$Res>
-    extends _$RazorpayApiErrorResponseCopyWithImpl<$Res,
-        _$RazorpayApiErrorResponseImpl>
-    implements _$$RazorpayApiErrorResponseImplCopyWith<$Res> {
-  __$$RazorpayApiErrorResponseImplCopyWithImpl(
-      _$RazorpayApiErrorResponseImpl _value,
-      $Res Function(_$RazorpayApiErrorResponseImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of RazorpayApiErrorResponse
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? error = null,
-    Object? statusCode = freezed,
-  }) {
-    return _then(_$RazorpayApiErrorResponseImpl(
-      error: null == error
-          ? _value.error
-          : error // ignore: cast_nullable_to_non_nullable
-              as RazorpayError,
-      statusCode: freezed == statusCode
-          ? _value.statusCode
-          : statusCode // ignore: cast_nullable_to_non_nullable
-              as int?,
+    return _then(_RazorpayError(
+      code: null == code
+          ? _self.code
+          : code // ignore: cast_nullable_to_non_nullable
+              as String,
+      description: null == description
+          ? _self.description
+          : description // ignore: cast_nullable_to_non_nullable
+              as String,
+      field: freezed == field
+          ? _self.field
+          : field // ignore: cast_nullable_to_non_nullable
+              as dynamic,
+      source: freezed == source
+          ? _self.source
+          : source // ignore: cast_nullable_to_non_nullable
+              as String?,
+      step: freezed == step
+          ? _self.step
+          : step // ignore: cast_nullable_to_non_nullable
+              as String?,
+      reason: freezed == reason
+          ? _self.reason
+          : reason // ignore: cast_nullable_to_non_nullable
+              as String?,
+      metadata: freezed == metadata
+          ? _self._metadata
+          : metadata // ignore: cast_nullable_to_non_nullable
+              as Map<String, String>?,
     ));
   }
 }
 
 /// @nodoc
+mixin _$RazorpayApiErrorResponse {
+  RazorpayError get error;
+  int? get statusCode;
 
-@JsonSerializable(includeIfNull: false)
-class _$RazorpayApiErrorResponseImpl implements _RazorpayApiErrorResponse {
-  const _$RazorpayApiErrorResponseImpl({required this.error, this.statusCode});
+  /// Create a copy of RazorpayApiErrorResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $RazorpayApiErrorResponseCopyWith<RazorpayApiErrorResponse> get copyWith =>
+      _$RazorpayApiErrorResponseCopyWithImpl<RazorpayApiErrorResponse>(
+          this as RazorpayApiErrorResponse, _$identity);
 
-  factory _$RazorpayApiErrorResponseImpl.fromJson(Map<String, dynamic> json) =>
-      _$$RazorpayApiErrorResponseImplFromJson(json);
-
-  @override
-  final RazorpayError error;
-  @override
-  final int? statusCode;
-
-  @override
-  String toString() {
-    return 'RazorpayApiErrorResponse(error: $error, statusCode: $statusCode)';
-  }
+  /// Serializes this RazorpayApiErrorResponse to a JSON map.
+  Map<String, dynamic> toJson();
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$RazorpayApiErrorResponseImpl &&
+            other is RazorpayApiErrorResponse &&
             (identical(other.error, error) || other.error == error) &&
             (identical(other.statusCode, statusCode) ||
                 other.statusCode == statusCode));
@@ -459,40 +326,162 @@ class _$RazorpayApiErrorResponseImpl implements _RazorpayApiErrorResponse {
   @override
   int get hashCode => Object.hash(runtimeType, error, statusCode);
 
-  /// Create a copy of RazorpayApiErrorResponse
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$RazorpayApiErrorResponseImplCopyWith<_$RazorpayApiErrorResponseImpl>
-      get copyWith => __$$RazorpayApiErrorResponseImplCopyWithImpl<
-          _$RazorpayApiErrorResponseImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$RazorpayApiErrorResponseImplToJson(
-      this,
-    );
+  String toString() {
+    return 'RazorpayApiErrorResponse(error: $error, statusCode: $statusCode)';
   }
 }
 
-abstract class _RazorpayApiErrorResponse implements RazorpayApiErrorResponse {
-  const factory _RazorpayApiErrorResponse(
-      {required final RazorpayError error,
-      final int? statusCode}) = _$RazorpayApiErrorResponseImpl;
+/// @nodoc
+abstract mixin class $RazorpayApiErrorResponseCopyWith<$Res> {
+  factory $RazorpayApiErrorResponseCopyWith(RazorpayApiErrorResponse value,
+          $Res Function(RazorpayApiErrorResponse) _then) =
+      _$RazorpayApiErrorResponseCopyWithImpl;
+  @useResult
+  $Res call({RazorpayError error, int? statusCode});
 
-  factory _RazorpayApiErrorResponse.fromJson(Map<String, dynamic> json) =
-      _$RazorpayApiErrorResponseImpl.fromJson;
+  $RazorpayErrorCopyWith<$Res> get error;
+}
+
+/// @nodoc
+class _$RazorpayApiErrorResponseCopyWithImpl<$Res>
+    implements $RazorpayApiErrorResponseCopyWith<$Res> {
+  _$RazorpayApiErrorResponseCopyWithImpl(this._self, this._then);
+
+  final RazorpayApiErrorResponse _self;
+  final $Res Function(RazorpayApiErrorResponse) _then;
+
+  /// Create a copy of RazorpayApiErrorResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? error = null,
+    Object? statusCode = freezed,
+  }) {
+    return _then(_self.copyWith(
+      error: null == error
+          ? _self.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as RazorpayError,
+      statusCode: freezed == statusCode
+          ? _self.statusCode
+          : statusCode // ignore: cast_nullable_to_non_nullable
+              as int?,
+    ));
+  }
+
+  /// Create a copy of RazorpayApiErrorResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $RazorpayErrorCopyWith<$Res> get error {
+    return $RazorpayErrorCopyWith<$Res>(_self.error, (value) {
+      return _then(_self.copyWith(error: value));
+    });
+  }
+}
+
+/// @nodoc
+
+@JsonSerializable(includeIfNull: false)
+class _RazorpayApiErrorResponse implements RazorpayApiErrorResponse {
+  const _RazorpayApiErrorResponse({required this.error, this.statusCode});
+  factory _RazorpayApiErrorResponse.fromJson(Map<String, dynamic> json) =>
+      _$RazorpayApiErrorResponseFromJson(json);
 
   @override
-  RazorpayError get error;
+  final RazorpayError error;
   @override
-  int? get statusCode;
+  final int? statusCode;
 
   /// Create a copy of RazorpayApiErrorResponse
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$RazorpayApiErrorResponseImplCopyWith<_$RazorpayApiErrorResponseImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  @pragma('vm:prefer-inline')
+  _$RazorpayApiErrorResponseCopyWith<_RazorpayApiErrorResponse> get copyWith =>
+      __$RazorpayApiErrorResponseCopyWithImpl<_RazorpayApiErrorResponse>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$RazorpayApiErrorResponseToJson(
+      this,
+    );
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _RazorpayApiErrorResponse &&
+            (identical(other.error, error) || other.error == error) &&
+            (identical(other.statusCode, statusCode) ||
+                other.statusCode == statusCode));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, error, statusCode);
+
+  @override
+  String toString() {
+    return 'RazorpayApiErrorResponse(error: $error, statusCode: $statusCode)';
+  }
 }
+
+/// @nodoc
+abstract mixin class _$RazorpayApiErrorResponseCopyWith<$Res>
+    implements $RazorpayApiErrorResponseCopyWith<$Res> {
+  factory _$RazorpayApiErrorResponseCopyWith(_RazorpayApiErrorResponse value,
+          $Res Function(_RazorpayApiErrorResponse) _then) =
+      __$RazorpayApiErrorResponseCopyWithImpl;
+  @override
+  @useResult
+  $Res call({RazorpayError error, int? statusCode});
+
+  @override
+  $RazorpayErrorCopyWith<$Res> get error;
+}
+
+/// @nodoc
+class __$RazorpayApiErrorResponseCopyWithImpl<$Res>
+    implements _$RazorpayApiErrorResponseCopyWith<$Res> {
+  __$RazorpayApiErrorResponseCopyWithImpl(this._self, this._then);
+
+  final _RazorpayApiErrorResponse _self;
+  final $Res Function(_RazorpayApiErrorResponse) _then;
+
+  /// Create a copy of RazorpayApiErrorResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? error = null,
+    Object? statusCode = freezed,
+  }) {
+    return _then(_RazorpayApiErrorResponse(
+      error: null == error
+          ? _self.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as RazorpayError,
+      statusCode: freezed == statusCode
+          ? _self.statusCode
+          : statusCode // ignore: cast_nullable_to_non_nullable
+              as int?,
+    ));
+  }
+
+  /// Create a copy of RazorpayApiErrorResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $RazorpayErrorCopyWith<$Res> get error {
+    return $RazorpayErrorCopyWith<$Res>(_self.error, (value) {
+      return _then(_self.copyWith(error: value));
+    });
+  }
+}
+
+// dart format on

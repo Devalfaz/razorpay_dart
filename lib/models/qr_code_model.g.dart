@@ -6,9 +6,8 @@ part of 'qr_code_model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$RazorpayTaxInvoiceImpl _$$RazorpayTaxInvoiceImplFromJson(
-        Map<String, dynamic> json) =>
-    _$RazorpayTaxInvoiceImpl(
+_RazorpayTaxInvoice _$RazorpayTaxInvoiceFromJson(Map<String, dynamic> json) =>
+    _RazorpayTaxInvoice(
       number: json['number'] as String?,
       date: (json['date'] as num?)?.toInt(),
       customer_name: json['customer_name'] as String?,
@@ -19,8 +18,7 @@ _$RazorpayTaxInvoiceImpl _$$RazorpayTaxInvoiceImplFromJson(
           $enumDecodeNullable(_$SupplyTypeEnumMap, json['supply_type']),
     );
 
-Map<String, dynamic> _$$RazorpayTaxInvoiceImplToJson(
-        _$RazorpayTaxInvoiceImpl instance) =>
+Map<String, dynamic> _$RazorpayTaxInvoiceToJson(_RazorpayTaxInvoice instance) =>
     <String, dynamic>{
       if (instance.number case final value?) 'number': value,
       if (instance.date case final value?) 'date': value,
@@ -37,22 +35,22 @@ const _$SupplyTypeEnumMap = {
   SupplyType.intrastate: 'intrastate',
 };
 
-_$RazorpayQrCodeBaseRequestBodyImpl
-    _$$RazorpayQrCodeBaseRequestBodyImplFromJson(Map<String, dynamic> json) =>
-        _$RazorpayQrCodeBaseRequestBodyImpl(
-          type: $enumDecode(_$QrCodeTypeEnumMap, json['type']),
-          usage: $enumDecode(_$QrCodeUsageEnumMap, json['usage']),
-          name: json['name'] as String?,
-          fixed_amount: json['fixed_amount'] as bool?,
-          payment_amount: (json['payment_amount'] as num?)?.toInt(),
-          description: json['description'] as String?,
-          customer_id: json['customer_id'] as String?,
-          close_by: (json['close_by'] as num?)?.toInt(),
-          notes: json['notes'] as Map<String, dynamic>?,
-        );
+_RazorpayQrCodeBaseRequestBody _$RazorpayQrCodeBaseRequestBodyFromJson(
+        Map<String, dynamic> json) =>
+    _RazorpayQrCodeBaseRequestBody(
+      type: $enumDecode(_$QrCodeTypeEnumMap, json['type']),
+      usage: $enumDecode(_$QrCodeUsageEnumMap, json['usage']),
+      name: json['name'] as String?,
+      fixed_amount: json['fixed_amount'] as bool?,
+      payment_amount: (json['payment_amount'] as num?)?.toInt(),
+      description: json['description'] as String?,
+      customer_id: json['customer_id'] as String?,
+      close_by: (json['close_by'] as num?)?.toInt(),
+      notes: json['notes'] as Map<String, dynamic>?,
+    );
 
-Map<String, dynamic> _$$RazorpayQrCodeBaseRequestBodyImplToJson(
-        _$RazorpayQrCodeBaseRequestBodyImpl instance) =>
+Map<String, dynamic> _$RazorpayQrCodeBaseRequestBodyToJson(
+        _RazorpayQrCodeBaseRequestBody instance) =>
     <String, dynamic>{
       'type': _$QrCodeTypeEnumMap[instance.type]!,
       'usage': _$QrCodeUsageEnumMap[instance.usage]!,
@@ -75,22 +73,22 @@ const _$QrCodeUsageEnumMap = {
   QrCodeUsage.multiple_use: 'multiple_use',
 };
 
-_$RazorpayQrCodeCreateRequestBodyImpl
-    _$$RazorpayQrCodeCreateRequestBodyImplFromJson(Map<String, dynamic> json) =>
-        _$RazorpayQrCodeCreateRequestBodyImpl(
-          type: $enumDecode(_$QrCodeTypeEnumMap, json['type']),
-          usage: $enumDecode(_$QrCodeUsageEnumMap, json['usage']),
-          name: json['name'] as String?,
-          fixed_amount: json['fixed_amount'] as bool?,
-          payment_amount: (json['payment_amount'] as num?)?.toInt(),
-          description: json['description'] as String?,
-          customer_id: json['customer_id'] as String?,
-          close_by: (json['close_by'] as num?)?.toInt(),
-          notes: json['notes'] as Map<String, dynamic>?,
-        );
+_RazorpayQrCodeCreateRequestBody _$RazorpayQrCodeCreateRequestBodyFromJson(
+        Map<String, dynamic> json) =>
+    _RazorpayQrCodeCreateRequestBody(
+      type: $enumDecode(_$QrCodeTypeEnumMap, json['type']),
+      usage: $enumDecode(_$QrCodeUsageEnumMap, json['usage']),
+      name: json['name'] as String?,
+      fixed_amount: json['fixed_amount'] as bool?,
+      payment_amount: (json['payment_amount'] as num?)?.toInt(),
+      description: json['description'] as String?,
+      customer_id: json['customer_id'] as String?,
+      close_by: (json['close_by'] as num?)?.toInt(),
+      notes: json['notes'] as Map<String, dynamic>?,
+    );
 
-Map<String, dynamic> _$$RazorpayQrCodeCreateRequestBodyImplToJson(
-        _$RazorpayQrCodeCreateRequestBodyImpl instance) =>
+Map<String, dynamic> _$RazorpayQrCodeCreateRequestBodyToJson(
+        _RazorpayQrCodeCreateRequestBody instance) =>
     <String, dynamic>{
       'type': _$QrCodeTypeEnumMap[instance.type]!,
       'usage': _$QrCodeUsageEnumMap[instance.usage]!,
@@ -103,10 +101,9 @@ Map<String, dynamic> _$$RazorpayQrCodeCreateRequestBodyImplToJson(
       if (instance.notes case final value?) 'notes': value,
     };
 
-_$RazorpayQrCodeGstCreateRequestBodyImpl
-    _$$RazorpayQrCodeGstCreateRequestBodyImplFromJson(
-            Map<String, dynamic> json) =>
-        _$RazorpayQrCodeGstCreateRequestBodyImpl(
+_RazorpayQrCodeGstCreateRequestBody
+    _$RazorpayQrCodeGstCreateRequestBodyFromJson(Map<String, dynamic> json) =>
+        _RazorpayQrCodeGstCreateRequestBody(
           type: $enumDecode(_$QrCodeTypeEnumMap, json['type']),
           usage: $enumDecode(_$QrCodeUsageEnumMap, json['usage']),
           name: json['name'] as String?,
@@ -122,8 +119,8 @@ _$RazorpayQrCodeGstCreateRequestBodyImpl
                   json['tax_invoice'] as Map<String, dynamic>),
         );
 
-Map<String, dynamic> _$$RazorpayQrCodeGstCreateRequestBodyImplToJson(
-        _$RazorpayQrCodeGstCreateRequestBodyImpl instance) =>
+Map<String, dynamic> _$RazorpayQrCodeGstCreateRequestBodyToJson(
+        _RazorpayQrCodeGstCreateRequestBody instance) =>
     <String, dynamic>{
       'type': _$QrCodeTypeEnumMap[instance.type]!,
       'usage': _$QrCodeUsageEnumMap[instance.usage]!,
@@ -137,8 +134,8 @@ Map<String, dynamic> _$$RazorpayQrCodeGstCreateRequestBodyImplToJson(
       if (instance.tax_invoice case final value?) 'tax_invoice': value,
     };
 
-_$RazorpayQrCodeImpl _$$RazorpayQrCodeImplFromJson(Map<String, dynamic> json) =>
-    _$RazorpayQrCodeImpl(
+_RazorpayQrCode _$RazorpayQrCodeFromJson(Map<String, dynamic> json) =>
+    _RazorpayQrCode(
       id: json['id'] as String,
       entity: json['entity'] as String,
       type: $enumDecode(_$QrCodeTypeEnumMap, json['type']),
@@ -165,8 +162,7 @@ _$RazorpayQrCodeImpl _$$RazorpayQrCodeImplFromJson(Map<String, dynamic> json) =>
           $enumDecodeNullable(_$QrCodeCloseReasonEnumMap, json['close_reason']),
     );
 
-Map<String, dynamic> _$$RazorpayQrCodeImplToJson(
-        _$RazorpayQrCodeImpl instance) =>
+Map<String, dynamic> _$RazorpayQrCodeToJson(_RazorpayQrCode instance) =>
     <String, dynamic>{
       'id': instance.id,
       'entity': instance.entity,
@@ -200,9 +196,8 @@ const _$QrCodeCloseReasonEnumMap = {
   QrCodeCloseReason.paid: 'paid',
 };
 
-_$RazorpayQrCodeQueryImpl _$$RazorpayQrCodeQueryImplFromJson(
-        Map<String, dynamic> json) =>
-    _$RazorpayQrCodeQueryImpl(
+_RazorpayQrCodeQuery _$RazorpayQrCodeQueryFromJson(Map<String, dynamic> json) =>
+    _RazorpayQrCodeQuery(
       from: (json['from'] as num?)?.toInt(),
       to: (json['to'] as num?)?.toInt(),
       count: (json['count'] as num?)?.toInt(),
@@ -211,8 +206,8 @@ _$RazorpayQrCodeQueryImpl _$$RazorpayQrCodeQueryImplFromJson(
       payment_id: json['payment_id'] as String?,
     );
 
-Map<String, dynamic> _$$RazorpayQrCodeQueryImplToJson(
-        _$RazorpayQrCodeQueryImpl instance) =>
+Map<String, dynamic> _$RazorpayQrCodeQueryToJson(
+        _RazorpayQrCodeQuery instance) =>
     <String, dynamic>{
       if (instance.from case final value?) 'from': value,
       if (instance.to case final value?) 'to': value,
@@ -222,18 +217,18 @@ Map<String, dynamic> _$$RazorpayQrCodeQueryImplToJson(
       if (instance.payment_id case final value?) 'payment_id': value,
     };
 
-_$RazorpayQrCodePaymentsResponseImpl
-    _$$RazorpayQrCodePaymentsResponseImplFromJson(Map<String, dynamic> json) =>
-        _$RazorpayQrCodePaymentsResponseImpl(
-          entity: json['entity'] as String,
-          count: (json['count'] as num).toInt(),
-          items: (json['items'] as List<dynamic>)
-              .map((e) => RazorpayPayment.fromJson(e as Map<String, dynamic>))
-              .toList(),
-        );
+_RazorpayQrCodePaymentsResponse _$RazorpayQrCodePaymentsResponseFromJson(
+        Map<String, dynamic> json) =>
+    _RazorpayQrCodePaymentsResponse(
+      entity: json['entity'] as String,
+      count: (json['count'] as num).toInt(),
+      items: (json['items'] as List<dynamic>)
+          .map((e) => RazorpayPayment.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
 
-Map<String, dynamic> _$$RazorpayQrCodePaymentsResponseImplToJson(
-        _$RazorpayQrCodePaymentsResponseImpl instance) =>
+Map<String, dynamic> _$RazorpayQrCodePaymentsResponseToJson(
+        _RazorpayQrCodePaymentsResponse instance) =>
     <String, dynamic>{
       'entity': instance.entity,
       'count': instance.count,

@@ -6,8 +6,8 @@ part of 'addons_model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$RazorpayAddonImpl _$$RazorpayAddonImplFromJson(Map<String, dynamic> json) =>
-    _$RazorpayAddonImpl(
+_RazorpayAddon _$RazorpayAddonFromJson(Map<String, dynamic> json) =>
+    _RazorpayAddon(
       id: json['id'] as String,
       entity: json['entity'] as String,
       item: RazorpayItem.fromJson(json['item'] as Map<String, dynamic>),
@@ -17,7 +17,7 @@ _$RazorpayAddonImpl _$$RazorpayAddonImplFromJson(Map<String, dynamic> json) =>
       invoice_id: json['invoice_id'] as String?,
     );
 
-Map<String, dynamic> _$$RazorpayAddonImplToJson(_$RazorpayAddonImpl instance) =>
+Map<String, dynamic> _$RazorpayAddonToJson(_RazorpayAddon instance) =>
     <String, dynamic>{
       'id': instance.id,
       'entity': instance.entity,

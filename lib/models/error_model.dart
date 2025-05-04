@@ -5,7 +5,7 @@ part 'error_model.freezed.dart';
 part 'error_model.g.dart';
 
 @freezed
-class RazorpayError with _$RazorpayError {
+abstract class RazorpayError with _$RazorpayError {
   @JsonSerializable(includeIfNull: false)
   const factory RazorpayError({
     required String code,
@@ -24,7 +24,7 @@ class RazorpayError with _$RazorpayError {
 // Model for the overall error structure returned by the API
 // Note: This might differ slightly from INormalizeError used internally in JS
 @freezed
-class RazorpayApiErrorResponse with _$RazorpayApiErrorResponse {
+abstract class RazorpayApiErrorResponse with _$RazorpayApiErrorResponse {
   @JsonSerializable(includeIfNull: false)
   const factory RazorpayApiErrorResponse({
     required RazorpayError error,

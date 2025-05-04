@@ -6,53 +6,53 @@ part of 'payment_link_model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$RazorpayPaymentLinkCustomerImpl _$$RazorpayPaymentLinkCustomerImplFromJson(
+_RazorpayPaymentLinkCustomer _$RazorpayPaymentLinkCustomerFromJson(
         Map<String, dynamic> json) =>
-    _$RazorpayPaymentLinkCustomerImpl(
+    _RazorpayPaymentLinkCustomer(
       name: json['name'] as String?,
       email: json['email'] as String?,
       contact: json['contact'],
     );
 
-Map<String, dynamic> _$$RazorpayPaymentLinkCustomerImplToJson(
-        _$RazorpayPaymentLinkCustomerImpl instance) =>
+Map<String, dynamic> _$RazorpayPaymentLinkCustomerToJson(
+        _RazorpayPaymentLinkCustomer instance) =>
     <String, dynamic>{
       if (instance.name case final value?) 'name': value,
       if (instance.email case final value?) 'email': value,
       if (instance.contact case final value?) 'contact': value,
     };
 
-_$RazorpayPaymentLinkNotifyImpl _$$RazorpayPaymentLinkNotifyImplFromJson(
+_RazorpayPaymentLinkNotify _$RazorpayPaymentLinkNotifyFromJson(
         Map<String, dynamic> json) =>
-    _$RazorpayPaymentLinkNotifyImpl(
+    _RazorpayPaymentLinkNotify(
       email: json['email'] as bool?,
       sms: json['sms'] as bool?,
       whatsapp: json['whatsapp'] as bool?,
     );
 
-Map<String, dynamic> _$$RazorpayPaymentLinkNotifyImplToJson(
-        _$RazorpayPaymentLinkNotifyImpl instance) =>
+Map<String, dynamic> _$RazorpayPaymentLinkNotifyToJson(
+        _RazorpayPaymentLinkNotify instance) =>
     <String, dynamic>{
       if (instance.email case final value?) 'email': value,
       if (instance.sms case final value?) 'sms': value,
       if (instance.whatsapp case final value?) 'whatsapp': value,
     };
 
-_$RazorpayPaymentLinkReminderImpl _$$RazorpayPaymentLinkReminderImplFromJson(
+_RazorpayPaymentLinkReminder _$RazorpayPaymentLinkReminderFromJson(
         Map<String, dynamic> json) =>
-    _$RazorpayPaymentLinkReminderImpl(
+    _RazorpayPaymentLinkReminder(
       status: json['status'] as String,
     );
 
-Map<String, dynamic> _$$RazorpayPaymentLinkReminderImplToJson(
-        _$RazorpayPaymentLinkReminderImpl instance) =>
+Map<String, dynamic> _$RazorpayPaymentLinkReminderToJson(
+        _RazorpayPaymentLinkReminder instance) =>
     <String, dynamic>{
       'status': instance.status,
     };
 
-_$RazorpayPaymentLinkPaymentImpl _$$RazorpayPaymentLinkPaymentImplFromJson(
+_RazorpayPaymentLinkPayment _$RazorpayPaymentLinkPaymentFromJson(
         Map<String, dynamic> json) =>
-    _$RazorpayPaymentLinkPaymentImpl(
+    _RazorpayPaymentLinkPayment(
       amount: json['amount'] as String,
       created_at: json['created_at'] as String,
       method: json['method'] as String,
@@ -62,8 +62,8 @@ _$RazorpayPaymentLinkPaymentImpl _$$RazorpayPaymentLinkPaymentImplFromJson(
       updated_at: (json['updated_at'] as num).toInt(),
     );
 
-Map<String, dynamic> _$$RazorpayPaymentLinkPaymentImplToJson(
-        _$RazorpayPaymentLinkPaymentImpl instance) =>
+Map<String, dynamic> _$RazorpayPaymentLinkPaymentToJson(
+        _RazorpayPaymentLinkPayment instance) =>
     <String, dynamic>{
       'amount': instance.amount,
       'created_at': instance.created_at,
@@ -74,10 +74,9 @@ Map<String, dynamic> _$$RazorpayPaymentLinkPaymentImplToJson(
       'updated_at': instance.updated_at,
     };
 
-_$RazorpayPaymentLinkBaseRequestBodyImpl
-    _$$RazorpayPaymentLinkBaseRequestBodyImplFromJson(
-            Map<String, dynamic> json) =>
-        _$RazorpayPaymentLinkBaseRequestBodyImpl(
+_RazorpayPaymentLinkBaseRequestBody
+    _$RazorpayPaymentLinkBaseRequestBodyFromJson(Map<String, dynamic> json) =>
+        _RazorpayPaymentLinkBaseRequestBody(
           amount: json['amount'],
           currency: json['currency'] as String?,
           accept_partial: json['accept_partial'] as bool?,
@@ -96,8 +95,8 @@ _$RazorpayPaymentLinkBaseRequestBodyImpl
           callback_method: json['callback_method'] as String?,
         );
 
-Map<String, dynamic> _$$RazorpayPaymentLinkBaseRequestBodyImplToJson(
-        _$RazorpayPaymentLinkBaseRequestBodyImpl instance) =>
+Map<String, dynamic> _$RazorpayPaymentLinkBaseRequestBodyToJson(
+        _RazorpayPaymentLinkBaseRequestBody instance) =>
     <String, dynamic>{
       if (instance.amount case final value?) 'amount': value,
       if (instance.currency case final value?) 'currency': value,
@@ -114,10 +113,9 @@ Map<String, dynamic> _$$RazorpayPaymentLinkBaseRequestBodyImplToJson(
       if (instance.callback_method case final value?) 'callback_method': value,
     };
 
-_$RazorpayPaymentLinkCreateRequestBodyImpl
-    _$$RazorpayPaymentLinkCreateRequestBodyImplFromJson(
-            Map<String, dynamic> json) =>
-        _$RazorpayPaymentLinkCreateRequestBodyImpl(
+_RazorpayPaymentLinkCreateRequestBody
+    _$RazorpayPaymentLinkCreateRequestBodyFromJson(Map<String, dynamic> json) =>
+        _RazorpayPaymentLinkCreateRequestBody(
           amount: json['amount'],
           currency: json['currency'] as String?,
           accept_partial: json['accept_partial'] as bool?,
@@ -136,8 +134,8 @@ _$RazorpayPaymentLinkCreateRequestBodyImpl
           callback_method: json['callback_method'] as String?,
         );
 
-Map<String, dynamic> _$$RazorpayPaymentLinkCreateRequestBodyImplToJson(
-        _$RazorpayPaymentLinkCreateRequestBodyImpl instance) =>
+Map<String, dynamic> _$RazorpayPaymentLinkCreateRequestBodyToJson(
+        _RazorpayPaymentLinkCreateRequestBody instance) =>
     <String, dynamic>{
       if (instance.amount case final value?) 'amount': value,
       if (instance.currency case final value?) 'currency': value,
@@ -154,10 +152,9 @@ Map<String, dynamic> _$$RazorpayPaymentLinkCreateRequestBodyImplToJson(
       if (instance.callback_method case final value?) 'callback_method': value,
     };
 
-_$RazorpayPaymentLinkUpdateRequestBodyImpl
-    _$$RazorpayPaymentLinkUpdateRequestBodyImplFromJson(
-            Map<String, dynamic> json) =>
-        _$RazorpayPaymentLinkUpdateRequestBodyImpl(
+_RazorpayPaymentLinkUpdateRequestBody
+    _$RazorpayPaymentLinkUpdateRequestBodyFromJson(Map<String, dynamic> json) =>
+        _RazorpayPaymentLinkUpdateRequestBody(
           accept_partial: json['accept_partial'] as bool?,
           reference_id: json['reference_id'] as String?,
           expire_by: (json['expire_by'] as num?)?.toInt(),
@@ -165,8 +162,8 @@ _$RazorpayPaymentLinkUpdateRequestBodyImpl
           reminder_enable: json['reminder_enable'] as bool?,
         );
 
-Map<String, dynamic> _$$RazorpayPaymentLinkUpdateRequestBodyImplToJson(
-        _$RazorpayPaymentLinkUpdateRequestBodyImpl instance) =>
+Map<String, dynamic> _$RazorpayPaymentLinkUpdateRequestBodyToJson(
+        _RazorpayPaymentLinkUpdateRequestBody instance) =>
     <String, dynamic>{
       if (instance.accept_partial case final value?) 'accept_partial': value,
       if (instance.reference_id case final value?) 'reference_id': value,
@@ -175,9 +172,8 @@ Map<String, dynamic> _$$RazorpayPaymentLinkUpdateRequestBodyImplToJson(
       if (instance.reminder_enable case final value?) 'reminder_enable': value,
     };
 
-_$RazorpayPaymentLinkImpl _$$RazorpayPaymentLinkImplFromJson(
-        Map<String, dynamic> json) =>
-    _$RazorpayPaymentLinkImpl(
+_RazorpayPaymentLink _$RazorpayPaymentLinkFromJson(Map<String, dynamic> json) =>
+    _RazorpayPaymentLink(
       id: json['id'] as String,
       amount: json['amount'],
       payments: (json['payments'] as List<dynamic>?)
@@ -204,8 +200,8 @@ _$RazorpayPaymentLinkImpl _$$RazorpayPaymentLinkImplFromJson(
       source_id: json['source_id'] as String?,
     );
 
-Map<String, dynamic> _$$RazorpayPaymentLinkImplToJson(
-        _$RazorpayPaymentLinkImpl instance) =>
+Map<String, dynamic> _$RazorpayPaymentLinkToJson(
+        _RazorpayPaymentLink instance) =>
     <String, dynamic>{
       'id': instance.id,
       if (instance.amount case final value?) 'amount': value,
@@ -227,50 +223,49 @@ Map<String, dynamic> _$$RazorpayPaymentLinkImplToJson(
       if (instance.source_id case final value?) 'source_id': value,
     };
 
-_$RazorpayTransferPaymentOptionImpl
-    _$$RazorpayTransferPaymentOptionImplFromJson(Map<String, dynamic> json) =>
-        _$RazorpayTransferPaymentOptionImpl(
-          order: RazorpayTransferPaymentOrder.fromJson(
-              json['order'] as Map<String, dynamic>),
-          amount: json['amount'],
-          customer: RazorpayPaymentLinkCustomer.fromJson(
-              json['customer'] as Map<String, dynamic>),
-        );
+_RazorpayTransferPaymentOption _$RazorpayTransferPaymentOptionFromJson(
+        Map<String, dynamic> json) =>
+    _RazorpayTransferPaymentOption(
+      order: RazorpayTransferPaymentOrder.fromJson(
+          json['order'] as Map<String, dynamic>),
+      amount: json['amount'],
+      customer: RazorpayPaymentLinkCustomer.fromJson(
+          json['customer'] as Map<String, dynamic>),
+    );
 
-Map<String, dynamic> _$$RazorpayTransferPaymentOptionImplToJson(
-        _$RazorpayTransferPaymentOptionImpl instance) =>
+Map<String, dynamic> _$RazorpayTransferPaymentOptionToJson(
+        _RazorpayTransferPaymentOption instance) =>
     <String, dynamic>{
       'order': instance.order,
       if (instance.amount case final value?) 'amount': value,
       'customer': instance.customer,
     };
 
-_$RazorpayTransferPaymentOrderImpl _$$RazorpayTransferPaymentOrderImplFromJson(
+_RazorpayTransferPaymentOrder _$RazorpayTransferPaymentOrderFromJson(
         Map<String, dynamic> json) =>
-    _$RazorpayTransferPaymentOrderImpl(
+    _RazorpayTransferPaymentOrder(
       transfers: (json['transfers'] as List<dynamic>?)
           ?.map((e) => RazorpayOrderCreateTransferRequestBody.fromJson(
               e as Map<String, dynamic>))
           .toList(),
     );
 
-Map<String, dynamic> _$$RazorpayTransferPaymentOrderImplToJson(
-        _$RazorpayTransferPaymentOrderImpl instance) =>
+Map<String, dynamic> _$RazorpayTransferPaymentOrderToJson(
+        _RazorpayTransferPaymentOrder instance) =>
     <String, dynamic>{
       if (instance.transfers case final value?) 'transfers': value,
     };
 
-_$RazorpayPaymentLinkListResponseImpl
-    _$$RazorpayPaymentLinkListResponseImplFromJson(Map<String, dynamic> json) =>
-        _$RazorpayPaymentLinkListResponseImpl(
-          payment_links: (json['payment_links'] as List<dynamic>)
-              .map((e) =>
-                  RazorpayPaymentLink.fromJson(e as Map<String, dynamic>))
-              .toList(),
-        );
+_RazorpayPaymentLinkListResponse _$RazorpayPaymentLinkListResponseFromJson(
+        Map<String, dynamic> json) =>
+    _RazorpayPaymentLinkListResponse(
+      payment_links: (json['payment_links'] as List<dynamic>)
+          .map((e) => RazorpayPaymentLink.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
 
-Map<String, dynamic> _$$RazorpayPaymentLinkListResponseImplToJson(
-        _$RazorpayPaymentLinkListResponseImpl instance) =>
+Map<String, dynamic> _$RazorpayPaymentLinkListResponseToJson(
+        _RazorpayPaymentLinkListResponse instance) =>
     <String, dynamic>{
       'payment_links': instance.payment_links,
     };

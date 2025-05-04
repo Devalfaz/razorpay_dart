@@ -6,9 +6,8 @@ part of 'documents_model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$RazorpayDocumentImpl _$$RazorpayDocumentImplFromJson(
-        Map<String, dynamic> json) =>
-    _$RazorpayDocumentImpl(
+_RazorpayDocument _$RazorpayDocumentFromJson(Map<String, dynamic> json) =>
+    _RazorpayDocument(
       id: json['id'] as String,
       entity: json['entity'] as String,
       purpose: json['purpose'] as String,
@@ -18,8 +17,7 @@ _$RazorpayDocumentImpl _$$RazorpayDocumentImplFromJson(
       created_at: (json['created_at'] as num).toInt(),
     );
 
-Map<String, dynamic> _$$RazorpayDocumentImplToJson(
-        _$RazorpayDocumentImpl instance) =>
+Map<String, dynamic> _$RazorpayDocumentToJson(_RazorpayDocument instance) =>
     <String, dynamic>{
       'id': instance.id,
       'entity': instance.entity,

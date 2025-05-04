@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,111 +10,68 @@ part of 'refunds_model.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-RazorpayRefundBaseRequestBody _$RazorpayRefundBaseRequestBodyFromJson(
-    Map<String, dynamic> json) {
-  return _RazorpayRefundBaseRequestBody.fromJson(json);
-}
 
 /// @nodoc
 mixin _$RazorpayRefundBaseRequestBody {
-  int? get amount =>
-      throw _privateConstructorUsedError; // Amount is optional for full refund, required for partial
-  RefundSpeed? get speed => throw _privateConstructorUsedError;
-  IMap<dynamic>? get notes =>
-      throw _privateConstructorUsedError; // IMap<string | number>
-  String? get receipt => throw _privateConstructorUsedError;
-
-  /// Serializes this RazorpayRefundBaseRequestBody to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  int? get amount; // Amount is optional for full refund, required for partial
+  RefundSpeed? get speed;
+  IMap<dynamic>? get notes; // IMap<string | number>
+  String? get receipt;
 
   /// Create a copy of RazorpayRefundBaseRequestBody
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $RazorpayRefundBaseRequestBodyCopyWith<RazorpayRefundBaseRequestBody>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $RazorpayRefundBaseRequestBodyCopyWith<$Res> {
-  factory $RazorpayRefundBaseRequestBodyCopyWith(
-          RazorpayRefundBaseRequestBody value,
-          $Res Function(RazorpayRefundBaseRequestBody) then) =
-      _$RazorpayRefundBaseRequestBodyCopyWithImpl<$Res,
-          RazorpayRefundBaseRequestBody>;
-  @useResult
-  $Res call(
-      {int? amount, RefundSpeed? speed, IMap<dynamic>? notes, String? receipt});
-}
-
-/// @nodoc
-class _$RazorpayRefundBaseRequestBodyCopyWithImpl<$Res,
-        $Val extends RazorpayRefundBaseRequestBody>
-    implements $RazorpayRefundBaseRequestBodyCopyWith<$Res> {
-  _$RazorpayRefundBaseRequestBodyCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of RazorpayRefundBaseRequestBody
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
+  $RazorpayRefundBaseRequestBodyCopyWith<RazorpayRefundBaseRequestBody>
+      get copyWith => _$RazorpayRefundBaseRequestBodyCopyWithImpl<
+              RazorpayRefundBaseRequestBody>(
+          this as RazorpayRefundBaseRequestBody, _$identity);
+
+  /// Serializes this RazorpayRefundBaseRequestBody to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? amount = freezed,
-    Object? speed = freezed,
-    Object? notes = freezed,
-    Object? receipt = freezed,
-  }) {
-    return _then(_value.copyWith(
-      amount: freezed == amount
-          ? _value.amount
-          : amount // ignore: cast_nullable_to_non_nullable
-              as int?,
-      speed: freezed == speed
-          ? _value.speed
-          : speed // ignore: cast_nullable_to_non_nullable
-              as RefundSpeed?,
-      notes: freezed == notes
-          ? _value.notes
-          : notes // ignore: cast_nullable_to_non_nullable
-              as IMap<dynamic>?,
-      receipt: freezed == receipt
-          ? _value.receipt
-          : receipt // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is RazorpayRefundBaseRequestBody &&
+            (identical(other.amount, amount) || other.amount == amount) &&
+            (identical(other.speed, speed) || other.speed == speed) &&
+            const DeepCollectionEquality().equals(other.notes, notes) &&
+            (identical(other.receipt, receipt) || other.receipt == receipt));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, amount, speed,
+      const DeepCollectionEquality().hash(notes), receipt);
+
+  @override
+  String toString() {
+    return 'RazorpayRefundBaseRequestBody(amount: $amount, speed: $speed, notes: $notes, receipt: $receipt)';
   }
 }
 
 /// @nodoc
-abstract class _$$RazorpayRefundBaseRequestBodyImplCopyWith<$Res>
-    implements $RazorpayRefundBaseRequestBodyCopyWith<$Res> {
-  factory _$$RazorpayRefundBaseRequestBodyImplCopyWith(
-          _$RazorpayRefundBaseRequestBodyImpl value,
-          $Res Function(_$RazorpayRefundBaseRequestBodyImpl) then) =
-      __$$RazorpayRefundBaseRequestBodyImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $RazorpayRefundBaseRequestBodyCopyWith<$Res> {
+  factory $RazorpayRefundBaseRequestBodyCopyWith(
+          RazorpayRefundBaseRequestBody value,
+          $Res Function(RazorpayRefundBaseRequestBody) _then) =
+      _$RazorpayRefundBaseRequestBodyCopyWithImpl;
   @useResult
   $Res call(
       {int? amount, RefundSpeed? speed, IMap<dynamic>? notes, String? receipt});
 }
 
 /// @nodoc
-class __$$RazorpayRefundBaseRequestBodyImplCopyWithImpl<$Res>
-    extends _$RazorpayRefundBaseRequestBodyCopyWithImpl<$Res,
-        _$RazorpayRefundBaseRequestBodyImpl>
-    implements _$$RazorpayRefundBaseRequestBodyImplCopyWith<$Res> {
-  __$$RazorpayRefundBaseRequestBodyImplCopyWithImpl(
-      _$RazorpayRefundBaseRequestBodyImpl _value,
-      $Res Function(_$RazorpayRefundBaseRequestBodyImpl) _then)
-      : super(_value, _then);
+class _$RazorpayRefundBaseRequestBodyCopyWithImpl<$Res>
+    implements $RazorpayRefundBaseRequestBodyCopyWith<$Res> {
+  _$RazorpayRefundBaseRequestBodyCopyWithImpl(this._self, this._then);
+
+  final RazorpayRefundBaseRequestBody _self;
+  final $Res Function(RazorpayRefundBaseRequestBody) _then;
 
   /// Create a copy of RazorpayRefundBaseRequestBody
   /// with the given fields replaced by the non-null parameter values.
@@ -125,21 +83,21 @@ class __$$RazorpayRefundBaseRequestBodyImplCopyWithImpl<$Res>
     Object? notes = freezed,
     Object? receipt = freezed,
   }) {
-    return _then(_$RazorpayRefundBaseRequestBodyImpl(
+    return _then(_self.copyWith(
       amount: freezed == amount
-          ? _value.amount
+          ? _self.amount
           : amount // ignore: cast_nullable_to_non_nullable
               as int?,
       speed: freezed == speed
-          ? _value.speed
+          ? _self.speed
           : speed // ignore: cast_nullable_to_non_nullable
               as RefundSpeed?,
       notes: freezed == notes
-          ? _value._notes
+          ? _self.notes
           : notes // ignore: cast_nullable_to_non_nullable
               as IMap<dynamic>?,
       receipt: freezed == receipt
-          ? _value.receipt
+          ? _self.receipt
           : receipt // ignore: cast_nullable_to_non_nullable
               as String?,
     ));
@@ -149,15 +107,12 @@ class __$$RazorpayRefundBaseRequestBodyImplCopyWithImpl<$Res>
 /// @nodoc
 
 @JsonSerializable(includeIfNull: false)
-class _$RazorpayRefundBaseRequestBodyImpl
-    implements _RazorpayRefundBaseRequestBody {
-  const _$RazorpayRefundBaseRequestBodyImpl(
+class _RazorpayRefundBaseRequestBody implements RazorpayRefundBaseRequestBody {
+  const _RazorpayRefundBaseRequestBody(
       {this.amount, this.speed, final IMap<dynamic>? notes, this.receipt})
       : _notes = notes;
-
-  factory _$RazorpayRefundBaseRequestBodyImpl.fromJson(
-          Map<String, dynamic> json) =>
-      _$$RazorpayRefundBaseRequestBodyImplFromJson(json);
+  factory _RazorpayRefundBaseRequestBody.fromJson(Map<String, dynamic> json) =>
+      _$RazorpayRefundBaseRequestBodyFromJson(json);
 
   @override
   final int? amount;
@@ -178,16 +133,27 @@ class _$RazorpayRefundBaseRequestBodyImpl
   @override
   final String? receipt;
 
+  /// Create a copy of RazorpayRefundBaseRequestBody
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'RazorpayRefundBaseRequestBody(amount: $amount, speed: $speed, notes: $notes, receipt: $receipt)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$RazorpayRefundBaseRequestBodyCopyWith<_RazorpayRefundBaseRequestBody>
+      get copyWith => __$RazorpayRefundBaseRequestBodyCopyWithImpl<
+          _RazorpayRefundBaseRequestBody>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$RazorpayRefundBaseRequestBodyToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$RazorpayRefundBaseRequestBodyImpl &&
+            other is _RazorpayRefundBaseRequestBody &&
             (identical(other.amount, amount) || other.amount == amount) &&
             (identical(other.speed, speed) || other.speed == speed) &&
             const DeepCollectionEquality().equals(other._notes, _notes) &&
@@ -199,151 +165,123 @@ class _$RazorpayRefundBaseRequestBodyImpl
   int get hashCode => Object.hash(runtimeType, amount, speed,
       const DeepCollectionEquality().hash(_notes), receipt);
 
-  /// Create a copy of RazorpayRefundBaseRequestBody
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$RazorpayRefundBaseRequestBodyImplCopyWith<
-          _$RazorpayRefundBaseRequestBodyImpl>
-      get copyWith => __$$RazorpayRefundBaseRequestBodyImplCopyWithImpl<
-          _$RazorpayRefundBaseRequestBodyImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$RazorpayRefundBaseRequestBodyImplToJson(
-      this,
-    );
+  String toString() {
+    return 'RazorpayRefundBaseRequestBody(amount: $amount, speed: $speed, notes: $notes, receipt: $receipt)';
   }
 }
 
-abstract class _RazorpayRefundBaseRequestBody
-    implements RazorpayRefundBaseRequestBody {
-  const factory _RazorpayRefundBaseRequestBody(
-      {final int? amount,
-      final RefundSpeed? speed,
-      final IMap<dynamic>? notes,
-      final String? receipt}) = _$RazorpayRefundBaseRequestBodyImpl;
+/// @nodoc
+abstract mixin class _$RazorpayRefundBaseRequestBodyCopyWith<$Res>
+    implements $RazorpayRefundBaseRequestBodyCopyWith<$Res> {
+  factory _$RazorpayRefundBaseRequestBodyCopyWith(
+          _RazorpayRefundBaseRequestBody value,
+          $Res Function(_RazorpayRefundBaseRequestBody) _then) =
+      __$RazorpayRefundBaseRequestBodyCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {int? amount, RefundSpeed? speed, IMap<dynamic>? notes, String? receipt});
+}
 
-  factory _RazorpayRefundBaseRequestBody.fromJson(Map<String, dynamic> json) =
-      _$RazorpayRefundBaseRequestBodyImpl.fromJson;
+/// @nodoc
+class __$RazorpayRefundBaseRequestBodyCopyWithImpl<$Res>
+    implements _$RazorpayRefundBaseRequestBodyCopyWith<$Res> {
+  __$RazorpayRefundBaseRequestBodyCopyWithImpl(this._self, this._then);
 
-  @override
-  int? get amount; // Amount is optional for full refund, required for partial
-  @override
-  RefundSpeed? get speed;
-  @override
-  IMap<dynamic>? get notes; // IMap<string | number>
-  @override
-  String? get receipt;
+  final _RazorpayRefundBaseRequestBody _self;
+  final $Res Function(_RazorpayRefundBaseRequestBody) _then;
 
   /// Create a copy of RazorpayRefundBaseRequestBody
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$RazorpayRefundBaseRequestBodyImplCopyWith<
-          _$RazorpayRefundBaseRequestBodyImpl>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-RazorpayRefundCreateRequestBody _$RazorpayRefundCreateRequestBodyFromJson(
-    Map<String, dynamic> json) {
-  return _RazorpayRefundCreateRequestBody.fromJson(json);
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? amount = freezed,
+    Object? speed = freezed,
+    Object? notes = freezed,
+    Object? receipt = freezed,
+  }) {
+    return _then(_RazorpayRefundBaseRequestBody(
+      amount: freezed == amount
+          ? _self.amount
+          : amount // ignore: cast_nullable_to_non_nullable
+              as int?,
+      speed: freezed == speed
+          ? _self.speed
+          : speed // ignore: cast_nullable_to_non_nullable
+              as RefundSpeed?,
+      notes: freezed == notes
+          ? _self._notes
+          : notes // ignore: cast_nullable_to_non_nullable
+              as IMap<dynamic>?,
+      receipt: freezed == receipt
+          ? _self.receipt
+          : receipt // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
 }
 
 /// @nodoc
 mixin _$RazorpayRefundCreateRequestBody {
-  int? get amount => throw _privateConstructorUsedError;
-  RefundSpeed? get speed => throw _privateConstructorUsedError;
-  IMap<dynamic>? get notes => throw _privateConstructorUsedError;
-  String? get receipt => throw _privateConstructorUsedError;
-
-  /// Serializes this RazorpayRefundCreateRequestBody to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  int? get amount;
+  RefundSpeed? get speed;
+  IMap<dynamic>? get notes;
+  String? get receipt;
 
   /// Create a copy of RazorpayRefundCreateRequestBody
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $RazorpayRefundCreateRequestBodyCopyWith<RazorpayRefundCreateRequestBody>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $RazorpayRefundCreateRequestBodyCopyWith<$Res> {
-  factory $RazorpayRefundCreateRequestBodyCopyWith(
-          RazorpayRefundCreateRequestBody value,
-          $Res Function(RazorpayRefundCreateRequestBody) then) =
-      _$RazorpayRefundCreateRequestBodyCopyWithImpl<$Res,
-          RazorpayRefundCreateRequestBody>;
-  @useResult
-  $Res call(
-      {int? amount, RefundSpeed? speed, IMap<dynamic>? notes, String? receipt});
-}
-
-/// @nodoc
-class _$RazorpayRefundCreateRequestBodyCopyWithImpl<$Res,
-        $Val extends RazorpayRefundCreateRequestBody>
-    implements $RazorpayRefundCreateRequestBodyCopyWith<$Res> {
-  _$RazorpayRefundCreateRequestBodyCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of RazorpayRefundCreateRequestBody
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
+  $RazorpayRefundCreateRequestBodyCopyWith<RazorpayRefundCreateRequestBody>
+      get copyWith => _$RazorpayRefundCreateRequestBodyCopyWithImpl<
+              RazorpayRefundCreateRequestBody>(
+          this as RazorpayRefundCreateRequestBody, _$identity);
+
+  /// Serializes this RazorpayRefundCreateRequestBody to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? amount = freezed,
-    Object? speed = freezed,
-    Object? notes = freezed,
-    Object? receipt = freezed,
-  }) {
-    return _then(_value.copyWith(
-      amount: freezed == amount
-          ? _value.amount
-          : amount // ignore: cast_nullable_to_non_nullable
-              as int?,
-      speed: freezed == speed
-          ? _value.speed
-          : speed // ignore: cast_nullable_to_non_nullable
-              as RefundSpeed?,
-      notes: freezed == notes
-          ? _value.notes
-          : notes // ignore: cast_nullable_to_non_nullable
-              as IMap<dynamic>?,
-      receipt: freezed == receipt
-          ? _value.receipt
-          : receipt // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is RazorpayRefundCreateRequestBody &&
+            (identical(other.amount, amount) || other.amount == amount) &&
+            (identical(other.speed, speed) || other.speed == speed) &&
+            const DeepCollectionEquality().equals(other.notes, notes) &&
+            (identical(other.receipt, receipt) || other.receipt == receipt));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, amount, speed,
+      const DeepCollectionEquality().hash(notes), receipt);
+
+  @override
+  String toString() {
+    return 'RazorpayRefundCreateRequestBody(amount: $amount, speed: $speed, notes: $notes, receipt: $receipt)';
   }
 }
 
 /// @nodoc
-abstract class _$$RazorpayRefundCreateRequestBodyImplCopyWith<$Res>
-    implements $RazorpayRefundCreateRequestBodyCopyWith<$Res> {
-  factory _$$RazorpayRefundCreateRequestBodyImplCopyWith(
-          _$RazorpayRefundCreateRequestBodyImpl value,
-          $Res Function(_$RazorpayRefundCreateRequestBodyImpl) then) =
-      __$$RazorpayRefundCreateRequestBodyImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $RazorpayRefundCreateRequestBodyCopyWith<$Res> {
+  factory $RazorpayRefundCreateRequestBodyCopyWith(
+          RazorpayRefundCreateRequestBody value,
+          $Res Function(RazorpayRefundCreateRequestBody) _then) =
+      _$RazorpayRefundCreateRequestBodyCopyWithImpl;
   @useResult
   $Res call(
       {int? amount, RefundSpeed? speed, IMap<dynamic>? notes, String? receipt});
 }
 
 /// @nodoc
-class __$$RazorpayRefundCreateRequestBodyImplCopyWithImpl<$Res>
-    extends _$RazorpayRefundCreateRequestBodyCopyWithImpl<$Res,
-        _$RazorpayRefundCreateRequestBodyImpl>
-    implements _$$RazorpayRefundCreateRequestBodyImplCopyWith<$Res> {
-  __$$RazorpayRefundCreateRequestBodyImplCopyWithImpl(
-      _$RazorpayRefundCreateRequestBodyImpl _value,
-      $Res Function(_$RazorpayRefundCreateRequestBodyImpl) _then)
-      : super(_value, _then);
+class _$RazorpayRefundCreateRequestBodyCopyWithImpl<$Res>
+    implements $RazorpayRefundCreateRequestBodyCopyWith<$Res> {
+  _$RazorpayRefundCreateRequestBodyCopyWithImpl(this._self, this._then);
+
+  final RazorpayRefundCreateRequestBody _self;
+  final $Res Function(RazorpayRefundCreateRequestBody) _then;
 
   /// Create a copy of RazorpayRefundCreateRequestBody
   /// with the given fields replaced by the non-null parameter values.
@@ -355,21 +293,21 @@ class __$$RazorpayRefundCreateRequestBodyImplCopyWithImpl<$Res>
     Object? notes = freezed,
     Object? receipt = freezed,
   }) {
-    return _then(_$RazorpayRefundCreateRequestBodyImpl(
+    return _then(_self.copyWith(
       amount: freezed == amount
-          ? _value.amount
+          ? _self.amount
           : amount // ignore: cast_nullable_to_non_nullable
               as int?,
       speed: freezed == speed
-          ? _value.speed
+          ? _self.speed
           : speed // ignore: cast_nullable_to_non_nullable
               as RefundSpeed?,
       notes: freezed == notes
-          ? _value._notes
+          ? _self.notes
           : notes // ignore: cast_nullable_to_non_nullable
               as IMap<dynamic>?,
       receipt: freezed == receipt
-          ? _value.receipt
+          ? _self.receipt
           : receipt // ignore: cast_nullable_to_non_nullable
               as String?,
     ));
@@ -379,15 +317,14 @@ class __$$RazorpayRefundCreateRequestBodyImplCopyWithImpl<$Res>
 /// @nodoc
 
 @JsonSerializable(includeIfNull: false)
-class _$RazorpayRefundCreateRequestBodyImpl
-    implements _RazorpayRefundCreateRequestBody {
-  const _$RazorpayRefundCreateRequestBodyImpl(
+class _RazorpayRefundCreateRequestBody
+    implements RazorpayRefundCreateRequestBody {
+  const _RazorpayRefundCreateRequestBody(
       {this.amount, this.speed, final IMap<dynamic>? notes, this.receipt})
       : _notes = notes;
-
-  factory _$RazorpayRefundCreateRequestBodyImpl.fromJson(
+  factory _RazorpayRefundCreateRequestBody.fromJson(
           Map<String, dynamic> json) =>
-      _$$RazorpayRefundCreateRequestBodyImplFromJson(json);
+      _$RazorpayRefundCreateRequestBodyFromJson(json);
 
   @override
   final int? amount;
@@ -406,16 +343,27 @@ class _$RazorpayRefundCreateRequestBodyImpl
   @override
   final String? receipt;
 
+  /// Create a copy of RazorpayRefundCreateRequestBody
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'RazorpayRefundCreateRequestBody(amount: $amount, speed: $speed, notes: $notes, receipt: $receipt)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$RazorpayRefundCreateRequestBodyCopyWith<_RazorpayRefundCreateRequestBody>
+      get copyWith => __$RazorpayRefundCreateRequestBodyCopyWithImpl<
+          _RazorpayRefundCreateRequestBody>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$RazorpayRefundCreateRequestBodyToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$RazorpayRefundCreateRequestBodyImpl &&
+            other is _RazorpayRefundCreateRequestBody &&
             (identical(other.amount, amount) || other.amount == amount) &&
             (identical(other.speed, speed) || other.speed == speed) &&
             const DeepCollectionEquality().equals(other._notes, _notes) &&
@@ -427,131 +375,116 @@ class _$RazorpayRefundCreateRequestBodyImpl
   int get hashCode => Object.hash(runtimeType, amount, speed,
       const DeepCollectionEquality().hash(_notes), receipt);
 
-  /// Create a copy of RazorpayRefundCreateRequestBody
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$RazorpayRefundCreateRequestBodyImplCopyWith<
-          _$RazorpayRefundCreateRequestBodyImpl>
-      get copyWith => __$$RazorpayRefundCreateRequestBodyImplCopyWithImpl<
-          _$RazorpayRefundCreateRequestBodyImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$RazorpayRefundCreateRequestBodyImplToJson(
-      this,
-    );
+  String toString() {
+    return 'RazorpayRefundCreateRequestBody(amount: $amount, speed: $speed, notes: $notes, receipt: $receipt)';
   }
 }
 
-abstract class _RazorpayRefundCreateRequestBody
-    implements RazorpayRefundCreateRequestBody {
-  const factory _RazorpayRefundCreateRequestBody(
-      {final int? amount,
-      final RefundSpeed? speed,
-      final IMap<dynamic>? notes,
-      final String? receipt}) = _$RazorpayRefundCreateRequestBodyImpl;
+/// @nodoc
+abstract mixin class _$RazorpayRefundCreateRequestBodyCopyWith<$Res>
+    implements $RazorpayRefundCreateRequestBodyCopyWith<$Res> {
+  factory _$RazorpayRefundCreateRequestBodyCopyWith(
+          _RazorpayRefundCreateRequestBody value,
+          $Res Function(_RazorpayRefundCreateRequestBody) _then) =
+      __$RazorpayRefundCreateRequestBodyCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {int? amount, RefundSpeed? speed, IMap<dynamic>? notes, String? receipt});
+}
 
-  factory _RazorpayRefundCreateRequestBody.fromJson(Map<String, dynamic> json) =
-      _$RazorpayRefundCreateRequestBodyImpl.fromJson;
+/// @nodoc
+class __$RazorpayRefundCreateRequestBodyCopyWithImpl<$Res>
+    implements _$RazorpayRefundCreateRequestBodyCopyWith<$Res> {
+  __$RazorpayRefundCreateRequestBodyCopyWithImpl(this._self, this._then);
 
-  @override
-  int? get amount;
-  @override
-  RefundSpeed? get speed;
-  @override
-  IMap<dynamic>? get notes;
-  @override
-  String? get receipt;
+  final _RazorpayRefundCreateRequestBody _self;
+  final $Res Function(_RazorpayRefundCreateRequestBody) _then;
 
   /// Create a copy of RazorpayRefundCreateRequestBody
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$RazorpayRefundCreateRequestBodyImplCopyWith<
-          _$RazorpayRefundCreateRequestBodyImpl>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-RazorpayRefundUpdateRequestBody _$RazorpayRefundUpdateRequestBodyFromJson(
-    Map<String, dynamic> json) {
-  return _RazorpayRefundUpdateRequestBody.fromJson(json);
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? amount = freezed,
+    Object? speed = freezed,
+    Object? notes = freezed,
+    Object? receipt = freezed,
+  }) {
+    return _then(_RazorpayRefundCreateRequestBody(
+      amount: freezed == amount
+          ? _self.amount
+          : amount // ignore: cast_nullable_to_non_nullable
+              as int?,
+      speed: freezed == speed
+          ? _self.speed
+          : speed // ignore: cast_nullable_to_non_nullable
+              as RefundSpeed?,
+      notes: freezed == notes
+          ? _self._notes
+          : notes // ignore: cast_nullable_to_non_nullable
+              as IMap<dynamic>?,
+      receipt: freezed == receipt
+          ? _self.receipt
+          : receipt // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
 }
 
 /// @nodoc
 mixin _$RazorpayRefundUpdateRequestBody {
-  IMap<dynamic> get notes => throw _privateConstructorUsedError;
-
-  /// Serializes this RazorpayRefundUpdateRequestBody to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  IMap<dynamic> get notes;
 
   /// Create a copy of RazorpayRefundUpdateRequestBody
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $RazorpayRefundUpdateRequestBodyCopyWith<RazorpayRefundUpdateRequestBody>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $RazorpayRefundUpdateRequestBodyCopyWith<$Res> {
-  factory $RazorpayRefundUpdateRequestBodyCopyWith(
-          RazorpayRefundUpdateRequestBody value,
-          $Res Function(RazorpayRefundUpdateRequestBody) then) =
-      _$RazorpayRefundUpdateRequestBodyCopyWithImpl<$Res,
-          RazorpayRefundUpdateRequestBody>;
-  @useResult
-  $Res call({IMap<dynamic> notes});
-}
-
-/// @nodoc
-class _$RazorpayRefundUpdateRequestBodyCopyWithImpl<$Res,
-        $Val extends RazorpayRefundUpdateRequestBody>
-    implements $RazorpayRefundUpdateRequestBodyCopyWith<$Res> {
-  _$RazorpayRefundUpdateRequestBodyCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of RazorpayRefundUpdateRequestBody
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
+  $RazorpayRefundUpdateRequestBodyCopyWith<RazorpayRefundUpdateRequestBody>
+      get copyWith => _$RazorpayRefundUpdateRequestBodyCopyWithImpl<
+              RazorpayRefundUpdateRequestBody>(
+          this as RazorpayRefundUpdateRequestBody, _$identity);
+
+  /// Serializes this RazorpayRefundUpdateRequestBody to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? notes = null,
-  }) {
-    return _then(_value.copyWith(
-      notes: null == notes
-          ? _value.notes
-          : notes // ignore: cast_nullable_to_non_nullable
-              as IMap<dynamic>,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is RazorpayRefundUpdateRequestBody &&
+            const DeepCollectionEquality().equals(other.notes, notes));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(notes));
+
+  @override
+  String toString() {
+    return 'RazorpayRefundUpdateRequestBody(notes: $notes)';
   }
 }
 
 /// @nodoc
-abstract class _$$RazorpayRefundUpdateRequestBodyImplCopyWith<$Res>
-    implements $RazorpayRefundUpdateRequestBodyCopyWith<$Res> {
-  factory _$$RazorpayRefundUpdateRequestBodyImplCopyWith(
-          _$RazorpayRefundUpdateRequestBodyImpl value,
-          $Res Function(_$RazorpayRefundUpdateRequestBodyImpl) then) =
-      __$$RazorpayRefundUpdateRequestBodyImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $RazorpayRefundUpdateRequestBodyCopyWith<$Res> {
+  factory $RazorpayRefundUpdateRequestBodyCopyWith(
+          RazorpayRefundUpdateRequestBody value,
+          $Res Function(RazorpayRefundUpdateRequestBody) _then) =
+      _$RazorpayRefundUpdateRequestBodyCopyWithImpl;
   @useResult
   $Res call({IMap<dynamic> notes});
 }
 
 /// @nodoc
-class __$$RazorpayRefundUpdateRequestBodyImplCopyWithImpl<$Res>
-    extends _$RazorpayRefundUpdateRequestBodyCopyWithImpl<$Res,
-        _$RazorpayRefundUpdateRequestBodyImpl>
-    implements _$$RazorpayRefundUpdateRequestBodyImplCopyWith<$Res> {
-  __$$RazorpayRefundUpdateRequestBodyImplCopyWithImpl(
-      _$RazorpayRefundUpdateRequestBodyImpl _value,
-      $Res Function(_$RazorpayRefundUpdateRequestBodyImpl) _then)
-      : super(_value, _then);
+class _$RazorpayRefundUpdateRequestBodyCopyWithImpl<$Res>
+    implements $RazorpayRefundUpdateRequestBodyCopyWith<$Res> {
+  _$RazorpayRefundUpdateRequestBodyCopyWithImpl(this._self, this._then);
+
+  final RazorpayRefundUpdateRequestBody _self;
+  final $Res Function(RazorpayRefundUpdateRequestBody) _then;
 
   /// Create a copy of RazorpayRefundUpdateRequestBody
   /// with the given fields replaced by the non-null parameter values.
@@ -560,9 +493,9 @@ class __$$RazorpayRefundUpdateRequestBodyImplCopyWithImpl<$Res>
   $Res call({
     Object? notes = null,
   }) {
-    return _then(_$RazorpayRefundUpdateRequestBodyImpl(
+    return _then(_self.copyWith(
       notes: null == notes
-          ? _value._notes
+          ? _self.notes
           : notes // ignore: cast_nullable_to_non_nullable
               as IMap<dynamic>,
     ));
@@ -572,15 +505,13 @@ class __$$RazorpayRefundUpdateRequestBodyImplCopyWithImpl<$Res>
 /// @nodoc
 
 @JsonSerializable(includeIfNull: false)
-class _$RazorpayRefundUpdateRequestBodyImpl
-    implements _RazorpayRefundUpdateRequestBody {
-  const _$RazorpayRefundUpdateRequestBodyImpl(
-      {required final IMap<dynamic> notes})
+class _RazorpayRefundUpdateRequestBody
+    implements RazorpayRefundUpdateRequestBody {
+  const _RazorpayRefundUpdateRequestBody({required final IMap<dynamic> notes})
       : _notes = notes;
-
-  factory _$RazorpayRefundUpdateRequestBodyImpl.fromJson(
+  factory _RazorpayRefundUpdateRequestBody.fromJson(
           Map<String, dynamic> json) =>
-      _$$RazorpayRefundUpdateRequestBodyImplFromJson(json);
+      _$RazorpayRefundUpdateRequestBodyFromJson(json);
 
   final IMap<dynamic> _notes;
   @override
@@ -590,16 +521,27 @@ class _$RazorpayRefundUpdateRequestBodyImpl
     return EqualUnmodifiableMapView(_notes);
   }
 
+  /// Create a copy of RazorpayRefundUpdateRequestBody
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'RazorpayRefundUpdateRequestBody(notes: $notes)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$RazorpayRefundUpdateRequestBodyCopyWith<_RazorpayRefundUpdateRequestBody>
+      get copyWith => __$RazorpayRefundUpdateRequestBodyCopyWithImpl<
+          _RazorpayRefundUpdateRequestBody>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$RazorpayRefundUpdateRequestBodyToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$RazorpayRefundUpdateRequestBodyImpl &&
+            other is _RazorpayRefundUpdateRequestBody &&
             const DeepCollectionEquality().equals(other._notes, _notes));
   }
 
@@ -608,195 +550,133 @@ class _$RazorpayRefundUpdateRequestBodyImpl
   int get hashCode =>
       Object.hash(runtimeType, const DeepCollectionEquality().hash(_notes));
 
-  /// Create a copy of RazorpayRefundUpdateRequestBody
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$RazorpayRefundUpdateRequestBodyImplCopyWith<
-          _$RazorpayRefundUpdateRequestBodyImpl>
-      get copyWith => __$$RazorpayRefundUpdateRequestBodyImplCopyWithImpl<
-          _$RazorpayRefundUpdateRequestBodyImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$RazorpayRefundUpdateRequestBodyImplToJson(
-      this,
-    );
+  String toString() {
+    return 'RazorpayRefundUpdateRequestBody(notes: $notes)';
   }
 }
 
-abstract class _RazorpayRefundUpdateRequestBody
-    implements RazorpayRefundUpdateRequestBody {
-  const factory _RazorpayRefundUpdateRequestBody(
-          {required final IMap<dynamic> notes}) =
-      _$RazorpayRefundUpdateRequestBodyImpl;
-
-  factory _RazorpayRefundUpdateRequestBody.fromJson(Map<String, dynamic> json) =
-      _$RazorpayRefundUpdateRequestBodyImpl.fromJson;
-
+/// @nodoc
+abstract mixin class _$RazorpayRefundUpdateRequestBodyCopyWith<$Res>
+    implements $RazorpayRefundUpdateRequestBodyCopyWith<$Res> {
+  factory _$RazorpayRefundUpdateRequestBodyCopyWith(
+          _RazorpayRefundUpdateRequestBody value,
+          $Res Function(_RazorpayRefundUpdateRequestBody) _then) =
+      __$RazorpayRefundUpdateRequestBodyCopyWithImpl;
   @override
-  IMap<dynamic> get notes;
+  @useResult
+  $Res call({IMap<dynamic> notes});
+}
+
+/// @nodoc
+class __$RazorpayRefundUpdateRequestBodyCopyWithImpl<$Res>
+    implements _$RazorpayRefundUpdateRequestBodyCopyWith<$Res> {
+  __$RazorpayRefundUpdateRequestBodyCopyWithImpl(this._self, this._then);
+
+  final _RazorpayRefundUpdateRequestBody _self;
+  final $Res Function(_RazorpayRefundUpdateRequestBody) _then;
 
   /// Create a copy of RazorpayRefundUpdateRequestBody
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$RazorpayRefundUpdateRequestBodyImplCopyWith<
-          _$RazorpayRefundUpdateRequestBodyImpl>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-RazorpayRefund _$RazorpayRefundFromJson(Map<String, dynamic> json) {
-  return _RazorpayRefund.fromJson(json);
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? notes = null,
+  }) {
+    return _then(_RazorpayRefundUpdateRequestBody(
+      notes: null == notes
+          ? _self._notes
+          : notes // ignore: cast_nullable_to_non_nullable
+              as IMap<dynamic>,
+    ));
+  }
 }
 
 /// @nodoc
 mixin _$RazorpayRefund {
-  String get id => throw _privateConstructorUsedError;
-  String get entity => throw _privateConstructorUsedError;
-  String get currency => throw _privateConstructorUsedError;
-  String get payment_id => throw _privateConstructorUsedError;
-  int get created_at => throw _privateConstructorUsedError;
-  RazorpayRefundStatus get status => throw _privateConstructorUsedError;
-  int? get amount =>
-      throw _privateConstructorUsedError; // Use nullable int as amount might not be present in all contexts? d.ts shows optional
-  IMap<dynamic>? get notes =>
-      throw _privateConstructorUsedError; // IMap<string | number>
-  String? get receipt => throw _privateConstructorUsedError; // Nullable string
+  String get id;
+  String get entity;
+  String get currency;
+  String get payment_id;
+  int get created_at;
+  RazorpayRefundStatus get status;
+  int?
+      get amount; // Use nullable int as amount might not be present in all contexts? d.ts shows optional
+  IMap<dynamic>? get notes; // IMap<string | number>
+  String? get receipt; // Nullable string
 // Response specific fields
-  IMap<dynamic>? get acquirer_data =>
-      throw _privateConstructorUsedError; // Use Map<String, dynamic> for flexibility
-  String? get batch_id => throw _privateConstructorUsedError; // Nullable string
-  ProcessedSpeed? get speed_processed =>
-      throw _privateConstructorUsedError; // Nullable enum
-  RefundSpeed? get speed_requested => throw _privateConstructorUsedError;
-
-  /// Serializes this RazorpayRefund to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  IMap<dynamic>? get acquirer_data; // Use Map<String, dynamic> for flexibility
+  String? get batch_id; // Nullable string
+  ProcessedSpeed? get speed_processed; // Nullable enum
+  RefundSpeed? get speed_requested;
 
   /// Create a copy of RazorpayRefund
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $RazorpayRefundCopyWith<RazorpayRefund> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $RazorpayRefundCopyWith<$Res> {
-  factory $RazorpayRefundCopyWith(
-          RazorpayRefund value, $Res Function(RazorpayRefund) then) =
-      _$RazorpayRefundCopyWithImpl<$Res, RazorpayRefund>;
-  @useResult
-  $Res call(
-      {String id,
-      String entity,
-      String currency,
-      String payment_id,
-      int created_at,
-      RazorpayRefundStatus status,
-      int? amount,
-      IMap<dynamic>? notes,
-      String? receipt,
-      IMap<dynamic>? acquirer_data,
-      String? batch_id,
-      ProcessedSpeed? speed_processed,
-      RefundSpeed? speed_requested});
-}
-
-/// @nodoc
-class _$RazorpayRefundCopyWithImpl<$Res, $Val extends RazorpayRefund>
-    implements $RazorpayRefundCopyWith<$Res> {
-  _$RazorpayRefundCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of RazorpayRefund
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
+  $RazorpayRefundCopyWith<RazorpayRefund> get copyWith =>
+      _$RazorpayRefundCopyWithImpl<RazorpayRefund>(
+          this as RazorpayRefund, _$identity);
+
+  /// Serializes this RazorpayRefund to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? id = null,
-    Object? entity = null,
-    Object? currency = null,
-    Object? payment_id = null,
-    Object? created_at = null,
-    Object? status = null,
-    Object? amount = freezed,
-    Object? notes = freezed,
-    Object? receipt = freezed,
-    Object? acquirer_data = freezed,
-    Object? batch_id = freezed,
-    Object? speed_processed = freezed,
-    Object? speed_requested = freezed,
-  }) {
-    return _then(_value.copyWith(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      entity: null == entity
-          ? _value.entity
-          : entity // ignore: cast_nullable_to_non_nullable
-              as String,
-      currency: null == currency
-          ? _value.currency
-          : currency // ignore: cast_nullable_to_non_nullable
-              as String,
-      payment_id: null == payment_id
-          ? _value.payment_id
-          : payment_id // ignore: cast_nullable_to_non_nullable
-              as String,
-      created_at: null == created_at
-          ? _value.created_at
-          : created_at // ignore: cast_nullable_to_non_nullable
-              as int,
-      status: null == status
-          ? _value.status
-          : status // ignore: cast_nullable_to_non_nullable
-              as RazorpayRefundStatus,
-      amount: freezed == amount
-          ? _value.amount
-          : amount // ignore: cast_nullable_to_non_nullable
-              as int?,
-      notes: freezed == notes
-          ? _value.notes
-          : notes // ignore: cast_nullable_to_non_nullable
-              as IMap<dynamic>?,
-      receipt: freezed == receipt
-          ? _value.receipt
-          : receipt // ignore: cast_nullable_to_non_nullable
-              as String?,
-      acquirer_data: freezed == acquirer_data
-          ? _value.acquirer_data
-          : acquirer_data // ignore: cast_nullable_to_non_nullable
-              as IMap<dynamic>?,
-      batch_id: freezed == batch_id
-          ? _value.batch_id
-          : batch_id // ignore: cast_nullable_to_non_nullable
-              as String?,
-      speed_processed: freezed == speed_processed
-          ? _value.speed_processed
-          : speed_processed // ignore: cast_nullable_to_non_nullable
-              as ProcessedSpeed?,
-      speed_requested: freezed == speed_requested
-          ? _value.speed_requested
-          : speed_requested // ignore: cast_nullable_to_non_nullable
-              as RefundSpeed?,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is RazorpayRefund &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.entity, entity) || other.entity == entity) &&
+            (identical(other.currency, currency) ||
+                other.currency == currency) &&
+            (identical(other.payment_id, payment_id) ||
+                other.payment_id == payment_id) &&
+            (identical(other.created_at, created_at) ||
+                other.created_at == created_at) &&
+            (identical(other.status, status) || other.status == status) &&
+            (identical(other.amount, amount) || other.amount == amount) &&
+            const DeepCollectionEquality().equals(other.notes, notes) &&
+            (identical(other.receipt, receipt) || other.receipt == receipt) &&
+            const DeepCollectionEquality()
+                .equals(other.acquirer_data, acquirer_data) &&
+            (identical(other.batch_id, batch_id) ||
+                other.batch_id == batch_id) &&
+            (identical(other.speed_processed, speed_processed) ||
+                other.speed_processed == speed_processed) &&
+            (identical(other.speed_requested, speed_requested) ||
+                other.speed_requested == speed_requested));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      entity,
+      currency,
+      payment_id,
+      created_at,
+      status,
+      amount,
+      const DeepCollectionEquality().hash(notes),
+      receipt,
+      const DeepCollectionEquality().hash(acquirer_data),
+      batch_id,
+      speed_processed,
+      speed_requested);
+
+  @override
+  String toString() {
+    return 'RazorpayRefund(id: $id, entity: $entity, currency: $currency, payment_id: $payment_id, created_at: $created_at, status: $status, amount: $amount, notes: $notes, receipt: $receipt, acquirer_data: $acquirer_data, batch_id: $batch_id, speed_processed: $speed_processed, speed_requested: $speed_requested)';
   }
 }
 
 /// @nodoc
-abstract class _$$RazorpayRefundImplCopyWith<$Res>
-    implements $RazorpayRefundCopyWith<$Res> {
-  factory _$$RazorpayRefundImplCopyWith(_$RazorpayRefundImpl value,
-          $Res Function(_$RazorpayRefundImpl) then) =
-      __$$RazorpayRefundImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $RazorpayRefundCopyWith<$Res> {
+  factory $RazorpayRefundCopyWith(
+          RazorpayRefund value, $Res Function(RazorpayRefund) _then) =
+      _$RazorpayRefundCopyWithImpl;
   @useResult
   $Res call(
       {String id,
@@ -815,12 +695,12 @@ abstract class _$$RazorpayRefundImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$RazorpayRefundImplCopyWithImpl<$Res>
-    extends _$RazorpayRefundCopyWithImpl<$Res, _$RazorpayRefundImpl>
-    implements _$$RazorpayRefundImplCopyWith<$Res> {
-  __$$RazorpayRefundImplCopyWithImpl(
-      _$RazorpayRefundImpl _value, $Res Function(_$RazorpayRefundImpl) _then)
-      : super(_value, _then);
+class _$RazorpayRefundCopyWithImpl<$Res>
+    implements $RazorpayRefundCopyWith<$Res> {
+  _$RazorpayRefundCopyWithImpl(this._self, this._then);
+
+  final RazorpayRefund _self;
+  final $Res Function(RazorpayRefund) _then;
 
   /// Create a copy of RazorpayRefund
   /// with the given fields replaced by the non-null parameter values.
@@ -841,57 +721,57 @@ class __$$RazorpayRefundImplCopyWithImpl<$Res>
     Object? speed_processed = freezed,
     Object? speed_requested = freezed,
   }) {
-    return _then(_$RazorpayRefundImpl(
+    return _then(_self.copyWith(
       id: null == id
-          ? _value.id
+          ? _self.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
       entity: null == entity
-          ? _value.entity
+          ? _self.entity
           : entity // ignore: cast_nullable_to_non_nullable
               as String,
       currency: null == currency
-          ? _value.currency
+          ? _self.currency
           : currency // ignore: cast_nullable_to_non_nullable
               as String,
       payment_id: null == payment_id
-          ? _value.payment_id
+          ? _self.payment_id
           : payment_id // ignore: cast_nullable_to_non_nullable
               as String,
       created_at: null == created_at
-          ? _value.created_at
+          ? _self.created_at
           : created_at // ignore: cast_nullable_to_non_nullable
               as int,
       status: null == status
-          ? _value.status
+          ? _self.status
           : status // ignore: cast_nullable_to_non_nullable
               as RazorpayRefundStatus,
       amount: freezed == amount
-          ? _value.amount
+          ? _self.amount
           : amount // ignore: cast_nullable_to_non_nullable
               as int?,
       notes: freezed == notes
-          ? _value._notes
+          ? _self.notes
           : notes // ignore: cast_nullable_to_non_nullable
               as IMap<dynamic>?,
       receipt: freezed == receipt
-          ? _value.receipt
+          ? _self.receipt
           : receipt // ignore: cast_nullable_to_non_nullable
               as String?,
       acquirer_data: freezed == acquirer_data
-          ? _value._acquirer_data
+          ? _self.acquirer_data
           : acquirer_data // ignore: cast_nullable_to_non_nullable
               as IMap<dynamic>?,
       batch_id: freezed == batch_id
-          ? _value.batch_id
+          ? _self.batch_id
           : batch_id // ignore: cast_nullable_to_non_nullable
               as String?,
       speed_processed: freezed == speed_processed
-          ? _value.speed_processed
+          ? _self.speed_processed
           : speed_processed // ignore: cast_nullable_to_non_nullable
               as ProcessedSpeed?,
       speed_requested: freezed == speed_requested
-          ? _value.speed_requested
+          ? _self.speed_requested
           : speed_requested // ignore: cast_nullable_to_non_nullable
               as RefundSpeed?,
     ));
@@ -901,8 +781,8 @@ class __$$RazorpayRefundImplCopyWithImpl<$Res>
 /// @nodoc
 
 @JsonSerializable(includeIfNull: false)
-class _$RazorpayRefundImpl implements _RazorpayRefund {
-  const _$RazorpayRefundImpl(
+class _RazorpayRefund implements RazorpayRefund {
+  const _RazorpayRefund(
       {required this.id,
       required this.entity,
       required this.currency,
@@ -918,9 +798,8 @@ class _$RazorpayRefundImpl implements _RazorpayRefund {
       this.speed_requested})
       : _notes = notes,
         _acquirer_data = acquirer_data;
-
-  factory _$RazorpayRefundImpl.fromJson(Map<String, dynamic> json) =>
-      _$$RazorpayRefundImplFromJson(json);
+  factory _RazorpayRefund.fromJson(Map<String, dynamic> json) =>
+      _$RazorpayRefundFromJson(json);
 
   @override
   final String id;
@@ -975,16 +854,26 @@ class _$RazorpayRefundImpl implements _RazorpayRefund {
   @override
   final RefundSpeed? speed_requested;
 
+  /// Create a copy of RazorpayRefund
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'RazorpayRefund(id: $id, entity: $entity, currency: $currency, payment_id: $payment_id, created_at: $created_at, status: $status, amount: $amount, notes: $notes, receipt: $receipt, acquirer_data: $acquirer_data, batch_id: $batch_id, speed_processed: $speed_processed, speed_requested: $speed_requested)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$RazorpayRefundCopyWith<_RazorpayRefund> get copyWith =>
+      __$RazorpayRefundCopyWithImpl<_RazorpayRefund>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$RazorpayRefundToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$RazorpayRefundImpl &&
+            other is _RazorpayRefund &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.entity, entity) || other.entity == entity) &&
             (identical(other.currency, currency) ||
@@ -1025,155 +914,170 @@ class _$RazorpayRefundImpl implements _RazorpayRefund {
       speed_processed,
       speed_requested);
 
-  /// Create a copy of RazorpayRefund
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$RazorpayRefundImplCopyWith<_$RazorpayRefundImpl> get copyWith =>
-      __$$RazorpayRefundImplCopyWithImpl<_$RazorpayRefundImpl>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$RazorpayRefundImplToJson(
-      this,
-    );
+  String toString() {
+    return 'RazorpayRefund(id: $id, entity: $entity, currency: $currency, payment_id: $payment_id, created_at: $created_at, status: $status, amount: $amount, notes: $notes, receipt: $receipt, acquirer_data: $acquirer_data, batch_id: $batch_id, speed_processed: $speed_processed, speed_requested: $speed_requested)';
   }
 }
 
-abstract class _RazorpayRefund implements RazorpayRefund {
-  const factory _RazorpayRefund(
-      {required final String id,
-      required final String entity,
-      required final String currency,
-      required final String payment_id,
-      required final int created_at,
-      required final RazorpayRefundStatus status,
-      final int? amount,
-      final IMap<dynamic>? notes,
-      final String? receipt,
-      final IMap<dynamic>? acquirer_data,
-      final String? batch_id,
-      final ProcessedSpeed? speed_processed,
-      final RefundSpeed? speed_requested}) = _$RazorpayRefundImpl;
+/// @nodoc
+abstract mixin class _$RazorpayRefundCopyWith<$Res>
+    implements $RazorpayRefundCopyWith<$Res> {
+  factory _$RazorpayRefundCopyWith(
+          _RazorpayRefund value, $Res Function(_RazorpayRefund) _then) =
+      __$RazorpayRefundCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {String id,
+      String entity,
+      String currency,
+      String payment_id,
+      int created_at,
+      RazorpayRefundStatus status,
+      int? amount,
+      IMap<dynamic>? notes,
+      String? receipt,
+      IMap<dynamic>? acquirer_data,
+      String? batch_id,
+      ProcessedSpeed? speed_processed,
+      RefundSpeed? speed_requested});
+}
 
-  factory _RazorpayRefund.fromJson(Map<String, dynamic> json) =
-      _$RazorpayRefundImpl.fromJson;
+/// @nodoc
+class __$RazorpayRefundCopyWithImpl<$Res>
+    implements _$RazorpayRefundCopyWith<$Res> {
+  __$RazorpayRefundCopyWithImpl(this._self, this._then);
 
-  @override
-  String get id;
-  @override
-  String get entity;
-  @override
-  String get currency;
-  @override
-  String get payment_id;
-  @override
-  int get created_at;
-  @override
-  RazorpayRefundStatus get status;
-  @override
-  int?
-      get amount; // Use nullable int as amount might not be present in all contexts? d.ts shows optional
-  @override
-  IMap<dynamic>? get notes; // IMap<string | number>
-  @override
-  String? get receipt; // Nullable string
-// Response specific fields
-  @override
-  IMap<dynamic>? get acquirer_data; // Use Map<String, dynamic> for flexibility
-  @override
-  String? get batch_id; // Nullable string
-  @override
-  ProcessedSpeed? get speed_processed; // Nullable enum
-  @override
-  RefundSpeed? get speed_requested;
+  final _RazorpayRefund _self;
+  final $Res Function(_RazorpayRefund) _then;
 
   /// Create a copy of RazorpayRefund
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$RazorpayRefundImplCopyWith<_$RazorpayRefundImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-RazorpayRefundFetchQuery _$RazorpayRefundFetchQueryFromJson(
-    Map<String, dynamic> json) {
-  return _RazorpayRefundFetchQuery.fromJson(json);
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? id = null,
+    Object? entity = null,
+    Object? currency = null,
+    Object? payment_id = null,
+    Object? created_at = null,
+    Object? status = null,
+    Object? amount = freezed,
+    Object? notes = freezed,
+    Object? receipt = freezed,
+    Object? acquirer_data = freezed,
+    Object? batch_id = freezed,
+    Object? speed_processed = freezed,
+    Object? speed_requested = freezed,
+  }) {
+    return _then(_RazorpayRefund(
+      id: null == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      entity: null == entity
+          ? _self.entity
+          : entity // ignore: cast_nullable_to_non_nullable
+              as String,
+      currency: null == currency
+          ? _self.currency
+          : currency // ignore: cast_nullable_to_non_nullable
+              as String,
+      payment_id: null == payment_id
+          ? _self.payment_id
+          : payment_id // ignore: cast_nullable_to_non_nullable
+              as String,
+      created_at: null == created_at
+          ? _self.created_at
+          : created_at // ignore: cast_nullable_to_non_nullable
+              as int,
+      status: null == status
+          ? _self.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as RazorpayRefundStatus,
+      amount: freezed == amount
+          ? _self.amount
+          : amount // ignore: cast_nullable_to_non_nullable
+              as int?,
+      notes: freezed == notes
+          ? _self._notes
+          : notes // ignore: cast_nullable_to_non_nullable
+              as IMap<dynamic>?,
+      receipt: freezed == receipt
+          ? _self.receipt
+          : receipt // ignore: cast_nullable_to_non_nullable
+              as String?,
+      acquirer_data: freezed == acquirer_data
+          ? _self._acquirer_data
+          : acquirer_data // ignore: cast_nullable_to_non_nullable
+              as IMap<dynamic>?,
+      batch_id: freezed == batch_id
+          ? _self.batch_id
+          : batch_id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      speed_processed: freezed == speed_processed
+          ? _self.speed_processed
+          : speed_processed // ignore: cast_nullable_to_non_nullable
+              as ProcessedSpeed?,
+      speed_requested: freezed == speed_requested
+          ? _self.speed_requested
+          : speed_requested // ignore: cast_nullable_to_non_nullable
+              as RefundSpeed?,
+    ));
+  }
 }
 
 /// @nodoc
 mixin _$RazorpayRefundFetchQuery {
-  String? get payment_id => throw _privateConstructorUsedError;
-
-  /// Serializes this RazorpayRefundFetchQuery to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  String? get payment_id;
 
   /// Create a copy of RazorpayRefundFetchQuery
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $RazorpayRefundFetchQueryCopyWith<RazorpayRefundFetchQuery> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $RazorpayRefundFetchQueryCopyWith<$Res> {
-  factory $RazorpayRefundFetchQueryCopyWith(RazorpayRefundFetchQuery value,
-          $Res Function(RazorpayRefundFetchQuery) then) =
-      _$RazorpayRefundFetchQueryCopyWithImpl<$Res, RazorpayRefundFetchQuery>;
-  @useResult
-  $Res call({String? payment_id});
-}
-
-/// @nodoc
-class _$RazorpayRefundFetchQueryCopyWithImpl<$Res,
-        $Val extends RazorpayRefundFetchQuery>
-    implements $RazorpayRefundFetchQueryCopyWith<$Res> {
-  _$RazorpayRefundFetchQueryCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of RazorpayRefundFetchQuery
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
+  $RazorpayRefundFetchQueryCopyWith<RazorpayRefundFetchQuery> get copyWith =>
+      _$RazorpayRefundFetchQueryCopyWithImpl<RazorpayRefundFetchQuery>(
+          this as RazorpayRefundFetchQuery, _$identity);
+
+  /// Serializes this RazorpayRefundFetchQuery to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? payment_id = freezed,
-  }) {
-    return _then(_value.copyWith(
-      payment_id: freezed == payment_id
-          ? _value.payment_id
-          : payment_id // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is RazorpayRefundFetchQuery &&
+            (identical(other.payment_id, payment_id) ||
+                other.payment_id == payment_id));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, payment_id);
+
+  @override
+  String toString() {
+    return 'RazorpayRefundFetchQuery(payment_id: $payment_id)';
   }
 }
 
 /// @nodoc
-abstract class _$$RazorpayRefundFetchQueryImplCopyWith<$Res>
-    implements $RazorpayRefundFetchQueryCopyWith<$Res> {
-  factory _$$RazorpayRefundFetchQueryImplCopyWith(
-          _$RazorpayRefundFetchQueryImpl value,
-          $Res Function(_$RazorpayRefundFetchQueryImpl) then) =
-      __$$RazorpayRefundFetchQueryImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $RazorpayRefundFetchQueryCopyWith<$Res> {
+  factory $RazorpayRefundFetchQueryCopyWith(RazorpayRefundFetchQuery value,
+          $Res Function(RazorpayRefundFetchQuery) _then) =
+      _$RazorpayRefundFetchQueryCopyWithImpl;
   @useResult
   $Res call({String? payment_id});
 }
 
 /// @nodoc
-class __$$RazorpayRefundFetchQueryImplCopyWithImpl<$Res>
-    extends _$RazorpayRefundFetchQueryCopyWithImpl<$Res,
-        _$RazorpayRefundFetchQueryImpl>
-    implements _$$RazorpayRefundFetchQueryImplCopyWith<$Res> {
-  __$$RazorpayRefundFetchQueryImplCopyWithImpl(
-      _$RazorpayRefundFetchQueryImpl _value,
-      $Res Function(_$RazorpayRefundFetchQueryImpl) _then)
-      : super(_value, _then);
+class _$RazorpayRefundFetchQueryCopyWithImpl<$Res>
+    implements $RazorpayRefundFetchQueryCopyWith<$Res> {
+  _$RazorpayRefundFetchQueryCopyWithImpl(this._self, this._then);
+
+  final RazorpayRefundFetchQuery _self;
+  final $Res Function(RazorpayRefundFetchQuery) _then;
 
   /// Create a copy of RazorpayRefundFetchQuery
   /// with the given fields replaced by the non-null parameter values.
@@ -1182,9 +1086,9 @@ class __$$RazorpayRefundFetchQueryImplCopyWithImpl<$Res>
   $Res call({
     Object? payment_id = freezed,
   }) {
-    return _then(_$RazorpayRefundFetchQueryImpl(
+    return _then(_self.copyWith(
       payment_id: freezed == payment_id
-          ? _value.payment_id
+          ? _self.payment_id
           : payment_id // ignore: cast_nullable_to_non_nullable
               as String?,
     ));
@@ -1194,25 +1098,35 @@ class __$$RazorpayRefundFetchQueryImplCopyWithImpl<$Res>
 /// @nodoc
 
 @JsonSerializable(includeIfNull: false)
-class _$RazorpayRefundFetchQueryImpl implements _RazorpayRefundFetchQuery {
-  const _$RazorpayRefundFetchQueryImpl({this.payment_id});
-
-  factory _$RazorpayRefundFetchQueryImpl.fromJson(Map<String, dynamic> json) =>
-      _$$RazorpayRefundFetchQueryImplFromJson(json);
+class _RazorpayRefundFetchQuery implements RazorpayRefundFetchQuery {
+  const _RazorpayRefundFetchQuery({this.payment_id});
+  factory _RazorpayRefundFetchQuery.fromJson(Map<String, dynamic> json) =>
+      _$RazorpayRefundFetchQueryFromJson(json);
 
   @override
   final String? payment_id;
 
+  /// Create a copy of RazorpayRefundFetchQuery
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'RazorpayRefundFetchQuery(payment_id: $payment_id)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$RazorpayRefundFetchQueryCopyWith<_RazorpayRefundFetchQuery> get copyWith =>
+      __$RazorpayRefundFetchQueryCopyWithImpl<_RazorpayRefundFetchQuery>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$RazorpayRefundFetchQueryToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$RazorpayRefundFetchQueryImpl &&
+            other is _RazorpayRefundFetchQuery &&
             (identical(other.payment_id, payment_id) ||
                 other.payment_id == payment_id));
   }
@@ -1221,37 +1135,45 @@ class _$RazorpayRefundFetchQueryImpl implements _RazorpayRefundFetchQuery {
   @override
   int get hashCode => Object.hash(runtimeType, payment_id);
 
-  /// Create a copy of RazorpayRefundFetchQuery
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$RazorpayRefundFetchQueryImplCopyWith<_$RazorpayRefundFetchQueryImpl>
-      get copyWith => __$$RazorpayRefundFetchQueryImplCopyWithImpl<
-          _$RazorpayRefundFetchQueryImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$RazorpayRefundFetchQueryImplToJson(
-      this,
-    );
+  String toString() {
+    return 'RazorpayRefundFetchQuery(payment_id: $payment_id)';
   }
 }
 
-abstract class _RazorpayRefundFetchQuery implements RazorpayRefundFetchQuery {
-  const factory _RazorpayRefundFetchQuery({final String? payment_id}) =
-      _$RazorpayRefundFetchQueryImpl;
-
-  factory _RazorpayRefundFetchQuery.fromJson(Map<String, dynamic> json) =
-      _$RazorpayRefundFetchQueryImpl.fromJson;
-
+/// @nodoc
+abstract mixin class _$RazorpayRefundFetchQueryCopyWith<$Res>
+    implements $RazorpayRefundFetchQueryCopyWith<$Res> {
+  factory _$RazorpayRefundFetchQueryCopyWith(_RazorpayRefundFetchQuery value,
+          $Res Function(_RazorpayRefundFetchQuery) _then) =
+      __$RazorpayRefundFetchQueryCopyWithImpl;
   @override
-  String? get payment_id;
+  @useResult
+  $Res call({String? payment_id});
+}
+
+/// @nodoc
+class __$RazorpayRefundFetchQueryCopyWithImpl<$Res>
+    implements _$RazorpayRefundFetchQueryCopyWith<$Res> {
+  __$RazorpayRefundFetchQueryCopyWithImpl(this._self, this._then);
+
+  final _RazorpayRefundFetchQuery _self;
+  final $Res Function(_RazorpayRefundFetchQuery) _then;
 
   /// Create a copy of RazorpayRefundFetchQuery
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$RazorpayRefundFetchQueryImplCopyWith<_$RazorpayRefundFetchQueryImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? payment_id = freezed,
+  }) {
+    return _then(_RazorpayRefundFetchQuery(
+      payment_id: freezed == payment_id
+          ? _self.payment_id
+          : payment_id // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
 }
+
+// dart format on

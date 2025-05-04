@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,134 +10,30 @@ part of 'stakeholders_model.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-RelationShip _$RelationShipFromJson(Map<String, dynamic> json) {
-  return _RelationShip.fromJson(json);
-}
 
 /// @nodoc
 mixin _$RelationShip {
-  bool? get executive => throw _privateConstructorUsedError;
-  bool? get director => throw _privateConstructorUsedError;
-
-  /// Serializes this RelationShip to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  bool? get executive;
+  bool? get director;
 
   /// Create a copy of RelationShip
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
   $RelationShipCopyWith<RelationShip> get copyWith =>
-      throw _privateConstructorUsedError;
-}
+      _$RelationShipCopyWithImpl<RelationShip>(
+          this as RelationShip, _$identity);
 
-/// @nodoc
-abstract class $RelationShipCopyWith<$Res> {
-  factory $RelationShipCopyWith(
-          RelationShip value, $Res Function(RelationShip) then) =
-      _$RelationShipCopyWithImpl<$Res, RelationShip>;
-  @useResult
-  $Res call({bool? executive, bool? director});
-}
-
-/// @nodoc
-class _$RelationShipCopyWithImpl<$Res, $Val extends RelationShip>
-    implements $RelationShipCopyWith<$Res> {
-  _$RelationShipCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of RelationShip
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? executive = freezed,
-    Object? director = freezed,
-  }) {
-    return _then(_value.copyWith(
-      executive: freezed == executive
-          ? _value.executive
-          : executive // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      director: freezed == director
-          ? _value.director
-          : director // ignore: cast_nullable_to_non_nullable
-              as bool?,
-    ) as $Val);
-  }
-}
-
-/// @nodoc
-abstract class _$$RelationShipImplCopyWith<$Res>
-    implements $RelationShipCopyWith<$Res> {
-  factory _$$RelationShipImplCopyWith(
-          _$RelationShipImpl value, $Res Function(_$RelationShipImpl) then) =
-      __$$RelationShipImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({bool? executive, bool? director});
-}
-
-/// @nodoc
-class __$$RelationShipImplCopyWithImpl<$Res>
-    extends _$RelationShipCopyWithImpl<$Res, _$RelationShipImpl>
-    implements _$$RelationShipImplCopyWith<$Res> {
-  __$$RelationShipImplCopyWithImpl(
-      _$RelationShipImpl _value, $Res Function(_$RelationShipImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of RelationShip
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? executive = freezed,
-    Object? director = freezed,
-  }) {
-    return _then(_$RelationShipImpl(
-      executive: freezed == executive
-          ? _value.executive
-          : executive // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      director: freezed == director
-          ? _value.director
-          : director // ignore: cast_nullable_to_non_nullable
-              as bool?,
-    ));
-  }
-}
-
-/// @nodoc
-
-@JsonSerializable(includeIfNull: false)
-class _$RelationShipImpl implements _RelationShip {
-  const _$RelationShipImpl({this.executive, this.director});
-
-  factory _$RelationShipImpl.fromJson(Map<String, dynamic> json) =>
-      _$$RelationShipImplFromJson(json);
-
-  @override
-  final bool? executive;
-  @override
-  final bool? director;
-
-  @override
-  String toString() {
-    return 'RelationShip(executive: $executive, director: $director)';
-  }
+  /// Serializes this RelationShip to a JSON map.
+  Map<String, dynamic> toJson();
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$RelationShipImpl &&
+            other is RelationShip &&
             (identical(other.executive, executive) ||
                 other.executive == executive) &&
             (identical(other.director, director) ||
@@ -147,134 +44,45 @@ class _$RelationShipImpl implements _RelationShip {
   @override
   int get hashCode => Object.hash(runtimeType, executive, director);
 
-  /// Create a copy of RelationShip
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$RelationShipImplCopyWith<_$RelationShipImpl> get copyWith =>
-      __$$RelationShipImplCopyWithImpl<_$RelationShipImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$RelationShipImplToJson(
-      this,
-    );
-  }
-}
-
-abstract class _RelationShip implements RelationShip {
-  const factory _RelationShip({final bool? executive, final bool? director}) =
-      _$RelationShipImpl;
-
-  factory _RelationShip.fromJson(Map<String, dynamic> json) =
-      _$RelationShipImpl.fromJson;
-
-  @override
-  bool? get executive;
-  @override
-  bool? get director;
-
-  /// Create a copy of RelationShip
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$RelationShipImplCopyWith<_$RelationShipImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-Phone _$PhoneFromJson(Map<String, dynamic> json) {
-  return _Phone.fromJson(json);
-}
-
-/// @nodoc
-mixin _$Phone {
-  String? get primary => throw _privateConstructorUsedError;
-  String? get secondary => throw _privateConstructorUsedError;
-
-  /// Serializes this Phone to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of Phone
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  $PhoneCopyWith<Phone> get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $PhoneCopyWith<$Res> {
-  factory $PhoneCopyWith(Phone value, $Res Function(Phone) then) =
-      _$PhoneCopyWithImpl<$Res, Phone>;
-  @useResult
-  $Res call({String? primary, String? secondary});
-}
-
-/// @nodoc
-class _$PhoneCopyWithImpl<$Res, $Val extends Phone>
-    implements $PhoneCopyWith<$Res> {
-  _$PhoneCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of Phone
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? primary = freezed,
-    Object? secondary = freezed,
-  }) {
-    return _then(_value.copyWith(
-      primary: freezed == primary
-          ? _value.primary
-          : primary // ignore: cast_nullable_to_non_nullable
-              as String?,
-      secondary: freezed == secondary
-          ? _value.secondary
-          : secondary // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ) as $Val);
+  String toString() {
+    return 'RelationShip(executive: $executive, director: $director)';
   }
 }
 
 /// @nodoc
-abstract class _$$PhoneImplCopyWith<$Res> implements $PhoneCopyWith<$Res> {
-  factory _$$PhoneImplCopyWith(
-          _$PhoneImpl value, $Res Function(_$PhoneImpl) then) =
-      __$$PhoneImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $RelationShipCopyWith<$Res> {
+  factory $RelationShipCopyWith(
+          RelationShip value, $Res Function(RelationShip) _then) =
+      _$RelationShipCopyWithImpl;
   @useResult
-  $Res call({String? primary, String? secondary});
+  $Res call({bool? executive, bool? director});
 }
 
 /// @nodoc
-class __$$PhoneImplCopyWithImpl<$Res>
-    extends _$PhoneCopyWithImpl<$Res, _$PhoneImpl>
-    implements _$$PhoneImplCopyWith<$Res> {
-  __$$PhoneImplCopyWithImpl(
-      _$PhoneImpl _value, $Res Function(_$PhoneImpl) _then)
-      : super(_value, _then);
+class _$RelationShipCopyWithImpl<$Res> implements $RelationShipCopyWith<$Res> {
+  _$RelationShipCopyWithImpl(this._self, this._then);
 
-  /// Create a copy of Phone
+  final RelationShip _self;
+  final $Res Function(RelationShip) _then;
+
+  /// Create a copy of RelationShip
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? primary = freezed,
-    Object? secondary = freezed,
+    Object? executive = freezed,
+    Object? director = freezed,
   }) {
-    return _then(_$PhoneImpl(
-      primary: freezed == primary
-          ? _value.primary
-          : primary // ignore: cast_nullable_to_non_nullable
-              as String?,
-      secondary: freezed == secondary
-          ? _value.secondary
-          : secondary // ignore: cast_nullable_to_non_nullable
-              as String?,
+    return _then(_self.copyWith(
+      executive: freezed == executive
+          ? _self.executive
+          : executive // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      director: freezed == director
+          ? _self.director
+          : director // ignore: cast_nullable_to_non_nullable
+              as bool?,
     ));
   }
 }
@@ -282,27 +90,112 @@ class __$$PhoneImplCopyWithImpl<$Res>
 /// @nodoc
 
 @JsonSerializable(includeIfNull: false)
-class _$PhoneImpl implements _Phone {
-  const _$PhoneImpl({this.primary, this.secondary});
-
-  factory _$PhoneImpl.fromJson(Map<String, dynamic> json) =>
-      _$$PhoneImplFromJson(json);
-
-  @override
-  final String? primary;
-  @override
-  final String? secondary;
+class _RelationShip implements RelationShip {
+  const _RelationShip({this.executive, this.director});
+  factory _RelationShip.fromJson(Map<String, dynamic> json) =>
+      _$RelationShipFromJson(json);
 
   @override
-  String toString() {
-    return 'Phone(primary: $primary, secondary: $secondary)';
+  final bool? executive;
+  @override
+  final bool? director;
+
+  /// Create a copy of RelationShip
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$RelationShipCopyWith<_RelationShip> get copyWith =>
+      __$RelationShipCopyWithImpl<_RelationShip>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$RelationShipToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$PhoneImpl &&
+            other is _RelationShip &&
+            (identical(other.executive, executive) ||
+                other.executive == executive) &&
+            (identical(other.director, director) ||
+                other.director == director));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, executive, director);
+
+  @override
+  String toString() {
+    return 'RelationShip(executive: $executive, director: $director)';
+  }
+}
+
+/// @nodoc
+abstract mixin class _$RelationShipCopyWith<$Res>
+    implements $RelationShipCopyWith<$Res> {
+  factory _$RelationShipCopyWith(
+          _RelationShip value, $Res Function(_RelationShip) _then) =
+      __$RelationShipCopyWithImpl;
+  @override
+  @useResult
+  $Res call({bool? executive, bool? director});
+}
+
+/// @nodoc
+class __$RelationShipCopyWithImpl<$Res>
+    implements _$RelationShipCopyWith<$Res> {
+  __$RelationShipCopyWithImpl(this._self, this._then);
+
+  final _RelationShip _self;
+  final $Res Function(_RelationShip) _then;
+
+  /// Create a copy of RelationShip
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? executive = freezed,
+    Object? director = freezed,
+  }) {
+    return _then(_RelationShip(
+      executive: freezed == executive
+          ? _self.executive
+          : executive // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      director: freezed == director
+          ? _self.director
+          : director // ignore: cast_nullable_to_non_nullable
+              as bool?,
+    ));
+  }
+}
+
+/// @nodoc
+mixin _$Phone {
+  String? get primary;
+  String? get secondary;
+
+  /// Create a copy of Phone
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $PhoneCopyWith<Phone> get copyWith =>
+      _$PhoneCopyWithImpl<Phone>(this as Phone, _$identity);
+
+  /// Serializes this Phone to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is Phone &&
             (identical(other.primary, primary) || other.primary == primary) &&
             (identical(other.secondary, secondary) ||
                 other.secondary == secondary));
@@ -312,118 +205,44 @@ class _$PhoneImpl implements _Phone {
   @override
   int get hashCode => Object.hash(runtimeType, primary, secondary);
 
-  /// Create a copy of Phone
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$PhoneImplCopyWith<_$PhoneImpl> get copyWith =>
-      __$$PhoneImplCopyWithImpl<_$PhoneImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$PhoneImplToJson(
-      this,
-    );
-  }
-}
-
-abstract class _Phone implements Phone {
-  const factory _Phone({final String? primary, final String? secondary}) =
-      _$PhoneImpl;
-
-  factory _Phone.fromJson(Map<String, dynamic> json) = _$PhoneImpl.fromJson;
-
-  @override
-  String? get primary;
-  @override
-  String? get secondary;
-
-  /// Create a copy of Phone
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$PhoneImplCopyWith<_$PhoneImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-Kyc _$KycFromJson(Map<String, dynamic> json) {
-  return _Kyc.fromJson(json);
-}
-
-/// @nodoc
-mixin _$Kyc {
-  String get pan => throw _privateConstructorUsedError;
-
-  /// Serializes this Kyc to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of Kyc
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  $KycCopyWith<Kyc> get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $KycCopyWith<$Res> {
-  factory $KycCopyWith(Kyc value, $Res Function(Kyc) then) =
-      _$KycCopyWithImpl<$Res, Kyc>;
-  @useResult
-  $Res call({String pan});
-}
-
-/// @nodoc
-class _$KycCopyWithImpl<$Res, $Val extends Kyc> implements $KycCopyWith<$Res> {
-  _$KycCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of Kyc
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? pan = null,
-  }) {
-    return _then(_value.copyWith(
-      pan: null == pan
-          ? _value.pan
-          : pan // ignore: cast_nullable_to_non_nullable
-              as String,
-    ) as $Val);
+  String toString() {
+    return 'Phone(primary: $primary, secondary: $secondary)';
   }
 }
 
 /// @nodoc
-abstract class _$$KycImplCopyWith<$Res> implements $KycCopyWith<$Res> {
-  factory _$$KycImplCopyWith(_$KycImpl value, $Res Function(_$KycImpl) then) =
-      __$$KycImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $PhoneCopyWith<$Res> {
+  factory $PhoneCopyWith(Phone value, $Res Function(Phone) _then) =
+      _$PhoneCopyWithImpl;
   @useResult
-  $Res call({String pan});
+  $Res call({String? primary, String? secondary});
 }
 
 /// @nodoc
-class __$$KycImplCopyWithImpl<$Res> extends _$KycCopyWithImpl<$Res, _$KycImpl>
-    implements _$$KycImplCopyWith<$Res> {
-  __$$KycImplCopyWithImpl(_$KycImpl _value, $Res Function(_$KycImpl) _then)
-      : super(_value, _then);
+class _$PhoneCopyWithImpl<$Res> implements $PhoneCopyWith<$Res> {
+  _$PhoneCopyWithImpl(this._self, this._then);
 
-  /// Create a copy of Kyc
+  final Phone _self;
+  final $Res Function(Phone) _then;
+
+  /// Create a copy of Phone
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? pan = null,
+    Object? primary = freezed,
+    Object? secondary = freezed,
   }) {
-    return _then(_$KycImpl(
-      pan: null == pan
-          ? _value.pan
-          : pan // ignore: cast_nullable_to_non_nullable
-              as String,
+    return _then(_self.copyWith(
+      primary: freezed == primary
+          ? _self.primary
+          : primary // ignore: cast_nullable_to_non_nullable
+              as String?,
+      secondary: freezed == secondary
+          ? _self.secondary
+          : secondary // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -431,25 +250,106 @@ class __$$KycImplCopyWithImpl<$Res> extends _$KycCopyWithImpl<$Res, _$KycImpl>
 /// @nodoc
 
 @JsonSerializable(includeIfNull: false)
-class _$KycImpl implements _Kyc {
-  const _$KycImpl({required this.pan});
-
-  factory _$KycImpl.fromJson(Map<String, dynamic> json) =>
-      _$$KycImplFromJson(json);
+class _Phone implements Phone {
+  const _Phone({this.primary, this.secondary});
+  factory _Phone.fromJson(Map<String, dynamic> json) => _$PhoneFromJson(json);
 
   @override
-  final String pan;
+  final String? primary;
+  @override
+  final String? secondary;
+
+  /// Create a copy of Phone
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$PhoneCopyWith<_Phone> get copyWith =>
+      __$PhoneCopyWithImpl<_Phone>(this, _$identity);
 
   @override
-  String toString() {
-    return 'Kyc(pan: $pan)';
+  Map<String, dynamic> toJson() {
+    return _$PhoneToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$KycImpl &&
+            other is _Phone &&
+            (identical(other.primary, primary) || other.primary == primary) &&
+            (identical(other.secondary, secondary) ||
+                other.secondary == secondary));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, primary, secondary);
+
+  @override
+  String toString() {
+    return 'Phone(primary: $primary, secondary: $secondary)';
+  }
+}
+
+/// @nodoc
+abstract mixin class _$PhoneCopyWith<$Res> implements $PhoneCopyWith<$Res> {
+  factory _$PhoneCopyWith(_Phone value, $Res Function(_Phone) _then) =
+      __$PhoneCopyWithImpl;
+  @override
+  @useResult
+  $Res call({String? primary, String? secondary});
+}
+
+/// @nodoc
+class __$PhoneCopyWithImpl<$Res> implements _$PhoneCopyWith<$Res> {
+  __$PhoneCopyWithImpl(this._self, this._then);
+
+  final _Phone _self;
+  final $Res Function(_Phone) _then;
+
+  /// Create a copy of Phone
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? primary = freezed,
+    Object? secondary = freezed,
+  }) {
+    return _then(_Phone(
+      primary: freezed == primary
+          ? _self.primary
+          : primary // ignore: cast_nullable_to_non_nullable
+              as String?,
+      secondary: freezed == secondary
+          ? _self.secondary
+          : secondary // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+mixin _$Kyc {
+  String get pan;
+
+  /// Create a copy of Kyc
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $KycCopyWith<Kyc> get copyWith =>
+      _$KycCopyWithImpl<Kyc>(this as Kyc, _$identity);
+
+  /// Serializes this Kyc to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is Kyc &&
             (identical(other.pan, pan) || other.pan == pan));
   }
 
@@ -457,130 +357,165 @@ class _$KycImpl implements _Kyc {
   @override
   int get hashCode => Object.hash(runtimeType, pan);
 
-  /// Create a copy of Kyc
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$KycImplCopyWith<_$KycImpl> get copyWith =>
-      __$$KycImplCopyWithImpl<_$KycImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$KycImplToJson(
-      this,
-    );
+  String toString() {
+    return 'Kyc(pan: $pan)';
   }
 }
 
-abstract class _Kyc implements Kyc {
-  const factory _Kyc({required final String pan}) = _$KycImpl;
+/// @nodoc
+abstract mixin class $KycCopyWith<$Res> {
+  factory $KycCopyWith(Kyc value, $Res Function(Kyc) _then) = _$KycCopyWithImpl;
+  @useResult
+  $Res call({String pan});
+}
 
-  factory _Kyc.fromJson(Map<String, dynamic> json) = _$KycImpl.fromJson;
+/// @nodoc
+class _$KycCopyWithImpl<$Res> implements $KycCopyWith<$Res> {
+  _$KycCopyWithImpl(this._self, this._then);
+
+  final Kyc _self;
+  final $Res Function(Kyc) _then;
+
+  /// Create a copy of Kyc
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? pan = null,
+  }) {
+    return _then(_self.copyWith(
+      pan: null == pan
+          ? _self.pan
+          : pan // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+@JsonSerializable(includeIfNull: false)
+class _Kyc implements Kyc {
+  const _Kyc({required this.pan});
+  factory _Kyc.fromJson(Map<String, dynamic> json) => _$KycFromJson(json);
 
   @override
-  String get pan;
+  final String pan;
 
   /// Create a copy of Kyc
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$KycImplCopyWith<_$KycImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  @pragma('vm:prefer-inline')
+  _$KycCopyWith<_Kyc> get copyWith =>
+      __$KycCopyWithImpl<_Kyc>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$KycToJson(
+      this,
+    );
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _Kyc &&
+            (identical(other.pan, pan) || other.pan == pan));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, pan);
+
+  @override
+  String toString() {
+    return 'Kyc(pan: $pan)';
+  }
 }
 
-StakeholderAddresses _$StakeholderAddressesFromJson(Map<String, dynamic> json) {
-  return _StakeholderAddresses.fromJson(json);
+/// @nodoc
+abstract mixin class _$KycCopyWith<$Res> implements $KycCopyWith<$Res> {
+  factory _$KycCopyWith(_Kyc value, $Res Function(_Kyc) _then) =
+      __$KycCopyWithImpl;
+  @override
+  @useResult
+  $Res call({String pan});
+}
+
+/// @nodoc
+class __$KycCopyWithImpl<$Res> implements _$KycCopyWith<$Res> {
+  __$KycCopyWithImpl(this._self, this._then);
+
+  final _Kyc _self;
+  final $Res Function(_Kyc) _then;
+
+  /// Create a copy of Kyc
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? pan = null,
+  }) {
+    return _then(_Kyc(
+      pan: null == pan
+          ? _self.pan
+          : pan // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
 }
 
 /// @nodoc
 mixin _$StakeholderAddresses {
-  String get street =>
-      throw _privateConstructorUsedError; // Combined street address
-  String get city => throw _privateConstructorUsedError;
-  String get state => throw _privateConstructorUsedError;
-  dynamic get postal_code =>
-      throw _privateConstructorUsedError; // number | string
-  String get country => throw _privateConstructorUsedError;
-
-  /// Serializes this StakeholderAddresses to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  String get street; // Combined street address
+  String get city;
+  String get state;
+  dynamic get postal_code; // number | string
+  String get country;
 
   /// Create a copy of StakeholderAddresses
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $StakeholderAddressesCopyWith<StakeholderAddresses> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $StakeholderAddressesCopyWith<$Res> {
-  factory $StakeholderAddressesCopyWith(StakeholderAddresses value,
-          $Res Function(StakeholderAddresses) then) =
-      _$StakeholderAddressesCopyWithImpl<$Res, StakeholderAddresses>;
-  @useResult
-  $Res call(
-      {String street,
-      String city,
-      String state,
-      dynamic postal_code,
-      String country});
-}
-
-/// @nodoc
-class _$StakeholderAddressesCopyWithImpl<$Res,
-        $Val extends StakeholderAddresses>
-    implements $StakeholderAddressesCopyWith<$Res> {
-  _$StakeholderAddressesCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of StakeholderAddresses
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
+  $StakeholderAddressesCopyWith<StakeholderAddresses> get copyWith =>
+      _$StakeholderAddressesCopyWithImpl<StakeholderAddresses>(
+          this as StakeholderAddresses, _$identity);
+
+  /// Serializes this StakeholderAddresses to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? street = null,
-    Object? city = null,
-    Object? state = null,
-    Object? postal_code = freezed,
-    Object? country = null,
-  }) {
-    return _then(_value.copyWith(
-      street: null == street
-          ? _value.street
-          : street // ignore: cast_nullable_to_non_nullable
-              as String,
-      city: null == city
-          ? _value.city
-          : city // ignore: cast_nullable_to_non_nullable
-              as String,
-      state: null == state
-          ? _value.state
-          : state // ignore: cast_nullable_to_non_nullable
-              as String,
-      postal_code: freezed == postal_code
-          ? _value.postal_code
-          : postal_code // ignore: cast_nullable_to_non_nullable
-              as dynamic,
-      country: null == country
-          ? _value.country
-          : country // ignore: cast_nullable_to_non_nullable
-              as String,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is StakeholderAddresses &&
+            (identical(other.street, street) || other.street == street) &&
+            (identical(other.city, city) || other.city == city) &&
+            (identical(other.state, state) || other.state == state) &&
+            const DeepCollectionEquality()
+                .equals(other.postal_code, postal_code) &&
+            (identical(other.country, country) || other.country == country));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, street, city, state,
+      const DeepCollectionEquality().hash(postal_code), country);
+
+  @override
+  String toString() {
+    return 'StakeholderAddresses(street: $street, city: $city, state: $state, postal_code: $postal_code, country: $country)';
   }
 }
 
 /// @nodoc
-abstract class _$$StakeholderAddressesImplCopyWith<$Res>
-    implements $StakeholderAddressesCopyWith<$Res> {
-  factory _$$StakeholderAddressesImplCopyWith(_$StakeholderAddressesImpl value,
-          $Res Function(_$StakeholderAddressesImpl) then) =
-      __$$StakeholderAddressesImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $StakeholderAddressesCopyWith<$Res> {
+  factory $StakeholderAddressesCopyWith(StakeholderAddresses value,
+          $Res Function(StakeholderAddresses) _then) =
+      _$StakeholderAddressesCopyWithImpl;
   @useResult
   $Res call(
       {String street,
@@ -591,12 +526,12 @@ abstract class _$$StakeholderAddressesImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$StakeholderAddressesImplCopyWithImpl<$Res>
-    extends _$StakeholderAddressesCopyWithImpl<$Res, _$StakeholderAddressesImpl>
-    implements _$$StakeholderAddressesImplCopyWith<$Res> {
-  __$$StakeholderAddressesImplCopyWithImpl(_$StakeholderAddressesImpl _value,
-      $Res Function(_$StakeholderAddressesImpl) _then)
-      : super(_value, _then);
+class _$StakeholderAddressesCopyWithImpl<$Res>
+    implements $StakeholderAddressesCopyWith<$Res> {
+  _$StakeholderAddressesCopyWithImpl(this._self, this._then);
+
+  final StakeholderAddresses _self;
+  final $Res Function(StakeholderAddresses) _then;
 
   /// Create a copy of StakeholderAddresses
   /// with the given fields replaced by the non-null parameter values.
@@ -609,25 +544,25 @@ class __$$StakeholderAddressesImplCopyWithImpl<$Res>
     Object? postal_code = freezed,
     Object? country = null,
   }) {
-    return _then(_$StakeholderAddressesImpl(
+    return _then(_self.copyWith(
       street: null == street
-          ? _value.street
+          ? _self.street
           : street // ignore: cast_nullable_to_non_nullable
               as String,
       city: null == city
-          ? _value.city
+          ? _self.city
           : city // ignore: cast_nullable_to_non_nullable
               as String,
       state: null == state
-          ? _value.state
+          ? _self.state
           : state // ignore: cast_nullable_to_non_nullable
               as String,
       postal_code: freezed == postal_code
-          ? _value.postal_code
+          ? _self.postal_code
           : postal_code // ignore: cast_nullable_to_non_nullable
               as dynamic,
       country: null == country
-          ? _value.country
+          ? _self.country
           : country // ignore: cast_nullable_to_non_nullable
               as String,
     ));
@@ -637,16 +572,15 @@ class __$$StakeholderAddressesImplCopyWithImpl<$Res>
 /// @nodoc
 
 @JsonSerializable(includeIfNull: false)
-class _$StakeholderAddressesImpl implements _StakeholderAddresses {
-  const _$StakeholderAddressesImpl(
+class _StakeholderAddresses implements StakeholderAddresses {
+  const _StakeholderAddresses(
       {required this.street,
       required this.city,
       required this.state,
       required this.postal_code,
       required this.country});
-
-  factory _$StakeholderAddressesImpl.fromJson(Map<String, dynamic> json) =>
-      _$$StakeholderAddressesImplFromJson(json);
+  factory _StakeholderAddresses.fromJson(Map<String, dynamic> json) =>
+      _$StakeholderAddressesFromJson(json);
 
   @override
   final String street;
@@ -661,16 +595,27 @@ class _$StakeholderAddressesImpl implements _StakeholderAddresses {
   @override
   final String country;
 
+  /// Create a copy of StakeholderAddresses
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'StakeholderAddresses(street: $street, city: $city, state: $state, postal_code: $postal_code, country: $country)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$StakeholderAddressesCopyWith<_StakeholderAddresses> get copyWith =>
+      __$StakeholderAddressesCopyWithImpl<_StakeholderAddresses>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$StakeholderAddressesToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$StakeholderAddressesImpl &&
+            other is _StakeholderAddresses &&
             (identical(other.street, street) || other.street == street) &&
             (identical(other.city, city) || other.city == city) &&
             (identical(other.state, state) || other.state == state) &&
@@ -684,194 +629,94 @@ class _$StakeholderAddressesImpl implements _StakeholderAddresses {
   int get hashCode => Object.hash(runtimeType, street, city, state,
       const DeepCollectionEquality().hash(postal_code), country);
 
-  /// Create a copy of StakeholderAddresses
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$StakeholderAddressesImplCopyWith<_$StakeholderAddressesImpl>
-      get copyWith =>
-          __$$StakeholderAddressesImplCopyWithImpl<_$StakeholderAddressesImpl>(
-              this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$StakeholderAddressesImplToJson(
-      this,
-    );
+  String toString() {
+    return 'StakeholderAddresses(street: $street, city: $city, state: $state, postal_code: $postal_code, country: $country)';
   }
 }
 
-abstract class _StakeholderAddresses implements StakeholderAddresses {
-  const factory _StakeholderAddresses(
-      {required final String street,
-      required final String city,
-      required final String state,
-      required final dynamic postal_code,
-      required final String country}) = _$StakeholderAddressesImpl;
+/// @nodoc
+abstract mixin class _$StakeholderAddressesCopyWith<$Res>
+    implements $StakeholderAddressesCopyWith<$Res> {
+  factory _$StakeholderAddressesCopyWith(_StakeholderAddresses value,
+          $Res Function(_StakeholderAddresses) _then) =
+      __$StakeholderAddressesCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {String street,
+      String city,
+      String state,
+      dynamic postal_code,
+      String country});
+}
 
-  factory _StakeholderAddresses.fromJson(Map<String, dynamic> json) =
-      _$StakeholderAddressesImpl.fromJson;
+/// @nodoc
+class __$StakeholderAddressesCopyWithImpl<$Res>
+    implements _$StakeholderAddressesCopyWith<$Res> {
+  __$StakeholderAddressesCopyWithImpl(this._self, this._then);
 
-  @override
-  String get street; // Combined street address
-  @override
-  String get city;
-  @override
-  String get state;
-  @override
-  dynamic get postal_code; // number | string
-  @override
-  String get country;
+  final _StakeholderAddresses _self;
+  final $Res Function(_StakeholderAddresses) _then;
 
   /// Create a copy of StakeholderAddresses
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$StakeholderAddressesImplCopyWith<_$StakeholderAddressesImpl>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-StakeholderAddressContainer _$StakeholderAddressContainerFromJson(
-    Map<String, dynamic> json) {
-  return _StakeholderAddressContainer.fromJson(json);
-}
-
-/// @nodoc
-mixin _$StakeholderAddressContainer {
-// Partial<Address> -> Make fields nullable
-  StakeholderAddresses? get residential => throw _privateConstructorUsedError;
-
-  /// Serializes this StakeholderAddressContainer to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of StakeholderAddressContainer
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  $StakeholderAddressContainerCopyWith<StakeholderAddressContainer>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $StakeholderAddressContainerCopyWith<$Res> {
-  factory $StakeholderAddressContainerCopyWith(
-          StakeholderAddressContainer value,
-          $Res Function(StakeholderAddressContainer) then) =
-      _$StakeholderAddressContainerCopyWithImpl<$Res,
-          StakeholderAddressContainer>;
-  @useResult
-  $Res call({StakeholderAddresses? residential});
-
-  $StakeholderAddressesCopyWith<$Res>? get residential;
-}
-
-/// @nodoc
-class _$StakeholderAddressContainerCopyWithImpl<$Res,
-        $Val extends StakeholderAddressContainer>
-    implements $StakeholderAddressContainerCopyWith<$Res> {
-  _$StakeholderAddressContainerCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of StakeholderAddressContainer
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
-  @override
   $Res call({
-    Object? residential = freezed,
+    Object? street = null,
+    Object? city = null,
+    Object? state = null,
+    Object? postal_code = freezed,
+    Object? country = null,
   }) {
-    return _then(_value.copyWith(
-      residential: freezed == residential
-          ? _value.residential
-          : residential // ignore: cast_nullable_to_non_nullable
-              as StakeholderAddresses?,
-    ) as $Val);
-  }
-
-  /// Create a copy of StakeholderAddressContainer
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StakeholderAddressesCopyWith<$Res>? get residential {
-    if (_value.residential == null) {
-      return null;
-    }
-
-    return $StakeholderAddressesCopyWith<$Res>(_value.residential!, (value) {
-      return _then(_value.copyWith(residential: value) as $Val);
-    });
-  }
-}
-
-/// @nodoc
-abstract class _$$StakeholderAddressContainerImplCopyWith<$Res>
-    implements $StakeholderAddressContainerCopyWith<$Res> {
-  factory _$$StakeholderAddressContainerImplCopyWith(
-          _$StakeholderAddressContainerImpl value,
-          $Res Function(_$StakeholderAddressContainerImpl) then) =
-      __$$StakeholderAddressContainerImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({StakeholderAddresses? residential});
-
-  @override
-  $StakeholderAddressesCopyWith<$Res>? get residential;
-}
-
-/// @nodoc
-class __$$StakeholderAddressContainerImplCopyWithImpl<$Res>
-    extends _$StakeholderAddressContainerCopyWithImpl<$Res,
-        _$StakeholderAddressContainerImpl>
-    implements _$$StakeholderAddressContainerImplCopyWith<$Res> {
-  __$$StakeholderAddressContainerImplCopyWithImpl(
-      _$StakeholderAddressContainerImpl _value,
-      $Res Function(_$StakeholderAddressContainerImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of StakeholderAddressContainer
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? residential = freezed,
-  }) {
-    return _then(_$StakeholderAddressContainerImpl(
-      residential: freezed == residential
-          ? _value.residential
-          : residential // ignore: cast_nullable_to_non_nullable
-              as StakeholderAddresses?,
+    return _then(_StakeholderAddresses(
+      street: null == street
+          ? _self.street
+          : street // ignore: cast_nullable_to_non_nullable
+              as String,
+      city: null == city
+          ? _self.city
+          : city // ignore: cast_nullable_to_non_nullable
+              as String,
+      state: null == state
+          ? _self.state
+          : state // ignore: cast_nullable_to_non_nullable
+              as String,
+      postal_code: freezed == postal_code
+          ? _self.postal_code
+          : postal_code // ignore: cast_nullable_to_non_nullable
+              as dynamic,
+      country: null == country
+          ? _self.country
+          : country // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
 
 /// @nodoc
-
-@JsonSerializable(includeIfNull: false)
-class _$StakeholderAddressContainerImpl
-    implements _StakeholderAddressContainer {
-  const _$StakeholderAddressContainerImpl({this.residential});
-
-  factory _$StakeholderAddressContainerImpl.fromJson(
-          Map<String, dynamic> json) =>
-      _$$StakeholderAddressContainerImplFromJson(json);
-
+mixin _$StakeholderAddressContainer {
 // Partial<Address> -> Make fields nullable
-  @override
-  final StakeholderAddresses? residential;
+  StakeholderAddresses? get residential;
 
-  @override
-  String toString() {
-    return 'StakeholderAddressContainer(residential: $residential)';
-  }
+  /// Create a copy of StakeholderAddressContainer
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $StakeholderAddressContainerCopyWith<StakeholderAddressContainer>
+      get copyWith => _$StakeholderAddressContainerCopyWithImpl<
+              StakeholderAddressContainer>(
+          this as StakeholderAddressContainer, _$identity);
+
+  /// Serializes this StakeholderAddressContainer to a JSON map.
+  Map<String, dynamic> toJson();
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$StakeholderAddressContainerImpl &&
+            other is StakeholderAddressContainer &&
             (identical(other.residential, residential) ||
                 other.residential == residential));
   }
@@ -880,472 +725,229 @@ class _$StakeholderAddressContainerImpl
   @override
   int get hashCode => Object.hash(runtimeType, residential);
 
-  /// Create a copy of StakeholderAddressContainer
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$StakeholderAddressContainerImplCopyWith<_$StakeholderAddressContainerImpl>
-      get copyWith => __$$StakeholderAddressContainerImplCopyWithImpl<
-          _$StakeholderAddressContainerImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$StakeholderAddressContainerImplToJson(
-      this,
-    );
+  String toString() {
+    return 'StakeholderAddressContainer(residential: $residential)';
   }
 }
 
-abstract class _StakeholderAddressContainer
-    implements StakeholderAddressContainer {
-  const factory _StakeholderAddressContainer(
-          {final StakeholderAddresses? residential}) =
-      _$StakeholderAddressContainerImpl;
+/// @nodoc
+abstract mixin class $StakeholderAddressContainerCopyWith<$Res> {
+  factory $StakeholderAddressContainerCopyWith(
+          StakeholderAddressContainer value,
+          $Res Function(StakeholderAddressContainer) _then) =
+      _$StakeholderAddressContainerCopyWithImpl;
+  @useResult
+  $Res call({StakeholderAddresses? residential});
 
-  factory _StakeholderAddressContainer.fromJson(Map<String, dynamic> json) =
-      _$StakeholderAddressContainerImpl.fromJson;
+  $StakeholderAddressesCopyWith<$Res>? get residential;
+}
 
-// Partial<Address> -> Make fields nullable
-  @override
-  StakeholderAddresses? get residential;
+/// @nodoc
+class _$StakeholderAddressContainerCopyWithImpl<$Res>
+    implements $StakeholderAddressContainerCopyWith<$Res> {
+  _$StakeholderAddressContainerCopyWithImpl(this._self, this._then);
+
+  final StakeholderAddressContainer _self;
+  final $Res Function(StakeholderAddressContainer) _then;
 
   /// Create a copy of StakeholderAddressContainer
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$StakeholderAddressContainerImplCopyWith<_$StakeholderAddressContainerImpl>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-RazorpayStakeholderBaseRequestBody _$RazorpayStakeholderBaseRequestBodyFromJson(
-    Map<String, dynamic> json) {
-  return _RazorpayStakeholderBaseRequestBody.fromJson(json);
-}
-
-/// @nodoc
-mixin _$RazorpayStakeholderBaseRequestBody {
-  Phone get phone => throw _privateConstructorUsedError;
-  Kyc get kyc => throw _privateConstructorUsedError;
-  String get name => throw _privateConstructorUsedError;
-  String get email => throw _privateConstructorUsedError;
-  RelationShip? get relationship => throw _privateConstructorUsedError;
-  int? get percentage_ownership => throw _privateConstructorUsedError;
-  StakeholderAddressContainer? get addresses =>
-      throw _privateConstructorUsedError;
-  IMap<dynamic>? get notes => throw _privateConstructorUsedError;
-
-  /// Serializes this RazorpayStakeholderBaseRequestBody to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of RazorpayStakeholderBaseRequestBody
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  $RazorpayStakeholderBaseRequestBodyCopyWith<
-          RazorpayStakeholderBaseRequestBody>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $RazorpayStakeholderBaseRequestBodyCopyWith<$Res> {
-  factory $RazorpayStakeholderBaseRequestBodyCopyWith(
-          RazorpayStakeholderBaseRequestBody value,
-          $Res Function(RazorpayStakeholderBaseRequestBody) then) =
-      _$RazorpayStakeholderBaseRequestBodyCopyWithImpl<$Res,
-          RazorpayStakeholderBaseRequestBody>;
-  @useResult
-  $Res call(
-      {Phone phone,
-      Kyc kyc,
-      String name,
-      String email,
-      RelationShip? relationship,
-      int? percentage_ownership,
-      StakeholderAddressContainer? addresses,
-      IMap<dynamic>? notes});
-
-  $PhoneCopyWith<$Res> get phone;
-  $KycCopyWith<$Res> get kyc;
-  $RelationShipCopyWith<$Res>? get relationship;
-  $StakeholderAddressContainerCopyWith<$Res>? get addresses;
-}
-
-/// @nodoc
-class _$RazorpayStakeholderBaseRequestBodyCopyWithImpl<$Res,
-        $Val extends RazorpayStakeholderBaseRequestBody>
-    implements $RazorpayStakeholderBaseRequestBodyCopyWith<$Res> {
-  _$RazorpayStakeholderBaseRequestBodyCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of RazorpayStakeholderBaseRequestBody
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? phone = null,
-    Object? kyc = null,
-    Object? name = null,
-    Object? email = null,
-    Object? relationship = freezed,
-    Object? percentage_ownership = freezed,
-    Object? addresses = freezed,
-    Object? notes = freezed,
+    Object? residential = freezed,
   }) {
-    return _then(_value.copyWith(
-      phone: null == phone
-          ? _value.phone
-          : phone // ignore: cast_nullable_to_non_nullable
-              as Phone,
-      kyc: null == kyc
-          ? _value.kyc
-          : kyc // ignore: cast_nullable_to_non_nullable
-              as Kyc,
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      email: null == email
-          ? _value.email
-          : email // ignore: cast_nullable_to_non_nullable
-              as String,
-      relationship: freezed == relationship
-          ? _value.relationship
-          : relationship // ignore: cast_nullable_to_non_nullable
-              as RelationShip?,
-      percentage_ownership: freezed == percentage_ownership
-          ? _value.percentage_ownership
-          : percentage_ownership // ignore: cast_nullable_to_non_nullable
-              as int?,
-      addresses: freezed == addresses
-          ? _value.addresses
-          : addresses // ignore: cast_nullable_to_non_nullable
-              as StakeholderAddressContainer?,
-      notes: freezed == notes
-          ? _value.notes
-          : notes // ignore: cast_nullable_to_non_nullable
-              as IMap<dynamic>?,
-    ) as $Val);
-  }
-
-  /// Create a copy of RazorpayStakeholderBaseRequestBody
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $PhoneCopyWith<$Res> get phone {
-    return $PhoneCopyWith<$Res>(_value.phone, (value) {
-      return _then(_value.copyWith(phone: value) as $Val);
-    });
-  }
-
-  /// Create a copy of RazorpayStakeholderBaseRequestBody
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $KycCopyWith<$Res> get kyc {
-    return $KycCopyWith<$Res>(_value.kyc, (value) {
-      return _then(_value.copyWith(kyc: value) as $Val);
-    });
-  }
-
-  /// Create a copy of RazorpayStakeholderBaseRequestBody
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $RelationShipCopyWith<$Res>? get relationship {
-    if (_value.relationship == null) {
-      return null;
-    }
-
-    return $RelationShipCopyWith<$Res>(_value.relationship!, (value) {
-      return _then(_value.copyWith(relationship: value) as $Val);
-    });
-  }
-
-  /// Create a copy of RazorpayStakeholderBaseRequestBody
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StakeholderAddressContainerCopyWith<$Res>? get addresses {
-    if (_value.addresses == null) {
-      return null;
-    }
-
-    return $StakeholderAddressContainerCopyWith<$Res>(_value.addresses!,
-        (value) {
-      return _then(_value.copyWith(addresses: value) as $Val);
-    });
-  }
-}
-
-/// @nodoc
-abstract class _$$RazorpayStakeholderBaseRequestBodyImplCopyWith<$Res>
-    implements $RazorpayStakeholderBaseRequestBodyCopyWith<$Res> {
-  factory _$$RazorpayStakeholderBaseRequestBodyImplCopyWith(
-          _$RazorpayStakeholderBaseRequestBodyImpl value,
-          $Res Function(_$RazorpayStakeholderBaseRequestBodyImpl) then) =
-      __$$RazorpayStakeholderBaseRequestBodyImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {Phone phone,
-      Kyc kyc,
-      String name,
-      String email,
-      RelationShip? relationship,
-      int? percentage_ownership,
-      StakeholderAddressContainer? addresses,
-      IMap<dynamic>? notes});
-
-  @override
-  $PhoneCopyWith<$Res> get phone;
-  @override
-  $KycCopyWith<$Res> get kyc;
-  @override
-  $RelationShipCopyWith<$Res>? get relationship;
-  @override
-  $StakeholderAddressContainerCopyWith<$Res>? get addresses;
-}
-
-/// @nodoc
-class __$$RazorpayStakeholderBaseRequestBodyImplCopyWithImpl<$Res>
-    extends _$RazorpayStakeholderBaseRequestBodyCopyWithImpl<$Res,
-        _$RazorpayStakeholderBaseRequestBodyImpl>
-    implements _$$RazorpayStakeholderBaseRequestBodyImplCopyWith<$Res> {
-  __$$RazorpayStakeholderBaseRequestBodyImplCopyWithImpl(
-      _$RazorpayStakeholderBaseRequestBodyImpl _value,
-      $Res Function(_$RazorpayStakeholderBaseRequestBodyImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of RazorpayStakeholderBaseRequestBody
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? phone = null,
-    Object? kyc = null,
-    Object? name = null,
-    Object? email = null,
-    Object? relationship = freezed,
-    Object? percentage_ownership = freezed,
-    Object? addresses = freezed,
-    Object? notes = freezed,
-  }) {
-    return _then(_$RazorpayStakeholderBaseRequestBodyImpl(
-      phone: null == phone
-          ? _value.phone
-          : phone // ignore: cast_nullable_to_non_nullable
-              as Phone,
-      kyc: null == kyc
-          ? _value.kyc
-          : kyc // ignore: cast_nullable_to_non_nullable
-              as Kyc,
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      email: null == email
-          ? _value.email
-          : email // ignore: cast_nullable_to_non_nullable
-              as String,
-      relationship: freezed == relationship
-          ? _value.relationship
-          : relationship // ignore: cast_nullable_to_non_nullable
-              as RelationShip?,
-      percentage_ownership: freezed == percentage_ownership
-          ? _value.percentage_ownership
-          : percentage_ownership // ignore: cast_nullable_to_non_nullable
-              as int?,
-      addresses: freezed == addresses
-          ? _value.addresses
-          : addresses // ignore: cast_nullable_to_non_nullable
-              as StakeholderAddressContainer?,
-      notes: freezed == notes
-          ? _value._notes
-          : notes // ignore: cast_nullable_to_non_nullable
-              as IMap<dynamic>?,
+    return _then(_self.copyWith(
+      residential: freezed == residential
+          ? _self.residential
+          : residential // ignore: cast_nullable_to_non_nullable
+              as StakeholderAddresses?,
     ));
+  }
+
+  /// Create a copy of StakeholderAddressContainer
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $StakeholderAddressesCopyWith<$Res>? get residential {
+    if (_self.residential == null) {
+      return null;
+    }
+
+    return $StakeholderAddressesCopyWith<$Res>(_self.residential!, (value) {
+      return _then(_self.copyWith(residential: value));
+    });
   }
 }
 
 /// @nodoc
 
 @JsonSerializable(includeIfNull: false)
-class _$RazorpayStakeholderBaseRequestBodyImpl
-    implements _RazorpayStakeholderBaseRequestBody {
-  const _$RazorpayStakeholderBaseRequestBodyImpl(
-      {required this.phone,
-      required this.kyc,
-      required this.name,
-      required this.email,
-      this.relationship,
-      this.percentage_ownership,
-      this.addresses,
-      final IMap<dynamic>? notes})
-      : _notes = notes;
+class _StakeholderAddressContainer implements StakeholderAddressContainer {
+  const _StakeholderAddressContainer({this.residential});
+  factory _StakeholderAddressContainer.fromJson(Map<String, dynamic> json) =>
+      _$StakeholderAddressContainerFromJson(json);
 
-  factory _$RazorpayStakeholderBaseRequestBodyImpl.fromJson(
-          Map<String, dynamic> json) =>
-      _$$RazorpayStakeholderBaseRequestBodyImplFromJson(json);
+// Partial<Address> -> Make fields nullable
+  @override
+  final StakeholderAddresses? residential;
+
+  /// Create a copy of StakeholderAddressContainer
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$StakeholderAddressContainerCopyWith<_StakeholderAddressContainer>
+      get copyWith => __$StakeholderAddressContainerCopyWithImpl<
+          _StakeholderAddressContainer>(this, _$identity);
 
   @override
-  final Phone phone;
-  @override
-  final Kyc kyc;
-  @override
-  final String name;
-  @override
-  final String email;
-  @override
-  final RelationShip? relationship;
-  @override
-  final int? percentage_ownership;
-  @override
-  final StakeholderAddressContainer? addresses;
-  final IMap<dynamic>? _notes;
-  @override
-  IMap<dynamic>? get notes {
-    final value = _notes;
-    if (value == null) return null;
-    if (_notes is EqualUnmodifiableMapView) return _notes;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableMapView(value);
+  Map<String, dynamic> toJson() {
+    return _$StakeholderAddressContainerToJson(
+      this,
+    );
   }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _StakeholderAddressContainer &&
+            (identical(other.residential, residential) ||
+                other.residential == residential));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, residential);
+
+  @override
+  String toString() {
+    return 'StakeholderAddressContainer(residential: $residential)';
+  }
+}
+
+/// @nodoc
+abstract mixin class _$StakeholderAddressContainerCopyWith<$Res>
+    implements $StakeholderAddressContainerCopyWith<$Res> {
+  factory _$StakeholderAddressContainerCopyWith(
+          _StakeholderAddressContainer value,
+          $Res Function(_StakeholderAddressContainer) _then) =
+      __$StakeholderAddressContainerCopyWithImpl;
+  @override
+  @useResult
+  $Res call({StakeholderAddresses? residential});
+
+  @override
+  $StakeholderAddressesCopyWith<$Res>? get residential;
+}
+
+/// @nodoc
+class __$StakeholderAddressContainerCopyWithImpl<$Res>
+    implements _$StakeholderAddressContainerCopyWith<$Res> {
+  __$StakeholderAddressContainerCopyWithImpl(this._self, this._then);
+
+  final _StakeholderAddressContainer _self;
+  final $Res Function(_StakeholderAddressContainer) _then;
+
+  /// Create a copy of StakeholderAddressContainer
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? residential = freezed,
+  }) {
+    return _then(_StakeholderAddressContainer(
+      residential: freezed == residential
+          ? _self.residential
+          : residential // ignore: cast_nullable_to_non_nullable
+              as StakeholderAddresses?,
+    ));
+  }
+
+  /// Create a copy of StakeholderAddressContainer
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $StakeholderAddressesCopyWith<$Res>? get residential {
+    if (_self.residential == null) {
+      return null;
+    }
+
+    return $StakeholderAddressesCopyWith<$Res>(_self.residential!, (value) {
+      return _then(_self.copyWith(residential: value));
+    });
+  }
+}
+
+/// @nodoc
+mixin _$RazorpayStakeholderBaseRequestBody {
+  Phone get phone;
+  Kyc get kyc;
+  String get name;
+  String get email;
+  RelationShip? get relationship;
+  int? get percentage_ownership;
+  StakeholderAddressContainer? get addresses;
+  IMap<dynamic>? get notes;
+
+  /// Create a copy of RazorpayStakeholderBaseRequestBody
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $RazorpayStakeholderBaseRequestBodyCopyWith<
+          RazorpayStakeholderBaseRequestBody>
+      get copyWith => _$RazorpayStakeholderBaseRequestBodyCopyWithImpl<
+              RazorpayStakeholderBaseRequestBody>(
+          this as RazorpayStakeholderBaseRequestBody, _$identity);
+
+  /// Serializes this RazorpayStakeholderBaseRequestBody to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is RazorpayStakeholderBaseRequestBody &&
+            (identical(other.phone, phone) || other.phone == phone) &&
+            (identical(other.kyc, kyc) || other.kyc == kyc) &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.email, email) || other.email == email) &&
+            (identical(other.relationship, relationship) ||
+                other.relationship == relationship) &&
+            (identical(other.percentage_ownership, percentage_ownership) ||
+                other.percentage_ownership == percentage_ownership) &&
+            (identical(other.addresses, addresses) ||
+                other.addresses == addresses) &&
+            const DeepCollectionEquality().equals(other.notes, notes));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      phone,
+      kyc,
+      name,
+      email,
+      relationship,
+      percentage_ownership,
+      addresses,
+      const DeepCollectionEquality().hash(notes));
 
   @override
   String toString() {
     return 'RazorpayStakeholderBaseRequestBody(phone: $phone, kyc: $kyc, name: $name, email: $email, relationship: $relationship, percentage_ownership: $percentage_ownership, addresses: $addresses, notes: $notes)';
   }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$RazorpayStakeholderBaseRequestBodyImpl &&
-            (identical(other.phone, phone) || other.phone == phone) &&
-            (identical(other.kyc, kyc) || other.kyc == kyc) &&
-            (identical(other.name, name) || other.name == name) &&
-            (identical(other.email, email) || other.email == email) &&
-            (identical(other.relationship, relationship) ||
-                other.relationship == relationship) &&
-            (identical(other.percentage_ownership, percentage_ownership) ||
-                other.percentage_ownership == percentage_ownership) &&
-            (identical(other.addresses, addresses) ||
-                other.addresses == addresses) &&
-            const DeepCollectionEquality().equals(other._notes, _notes));
-  }
-
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      phone,
-      kyc,
-      name,
-      email,
-      relationship,
-      percentage_ownership,
-      addresses,
-      const DeepCollectionEquality().hash(_notes));
-
-  /// Create a copy of RazorpayStakeholderBaseRequestBody
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$RazorpayStakeholderBaseRequestBodyImplCopyWith<
-          _$RazorpayStakeholderBaseRequestBodyImpl>
-      get copyWith => __$$RazorpayStakeholderBaseRequestBodyImplCopyWithImpl<
-          _$RazorpayStakeholderBaseRequestBodyImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$RazorpayStakeholderBaseRequestBodyImplToJson(
-      this,
-    );
-  }
-}
-
-abstract class _RazorpayStakeholderBaseRequestBody
-    implements RazorpayStakeholderBaseRequestBody {
-  const factory _RazorpayStakeholderBaseRequestBody(
-      {required final Phone phone,
-      required final Kyc kyc,
-      required final String name,
-      required final String email,
-      final RelationShip? relationship,
-      final int? percentage_ownership,
-      final StakeholderAddressContainer? addresses,
-      final IMap<dynamic>? notes}) = _$RazorpayStakeholderBaseRequestBodyImpl;
-
-  factory _RazorpayStakeholderBaseRequestBody.fromJson(
-          Map<String, dynamic> json) =
-      _$RazorpayStakeholderBaseRequestBodyImpl.fromJson;
-
-  @override
-  Phone get phone;
-  @override
-  Kyc get kyc;
-  @override
-  String get name;
-  @override
-  String get email;
-  @override
-  RelationShip? get relationship;
-  @override
-  int? get percentage_ownership;
-  @override
-  StakeholderAddressContainer? get addresses;
-  @override
-  IMap<dynamic>? get notes;
-
-  /// Create a copy of RazorpayStakeholderBaseRequestBody
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$RazorpayStakeholderBaseRequestBodyImplCopyWith<
-          _$RazorpayStakeholderBaseRequestBodyImpl>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-RazorpayStakeholderCreateRequestBody
-    _$RazorpayStakeholderCreateRequestBodyFromJson(Map<String, dynamic> json) {
-  return _RazorpayStakeholderCreateRequestBody.fromJson(json);
 }
 
 /// @nodoc
-mixin _$RazorpayStakeholderCreateRequestBody {
-  Phone get phone => throw _privateConstructorUsedError;
-  Kyc get kyc => throw _privateConstructorUsedError;
-  String get name => throw _privateConstructorUsedError;
-  String get email => throw _privateConstructorUsedError;
-  RelationShip? get relationship => throw _privateConstructorUsedError;
-  int? get percentage_ownership => throw _privateConstructorUsedError;
-  StakeholderAddressContainer? get addresses =>
-      throw _privateConstructorUsedError;
-  IMap<dynamic>? get notes => throw _privateConstructorUsedError;
-
-  /// Serializes this RazorpayStakeholderCreateRequestBody to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of RazorpayStakeholderCreateRequestBody
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  $RazorpayStakeholderCreateRequestBodyCopyWith<
-          RazorpayStakeholderCreateRequestBody>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $RazorpayStakeholderCreateRequestBodyCopyWith<$Res> {
-  factory $RazorpayStakeholderCreateRequestBodyCopyWith(
-          RazorpayStakeholderCreateRequestBody value,
-          $Res Function(RazorpayStakeholderCreateRequestBody) then) =
-      _$RazorpayStakeholderCreateRequestBodyCopyWithImpl<$Res,
-          RazorpayStakeholderCreateRequestBody>;
+abstract mixin class $RazorpayStakeholderBaseRequestBodyCopyWith<$Res> {
+  factory $RazorpayStakeholderBaseRequestBodyCopyWith(
+          RazorpayStakeholderBaseRequestBody value,
+          $Res Function(RazorpayStakeholderBaseRequestBody) _then) =
+      _$RazorpayStakeholderBaseRequestBodyCopyWithImpl;
   @useResult
   $Res call(
       {Phone phone,
@@ -1364,17 +966,14 @@ abstract class $RazorpayStakeholderCreateRequestBodyCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$RazorpayStakeholderCreateRequestBodyCopyWithImpl<$Res,
-        $Val extends RazorpayStakeholderCreateRequestBody>
-    implements $RazorpayStakeholderCreateRequestBodyCopyWith<$Res> {
-  _$RazorpayStakeholderCreateRequestBodyCopyWithImpl(this._value, this._then);
+class _$RazorpayStakeholderBaseRequestBodyCopyWithImpl<$Res>
+    implements $RazorpayStakeholderBaseRequestBodyCopyWith<$Res> {
+  _$RazorpayStakeholderBaseRequestBodyCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final RazorpayStakeholderBaseRequestBody _self;
+  final $Res Function(RazorpayStakeholderBaseRequestBody) _then;
 
-  /// Create a copy of RazorpayStakeholderCreateRequestBody
+  /// Create a copy of RazorpayStakeholderBaseRequestBody
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
@@ -1388,188 +987,98 @@ class _$RazorpayStakeholderCreateRequestBodyCopyWithImpl<$Res,
     Object? addresses = freezed,
     Object? notes = freezed,
   }) {
-    return _then(_value.copyWith(
+    return _then(_self.copyWith(
       phone: null == phone
-          ? _value.phone
+          ? _self.phone
           : phone // ignore: cast_nullable_to_non_nullable
               as Phone,
       kyc: null == kyc
-          ? _value.kyc
+          ? _self.kyc
           : kyc // ignore: cast_nullable_to_non_nullable
               as Kyc,
       name: null == name
-          ? _value.name
+          ? _self.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
       email: null == email
-          ? _value.email
+          ? _self.email
           : email // ignore: cast_nullable_to_non_nullable
               as String,
       relationship: freezed == relationship
-          ? _value.relationship
+          ? _self.relationship
           : relationship // ignore: cast_nullable_to_non_nullable
               as RelationShip?,
       percentage_ownership: freezed == percentage_ownership
-          ? _value.percentage_ownership
+          ? _self.percentage_ownership
           : percentage_ownership // ignore: cast_nullable_to_non_nullable
               as int?,
       addresses: freezed == addresses
-          ? _value.addresses
+          ? _self.addresses
           : addresses // ignore: cast_nullable_to_non_nullable
               as StakeholderAddressContainer?,
       notes: freezed == notes
-          ? _value.notes
+          ? _self.notes
           : notes // ignore: cast_nullable_to_non_nullable
               as IMap<dynamic>?,
-    ) as $Val);
+    ));
   }
 
-  /// Create a copy of RazorpayStakeholderCreateRequestBody
+  /// Create a copy of RazorpayStakeholderBaseRequestBody
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $PhoneCopyWith<$Res> get phone {
-    return $PhoneCopyWith<$Res>(_value.phone, (value) {
-      return _then(_value.copyWith(phone: value) as $Val);
+    return $PhoneCopyWith<$Res>(_self.phone, (value) {
+      return _then(_self.copyWith(phone: value));
     });
   }
 
-  /// Create a copy of RazorpayStakeholderCreateRequestBody
+  /// Create a copy of RazorpayStakeholderBaseRequestBody
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $KycCopyWith<$Res> get kyc {
-    return $KycCopyWith<$Res>(_value.kyc, (value) {
-      return _then(_value.copyWith(kyc: value) as $Val);
+    return $KycCopyWith<$Res>(_self.kyc, (value) {
+      return _then(_self.copyWith(kyc: value));
     });
   }
 
-  /// Create a copy of RazorpayStakeholderCreateRequestBody
+  /// Create a copy of RazorpayStakeholderBaseRequestBody
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $RelationShipCopyWith<$Res>? get relationship {
-    if (_value.relationship == null) {
+    if (_self.relationship == null) {
       return null;
     }
 
-    return $RelationShipCopyWith<$Res>(_value.relationship!, (value) {
-      return _then(_value.copyWith(relationship: value) as $Val);
+    return $RelationShipCopyWith<$Res>(_self.relationship!, (value) {
+      return _then(_self.copyWith(relationship: value));
     });
   }
 
-  /// Create a copy of RazorpayStakeholderCreateRequestBody
+  /// Create a copy of RazorpayStakeholderBaseRequestBody
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $StakeholderAddressContainerCopyWith<$Res>? get addresses {
-    if (_value.addresses == null) {
+    if (_self.addresses == null) {
       return null;
     }
 
-    return $StakeholderAddressContainerCopyWith<$Res>(_value.addresses!,
+    return $StakeholderAddressContainerCopyWith<$Res>(_self.addresses!,
         (value) {
-      return _then(_value.copyWith(addresses: value) as $Val);
+      return _then(_self.copyWith(addresses: value));
     });
-  }
-}
-
-/// @nodoc
-abstract class _$$RazorpayStakeholderCreateRequestBodyImplCopyWith<$Res>
-    implements $RazorpayStakeholderCreateRequestBodyCopyWith<$Res> {
-  factory _$$RazorpayStakeholderCreateRequestBodyImplCopyWith(
-          _$RazorpayStakeholderCreateRequestBodyImpl value,
-          $Res Function(_$RazorpayStakeholderCreateRequestBodyImpl) then) =
-      __$$RazorpayStakeholderCreateRequestBodyImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {Phone phone,
-      Kyc kyc,
-      String name,
-      String email,
-      RelationShip? relationship,
-      int? percentage_ownership,
-      StakeholderAddressContainer? addresses,
-      IMap<dynamic>? notes});
-
-  @override
-  $PhoneCopyWith<$Res> get phone;
-  @override
-  $KycCopyWith<$Res> get kyc;
-  @override
-  $RelationShipCopyWith<$Res>? get relationship;
-  @override
-  $StakeholderAddressContainerCopyWith<$Res>? get addresses;
-}
-
-/// @nodoc
-class __$$RazorpayStakeholderCreateRequestBodyImplCopyWithImpl<$Res>
-    extends _$RazorpayStakeholderCreateRequestBodyCopyWithImpl<$Res,
-        _$RazorpayStakeholderCreateRequestBodyImpl>
-    implements _$$RazorpayStakeholderCreateRequestBodyImplCopyWith<$Res> {
-  __$$RazorpayStakeholderCreateRequestBodyImplCopyWithImpl(
-      _$RazorpayStakeholderCreateRequestBodyImpl _value,
-      $Res Function(_$RazorpayStakeholderCreateRequestBodyImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of RazorpayStakeholderCreateRequestBody
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? phone = null,
-    Object? kyc = null,
-    Object? name = null,
-    Object? email = null,
-    Object? relationship = freezed,
-    Object? percentage_ownership = freezed,
-    Object? addresses = freezed,
-    Object? notes = freezed,
-  }) {
-    return _then(_$RazorpayStakeholderCreateRequestBodyImpl(
-      phone: null == phone
-          ? _value.phone
-          : phone // ignore: cast_nullable_to_non_nullable
-              as Phone,
-      kyc: null == kyc
-          ? _value.kyc
-          : kyc // ignore: cast_nullable_to_non_nullable
-              as Kyc,
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      email: null == email
-          ? _value.email
-          : email // ignore: cast_nullable_to_non_nullable
-              as String,
-      relationship: freezed == relationship
-          ? _value.relationship
-          : relationship // ignore: cast_nullable_to_non_nullable
-              as RelationShip?,
-      percentage_ownership: freezed == percentage_ownership
-          ? _value.percentage_ownership
-          : percentage_ownership // ignore: cast_nullable_to_non_nullable
-              as int?,
-      addresses: freezed == addresses
-          ? _value.addresses
-          : addresses // ignore: cast_nullable_to_non_nullable
-              as StakeholderAddressContainer?,
-      notes: freezed == notes
-          ? _value._notes
-          : notes // ignore: cast_nullable_to_non_nullable
-              as IMap<dynamic>?,
-    ));
   }
 }
 
 /// @nodoc
 
 @JsonSerializable(includeIfNull: false)
-class _$RazorpayStakeholderCreateRequestBodyImpl
-    implements _RazorpayStakeholderCreateRequestBody {
-  const _$RazorpayStakeholderCreateRequestBodyImpl(
+class _RazorpayStakeholderBaseRequestBody
+    implements RazorpayStakeholderBaseRequestBody {
+  const _RazorpayStakeholderBaseRequestBody(
       {required this.phone,
       required this.kyc,
       required this.name,
@@ -1579,10 +1088,9 @@ class _$RazorpayStakeholderCreateRequestBodyImpl
       this.addresses,
       final IMap<dynamic>? notes})
       : _notes = notes;
-
-  factory _$RazorpayStakeholderCreateRequestBodyImpl.fromJson(
+  factory _RazorpayStakeholderBaseRequestBody.fromJson(
           Map<String, dynamic> json) =>
-      _$$RazorpayStakeholderCreateRequestBodyImplFromJson(json);
+      _$RazorpayStakeholderBaseRequestBodyFromJson(json);
 
   @override
   final Phone phone;
@@ -1608,16 +1116,28 @@ class _$RazorpayStakeholderCreateRequestBodyImpl
     return EqualUnmodifiableMapView(value);
   }
 
+  /// Create a copy of RazorpayStakeholderBaseRequestBody
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'RazorpayStakeholderCreateRequestBody(phone: $phone, kyc: $kyc, name: $name, email: $email, relationship: $relationship, percentage_ownership: $percentage_ownership, addresses: $addresses, notes: $notes)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$RazorpayStakeholderBaseRequestBodyCopyWith<
+          _RazorpayStakeholderBaseRequestBody>
+      get copyWith => __$RazorpayStakeholderBaseRequestBodyCopyWithImpl<
+          _RazorpayStakeholderBaseRequestBody>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$RazorpayStakeholderBaseRequestBodyToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$RazorpayStakeholderCreateRequestBodyImpl &&
+            other is _RazorpayStakeholderBaseRequestBody &&
             (identical(other.phone, phone) || other.phone == phone) &&
             (identical(other.kyc, kyc) || other.kyc == kyc) &&
             (identical(other.name, name) || other.name == name) &&
@@ -1644,100 +1164,639 @@ class _$RazorpayStakeholderCreateRequestBodyImpl
       addresses,
       const DeepCollectionEquality().hash(_notes));
 
-  /// Create a copy of RazorpayStakeholderCreateRequestBody
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$RazorpayStakeholderCreateRequestBodyImplCopyWith<
-          _$RazorpayStakeholderCreateRequestBodyImpl>
-      get copyWith => __$$RazorpayStakeholderCreateRequestBodyImplCopyWithImpl<
-          _$RazorpayStakeholderCreateRequestBodyImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$RazorpayStakeholderCreateRequestBodyImplToJson(
-      this,
-    );
+  String toString() {
+    return 'RazorpayStakeholderBaseRequestBody(phone: $phone, kyc: $kyc, name: $name, email: $email, relationship: $relationship, percentage_ownership: $percentage_ownership, addresses: $addresses, notes: $notes)';
   }
 }
 
-abstract class _RazorpayStakeholderCreateRequestBody
-    implements RazorpayStakeholderCreateRequestBody {
-  const factory _RazorpayStakeholderCreateRequestBody(
-      {required final Phone phone,
-      required final Kyc kyc,
-      required final String name,
-      required final String email,
-      final RelationShip? relationship,
-      final int? percentage_ownership,
-      final StakeholderAddressContainer? addresses,
-      final IMap<dynamic>? notes}) = _$RazorpayStakeholderCreateRequestBodyImpl;
-
-  factory _RazorpayStakeholderCreateRequestBody.fromJson(
-          Map<String, dynamic> json) =
-      _$RazorpayStakeholderCreateRequestBodyImpl.fromJson;
+/// @nodoc
+abstract mixin class _$RazorpayStakeholderBaseRequestBodyCopyWith<$Res>
+    implements $RazorpayStakeholderBaseRequestBodyCopyWith<$Res> {
+  factory _$RazorpayStakeholderBaseRequestBodyCopyWith(
+          _RazorpayStakeholderBaseRequestBody value,
+          $Res Function(_RazorpayStakeholderBaseRequestBody) _then) =
+      __$RazorpayStakeholderBaseRequestBodyCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {Phone phone,
+      Kyc kyc,
+      String name,
+      String email,
+      RelationShip? relationship,
+      int? percentage_ownership,
+      StakeholderAddressContainer? addresses,
+      IMap<dynamic>? notes});
 
   @override
+  $PhoneCopyWith<$Res> get phone;
+  @override
+  $KycCopyWith<$Res> get kyc;
+  @override
+  $RelationShipCopyWith<$Res>? get relationship;
+  @override
+  $StakeholderAddressContainerCopyWith<$Res>? get addresses;
+}
+
+/// @nodoc
+class __$RazorpayStakeholderBaseRequestBodyCopyWithImpl<$Res>
+    implements _$RazorpayStakeholderBaseRequestBodyCopyWith<$Res> {
+  __$RazorpayStakeholderBaseRequestBodyCopyWithImpl(this._self, this._then);
+
+  final _RazorpayStakeholderBaseRequestBody _self;
+  final $Res Function(_RazorpayStakeholderBaseRequestBody) _then;
+
+  /// Create a copy of RazorpayStakeholderBaseRequestBody
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? phone = null,
+    Object? kyc = null,
+    Object? name = null,
+    Object? email = null,
+    Object? relationship = freezed,
+    Object? percentage_ownership = freezed,
+    Object? addresses = freezed,
+    Object? notes = freezed,
+  }) {
+    return _then(_RazorpayStakeholderBaseRequestBody(
+      phone: null == phone
+          ? _self.phone
+          : phone // ignore: cast_nullable_to_non_nullable
+              as Phone,
+      kyc: null == kyc
+          ? _self.kyc
+          : kyc // ignore: cast_nullable_to_non_nullable
+              as Kyc,
+      name: null == name
+          ? _self.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      email: null == email
+          ? _self.email
+          : email // ignore: cast_nullable_to_non_nullable
+              as String,
+      relationship: freezed == relationship
+          ? _self.relationship
+          : relationship // ignore: cast_nullable_to_non_nullable
+              as RelationShip?,
+      percentage_ownership: freezed == percentage_ownership
+          ? _self.percentage_ownership
+          : percentage_ownership // ignore: cast_nullable_to_non_nullable
+              as int?,
+      addresses: freezed == addresses
+          ? _self.addresses
+          : addresses // ignore: cast_nullable_to_non_nullable
+              as StakeholderAddressContainer?,
+      notes: freezed == notes
+          ? _self._notes
+          : notes // ignore: cast_nullable_to_non_nullable
+              as IMap<dynamic>?,
+    ));
+  }
+
+  /// Create a copy of RazorpayStakeholderBaseRequestBody
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $PhoneCopyWith<$Res> get phone {
+    return $PhoneCopyWith<$Res>(_self.phone, (value) {
+      return _then(_self.copyWith(phone: value));
+    });
+  }
+
+  /// Create a copy of RazorpayStakeholderBaseRequestBody
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $KycCopyWith<$Res> get kyc {
+    return $KycCopyWith<$Res>(_self.kyc, (value) {
+      return _then(_self.copyWith(kyc: value));
+    });
+  }
+
+  /// Create a copy of RazorpayStakeholderBaseRequestBody
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $RelationShipCopyWith<$Res>? get relationship {
+    if (_self.relationship == null) {
+      return null;
+    }
+
+    return $RelationShipCopyWith<$Res>(_self.relationship!, (value) {
+      return _then(_self.copyWith(relationship: value));
+    });
+  }
+
+  /// Create a copy of RazorpayStakeholderBaseRequestBody
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $StakeholderAddressContainerCopyWith<$Res>? get addresses {
+    if (_self.addresses == null) {
+      return null;
+    }
+
+    return $StakeholderAddressContainerCopyWith<$Res>(_self.addresses!,
+        (value) {
+      return _then(_self.copyWith(addresses: value));
+    });
+  }
+}
+
+/// @nodoc
+mixin _$RazorpayStakeholderCreateRequestBody {
   Phone get phone;
-  @override
   Kyc get kyc;
-  @override
   String get name;
-  @override
   String get email;
-  @override
   RelationShip? get relationship;
-  @override
   int? get percentage_ownership;
-  @override
   StakeholderAddressContainer? get addresses;
-  @override
   IMap<dynamic>? get notes;
 
   /// Create a copy of RazorpayStakeholderCreateRequestBody
   /// with the given fields replaced by the non-null parameter values.
-  @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$RazorpayStakeholderCreateRequestBodyImplCopyWith<
-          _$RazorpayStakeholderCreateRequestBodyImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  @pragma('vm:prefer-inline')
+  $RazorpayStakeholderCreateRequestBodyCopyWith<
+          RazorpayStakeholderCreateRequestBody>
+      get copyWith => _$RazorpayStakeholderCreateRequestBodyCopyWithImpl<
+              RazorpayStakeholderCreateRequestBody>(
+          this as RazorpayStakeholderCreateRequestBody, _$identity);
+
+  /// Serializes this RazorpayStakeholderCreateRequestBody to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is RazorpayStakeholderCreateRequestBody &&
+            (identical(other.phone, phone) || other.phone == phone) &&
+            (identical(other.kyc, kyc) || other.kyc == kyc) &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.email, email) || other.email == email) &&
+            (identical(other.relationship, relationship) ||
+                other.relationship == relationship) &&
+            (identical(other.percentage_ownership, percentage_ownership) ||
+                other.percentage_ownership == percentage_ownership) &&
+            (identical(other.addresses, addresses) ||
+                other.addresses == addresses) &&
+            const DeepCollectionEquality().equals(other.notes, notes));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      phone,
+      kyc,
+      name,
+      email,
+      relationship,
+      percentage_ownership,
+      addresses,
+      const DeepCollectionEquality().hash(notes));
+
+  @override
+  String toString() {
+    return 'RazorpayStakeholderCreateRequestBody(phone: $phone, kyc: $kyc, name: $name, email: $email, relationship: $relationship, percentage_ownership: $percentage_ownership, addresses: $addresses, notes: $notes)';
+  }
 }
 
-RazorpayStakeholderUpdateRequestBody
-    _$RazorpayStakeholderUpdateRequestBodyFromJson(Map<String, dynamic> json) {
-  return _RazorpayStakeholderUpdateRequestBody.fromJson(json);
+/// @nodoc
+abstract mixin class $RazorpayStakeholderCreateRequestBodyCopyWith<$Res> {
+  factory $RazorpayStakeholderCreateRequestBodyCopyWith(
+          RazorpayStakeholderCreateRequestBody value,
+          $Res Function(RazorpayStakeholderCreateRequestBody) _then) =
+      _$RazorpayStakeholderCreateRequestBodyCopyWithImpl;
+  @useResult
+  $Res call(
+      {Phone phone,
+      Kyc kyc,
+      String name,
+      String email,
+      RelationShip? relationship,
+      int? percentage_ownership,
+      StakeholderAddressContainer? addresses,
+      IMap<dynamic>? notes});
+
+  $PhoneCopyWith<$Res> get phone;
+  $KycCopyWith<$Res> get kyc;
+  $RelationShipCopyWith<$Res>? get relationship;
+  $StakeholderAddressContainerCopyWith<$Res>? get addresses;
+}
+
+/// @nodoc
+class _$RazorpayStakeholderCreateRequestBodyCopyWithImpl<$Res>
+    implements $RazorpayStakeholderCreateRequestBodyCopyWith<$Res> {
+  _$RazorpayStakeholderCreateRequestBodyCopyWithImpl(this._self, this._then);
+
+  final RazorpayStakeholderCreateRequestBody _self;
+  final $Res Function(RazorpayStakeholderCreateRequestBody) _then;
+
+  /// Create a copy of RazorpayStakeholderCreateRequestBody
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? phone = null,
+    Object? kyc = null,
+    Object? name = null,
+    Object? email = null,
+    Object? relationship = freezed,
+    Object? percentage_ownership = freezed,
+    Object? addresses = freezed,
+    Object? notes = freezed,
+  }) {
+    return _then(_self.copyWith(
+      phone: null == phone
+          ? _self.phone
+          : phone // ignore: cast_nullable_to_non_nullable
+              as Phone,
+      kyc: null == kyc
+          ? _self.kyc
+          : kyc // ignore: cast_nullable_to_non_nullable
+              as Kyc,
+      name: null == name
+          ? _self.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      email: null == email
+          ? _self.email
+          : email // ignore: cast_nullable_to_non_nullable
+              as String,
+      relationship: freezed == relationship
+          ? _self.relationship
+          : relationship // ignore: cast_nullable_to_non_nullable
+              as RelationShip?,
+      percentage_ownership: freezed == percentage_ownership
+          ? _self.percentage_ownership
+          : percentage_ownership // ignore: cast_nullable_to_non_nullable
+              as int?,
+      addresses: freezed == addresses
+          ? _self.addresses
+          : addresses // ignore: cast_nullable_to_non_nullable
+              as StakeholderAddressContainer?,
+      notes: freezed == notes
+          ? _self.notes
+          : notes // ignore: cast_nullable_to_non_nullable
+              as IMap<dynamic>?,
+    ));
+  }
+
+  /// Create a copy of RazorpayStakeholderCreateRequestBody
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $PhoneCopyWith<$Res> get phone {
+    return $PhoneCopyWith<$Res>(_self.phone, (value) {
+      return _then(_self.copyWith(phone: value));
+    });
+  }
+
+  /// Create a copy of RazorpayStakeholderCreateRequestBody
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $KycCopyWith<$Res> get kyc {
+    return $KycCopyWith<$Res>(_self.kyc, (value) {
+      return _then(_self.copyWith(kyc: value));
+    });
+  }
+
+  /// Create a copy of RazorpayStakeholderCreateRequestBody
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $RelationShipCopyWith<$Res>? get relationship {
+    if (_self.relationship == null) {
+      return null;
+    }
+
+    return $RelationShipCopyWith<$Res>(_self.relationship!, (value) {
+      return _then(_self.copyWith(relationship: value));
+    });
+  }
+
+  /// Create a copy of RazorpayStakeholderCreateRequestBody
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $StakeholderAddressContainerCopyWith<$Res>? get addresses {
+    if (_self.addresses == null) {
+      return null;
+    }
+
+    return $StakeholderAddressContainerCopyWith<$Res>(_self.addresses!,
+        (value) {
+      return _then(_self.copyWith(addresses: value));
+    });
+  }
+}
+
+/// @nodoc
+
+@JsonSerializable(includeIfNull: false)
+class _RazorpayStakeholderCreateRequestBody
+    implements RazorpayStakeholderCreateRequestBody {
+  const _RazorpayStakeholderCreateRequestBody(
+      {required this.phone,
+      required this.kyc,
+      required this.name,
+      required this.email,
+      this.relationship,
+      this.percentage_ownership,
+      this.addresses,
+      final IMap<dynamic>? notes})
+      : _notes = notes;
+  factory _RazorpayStakeholderCreateRequestBody.fromJson(
+          Map<String, dynamic> json) =>
+      _$RazorpayStakeholderCreateRequestBodyFromJson(json);
+
+  @override
+  final Phone phone;
+  @override
+  final Kyc kyc;
+  @override
+  final String name;
+  @override
+  final String email;
+  @override
+  final RelationShip? relationship;
+  @override
+  final int? percentage_ownership;
+  @override
+  final StakeholderAddressContainer? addresses;
+  final IMap<dynamic>? _notes;
+  @override
+  IMap<dynamic>? get notes {
+    final value = _notes;
+    if (value == null) return null;
+    if (_notes is EqualUnmodifiableMapView) return _notes;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(value);
+  }
+
+  /// Create a copy of RazorpayStakeholderCreateRequestBody
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$RazorpayStakeholderCreateRequestBodyCopyWith<
+          _RazorpayStakeholderCreateRequestBody>
+      get copyWith => __$RazorpayStakeholderCreateRequestBodyCopyWithImpl<
+          _RazorpayStakeholderCreateRequestBody>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$RazorpayStakeholderCreateRequestBodyToJson(
+      this,
+    );
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _RazorpayStakeholderCreateRequestBody &&
+            (identical(other.phone, phone) || other.phone == phone) &&
+            (identical(other.kyc, kyc) || other.kyc == kyc) &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.email, email) || other.email == email) &&
+            (identical(other.relationship, relationship) ||
+                other.relationship == relationship) &&
+            (identical(other.percentage_ownership, percentage_ownership) ||
+                other.percentage_ownership == percentage_ownership) &&
+            (identical(other.addresses, addresses) ||
+                other.addresses == addresses) &&
+            const DeepCollectionEquality().equals(other._notes, _notes));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      phone,
+      kyc,
+      name,
+      email,
+      relationship,
+      percentage_ownership,
+      addresses,
+      const DeepCollectionEquality().hash(_notes));
+
+  @override
+  String toString() {
+    return 'RazorpayStakeholderCreateRequestBody(phone: $phone, kyc: $kyc, name: $name, email: $email, relationship: $relationship, percentage_ownership: $percentage_ownership, addresses: $addresses, notes: $notes)';
+  }
+}
+
+/// @nodoc
+abstract mixin class _$RazorpayStakeholderCreateRequestBodyCopyWith<$Res>
+    implements $RazorpayStakeholderCreateRequestBodyCopyWith<$Res> {
+  factory _$RazorpayStakeholderCreateRequestBodyCopyWith(
+          _RazorpayStakeholderCreateRequestBody value,
+          $Res Function(_RazorpayStakeholderCreateRequestBody) _then) =
+      __$RazorpayStakeholderCreateRequestBodyCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {Phone phone,
+      Kyc kyc,
+      String name,
+      String email,
+      RelationShip? relationship,
+      int? percentage_ownership,
+      StakeholderAddressContainer? addresses,
+      IMap<dynamic>? notes});
+
+  @override
+  $PhoneCopyWith<$Res> get phone;
+  @override
+  $KycCopyWith<$Res> get kyc;
+  @override
+  $RelationShipCopyWith<$Res>? get relationship;
+  @override
+  $StakeholderAddressContainerCopyWith<$Res>? get addresses;
+}
+
+/// @nodoc
+class __$RazorpayStakeholderCreateRequestBodyCopyWithImpl<$Res>
+    implements _$RazorpayStakeholderCreateRequestBodyCopyWith<$Res> {
+  __$RazorpayStakeholderCreateRequestBodyCopyWithImpl(this._self, this._then);
+
+  final _RazorpayStakeholderCreateRequestBody _self;
+  final $Res Function(_RazorpayStakeholderCreateRequestBody) _then;
+
+  /// Create a copy of RazorpayStakeholderCreateRequestBody
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? phone = null,
+    Object? kyc = null,
+    Object? name = null,
+    Object? email = null,
+    Object? relationship = freezed,
+    Object? percentage_ownership = freezed,
+    Object? addresses = freezed,
+    Object? notes = freezed,
+  }) {
+    return _then(_RazorpayStakeholderCreateRequestBody(
+      phone: null == phone
+          ? _self.phone
+          : phone // ignore: cast_nullable_to_non_nullable
+              as Phone,
+      kyc: null == kyc
+          ? _self.kyc
+          : kyc // ignore: cast_nullable_to_non_nullable
+              as Kyc,
+      name: null == name
+          ? _self.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      email: null == email
+          ? _self.email
+          : email // ignore: cast_nullable_to_non_nullable
+              as String,
+      relationship: freezed == relationship
+          ? _self.relationship
+          : relationship // ignore: cast_nullable_to_non_nullable
+              as RelationShip?,
+      percentage_ownership: freezed == percentage_ownership
+          ? _self.percentage_ownership
+          : percentage_ownership // ignore: cast_nullable_to_non_nullable
+              as int?,
+      addresses: freezed == addresses
+          ? _self.addresses
+          : addresses // ignore: cast_nullable_to_non_nullable
+              as StakeholderAddressContainer?,
+      notes: freezed == notes
+          ? _self._notes
+          : notes // ignore: cast_nullable_to_non_nullable
+              as IMap<dynamic>?,
+    ));
+  }
+
+  /// Create a copy of RazorpayStakeholderCreateRequestBody
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $PhoneCopyWith<$Res> get phone {
+    return $PhoneCopyWith<$Res>(_self.phone, (value) {
+      return _then(_self.copyWith(phone: value));
+    });
+  }
+
+  /// Create a copy of RazorpayStakeholderCreateRequestBody
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $KycCopyWith<$Res> get kyc {
+    return $KycCopyWith<$Res>(_self.kyc, (value) {
+      return _then(_self.copyWith(kyc: value));
+    });
+  }
+
+  /// Create a copy of RazorpayStakeholderCreateRequestBody
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $RelationShipCopyWith<$Res>? get relationship {
+    if (_self.relationship == null) {
+      return null;
+    }
+
+    return $RelationShipCopyWith<$Res>(_self.relationship!, (value) {
+      return _then(_self.copyWith(relationship: value));
+    });
+  }
+
+  /// Create a copy of RazorpayStakeholderCreateRequestBody
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $StakeholderAddressContainerCopyWith<$Res>? get addresses {
+    if (_self.addresses == null) {
+      return null;
+    }
+
+    return $StakeholderAddressContainerCopyWith<$Res>(_self.addresses!,
+        (value) {
+      return _then(_self.copyWith(addresses: value));
+    });
+  }
 }
 
 /// @nodoc
 mixin _$RazorpayStakeholderUpdateRequestBody {
-  RelationShip? get relationship => throw _privateConstructorUsedError;
-  Phone? get phone => throw _privateConstructorUsedError;
-  Kyc? get kyc => throw _privateConstructorUsedError;
-  String? get name => throw _privateConstructorUsedError;
-  int? get percentage_ownership => throw _privateConstructorUsedError;
-  StakeholderAddressContainer? get addresses =>
-      throw _privateConstructorUsedError;
-  IMap<dynamic>? get notes => throw _privateConstructorUsedError;
-
-  /// Serializes this RazorpayStakeholderUpdateRequestBody to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  RelationShip? get relationship;
+  Phone? get phone;
+  Kyc? get kyc;
+  String? get name;
+  int? get percentage_ownership;
+  StakeholderAddressContainer? get addresses;
+  IMap<dynamic>? get notes;
 
   /// Create a copy of RazorpayStakeholderUpdateRequestBody
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
   $RazorpayStakeholderUpdateRequestBodyCopyWith<
           RazorpayStakeholderUpdateRequestBody>
-      get copyWith => throw _privateConstructorUsedError;
+      get copyWith => _$RazorpayStakeholderUpdateRequestBodyCopyWithImpl<
+              RazorpayStakeholderUpdateRequestBody>(
+          this as RazorpayStakeholderUpdateRequestBody, _$identity);
+
+  /// Serializes this RazorpayStakeholderUpdateRequestBody to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is RazorpayStakeholderUpdateRequestBody &&
+            (identical(other.relationship, relationship) ||
+                other.relationship == relationship) &&
+            (identical(other.phone, phone) || other.phone == phone) &&
+            (identical(other.kyc, kyc) || other.kyc == kyc) &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.percentage_ownership, percentage_ownership) ||
+                other.percentage_ownership == percentage_ownership) &&
+            (identical(other.addresses, addresses) ||
+                other.addresses == addresses) &&
+            const DeepCollectionEquality().equals(other.notes, notes));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      relationship,
+      phone,
+      kyc,
+      name,
+      percentage_ownership,
+      addresses,
+      const DeepCollectionEquality().hash(notes));
+
+  @override
+  String toString() {
+    return 'RazorpayStakeholderUpdateRequestBody(relationship: $relationship, phone: $phone, kyc: $kyc, name: $name, percentage_ownership: $percentage_ownership, addresses: $addresses, notes: $notes)';
+  }
 }
 
 /// @nodoc
-abstract class $RazorpayStakeholderUpdateRequestBodyCopyWith<$Res> {
+abstract mixin class $RazorpayStakeholderUpdateRequestBodyCopyWith<$Res> {
   factory $RazorpayStakeholderUpdateRequestBodyCopyWith(
           RazorpayStakeholderUpdateRequestBody value,
-          $Res Function(RazorpayStakeholderUpdateRequestBody) then) =
-      _$RazorpayStakeholderUpdateRequestBodyCopyWithImpl<$Res,
-          RazorpayStakeholderUpdateRequestBody>;
+          $Res Function(RazorpayStakeholderUpdateRequestBody) _then) =
+      _$RazorpayStakeholderUpdateRequestBodyCopyWithImpl;
   @useResult
   $Res call(
       {RelationShip? relationship,
@@ -1755,15 +1814,12 @@ abstract class $RazorpayStakeholderUpdateRequestBodyCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$RazorpayStakeholderUpdateRequestBodyCopyWithImpl<$Res,
-        $Val extends RazorpayStakeholderUpdateRequestBody>
+class _$RazorpayStakeholderUpdateRequestBodyCopyWithImpl<$Res>
     implements $RazorpayStakeholderUpdateRequestBodyCopyWith<$Res> {
-  _$RazorpayStakeholderUpdateRequestBodyCopyWithImpl(this._value, this._then);
+  _$RazorpayStakeholderUpdateRequestBodyCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final RazorpayStakeholderUpdateRequestBody _self;
+  final $Res Function(RazorpayStakeholderUpdateRequestBody) _then;
 
   /// Create a copy of RazorpayStakeholderUpdateRequestBody
   /// with the given fields replaced by the non-null parameter values.
@@ -1778,36 +1834,36 @@ class _$RazorpayStakeholderUpdateRequestBodyCopyWithImpl<$Res,
     Object? addresses = freezed,
     Object? notes = freezed,
   }) {
-    return _then(_value.copyWith(
+    return _then(_self.copyWith(
       relationship: freezed == relationship
-          ? _value.relationship
+          ? _self.relationship
           : relationship // ignore: cast_nullable_to_non_nullable
               as RelationShip?,
       phone: freezed == phone
-          ? _value.phone
+          ? _self.phone
           : phone // ignore: cast_nullable_to_non_nullable
               as Phone?,
       kyc: freezed == kyc
-          ? _value.kyc
+          ? _self.kyc
           : kyc // ignore: cast_nullable_to_non_nullable
               as Kyc?,
       name: freezed == name
-          ? _value.name
+          ? _self.name
           : name // ignore: cast_nullable_to_non_nullable
               as String?,
       percentage_ownership: freezed == percentage_ownership
-          ? _value.percentage_ownership
+          ? _self.percentage_ownership
           : percentage_ownership // ignore: cast_nullable_to_non_nullable
               as int?,
       addresses: freezed == addresses
-          ? _value.addresses
+          ? _self.addresses
           : addresses // ignore: cast_nullable_to_non_nullable
               as StakeholderAddressContainer?,
       notes: freezed == notes
-          ? _value.notes
+          ? _self.notes
           : notes // ignore: cast_nullable_to_non_nullable
               as IMap<dynamic>?,
-    ) as $Val);
+    ));
   }
 
   /// Create a copy of RazorpayStakeholderUpdateRequestBody
@@ -1815,12 +1871,12 @@ class _$RazorpayStakeholderUpdateRequestBodyCopyWithImpl<$Res,
   @override
   @pragma('vm:prefer-inline')
   $RelationShipCopyWith<$Res>? get relationship {
-    if (_value.relationship == null) {
+    if (_self.relationship == null) {
       return null;
     }
 
-    return $RelationShipCopyWith<$Res>(_value.relationship!, (value) {
-      return _then(_value.copyWith(relationship: value) as $Val);
+    return $RelationShipCopyWith<$Res>(_self.relationship!, (value) {
+      return _then(_self.copyWith(relationship: value));
     });
   }
 
@@ -1829,12 +1885,12 @@ class _$RazorpayStakeholderUpdateRequestBodyCopyWithImpl<$Res,
   @override
   @pragma('vm:prefer-inline')
   $PhoneCopyWith<$Res>? get phone {
-    if (_value.phone == null) {
+    if (_self.phone == null) {
       return null;
     }
 
-    return $PhoneCopyWith<$Res>(_value.phone!, (value) {
-      return _then(_value.copyWith(phone: value) as $Val);
+    return $PhoneCopyWith<$Res>(_self.phone!, (value) {
+      return _then(_self.copyWith(phone: value));
     });
   }
 
@@ -1843,12 +1899,12 @@ class _$RazorpayStakeholderUpdateRequestBodyCopyWithImpl<$Res,
   @override
   @pragma('vm:prefer-inline')
   $KycCopyWith<$Res>? get kyc {
-    if (_value.kyc == null) {
+    if (_self.kyc == null) {
       return null;
     }
 
-    return $KycCopyWith<$Res>(_value.kyc!, (value) {
-      return _then(_value.copyWith(kyc: value) as $Val);
+    return $KycCopyWith<$Res>(_self.kyc!, (value) {
+      return _then(_self.copyWith(kyc: value));
     });
   }
 
@@ -1857,107 +1913,23 @@ class _$RazorpayStakeholderUpdateRequestBodyCopyWithImpl<$Res,
   @override
   @pragma('vm:prefer-inline')
   $StakeholderAddressContainerCopyWith<$Res>? get addresses {
-    if (_value.addresses == null) {
+    if (_self.addresses == null) {
       return null;
     }
 
-    return $StakeholderAddressContainerCopyWith<$Res>(_value.addresses!,
+    return $StakeholderAddressContainerCopyWith<$Res>(_self.addresses!,
         (value) {
-      return _then(_value.copyWith(addresses: value) as $Val);
+      return _then(_self.copyWith(addresses: value));
     });
-  }
-}
-
-/// @nodoc
-abstract class _$$RazorpayStakeholderUpdateRequestBodyImplCopyWith<$Res>
-    implements $RazorpayStakeholderUpdateRequestBodyCopyWith<$Res> {
-  factory _$$RazorpayStakeholderUpdateRequestBodyImplCopyWith(
-          _$RazorpayStakeholderUpdateRequestBodyImpl value,
-          $Res Function(_$RazorpayStakeholderUpdateRequestBodyImpl) then) =
-      __$$RazorpayStakeholderUpdateRequestBodyImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {RelationShip? relationship,
-      Phone? phone,
-      Kyc? kyc,
-      String? name,
-      int? percentage_ownership,
-      StakeholderAddressContainer? addresses,
-      IMap<dynamic>? notes});
-
-  @override
-  $RelationShipCopyWith<$Res>? get relationship;
-  @override
-  $PhoneCopyWith<$Res>? get phone;
-  @override
-  $KycCopyWith<$Res>? get kyc;
-  @override
-  $StakeholderAddressContainerCopyWith<$Res>? get addresses;
-}
-
-/// @nodoc
-class __$$RazorpayStakeholderUpdateRequestBodyImplCopyWithImpl<$Res>
-    extends _$RazorpayStakeholderUpdateRequestBodyCopyWithImpl<$Res,
-        _$RazorpayStakeholderUpdateRequestBodyImpl>
-    implements _$$RazorpayStakeholderUpdateRequestBodyImplCopyWith<$Res> {
-  __$$RazorpayStakeholderUpdateRequestBodyImplCopyWithImpl(
-      _$RazorpayStakeholderUpdateRequestBodyImpl _value,
-      $Res Function(_$RazorpayStakeholderUpdateRequestBodyImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of RazorpayStakeholderUpdateRequestBody
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? relationship = freezed,
-    Object? phone = freezed,
-    Object? kyc = freezed,
-    Object? name = freezed,
-    Object? percentage_ownership = freezed,
-    Object? addresses = freezed,
-    Object? notes = freezed,
-  }) {
-    return _then(_$RazorpayStakeholderUpdateRequestBodyImpl(
-      relationship: freezed == relationship
-          ? _value.relationship
-          : relationship // ignore: cast_nullable_to_non_nullable
-              as RelationShip?,
-      phone: freezed == phone
-          ? _value.phone
-          : phone // ignore: cast_nullable_to_non_nullable
-              as Phone?,
-      kyc: freezed == kyc
-          ? _value.kyc
-          : kyc // ignore: cast_nullable_to_non_nullable
-              as Kyc?,
-      name: freezed == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String?,
-      percentage_ownership: freezed == percentage_ownership
-          ? _value.percentage_ownership
-          : percentage_ownership // ignore: cast_nullable_to_non_nullable
-              as int?,
-      addresses: freezed == addresses
-          ? _value.addresses
-          : addresses // ignore: cast_nullable_to_non_nullable
-              as StakeholderAddressContainer?,
-      notes: freezed == notes
-          ? _value._notes
-          : notes // ignore: cast_nullable_to_non_nullable
-              as IMap<dynamic>?,
-    ));
   }
 }
 
 /// @nodoc
 
 @JsonSerializable(includeIfNull: false)
-class _$RazorpayStakeholderUpdateRequestBodyImpl
-    implements _RazorpayStakeholderUpdateRequestBody {
-  const _$RazorpayStakeholderUpdateRequestBodyImpl(
+class _RazorpayStakeholderUpdateRequestBody
+    implements RazorpayStakeholderUpdateRequestBody {
+  const _RazorpayStakeholderUpdateRequestBody(
       {this.relationship,
       this.phone,
       this.kyc,
@@ -1966,10 +1938,9 @@ class _$RazorpayStakeholderUpdateRequestBodyImpl
       this.addresses,
       final IMap<dynamic>? notes})
       : _notes = notes;
-
-  factory _$RazorpayStakeholderUpdateRequestBodyImpl.fromJson(
+  factory _RazorpayStakeholderUpdateRequestBody.fromJson(
           Map<String, dynamic> json) =>
-      _$$RazorpayStakeholderUpdateRequestBodyImplFromJson(json);
+      _$RazorpayStakeholderUpdateRequestBodyFromJson(json);
 
   @override
   final RelationShip? relationship;
@@ -1993,16 +1964,28 @@ class _$RazorpayStakeholderUpdateRequestBodyImpl
     return EqualUnmodifiableMapView(value);
   }
 
+  /// Create a copy of RazorpayStakeholderUpdateRequestBody
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'RazorpayStakeholderUpdateRequestBody(relationship: $relationship, phone: $phone, kyc: $kyc, name: $name, percentage_ownership: $percentage_ownership, addresses: $addresses, notes: $notes)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$RazorpayStakeholderUpdateRequestBodyCopyWith<
+          _RazorpayStakeholderUpdateRequestBody>
+      get copyWith => __$RazorpayStakeholderUpdateRequestBodyCopyWithImpl<
+          _RazorpayStakeholderUpdateRequestBody>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$RazorpayStakeholderUpdateRequestBodyToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$RazorpayStakeholderUpdateRequestBodyImpl &&
+            other is _RazorpayStakeholderUpdateRequestBody &&
             (identical(other.relationship, relationship) ||
                 other.relationship == relationship) &&
             (identical(other.phone, phone) || other.phone == phone) &&
@@ -2027,96 +2010,221 @@ class _$RazorpayStakeholderUpdateRequestBodyImpl
       addresses,
       const DeepCollectionEquality().hash(_notes));
 
-  /// Create a copy of RazorpayStakeholderUpdateRequestBody
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$RazorpayStakeholderUpdateRequestBodyImplCopyWith<
-          _$RazorpayStakeholderUpdateRequestBodyImpl>
-      get copyWith => __$$RazorpayStakeholderUpdateRequestBodyImplCopyWithImpl<
-          _$RazorpayStakeholderUpdateRequestBodyImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$RazorpayStakeholderUpdateRequestBodyImplToJson(
-      this,
-    );
+  String toString() {
+    return 'RazorpayStakeholderUpdateRequestBody(relationship: $relationship, phone: $phone, kyc: $kyc, name: $name, percentage_ownership: $percentage_ownership, addresses: $addresses, notes: $notes)';
   }
 }
 
-abstract class _RazorpayStakeholderUpdateRequestBody
-    implements RazorpayStakeholderUpdateRequestBody {
-  const factory _RazorpayStakeholderUpdateRequestBody(
-      {final RelationShip? relationship,
-      final Phone? phone,
-      final Kyc? kyc,
-      final String? name,
-      final int? percentage_ownership,
-      final StakeholderAddressContainer? addresses,
-      final IMap<dynamic>? notes}) = _$RazorpayStakeholderUpdateRequestBodyImpl;
+/// @nodoc
+abstract mixin class _$RazorpayStakeholderUpdateRequestBodyCopyWith<$Res>
+    implements $RazorpayStakeholderUpdateRequestBodyCopyWith<$Res> {
+  factory _$RazorpayStakeholderUpdateRequestBodyCopyWith(
+          _RazorpayStakeholderUpdateRequestBody value,
+          $Res Function(_RazorpayStakeholderUpdateRequestBody) _then) =
+      __$RazorpayStakeholderUpdateRequestBodyCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {RelationShip? relationship,
+      Phone? phone,
+      Kyc? kyc,
+      String? name,
+      int? percentage_ownership,
+      StakeholderAddressContainer? addresses,
+      IMap<dynamic>? notes});
 
-  factory _RazorpayStakeholderUpdateRequestBody.fromJson(
-          Map<String, dynamic> json) =
-      _$RazorpayStakeholderUpdateRequestBodyImpl.fromJson;
+  @override
+  $RelationShipCopyWith<$Res>? get relationship;
+  @override
+  $PhoneCopyWith<$Res>? get phone;
+  @override
+  $KycCopyWith<$Res>? get kyc;
+  @override
+  $StakeholderAddressContainerCopyWith<$Res>? get addresses;
+}
 
-  @override
-  RelationShip? get relationship;
-  @override
-  Phone? get phone;
-  @override
-  Kyc? get kyc;
-  @override
-  String? get name;
-  @override
-  int? get percentage_ownership;
-  @override
-  StakeholderAddressContainer? get addresses;
-  @override
-  IMap<dynamic>? get notes;
+/// @nodoc
+class __$RazorpayStakeholderUpdateRequestBodyCopyWithImpl<$Res>
+    implements _$RazorpayStakeholderUpdateRequestBodyCopyWith<$Res> {
+  __$RazorpayStakeholderUpdateRequestBodyCopyWithImpl(this._self, this._then);
+
+  final _RazorpayStakeholderUpdateRequestBody _self;
+  final $Res Function(_RazorpayStakeholderUpdateRequestBody) _then;
 
   /// Create a copy of RazorpayStakeholderUpdateRequestBody
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$RazorpayStakeholderUpdateRequestBodyImplCopyWith<
-          _$RazorpayStakeholderUpdateRequestBodyImpl>
-      get copyWith => throw _privateConstructorUsedError;
-}
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? relationship = freezed,
+    Object? phone = freezed,
+    Object? kyc = freezed,
+    Object? name = freezed,
+    Object? percentage_ownership = freezed,
+    Object? addresses = freezed,
+    Object? notes = freezed,
+  }) {
+    return _then(_RazorpayStakeholderUpdateRequestBody(
+      relationship: freezed == relationship
+          ? _self.relationship
+          : relationship // ignore: cast_nullable_to_non_nullable
+              as RelationShip?,
+      phone: freezed == phone
+          ? _self.phone
+          : phone // ignore: cast_nullable_to_non_nullable
+              as Phone?,
+      kyc: freezed == kyc
+          ? _self.kyc
+          : kyc // ignore: cast_nullable_to_non_nullable
+              as Kyc?,
+      name: freezed == name
+          ? _self.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String?,
+      percentage_ownership: freezed == percentage_ownership
+          ? _self.percentage_ownership
+          : percentage_ownership // ignore: cast_nullable_to_non_nullable
+              as int?,
+      addresses: freezed == addresses
+          ? _self.addresses
+          : addresses // ignore: cast_nullable_to_non_nullable
+              as StakeholderAddressContainer?,
+      notes: freezed == notes
+          ? _self._notes
+          : notes // ignore: cast_nullable_to_non_nullable
+              as IMap<dynamic>?,
+    ));
+  }
 
-RazorpayStakeholder _$RazorpayStakeholderFromJson(Map<String, dynamic> json) {
-  return _RazorpayStakeholder.fromJson(json);
+  /// Create a copy of RazorpayStakeholderUpdateRequestBody
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $RelationShipCopyWith<$Res>? get relationship {
+    if (_self.relationship == null) {
+      return null;
+    }
+
+    return $RelationShipCopyWith<$Res>(_self.relationship!, (value) {
+      return _then(_self.copyWith(relationship: value));
+    });
+  }
+
+  /// Create a copy of RazorpayStakeholderUpdateRequestBody
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $PhoneCopyWith<$Res>? get phone {
+    if (_self.phone == null) {
+      return null;
+    }
+
+    return $PhoneCopyWith<$Res>(_self.phone!, (value) {
+      return _then(_self.copyWith(phone: value));
+    });
+  }
+
+  /// Create a copy of RazorpayStakeholderUpdateRequestBody
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $KycCopyWith<$Res>? get kyc {
+    if (_self.kyc == null) {
+      return null;
+    }
+
+    return $KycCopyWith<$Res>(_self.kyc!, (value) {
+      return _then(_self.copyWith(kyc: value));
+    });
+  }
+
+  /// Create a copy of RazorpayStakeholderUpdateRequestBody
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $StakeholderAddressContainerCopyWith<$Res>? get addresses {
+    if (_self.addresses == null) {
+      return null;
+    }
+
+    return $StakeholderAddressContainerCopyWith<$Res>(_self.addresses!,
+        (value) {
+      return _then(_self.copyWith(addresses: value));
+    });
+  }
 }
 
 /// @nodoc
 mixin _$RazorpayStakeholder {
-  String get id => throw _privateConstructorUsedError;
-  String get entity => throw _privateConstructorUsedError;
-  Phone get phone => throw _privateConstructorUsedError;
-  Kyc get kyc => throw _privateConstructorUsedError;
-  String get name => throw _privateConstructorUsedError;
-  String get email => throw _privateConstructorUsedError; // Base fields
-  RelationShip? get relationship => throw _privateConstructorUsedError;
-  int? get percentage_ownership => throw _privateConstructorUsedError;
-  StakeholderAddressContainer? get addresses =>
-      throw _privateConstructorUsedError;
-  IMap<dynamic>? get notes => throw _privateConstructorUsedError;
-
-  /// Serializes this RazorpayStakeholder to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  String get id;
+  String get entity;
+  Phone get phone;
+  Kyc get kyc;
+  String get name;
+  String get email; // Base fields
+  RelationShip? get relationship;
+  int? get percentage_ownership;
+  StakeholderAddressContainer? get addresses;
+  IMap<dynamic>? get notes;
 
   /// Create a copy of RazorpayStakeholder
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
   $RazorpayStakeholderCopyWith<RazorpayStakeholder> get copyWith =>
-      throw _privateConstructorUsedError;
+      _$RazorpayStakeholderCopyWithImpl<RazorpayStakeholder>(
+          this as RazorpayStakeholder, _$identity);
+
+  /// Serializes this RazorpayStakeholder to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is RazorpayStakeholder &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.entity, entity) || other.entity == entity) &&
+            (identical(other.phone, phone) || other.phone == phone) &&
+            (identical(other.kyc, kyc) || other.kyc == kyc) &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.email, email) || other.email == email) &&
+            (identical(other.relationship, relationship) ||
+                other.relationship == relationship) &&
+            (identical(other.percentage_ownership, percentage_ownership) ||
+                other.percentage_ownership == percentage_ownership) &&
+            (identical(other.addresses, addresses) ||
+                other.addresses == addresses) &&
+            const DeepCollectionEquality().equals(other.notes, notes));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      entity,
+      phone,
+      kyc,
+      name,
+      email,
+      relationship,
+      percentage_ownership,
+      addresses,
+      const DeepCollectionEquality().hash(notes));
+
+  @override
+  String toString() {
+    return 'RazorpayStakeholder(id: $id, entity: $entity, phone: $phone, kyc: $kyc, name: $name, email: $email, relationship: $relationship, percentage_ownership: $percentage_ownership, addresses: $addresses, notes: $notes)';
+  }
 }
 
 /// @nodoc
-abstract class $RazorpayStakeholderCopyWith<$Res> {
+abstract mixin class $RazorpayStakeholderCopyWith<$Res> {
   factory $RazorpayStakeholderCopyWith(
-          RazorpayStakeholder value, $Res Function(RazorpayStakeholder) then) =
-      _$RazorpayStakeholderCopyWithImpl<$Res, RazorpayStakeholder>;
+          RazorpayStakeholder value, $Res Function(RazorpayStakeholder) _then) =
+      _$RazorpayStakeholderCopyWithImpl;
   @useResult
   $Res call(
       {String id,
@@ -2137,14 +2245,12 @@ abstract class $RazorpayStakeholderCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$RazorpayStakeholderCopyWithImpl<$Res, $Val extends RazorpayStakeholder>
+class _$RazorpayStakeholderCopyWithImpl<$Res>
     implements $RazorpayStakeholderCopyWith<$Res> {
-  _$RazorpayStakeholderCopyWithImpl(this._value, this._then);
+  _$RazorpayStakeholderCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final RazorpayStakeholder _self;
+  final $Res Function(RazorpayStakeholder) _then;
 
   /// Create a copy of RazorpayStakeholder
   /// with the given fields replaced by the non-null parameter values.
@@ -2162,48 +2268,48 @@ class _$RazorpayStakeholderCopyWithImpl<$Res, $Val extends RazorpayStakeholder>
     Object? addresses = freezed,
     Object? notes = freezed,
   }) {
-    return _then(_value.copyWith(
+    return _then(_self.copyWith(
       id: null == id
-          ? _value.id
+          ? _self.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
       entity: null == entity
-          ? _value.entity
+          ? _self.entity
           : entity // ignore: cast_nullable_to_non_nullable
               as String,
       phone: null == phone
-          ? _value.phone
+          ? _self.phone
           : phone // ignore: cast_nullable_to_non_nullable
               as Phone,
       kyc: null == kyc
-          ? _value.kyc
+          ? _self.kyc
           : kyc // ignore: cast_nullable_to_non_nullable
               as Kyc,
       name: null == name
-          ? _value.name
+          ? _self.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
       email: null == email
-          ? _value.email
+          ? _self.email
           : email // ignore: cast_nullable_to_non_nullable
               as String,
       relationship: freezed == relationship
-          ? _value.relationship
+          ? _self.relationship
           : relationship // ignore: cast_nullable_to_non_nullable
               as RelationShip?,
       percentage_ownership: freezed == percentage_ownership
-          ? _value.percentage_ownership
+          ? _self.percentage_ownership
           : percentage_ownership // ignore: cast_nullable_to_non_nullable
               as int?,
       addresses: freezed == addresses
-          ? _value.addresses
+          ? _self.addresses
           : addresses // ignore: cast_nullable_to_non_nullable
               as StakeholderAddressContainer?,
       notes: freezed == notes
-          ? _value.notes
+          ? _self.notes
           : notes // ignore: cast_nullable_to_non_nullable
               as IMap<dynamic>?,
-    ) as $Val);
+    ));
   }
 
   /// Create a copy of RazorpayStakeholder
@@ -2211,8 +2317,8 @@ class _$RazorpayStakeholderCopyWithImpl<$Res, $Val extends RazorpayStakeholder>
   @override
   @pragma('vm:prefer-inline')
   $PhoneCopyWith<$Res> get phone {
-    return $PhoneCopyWith<$Res>(_value.phone, (value) {
-      return _then(_value.copyWith(phone: value) as $Val);
+    return $PhoneCopyWith<$Res>(_self.phone, (value) {
+      return _then(_self.copyWith(phone: value));
     });
   }
 
@@ -2221,8 +2327,8 @@ class _$RazorpayStakeholderCopyWithImpl<$Res, $Val extends RazorpayStakeholder>
   @override
   @pragma('vm:prefer-inline')
   $KycCopyWith<$Res> get kyc {
-    return $KycCopyWith<$Res>(_value.kyc, (value) {
-      return _then(_value.copyWith(kyc: value) as $Val);
+    return $KycCopyWith<$Res>(_self.kyc, (value) {
+      return _then(_self.copyWith(kyc: value));
     });
   }
 
@@ -2231,12 +2337,12 @@ class _$RazorpayStakeholderCopyWithImpl<$Res, $Val extends RazorpayStakeholder>
   @override
   @pragma('vm:prefer-inline')
   $RelationShipCopyWith<$Res>? get relationship {
-    if (_value.relationship == null) {
+    if (_self.relationship == null) {
       return null;
     }
 
-    return $RelationShipCopyWith<$Res>(_value.relationship!, (value) {
-      return _then(_value.copyWith(relationship: value) as $Val);
+    return $RelationShipCopyWith<$Res>(_self.relationship!, (value) {
+      return _then(_self.copyWith(relationship: value));
     });
   }
 
@@ -2245,121 +2351,22 @@ class _$RazorpayStakeholderCopyWithImpl<$Res, $Val extends RazorpayStakeholder>
   @override
   @pragma('vm:prefer-inline')
   $StakeholderAddressContainerCopyWith<$Res>? get addresses {
-    if (_value.addresses == null) {
+    if (_self.addresses == null) {
       return null;
     }
 
-    return $StakeholderAddressContainerCopyWith<$Res>(_value.addresses!,
+    return $StakeholderAddressContainerCopyWith<$Res>(_self.addresses!,
         (value) {
-      return _then(_value.copyWith(addresses: value) as $Val);
+      return _then(_self.copyWith(addresses: value));
     });
-  }
-}
-
-/// @nodoc
-abstract class _$$RazorpayStakeholderImplCopyWith<$Res>
-    implements $RazorpayStakeholderCopyWith<$Res> {
-  factory _$$RazorpayStakeholderImplCopyWith(_$RazorpayStakeholderImpl value,
-          $Res Function(_$RazorpayStakeholderImpl) then) =
-      __$$RazorpayStakeholderImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {String id,
-      String entity,
-      Phone phone,
-      Kyc kyc,
-      String name,
-      String email,
-      RelationShip? relationship,
-      int? percentage_ownership,
-      StakeholderAddressContainer? addresses,
-      IMap<dynamic>? notes});
-
-  @override
-  $PhoneCopyWith<$Res> get phone;
-  @override
-  $KycCopyWith<$Res> get kyc;
-  @override
-  $RelationShipCopyWith<$Res>? get relationship;
-  @override
-  $StakeholderAddressContainerCopyWith<$Res>? get addresses;
-}
-
-/// @nodoc
-class __$$RazorpayStakeholderImplCopyWithImpl<$Res>
-    extends _$RazorpayStakeholderCopyWithImpl<$Res, _$RazorpayStakeholderImpl>
-    implements _$$RazorpayStakeholderImplCopyWith<$Res> {
-  __$$RazorpayStakeholderImplCopyWithImpl(_$RazorpayStakeholderImpl _value,
-      $Res Function(_$RazorpayStakeholderImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of RazorpayStakeholder
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? id = null,
-    Object? entity = null,
-    Object? phone = null,
-    Object? kyc = null,
-    Object? name = null,
-    Object? email = null,
-    Object? relationship = freezed,
-    Object? percentage_ownership = freezed,
-    Object? addresses = freezed,
-    Object? notes = freezed,
-  }) {
-    return _then(_$RazorpayStakeholderImpl(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      entity: null == entity
-          ? _value.entity
-          : entity // ignore: cast_nullable_to_non_nullable
-              as String,
-      phone: null == phone
-          ? _value.phone
-          : phone // ignore: cast_nullable_to_non_nullable
-              as Phone,
-      kyc: null == kyc
-          ? _value.kyc
-          : kyc // ignore: cast_nullable_to_non_nullable
-              as Kyc,
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      email: null == email
-          ? _value.email
-          : email // ignore: cast_nullable_to_non_nullable
-              as String,
-      relationship: freezed == relationship
-          ? _value.relationship
-          : relationship // ignore: cast_nullable_to_non_nullable
-              as RelationShip?,
-      percentage_ownership: freezed == percentage_ownership
-          ? _value.percentage_ownership
-          : percentage_ownership // ignore: cast_nullable_to_non_nullable
-              as int?,
-      addresses: freezed == addresses
-          ? _value.addresses
-          : addresses // ignore: cast_nullable_to_non_nullable
-              as StakeholderAddressContainer?,
-      notes: freezed == notes
-          ? _value._notes
-          : notes // ignore: cast_nullable_to_non_nullable
-              as IMap<dynamic>?,
-    ));
   }
 }
 
 /// @nodoc
 
 @JsonSerializable(includeIfNull: false)
-class _$RazorpayStakeholderImpl implements _RazorpayStakeholder {
-  const _$RazorpayStakeholderImpl(
+class _RazorpayStakeholder implements RazorpayStakeholder {
+  const _RazorpayStakeholder(
       {required this.id,
       required this.entity,
       required this.phone,
@@ -2371,9 +2378,8 @@ class _$RazorpayStakeholderImpl implements _RazorpayStakeholder {
       this.addresses,
       final IMap<dynamic>? notes})
       : _notes = notes;
-
-  factory _$RazorpayStakeholderImpl.fromJson(Map<String, dynamic> json) =>
-      _$$RazorpayStakeholderImplFromJson(json);
+  factory _RazorpayStakeholder.fromJson(Map<String, dynamic> json) =>
+      _$RazorpayStakeholderFromJson(json);
 
   @override
   final String id;
@@ -2404,16 +2410,27 @@ class _$RazorpayStakeholderImpl implements _RazorpayStakeholder {
     return EqualUnmodifiableMapView(value);
   }
 
+  /// Create a copy of RazorpayStakeholder
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'RazorpayStakeholder(id: $id, entity: $entity, phone: $phone, kyc: $kyc, name: $name, email: $email, relationship: $relationship, percentage_ownership: $percentage_ownership, addresses: $addresses, notes: $notes)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$RazorpayStakeholderCopyWith<_RazorpayStakeholder> get copyWith =>
+      __$RazorpayStakeholderCopyWithImpl<_RazorpayStakeholder>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$RazorpayStakeholderToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$RazorpayStakeholderImpl &&
+            other is _RazorpayStakeholder &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.entity, entity) || other.entity == entity) &&
             (identical(other.phone, phone) || other.phone == phone) &&
@@ -2444,201 +2461,182 @@ class _$RazorpayStakeholderImpl implements _RazorpayStakeholder {
       addresses,
       const DeepCollectionEquality().hash(_notes));
 
-  /// Create a copy of RazorpayStakeholder
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$RazorpayStakeholderImplCopyWith<_$RazorpayStakeholderImpl> get copyWith =>
-      __$$RazorpayStakeholderImplCopyWithImpl<_$RazorpayStakeholderImpl>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$RazorpayStakeholderImplToJson(
-      this,
-    );
+  String toString() {
+    return 'RazorpayStakeholder(id: $id, entity: $entity, phone: $phone, kyc: $kyc, name: $name, email: $email, relationship: $relationship, percentage_ownership: $percentage_ownership, addresses: $addresses, notes: $notes)';
   }
 }
 
-abstract class _RazorpayStakeholder implements RazorpayStakeholder {
-  const factory _RazorpayStakeholder(
-      {required final String id,
-      required final String entity,
-      required final Phone phone,
-      required final Kyc kyc,
-      required final String name,
-      required final String email,
-      final RelationShip? relationship,
-      final int? percentage_ownership,
-      final StakeholderAddressContainer? addresses,
-      final IMap<dynamic>? notes}) = _$RazorpayStakeholderImpl;
+/// @nodoc
+abstract mixin class _$RazorpayStakeholderCopyWith<$Res>
+    implements $RazorpayStakeholderCopyWith<$Res> {
+  factory _$RazorpayStakeholderCopyWith(_RazorpayStakeholder value,
+          $Res Function(_RazorpayStakeholder) _then) =
+      __$RazorpayStakeholderCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {String id,
+      String entity,
+      Phone phone,
+      Kyc kyc,
+      String name,
+      String email,
+      RelationShip? relationship,
+      int? percentage_ownership,
+      StakeholderAddressContainer? addresses,
+      IMap<dynamic>? notes});
 
-  factory _RazorpayStakeholder.fromJson(Map<String, dynamic> json) =
-      _$RazorpayStakeholderImpl.fromJson;
+  @override
+  $PhoneCopyWith<$Res> get phone;
+  @override
+  $KycCopyWith<$Res> get kyc;
+  @override
+  $RelationShipCopyWith<$Res>? get relationship;
+  @override
+  $StakeholderAddressContainerCopyWith<$Res>? get addresses;
+}
 
-  @override
-  String get id;
-  @override
-  String get entity;
-  @override
-  Phone get phone;
-  @override
-  Kyc get kyc;
-  @override
-  String get name;
-  @override
-  String get email; // Base fields
-  @override
-  RelationShip? get relationship;
-  @override
-  int? get percentage_ownership;
-  @override
-  StakeholderAddressContainer? get addresses;
-  @override
-  IMap<dynamic>? get notes;
+/// @nodoc
+class __$RazorpayStakeholderCopyWithImpl<$Res>
+    implements _$RazorpayStakeholderCopyWith<$Res> {
+  __$RazorpayStakeholderCopyWithImpl(this._self, this._then);
+
+  final _RazorpayStakeholder _self;
+  final $Res Function(_RazorpayStakeholder) _then;
 
   /// Create a copy of RazorpayStakeholder
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$RazorpayStakeholderImplCopyWith<_$RazorpayStakeholderImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? id = null,
+    Object? entity = null,
+    Object? phone = null,
+    Object? kyc = null,
+    Object? name = null,
+    Object? email = null,
+    Object? relationship = freezed,
+    Object? percentage_ownership = freezed,
+    Object? addresses = freezed,
+    Object? notes = freezed,
+  }) {
+    return _then(_RazorpayStakeholder(
+      id: null == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      entity: null == entity
+          ? _self.entity
+          : entity // ignore: cast_nullable_to_non_nullable
+              as String,
+      phone: null == phone
+          ? _self.phone
+          : phone // ignore: cast_nullable_to_non_nullable
+              as Phone,
+      kyc: null == kyc
+          ? _self.kyc
+          : kyc // ignore: cast_nullable_to_non_nullable
+              as Kyc,
+      name: null == name
+          ? _self.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      email: null == email
+          ? _self.email
+          : email // ignore: cast_nullable_to_non_nullable
+              as String,
+      relationship: freezed == relationship
+          ? _self.relationship
+          : relationship // ignore: cast_nullable_to_non_nullable
+              as RelationShip?,
+      percentage_ownership: freezed == percentage_ownership
+          ? _self.percentage_ownership
+          : percentage_ownership // ignore: cast_nullable_to_non_nullable
+              as int?,
+      addresses: freezed == addresses
+          ? _self.addresses
+          : addresses // ignore: cast_nullable_to_non_nullable
+              as StakeholderAddressContainer?,
+      notes: freezed == notes
+          ? _self._notes
+          : notes // ignore: cast_nullable_to_non_nullable
+              as IMap<dynamic>?,
+    ));
+  }
 
-RazorpayStakeholderDocument _$RazorpayStakeholderDocumentFromJson(
-    Map<String, dynamic> json) {
-  return _RazorpayStakeholderDocument.fromJson(json);
+  /// Create a copy of RazorpayStakeholder
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $PhoneCopyWith<$Res> get phone {
+    return $PhoneCopyWith<$Res>(_self.phone, (value) {
+      return _then(_self.copyWith(phone: value));
+    });
+  }
+
+  /// Create a copy of RazorpayStakeholder
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $KycCopyWith<$Res> get kyc {
+    return $KycCopyWith<$Res>(_self.kyc, (value) {
+      return _then(_self.copyWith(kyc: value));
+    });
+  }
+
+  /// Create a copy of RazorpayStakeholder
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $RelationShipCopyWith<$Res>? get relationship {
+    if (_self.relationship == null) {
+      return null;
+    }
+
+    return $RelationShipCopyWith<$Res>(_self.relationship!, (value) {
+      return _then(_self.copyWith(relationship: value));
+    });
+  }
+
+  /// Create a copy of RazorpayStakeholder
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $StakeholderAddressContainerCopyWith<$Res>? get addresses {
+    if (_self.addresses == null) {
+      return null;
+    }
+
+    return $StakeholderAddressContainerCopyWith<$Res>(_self.addresses!,
+        (value) {
+      return _then(_self.copyWith(addresses: value));
+    });
+  }
 }
 
 /// @nodoc
 mixin _$RazorpayStakeholderDocument {
-  String get type => throw _privateConstructorUsedError;
-  String get url => throw _privateConstructorUsedError;
-
-  /// Serializes this RazorpayStakeholderDocument to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  String get type;
+  String get url;
 
   /// Create a copy of RazorpayStakeholderDocument
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
   $RazorpayStakeholderDocumentCopyWith<RazorpayStakeholderDocument>
-      get copyWith => throw _privateConstructorUsedError;
-}
+      get copyWith => _$RazorpayStakeholderDocumentCopyWithImpl<
+              RazorpayStakeholderDocument>(
+          this as RazorpayStakeholderDocument, _$identity);
 
-/// @nodoc
-abstract class $RazorpayStakeholderDocumentCopyWith<$Res> {
-  factory $RazorpayStakeholderDocumentCopyWith(
-          RazorpayStakeholderDocument value,
-          $Res Function(RazorpayStakeholderDocument) then) =
-      _$RazorpayStakeholderDocumentCopyWithImpl<$Res,
-          RazorpayStakeholderDocument>;
-  @useResult
-  $Res call({String type, String url});
-}
-
-/// @nodoc
-class _$RazorpayStakeholderDocumentCopyWithImpl<$Res,
-        $Val extends RazorpayStakeholderDocument>
-    implements $RazorpayStakeholderDocumentCopyWith<$Res> {
-  _$RazorpayStakeholderDocumentCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of RazorpayStakeholderDocument
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? type = null,
-    Object? url = null,
-  }) {
-    return _then(_value.copyWith(
-      type: null == type
-          ? _value.type
-          : type // ignore: cast_nullable_to_non_nullable
-              as String,
-      url: null == url
-          ? _value.url
-          : url // ignore: cast_nullable_to_non_nullable
-              as String,
-    ) as $Val);
-  }
-}
-
-/// @nodoc
-abstract class _$$RazorpayStakeholderDocumentImplCopyWith<$Res>
-    implements $RazorpayStakeholderDocumentCopyWith<$Res> {
-  factory _$$RazorpayStakeholderDocumentImplCopyWith(
-          _$RazorpayStakeholderDocumentImpl value,
-          $Res Function(_$RazorpayStakeholderDocumentImpl) then) =
-      __$$RazorpayStakeholderDocumentImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({String type, String url});
-}
-
-/// @nodoc
-class __$$RazorpayStakeholderDocumentImplCopyWithImpl<$Res>
-    extends _$RazorpayStakeholderDocumentCopyWithImpl<$Res,
-        _$RazorpayStakeholderDocumentImpl>
-    implements _$$RazorpayStakeholderDocumentImplCopyWith<$Res> {
-  __$$RazorpayStakeholderDocumentImplCopyWithImpl(
-      _$RazorpayStakeholderDocumentImpl _value,
-      $Res Function(_$RazorpayStakeholderDocumentImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of RazorpayStakeholderDocument
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? type = null,
-    Object? url = null,
-  }) {
-    return _then(_$RazorpayStakeholderDocumentImpl(
-      type: null == type
-          ? _value.type
-          : type // ignore: cast_nullable_to_non_nullable
-              as String,
-      url: null == url
-          ? _value.url
-          : url // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
-}
-
-/// @nodoc
-
-@JsonSerializable(includeIfNull: false)
-class _$RazorpayStakeholderDocumentImpl
-    implements _RazorpayStakeholderDocument {
-  const _$RazorpayStakeholderDocumentImpl(
-      {required this.type, required this.url});
-
-  factory _$RazorpayStakeholderDocumentImpl.fromJson(
-          Map<String, dynamic> json) =>
-      _$$RazorpayStakeholderDocumentImplFromJson(json);
-
-  @override
-  final String type;
-  @override
-  final String url;
-
-  @override
-  String toString() {
-    return 'RazorpayStakeholderDocument(type: $type, url: $url)';
-  }
+  /// Serializes this RazorpayStakeholderDocument to a JSON map.
+  Map<String, dynamic> toJson();
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$RazorpayStakeholderDocumentImpl &&
+            other is RazorpayStakeholderDocument &&
             (identical(other.type, type) || other.type == type) &&
             (identical(other.url, url) || other.url == url));
   }
@@ -2647,125 +2645,195 @@ class _$RazorpayStakeholderDocumentImpl
   @override
   int get hashCode => Object.hash(runtimeType, type, url);
 
-  /// Create a copy of RazorpayStakeholderDocument
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$RazorpayStakeholderDocumentImplCopyWith<_$RazorpayStakeholderDocumentImpl>
-      get copyWith => __$$RazorpayStakeholderDocumentImplCopyWithImpl<
-          _$RazorpayStakeholderDocumentImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$RazorpayStakeholderDocumentImplToJson(
-      this,
-    );
+  String toString() {
+    return 'RazorpayStakeholderDocument(type: $type, url: $url)';
   }
 }
 
-abstract class _RazorpayStakeholderDocument
-    implements RazorpayStakeholderDocument {
-  const factory _RazorpayStakeholderDocument(
-      {required final String type,
-      required final String url}) = _$RazorpayStakeholderDocumentImpl;
+/// @nodoc
+abstract mixin class $RazorpayStakeholderDocumentCopyWith<$Res> {
+  factory $RazorpayStakeholderDocumentCopyWith(
+          RazorpayStakeholderDocument value,
+          $Res Function(RazorpayStakeholderDocument) _then) =
+      _$RazorpayStakeholderDocumentCopyWithImpl;
+  @useResult
+  $Res call({String type, String url});
+}
 
-  factory _RazorpayStakeholderDocument.fromJson(Map<String, dynamic> json) =
-      _$RazorpayStakeholderDocumentImpl.fromJson;
+/// @nodoc
+class _$RazorpayStakeholderDocumentCopyWithImpl<$Res>
+    implements $RazorpayStakeholderDocumentCopyWith<$Res> {
+  _$RazorpayStakeholderDocumentCopyWithImpl(this._self, this._then);
+
+  final RazorpayStakeholderDocument _self;
+  final $Res Function(RazorpayStakeholderDocument) _then;
+
+  /// Create a copy of RazorpayStakeholderDocument
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? type = null,
+    Object? url = null,
+  }) {
+    return _then(_self.copyWith(
+      type: null == type
+          ? _self.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as String,
+      url: null == url
+          ? _self.url
+          : url // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+@JsonSerializable(includeIfNull: false)
+class _RazorpayStakeholderDocument implements RazorpayStakeholderDocument {
+  const _RazorpayStakeholderDocument({required this.type, required this.url});
+  factory _RazorpayStakeholderDocument.fromJson(Map<String, dynamic> json) =>
+      _$RazorpayStakeholderDocumentFromJson(json);
 
   @override
-  String get type;
+  final String type;
   @override
-  String get url;
+  final String url;
 
   /// Create a copy of RazorpayStakeholderDocument
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$RazorpayStakeholderDocumentImplCopyWith<_$RazorpayStakeholderDocumentImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  @pragma('vm:prefer-inline')
+  _$RazorpayStakeholderDocumentCopyWith<_RazorpayStakeholderDocument>
+      get copyWith => __$RazorpayStakeholderDocumentCopyWithImpl<
+          _RazorpayStakeholderDocument>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$RazorpayStakeholderDocumentToJson(
+      this,
+    );
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _RazorpayStakeholderDocument &&
+            (identical(other.type, type) || other.type == type) &&
+            (identical(other.url, url) || other.url == url));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, type, url);
+
+  @override
+  String toString() {
+    return 'RazorpayStakeholderDocument(type: $type, url: $url)';
+  }
 }
 
-RazorpayStakeholderDocuments _$RazorpayStakeholderDocumentsFromJson(
-    Map<String, dynamic> json) {
-  return _RazorpayStakeholderDocuments.fromJson(json);
+/// @nodoc
+abstract mixin class _$RazorpayStakeholderDocumentCopyWith<$Res>
+    implements $RazorpayStakeholderDocumentCopyWith<$Res> {
+  factory _$RazorpayStakeholderDocumentCopyWith(
+          _RazorpayStakeholderDocument value,
+          $Res Function(_RazorpayStakeholderDocument) _then) =
+      __$RazorpayStakeholderDocumentCopyWithImpl;
+  @override
+  @useResult
+  $Res call({String type, String url});
+}
+
+/// @nodoc
+class __$RazorpayStakeholderDocumentCopyWithImpl<$Res>
+    implements _$RazorpayStakeholderDocumentCopyWith<$Res> {
+  __$RazorpayStakeholderDocumentCopyWithImpl(this._self, this._then);
+
+  final _RazorpayStakeholderDocument _self;
+  final $Res Function(_RazorpayStakeholderDocument) _then;
+
+  /// Create a copy of RazorpayStakeholderDocument
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? type = null,
+    Object? url = null,
+  }) {
+    return _then(_RazorpayStakeholderDocument(
+      type: null == type
+          ? _self.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as String,
+      url: null == url
+          ? _self.url
+          : url // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
 }
 
 /// @nodoc
 mixin _$RazorpayStakeholderDocuments {
 // Key name needs confirmation from actual API response, d.ts shows tuple `[...]`
-  List<RazorpayStakeholderDocument>? get individual_proof_of_address =>
-      throw _privateConstructorUsedError;
-
-  /// Serializes this RazorpayStakeholderDocuments to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  List<RazorpayStakeholderDocument>? get individual_proof_of_address;
 
   /// Create a copy of RazorpayStakeholderDocuments
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $RazorpayStakeholderDocumentsCopyWith<RazorpayStakeholderDocuments>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $RazorpayStakeholderDocumentsCopyWith<$Res> {
-  factory $RazorpayStakeholderDocumentsCopyWith(
-          RazorpayStakeholderDocuments value,
-          $Res Function(RazorpayStakeholderDocuments) then) =
-      _$RazorpayStakeholderDocumentsCopyWithImpl<$Res,
-          RazorpayStakeholderDocuments>;
-  @useResult
-  $Res call({List<RazorpayStakeholderDocument>? individual_proof_of_address});
-}
-
-/// @nodoc
-class _$RazorpayStakeholderDocumentsCopyWithImpl<$Res,
-        $Val extends RazorpayStakeholderDocuments>
-    implements $RazorpayStakeholderDocumentsCopyWith<$Res> {
-  _$RazorpayStakeholderDocumentsCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of RazorpayStakeholderDocuments
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
+  $RazorpayStakeholderDocumentsCopyWith<RazorpayStakeholderDocuments>
+      get copyWith => _$RazorpayStakeholderDocumentsCopyWithImpl<
+              RazorpayStakeholderDocuments>(
+          this as RazorpayStakeholderDocuments, _$identity);
+
+  /// Serializes this RazorpayStakeholderDocuments to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? individual_proof_of_address = freezed,
-  }) {
-    return _then(_value.copyWith(
-      individual_proof_of_address: freezed == individual_proof_of_address
-          ? _value.individual_proof_of_address
-          : individual_proof_of_address // ignore: cast_nullable_to_non_nullable
-              as List<RazorpayStakeholderDocument>?,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is RazorpayStakeholderDocuments &&
+            const DeepCollectionEquality().equals(
+                other.individual_proof_of_address,
+                individual_proof_of_address));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType,
+      const DeepCollectionEquality().hash(individual_proof_of_address));
+
+  @override
+  String toString() {
+    return 'RazorpayStakeholderDocuments(individual_proof_of_address: $individual_proof_of_address)';
   }
 }
 
 /// @nodoc
-abstract class _$$RazorpayStakeholderDocumentsImplCopyWith<$Res>
-    implements $RazorpayStakeholderDocumentsCopyWith<$Res> {
-  factory _$$RazorpayStakeholderDocumentsImplCopyWith(
-          _$RazorpayStakeholderDocumentsImpl value,
-          $Res Function(_$RazorpayStakeholderDocumentsImpl) then) =
-      __$$RazorpayStakeholderDocumentsImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $RazorpayStakeholderDocumentsCopyWith<$Res> {
+  factory $RazorpayStakeholderDocumentsCopyWith(
+          RazorpayStakeholderDocuments value,
+          $Res Function(RazorpayStakeholderDocuments) _then) =
+      _$RazorpayStakeholderDocumentsCopyWithImpl;
   @useResult
   $Res call({List<RazorpayStakeholderDocument>? individual_proof_of_address});
 }
 
 /// @nodoc
-class __$$RazorpayStakeholderDocumentsImplCopyWithImpl<$Res>
-    extends _$RazorpayStakeholderDocumentsCopyWithImpl<$Res,
-        _$RazorpayStakeholderDocumentsImpl>
-    implements _$$RazorpayStakeholderDocumentsImplCopyWith<$Res> {
-  __$$RazorpayStakeholderDocumentsImplCopyWithImpl(
-      _$RazorpayStakeholderDocumentsImpl _value,
-      $Res Function(_$RazorpayStakeholderDocumentsImpl) _then)
-      : super(_value, _then);
+class _$RazorpayStakeholderDocumentsCopyWithImpl<$Res>
+    implements $RazorpayStakeholderDocumentsCopyWith<$Res> {
+  _$RazorpayStakeholderDocumentsCopyWithImpl(this._self, this._then);
+
+  final RazorpayStakeholderDocuments _self;
+  final $Res Function(RazorpayStakeholderDocuments) _then;
 
   /// Create a copy of RazorpayStakeholderDocuments
   /// with the given fields replaced by the non-null parameter values.
@@ -2774,9 +2842,9 @@ class __$$RazorpayStakeholderDocumentsImplCopyWithImpl<$Res>
   $Res call({
     Object? individual_proof_of_address = freezed,
   }) {
-    return _then(_$RazorpayStakeholderDocumentsImpl(
+    return _then(_self.copyWith(
       individual_proof_of_address: freezed == individual_proof_of_address
-          ? _value._individual_proof_of_address
+          ? _self.individual_proof_of_address
           : individual_proof_of_address // ignore: cast_nullable_to_non_nullable
               as List<RazorpayStakeholderDocument>?,
     ));
@@ -2786,15 +2854,12 @@ class __$$RazorpayStakeholderDocumentsImplCopyWithImpl<$Res>
 /// @nodoc
 
 @JsonSerializable(includeIfNull: false)
-class _$RazorpayStakeholderDocumentsImpl
-    implements _RazorpayStakeholderDocuments {
-  const _$RazorpayStakeholderDocumentsImpl(
+class _RazorpayStakeholderDocuments implements RazorpayStakeholderDocuments {
+  const _RazorpayStakeholderDocuments(
       {final List<RazorpayStakeholderDocument>? individual_proof_of_address})
       : _individual_proof_of_address = individual_proof_of_address;
-
-  factory _$RazorpayStakeholderDocumentsImpl.fromJson(
-          Map<String, dynamic> json) =>
-      _$$RazorpayStakeholderDocumentsImplFromJson(json);
+  factory _RazorpayStakeholderDocuments.fromJson(Map<String, dynamic> json) =>
+      _$RazorpayStakeholderDocumentsFromJson(json);
 
 // Key name needs confirmation from actual API response, d.ts shows tuple `[...]`
   final List<RazorpayStakeholderDocument>? _individual_proof_of_address;
@@ -2809,16 +2874,27 @@ class _$RazorpayStakeholderDocumentsImpl
     return EqualUnmodifiableListView(value);
   }
 
+  /// Create a copy of RazorpayStakeholderDocuments
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'RazorpayStakeholderDocuments(individual_proof_of_address: $individual_proof_of_address)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$RazorpayStakeholderDocumentsCopyWith<_RazorpayStakeholderDocuments>
+      get copyWith => __$RazorpayStakeholderDocumentsCopyWithImpl<
+          _RazorpayStakeholderDocuments>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$RazorpayStakeholderDocumentsToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$RazorpayStakeholderDocumentsImpl &&
+            other is _RazorpayStakeholderDocuments &&
             const DeepCollectionEquality().equals(
                 other._individual_proof_of_address,
                 _individual_proof_of_address));
@@ -2829,133 +2905,104 @@ class _$RazorpayStakeholderDocumentsImpl
   int get hashCode => Object.hash(runtimeType,
       const DeepCollectionEquality().hash(_individual_proof_of_address));
 
-  /// Create a copy of RazorpayStakeholderDocuments
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$RazorpayStakeholderDocumentsImplCopyWith<
-          _$RazorpayStakeholderDocumentsImpl>
-      get copyWith => __$$RazorpayStakeholderDocumentsImplCopyWithImpl<
-          _$RazorpayStakeholderDocumentsImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$RazorpayStakeholderDocumentsImplToJson(
-      this,
-    );
+  String toString() {
+    return 'RazorpayStakeholderDocuments(individual_proof_of_address: $individual_proof_of_address)';
   }
 }
 
-abstract class _RazorpayStakeholderDocuments
-    implements RazorpayStakeholderDocuments {
-  const factory _RazorpayStakeholderDocuments(
-      {final List<RazorpayStakeholderDocument>?
-          individual_proof_of_address}) = _$RazorpayStakeholderDocumentsImpl;
-
-  factory _RazorpayStakeholderDocuments.fromJson(Map<String, dynamic> json) =
-      _$RazorpayStakeholderDocumentsImpl.fromJson;
-
-// Key name needs confirmation from actual API response, d.ts shows tuple `[...]`
+/// @nodoc
+abstract mixin class _$RazorpayStakeholderDocumentsCopyWith<$Res>
+    implements $RazorpayStakeholderDocumentsCopyWith<$Res> {
+  factory _$RazorpayStakeholderDocumentsCopyWith(
+          _RazorpayStakeholderDocuments value,
+          $Res Function(_RazorpayStakeholderDocuments) _then) =
+      __$RazorpayStakeholderDocumentsCopyWithImpl;
   @override
-  List<RazorpayStakeholderDocument>? get individual_proof_of_address;
+  @useResult
+  $Res call({List<RazorpayStakeholderDocument>? individual_proof_of_address});
+}
+
+/// @nodoc
+class __$RazorpayStakeholderDocumentsCopyWithImpl<$Res>
+    implements _$RazorpayStakeholderDocumentsCopyWith<$Res> {
+  __$RazorpayStakeholderDocumentsCopyWithImpl(this._self, this._then);
+
+  final _RazorpayStakeholderDocuments _self;
+  final $Res Function(_RazorpayStakeholderDocuments) _then;
 
   /// Create a copy of RazorpayStakeholderDocuments
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$RazorpayStakeholderDocumentsImplCopyWith<
-          _$RazorpayStakeholderDocumentsImpl>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-RazorpayStakeholderListResponse _$RazorpayStakeholderListResponseFromJson(
-    Map<String, dynamic> json) {
-  return _RazorpayStakeholderListResponse.fromJson(json);
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? individual_proof_of_address = freezed,
+  }) {
+    return _then(_RazorpayStakeholderDocuments(
+      individual_proof_of_address: freezed == individual_proof_of_address
+          ? _self._individual_proof_of_address
+          : individual_proof_of_address // ignore: cast_nullable_to_non_nullable
+              as List<RazorpayStakeholderDocument>?,
+    ));
+  }
 }
 
 /// @nodoc
 mixin _$RazorpayStakeholderListResponse {
-  String get entity =>
-      throw _privateConstructorUsedError; // Likely 'collection'
+  String get entity; // Likely 'collection'
 // Count is missing in JS implementation return, but present in similar APIs. Add if needed.
 // required int count,
-  List<RazorpayStakeholder> get items => throw _privateConstructorUsedError;
-
-  /// Serializes this RazorpayStakeholderListResponse to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  List<RazorpayStakeholder> get items;
 
   /// Create a copy of RazorpayStakeholderListResponse
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $RazorpayStakeholderListResponseCopyWith<RazorpayStakeholderListResponse>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $RazorpayStakeholderListResponseCopyWith<$Res> {
-  factory $RazorpayStakeholderListResponseCopyWith(
-          RazorpayStakeholderListResponse value,
-          $Res Function(RazorpayStakeholderListResponse) then) =
-      _$RazorpayStakeholderListResponseCopyWithImpl<$Res,
-          RazorpayStakeholderListResponse>;
-  @useResult
-  $Res call({String entity, List<RazorpayStakeholder> items});
-}
-
-/// @nodoc
-class _$RazorpayStakeholderListResponseCopyWithImpl<$Res,
-        $Val extends RazorpayStakeholderListResponse>
-    implements $RazorpayStakeholderListResponseCopyWith<$Res> {
-  _$RazorpayStakeholderListResponseCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of RazorpayStakeholderListResponse
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
+  $RazorpayStakeholderListResponseCopyWith<RazorpayStakeholderListResponse>
+      get copyWith => _$RazorpayStakeholderListResponseCopyWithImpl<
+              RazorpayStakeholderListResponse>(
+          this as RazorpayStakeholderListResponse, _$identity);
+
+  /// Serializes this RazorpayStakeholderListResponse to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? entity = null,
-    Object? items = null,
-  }) {
-    return _then(_value.copyWith(
-      entity: null == entity
-          ? _value.entity
-          : entity // ignore: cast_nullable_to_non_nullable
-              as String,
-      items: null == items
-          ? _value.items
-          : items // ignore: cast_nullable_to_non_nullable
-              as List<RazorpayStakeholder>,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is RazorpayStakeholderListResponse &&
+            (identical(other.entity, entity) || other.entity == entity) &&
+            const DeepCollectionEquality().equals(other.items, items));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, entity, const DeepCollectionEquality().hash(items));
+
+  @override
+  String toString() {
+    return 'RazorpayStakeholderListResponse(entity: $entity, items: $items)';
   }
 }
 
 /// @nodoc
-abstract class _$$RazorpayStakeholderListResponseImplCopyWith<$Res>
-    implements $RazorpayStakeholderListResponseCopyWith<$Res> {
-  factory _$$RazorpayStakeholderListResponseImplCopyWith(
-          _$RazorpayStakeholderListResponseImpl value,
-          $Res Function(_$RazorpayStakeholderListResponseImpl) then) =
-      __$$RazorpayStakeholderListResponseImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $RazorpayStakeholderListResponseCopyWith<$Res> {
+  factory $RazorpayStakeholderListResponseCopyWith(
+          RazorpayStakeholderListResponse value,
+          $Res Function(RazorpayStakeholderListResponse) _then) =
+      _$RazorpayStakeholderListResponseCopyWithImpl;
   @useResult
   $Res call({String entity, List<RazorpayStakeholder> items});
 }
 
 /// @nodoc
-class __$$RazorpayStakeholderListResponseImplCopyWithImpl<$Res>
-    extends _$RazorpayStakeholderListResponseCopyWithImpl<$Res,
-        _$RazorpayStakeholderListResponseImpl>
-    implements _$$RazorpayStakeholderListResponseImplCopyWith<$Res> {
-  __$$RazorpayStakeholderListResponseImplCopyWithImpl(
-      _$RazorpayStakeholderListResponseImpl _value,
-      $Res Function(_$RazorpayStakeholderListResponseImpl) _then)
-      : super(_value, _then);
+class _$RazorpayStakeholderListResponseCopyWithImpl<$Res>
+    implements $RazorpayStakeholderListResponseCopyWith<$Res> {
+  _$RazorpayStakeholderListResponseCopyWithImpl(this._self, this._then);
+
+  final RazorpayStakeholderListResponse _self;
+  final $Res Function(RazorpayStakeholderListResponse) _then;
 
   /// Create a copy of RazorpayStakeholderListResponse
   /// with the given fields replaced by the non-null parameter values.
@@ -2965,13 +3012,13 @@ class __$$RazorpayStakeholderListResponseImplCopyWithImpl<$Res>
     Object? entity = null,
     Object? items = null,
   }) {
-    return _then(_$RazorpayStakeholderListResponseImpl(
+    return _then(_self.copyWith(
       entity: null == entity
-          ? _value.entity
+          ? _self.entity
           : entity // ignore: cast_nullable_to_non_nullable
               as String,
       items: null == items
-          ? _value._items
+          ? _self.items
           : items // ignore: cast_nullable_to_non_nullable
               as List<RazorpayStakeholder>,
     ));
@@ -2981,15 +3028,14 @@ class __$$RazorpayStakeholderListResponseImplCopyWithImpl<$Res>
 /// @nodoc
 
 @JsonSerializable(includeIfNull: false)
-class _$RazorpayStakeholderListResponseImpl
-    implements _RazorpayStakeholderListResponse {
-  const _$RazorpayStakeholderListResponseImpl(
+class _RazorpayStakeholderListResponse
+    implements RazorpayStakeholderListResponse {
+  const _RazorpayStakeholderListResponse(
       {required this.entity, required final List<RazorpayStakeholder> items})
       : _items = items;
-
-  factory _$RazorpayStakeholderListResponseImpl.fromJson(
+  factory _RazorpayStakeholderListResponse.fromJson(
           Map<String, dynamic> json) =>
-      _$$RazorpayStakeholderListResponseImplFromJson(json);
+      _$RazorpayStakeholderListResponseFromJson(json);
 
   @override
   final String entity;
@@ -3007,16 +3053,27 @@ class _$RazorpayStakeholderListResponseImpl
     return EqualUnmodifiableListView(_items);
   }
 
+  /// Create a copy of RazorpayStakeholderListResponse
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'RazorpayStakeholderListResponse(entity: $entity, items: $items)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$RazorpayStakeholderListResponseCopyWith<_RazorpayStakeholderListResponse>
+      get copyWith => __$RazorpayStakeholderListResponseCopyWithImpl<
+          _RazorpayStakeholderListResponse>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$RazorpayStakeholderListResponseToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$RazorpayStakeholderListResponseImpl &&
+            other is _RazorpayStakeholderListResponse &&
             (identical(other.entity, entity) || other.entity == entity) &&
             const DeepCollectionEquality().equals(other._items, _items));
   }
@@ -3026,46 +3083,51 @@ class _$RazorpayStakeholderListResponseImpl
   int get hashCode => Object.hash(
       runtimeType, entity, const DeepCollectionEquality().hash(_items));
 
-  /// Create a copy of RazorpayStakeholderListResponse
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$RazorpayStakeholderListResponseImplCopyWith<
-          _$RazorpayStakeholderListResponseImpl>
-      get copyWith => __$$RazorpayStakeholderListResponseImplCopyWithImpl<
-          _$RazorpayStakeholderListResponseImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$RazorpayStakeholderListResponseImplToJson(
-      this,
-    );
+  String toString() {
+    return 'RazorpayStakeholderListResponse(entity: $entity, items: $items)';
   }
 }
 
-abstract class _RazorpayStakeholderListResponse
-    implements RazorpayStakeholderListResponse {
-  const factory _RazorpayStakeholderListResponse(
-          {required final String entity,
-          required final List<RazorpayStakeholder> items}) =
-      _$RazorpayStakeholderListResponseImpl;
-
-  factory _RazorpayStakeholderListResponse.fromJson(Map<String, dynamic> json) =
-      _$RazorpayStakeholderListResponseImpl.fromJson;
-
+/// @nodoc
+abstract mixin class _$RazorpayStakeholderListResponseCopyWith<$Res>
+    implements $RazorpayStakeholderListResponseCopyWith<$Res> {
+  factory _$RazorpayStakeholderListResponseCopyWith(
+          _RazorpayStakeholderListResponse value,
+          $Res Function(_RazorpayStakeholderListResponse) _then) =
+      __$RazorpayStakeholderListResponseCopyWithImpl;
   @override
-  String get entity; // Likely 'collection'
-// Count is missing in JS implementation return, but present in similar APIs. Add if needed.
-// required int count,
-  @override
-  List<RazorpayStakeholder> get items;
+  @useResult
+  $Res call({String entity, List<RazorpayStakeholder> items});
+}
+
+/// @nodoc
+class __$RazorpayStakeholderListResponseCopyWithImpl<$Res>
+    implements _$RazorpayStakeholderListResponseCopyWith<$Res> {
+  __$RazorpayStakeholderListResponseCopyWithImpl(this._self, this._then);
+
+  final _RazorpayStakeholderListResponse _self;
+  final $Res Function(_RazorpayStakeholderListResponse) _then;
 
   /// Create a copy of RazorpayStakeholderListResponse
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$RazorpayStakeholderListResponseImplCopyWith<
-          _$RazorpayStakeholderListResponseImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? entity = null,
+    Object? items = null,
+  }) {
+    return _then(_RazorpayStakeholderListResponse(
+      entity: null == entity
+          ? _self.entity
+          : entity // ignore: cast_nullable_to_non_nullable
+              as String,
+      items: null == items
+          ? _self._items
+          : items // ignore: cast_nullable_to_non_nullable
+              as List<RazorpayStakeholder>,
+    ));
+  }
 }
+
+// dart format on

@@ -6,73 +6,70 @@ part of 'customers_model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$RazorpayCustomerBaseRequestBodyImpl
-    _$$RazorpayCustomerBaseRequestBodyImplFromJson(Map<String, dynamic> json) =>
-        _$RazorpayCustomerBaseRequestBodyImpl(
-          name: json['name'] as String?,
-          email: json['email'] as String?,
-          contact: json['contact'],
-          fail_existing: _intToBool(json['fail_existing']),
-          gstin: json['gstin'] as String?,
-          notes: json['notes'] as Map<String, dynamic>?,
-        );
-
-Map<String, dynamic> _$$RazorpayCustomerBaseRequestBodyImplToJson(
-        _$RazorpayCustomerBaseRequestBodyImpl instance) =>
-    <String, dynamic>{
-      if (instance.name case final value?) 'name': value,
-      if (instance.email case final value?) 'email': value,
-      if (instance.contact case final value?) 'contact': value,
-      if (_boolToInt(instance.fail_existing) case final value?)
-        'fail_existing': value,
-      if (instance.gstin case final value?) 'gstin': value,
-      if (instance.notes case final value?) 'notes': value,
-    };
-
-_$RazorpayCustomerCreateRequestBodyImpl
-    _$$RazorpayCustomerCreateRequestBodyImplFromJson(
-            Map<String, dynamic> json) =>
-        _$RazorpayCustomerCreateRequestBodyImpl(
-          name: json['name'] as String?,
-          email: json['email'] as String?,
-          contact: json['contact'],
-          fail_existing: _intToBool(json['fail_existing']),
-          gstin: json['gstin'] as String?,
-          notes: json['notes'] as Map<String, dynamic>?,
-        );
-
-Map<String, dynamic> _$$RazorpayCustomerCreateRequestBodyImplToJson(
-        _$RazorpayCustomerCreateRequestBodyImpl instance) =>
-    <String, dynamic>{
-      if (instance.name case final value?) 'name': value,
-      if (instance.email case final value?) 'email': value,
-      if (instance.contact case final value?) 'contact': value,
-      if (_boolToInt(instance.fail_existing) case final value?)
-        'fail_existing': value,
-      if (instance.gstin case final value?) 'gstin': value,
-      if (instance.notes case final value?) 'notes': value,
-    };
-
-_$RazorpayCustomerUpdateRequestBodyImpl
-    _$$RazorpayCustomerUpdateRequestBodyImplFromJson(
-            Map<String, dynamic> json) =>
-        _$RazorpayCustomerUpdateRequestBodyImpl(
-          name: json['name'] as String?,
-          email: json['email'] as String?,
-          contact: json['contact'],
-        );
-
-Map<String, dynamic> _$$RazorpayCustomerUpdateRequestBodyImplToJson(
-        _$RazorpayCustomerUpdateRequestBodyImpl instance) =>
-    <String, dynamic>{
-      if (instance.name case final value?) 'name': value,
-      if (instance.email case final value?) 'email': value,
-      if (instance.contact case final value?) 'contact': value,
-    };
-
-_$RazorpayCustomerImpl _$$RazorpayCustomerImplFromJson(
+_RazorpayCustomerBaseRequestBody _$RazorpayCustomerBaseRequestBodyFromJson(
         Map<String, dynamic> json) =>
-    _$RazorpayCustomerImpl(
+    _RazorpayCustomerBaseRequestBody(
+      name: json['name'] as String?,
+      email: json['email'] as String?,
+      contact: json['contact'],
+      fail_existing: _intToBool(json['fail_existing']),
+      gstin: json['gstin'] as String?,
+      notes: json['notes'] as Map<String, dynamic>?,
+    );
+
+Map<String, dynamic> _$RazorpayCustomerBaseRequestBodyToJson(
+        _RazorpayCustomerBaseRequestBody instance) =>
+    <String, dynamic>{
+      if (instance.name case final value?) 'name': value,
+      if (instance.email case final value?) 'email': value,
+      if (instance.contact case final value?) 'contact': value,
+      if (_boolToInt(instance.fail_existing) case final value?)
+        'fail_existing': value,
+      if (instance.gstin case final value?) 'gstin': value,
+      if (instance.notes case final value?) 'notes': value,
+    };
+
+_RazorpayCustomerCreateRequestBody _$RazorpayCustomerCreateRequestBodyFromJson(
+        Map<String, dynamic> json) =>
+    _RazorpayCustomerCreateRequestBody(
+      name: json['name'] as String?,
+      email: json['email'] as String?,
+      contact: json['contact'],
+      fail_existing: _intToBool(json['fail_existing']),
+      gstin: json['gstin'] as String?,
+      notes: json['notes'] as Map<String, dynamic>?,
+    );
+
+Map<String, dynamic> _$RazorpayCustomerCreateRequestBodyToJson(
+        _RazorpayCustomerCreateRequestBody instance) =>
+    <String, dynamic>{
+      if (instance.name case final value?) 'name': value,
+      if (instance.email case final value?) 'email': value,
+      if (instance.contact case final value?) 'contact': value,
+      if (_boolToInt(instance.fail_existing) case final value?)
+        'fail_existing': value,
+      if (instance.gstin case final value?) 'gstin': value,
+      if (instance.notes case final value?) 'notes': value,
+    };
+
+_RazorpayCustomerUpdateRequestBody _$RazorpayCustomerUpdateRequestBodyFromJson(
+        Map<String, dynamic> json) =>
+    _RazorpayCustomerUpdateRequestBody(
+      name: json['name'] as String?,
+      email: json['email'] as String?,
+      contact: json['contact'],
+    );
+
+Map<String, dynamic> _$RazorpayCustomerUpdateRequestBodyToJson(
+        _RazorpayCustomerUpdateRequestBody instance) =>
+    <String, dynamic>{
+      if (instance.name case final value?) 'name': value,
+      if (instance.email case final value?) 'email': value,
+      if (instance.contact case final value?) 'contact': value,
+    };
+
+_RazorpayCustomer _$RazorpayCustomerFromJson(Map<String, dynamic> json) =>
+    _RazorpayCustomer(
       id: json['id'] as String,
       entity: json['entity'] as String,
       created_at: (json['created_at'] as num).toInt(),
@@ -88,8 +85,7 @@ _$RazorpayCustomerImpl _$$RazorpayCustomerImplFromJson(
       fail_existing: _intToBool(json['fail_existing']),
     );
 
-Map<String, dynamic> _$$RazorpayCustomerImplToJson(
-        _$RazorpayCustomerImpl instance) =>
+Map<String, dynamic> _$RazorpayCustomerToJson(_RazorpayCustomer instance) =>
     <String, dynamic>{
       'id': instance.id,
       'entity': instance.entity,
@@ -105,10 +101,10 @@ Map<String, dynamic> _$$RazorpayCustomerImplToJson(
         'fail_existing': value,
     };
 
-_$RazorpayCustomerBankAccountRequestBodyImpl
-    _$$RazorpayCustomerBankAccountRequestBodyImplFromJson(
+_RazorpayCustomerBankAccountRequestBody
+    _$RazorpayCustomerBankAccountRequestBodyFromJson(
             Map<String, dynamic> json) =>
-        _$RazorpayCustomerBankAccountRequestBodyImpl(
+        _RazorpayCustomerBankAccountRequestBody(
           ifsc_code: json['ifsc_code'] as String,
           account_number: json['account_number'] as String,
           beneficiary_name: json['beneficiary_name'] as String?,
@@ -124,8 +120,8 @@ _$RazorpayCustomerBankAccountRequestBodyImpl
           beneficiary_pin: json['beneficiary_pin'] as String?,
         );
 
-Map<String, dynamic> _$$RazorpayCustomerBankAccountRequestBodyImplToJson(
-        _$RazorpayCustomerBankAccountRequestBodyImpl instance) =>
+Map<String, dynamic> _$RazorpayCustomerBankAccountRequestBodyToJson(
+        _RazorpayCustomerBankAccountRequestBody instance) =>
     <String, dynamic>{
       'ifsc_code': instance.ifsc_code,
       'account_number': instance.account_number,
@@ -152,9 +148,9 @@ Map<String, dynamic> _$$RazorpayCustomerBankAccountRequestBodyImplToJson(
       if (instance.beneficiary_pin case final value?) 'beneficiary_pin': value,
     };
 
-_$RazorpayCustomerBankAccountImpl _$$RazorpayCustomerBankAccountImplFromJson(
+_RazorpayCustomerBankAccount _$RazorpayCustomerBankAccountFromJson(
         Map<String, dynamic> json) =>
-    _$RazorpayCustomerBankAccountImpl(
+    _RazorpayCustomerBankAccount(
       id: json['id'] as String?,
       entity: json['entity'] as String?,
       ifsc: json['ifsc'] as String?,
@@ -172,8 +168,8 @@ _$RazorpayCustomerBankAccountImpl _$$RazorpayCustomerBankAccountImplFromJson(
       updated_at: (json['updated_at'] as num?)?.toInt(),
     );
 
-Map<String, dynamic> _$$RazorpayCustomerBankAccountImplToJson(
-        _$RazorpayCustomerBankAccountImpl instance) =>
+Map<String, dynamic> _$RazorpayCustomerBankAccountToJson(
+        _RazorpayCustomerBankAccount instance) =>
     <String, dynamic>{
       if (instance.id case final value?) 'id': value,
       if (instance.entity case final value?) 'entity': value,
@@ -192,9 +188,9 @@ Map<String, dynamic> _$$RazorpayCustomerBankAccountImplToJson(
       if (instance.updated_at case final value?) 'updated_at': value,
     };
 
-_$CustomersEligibilityImpl _$$CustomersEligibilityImplFromJson(
+_CustomersEligibility _$CustomersEligibilityFromJson(
         Map<String, dynamic> json) =>
-    _$CustomersEligibilityImpl(
+    _CustomersEligibility(
       id: json['id'] as String,
       contact: json['contact'] as String,
       ip: json['ip'] as String,
@@ -202,8 +198,8 @@ _$CustomersEligibilityImpl _$$CustomersEligibilityImplFromJson(
       user_agent: json['user_agent'] as String,
     );
 
-Map<String, dynamic> _$$CustomersEligibilityImplToJson(
-        _$CustomersEligibilityImpl instance) =>
+Map<String, dynamic> _$CustomersEligibilityToJson(
+        _CustomersEligibility instance) =>
     <String, dynamic>{
       'id': instance.id,
       'contact': instance.contact,
@@ -212,27 +208,27 @@ Map<String, dynamic> _$$CustomersEligibilityImplToJson(
       'user_agent': instance.user_agent,
     };
 
-_$RazorpayCustomerEligibilityRequestBodyImpl
-    _$$RazorpayCustomerEligibilityRequestBodyImplFromJson(
+_RazorpayCustomerEligibilityRequestBody
+    _$RazorpayCustomerEligibilityRequestBodyFromJson(
             Map<String, dynamic> json) =>
-        _$RazorpayCustomerEligibilityRequestBodyImpl(
+        _RazorpayCustomerEligibilityRequestBody(
           amount: json['amount'],
           customer: CustomersEligibilityInput.fromJson(
               json['customer'] as Map<String, dynamic>),
           inquiry: json['inquiry'] as String?,
         );
 
-Map<String, dynamic> _$$RazorpayCustomerEligibilityRequestBodyImplToJson(
-        _$RazorpayCustomerEligibilityRequestBodyImpl instance) =>
+Map<String, dynamic> _$RazorpayCustomerEligibilityRequestBodyToJson(
+        _RazorpayCustomerEligibilityRequestBody instance) =>
     <String, dynamic>{
       if (instance.amount case final value?) 'amount': value,
       'customer': instance.customer,
       if (instance.inquiry case final value?) 'inquiry': value,
     };
 
-_$CustomersEligibilityInputImpl _$$CustomersEligibilityInputImplFromJson(
+_CustomersEligibilityInput _$CustomersEligibilityInputFromJson(
         Map<String, dynamic> json) =>
-    _$CustomersEligibilityInputImpl(
+    _CustomersEligibilityInput(
       id: json['id'] as String?,
       contact: json['contact'] as String?,
       ip: json['ip'] as String?,
@@ -240,8 +236,8 @@ _$CustomersEligibilityInputImpl _$$CustomersEligibilityInputImplFromJson(
       user_agent: json['user_agent'] as String?,
     );
 
-Map<String, dynamic> _$$CustomersEligibilityInputImplToJson(
-        _$CustomersEligibilityInputImpl instance) =>
+Map<String, dynamic> _$CustomersEligibilityInputToJson(
+        _CustomersEligibilityInput instance) =>
     <String, dynamic>{
       if (instance.id case final value?) 'id': value,
       if (instance.contact case final value?) 'contact': value,
@@ -250,9 +246,9 @@ Map<String, dynamic> _$$CustomersEligibilityInputImplToJson(
       if (instance.user_agent case final value?) 'user_agent': value,
     };
 
-_$InstrumentEligibilityErrorImpl _$$InstrumentEligibilityErrorImplFromJson(
+_InstrumentEligibilityError _$InstrumentEligibilityErrorFromJson(
         Map<String, dynamic> json) =>
-    _$InstrumentEligibilityErrorImpl(
+    _InstrumentEligibilityError(
       code: json['code'] as String,
       description: json['description'] as String,
       field: json['field'],
@@ -264,8 +260,8 @@ _$InstrumentEligibilityErrorImpl _$$InstrumentEligibilityErrorImplFromJson(
       ),
     );
 
-Map<String, dynamic> _$$InstrumentEligibilityErrorImplToJson(
-        _$InstrumentEligibilityErrorImpl instance) =>
+Map<String, dynamic> _$InstrumentEligibilityErrorToJson(
+        _InstrumentEligibilityError instance) =>
     <String, dynamic>{
       'code': instance.code,
       'description': instance.description,
@@ -276,9 +272,9 @@ Map<String, dynamic> _$$InstrumentEligibilityErrorImplToJson(
       if (instance.metadata case final value?) 'metadata': value,
     };
 
-_$InstrumentEligibilityImpl _$$InstrumentEligibilityImplFromJson(
+_InstrumentEligibility _$InstrumentEligibilityFromJson(
         Map<String, dynamic> json) =>
-    _$InstrumentEligibilityImpl(
+    _InstrumentEligibility(
       status: json['status'] as String,
       error: json['error'] == null
           ? null
@@ -286,15 +282,14 @@ _$InstrumentEligibilityImpl _$$InstrumentEligibilityImplFromJson(
               json['error'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$$InstrumentEligibilityImplToJson(
-        _$InstrumentEligibilityImpl instance) =>
+Map<String, dynamic> _$InstrumentEligibilityToJson(
+        _InstrumentEligibility instance) =>
     <String, dynamic>{
       'status': instance.status,
       if (instance.error case final value?) 'error': value,
     };
 
-_$InstrumentsImpl _$$InstrumentsImplFromJson(Map<String, dynamic> json) =>
-    _$InstrumentsImpl(
+_Instruments _$InstrumentsFromJson(Map<String, dynamic> json) => _Instruments(
       method: json['method'] as String,
       issuer: json['issuer'] as String,
       type: json['type'] as String,
@@ -304,7 +299,7 @@ _$InstrumentsImpl _$$InstrumentsImplFromJson(Map<String, dynamic> json) =>
           json['eligibility'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$$InstrumentsImplToJson(_$InstrumentsImpl instance) =>
+Map<String, dynamic> _$InstrumentsToJson(_Instruments instance) =>
     <String, dynamic>{
       'method': instance.method,
       'issuer': instance.issuer,
@@ -314,9 +309,9 @@ Map<String, dynamic> _$$InstrumentsImplToJson(_$InstrumentsImpl instance) =>
       'eligibility': instance.eligibility,
     };
 
-_$RazorpayCustomerEligibilityImpl _$$RazorpayCustomerEligibilityImplFromJson(
+_RazorpayCustomerEligibility _$RazorpayCustomerEligibilityFromJson(
         Map<String, dynamic> json) =>
-    _$RazorpayCustomerEligibilityImpl(
+    _RazorpayCustomerEligibility(
       amount: json['amount'],
       customer: json['customer'] == null
           ? null
@@ -327,40 +322,40 @@ _$RazorpayCustomerEligibilityImpl _$$RazorpayCustomerEligibilityImplFromJson(
           .toList(),
     );
 
-Map<String, dynamic> _$$RazorpayCustomerEligibilityImplToJson(
-        _$RazorpayCustomerEligibilityImpl instance) =>
+Map<String, dynamic> _$RazorpayCustomerEligibilityToJson(
+        _RazorpayCustomerEligibility instance) =>
     <String, dynamic>{
       if (instance.amount case final value?) 'amount': value,
       if (instance.customer case final value?) 'customer': value,
       if (instance.instruments case final value?) 'instruments': value,
     };
 
-_$RazorpayCustomerTokensResponseImpl
-    _$$RazorpayCustomerTokensResponseImplFromJson(Map<String, dynamic> json) =>
-        _$RazorpayCustomerTokensResponseImpl(
-          entity: json['entity'] as String,
-          count: (json['count'] as num).toInt(),
-          items: (json['items'] as List<dynamic>)
-              .map((e) => RazorpayToken.fromJson(e as Map<String, dynamic>))
-              .toList(),
-        );
+_RazorpayCustomerTokensResponse _$RazorpayCustomerTokensResponseFromJson(
+        Map<String, dynamic> json) =>
+    _RazorpayCustomerTokensResponse(
+      entity: json['entity'] as String,
+      count: (json['count'] as num).toInt(),
+      items: (json['items'] as List<dynamic>)
+          .map((e) => RazorpayToken.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
 
-Map<String, dynamic> _$$RazorpayCustomerTokensResponseImplToJson(
-        _$RazorpayCustomerTokensResponseImpl instance) =>
+Map<String, dynamic> _$RazorpayCustomerTokensResponseToJson(
+        _RazorpayCustomerTokensResponse instance) =>
     <String, dynamic>{
       'entity': instance.entity,
       'count': instance.count,
       'items': instance.items,
     };
 
-_$RazorpayDeleteTokenResponseImpl _$$RazorpayDeleteTokenResponseImplFromJson(
+_RazorpayDeleteTokenResponse _$RazorpayDeleteTokenResponseFromJson(
         Map<String, dynamic> json) =>
-    _$RazorpayDeleteTokenResponseImpl(
+    _RazorpayDeleteTokenResponse(
       deleted: json['deleted'] as bool,
     );
 
-Map<String, dynamic> _$$RazorpayDeleteTokenResponseImplToJson(
-        _$RazorpayDeleteTokenResponseImpl instance) =>
+Map<String, dynamic> _$RazorpayDeleteTokenResponseToJson(
+        _RazorpayDeleteTokenResponse instance) =>
     <String, dynamic>{
       'deleted': instance.deleted,
     };

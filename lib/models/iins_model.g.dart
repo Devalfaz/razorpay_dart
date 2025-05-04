@@ -6,39 +6,37 @@ part of 'iins_model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$IinEmiImpl _$$IinEmiImplFromJson(Map<String, dynamic> json) => _$IinEmiImpl(
+_IinEmi _$IinEmiFromJson(Map<String, dynamic> json) => _IinEmi(
       available: json['available'] as bool,
     );
 
-Map<String, dynamic> _$$IinEmiImplToJson(_$IinEmiImpl instance) =>
+Map<String, dynamic> _$IinEmiToJson(_IinEmi instance) => <String, dynamic>{
+      'available': instance.available,
+    };
+
+_IinRecurring _$IinRecurringFromJson(Map<String, dynamic> json) =>
+    _IinRecurring(
+      available: json['available'] as bool,
+    );
+
+Map<String, dynamic> _$IinRecurringToJson(_IinRecurring instance) =>
     <String, dynamic>{
       'available': instance.available,
     };
 
-_$IinRecurringImpl _$$IinRecurringImplFromJson(Map<String, dynamic> json) =>
-    _$IinRecurringImpl(
-      available: json['available'] as bool,
-    );
-
-Map<String, dynamic> _$$IinRecurringImplToJson(_$IinRecurringImpl instance) =>
-    <String, dynamic>{
-      'available': instance.available,
-    };
-
-_$IinAuthenticationTypeImpl _$$IinAuthenticationTypeImplFromJson(
+_IinAuthenticationType _$IinAuthenticationTypeFromJson(
         Map<String, dynamic> json) =>
-    _$IinAuthenticationTypeImpl(
+    _IinAuthenticationType(
       type: json['type'] as String,
     );
 
-Map<String, dynamic> _$$IinAuthenticationTypeImplToJson(
-        _$IinAuthenticationTypeImpl instance) =>
+Map<String, dynamic> _$IinAuthenticationTypeToJson(
+        _IinAuthenticationType instance) =>
     <String, dynamic>{
       'type': instance.type,
     };
 
-_$RazorpayIinImpl _$$RazorpayIinImplFromJson(Map<String, dynamic> json) =>
-    _$RazorpayIinImpl(
+_RazorpayIin _$RazorpayIinFromJson(Map<String, dynamic> json) => _RazorpayIin(
       iin: json['iin'] as String,
       entity: json['entity'] as String,
       issuer_code: json['issuer_code'] as String,
@@ -57,7 +55,7 @@ _$RazorpayIinImpl _$$RazorpayIinImplFromJson(Map<String, dynamic> json) =>
       card_iin: json['card_iin'] as String?,
     );
 
-Map<String, dynamic> _$$RazorpayIinImplToJson(_$RazorpayIinImpl instance) =>
+Map<String, dynamic> _$RazorpayIinToJson(_RazorpayIin instance) =>
     <String, dynamic>{
       'iin': instance.iin,
       'entity': instance.entity,
@@ -102,15 +100,13 @@ const _$IinSubTypeEnumMap = {
   IinSubType.unknown: 'unknown',
 };
 
-_$RazorpayIinListImpl _$$RazorpayIinListImplFromJson(
-        Map<String, dynamic> json) =>
-    _$RazorpayIinListImpl(
+_RazorpayIinList _$RazorpayIinListFromJson(Map<String, dynamic> json) =>
+    _RazorpayIinList(
       count: (json['count'] as num).toInt(),
       iins: (json['iins'] as List<dynamic>).map((e) => e as String).toList(),
     );
 
-Map<String, dynamic> _$$RazorpayIinListImplToJson(
-        _$RazorpayIinListImpl instance) =>
+Map<String, dynamic> _$RazorpayIinListToJson(_RazorpayIinList instance) =>
     <String, dynamic>{
       'count': instance.count,
       'iins': instance.iins,

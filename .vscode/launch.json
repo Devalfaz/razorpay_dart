@@ -1,0 +1,19 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "razorpay_dart",
+            "request": "launch",
+            "type": "dart",
+            "program": "bin/razorpay_dart.dart",
+            "args": [
+                "--dart-define-from-file=.env",
+                "--dart-define=RAZORPAY_KEY_ID=test_id",
+                "--dart-define=RAZORPAY_KEY_SECRET=test_secret"
+            ]
+        }
+    ]
+}

@@ -7,7 +7,7 @@ part 'disputes_model.g.dart';
 
 // --- Nested Types for Evidence ---
 @freezed
-class OthersEvidence with _$OthersEvidence {
+abstract class OthersEvidence with _$OthersEvidence {
   @JsonSerializable(includeIfNull: false)
   const factory OthersEvidence({
     required String type,
@@ -20,7 +20,7 @@ class OthersEvidence with _$OthersEvidence {
 
 // Base Request Body for Contesting (also used for Evidence structure in response)
 @freezed
-class RazorpayDisputesContestBaseRequestBody
+abstract class RazorpayDisputesContestBaseRequestBody
     with _$RazorpayDisputesContestBaseRequestBody {
   @JsonSerializable(includeIfNull: false)
   const factory RazorpayDisputesContestBaseRequestBody({
@@ -52,7 +52,7 @@ class RazorpayDisputesContestBaseRequestBody
 
 // --- Main Dispute Response Body ---
 @freezed
-class RazorpayDispute with _$RazorpayDispute {
+abstract class RazorpayDispute with _$RazorpayDispute {
   @JsonSerializable(includeIfNull: false)
   const factory RazorpayDispute({
     required String id,

@@ -6,8 +6,8 @@ part of 'transfers_model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$TransferErrorImpl _$$TransferErrorImplFromJson(Map<String, dynamic> json) =>
-    _$TransferErrorImpl(
+_TransferError _$TransferErrorFromJson(Map<String, dynamic> json) =>
+    _TransferError(
       code: json['code'] as String?,
       description: json['description'] as String?,
       reason: json['reason'] as String?,
@@ -18,7 +18,7 @@ _$TransferErrorImpl _$$TransferErrorImplFromJson(Map<String, dynamic> json) =>
       metadata: json['metadata'] as String?,
     );
 
-Map<String, dynamic> _$$TransferErrorImplToJson(_$TransferErrorImpl instance) =>
+Map<String, dynamic> _$TransferErrorToJson(_TransferError instance) =>
     <String, dynamic>{
       if (instance.code case final value?) 'code': value,
       if (instance.description case final value?) 'description': value,
@@ -30,17 +30,17 @@ Map<String, dynamic> _$$TransferErrorImplToJson(_$TransferErrorImpl instance) =>
       if (instance.metadata case final value?) 'metadata': value,
     };
 
-_$RazorpayTransferBaseRequestBodyImpl
-    _$$RazorpayTransferBaseRequestBodyImplFromJson(Map<String, dynamic> json) =>
-        _$RazorpayTransferBaseRequestBodyImpl(
-          account: json['account'] as String,
-          amount: json['amount'],
-          currency: json['currency'] as String,
-          notes: json['notes'] as Map<String, dynamic>?,
-        );
+_RazorpayTransferBaseRequestBody _$RazorpayTransferBaseRequestBodyFromJson(
+        Map<String, dynamic> json) =>
+    _RazorpayTransferBaseRequestBody(
+      account: json['account'] as String,
+      amount: json['amount'],
+      currency: json['currency'] as String,
+      notes: json['notes'] as Map<String, dynamic>?,
+    );
 
-Map<String, dynamic> _$$RazorpayTransferBaseRequestBodyImplToJson(
-        _$RazorpayTransferBaseRequestBodyImpl instance) =>
+Map<String, dynamic> _$RazorpayTransferBaseRequestBodyToJson(
+        _RazorpayTransferBaseRequestBody instance) =>
     <String, dynamic>{
       'account': instance.account,
       if (instance.amount case final value?) 'amount': value,
@@ -48,18 +48,17 @@ Map<String, dynamic> _$$RazorpayTransferBaseRequestBodyImplToJson(
       if (instance.notes case final value?) 'notes': value,
     };
 
-_$RazorpayTransferCreateRequestBodyImpl
-    _$$RazorpayTransferCreateRequestBodyImplFromJson(
-            Map<String, dynamic> json) =>
-        _$RazorpayTransferCreateRequestBodyImpl(
-          account: json['account'] as String,
-          amount: json['amount'],
-          currency: json['currency'] as String,
-          notes: json['notes'] as Map<String, dynamic>?,
-        );
+_RazorpayTransferCreateRequestBody _$RazorpayTransferCreateRequestBodyFromJson(
+        Map<String, dynamic> json) =>
+    _RazorpayTransferCreateRequestBody(
+      account: json['account'] as String,
+      amount: json['amount'],
+      currency: json['currency'] as String,
+      notes: json['notes'] as Map<String, dynamic>?,
+    );
 
-Map<String, dynamic> _$$RazorpayTransferCreateRequestBodyImplToJson(
-        _$RazorpayTransferCreateRequestBodyImpl instance) =>
+Map<String, dynamic> _$RazorpayTransferCreateRequestBodyToJson(
+        _RazorpayTransferCreateRequestBody instance) =>
     <String, dynamic>{
       'account': instance.account,
       if (instance.amount case final value?) 'amount': value,
@@ -67,25 +66,24 @@ Map<String, dynamic> _$$RazorpayTransferCreateRequestBodyImplToJson(
       if (instance.notes case final value?) 'notes': value,
     };
 
-_$RazorpayTransferUpdateRequestBodyImpl
-    _$$RazorpayTransferUpdateRequestBodyImplFromJson(
-            Map<String, dynamic> json) =>
-        _$RazorpayTransferUpdateRequestBodyImpl(
-          on_hold: _intToBool(json['on_hold']),
-          on_hold_until: (json['on_hold_until'] as num?)?.toInt(),
-        );
+_RazorpayTransferUpdateRequestBody _$RazorpayTransferUpdateRequestBodyFromJson(
+        Map<String, dynamic> json) =>
+    _RazorpayTransferUpdateRequestBody(
+      on_hold: _intToBool(json['on_hold']),
+      on_hold_until: (json['on_hold_until'] as num?)?.toInt(),
+    );
 
-Map<String, dynamic> _$$RazorpayTransferUpdateRequestBodyImplToJson(
-        _$RazorpayTransferUpdateRequestBodyImpl instance) =>
+Map<String, dynamic> _$RazorpayTransferUpdateRequestBodyToJson(
+        _RazorpayTransferUpdateRequestBody instance) =>
     <String, dynamic>{
       if (_boolToInt(instance.on_hold) case final value?) 'on_hold': value,
       if (instance.on_hold_until case final value?) 'on_hold_until': value,
     };
 
-_$RazorpayOrderCreateTransferRequestBodyImpl
-    _$$RazorpayOrderCreateTransferRequestBodyImplFromJson(
+_RazorpayOrderCreateTransferRequestBody
+    _$RazorpayOrderCreateTransferRequestBodyFromJson(
             Map<String, dynamic> json) =>
-        _$RazorpayOrderCreateTransferRequestBodyImpl(
+        _RazorpayOrderCreateTransferRequestBody(
           account: json['account'] as String,
           amount: json['amount'],
           currency: json['currency'] as String,
@@ -97,8 +95,8 @@ _$RazorpayOrderCreateTransferRequestBodyImpl
               .toList(),
         );
 
-Map<String, dynamic> _$$RazorpayOrderCreateTransferRequestBodyImplToJson(
-        _$RazorpayOrderCreateTransferRequestBodyImpl instance) =>
+Map<String, dynamic> _$RazorpayOrderCreateTransferRequestBodyToJson(
+        _RazorpayOrderCreateTransferRequestBody instance) =>
     <String, dynamic>{
       'account': instance.account,
       if (instance.amount case final value?) 'amount': value,
@@ -110,9 +108,8 @@ Map<String, dynamic> _$$RazorpayOrderCreateTransferRequestBodyImplToJson(
         'linked_account_notes': value,
     };
 
-_$RazorpayTransferImpl _$$RazorpayTransferImplFromJson(
-        Map<String, dynamic> json) =>
-    _$RazorpayTransferImpl(
+_RazorpayTransfer _$RazorpayTransferFromJson(Map<String, dynamic> json) =>
+    _RazorpayTransfer(
       id: json['id'] as String,
       entity: json['entity'] as String,
       status: $enumDecode(_$TransferStatusEnumMap, json['status']),
@@ -133,8 +130,7 @@ _$RazorpayTransferImpl _$$RazorpayTransferImplFromJson(
           : TransferError.fromJson(json['error'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$$RazorpayTransferImplToJson(
-        _$RazorpayTransferImpl instance) =>
+Map<String, dynamic> _$RazorpayTransferToJson(_RazorpayTransfer instance) =>
     <String, dynamic>{
       'id': instance.id,
       'entity': instance.entity,
@@ -164,9 +160,8 @@ const _$TransferStatusEnumMap = {
   TransferStatus.partially_reversed: 'partially_reversed',
 };
 
-_$RazorpayReversalImpl _$$RazorpayReversalImplFromJson(
-        Map<String, dynamic> json) =>
-    _$RazorpayReversalImpl(
+_RazorpayReversal _$RazorpayReversalFromJson(Map<String, dynamic> json) =>
+    _RazorpayReversal(
       id: json['id'] as String,
       entity: json['entity'] as String,
       transfer_id: json['transfer_id'] as String,
@@ -177,8 +172,7 @@ _$RazorpayReversalImpl _$$RazorpayReversalImplFromJson(
       customer_refund_id: json['customer_refund_id'] as String?,
     );
 
-Map<String, dynamic> _$$RazorpayReversalImplToJson(
-        _$RazorpayReversalImpl instance) =>
+Map<String, dynamic> _$RazorpayReversalToJson(_RazorpayReversal instance) =>
     <String, dynamic>{
       'id': instance.id,
       'entity': instance.entity,
@@ -191,9 +185,9 @@ Map<String, dynamic> _$$RazorpayReversalImplToJson(
         'customer_refund_id': value,
     };
 
-_$RazorpayTransferQueryImpl _$$RazorpayTransferQueryImplFromJson(
+_RazorpayTransferQuery _$RazorpayTransferQueryFromJson(
         Map<String, dynamic> json) =>
-    _$RazorpayTransferQueryImpl(
+    _RazorpayTransferQuery(
       from: (json['from'] as num?)?.toInt(),
       to: (json['to'] as num?)?.toInt(),
       count: (json['count'] as num?)?.toInt(),
@@ -202,8 +196,8 @@ _$RazorpayTransferQueryImpl _$$RazorpayTransferQueryImplFromJson(
       payment_id: json['payment_id'] as String?,
     );
 
-Map<String, dynamic> _$$RazorpayTransferQueryImplToJson(
-        _$RazorpayTransferQueryImpl instance) =>
+Map<String, dynamic> _$RazorpayTransferQueryToJson(
+        _RazorpayTransferQuery instance) =>
     <String, dynamic>{
       if (instance.from case final value?) 'from': value,
       if (instance.to case final value?) 'to': value,
@@ -214,16 +208,16 @@ Map<String, dynamic> _$$RazorpayTransferQueryImplToJson(
       if (instance.payment_id case final value?) 'payment_id': value,
     };
 
-_$RazorpayReverseTransferRequestImpl
-    _$$RazorpayReverseTransferRequestImplFromJson(Map<String, dynamic> json) =>
-        _$RazorpayReverseTransferRequestImpl(
-          amount: (json['amount'] as num?)?.toInt(),
-          notes: json['notes'] as Map<String, dynamic>?,
-          receipt: json['receipt'] as String?,
-        );
+_RazorpayReverseTransferRequest _$RazorpayReverseTransferRequestFromJson(
+        Map<String, dynamic> json) =>
+    _RazorpayReverseTransferRequest(
+      amount: (json['amount'] as num?)?.toInt(),
+      notes: json['notes'] as Map<String, dynamic>?,
+      receipt: json['receipt'] as String?,
+    );
 
-Map<String, dynamic> _$$RazorpayReverseTransferRequestImplToJson(
-        _$RazorpayReverseTransferRequestImpl instance) =>
+Map<String, dynamic> _$RazorpayReverseTransferRequestToJson(
+        _RazorpayReverseTransferRequest instance) =>
     <String, dynamic>{
       if (instance.amount case final value?) 'amount': value,
       if (instance.notes case final value?) 'notes': value,
