@@ -1,5 +1,4 @@
 // lib/resources/addons.dart
-import 'package:dio/dio.dart';
 import 'package:razorpay_dart/api.dart';
 import 'package:razorpay_dart/models/addons_model.dart';
 import 'package:razorpay_dart/models/api_model.dart';
@@ -14,9 +13,8 @@ class Addons {
   /// Fetches an addon given Addon ID
   ///
   /// @param addonId - addon id to be fetched
-  Future<Response<RazorpayAddon>> fetch({
+  Future<RazorpayAddon> fetch({
     required String addonId,
-    void Function(RazorpayApiException?, Response<RazorpayAddon>?)? callback,
   }) async {
     if (addonId.isEmpty) {
       throw ArgumentError(MISSING_ID_ERROR);
@@ -25,39 +23,31 @@ class Addons {
     return api.get<RazorpayAddon>(
       {'url': url},
       fromJsonFactory: RazorpayAddon.fromJson,
-      callback: callback,
-    );
+    ).then((value) => value.data!);
   }
 
   /// Delete an addon given Addon ID
   ///
   /// @param addonId - addon id to be deleted
-  Future<Response<List<dynamic>>> delete({
-    // JS/TS returns [], use List<dynamic>
+  Future<void> delete({
     required String addonId,
-    void Function(RazorpayApiException?, Response<List<dynamic>>?)? callback,
   }) async {
     if (addonId.isEmpty) {
       throw ArgumentError(MISSING_ID_ERROR);
     }
     final url = '$BASE_URL/$addonId';
     // Expecting an empty list [] as response based on d.ts
-    return api.delete<List<dynamic>>(
+    return api.delete<void>(
       {'url': url},
-      fromJsonFactory: (json) => [], // Factory returns empty list
-      callback: callback,
-    );
+      fromJsonFactory: (json) {}, // Factory returns empty list
+    ).then((value) {});
   }
 
   /// Get all addons
   ///
   /// @param params - Check [doc](https://razorpay.com/docs/api/payments/subscriptions/#fetch-all-add-ons) for required params
-  Future<Response<RazorpayApiResponse<RazorpayAddon>>> all({
+  Future<RazorpayApiResponse<RazorpayAddon>> all({
     RazorpayPaginationOptions? params,
-    void Function(
-      RazorpayApiException?,
-      Response<RazorpayApiResponse<RazorpayAddon>>?,
-    )? callback,
   }) async {
     const url = BASE_URL;
     var from = params?.from;
@@ -80,20 +70,17 @@ class Addons {
       // Include other potential params from the input object if necessary
       ...?params?.toJson(), // Spread the rest of params if toJson is available
     };
-    // Remove null values before sending
-    queryParams.removeWhere((key, value) => value == null);
 
     return api.get<RazorpayApiResponse<RazorpayAddon>>(
       {
         'url': url,
         'data': queryParams,
       },
-      callback: callback,
       // Provide the factory for the generic response and the inner item type
       fromJsonFactory: (json) => RazorpayApiResponse<RazorpayAddon>.fromJson(
         json,
         (itemJson) => RazorpayAddon.fromJson(itemJson! as Map<String, dynamic>),
       ),
-    );
+    ).then((value) => value.data!);
   }
 }

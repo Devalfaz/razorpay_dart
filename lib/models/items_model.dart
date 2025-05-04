@@ -125,14 +125,3 @@ abstract class RazorpayItemQuery with _$RazorpayItemQuery {
   factory RazorpayItemQuery.fromJson(Map<String, dynamic> json) =>
       _$RazorpayItemQueryFromJson(json);
 }
-
-// Delete Response: Use the generic RazorpayDeleteResponse if defined, or create one.
-// Assuming it's similar to Invoice delete: returns `[]` -> empty list/object
-@freezed
-abstract class RazorpayItemDeleteResponse with _$RazorpayItemDeleteResponse {
-  @JsonSerializable(includeIfNull: false)
-  const factory RazorpayItemDeleteResponse() = _RazorpayItemDeleteResponse;
-
-  factory RazorpayItemDeleteResponse.fromJson(Map<String, dynamic> json) =>
-      _$RazorpayItemDeleteResponseFromJson(json);
-}

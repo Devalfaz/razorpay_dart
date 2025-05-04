@@ -109,16 +109,16 @@ class Items {
   /// Delete an item given Item ID
   ///
   /// @param itemId - The unique identifier of the item.
-  Future<RazorpayItemDeleteResponse> delete({
+  Future<void> delete({
     // Use specific empty model
     required String itemId,
   }) async {
     if (itemId.isEmpty) {
       throw ArgumentError('`item_id` is mandatory');
     }
-    return api.delete<RazorpayItemDeleteResponse>(
+    return api.delete<void>(
       {'url': '/items/$itemId'},
-      fromJsonFactory: RazorpayItemDeleteResponse.fromJson,
-    ).then((value) => value.data!);
+      fromJsonFactory: (json) {},
+    ).then((value) {});
   }
 }

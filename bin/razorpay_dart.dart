@@ -78,8 +78,8 @@ Future<void> _demonstrateItems(Razorpay razorpay) async {
     // Delete an item
     if (createdItemId != null) {
       print('\nDeleting Item ${createdItemId}...');
-      final deletedItem = await razorpay.items.delete(itemId: createdItemId);
-      print('Deleted Item Response: ${deletedItem.toJson()}');
+      final _ = await razorpay.items.delete(itemId: createdItemId);
+      print('Deleted Item');
       // Reset ID after deletion
       createdItemId = null;
     }
@@ -101,7 +101,6 @@ Future<void> _demonstrateItems(Razorpay razorpay) async {
 }
 
 // Function to demonstrate Card operations
-// Function to demonstrate Plan operations
 Future<void> _demonstrateCards(Razorpay razorpay) async {
   print('\n--- Demonstrating Cards ---');
   try {
@@ -120,6 +119,31 @@ Future<void> _demonstrateCards(Razorpay razorpay) async {
     print('Fetched Card: ${singleCard.toJson()}');
   } catch (e, s) {
     print('Error during Card operations: $e\n$s');
+  }
+}
+
+// Function to demonstrate Addon operations
+Future<void> _demonstrateAddons(Razorpay razorpay) async {
+  print('\n--- Demonstrating Addons ---');
+  try {
+    // Get an addon
+    final singleAddon =
+        await razorpay.addons.fetch(addonId: 'addon_1234567890');
+    print('Fetched Addon: ${singleAddon.toJson()}');
+
+    // Get all addons
+    print('\nFetching All Addons...');
+    final getAllAddons = await razorpay.addons.all();
+    print(
+        'Fetched All Addons: ${getAllAddons.toJson((value) => value.toJson())}');
+
+    // Delete an addon
+    print('\nDeleting Addon ${singleAddon.id}...');
+
+    final _ = await razorpay.addons.delete(addonId: singleAddon.id);
+    print('Deleted Addon');
+  } catch (e, s) {
+    print('Error during Addon operations: $e\n$s');
   }
 }
 
@@ -148,6 +172,9 @@ void main() async {
 
   // Demonstrate Card operations
   await _demonstrateCards(razorpay);
+
+  // Demonstrate Addon operations
+  await _demonstrateAddons(razorpay);
 
   print('\n--- All demonstrations finished ---');
 }

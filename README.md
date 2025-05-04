@@ -49,7 +49,7 @@ Add `razorpay_dart` to your `pubspec.yaml` dependencies:
 
 ```yaml
 dependencies:
-  razorpay_dart: ^0.0.2 # Use the latest version
+  razorpay_dart: ^0.0.3 # Use the latest version
 ```
 
 Then, run `flutter pub get` (or `dart pub get`).
@@ -138,3 +138,29 @@ flutter test
 ## License
 
 This package is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+
+*   [x] `cards.dart`
+*   [x] `items.dart`
+*   [x] `plans.dart`
+*   [x] `addons.dart`
+*   [ ] `accounts.dart`
+*   [ ] `customers.dart`
+*   [ ] `disputes.dart`
+*   [ ] `documents.dart`
+*   [ ] `fund_account.dart`
+*   [ ] `iins.dart`
+*   [ ] `invoices.dart`
+*   [ ] `orders.dart`
+*   [ ] `payment_link.dart`
+*   [ ] `payments.dart`
+*   [ ] `products.dart`
+*   [ ] `qr_code.dart`
+*   [ ] `refunds.dart`
+*   [ ] `settlements.dart`
+*   [ ] `stakeholders.dart`
+*   [ ] `subscriptions.dart`
+*   [ ] `tokens.dart`
+*   [ ] `transfers.dart`
+*   [ ] `virtual_accounts.dart`
+*   [ ] `webhooks.dart`
